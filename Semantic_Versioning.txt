@@ -1,0 +1,19 @@
+Semantic versioning helps naming new version of code
+
+MAJOR.MINOR.PATCH 
+
+MAJOR version when you make incompatible API changes
+MINOR version when you add functionality in a backwards-compatible manner
+PATCH version when you make backwards-compatible bug fixes
+
+ex: 3.2.9 -> Nineth patch version of second minor version of third major version
+
+Prerelease will add anything to 1.0.0 ex: 1.0.0-alpha or 1.0.0-0.3.7
+
+1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0
+
+http://semver.org/
+
+
+feature/name (pour une nouvelle feature ex: pageperso)
+hotfix/name (résolution d'un bug ex: bad-render)

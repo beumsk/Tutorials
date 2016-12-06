@@ -1,0 +1,83 @@
+GIT COMMANDS
+
+
+
+Most important commands:
+
+- git init // make directory become git project
+- git status // get the status of git
+- git clone https://github.com/8trust/godzilist.git // to clone 8trust github for example
+OR git clone remote_location clone_name // clone the directory in a new one named
+
+- git branch newbranch // create new branch called newbranch
+- git checkout master (or any branchname) // move to that branch
+- git add filename // add file to staging area
+- git commit -m "message" // stores changes from staging area to repository with message
+
+- git stash // keep modifications on stash to let you work on another branch without committing unfinished work
+- git stash pop // to get your modifications stashed
+- git stash apply // to keep modifications in stash
+
+- git log // view historic of commits
+- git merge branch_name // merge branch_name in actual branch
+- git blame filename // list all modifications with modificators names
+
+- git push origin your_branch_name // send commited to remote repository
+- git pull origin your_branch_name // get latest updates from remote repository
+
+/!\ It is crucial to keep sensible files (passwords, API, config, etc.) in a .gitignore file (should write paths to ignored files in .gitignore file)
+
+
+Work with git lets you work on a project with multitude of people as long as you are methodical
+
+Here is an exampe of the git-flow -> http://nurelm.com/wp-content/uploads/2015/05/git-flow.png
+
+Master branch handle the working code
+Hotfix branch handle random bugs
+Release branch handle last check before new release
+Develop branch handle improvements to the code , including new features
+Feature branches handle new features to be add to develop
+
+
+
+-> create repository
+-> create file
+$ git init (make directory become git project)
+$ git status (get status of git project)
+$ git add filename (add file to staging area)
+-> add some text
+$ git diff filename (check differences) 
+/!\ press 'q' to exit diff mode
+$ git add filename (add changes to staging area)
+$ git commit -m "message" (stores changes from staging area to repository with message)
+$ git log (view historic of commits)
+
+$ git show HEAD (show changes)
+$ git checkout HEAD filename (restore to commit)
+$ git reset HEAD filename (unstage a file from staging area)
+$ git log (take the first seven characters of the commit version you want)
+$ git reset 7777777 (the 7 characters to reset to that commit version)
+
+$ git branch (know what branch you are on)
+$ git branch new_branch (create new branch)
+$ git checkout branch_name (switch to that branch)
+$ git merge branch_name (update master branch with branch changes)
+/!\ if both master and branch have changed 
+-> conflict -> chose the version to keep
+$ git branch -d branch_name (delete branch)
+
+$ git clone remote_location clone_name (clone the directory in a new one named)
+$ cd new_directory (to get there)
+$ git remote -v (list remotes)
+$ git fetch (fetch changes to remote)
+$ git merge origin/master (update local master)
+$ git push origin your_branch_name
+
+1. $ git fetch
+2. $ git merge origin/master
+3. $ git branch new_branch
+4. $ git checkout new_branch
+5. -> work on project
+6. $ git fetch
+7. $ git merge origin/master
+8. $ git push origin your_branch_name

@@ -1,0 +1,119 @@
+CTRL+Alt+t 
+http://angrytools.com/command/
+
+General
+
+	$ sudo -s
+	become root 
+
+	$ exit
+	stop being root or quit terminal
+
+	become sudo?
+	else?
+
+	$ history
+	show terminal command history
+
+Find directories and files
+
+	$ ls
+	get the list of files and directory
+
+	$ pwd display current directory
+
+Path navigation
+
+	$ cd /
+	move to root directory, now present directory become /
+
+	$ cd
+	move to user directory
+
+	$ cd ..
+	move to one directory up
+
+	$ cd -
+	move to previous directory
+
+Create files
+
+	$ touch filename.txt
+	create new empty file
+
+	$ > filename.txt
+	create new empty file
+
+	$ cat filename.txt
+	view file contents
+
+Create directories
+
+	$ mkdir foldername
+	create a new directory
+
+	$ sudo mkdir foldername
+	create a new directory with super user rights
+
+Move files
+
+	$ mv filename.txt toDir/
+	move file into specified folder
+
+	$ cp filename.txt toDir/
+	copy file into specified folder
+
+Delete directory
+
+	$ rmdir /tmp/dirname
+	delete directory inside tmp directory
+
+	$ rm dirname
+	another command to remove directory
+
+Delete file
+
+	$ del file.txt
+	delete file
+
+Time
+
+	$ date
+	show current date/time
+
+System information
+
+	$ sudo lshw
+	get details of system hardware
+
+	$ sudo df -h
+	nfo about hard disk usage
+
+User info
+	
+	$ who
+	show who is logged in
+
+Running process
+
+	$ ps
+	show running process
+
+	$ ps aux
+	show running process with details
+
+Shudown/restart
+
+	$ sudo poweroff
+	$ sudo shutdown -h now
+	$ sudo init 0
+	use any command to shutdown system
+
+	$ sudo reboot
+	$ sudo shutdown -r 0
+	$ sudo init 6
+	use anyone command to restart
+
+	$ gnome-session-quit --logout
+	logout
+

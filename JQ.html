@@ -1,0 +1,372 @@
+JQuery
+  - Javascript Framework
+    - by Beumsk
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JQuery</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!--jQuery library-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!--Latest compiled JavaScript-->
+
+  <script>//start of the script
+    $(function() { // always the beginning of jquery code
+    });
+  </script>
+
+    // a is an object which selects all 'div' tags
+    <script>
+    $(function() {
+      var a = $('div'); 
+    });
+    </script>
+
+    
+    // add 'my_class' class to all 'img' elements
+    <script>
+    $(function() {
+      $('img').addClass('my_class'); 
+    });
+    </script>
+     
+
+    // change properties of '#el' 
+    <script>
+    $(function() {
+      $('#el').css('background-color', 'red').fadeIn('slow');  
+    });
+    </script>
+    
+
+    // code will process when clicking on '#action'
+    <script>
+    $(function() {
+      $('#action').click(function() { 
+      /*my code*/ 
+      });  
+    });
+    </script>
+    
+
+    // display '#item' on click
+    <a>Click</a> 
+    <p id="item">Hidden message</p>
+    <script>
+    $(function() {
+      $('a').click(function() { 
+        $('#item').collapse('toggle'); 
+      }); 
+    });
+    </script>
+    
+
+    // display '#item' on click and a pop-up
+    <a>Click</a> 
+    <p id="item">Hidden message</p>
+    <script>
+    $(function() {
+      $('a').click(function() { 
+        $('#item').collapse('toggle'); 
+      });
+      $('#item').on('shown.bs.collapse', function() { 
+        alert('On me voit !');
+      });
+    });
+    </script>
+    
+
+    // dropdown button; need data-toggle on 'h1' to work
+    <div class="btn-group"> 
+      <h1 data-toggle="dropdown"><span class="label label-default">Pass on me !</span></h1>
+      <ul class="dropdown-menu">
+        <li><a href="#">Petters</a></li>
+        <li><a href="#">Zoos</a></li>
+        <li><a href="#">Hunters</a></li>
+      </ul>
+    </div>
+    <script>
+    $(function() {
+      $('h1').mouseover(function() {
+        $(this).dropdown('toggle');
+      });  
+    });
+    </script>
+    
+
+    // Modal windows; need '#info' tags and html files
+    <div class="container">  
+      <div class="btn-group">
+        <button id="page1" type="button" class="btn btn-primary">Page 1</button>
+        <button id="page2" type="button" class="btn btn-primary">Page 2</button>
+        <button id="page3" type="button" class="btn btn-primary">Page 3</button>
+      </div>
+      <div class="modal fade" id="infos">
+        <div class="modal-dialog">  
+          <div class="modal-content"></div>  
+        </div> 
+      </div>
+    </div>
+    <script>
+    $(function() {
+      $("body").on("hidden.bs.modal", ".modal", function () { // helps to reinitialise; otherwise the smae pages opens on and on
+        $(this).removeData("bs.modal");
+      });
+      $("#page1").click(function() { 
+        $("#infos").modal({ remote: "remote1.html" } ,"show");
+      });
+      $("#page2").click(function() { 
+        $("#infos").modal({ remote: "remote2.html" }, "show");
+      });
+      $("#page3").click(function() { 
+        $("#infos").modal({ remote: "remote3.html" }, "show");
+      });  
+    });
+    </script>
+    
+
+    // Basic modal window
+    <button class="btn btn-primary">Informations</button>
+    <div class="modal" id="infos">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">x</button>
+            <h4 class="modal-title">More information</h4>
+          </div>
+          <div class="modal-body">
+            The tiger is an animal...
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-info" data-dismiss="modal">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    $(function() {
+      $('.btn').click(function() {
+        $('.modal').modal('show');
+      });
+    });
+    </script>
+    
+
+    // Tab
+    <ul class="nav nav-pills nav-justified">
+      <li><a href="#accueil">Home</a></li>
+      <li class="active"><a href="#livres">Books</a></li>
+      <li><a href="#temoignages">witness</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" id="accueil">Home text</div>
+        <div class="tab-pane" id="temoignages">All witnesses</div>
+        <div class="tab-pane active" id="livres">All books</div>
+    </div>
+    <script>
+    $(function() {
+      $('a').click(function(e) {
+        e.preventDefault();
+        $(this).tab('show');
+      });
+    });
+    </script>
+
+
+    // Waiting button
+    <a class="btn btn-primary" data-loading-text="Chargement...">Cliquez !</a>
+    <script>
+    $(function (){
+      $('a').click(function () {
+        with($(this)) {
+          button('loading');
+          setTimeout(function () {
+            button('reset');
+          }, 4000);
+        }
+      })
+    });
+    </script>
+
+
+    // Carousel with commands and status
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-offset-2 col-lg-8">
+          <div id="carousel" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="item active"><img alt="" src="http://fraisfrais.com/wp-content/uploads/2016/01/alexis-ren-2.jpg"></div>
+              <div class="item"><img alt="" src="http://i.dailymail.co.uk/i/pix/2016/03/17/20/324CAFAD00000578-3497508-image-a-64_1458245250690.jpg"></div>
+              <div class="item"><img alt="" src="http://www.worn.cz/public/files/07b/123793-1208380_262336840582186_2084814618_n.jpg"></div>
+            </div>
+          </div>
+        </div>  
+      </div>  
+      <div class="row">
+        <div class="col-lg-12">  
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success" id="first">
+              <input type="radio" name="options"><span class="glyphicon glyphicon-fast-backward"></span>
+            </label>
+            <label class="btn btn-success" id="previous">
+              <input type="radio" name="options"><span class="glyphicon glyphicon-step-backward"></span>
+            </label>
+            <label class="btn btn-success" id="pause">
+              <input type="radio" name="options"><span class="glyphicon glyphicon-pause"></span>
+            </label>
+            <label class="btn btn-success active" id="play">
+              <input type="radio" name="options"><span class="glyphicon glyphicon-play"></span>
+            </label>
+            <label class="btn btn-success" id="next">
+              <input type="radio" name="options"><span class="glyphicon glyphicon-step-forward"></span>
+            </label>
+            <label class="btn btn-success" id="last">
+              <input type="radio" name="options"><span class="glyphicon glyphicon-fast-forward"></span>
+            </label>
+          </div>  
+          <p><span class="label label-info"></span></p>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+      function affichage() {
+        var total = $('.item').length;
+        var current = $('.item.active').index() + 1;
+        $('.label').text(current + ' / '+ total);
+      }
+      $(function () {
+        affichage();
+        $('.carousel').carousel({ interval: 2000 });
+        $('#first').click(function() { $('.carousel').carousel(0); });
+        $('#previous').click(function() { $('.carousel').carousel('prev'); }); 
+        $('#pause').click(function() { $('.carousel').carousel('pause'); });
+        $('#play').click(function() { $('.carousel').carousel('cycle'); });
+        $('#next').click(function() { $('.carousel').carousel('next'); });
+        $('#last').click(function() { $('.carousel').carousel(2); });
+        $('.carousel').on('slid.bs.carousel', function () {
+          affichage();
+        });
+      });
+    </script>
+
+
+    // Tooltip
+    <a data-toggle="tooltip" title="Tooltip">Tooltip</a>
+    <a data-toggle="tooltip" data-placement="bottom" title="Tooltip bottom">Tooltip bottom</a><!--also right and left-->
+    <script>
+    $(function() {
+      $('a').tooltip({trigger:'hover', delay:100}); // by default trigger:'hover', try click; delay in ms
+    });
+    </script>
+
+
+    // Popover
+    <a href="#" class="btn btn-info" data-toggle="popover" data-content="Popover" data-trigger="focus" title="Popover">Popover</a><!--data-trigger="focus" change the way popover goes away-->
+    <a href="#" class="btn btn-info" data-toggle="popover" data-content="<i>Popover</i>" data-html="true" title="<b>Popover</b>">Popover bottom</a><!--allow html in popover-->
+    <script>
+    $(function() {
+      $('a').popover(); //same as tooltip can be done here
+    });
+    </script>
+
+
+    // Panel
+    <div class="container">
+      <div class="col-lg-6">
+        <div class="btn-group btn-group-justified" data-toggle="buttons">
+          <label class="btn btn-primary active" id="show">
+            <input type="radio" name="options">Show
+          </label>
+          <label class="btn btn-primary" id="hide">
+            <input type="radio" name="options">Hide
+          </label>
+          <label class="btn btn-primary" id="toggle">
+            <input type="radio" name="options">Toggle
+          </label>
+        </div>  
+        <div class="panel panel-info">
+          <div class="panel-heading"> 
+            <h3 class="panel-title"> Je suis le titre de l'accordéon</h3>
+          </div>
+          <div class="panel-body"> Je suis le contenu de l'accordéon</div>
+        </div>
+      </div>
+    </div>
+    <script>
+    $(function() {
+      $('.panel').collapse();
+      $('#show, #hide, #toggle').click(function(){
+        $('.panel').collapse($(this).attr('id'));
+      });
+    });
+    </script>
+
+
+    // Scrollspy animation
+
+    <script>
+    $(function () {
+      $('li>a').on('click', function(e) {
+        e.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(this.hash).offset().top
+        }, 1000, function(){
+          window.location.hash = hash;
+        });
+      });
+    });
+    </script>
+
+
+    // 
+
+    <script>
+    $(function() {
+      
+    });
+    </script>
+
+
+    // 
+
+    <script>
+    $(function() {
+      
+    });
+    </script>
+
+
+    // 
+
+    <script>
+    $(function() {
+      
+    });
+    </script>
+
+
+    // 
+
+    <script>
+    $(function() {
+      
+    });
+    </script>
+
+
+
+
+    });
+  </script>
+</body>
+</html>
