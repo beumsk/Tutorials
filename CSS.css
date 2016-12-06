@@ -1,0 +1,281 @@
+CASCADING STYLE SHEET
+  - Element Styling
+    - by Beumsk
+
+
+TODO: link to html file to show result
+
+/*To create a comment. Shown in code only. Indent 2 spaces*/
+/*Inspect(f12) to check easily css file*/
+
+ADD IN HTML
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+
+PRIORITY
+  >Inline style (inside an HTML element)
+  >External and internal style sheets (in the head section)
+  >Browser default
+
+
+SELECT HTML
+  * {} /*Selects all elements*/
+  html {} 
+  body {}
+  p {} /*Selects all <p> elements*/
+  div, p {} /*Selects all <div> elements and all <p> elements*/
+  div p {} /*Selects all <p> elements inside <div> elements*/
+  div > p {} /*Selects all <p> elements where the parent is a <div> element*/
+  div + p {} /*Selects all <p> elements that are placed immediately after <div> elements*/
+  div ~ p {} /*Selects every <ul> element that are preceded by a <p> element*/
+  .main {} /*Selects all elements with class="main"*/
+  #main {} /*Selects the element with id="main"*/
+
+  a:link {} /*Selects all unvisited links*/
+  a:visited {} /*Selects all visited links*/
+  a:hover {} /*Selects links on mouse over*/
+  a:active {} /*Selects the active link*/
+  a:focus {} /*Selects focused link*/
+  a:hover {transition: all 0.3s ease} /*smooth transition of 0.3sec*/
+
+  p:first-line {} /*Selects first line of <p>*/
+  p:first-letter {} /*Selects first letter of <p>*/
+  p:before {content: "Read this -";} /*insert some content before the content of <p>*/
+  p:after {content: " -Read more… ";} /*insert some content after the content of <p>*/
+  p:selection {} /*Selects the portion of <p> that is selected by a user*/
+
+  p:first-child {} /*Selects first child only*/
+  p:nth-child(2) {} /*Selects 2d child; or other*/
+  p:nth-child(n) {} /*Selects nth child*/
+  p:nth-child(even) {} /*Selects even'th child*/
+
+  :required {} /*Selects required form elements*/
+  :invalid {} /*Selects invalid form elements*/
+  :focus {} /*Selects focused form element*/
+
+  a[target="_blank"] {} /*Selects all elements with that attribute and value*/
+  [title~="flower"] {} /*select elements with an attribute value containing a specified word*/
+  [class|="top"] {} /*select elements with the specified attribute starting with the specified value*/
+  [class^="top"] {} /*select elements whose attribute value begins with a specified value*/
+  [class$="test"] {} /*select elements whose attribute value ends with a specified value*/
+  [class*="te"] {} /*select elements whose attribute value contains a specified value*/
+  input[type="button"] {} /*selects elements with type="button"*/
+
+  p {color: red !important;} /*become most important*/
+  
+
+http://www.w3schools.com/cssref/css_selectors.asp
+
+
+MEDIA QUERIES
+  @media only screen and (min-width: 768px) and (min-height: 1080px) {} /*screen width +768 and height +1080*/
+  @media only screen and (min-width: 360px) and (orientation: portrait) {} /*screen +360 and portrait*/
+  @media only screen and (orientation: landscape) {} /*screen landscape*/
+  @media only screen and (orientation: portrait) {} /*screen portrait*/
+
+http://www.alsacreations.com/article/lire/930-css3-media-queries.html
+
+
+.FONT {
+  font-family: "Times New Roman", Times, serif;
+  font-family: 'Fontname';
+  font-style: normal italic oblique; 
+  font-size: 14px 14em 14vh 14vw 14%; /*Use one. 1em = 16px*/ 
+  font-weight: bold normal; /*Weight work also with %, ...*/
+  font-variant: small-caps; /**/
+}
+
+@font-face {
+  font-family: Fontname; /*define the name of new font to be used as font-family*/
+  src: url(font.ttf); /*locate the font*/
+}
+
+.COLOR {
+  color: red; /*color text*/
+  color: #FF0000; /*red*/
+  color: rgb(255, 0, 0); /*red*/
+}
+
+.BACKGROUND {
+  background-color: lightblue; /*use color as bg*/
+  background-image: url("paper.gif"); /*use img as bg*/
+  background-repeat: no-repeat repeat-y repeat-x; /*by default, bg img will repeat*/
+  background-size: cover contain; /*fit to horizontal; fit to vertical; possible to define height and width*/
+  background-image: -webkit-linear-gradient(#666CCC, #BC1324); /*gradient from one color to the other*/
+  background-attachment: fixed; /*Fix the background image*/
+  background: url("") no-repeat top center; /*shortened method*/
+  background: url(""), url(""); /*2 different background images; first will be on top*/
+}
+
+.BORDERS {
+  border-style: solid dotted dashed double groove ridge inset outset none hidden; /*use one*/
+  border-style: dotted dashed solid double; /*each side different border type*/
+  border-width: 5px; /*or medium*/
+  border-color: red;
+  border: 5px solid red; /*shortened method */
+  border-radius: 5px; /*round borders*/
+  border-left: 6px solid red; /*only one side*/
+}
+
+.MARGIN { /*Space around elements*/
+  margin-bottom: 10px; /*top, right, bottom, left*/
+  margin-top: 5% 5vh 5vw 5em; /*use one*/
+  margin: 10px, 5px, 10px, 5px; /*shortened method*/
+  margin: auto; /*center element but need to specify width*/
+  margin-left: inherit; /*gets the value from parent element*/
+  /*margin collapse make only biggest margin appear if 2 follow each other*/
+  h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;}
+}
+
+.PADDING { /*Space around content*/
+  padding-right: 10px; /*top, right, bottom, left*/
+  padding-left: 5% 5vh 5vw 5em; /*use one*/
+  padding: 10px, 5px, 10px, 5px; /*shortened method*/
+}
+
+.HEIGHT {
+  height: 200px;
+  max-height: 100%;
+  min-height: 20em;
+}
+
+.WIDTH {
+  width: 400px;
+  max-width: 100%;
+  min-width: 20em;
+}
+
+.OUTLINE { /*very similar to borders, it stands just outside it*/
+  outline-style: solid dotted dashed double groove ridge inset outset; /*use one*/
+  outline: 5px dotted red; /*shortened method*/
+}
+
+.TEXT {
+  color: red;
+  text-align: center left right justify; /*justify(=text of exact same width)*/
+  text-decoration: none; /*very useful for links*/
+  text-decoration: overline underline line-through;
+  text-transform: uppercase lowercase capitalize;
+  text-indent: 50px; /*alineas*/
+  letter-spacing: 3px; /*space between letters*/
+  word-spacing: 3px; /*space between words*/
+  word-wrap: break-word; /*break word to make it fit in box*/
+  line-height: 0.8; /*space between lines*/
+  direction: rtl; /*change text direction to right-to-left*/
+  word-spacing: 10px;
+  vertical-align: middle text-top text-bottom; /*align image to text*/
+  text-shadow: 2px 2px #FF0000; /*shadow*/
+}
+
+.LIST {
+  list-style-type: circle square upper-roman lower-alpha none; /*kind of listing for ul*/
+  list-style-type: upper-roman lower-alpha; /*kind of listing for ol*/
+  list-style-image: url('sqpurple.gif'); /*img listing for ul*/
+  list-style-position: inside; /*inside or outside the content flow (outside by default)*/
+  list-style: square inside url("sqpurple.gif"); /*shortened way*/
+}
+
+.TABLE {
+  border: solid 1px; /*set to table, th and td it make it look like a table (thanks to borders)*/
+  border-collapse: collapse; /*delete space between cells and table*/
+  vertical-align: bottom top; /*align vertically*/
+  caption-side: top bottom; /*display title on top or underneath*/
+  empty-cells: hide show; /*can hide empty cells*/
+}
+
+.DISPLAY { 
+  display: inline; /*by default for <a> <span> <img> displays elements in line*/
+  display: block; /*by default for most of tags displays elements by full width block*/
+  display: hidden; /*hide item*/
+  display: none; /*hide item and affect layout, visibility is the same*/
+  display: inline-block; /*displays elements in line as blocks; allows to use vertical-align*/
+}
+
+.POSITION {
+  position: static; /*by default, they are not affected by top-right-bottom-left properties*/
+  position: relative; /*follow properties*/
+  position: fixed; /*is fixed on viewport -> does not move when scrolling*/
+  position: absolute; /*is positioned relative to the nearest positioned ancestor; top-left corner if no box around it*/
+  z-index: -1; /*defines stack order -> bigger is in front ! if not defined, last will be in front*/
+  /*possible to write over an image with position:absolute; and controls of location*/
+  clip: rect(0px,60px,200px,0px); /*sets shape of an element*/
+  overflow: hidden scroll; /*hide content when over element size or create scroll bar to access the rest*/
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+  overflow: auto; /*chose best option*/
+}
+
+.FLOAT {
+  float: right left; /*item floats to a side*/
+  clear: right left; /*stop floating for next items*/
+  overflow: auto; /*needed if an element is taller than the element containing it*/
+}
+
+.ALIGN {
+  margin: auto; /*center element but need to specify width*/
+  text-align: center; /*center text or image inside element*/
+  padding-top: 30px; /*if div padding defined, will by default be centered horizontally*/
+  line-height: 100px; /*if div and line height are the same, it will be centered horizontally*/
+  top: 50%;     left: 50%;    transform: translate(-50%, -50%); /*will center horizontally*/
+}
+
+.OPACITY {
+  opacity: 0.5; /*from 1 to 0, very useful with :hover*/
+  background: rgba(76, 175, 80, 0.5); /*works also with rgba*/
+}
+
+.SHADOW {
+  box-shadow: 6px 6px 6px black inset; /*horizontal, vertical, smooth, color, in/out the box*/
+  text-shadow: 6px 6px 6px black; /*horizontal, vertical, smooth, color*/
+}
+
+.TOOLTIP {
+  http://www.w3schools.com/css/css_tooltip.asp
+}
+
+.TRANSFORM-2D {
+  transform: translate(50px, 100px); /*moves 50px to right and 100px down*/
+  transform: rotate(45deg); /*rotate 45 degrees clockwise; counter-clockwise if negative*/
+  transform: scale(0.5 0.5); /*decrease and/or increase size via width and height*/
+  transform: skew(20deg 20deg); /*skew horizontally and/or vertically*/
+}
+
+.TRANSFORM-3D {
+  transform: rotateX(150deg); /*rotate around X-axis*/
+  transform: rotateY(150deg); /*rotate around Y-axis*/
+  transform: rotateZ(150deg); /*rotate around Z-axis*/
+}
+
+.TRANSITION {
+  http://www.w3schools.com/css/css3_transitions.asp
+}
+
+.CURSOR {
+  cursor: progress wait crosshair help move pointer text; /*different types of cursors*/
+  cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /*direction of resize*/
+}
+
+.BOX-MODEL {
+  box-sizing: border-box; /*keep border inside the height and width of elements; use with '*' is better*/
+}
+
+.IMAGE {
+  max-width: 100%; height: auto; /*easy resize images*/
+}
+
+.FLEX-CONTAINER {
+  display: flex;/*in a container, change the disposition to flex and allow following properties*/
+  flex-direction: column row column-reverse row-reverse; /*vertical, horizontal or in opposite order*/
+  flex-wrap: wrap wrap-reverse; /*by default items will stay on same line; wrap helps going down*/
+  justify-content: flex-start flex-end center space-between space-around; /*how items will display on a lign; works also with column direction; manage primary axis*/
+  align-items: stretch flex-end flex-start center baseline; /*manage secondary axis; how items will display in a column or lign*/
+  align-content: flex-start flex-end center space-between space-around stretch; /*manage secondary axis if there is multiple lines*/
+  flex-flow: row wrap; /*shortened way to direction and wrap*/
+}
+
+.FLEX-ITEMS {
+  margin: auto; /*center all elements; need to be on items and not on container*/
+  align-self: flex-end; /*align a single item differently; influence on secondary axis*/
+  order: 1 2 3; /*change order of html code; need to order every item; 0 by default*/
+  flex: 1 2 3; /*change size ...; need to flex every item*/
+}
