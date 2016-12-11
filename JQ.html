@@ -14,12 +14,84 @@ JQuery
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!--jQuery library-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!--jQuery library; always before js files-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!--Latest compiled JavaScript-->
+
+  <!--JQuery has 2 models: one for developement and one for online version (.min)-->
 
   <script>//start of the script
     $(function() { // always the beginning of jquery code
     });
+  </script>
+
+  <script> // JQuery filters 
+    $('p') // selects all p
+    $('p:first') // selects first p; last works too
+    $('p:eq(1)') // selects second p; works as an array
+    $('p:gt(0)') // selects p greater than 0
+    $('p:lt(3)') // selects p lower than 3
+    $('p:not(".main")') // selects p without 'main' class
+  </script>
+
+  <script> // more filters
+    $('p:hidden') // selects p hidden
+    $('p:visible') // selects p visible
+    $('p:contains("text")') // selects p with 'text'
+    $('p:has("element")') // selects p with 'element' as element
+    $('[align]') // selects elements with align attribut
+    $('[align=center]') // selects elements with align center
+    $('[align!=center]') // selects elements without align center
+  </script>
+
+  <script> // effect methods
+    $('p').show() // show element
+    $('p').hide() // hide element
+    $('p').fadeIn() // fade element in
+    $('p').fadeOut() // fade element out
+    $('p').fadeTo() // fade element to some opacity
+    $('p').slideUp() // hide element uping
+    $('p').slideDown() // hide element downing
+    $('p').slideToggle() // hide element same position
+  </script>
+
+  <script> // manipulation methods
+    $('p').css('color', 'red') // change css of p
+    $('p').html() // replace html content of p
+    $('p').text() // replace text of p
+    $('p').replaceWith() // replace entirely p
+    $('p').remove() // remove p
+    $('p').before() // insert content before p
+    $('p').after() // insert content after p
+    $('p').prepend() // insert inside p (after opening tag)
+    $('p').append() // insert inside p (before closing tag)
+    $('p').attr() // add attribut and value; removeAttr() too
+    $('p').class() // add class; removeClass() too
+  </script>
+
+  <script> // DOM
+    $('p').find() // access to parameter inside p
+    $('p').parent() // access to parent (parents possible too)
+    $('p').children() // access to children
+  </script>
+
+  <script> // Size and position
+    $('p').height() // basic height (no margins, padding and borders)
+    $('p').width() // basic width (no margins, padding and borders)
+  </script>
+
+  <script> // events
+    $('p').on('click', function() { … }) // if click
+    $('p').on('scroll', function() { … }) // if scroll
+    $('p').on('hover', function() { … }) // if hover
+    $('p').on('mouseover', function() { … }) // 
+    $('p').on('mouseenter', function() { … }) // if mouse enter element
+    $('p').on('mouse leave', function() { … }) // if mouse leave element
+    $('p').on('keydown', function() { … }) // 
+    $('p').on('keyup', function() { … }) // 
+    $('p').on('keypress', function() { … }) // 
+    $('p').on('focus', function() { … }) // if field gets focus
+    $('p').on('blur', function() { … }) // if field loses focus
+    $('p').on('resize', function() { … }) // 
   </script>
 
     // a is an object which selects all 'div' tags
