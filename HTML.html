@@ -217,10 +217,10 @@ HYPERTEXT MARKUP LANGUAGE
       <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!--cursor range--><hr>
       <input type="search" name=""><!--create a search area--><hr>
       <label>Genre</label><!--text before question--><hr>
-      <input type="radio" name="gender" value="male" checked>Male<br/><!--button to chose one between different options; 'checked' is radio by default--><hr>
-      <input type="radio" name="gender" value="female">Female<br/><hr><!--must be same 'name' to force not to click on both answers-->
-      <input type="checkbox" name="">Check1<!--button to chose multiple options--><hr>
-      <input type="checkbox" name="" checked>Check2<!--this checkbox will be 'check' by default--><hr>
+      <label><input type="radio" name="gender" value="male" checked>Male</label><br/><!--button to chose one between different options; 'checked' is radio by default--><hr>
+      <label><input type="radio" name="gender" value="female">Female</label><br/><hr><!--must be same 'name' to force not to click on both answers-->
+      <label><input type="checkbox" name="">Check1</label> <!--button to chose multiple options--><hr>
+      <label><input type="checkbox" name="" checked>Check2</label> <!--this checkbox will be 'check' by default--><hr>
       <input type="button" onclick="alert('Hello')" value="pop-up"><!--display message --><hr>
       <input type="reset" value="reset"><!--reset fields--><hr>
       <select><!--menu dréoulant-->
@@ -245,7 +245,7 @@ HYPERTEXT MARKUP LANGUAGE
     <p>The red panda was recognized as the state animal of Sikkim in the early 1990s, and was the mascot of the Darjeeling Tea Festival.</p>
   </details>
 
-  <form action="mailto:mail@mail.com" method="post" enctype="text/plain"><!--send mail-->
+  <form action="mailto:mail@mail.com?subject=form_submission" method="post" enctype="text/plain"><!--send mail-->
     <fieldset>
       <legend>Mail</legend>
       <input type="text" name="name">

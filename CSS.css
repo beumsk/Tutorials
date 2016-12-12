@@ -13,8 +13,9 @@ ADD IN HTML
 
 
 PRIORITY
-  >Inline style (inside an HTML element)
-  >External and internal style sheets (in the head section)
+  >!important /* body { color: red !important; } */
+  >Inline style (inside an HTML element) 
+  >External and internal style sheets (in the head section) /*id atributes take precedence; their style will value more than class for example */
   >Browser default
 
 

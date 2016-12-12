@@ -513,6 +513,7 @@ catch(Exception $e) // permet de garder les logs secrets en cas d'erreur, plus s
 // En cas d'erreur, on affiche un message et on arrête tout
   die('Erreur : '.$e->getMessage());
 }
+?>
 
 FAIRE UNE REQUETE SELECT
 
