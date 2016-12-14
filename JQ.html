@@ -73,16 +73,20 @@ JQuery
       $('p').after(''); // insert content after p
       $('p').prepend(''); // insert inside p (after opening tag)
       $('p').append(''); // insert inside p (before closing tag)
+      $('p').appendTo('div'); // insert p in div (before closing tag)
+      $('p').prependTo('div'); // insert p in div (after opening tag)
       $('p').attr(''); // add attribut and value; removeAttr() too
       $('p').addClass(''); // add class; removeClass() too
+      $('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p)
     });
   </script>
 
   <script> // DOM
     $(function() {
-      $('p').find(''); // access to parameter inside p
-      $('p').parent(''); // access to parent (parents possible too)
-      $('p').children(''); // access to children
+      $('p').find(''); // access to parameter inside p to for example change css
+      $('p').parent(''); // access to parent to for example, change css (parents possible too)
+      $('p').children(''); // access to children to for example, change css
+      $('p:nth-child(3)'); // access to third child
     });
   </script>
 
