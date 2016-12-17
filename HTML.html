@@ -82,6 +82,7 @@ HYPERTEXT MARKUP LANGUAGE
   <iframe src="HTML.html"></iframe><!--display a webpage inside one--><br><hr>
   <iframe src="http://www.youtube.com/embed/xxxxxxxxx"></iframe><!--to insert a Youtube video--><br><hr>
 
+
   <nav><!--for navigation links (menu with <a> tags)-->
     <a href="">Un</a>
     <a href="">Deux</a>
@@ -108,6 +109,7 @@ HYPERTEXT MARKUP LANGUAGE
   </dl><hr>
 
   <!--float:left or display:inline to display a list horizontally-->
+
 
   <table border="solid"><!--Table-->
   <thead><!--head of table-->
@@ -147,6 +149,7 @@ HYPERTEXT MARKUP LANGUAGE
   </tfoot>
   </table><hr>
 
+
   <b>bold</b><!--bold similar to <strong></strong>--><br><hr>
   <i>italic</i><!--italic similar to <em></em>--><br><hr>
   <u>underline</u><!--underline--><br><hr>
@@ -157,12 +160,15 @@ HYPERTEXT MARKUP LANGUAGE
   <del>crossed</del><!--crossed--><br><hr>
   <ins>underline</ins><!--underline--><br><hr>
 
+
   <i class="fa fa-cloud" style="font-size:24px;"></i><!--font-awesome icon, use fa-1x to fa-5x to resize-->
   <i class="glyphicon glyphicon-cloud" style="font-size:36px;"></i><!--bootstrap icon-->
   <i class="material-icons" style="font-size:48px;color:red;">cloud</i><!--google icon-->
 
+
   <hr><!--horizontal bar-->
   <br><!--new line or <br/>-->
+
 
   <q>Quote</q><!--"Quote text"-->
   <blockquote>Block quote</blockquote><!--Indented quote from another source--><hr>
@@ -170,6 +176,7 @@ HYPERTEXT MARKUP LANGUAGE
   <address>Address</address><!--Show address in italic--><hr>
   <cite>Work title</cite><!--Define title of a work in italic--><br><hr>
   <bdo dir="rtl">right to left</bdo><!--write text from right to left--><hr>
+
 
   <article>Article</article><!--Defines an article in the document--><hr>
   <aside>Aside</aside><!--Defines content aside from the page content--><hr>
@@ -182,19 +189,45 @@ HYPERTEXT MARKUP LANGUAGE
   </figure><hr>
   <legend>media legend</legend><!--legend to medias--><hr>
 
-  <svg><circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" /></svg><br> <!--SCalable vector graphic--><hr>
-  <svg><rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" /></svg><br><hr>
-  <svg><polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" /></svg><br><hr>
+
+  <svg><!--Scalable vector graphic-->
+    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    <!--circle; cx & cy for positioning; r for radius; stroke for highlighted lines; fill for color-->
+  </svg><br> <hr>
+  <svg>
+    <rect width="400" height="100" fill="red" style="stroke-width:10;stroke:rgb(0,0,0)" />
+    <!--rectangle; you can chose to modif in style or outside-->
+  </svg><br><hr>
+  <svg>
+    <line x1="10" y1="10" x2="200" y2="100" stroke="black" />
+    <!--line; with no stroke we won't see the line ofc-->
+  </svg><br><hr>
+  <svg>
+    <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+    <!--will create form based on points; fill-rule to chose how to fill; auto close of the points-->
+  </svg><br><hr>
+  <svg>
+    <polyline points="100 100, 150 150, 200 100" stroke-linejoin="miter" stroke="black" stroke-width="10" fill="none" />
+    <!--quite similar to polygon; links only between 2 points side by side-->
+  </svg><br><hr>
+  <svg>
+    <ellipse cx="200" cy="100" rx="150" ry="75" fill="green" />
+    <!--radius x and y to adjust size-->
+  </svg><br><hr>
+
 
   <video controls width="200px"><!--video; use poster, loop, autoplay, preload(auto, none);-->
     <source src="video/html.mp4" type="video/mp4"><!--use different format to work on all browsers-->
   </video> <br><hr>
 
+
   <audio controls><!--audio; use loop, autoplay, preload(auto, none);-->
     <source src="audio/ukulele.mp3" type="audio/mp3"><!--use different format to work on all browsers-->
   </audio> <br><hr>
 
+
   <bgsound src="" loop="infinite"></bgsound><!--background sound became obsolete !!-->
+
 
   <img src="img/html.jpg" alt="Planets" usemap="#map" style="width:145px;height:126px;"/><!--image with clickable areas-->
   <map name="map">
@@ -202,6 +235,7 @@ HYPERTEXT MARKUP LANGUAGE
     <area shape="circle" coords="90,58,3" alt="Mercury" href=""/>
     <area shape="circle" coords="124,58,8" alt="Venus" href=""/>
   </map><hr>
+
 
   <form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
     <fieldset><!--borders the questions-->
@@ -231,6 +265,7 @@ HYPERTEXT MARKUP LANGUAGE
     </fieldset>
   </form><hr>
 
+
   <details><!--Details and summary elements; no need of javascript to use expandables-->
     <summary>
       Distribution and habitat
@@ -245,6 +280,7 @@ HYPERTEXT MARKUP LANGUAGE
     <p>The red panda was recognized as the state animal of Sikkim in the early 1990s, and was the mascot of the Darjeeling Tea Festival.</p>
   </details>
 
+
   <form action="mailto:mail@mail.com?subject=form_submission" method="post" enctype="text/plain"><!--send mail-->
     <fieldset>
       <legend>Mail</legend>
@@ -253,12 +289,14 @@ HYPERTEXT MARKUP LANGUAGE
     </fieldset>
   </form><hr>
 
+
   <style type="text/css"></style><!--to code CSS-->
   <?php ?> <? ?> <!--to code PHP-->
   <script type="text/javascript"> // use src="" if external js file
     console.log('Texte javascript') // pas affiché dans la page web
   </script><!--to code JS-->
   <noscript>Sorry, your browser does not support JavaScript!</noscript><!--for user with disabled JS-->
+
 
   <p>less than = < = &lt; = &#60; </p><hr>
   <p>greater than = > = &gt; = &#62; </p><hr>
@@ -270,6 +308,7 @@ HYPERTEXT MARKUP LANGUAGE
   <p>registered = ® = &reg; = &#174; </p><hr>
   <p>trademark = ™ = &trade; = &#8482; </p><hr>
   
+
   <a href="More tags at http://www.w3schools.com/tags/default.asp"></a>
 </body>
 
