@@ -3,7 +3,7 @@ JAVASCRIPT
 		- by Beumsk
 	
 
-TODO: openclassrooms & codeacademy
+TODO: openclassrooms & codeacademy & freecodecamp
 			better way to present 
 
 // To create a comment. Shown in code only. Indent 2spaces
