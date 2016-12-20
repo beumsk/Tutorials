@@ -1,6 +1,6 @@
 JAVASCRIPT
-	- Page Behavior
-		- by Beumsk
+	-Page Behavior
+		-by Beumsk
 	
 
 TODO: openclassrooms & codeacademy & freecodecamp
@@ -85,7 +85,7 @@ CONDITIONS
 //
 	// return the sentence because it is true
 	if ("Rémy".length = 4) {
-	  console.log("You're name may be Rémy");
+		console.log("You're name may be Rémy");
 	} 
 
 	// return the else because it's false
@@ -922,9 +922,9 @@ ARRAYS
 	var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
 	var currentCard = 'Heart';
 	while (currentCard !== 'Spade') {
-	  console.log(currentCard);
-	  var randomNumber = Math.floor(Math.random() * 4);
-	  currentCard = cards[randomNumber];
+		console.log(currentCard);
+		var randomNumber = Math.floor(Math.random() * 4);
+		currentCard = cards[randomNumber];
 	}
 	console.log('Spade found !');
 
@@ -1078,13 +1078,13 @@ DOM BASIS
 
 	// function childNodes with error console
 	function showChild(node, index) {
-	    if (node.nodeType === document.ELEMENT_NODE) {
-		    if ((index >= 0) && (index < node.childNodes.length)) {
-		    	console.log(node.childNodes[index]);
-		    }
-		    else {
-		    	console.error('incorrect index');
-		    }
+			if (node.nodeType === document.ELEMENT_NODE) {
+				if ((index >= 0) && (index < node.childNodes.length)) {
+					console.log(node.childNodes[index]);
+				}
+				else {
+					console.error('incorrect index');
+				}
 		}
 		else {
 			console.error('Incorrect node type');
@@ -1151,10 +1151,10 @@ DOM GET/QUERY
 
 	// check presence of a class in a DOM element
 	if (document.getElementById("news").classList.contains("wonder")) {
-	    console.log("Identified element has 'wonder' class");
+			console.log("Identified element has 'wonder' class");
 	} 
 	else {
-	    console.log("Identified element has not 'wonder' class");
+			console.log("Identified element has not 'wonder' class");
 	}
 
 	// function count elements
