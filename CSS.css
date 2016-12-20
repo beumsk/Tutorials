@@ -20,49 +20,50 @@ PRIORITY
 
 
 SELECT HTML
-  * {} /*Selects all elements*/
+  * {} /* Selects all elements */
   html {} 
   body {}
-  p {} /*Selects all <p> elements*/
-  div, p {} /*Selects all <div> elements and all <p> elements*/
-  div p {} /*Selects all <p> elements inside <div> elements*/
-  div > p {} /*Selects all <p> elements where the parent is a <div> element*/
-  div + p {} /*Selects all <p> elements that are placed immediately after <div> elements*/
-  div ~ p {} /*Selects every <ul> element that are preceded by a <p> element*/
-  .main {} /*Selects all elements with class="main"*/
-  #main {} /*Selects the element with id="main"*/
+  p {} /* Selects all <p> elements*/
+  div, p {} /* Selects all <div> elements and all <p> elements */
+  div p {} /* Selects all <p> elements inside <div> elements */
+  div > p {} /* Selects all <p> elements where the parent is a <div> element */
+  div + p {} /* Selects all <p> elements that are placed immediately after <div> elements */
+  div ~ p {} /* Selects every <ul> element that are preceded by a <p> element */
+  .main {} /* Selects all elements with class="main" */
+  #main {} /* Selects the element with id="main" */
+  p.main {} /* Selects p elements with class="main" */
 
-  a:link {} /*Selects all unvisited links*/
-  a:visited {} /*Selects all visited links*/
-  a:hover {} /*Selects links on mouse over*/
-  a:active {} /*Selects the active link*/
-  a:focus {} /*Selects focused link*/
-  a:hover {transition: all 0.3s ease} /*smooth transition of 0.3sec*/
+  a:link {} /* Selects all unvisited links */
+  a:visited {} /* Selects all visited links */
+  a:hover {} /* Selects links on mouse over */
+  a:active {} /* Selects the active link */
+  a:focus {} /* Selects focused link */
+  a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
 
-  p:first-line {} /*Selects first line of <p>*/
-  p:first-letter {} /*Selects first letter of <p>*/
-  p:before {content: "Read this -";} /*insert some content before the content of <p>*/
-  p:after {content: " -Read more… ";} /*insert some content after the content of <p>*/
-  p:selection {} /*Selects the portion of <p> that is selected by a user*/
+  p:first-line {} /* Selects first line of <p> */
+  p:first-letter {} /* elects first letter of <p> */
+  p:before {content: "Read this -";} /* insert some content before the content of <p> */
+  p:after {content: " -Read more… ";} /* insert some content after the content of <p> */
+  p:selection {} /* Selects the portion of <p> that is selected by a user */
 
-  p:first-child {} /*Selects first child only*/
-  p:nth-child(2) {} /*Selects 2d child; or other*/
-  p:nth-child(n) {} /*Selects nth child*/
-  p:nth-child(even) {} /*Selects even'th child*/
+  p:first-child {} /* Selects first child only */
+  p:nth-child(2) {} /* Selects 2d child; or other */
+  p:nth-child(n) {} /* Selects nth child */
+  p:nth-child(even) {} /* Selects even'th child */
 
-  :required {} /*Selects required form elements*/
-  :invalid {} /*Selects invalid form elements*/
-  :focus {} /*Selects focused form element*/
+  :required {} /* Selects required form elements */
+  :invalid {} /* Selects invalid form elements */
+  :focus {} /* Selects focused form element */
 
-  a[target="_blank"] {} /*Selects all elements with that attribute and value*/
-  [title~="flower"] {} /*select elements with an attribute value containing a specified word*/
-  [class|="top"] {} /*select elements with the specified attribute starting with the specified value*/
-  [class^="top"] {} /*select elements whose attribute value begins with a specified value*/
-  [class$="test"] {} /*select elements whose attribute value ends with a specified value*/
-  [class*="te"] {} /*select elements whose attribute value contains a specified value*/
-  input[type="button"] {} /*selects elements with type="button"*/
+  a[target="_blank"] {} /* Selects all elements with that attribute and value */
+  [title~="flower"] {} /* select elements with an attribute value containing a specified word */
+  [class|="top"] {} /* select elements with the specified attribute starting with the specified value */
+  [class^="top"] {} /* select elements whose attribute value begins with a specified value */
+  [class$="test"] {} /* select elements whose attribute value ends with a specified value */
+  [class*="te"] {} /* select elements whose attribute value contains a specified value */
+  input[type="button"] {} /* selects elements with type="button" */
 
-  p {color: red !important;} /*become most important*/
+  p {color: red !important;} /* become most important */
   
 
 http://www.w3schools.com/cssref/css_selectors.asp
