@@ -28,10 +28,11 @@ SELECT HTML
   div p {} /* Selects all <p> elements inside <div> elements */
   div > p {} /* Selects all <p> elements where the parent is a <div> element */
   div + p {} /* Selects all <p> elements that are placed immediately after <div> elements */
-  div ~ p {} /* Selects every <ul> element that are preceded by a <p> element */
+  div ~ p {} /* Selects every <p> element that are preceded by a <div> element */
   .main {} /* Selects all elements with class="main" */
   #main {} /* Selects the element with id="main" */
   p.main {} /* Selects p elements with class="main" */
+  p * {} /* Selects everything in pplate */
 
   a:link {} /* Selects all unvisited links */
   a:visited {} /* Selects all visited links */
@@ -41,15 +42,26 @@ SELECT HTML
   a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
 
   p:first-line {} /* Selects first line of <p> */
-  p:first-letter {} /* elects first letter of <p> */
+  p:first-letter {} /* Selects first letter of <p> */
   p:before {content: "Read this -";} /* insert some content before the content of <p> */
   p:after {content: " -Read more… ";} /* insert some content after the content of <p> */
   p:selection {} /* Selects the portion of <p> that is selected by a user */
 
-  p:first-child {} /* Selects first child only */
+  p:first-child {} /* Selects first p only */
   p:nth-child(2) {} /* Selects 2d child; or other */
   p:nth-child(n) {} /* Selects nth child */
   p:nth-child(even) {} /* Selects even'th child */
+  p:only-child {} /* Selects the only p element */
+  p:last-child {} /* Selects the last p only */
+  p:nth-last-child(2) {} /* Selects 2d last child; or other */
+  p:first-of-type {} /* Selects first p element */
+  p:nth-of-type(odd) {} /* Selects odd p elements */
+  p:nth-of-type(2n+3) {} /* Selects every 2nd plate starting from the 3rd */
+  p:only-of-type {} /* Selects p if its the only p in there */
+  p:last-of-type {} /* Selects last p element */
+  p:empty {} /* Selects empty p elements */
+  p:not(.main) /* Selects p without .main class */
+
 
   :required {} /* Selects required form elements */
   :invalid {} /* Selects invalid form elements */
