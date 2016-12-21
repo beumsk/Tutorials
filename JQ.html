@@ -19,6 +19,7 @@ JQuery
 
 	<!--Best way is to write JQuery in an external js file but for a better view, i will combine in one here-->
 	<!--JQuery has 2 models: one for developement and one for online version (.min)-->
+	<!--JQuery must always be inside <script> and starting with $(function() {}); or $(document).ready(function() {}); -->
 
 	<script>//start of the script
 		$(function() { // always the beginning of jquery code
@@ -65,10 +66,11 @@ JQuery
 	<script> // manipulation methods
 		$(function() {
 			$('p').css('color', 'red') // change css of p
-			$('p').html(''); // replace content of p with html tags
+			$('p').html(''); // replace content of first p with html tags
 			$('p').text(''); // replace text of p without tags
 			$('p').replaceWith(''); // replace entirely p
-			$('p').remove(''); // remove p
+			$('p').remove(); // remove p and children
+			$('p').empty(); // remove everything inside p
 			$('p').before(''); // insert content before p
 			$('p').after(''); // insert content after p
 			$('p').prepend(''); // insert inside p (after opening tag)
@@ -76,7 +78,7 @@ JQuery
 			$('p').appendTo('div'); // insert p in div (before closing tag)
 			$('p').prependTo('div'); // insert p in div (after opening tag)
 			$('p').attr(''); // add attribut and value; removeAttr() too
-			$('p').addClass(''); // add class; removeClass() too
+			$('p').addClass(''); // add class; removeClass() too; toggleClass() too
 			$('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p)
 		});
 	</script>
@@ -99,7 +101,7 @@ JQuery
 
 	<script> // events
 		$(function() {
-			$('p').on('click', function() { … }) // if click
+			$('p').on('click', function() { … }) // if click; dblclick too
 			$('p').on('scroll', function() { … }) // if scroll
 			$('p').on('hover', function() { … }) // if hover
 			$('p').on('mouseover', function() { … }) // 
@@ -138,6 +140,14 @@ JQuery
 			$('.pull-me').click(function() {
 				$('.panel').slideToggle('slow');
 			});
+		});
+	</script>
+
+	<script> // thanks to the variable, the p moves and does not stand in the first place; no need to delete afterwards
+		$(document).ready(function() {
+			var $paragraphe = $('<p>mdr</p>');
+			$('#un').after($paragraphe); 
+			$('#deux').after($paragraphe);
 		});
 	</script>
 
