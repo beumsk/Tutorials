@@ -54,7 +54,7 @@ JQuery
 			$('p').hide(''); // hide element
 			$('p').fadeIn(''); // fade element in
 			$('p').fadeOut(''); // fade element out
-			$('p').fadeTo(''); // fade element to some opacity
+			$('p').fadeTo('slow', 0); // fade element to some opacity; speed and opacity as paramters
 			$('p').slideUp(''); // hide element uping
 			$('p').slideDown(''); // hide element downing
 			$('p').slideToggle(''); // hide element same position
@@ -104,13 +104,40 @@ JQuery
 			$('p').on('hover', function() { … }) // if hover
 			$('p').on('mouseover', function() { … }) // 
 			$('p').on('mouseenter', function() { … }) // if mouse enter element
-			$('p').on('mouse leave', function() { … }) // if mouse leave element
+			$('p').on('mouseleave', function() { … }) // if mouse leave element
 			$('p').on('keydown', function() { … }) // 
 			$('p').on('keyup', function() { … }) // 
 			$('p').on('keypress', function() { … }) // 
 			$('p').on('focus', function() { … }) // if field gets focus
 			$('p').on('blur', function() { … }) // if field loses focus
 			$('p').on('resize', function() { … }) // 
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$('div').mouseenter(function() {
+				$('div').fadeTo('fast', 1);
+			});
+			$('div').mouseleave(function() {
+				$('div').fadeTo('fast', 0.5); 
+			});
+		});
+	</script>
+
+	<script> // use this to have action only on the div clicked and not all the div
+		$(document).ready(function() {
+			$('div').click(function() {
+				$(this).fadeOut('slow');
+			});
+		});
+	</script>
+
+	<script> // show .panel toggle
+		$(document).ready(function() {
+			$('.pull-me').click(function() {
+				$('.panel').slideToggle('slow');
+			});
 		});
 	</script>
 

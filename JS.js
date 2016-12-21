@@ -36,6 +36,8 @@ VARIABLES
 	var a; a = 10; console.log(a); // create variable with value of '10'
 	var a = 10; console.log(a); // shortened method
 	var a = 0; a += 1; a ++; console.log(a); // add 1 and 1 to 'a' variable to reach 2
+	var a = 5; a -= 1; a --; console.log(a); // substracts 1 and 1 to reach 3
+	var a = 5; a *= 5; a /= 5; console.log(a); // multiply by 5 and divide by 5 to reach 5
 	var a = 3; var b = a+2; console.log(b); // 'b' will value 5 (3+2)
 	var a = Number("5"); console.log(a); // 'a' will value  the number 5 and not the string '5'
 	var a = String(5); console.log(a); // 'a' will value the string '5' and not the number 5
