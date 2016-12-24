@@ -152,6 +152,28 @@ JQuery
 	</script>
 
 	<script>
+		$(document).ready(function () { // will add what you type in form
+			$('button').click(function () {
+				var toAdd = $('input[name="message"]').val(); // get the value of the input tag 'name=mesage'
+				$('#destination').append('<p>' + toAdd + '</p>') // append the message in a p tag
+			});
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$('div').hover( // can have to functions separated by a coma; what to do when hover, and what to do after
+				function() {
+					$(this).addClass('miseenvaleur');
+				},
+				function() {
+					$(this).removeClass('miseenvaleur');
+				}
+			);
+		});
+	</script>
+
+	<script>
 		var a = $([]); // create empty jquery object
 	</script>
 
