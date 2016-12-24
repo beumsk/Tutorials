@@ -60,6 +60,7 @@ JQuery
 			$('p').slideDown(''); // hide element downing
 			$('p').slideToggle(''); // hide element same position
 			$('button').prop('disabled', 'true'); // disables button
+			$('p').animate({left:'+=10px'}, 500); // animates p to 10px to the right
 		});
 	</script>
 
@@ -107,7 +108,7 @@ JQuery
 			$('p').on('mouseover', function() { … }) // 
 			$('p').on('mouseenter', function() { … }) // if mouse enter element
 			$('p').on('mouseleave', function() { … }) // if mouse leave element
-			$('p').on('keydown', function() { … }) // 
+			$('p').on('keydown', function() { … }) // if you press a key on your keyboard; each key has a number to select it
 			$('p').on('keyup', function() { … }) // 
 			$('p').on('keypress', function() { … }) // 
 			$('p').on('focus', function() { … }) // if field gets focus
@@ -170,6 +171,31 @@ JQuery
 					$(this).removeClass('miseenvaleur');
 				}
 			);
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$(document).keydown(function(key) { // code to let you move image in the 4 directions
+				switch(parseInt(key.which,10)) {
+					// left arrow pressed
+					case 37:
+						$('img').animate({left: "-=10px"}, 'fast');
+						break;
+					// up arrow pressed
+					case 38:
+						$('img').animate({top: '-=10px'}, 'fast');
+						break;
+					// right arrow pressed
+					case 39:
+						$('img').animate({left: '+=10px'}, 'fast');
+						break;
+					// down arrow pressed
+					case 40:
+						$('img').animate({top: '+=10px'}, 'fast');
+						break;
+				}
+			});
 		});
 	</script>
 
