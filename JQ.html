@@ -15,6 +15,7 @@ JQuery
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!--jQuery library; always before js files-->
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script><!--IU jQuery for better animations-->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!--Latest compiled JavaScript-->
 
 	<!--Best way is to write JQuery in an external js file but for a better view, i will combine in one here-->
@@ -198,6 +199,55 @@ JQuery
 			});
 		});
 	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').click(function() {
+				$('div').effect('explode'); // exploses
+			});
+		});
+	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').click(function() {
+				$('div').effect('bounce', {times:3}, 200); // bounces
+			});
+		});
+	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').click(function() {
+				$('div').effect('slide'); // slides to become visible
+			});
+		});
+	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').draggable(); // drag and drop div
+		});
+	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').resizable(); // resize div
+		});
+	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').sortable(); // reorders a list
+		});
+	</script>
+
+	<script> // better animation thanks to IU jQuery
+		$(document).ready(function() {
+			$('div').accordion(); // creates an accordion from titles and div
+		});
+	</script>
+
 
 	<script>
 		var a = $([]); // create empty jquery object
