@@ -288,8 +288,20 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .FLEX-ITEMS {
-	margin: auto; /*center all elements; need to be on items and not on container*/
-	align-self: flex-end; /*align a single item differently; influence on secondary axis*/
-	order: 1 2 3; /*change order of html code; need to order every item; 0 by default*/
-	flex: 1 2 3; /*change size ...; need to flex every item*/
+	margin: auto; /* center all elements; need to be on items and not on container */
+	align-self: flex-end; /* align a single item differently; influence on secondary axis */
+	order: 1 2 3; /* change order of html code; need to order every item; 0 by default */
+	flex: 1 2 3; /* change size ...; need to flex every item */
+}
+
+.MULTI-COLUMNS {
+	-webkit-columns: 4 100px; /* Chrome, Safari, Opera */
+	-moz-columns: 4 100px; /* Firefox */
+	columns: 4 100px; /* IE */
+	column-count: 4; /* 4 columns */
+	column-width: 200px; /* width of columns */
+	column-gap: 50px; /* gap bewteen columns */
+	column-rule: 2px solid black; /* as a border between columns */
+	column-span: all; /* to span over multiple (all) columns a title for example */
+	/* check columns jumps */
 }
