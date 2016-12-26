@@ -155,11 +155,12 @@ JQuery
 
 	<script>
 		$(document).ready(function () { // will add what you type in form
-			$('button').click(function () {
+			$('#button').click(function () {
 				var toAdd = $('input[name="message"]').val(); // get the value of the input tag 'name=mesage'
 				$('#destination').append('<p>' + toAdd + '</p>') // append the message in a p tag
 			});
 		});
+		// little trick; we would use a div instead of a button, to prevent the page to reload
 	</script>
 
 	<script>
