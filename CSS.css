@@ -248,33 +248,47 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .TRANSFORM-2D {
-	transform: translate(50px, 100px); /*moves 50px to right and 100px down*/
-	transform: rotate(45deg); /*rotate 45 degrees clockwise; counter-clockwise if negative*/
-	transform: scale(0.5 0.5); /*decrease and/or increase size via width and height*/
-	transform: skew(20deg 20deg); /*skew horizontally and/or vertically*/
+	transform: translate(50px, 100px); /* moves 50px to right and 100px down */
+	transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
+	transform: scale(0.5, 0.5); /* decrease and/or increase size via width and height */
+	transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
+	-webkit-transform: rotate(10deg); /* for safari */
+	transform: scale(0.7) rotate(30deg); /* shortened method */
 }
 
 .TRANSFORM-3D {
-	transform: rotateX(150deg); /*rotate around X-axis*/
-	transform: rotateY(150deg); /*rotate around Y-axis*/
-	transform: rotateZ(150deg); /*rotate around Z-axis*/
+	transform: rotateX(150deg); /* rotate around X-axis */
+	transform: rotateY(150deg); /* rotate around Y-axis */
+	transform: rotateZ(150deg); /* rotate around Z-axis */
 }
 
 .TRANSITION {
-	http://www.w3schools.com/css/css3_transitions.asp
+	/* multiple transformations all at once */
+	transition-property: background-color, width, height; /* change those properties; they must be defined elsewhere */
+	transition-duration: 1s; /* the time it takes to make the transition */
+	transition-delay: 0.5s; /* the time before transition starts */
+	transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
+	transition: color 2s ease, width 1s linear; /* shortened method */
+}
+
+.ANIMATION {
+	/* multiple animations step by step */
+	animation: keyframe_name 2s; /* use animation created before in @keyframe */
+	-webkit-animation: keyframe_name; /* for safari, opera and chrome */
+	animation: keyframe_name 2s linear alternate infinite;
 }
 
 .CURSOR {
-	cursor: progress wait crosshair help move pointer text; /*different types of cursors*/
-	cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /*direction of resize*/
+	cursor: progress wait crosshair help move pointer text; /* different types of cursors */
+	cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /* direction of resize */
 }
 
 .BOX-MODEL {
-	box-sizing: border-box; /*keep border inside the height and width of elements; use with '*' is better*/
+	box-sizing: border-box; /* keep border inside the height and width of elements; use with '*' is better */
 }
 
 .IMAGE {
-	max-width: 100%; height: auto; /*easy resize images*/
+	max-width: 100%; height: auto; /* easy resize images */
 }
 
 .FLEX-CONTAINER {
