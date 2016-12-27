@@ -234,13 +234,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .OPACITY {
-	opacity: 0.5; /*from 1 to 0, very useful with :hover*/
-	background: rgba(76, 175, 80, 0.5); /*works also with rgba*/
+	opacity: 0.5; /* from 1 to 0, very useful with :hover */
+	background: rgba(76, 175, 80, 0.5); /* works also with rgba */
 }
 
 .SHADOW {
-	box-shadow: 6px 6px 6px black inset; /*horizontal, vertical, smooth, color, in/out the box*/
-	text-shadow: 6px 6px 6px black; /*horizontal, vertical, smooth, color*/
+	box-shadow: 6px 6px 6px black inset; /* horizontal, vertical, smooth, color, in/out the box */
+	text-shadow: 6px 6px 6px black; /* horizontal, vertical, smooth, color */
 }
 
 .TOOLTIP {
@@ -260,6 +260,10 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	transform: rotateX(150deg); /* rotate around X-axis */
 	transform: rotateY(150deg); /* rotate around Y-axis */
 	transform: rotateZ(150deg); /* rotate around Z-axis */
+	transform: rotate3d(x, y, z); /* shortened method */
+	transform: translate3d(x, y, z); /* translation */
+	transform: scale3d(x, y, z); /* scale */
+	backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
 }
 
 .TRANSITION {
@@ -271,11 +275,35 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	transition: color 2s ease, width 1s linear; /* shortened method */
 }
 
+@keyframes keyframe_name { /* needed for animation */
+	0% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(150px);
+	}
+	100% {
+		transform: translateX(150px) rotate(30deg);
+	}
+}
+
+@-webkit-keyframes keyframe_name { /* needed for animation on chrome safari and opera */
+	0% {
+		transform: translateX(0px);
+	}
+	50% {
+		transform: translateX(150px);
+	}
+	100% {
+		transform: translateX(150px) rotate(30deg);
+	}
+}
+
 .ANIMATION {
-	/* multiple animations step by step */
-	animation: keyframe_name 2s; /* use animation created before in @keyframe */
+	/* multiple animations step by step; need @keyframes */
+	animation: keyframe_name 2s; /* use animation created before in @keyframes */
 	-webkit-animation: keyframe_name; /* for safari, opera and chrome */
-	animation: keyframe_name 2s linear alternate infinite;
+	animation: keyframe_name 2s linear alternate infinite; /* alternate to make it play a loop; infinite for never-ending animation */
 }
 
 .CURSOR {
@@ -292,13 +320,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .FLEX-CONTAINER {
-	display: flex;/*in a container, change the disposition to flex and allow following properties*/
-	flex-direction: column row column-reverse row-reverse; /*vertical, horizontal or in opposite order*/
-	flex-wrap: wrap wrap-reverse; /*by default items will stay on same line; wrap helps going down*/
-	justify-content: flex-start flex-end center space-between space-around; /*how items will display on a lign; works also with column direction; manage primary axis*/
-	align-items: stretch flex-end flex-start center baseline; /*manage secondary axis; how items will display in a column or lign*/
-	align-content: flex-start flex-end center space-between space-around stretch; /*manage secondary axis if there is multiple lines*/
-	flex-flow: row wrap; /*shortened way to direction and wrap*/
+	display: flex;/* in a container, change the disposition to flex and allow following properties */
+	flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
+	flex-wrap: wrap wrap-reverse; /* by default items will stay on same line; wrap helps going down */
+	justify-content: flex-start flex-end center space-between space-around; /* how items will display on a lign; works also with column direction; manage primary axis */
+	align-items: stretch flex-end flex-start center baseline; /* manage secondary axis; how items will display in a column or lign */
+	align-content: flex-start flex-end center space-between space-around stretch; /* manage secondary axis if there is multiple lines */
+	flex-flow: row wrap; /* shortened way to direction and wrap */
 }
 
 .FLEX-ITEMS {
