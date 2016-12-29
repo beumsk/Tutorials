@@ -322,6 +322,15 @@ FUNCTIONS
 	console.log(sayHello()); // that works perfectly
 	console.log(message); // error, variable works only inside function
 
+	// global variables
+	/* to recheck
+	function globalVSlocal() {
+		var local = 'Local';
+		return local;
+		global = 'Global';
+		return global;
+	} */
+
 	// function with parameters
 	function sayHello(name) {
 		var message = 'Hello, ' + name + ' !';
