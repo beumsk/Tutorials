@@ -124,10 +124,30 @@ CONDITIONS
 		case "snow";
 			console.log("Wear gloves and hat");
 			break;
-		default:
+		default: // if none of cases is true
 			console.log("I did not understand");
 			break;
 	}
+
+	// if you do not use breaks, cases will merge till the next break
+	var answer = "";
+	switch (val) {
+    case 1:
+    case 2:
+    case 3:
+      answer = "Low"; // 1-3 will change to "Low"
+      break;
+    case 4:
+    case 5:
+    case 6:
+      answer = "Mid"; // 4-6 will change to "Mid"
+      break;
+    case 7:
+    case 8:
+    case 9:
+      answer = "High"; // 7-9 will change to "High"
+      break;
+  }
 
 	// what you can drive by age using 'else if' (which is more efficient)
 	var age = Number(prompt("Enter your age :")); 
@@ -301,7 +321,7 @@ FUNCTIONS
 	}
 	sayHello();
 
-	// function with return
+	// function with return; function exits at return statement, whatever comes after never outputs
 	function sayHello() {
 		return 'Hello !';
 	}
@@ -314,22 +334,13 @@ FUNCTIONS
 	var resultat = sayHello;
 	console.log(resultat);
 
-	// local variables
+	// local variables; they can't be used outside the function
 	function sayHello() {
 		var message = 'Hello !';
 		return message;
 	}
 	console.log(sayHello()); // that works perfectly
 	console.log(message); // error, variable works only inside function
-
-	// global variables
-	/* to recheck
-	function globalVSlocal() {
-		var local = 'Local';
-		return local;
-		global = 'Global';
-		return global;
-	} */
 
 	// function with parameters
 	function sayHello(name) {
@@ -532,13 +543,15 @@ OBJECTS
 	console.log(pen.brand);
 	// change property
 	pen.color = 'red';
-	// other way to reach properties
+	// other way to reach properties; useful for var or parameters
 	console.log(pen['color']);
 	// in a single line
 	console.log(pen.type + ' ' + pen.color + ' ' + pen.brand);
 	// add property
 	pen.price = 2;
 	console.log('My ' + pen.brand + ' ' + pen.color + ' ' + pen.type + 'pen costs ' + pen.price + ' euros.' )
+	// delete a property
+	delete pen.price;
 
 	// basic rpg
 	var char = {
@@ -897,9 +910,17 @@ ARRAYS
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.pop(); // no more 'MySQL'
 
+	// pop() element and store the deleted value
+	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+	var deleted = languages.pop(); // 'MySQL' is no more in array and stored in 'deleted'
+
 	// remove first element
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.shift(); // no more 'HTML'
+
+	// shift() element and store the deleted value
+	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+	var deleted = languages.shift(); // 'HTML' is no more in array and stored in 'deleted'
 
 	// add an element (from the front)
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
