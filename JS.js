@@ -530,7 +530,7 @@ FUNCTIONS MATH
 
 
 OBJECTS
-// they are like complexed variables; they include multiple parameters and functions
+// they are like complexed variables; they include multiple parameters and functions; you can have objects nested iin an array too
 
 	// simple object with 3 properties
 	var pen = {
@@ -543,7 +543,7 @@ OBJECTS
 	console.log(pen.brand);
 	// change property
 	pen.color = 'red';
-	// other way to reach properties; useful for var or parameters
+	// other way to reach properties; useful for var or parameters, or with var containing spaces
 	console.log(pen['color']);
 	// in a single line
 	console.log(pen.type + ' ' + pen.color + ' ' + pen.brand);
@@ -552,6 +552,9 @@ OBJECTS
 	console.log('My ' + pen.brand + ' ' + pen.color + ' ' + pen.type + 'pen costs ' + pen.price + ' euros.' )
 	// delete a property
 	delete pen.price;
+
+	// check if a propery exists; true or false
+	pen.hasOwnProperty(type);
 
 	// basic rpg
 	var char = {
