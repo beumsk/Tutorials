@@ -220,17 +220,17 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .FLOAT {
-	float: right left; /*item floats to a side*/
-	clear: right left; /*stop floating for next items*/
-	overflow: auto; /*needed if an element is taller than the element containing it*/
+	float: right left; /* item floats to a side */
+	clear: right left; /* stop floating for next items */
+	overflow: auto; /* needed if an element is taller than the element containing it */
 }
 
 .ALIGN {
-	margin: auto; /*center element but need to specify width*/
-	text-align: center; /*center text or image inside element*/
-	padding-top: 30px; /*if div padding defined, will by default be centered horizontally*/
-	line-height: 100px; /*if div and line height are the same, it will be centered horizontally*/
-	top: 50%;     left: 50%;    transform: translate(-50%, -50%); /*will center horizontally*/
+	margin: auto; /* center element but need to specify width */
+	text-align: center; /* center text or image inside element */
+	padding-top: 30px; /* if div padding defined, will by default be centered horizontally */
+	line-height: 100px; /* if div and line height are the same, it will be centered horizontally */
+	top: 50%;     left: 50%;    transform: translate(-50%, -50%); /* will center horizontally */
 }
 
 .OPACITY {
@@ -239,8 +239,9 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .SHADOW {
-	box-shadow: 6px 6px 6px black inset; /* horizontal, vertical, smooth, color, in/out the box */
-	text-shadow: 6px 6px 6px black; /* horizontal, vertical, smooth, color */
+	/* multiple shadow effects possible with comas */
+	box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
+	text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
 }
 
 .TOOLTIP {
