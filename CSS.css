@@ -216,7 +216,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	overflow: hidden scroll; /*hide content when over element size or create scroll bar to access the rest*/
 	overflow-x: hidden; /* Hide horizontal scrollbar */
 	overflow-y: scroll; /* Add vertical scrollbar */
-	overflow: auto; /*chose best option*/
+	overflow: auto; /* chose best option */
 }
 
 .FLOAT {
