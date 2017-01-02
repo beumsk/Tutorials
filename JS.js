@@ -31,7 +31,7 @@ if (a==1) {code block}; else if (a==2) {code block}; else {code block}; // condi
 switch (a) {case 1: code block; break; case 2: code block; break;} // switch condition
 
 while (a==1) {code block} // while loop
-	
+
 for (var i=0; i<a.length; i++) {code block} // for loop
 
 
@@ -953,6 +953,19 @@ ARRAYS
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
 
+	// make change on arrays
+	var oldArray = [1, 2, 3];
+	var newArray = oldArray.map(function(val) {
+		return val * 3;
+	});
+	console.log(newArray); // 3, 6, 9; they have been multiplied
+
+	// use all values, one at a time, to get a single one
+	var oldArray = [1, 2, 3, 4, 5];
+	var singleVal = oldArray.reduce(function(previousVal, currentVal) {
+		return preVal - currVal;
+	}, 0);
+
 	// array of objects
 	var Language = {
 		init: function(code, lvl) {
@@ -1109,7 +1122,7 @@ ARRAYS
 DOM BASIS
 // nodes are linked to html tags; 2 types: element () and textual ()
 	
-	// montrer partie html dans la console; ici body
+	// show html part in console; here body
 	console.log(document.body);
 
 	// element node check
