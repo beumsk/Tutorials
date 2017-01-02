@@ -11,6 +11,30 @@ TODO: openclassrooms & codeacademy & freecodecamp
 // Use inspect(f12) & debugger(source) to check easily js file
 
 
+MAIN JS 
+// main syntax
+var a = "example"; // variable
+	console.log(a);
+
+function example() {code block} // function
+	console.log(example);
+
+var numbers = [one, two, three]; // array
+	console.log(numbers[0]);
+
+var dog = {name:"Rex", race:"Pitbul", age:"6"} // object
+	console.log(dog.name);
+	console.log(dog['name']);
+
+if (a==1) {code block}; else if (a==2) {code block}; else {code block}; // condition
+
+switch (a) {case 1: code block; break; case 2: code block; break;} // switch condition
+
+while (a==1) {code block} // while loop
+	
+for (var i=0; i<a.length; i++) {code block} // for loop
+
+
 CONSOLELOG
 // required to show something in js
 	console.log("Text"); // show text
