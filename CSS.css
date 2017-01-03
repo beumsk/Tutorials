@@ -159,61 +159,61 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	min-width: 20em;
 }
 
-.OUTLINE { /*very similar to borders, it stands just outside it; it is used in forms for the focus color*/
-	outline-style: solid dotted dashed double groove ridge inset outset; /*use one*/
-	outline: 5px dotted red; /*shortened method*/
+.OUTLINE { /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
+	outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
+	outline: 5px dotted red; /* shortened method */
 }
 
 .TEXT {
 	color: red;
-	text-align: center left right justify; /*justify(=text of exact same width)*/
-	text-decoration: none; /*very useful for links*/
+	text-align: center left right justify; /* justify(=text of exact same width) */
+	text-decoration: none; /* very useful for links */
 	text-decoration: overline underline line-through;
 	text-transform: uppercase lowercase capitalize;
-	text-indent: 50px; /*alineas*/
-	letter-spacing: 3px; /*space between letters*/
-	word-spacing: 3px; /*space between words*/
-	word-wrap: break-word; /*break word to make it fit in box*/
-	line-height: 0.8; /*space between lines*/
-	direction: rtl; /*change text direction to right-to-left*/
+	text-indent: 50px; /* alineas */
+	letter-spacing: 3px; /* space between letters*/
+	word-spacing: 3px; /* space between words*/
+	word-wrap: break-word; /* break word to make it fit in box*/
+	line-height: 0.8; /* space between lines */
+	direction: rtl; /* change text direction to right-to-left */
 	word-spacing: 10px;
-	vertical-align: middle text-top text-bottom; /*align image to text*/
-	text-shadow: 2px 2px #FF0000; /*shadow*/
+	vertical-align: middle text-top text-bottom; /* align image to text */
+	text-shadow: 2px 2px #FF0000; /* shadow */
 }
 
 .LIST {
-	list-style-type: circle square upper-roman lower-alpha none; /*kind of listing for ul*/
-	list-style-type: upper-roman lower-alpha; /*kind of listing for ol*/
-	list-style-image: url('sqpurple.gif'); /*img listing for ul*/
-	list-style-position: inside; /*inside or outside the content flow (outside by default)*/
-	list-style: square inside url("sqpurple.gif"); /*shortened way*/
+	list-style-type: circle square upper-roman lower-alpha none; /* kind of listing for ul */
+	list-style-type: upper-roman lower-alpha; /* kind of listing for ol */
+	list-style-image: url('sqpurple.gif'); /* img listing for ul */
+	list-style-position: inside; /* inside or outside the content flow (outside by default) */
+	list-style: square inside url("sqpurple.gif"); /* shortened way */
 }
 
 .TABLE {
-	border: solid 1px; /*set to table, th and td it make it look like a table (thanks to borders)*/
-	border-collapse: collapse; /*delete space between cells and table*/
-	vertical-align: bottom top; /*align vertically*/
-	caption-side: top bottom; /*display title on top or underneath*/
-	empty-cells: hide show; /*can hide empty cells*/
+	border: solid 1px; /* set to table, th and td it make it look like a table (thanks to borders) */
+	border-collapse: collapse; /* delete space between cells and table */
+	vertical-align: bottom top; /* align vertically */
+	caption-side: top bottom; /* display title on top or underneath */
+	empty-cells: hide show; /* can hide empty cells */
 }
 
 .DISPLAY { 
-	display: inline; /*by default for <a> <span> <img> displays elements in line*/
-	display: block; /*by default for most of tags displays elements by full width block*/
-	display: hidden; /*hide item*/
-	display: none; /*hide item and affect layout, visibility is the same*/
-	display: inline-block; /*displays elements in line as blocks; allows to use vertical-align*/
+	display: inline; /* by default for <a> <span> <img> displays elements in line */
+	display: block; /* by default for most of tags displays elements by full width block */
+	display: hidden; /* hide item */
+	display: none; /* hide item and affect layout, visibility is the same */
+	display: inline-block; /* displays elements in line as blocks; allows to use vertical-align */
 }
 
 .POSITION {
-	position: static; /*by default, they are not affected by top-right-bottom-left properties*/
-	position: relative; /*follow properties*/
-	position: fixed; /*is fixed on viewport -> does not move when scrolling*/
-	position: absolute; /*is positioned relative to the nearest positioned ancestor; top-left corner if no box around it*/
-	z-index: -1; /*defines stack order -> bigger is in front ! if not defined, last will be in front*/
-	/*possible to write over an image with position:absolute; and controls of location*/
-	clip: rect(0px,60px,200px,0px); /*sets shape of an element*/
-	overflow: hidden scroll; /*hide content when over element size or create scroll bar to access the rest*/
+	position: static; /* by default, they are not affected by top-right-bottom-left properties */
+	position: relative; /* follow properties */
+	position: fixed; /* is fixed on viewport -> does not move when scrolling */
+	position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
+	z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
+	/* possible to write over an image with position:absolute; and controls of location */
+	clip: rect(0px,60px,200px,0px); /* sets shape of an element */
+	overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
 	overflow-x: hidden; /* Hide horizontal scrollbar */
 	overflow-y: scroll; /* Add vertical scrollbar */
 	overflow: auto; /* chose best option */
