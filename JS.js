@@ -953,18 +953,55 @@ ARRAYS
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
 
-	// make change on arrays
+	// make change on arrays; iterate
 	var oldArray = [1, 2, 3];
 	var newArray = oldArray.map(function(val) {
 		return val * 3;
 	});
-	console.log(newArray); // 3, 6, 9; they have been multiplied
+	console.log(newArray); // [3, 6, 9]; they have been multiplied
 
-	// use all values, one at a time, to get a single one
+	// use all values, one at a time, to get a single one; condense
 	var oldArray = [1, 2, 3, 4, 5];
 	var singleVal = oldArray.reduce(function(previousVal, currentVal) {
-		return preVal - currVal;
-	}, 0);
+		return previousVal - currentVal;
+	}, 0); // start at value[0]
+	console.log(singleVal); // will result in -1-2-3-4-5 = -15
+
+	// filter an array
+	var oldArray = [1, 2, 3, 4, 5];
+	var newArray = oldArray.filter(function(val) {
+		return val < 4; // keep what is said; all values under 4
+	});
+	console.log(newArray); // [1, 2, 3]
+
+	// sort an array
+	var array = [1, 2, 3, 4, 5];
+	array.sort(function(a, b) {
+		return b - a; // from largest; a - b to sort from smallest
+	});
+	console.log(array); // [5, 4, 3, 2, 1]
+
+	// reverse an array
+	var array = [1, 2, 3];
+	var newArray = array.reverse();
+	console.log(newArray); // [3, 2, 1]
+
+	// concatenate an array with another one
+	var oldArray = [1, 2, 3];
+	var concatenateMe = [4, 5, 6];
+	var newArray = oldArray.concat(concatenateMe);
+	console.log(newArray); // [1, 2, 3, 4, 5, 6]
+
+	// split a string into an array
+	var string = 'Split me into an array';
+	var array = string.split(' '); // can be other character
+	console.log(array); // ['Split', 'me', 'into', 'an', 'array']
+
+	// join an array into a string
+	var array = ['Join', 'me', 'into', 'a', 'string'];
+	var string = array.join(' ');
+	console.log(string); // 'Join me into a string'
+
 
 	// array of objects
 	var Language = {

@@ -141,10 +141,10 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;}
 }
 
-.PADDING { /*Space around content*/
-	padding-right: 10px; /*top, right, bottom, left*/
-	padding-left: 5% 5vh 5vw 5em; /*use one*/
-	padding: 10px, 5px, 10px, 5px; /*shortened method*/
+.PADDING { /* Space around content */
+	padding-right: 10px; /* top, right, bottom, left */
+	padding-left: 5% 5vh 5vw 5em; /* use one */
+	padding: 10px, 5px, 10px, 5px; /* shortened method */
 }
 
 .HEIGHT {
