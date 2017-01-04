@@ -47,6 +47,7 @@ CONSOLELOG
 	console.log("Text".length); // count number of characters
 	console.log("hi, how are you?".length); // works with sentences also
 	console.log("Text".substring(0, 2)); // show letters (start, end-1); here 'Te'; we could say we start from 0 position and go for a number = difference between two numbers
+	console.log("repeat ".repeat(9)); // show 9 times "repeat "
 
 
 ERRORS
@@ -1011,7 +1012,7 @@ ARRAYS
 	}
 	reverseString("hello"); // return olleh
 
-	
+
 
 
 	// array of objects
