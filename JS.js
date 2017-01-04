@@ -156,22 +156,22 @@ CONDITIONS
 	// if you do not use breaks, cases will merge till the next break
 	var answer = "";
 	switch (val) {
-    case 1:
-    case 2:
-    case 3:
-      answer = "Low"; // 1-3 will change to "Low"
-      break;
-    case 4:
-    case 5:
-    case 6:
-      answer = "Mid"; // 4-6 will change to "Mid"
-      break;
-    case 7:
-    case 8:
-    case 9:
-      answer = "High"; // 7-9 will change to "High"
-      break;
-  }
+		case 1:
+		case 2:
+		case 3:
+			answer = "Low"; // 1-3 will change to "Low"
+			break;
+		case 4:
+		case 5:
+		case 6:
+			answer = "Mid"; // 4-6 will change to "Mid"
+			break;
+		case 7:
+		case 8:
+		case 9:
+			answer = "High"; // 7-9 will change to "High"
+			break;
+	}
 
 	// what you can drive by age using 'else if' (which is more efficient)
 	var age = Number(prompt("Enter your age :")); 
@@ -1001,6 +1001,17 @@ ARRAYS
 	var array = ['Join', 'me', 'into', 'a', 'string'];
 	var string = array.join(' ');
 	console.log(string); // 'Join me into a string'
+
+	// reverse a string
+	function reverseString(str) {
+		var array = str.split("");
+		array.reverse();
+		str = array.join("");
+		return str;
+	}
+	reverseString("hello"); // return olleh
+
+	
 
 
 	// array of objects
