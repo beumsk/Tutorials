@@ -48,6 +48,7 @@ CONSOLELOG
 	console.log("hi, how are you?".length); // works with sentences also
 	console.log("Text".substring(0, 2)); // show letters (start, end-1); here 'Te'; we could say we start from 0 position and go for a number = difference between two numbers
 	console.log("repeat ".repeat(9)); // show 9 times "repeat "
+	console.log("slice".slice(0, 3)); // show sliced string from 0 to 2 "sli" (3 is not included)
 
 
 ERRORS
@@ -954,6 +955,13 @@ ARRAYS
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
 
+	// change arguments of a function into an array
+	function array(arr) {
+		var args = Array.prototype.slice.call(arguments);
+		console.log(args); // [1, 2, 3, 4]
+	}
+	array(1, 2, 3, 4); 
+
 	// make change on arrays; iterate
 	var oldArray = [1, 2, 3];
 	var newArray = oldArray.map(function(val) {
@@ -1002,6 +1010,16 @@ ARRAYS
 	var array = ['Join', 'me', 'into', 'a', 'string'];
 	var string = array.join(' ');
 	console.log(string); // 'Join me into a string'
+
+	// slice an array
+	var array = ['Keep', 'us', 'delete', 'the', 'others'];
+	array = array.slice(0, 2);
+	console.log(array); // ['Keep', 'us']
+
+	// splice an array
+	var array = ['Delete', 'the', 'others', 'keep', 'us'];
+	array = array.splice(3);
+	console.log(array); // ['keep', 'us']
 
 	// reverse a string
 	function reverseString(str) {
