@@ -49,6 +49,8 @@ CONSOLELOG
 	console.log("Text".substring(0, 2)); // show letters (start, end-1); here 'Te'; we could say we start from 0 position and go for a number = difference between two numbers
 	console.log("repeat ".repeat(9)); // show 9 times "repeat "
 	console.log("slice".slice(0, 3)); // show sliced string from 0 to 2 "sli" (3 is not included)
+	console.log("A".charCodeAt()); // show charCode of "A"; 65 here
+	console.log(String.fromCharCode(65)); // show letter of 65; "A" here
 
 
 ERRORS
@@ -995,6 +997,11 @@ ARRAYS
 		return b - a; // from largest; a - b to sort from smallest
 	});
 	console.log(array); // [5, 4, 3, 2, 1]
+
+	// get index position of a value in an array
+	var array = [10, 20, 30, 40, 50];
+	var a = array.indexOf(30);
+	console.log(a); // 2; position of value 30
 
 	// reverse an array
 	var array = [1, 2, 3];
