@@ -983,6 +983,12 @@ ARRAYS
 	});
 	console.log(newArray); // [1, 2, 3]
 
+	// filter Boolean, will delete false, null, 0, "", undefined, and NaN.
+	function numbersLettersOnly(arr) {
+		return arr.filter(Boolean);
+	}
+	numbersLettersOnly([7, "abc", false, null, 0, 9, NaN, "hello", undefined, ""]); // [7, "abc", 9, "hello"]
+
 	// sort an array
 	var array = [1, 2, 3, 4, 5];
 	array.sort(function(a, b) {
