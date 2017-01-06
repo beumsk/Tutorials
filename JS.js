@@ -34,6 +34,8 @@ while (a==1) {code block} // while loop
 
 for (var i=0; i<a.length; i++) {code block} // for loop
 
+a.forEach(function(element) {code block}); // forEach loop
+
 
 CONSOLELOG
 // required to show something in js
@@ -337,7 +339,11 @@ LOOPS
 		number++; // will display 1, 3 and 5 because of double increment !
 	}
 
-
+	//forEach loop
+	var a = [1, 2, 3, 4, 5];
+	a.forEach(function(element) {
+		console.log(element); // 1 2 3 4 5, each on a different line
+	});
 
 
 FUNCTIONS
@@ -1443,3 +1449,14 @@ DOM STYLE
 	listeElt.appendChild(longueurElt);
 	document.getElementById("infos").appendChild(document.createTextNode("Informations sur l'élément"));
 	document.getElementById("infos").appendChild(listeElt);
+
+
+API 
+// 
+
+	// get geolocation data; must have user authorization
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+    }); // insert latitude and longitude into #data
+  }
