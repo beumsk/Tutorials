@@ -132,13 +132,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	border-left: 6px solid red; /* only one side */
 }
 
-.MARGIN { /*Space around elements*/
-	margin-bottom: 10px; /*top, right, bottom, left*/
-	margin-top: 5% 5vh 5vw 5em; /*use one*/
-	margin: 10px, 5px, 10px, 5px; /*shortened method*/
-	margin: auto; /*center element but need to specify width*/
-	margin-left: inherit; /*gets the value from parent element*/
-	/*margin collapse make only biggest margin appear if 2 follow each other*/
+.MARGIN { /* Space around elements */
+	margin-bottom: 10px; /* top, right, bottom, left */
+	margin-top: 5% 5vh 5vw 5em; /* use one */
+	margin: 10px, 5px, 10px, 5px; /* shortened method */
+	margin: auto; /* center element but need to specify width */
+	margin-left: inherit; /* gets the value from parent element */
+	/* margin collapse make only biggest margin appear if 2 follow each other */
 	h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;}
 }
 
