@@ -72,6 +72,7 @@ VARIABLES
 	var a = Number("5"); console.log(a); // 'a' will value  the number 5 and not the string '5'
 	var a = String(5); console.log(a); // 'a' will value the string '5' and not the number 5
 	var a = "five" * 2; console.log(a); // NaN; Not a Number
+	var a = (b>10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
 
 
 POP-UPS
