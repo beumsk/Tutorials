@@ -22,12 +22,12 @@ JQuery
 	<!--JQuery has 2 models: one for developement and one for online version (.min)-->
 	<!--JQuery must always be inside <script> and starting with $(function() {}); or $(document).ready(function() {}); -->
 
-	<script>//start of the script
+	<script>
+		//start of the script
 		$(function() { // always the beginning of jquery code
 		});
-	</script>
 
-	<script> // JQuery filters 
+		// JQuery filters 
 		$(function() {
 			$('p') // selects all p
 			$('p:first') // selects first p; last works too
@@ -36,9 +36,9 @@ JQuery
 			$('p:lt(3)') // selects p lower than 3
 			$('p:not(".main")') // selects p without 'main' class
 		});
-	</script>
+	
 
-	<script> // more filters
+		// more filters
 		$(function() {
 			$('p:hidden') // selects p hidden
 			$('p:visible') // selects p visible
@@ -48,9 +48,9 @@ JQuery
 			$('[align=center]') // selects elements with align center
 			$('[align!=center]') // selects elements without align center
 		});
-	</script>
+	
 
-	<script> // effect methods
+		// effect methods
 		$(function() {
 			$('p').show(''); // show element
 			$('p').hide(''); // hide element
@@ -63,9 +63,9 @@ JQuery
 			$('button').prop('disabled', 'true'); // disables button
 			$('p').animate({left:'+=10px'}, 500); // animates p to 10px to the right
 		});
-	</script>
+	
 
-	<script> // manipulation methods
+		// manipulation methods
 		$(function() {
 			$('p').css('color', 'red') // change css of p
 			$('p').html(''); // replace content of first p with html tags
@@ -83,25 +83,25 @@ JQuery
 			$('p').addClass(''); // add class; removeClass() too; toggleClass() too
 			$('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p)
 		});
-	</script>
+	
 
-	<script> // DOM
+		// DOM
 		$(function() {
 			$('p').find(''); // access to parameter inside p to for example change css
 			$('p').parent(''); // access to parent to for example, change css (parents possible too)
 			$('p').children(''); // access to children to for example, change css
 			$('p:nth-child(3)'); // access to third child
 		});
-	</script>
+	
 
-	<script> // Size and position
+		// Size and position
 		$(function() {
 			$('p').height(''); // basic height (no margins, padding and borders)
 			$('p').width(''); // basic width (no margins, padding and borders)
 		});
-	</script>
+	
 
-	<script> // events
+		// events
 		$(function() {
 			$('p').on('click', function() { … }) // if click; dblclick too
 			$('p').on('scroll', function() { … }) // if scroll
@@ -116,9 +116,9 @@ JQuery
 			$('p').on('blur', function() { … }) // if field loses focus
 			$('p').on('resize', function() { … }) // 
 		});
-	</script>
+	
 
-	<script>
+	
 		$(document).ready(function() {
 			$('div').mouseenter(function() {
 				$('div').fadeTo('fast', 1);
@@ -127,33 +127,33 @@ JQuery
 				$('div').fadeTo('fast', 0.5); 
 			});
 		});
-	</script>
+	
 
-	<script> // use this to have action only on the div clicked and not all the div
+		// use this to have action only on the div clicked and not all the div
 		$(document).ready(function() {
 			$('div').click(function() {
 				$(this).fadeOut('slow');
 			});
 		});
-	</script>
+	
 
-	<script> // show .panel toggle
+		// show .panel toggle
 		$(document).ready(function() {
 			$('.pull-me').click(function() {
 				$('.panel').slideToggle('slow');
 			});
 		});
-	</script>
+	
 
-	<script> // thanks to the variable, the p moves and does not stand in the first place; no need to delete afterwards
+		// thanks to the variable, the p moves and does not stand in the first place; no need to delete afterwards
 		$(document).ready(function() {
 			var $paragraphe = $('<p>mdr</p>');
 			$('#un').after($paragraphe); 
 			$('#deux').after($paragraphe);
 		});
-	</script>
+	
 
-	<script>
+	
 		$(document).ready(function () { // will add what you type in form
 			$('#button').click(function () {
 				var toAdd = $('input[name="message"]').val(); // get the value of the input tag 'name=mesage'
@@ -161,9 +161,9 @@ JQuery
 			});
 		});
 		// little trick; we would use a div instead of a button, to prevent the page to reload
-	</script>
+	
 
-	<script>
+	
 		$(document).ready(function() {
 			$('div').hover( // can have to functions separated by a coma; what to do when hover, and what to do after
 				function() {
@@ -174,9 +174,9 @@ JQuery
 				}
 			);
 		});
-	</script>
+	
 
-	<script>
+	
 		$(document).ready(function() {
 			$(document).keydown(function(key) { // code to let you move image in the 4 directions
 				switch(parseInt(key.which,10)) {
@@ -199,92 +199,84 @@ JQuery
 				}
 			});
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').click(function() {
 				$('div').effect('explode'); // exploses
 			});
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').click(function() {
 				$('div').effect('bounce', {times:3}, 200); // bounces
 			});
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').click(function() {
 				$('div').effect('slide'); // slides to become visible
 			});
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').draggable(); // drag and drop div
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').resizable(); // resize div
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').sortable(); // reorders a list
 		});
-	</script>
+	
 
-	<script> // better animation thanks to IU jQuery
+		// better animation thanks to IU jQuery
 		$(document).ready(function() {
 			$('div').accordion(); // creates an accordion from titles and div
 		});
-	</script>
-
-
-	<script>
+	
+	
 		var a = $([]); // create empty jquery object
-	</script>
+	
 
-	// a is an object which selects all 'div' tags
-	<script>
+		// a is an object which selects all 'div' tags
 		$(function() {
 			var a = $('div'); 
 		});
-	</script>
 
 	
-	// add 'my_class' class to all 'img' elements
-	<script>
+		// add 'my_class' class to all 'img' elements
 		$(function() {
 			$('img').addClass('my_class'); 
 		});
-	</script>
-	 
+	
 
-	// change properties of '#el' 
-	<script>
+		// change properties of '#el' 
 		$(function() {
 			$('#el').css('background-color', 'red').fadeIn('slow');  
 		});
-	</script>
 	
 
-	// code will process when clicking on '#action'
-	<script>
+		// code will process when clicking on '#action'
 		$(function() {
 			$('#action').click(function() { 
 			/*my code*/ 
 			});  
 		});
+
 	</script>
 	
 
