@@ -30,6 +30,10 @@ JQuery
 		// JQuery filters 
 		$(function() {
 			$('p') // selects all p
+			$('.class') // selects class named 'class'
+			$('#id') // selects id named 'id'
+			$(this) // selects same selector as function
+			$('p').next() // selects selector right after 'p'; very useful with this
 			$('p:first') // selects first p; last works too
 			$('p:eq(1)') // selects second p; works as an array
 			$('p:gt(0)') // selects p greater than 0
@@ -54,6 +58,7 @@ JQuery
 		$(function() {
 			$('p').show(''); // show element
 			$('p').hide(''); // hide element
+			$('p').toggle(''); // show/hide element
 			$('p').fadeIn(''); // fade element in
 			$('p').fadeOut(''); // fade element out
 			$('p').fadeTo('slow', 0); // fade element to some opacity; speed and opacity as paramters
