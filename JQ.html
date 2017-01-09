@@ -116,9 +116,13 @@ JQuery
 			$('p').on('blur', function() { … }) // if field loses focus
 			$('p').on('resize', function() { … }) // 
 		});
+
+
+		// get value
+		var getValue = $("input").val();
 	
 
-	
+		// 
 		$(document).ready(function() {
 			$('div').mouseenter(function() {
 				$('div').fadeTo('fast', 1);
@@ -153,7 +157,7 @@ JQuery
 		});
 	
 
-	
+		// 
 		$(document).ready(function () { // will add what you type in form
 			$('#button').click(function () {
 				var toAdd = $('input[name="message"]').val(); // get the value of the input tag 'name=mesage'
