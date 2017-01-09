@@ -1330,6 +1330,10 @@ DOM GET/QUERY
 	}
 	infoLinks();
 
+	// get value of an input
+	var getValue = document.getElementsByTagName('input').value;
+	console.log(getValue); // log input value
+
 
 DOM CHANGE
 // ways to change html elements; clear, add, etc.
