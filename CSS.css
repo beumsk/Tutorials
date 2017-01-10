@@ -230,13 +230,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	margin: auto; /* center element but need to specify width */
 	text-align: center; /* center text or image inside element */
 	padding-top: 30px; /* if div padding defined, will by default be centered horizontally */
-	line-height: 100px; /* if div and line height are the same, it will be centered horizontally */
+	line-height: 100px; /* if div and line height are the same, it will be centered vertically */
 	top: 50%;     left: 50%;    transform: translate(-50%, -50%); /* will center horizontally */
 }
 
 .OPACITY {
-	opacity: 0.5; /* from 1 to 0, very useful with :hover */
-	background: rgba(76, 175, 80, 0.5); /* works also with rgba */
+	opacity: 0.5; /* from 1 to 0, very useful with :hover; effect on other elements too ! */
+	background: rgba(76, 175, 80, 0.5); /* works also with rgba; better way because it changes only this element */
 }
 
 .SHADOW {
