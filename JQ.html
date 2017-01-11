@@ -185,6 +185,14 @@ JQuery
 		});
 	
 
+		// validate form with enter without page refresh
+		$('input').keypress(function (e) {
+      if (e.which == 13) {
+        e.preventDefault();
+        $("#button").click();   
+      }
+  	});
+
 	
 		$(document).ready(function() {
 			$(document).keydown(function(key) { // code to let you move image in the 4 directions
