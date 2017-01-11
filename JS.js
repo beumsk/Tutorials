@@ -1206,6 +1206,17 @@ ARRAYS
 
 
 
+API
+// Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
+
+	// Geolocation
+
+
+	// API with JSON
+
+
+
+
 DOM BASIS
 // nodes are linked to html tags; 2 types: element () and textual ()
 	
