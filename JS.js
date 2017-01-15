@@ -992,6 +992,13 @@ ARRAYS
 	});
 	console.log(newArray); // [1, 2, 3]
 
+	// delete some array values
+	var arr = ["one", "two", "three"];
+	delete arr[2];
+	console.log(arr); // ["one", "two", null]
+	arr.filter(Boolean); // to remove null, undefined etc.
+	console.log(arr); // ["one", "two"]
+
 	// filter Boolean, will delete false, null, 0, "", undefined, and NaN.
 	function numbersLettersOnly(arr) {
 		return arr.filter(Boolean);
@@ -1025,6 +1032,11 @@ ARRAYS
 	var string = 'Split me into an array';
 	var array = string.split(' '); // can be other character
 	console.log(array); // ['Split', 'me', 'into', 'an', 'array']
+
+	// split number into an array 
+	var num = 137;
+	var arr = (""+num).split("");
+	console.log(arr); // ["1", "3", "7"]
 
 	// join an array into a string
 	var array = ['Join', 'me', 'into', 'a', 'string'];
