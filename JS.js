@@ -302,10 +302,26 @@ LOOPS
 		console.log(number);
 	}
 
-	// if variable is only used in the for loop
+	// when variable is only used in the for loop
 	for (var number = 1; number <= 4; number++) {
 		console.log(number);
 	}
+
+	// break; end of the loop
+	for (var i=0; i<=5; i++) {
+		if (i===3) {
+			break;	
+		}
+		console.log(i);
+	} // 0 1 2; stops when 3 reached
+
+	// continue; breaks one iteration in the loop
+	for (var i=0; i<=5; i++) {
+		if (i===3) {
+			continue;	
+		}
+		console.log(i);
+	} // 0 1 2 4 5; no 3
 
 	// for with prompt and condition
 	var number = Number(prompt("Enter a number"));
