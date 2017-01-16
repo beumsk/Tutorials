@@ -288,6 +288,13 @@ LOOPS
 		console.log(number); // the condition will always be true and will therefore lead to infinite loop
 	}
 
+	// do while loop; while alike, but will do the first block code at least once (even if while is false)
+	var count = 11;
+	do {
+		console.log(count);
+		count++;
+	}
+	while (count<=5); // will log 11
 
 	// for loop; use when you know the number of loops
 	var number;
