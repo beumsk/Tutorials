@@ -9,7 +9,7 @@ HYPERTEXT MARKUP LANGUAGE
 <!DOCTYPE html>
 <html>
 
-<!--Head elements-->
+<!--HEAD ELEMENTS-->
 <head><!--Everything about title, CSS link, SEO, description, ...-->
 	<meta charset="utf-8"/><!--allow special characters to be displayed-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><!---->
@@ -50,13 +50,13 @@ HYPERTEXT MARKUP LANGUAGE
 	<![endif]-->
 </head>
 
-<!--Body elements-->    
+<!--BODY ELEMENTS-->    
 <body><!--Visible content of the page--><br><hr><br><br>
 	<div id="id">div with id</div><!--id="" allows to target elements in CSS using # ; useful to link to a place in the page--><hr>
 	<div class="">div with class</div><!-- class="" allows to target elemnts in CSS using . --><hr>
 	<div class="class1 class2 class-etc">div with multiple class</div><!--multiple class--><hr>
 	
-	<!--main tags-->
+	<!--MAIN TAGS-->
 	<header>header of page</header><!--header of a page--><hr>
 	<footer>footer of page</footer><!--footer of a page--><hr>
 	<h1>title h1</h1><!--1 to 6, decreasing size--><hr>
@@ -70,7 +70,7 @@ HYPERTEXT MARKUP LANGUAGE
 	<progress value="60" max="100"><!-- display progress bar; takes color as background-->
 	<time>10:30</time><!--not very useful since it changes nothing-->
 	
-	<!--links-->
+	<!--LINKS-->
 	<a href="url" target="_blank">url</a><br><!--to create a link, blank open in a new tab--><hr>
 	<a href="url" title="bull text">url with bubble</a><br><!--link with some bull text--><hr>
 	<a href="mailto:votrenom@bidule.com">mail</a><br><!--link to send mail--><hr>
@@ -79,35 +79,35 @@ HYPERTEXT MARKUP LANGUAGE
 	<a href="#id">reach #id</a><br><!--reach the id="id" section of the page--><hr>
 	<a href="#"><img src="img/html.jpg" width="200px"></a><br><!--link on an image--><hr>
 
-	<!--images or frames-->
+	<!--IMAGES OR FRAMES-->
 	<a href="img/html.jpg"><img src="img/html.jpg" alt="mini" title="mini" width="200px"></a><!--link img to bigger image--><br><hr>
 	<img src="img/html.jpg" alt="" width="200px" /><!--to insert an image, can also be .png, .jpg, .gif--><br><hr>
 	<img src="img/html.jpg" alt="" title="bull text" width="200px"><!--infobull--><br><hr>
 	<iframe src="HTML.html"></iframe><!--display a webpage inside one--><br><hr>
 	<iframe src="http://www.youtube.com/embed/xxxxxxxxx"></iframe><!--to insert a Youtube video--><br><hr>
 
-	<!--navigation-->
+	<!--NAVIGATION-->
 	<nav><!--for navigation links (menu with <a> tags)-->
 		<a href="">Un</a>
 		<a href="">Deux</a>
 		<a href="">Trois</a>
 	</nav><hr>
 
-	<!--ordered list-->
+	<!--PRDERED LIST-->
 	<ol>
 		<li>Un</li><!--list elements-->
 		<li>Deux</li>
 		<li>Trois</li>
 	</ol><hr>
 
-	<!--unordered list-->
+	<!--UNORDERED LIST-->
 	<ul>
 		<li>Bleu</li><!--list element-->
 		<li>Rouge</li>
 		<li>Jaune</li>
 	</ul><hr>
 
-	<!--descriptive list-->
+	<!--DESCRIPTIVE LIST-->
 	<dl>
 		<dt>Tiger</dt><!--term-->
 		<dd>best animal</dd><!--description-->
@@ -117,7 +117,7 @@ HYPERTEXT MARKUP LANGUAGE
 
 	<!--float:left or display:inline to display a list horizontally-->
 
-	<!--table-->
+	<!--TABLE-->
 	<table border="solid">
 	<thead><!--head of table-->
 		<tr><!--tableau row-->
@@ -156,7 +156,7 @@ HYPERTEXT MARKUP LANGUAGE
 	</tfoot>
 	</table><hr>
 
-	<!--text modifications-->
+	<!--TEXT MODIFICATIONS-->
 	<b>bold</b><!--bold similar to <strong></strong>--><br><hr>
 	<i>italic</i><!--italic similar to <em></em>--><br><hr>
 	<u>underline</u><!--underline--><br><hr>
@@ -167,18 +167,18 @@ HYPERTEXT MARKUP LANGUAGE
 	<del>crossed</del><!--crossed--><br><hr>
 	<ins>underline</ins><!--underline--><br><hr>
 
-	<!--Icons-->
+	<!--ICONS-->
 	<i class="fa fa-cloud" style="font-size:24px;"></i><!--font-awesome icon, use fa-1x to fa-5x to resize-->
 	<i class="glyphicon glyphicon-cloud" style="font-size:36px;"></i><!--bootstrap icon-->
 	<i class="material-icons" style="font-size:48px;color:red;">cloud</i><!--google icon-->
 
 
-	<!--breaks-->
+	<!--BREAKS-->
 	<hr><!--horizontal bar-->
 	<br><!--new line or <br/>-->
 
 
-	<!--quotes-->
+	<!--QUOTES-->
 	<q>Quote</q><!--"Quote text"-->
 	<blockquote>Block quote</blockquote><!--Indented quote from another source--><hr>
 	<abbr title="Hypertext Markup Language">HTML</abbr><!--help with abbreviations and acronyms--><hr>
@@ -187,7 +187,7 @@ HYPERTEXT MARKUP LANGUAGE
 	<bdo dir="rtl">right to left</bdo><!--write text from right to left--><hr>
 
 
-	<!--html5 tags-->
+	<!--HTML5 TAGS-->
 	<article>Article</article><!--Defines an article in the document--><hr>
 	<aside>Aside</aside><!--Defines content aside from the page content--><hr>
 	<canvas>Canvas</canvas><!--Draw graphics, on the fly, via scripting--><hr>
@@ -200,7 +200,7 @@ HYPERTEXT MARKUP LANGUAGE
 	<legend>media legend</legend><!--legend to medias--><hr>
 
 
-	<!--Scalable vector graphic-->
+	<!--SCALABLE VECTOR GRAPHIC-->
 	<svg>
 		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
 		<!--circle; cx & cy for positioning; r for radius; stroke for highlighted lines; fill for color-->
@@ -230,22 +230,22 @@ HYPERTEXT MARKUP LANGUAGE
 	</svg><br><hr>
 
 
-	<!--Video-->
+	<!--VIDEO-->
 	<video controls width="200px"><!--video; use poster, loop, autoplay, preload(auto, none);-->
 		<source src="video/html.mp4" type="video/mp4"><!--use different format to work on all browsers-->
 	</video> <br><hr>
 
 
-	<!--Audio-->
+	<!--AUDIO-->
 	<audio controls><!--audio; use loop, autoplay, preload(auto, none);-->
 		<source src="audio/ukulele.mp3" type="audio/mp3"><!--use different format to work on all browsers-->
 	</audio> <br><hr>
 
-	<!--Background sound-->
+	<!--BG SOUND-->
 	<bgsound src="" loop="infinite"></bgsound><!--background sound became obsolete !!-->
 
 
-	<!--image map-->
+	<!--IMAGE MAP-->
 	<img src="img/html.jpg" alt="Planets" usemap="#map" style="width:145px;height:126px;"/><!--image with clickable areas-->
 	<map name="map">
 		<area shape="rect" coords="0,0,82,126" alt="Sun" href=""/>
@@ -253,7 +253,7 @@ HYPERTEXT MARKUP LANGUAGE
 		<area shape="circle" coords="124,58,8" alt="Venus" href=""/>
 	</map><hr>
 
-	<!--Forms-->
+	<!--FORMS-->
 	<form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
 		<fieldset><!--borders the questions-->
 			<legend>Information</legend><!--name of the fieldset-->
@@ -282,7 +282,7 @@ HYPERTEXT MARKUP LANGUAGE
 		</fieldset>
 	</form><hr>
 
-	<!--Exapandable easy way-->
+	<!--EXPANDABLE-->
 	<details><!--Details and summary elements; no need of javascript to use expandables-->
 		<summary>
 			Distribution and habitat
@@ -298,7 +298,7 @@ HYPERTEXT MARKUP LANGUAGE
 	</details>
 
 
-	<!--Mail form-->
+	<!--MAIL FORM-->
 	<form action="mailto:mail@mail.com?subject=form_submission" method="post" enctype="text/plain"><!--send mail-->
 		<fieldset>
 			<legend>Mail</legend>
@@ -308,7 +308,7 @@ HYPERTEXT MARKUP LANGUAGE
 	</form><hr>
 
 
-	<!--Symbols-->
+	<!--SYMBOLS-->
 	<p>less than = < = &lt; = &#60; </p><hr>
 	<p>greater than = > = &gt; = &#62; </p><hr>
 	<p>ampersand = & = &amp; = &#38; </p><hr>
@@ -322,7 +322,7 @@ HYPERTEXT MARKUP LANGUAGE
 
 
 
-	<!--Scripts-->
+	<!--SCRIPTS-->
 	<?php ?> <? ?> <!--to code PHP-->
 	<script type="text/javascript"> // use src="" if external js file
 		console.log('Texte javascript') // pas affiché dans la page web
