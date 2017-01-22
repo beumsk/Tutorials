@@ -1075,6 +1075,11 @@ ARRAYS
 	array = array.splice(3);
 	console.log(array); // ['keep', 'us']
 
+  // replace smth in a string
+  var str = "Salut, c'est chouette !";
+  str = str.replace("chouette", "cool");
+  console.log(str); // "Salut, c'est cool !"
+
 	// reverse a string
 	function reverseString(str) {
 		var array = str.split("");
