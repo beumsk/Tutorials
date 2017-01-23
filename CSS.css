@@ -246,7 +246,24 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 }
 
 .TOOLTIP {
-	http://www.w3schools.com/css/css_tooltip.asp
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.TOOLTIP .TOOLTIPTEXT {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.TOOLTIP:hover .TOOLTIPTEXT {
+  visibility: visible;
 }
 
 .TRANSFORM-2D {
