@@ -5,8 +5,10 @@ Every tutorial file is made using the appropriate language syntax.
 It is not really meant to be tried in a browser even if some partly work.
 More complex language are not only theorical, they present examples too.
 
-2016.12.06
+2017.01.24
+TODO : check all languages on W3schools
 
+2016.12.06
 -HTML
 -CSS
 -JS
