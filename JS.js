@@ -599,6 +599,29 @@ FUNCTIONS MATH
 	
 	
 
+DATE
+// Date object enables us to work with dates; dates are calculated from 01 Jan 1970 00:00:00
+
+	// current date and time
+	var d = new Date();
+	console.log(d); // now
+
+	// set date easily
+	var d2 = new Date("January 2, 2015 10:42:00"); // Fri Jan 02 2015 10:42:00
+
+	// set date with numbers
+	var d3 = new Date(88,5,11,11,42,0,0); // Sat Jun 11 1988 11:42:00
+
+	// get hours; returns hour of date
+	var d = new Date();
+	var hours = d.getHours(); // current hour; getMinutes(), getSeconds(), getMilliseconds()
+
+	// get year; returns year of date
+	var d = new Date();
+	var year = d.getFullYear(); // current year; getMonth(), getDate();day of month, getDay();day of week
+
+
+
 OBJECTS
 // they are like complexed variables; they include multiple parameters and functions; you can have objects nested iin an array too
 
