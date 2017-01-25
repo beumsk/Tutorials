@@ -576,7 +576,10 @@ FUNCTIONS MATH
 // start with 'Math.' they work on numbers
 
 	// Math.min; returns the smallest number from parameters
-	console.log(Math.min(9, 7, 6, 1));
+	console.log(Math.min(9, 7, 6, 1)); // 1
+
+	// Math.max; returns the biggest number from parameters
+	console.log(Math.max(9, 1, 6, 3, 5)); // 9
 
 	// Math.random; returns a random number between 0 and 1
 	console.log(Math.random());
@@ -585,6 +588,16 @@ FUNCTIONS MATH
 	console.log(Math.random() * 100); // random number 1 to 100; change '100' to change possibilities of course
 	console.log(Math.floor(Math.random() * 100)); // random number without decimals
 
+	// Math.pow; returns first parameter powered by second parameter
+	console.log(Math.pow(5, 2)); // 25
+
+	// Math.sqrt; returns square root of parameter
+	console.log(Math.sqrt(16)); // 16
+
+	// Math.abs; returns absolute of parameter
+	console.log(Math.abs(-12)); // 12
+	
+	
 
 OBJECTS
 // they are like complexed variables; they include multiple parameters and functions; you can have objects nested iin an array too
