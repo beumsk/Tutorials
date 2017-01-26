@@ -12,6 +12,7 @@ TODO: better way to present
 
 MAIN JS 
 // main syntax
+
 var a = "example"; // variable
 	console.log(a);
 
@@ -38,6 +39,7 @@ a.forEach(function(element) {code block}); // forEach loop
 
 CONSOLELOG
 // required to show something in js
+
 	console.log("Text"); // show text
 	console.log("up \n down"); // \n acts like enter
 	console.log("\' \" \\ "); // to use those tricky characters
@@ -60,7 +62,8 @@ ERRORS
 
 
 VARIABLES
-//
+// JavaScript variables are containers for storing data values.
+
 	var a; console.log(a); // creates variable without value
 	var a; a = 10; console.log(a); // create variable with value of '10'
 	var a = 10; console.log(a); // shortened method
@@ -76,6 +79,7 @@ VARIABLES
 
 POP-UPS
 // launch pop-up
+
 	confirm("Are you sure to leave?"); // launch pop-up to confirm -> return true/false
 	prompt("Enter tour name"); // launch pop-up where user can answer -> return the answer
 	alert("hello"); // launch pop-up with text
@@ -85,7 +89,8 @@ POP-UPS
 
 
 COMPARISONS
-// they will give boolean answers (true or false)
+// Comparison and Logical operators are used to test for true or false
+
 	// smaller than 
 		8 < 10 
 	// greater than
@@ -114,7 +119,8 @@ COMPARISONS
 
 
 CONDITIONS
-//
+// Conditional statements are used to perform different actions based on different conditions
+
 	// return the sentence because it is true
 	if ("Rémy".length = 4) {
 		console.log("You're name may be Rémy");
@@ -234,6 +240,7 @@ CONDITIONS
 
 LOOPS
 // while the condition is true, the code is looping
+
 	// while loop; use it by default
 	var number = 1;
 	while (number <= 4) {
@@ -370,7 +377,7 @@ LOOPS
 
 
 FUNCTIONS
-// 
+// A JavaScript function is a block of code designed to perform a particular task. You need to invoke it
 
 	// simple function
 	function sayHello() {
@@ -478,7 +485,7 @@ FUNCTIONS
 
 
 FUNCTIONS TEXT 
-// work on text strings
+// functions working on text strings
 
 	// length with variables
 	var word = 'Kangaroo';
@@ -573,7 +580,7 @@ FUNCTIONS TEXT
 
 
 FUNCTIONS MATH 
-// start with 'Math.' they work on numbers
+// Functions working on numbers; they start with 'Math.'
 
 	// Math.min; returns the smallest number from parameters
 	console.log(Math.min(9, 7, 6, 1)); // 1
@@ -623,7 +630,7 @@ DATE
 
 
 OBJECTS
-// they are like complexed variables; they include multiple parameters and functions; you can have objects nested iin an array too
+// they are like complexed variables; they include multiple parameters and functions; you can have objects nested in an array too
 
 	// simple object with 3 properties
 	var pen = {
@@ -966,7 +973,7 @@ PROTOTYPES
 
 
 ARRAYS
-//
+// JavaScript arrays are used to store multiple values in a single variable.
 
 	// basic
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
@@ -1281,17 +1288,6 @@ ARRAYS
 
 
 
-API
-// Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
-
-	// Geolocation
-
-
-	// API with JSON
-
-
-
-
 DOM BASIS
 // nodes are linked to html tags; 2 types: element () and textual ()
 	
@@ -1543,7 +1539,7 @@ DOM STYLE
 
 
 API 
-// 
+// Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
 
 	// get geolocation data; must have user authorization
   if (navigator.geolocation) {
@@ -1551,3 +1547,6 @@ API
       $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
     }); // insert latitude and longitude into #data
   }
+
+	// API with JSON
+	
