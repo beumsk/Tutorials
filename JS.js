@@ -16,7 +16,7 @@ MAIN JS
 var a = "example"; // variable
 	console.log(a);
 
-function example() {code block} // function
+function example() {code block} // function; also var example function() {};
 	console.log(example);
 
 var numbers = [one, two, three]; // array
