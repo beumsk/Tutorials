@@ -22,17 +22,19 @@ function example() {code block} // function; also var example function() {};
 var numbers = [one, two, three]; // array
 	console.log(numbers[0]);
 
-var dog = {name:"Rex", race:"Pitbul", age:"6"} // object
+var dog = {name: "Rex", race: "Pitbul", age: "6"} // object
 	console.log(dog.name);
-	console.log(dog['name']);
+	console.log(dog['name']); // same effect
 
-if (a==1) {code block}; else if (a==2) {code block}; else {code block}; // condition
+if (a == 1) {code block}; else if (a == 2) {code block}; else {code block}; // condition
 
 switch (a) {case 1: code block; break; case 2: code block; break;} // switch condition
 
-while (a==1) {code block} // while loop
+while (a == 1) {code block} // while loop
 
-for (var i=0; i<a.length; i++) {code block} // for loop
+do while (0 === 1) {code block} // will execute code block at least once
+
+for (i = 0; i < a.length; i++) {code block} // for loop
 
 a.forEach(function(element) {code block}); // forEach loop
 
@@ -43,9 +45,9 @@ CONSOLELOG
 	console.log("Text"); // show text
 	console.log("up \n down"); // \n acts like enter
 	console.log("\' \" \\ "); // to use those tricky characters
-	console.log(3+4-1*4/2); // process and give answer
-	console.log(10%3); // show the rest of division -> it is called modulo
-	console.log("hel"+"lo"); // show addition of the two strings "bonjour"
+	console.log(3 + 4 - 1 * 4 / 2); // process and give answer
+	console.log(10 % 3); // show the rest of division -> it is called modulo
+	console.log("hel" + "lo"); // show addition of the two strings "bonjour"
 	console.log("hello", "you"); // show both strings with a space between "hello you"
 	console.log("Text".length); // count number of characters
 	console.log("hi, how are you?".length); // works with sentences also
@@ -56,9 +58,8 @@ CONSOLELOG
 	console.log(String.fromCharCode(65)); // show letter of 65; "A" here
 
 
-ERRORS
-//
-	error // error example -> ReferenceError: slip is not defined; ends the work of JS (the code afterwards will never be processed)
+ERRORS 
+// error example -> ReferenceError: not defined; ends the work of JS (the code afterwards will never be processed)
 
 
 VARIABLES
