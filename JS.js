@@ -32,7 +32,7 @@ switch (a) {case 1: code block; break; case 2: code block; break;} // switch con
 
 while (a == 1) {code block} // while loop
 
-do while (0 === 1) {code block} // will execute code block at least once
+do {code block} while (false); // will execute code block at least once
 
 for (i = 0; i < a.length; i++) {code block} // for loop
 
