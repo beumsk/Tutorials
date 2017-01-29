@@ -71,11 +71,11 @@ VARIABLES
 	var a = 0; a += 1; a ++; console.log(a); // add 1 and 1 to 'a' variable to reach 2
 	var a = 5; a -= 1; a --; console.log(a); // substracts 1 and 1 to reach 3
 	var a = 5; a *= 5; a /= 5; console.log(a); // multiply by 5 and divide by 5 to reach 5
-	var a = 3; var b = a+2; console.log(b); // 'b' will value 5 (3+2)
+	var a = 3; var b = a + 2; console.log(b); // 'b' will value 5 (3+2)
 	var a = Number("5"); console.log(a); // 'a' will value  the number 5 and not the string '5'
 	var a = String(5); console.log(a); // 'a' will value the string '5' and not the number 5
 	var a = "five" * 2; console.log(a); // NaN; Not a Number
-	var a = (b>10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
+	var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
 
 
 POP-UPS
@@ -137,11 +137,11 @@ CONDITIONS
 
 	// according to number typed, it will answer differently
 	var number = Number(prompt("Enter a number :")); 
-	if (number>0) {
+	if (number  >0) {
 		console.log(number + " is positive");
 	}
 	else {
-		if (number===0) {
+		if (number === 0) {
 			console.log(number + " is nul");
 		}
 		else {
@@ -188,10 +188,10 @@ CONDITIONS
 
 	// what you can drive by age using 'else if' (which is more efficient)
 	var age = Number(prompt("Enter your age :")); 
-	if (age>=18) {
+	if (age >= 18) {
 		console.log("You can drive a car !");
 	}
-	else if (age>=16) {
+	else if (age >= 16) {
 		console.log("You can drive a scooter !");
 	}
 	else {
@@ -301,7 +301,7 @@ LOOPS
 		console.log(count);
 		count++;
 	}
-	while (count<=5); // will log 11
+	while (count <= 5); // will log 11
 
 	// for loop; use when you know the number of loops
 	var number;
@@ -315,7 +315,7 @@ LOOPS
 	}
 
 	// break; end of the loop
-	for (var i=0; i<=5; i++) {
+	for (var i  =0; i <= 5; i++) {
 		if (i===3) {
 			break;	
 		}
@@ -323,8 +323,8 @@ LOOPS
 	} // 0 1 2; stops when 3 reached
 
 	// continue; breaks one iteration in the loop
-	for (var i=0; i<=5; i++) {
-		if (i===3) {
+	for (var i = 0; i <= 5; i++) {
+		if (i === 3) {
 			continue;	
 		}
 		console.log(i);
