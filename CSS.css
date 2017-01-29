@@ -373,5 +373,5 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	background-image: linear-gradient(to top left, blue, green, yellow); /* more colors possible */
 	background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1)); /* you can use it with transparency of course */
 	background-image: linear-gradient(to right, blue 0%, green 30%); /* % or pixels to change space of each color */
-	background-image: radial-gradient(circle at center, white green); /* radial gradient; other positions available; ellipse too */
+	background-image: radial-gradient(circle at center, white, green); /* radial gradient; other positions available; ellipse too */
 }
