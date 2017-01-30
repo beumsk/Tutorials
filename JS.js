@@ -1037,6 +1037,14 @@ ARRAYS
 	}
 	array(1, 2, 3, 4); 
 
+	// going through function arguments
+	function lol(arr1, arr2, arr3) {
+		for (i=0; i<arguments.length; i++) {
+			console.log(arguments[i]);
+		}
+	}
+	lol(1, 3, 7); // 1 3 7
+
 	// make change on arrays; iterate
 	var oldArray = [1, 2, 3];
 	var newArray = oldArray.map(function(val) {
@@ -1287,6 +1295,37 @@ ARRAYS
 	// quit
 	console.log('\nGoodbye !');
 
+
+
+REGEXP 
+// regular expression object for matching text with a pattern
+
+	[abc] // Find any characters between the brackets
+	[^abc] // Find any character NOT between the brackets
+	[0-9] // Find any digits between the brackets
+	[^0-9] // Find any character NOT between the brackets (any non-digit)
+	(x|y)	// Find any alternatives separated with |
+	\d	// Find a digit
+	\s	// Find a whitespace character
+	n+	// Matches any string that contains at least one n
+	n*	// Matches any string that contains zero or more occurrences of n
+	n?	// Matches any string that contains zero or one occurrences of n
+	i	// Perform case-insensitive matching
+	g	// Perform a global match (find all matches rather than stopping after the first match)
+	m	// Perform multiline matching
+	
+	// The search() method uses an expression to search for a match, and returns the position of the match.
+	"try to find me".search(/me/i); // 12
+	
+	// The replace() method returns a modified string where the pattern is replaced.
+	"try to find him".replace(/him/i, "me"); // try to find me
+	
+	// The test() method searches a string and return true or false
+	/me/i.test("Am I in this string?"); // false
+	
+	// The exec() method searches a string and return the found text or null
+	/me/i.exec("Am I in this string?"); // null
+	
 
 
 DOM BASIS
