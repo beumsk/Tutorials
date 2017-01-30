@@ -1132,6 +1132,10 @@ ARRAYS
   str = str.replace("chouette", "cool");
   console.log(str); // "Salut, c'est cool !"
 
+	// use replace to add spaces before uppercases; or smth else
+	"myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
+	"myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
+
 	// reverse a string
 	function reverseString(str) {
 		var array = str.split("");
