@@ -139,7 +139,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	margin: auto; /* center element but need to specify width */
 	margin-left: inherit; /* gets the value from parent element */
 	/* margin collapse make only biggest margin appear if 2 follow each other */
-	h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;}
+	/* h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;} */
 }
 
 .PADDING { /* Space around content */
@@ -148,13 +148,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	padding: 10px, 5px, 10px, 5px; /* shortened method */
 }
 
-.HEIGHT {
+.HEIGHT { /* While px are fixed, em and % depends on parents */
 	height: 200px;
 	max-height: 100%;
 	min-height: 20em;
 }
 
-.WIDTH {
+.WIDTH { /* While px are fixed, em and % depends on parents */
 	width: 400px;
 	max-width: 100%;
 	min-width: 20em;
