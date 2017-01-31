@@ -62,7 +62,6 @@ SELECT HTML
 	p:empty {} /* Selects empty p elements */
 	p:not(.main) /* Selects p without .main class */
 
-
 	:required {} /* Selects required form elements */
 	:invalid {} /* Selects invalid form elements */
 	:focus {} /* Selects focused form element */
@@ -77,9 +76,6 @@ SELECT HTML
 
 	p {color: red !important;} /* become most important */
 	
-
-http://www.w3schools.com/cssref/css_selectors.asp
-
 
 MEDIA QUERIES
 	@media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
