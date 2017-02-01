@@ -62,6 +62,7 @@ JQuery
 			$('p').fadeIn(''); // fade element in
 			$('p').fadeOut(''); // fade element out
 			$('p').fadeTo('slow', 0); // fade element to some opacity; speed and opacity as paramters
+			$('p').toggleClass("newClass"); // switch between oldClass and newClass for every event
 			$('p').slideUp(''); // hide element uping
 			$('p').slideDown(''); // hide element downing
 			$('p').slideToggle(''); // hide element same position
@@ -128,7 +129,7 @@ JQuery
 		var getValue2 = $("input[id='name']").val(); // gets value of input id name
 	
 
-		// 
+		// change opacity when mouse enters/leaves
 		$(document).ready(function() {
 			$('div').mouseenter(function() {
 				$('div').fadeTo('fast', 1);
@@ -136,6 +137,12 @@ JQuery
 			$('div').mouseleave(function() {
 				$('div').fadeTo('fast', 0.5); 
 			});
+		});
+		
+		
+		// toggle between two classes; can easily modify css of an object
+		$('div').on("click", function() {
+			$(this).toggleClass("newClass");
 		});
 	
 
