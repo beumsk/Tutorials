@@ -44,6 +44,7 @@ SELECT HTML
 	p:first-line {} /* Selects first line of <p> */
 	p:first-letter {} /* Selects first letter of <p> */
 	p:before {content: "Read this -";} /* insert some content before the content of <p> */
+	p:before {content: attr(href);} /* can also be other attribute or other */
 	p:after {content: " -Read more… ";} /* insert some content after the content of <p> */
 	p:selection {} /* Selects the portion of <p> that is selected by a user */
 
