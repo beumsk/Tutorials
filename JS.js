@@ -1348,9 +1348,18 @@ DOM BASIS
 		console.log(Body is a textual node);
 	}
 
-	// access element node first child
+	// access element node first child (here body element)
 	console.log(document.body.childNodes[0]); // notice that it will return #text because it counts the space before first html tag
 	console.log(document.body.childNodes[1]); // return real first html tag
+	
+	// access element relationships (here header element)
+	console.log(getElementsByTagName("header").childeNodes); // returns an array of header child nodes
+	console.log(getElementsByTagName("header").firstChild); // returns an header first child	
+	console.log(getElementsByTagName("header").lastChild); // returns an header last child
+	console.log(getElementsByTagName("header").hasChildNodes); // returns true if childnodes; false otherwise
+	console.log(getElementsByTagName("header").nextSibling); // returns next node on same level
+	console.log(getElementsByTagName("header").previousSibling); // returns previous node on same level
+	console.log(getElementsByTagName("header").parentNode); //returns parent node
 
 	// check the child list
 	for (var i = 0; i < document.body.childNodes.length; i++) {
@@ -1477,7 +1486,7 @@ DOM CHANGE
 	// create and or set an attribute
 	document.querySelector('h1').setAttribute('id', 'title'); // first its name and secondly its value 
 
-	// 'id', 'href' and 'value' are easier
+	// 'id', 'href', 'src' and 'value' are easier
 	document.querySelector('h1').id = 'title';
 
 	// classList
