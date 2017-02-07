@@ -1544,7 +1544,7 @@ DOM CHANGE
 
 
 DOM STYLE
-// 
+// give style to elements
 	
 	// style element
 	var pElt = document.querySelector('p');
@@ -1590,6 +1590,57 @@ DOM STYLE
 	document.getElementById("infos").appendChild(document.createTextNode("Informations sur l'élément"));
 	document.getElementById("infos").appendChild(listeElt);
 
+	
+DOM EVENTS
+// help to react to user's actions
+	
+	// add an event
+	document.getElementById("button").addEventListener("click", function() {
+		console.log("Click !");
+	});
+	
+	// remove an event; function can't be anonymous
+	document.getElementById("button").removeEventListener("click", namedFunction());
+	
+	// get event type and target content
+	document.getElementById("button").addEventListener("click", function(e) {
+		console.log("Event :" + e.type + ", target text :" + e.target.textContent);
+	});
+	
+	// keypress event returning the pressed key (only for characters)
+	document.addEventListener("keypress", function (e) {
+			console.log("Vous avez appuyé sur la touche " + String.fromCharCode(e.charCode));
+	});
+	
+	// info on pressed key; work also with "keyup"
+	document.addEventListener("keydown", function(e) {
+		console.log("Evènement clavier : " + e.type + ", touche : " + e.keyCode);
+	});
+	
+	// Wait until the page is fully loaded to make an action
+	window.addEventListener("load", function() {
+		console.log("Page fully loaded");
+	});
+	
+	// warning before leaving page or tab
+	window.addEventListener("beforeunload", function(e) {
+		var message = "We are chill here !";
+		e.returnValue = message; // usual confirmation
+		return message; // confirmation for some browsers
+	});
+	
+	// stop propagation; propagation goes from child to parents
+	document.getElementById("propa").addEventListener("click", function (e) {
+    console.log("Gestionnaire bouton");
+		e.stopPropagation();
+	});
+	
+	// prevent default behavior
+	document.getElementById("interdit").addEventListener("click", function (e) {
+    console.log("Continuez plutôt à lire le cours ;)");
+    e.preventDefault(); // cancel the link navigation
+	});
+	
 
 API 
 // Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
