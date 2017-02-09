@@ -63,6 +63,7 @@ JQuery
 			$('p').toggle(''); // show/hide element
 			$('p').fadeIn(''); // fade element in
 			$('p').fadeOut(''); // fade element out
+			$('p').fadeToggle(''); // switch between fadeIn and fadeOut
 			$('p').fadeTo('slow', 0); // fade element to some opacity; speed and opacity as paramters
 			$('p').toggleClass("newClass"); // switch between oldClass and newClass for every event
 			$('p').slideUp(''); // hide element uping
@@ -124,6 +125,10 @@ JQuery
 			$('p').on('blur', function() { … }) // if field loses focus
 			$('p').on('resize', function() { … }) // 
 		});
+		
+		
+		// create html tag
+		$("<p></p>"); // creates p tag; need to append it later
 
 
 		// get value
