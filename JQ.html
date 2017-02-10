@@ -58,47 +58,49 @@ JQuery
 
 		// effect methods
 		$(function() {
-			$('p').show(''); // show element
-			$('p').hide(''); // hide element
-			$('p').toggle(''); // show/hide element
-			$('p').fadeIn(''); // fade element in
-			$('p').fadeOut(''); // fade element out
-			$('p').fadeToggle(''); // switch between fadeIn and fadeOut
+			$('p').show(1000, linear); // show element
+			$('p').hide(1000, linear); // hide element
+			$('p').toggle(1000, linear); // show/hide element
+			$('p').fadeIn(1000, linear); // fade element in
+			$('p').fadeOut(1000, linear); // fade element out
+			$('p').fadeToggle(1000, linear); // switch between fadeIn and fadeOut
 			$('p').fadeTo('slow', 0); // fade element to some opacity; speed and opacity as paramters
 			$('p').toggleClass("newClass"); // switch between oldClass and newClass for every event
-			$('p').slideUp(''); // hide element uping
-			$('p').slideDown(''); // hide element downing
-			$('p').slideToggle(''); // hide element same position
+			$('p').slideUp(1000, linear); // hide element uping
+			$('p').slideDown(1000, linear); // hide element downing
+			$('p').slideToggle(1000, linear); // hide element same position
 			$('button').prop('disabled', 'true'); // disables button
 			$('p').animate({left:'+=10px'}, 500); // animates p to 10px to the right
+			$('p').stop(); // stop currently running animation
 		});
 	
 
 		// manipulation methods
 		$(function() {
 			$('p').css('color', 'red') // change css of p
-			$('p').html(''); // replace content of first p with html tags understood
-			$('p').text(''); // replace text of p without tags understood
-			$('p').replaceWith(''); // replace entirely p
+			$('p').html('Hey <span>Red</span> !'); // replace content of first p with html tags understood
+			$('p').text('Hey Red !'); // replace text of p without tags understood
+			$('p').replaceWith('<p>Hey Red !</p>'); // replace entirely p
 			$('p').remove(); // remove p and children
 			$('p').empty(); // remove everything inside p
-			$('p').before(''); // insert content before p
-			$('p').after(''); // insert content after p
-			$('p').prepend(''); // insert inside p (after opening tag)
-			$('p').append(''); // insert inside p (before closing tag)
+			$('p').before('Content'); // insert content before p
+			$('p').after('Content'); // insert content after p
+			$('p').prepend('Content'); // insert inside p (after opening tag)
+			$('p').append('Content'); // insert inside p (before closing tag)
 			$('p').appendTo('div'); // insert p in div (before closing tag)
 			$('p').prependTo('div'); // insert p in div (after opening tag)
-			$('p').attr(''); // add attribut and value; removeAttr() too
-			$('p').addClass(''); // add class; removeClass() too; toggleClass() too
+			$('a').attr('href', 'http://somewhere.lol'); // add attribut and value; removeAttr() too
+			$('p').addClass('Class'); // add class; removeClass() too; toggleClass() too
 			$('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p)
 		});
 	
 
-		// DOM
+		// DOM traversing
 		$(function() {
-			$('p').find(''); // access to parameter inside p to for example change css
-			$('p').parent(''); // access to parent to for example, change css (parents possible too)
-			$('p').children(''); // access to children to for example, change css
+			$('p').find('span'); // access to span inside p to for example change css
+			$('p').siblings(); // access siblings (tag on same level)
+			$('p').parent(); // access to parent to for example, change css (parents possible too)
+			$('p').children(); // access to children to for example, change css
 			$('p:nth-child(3)'); // access to third child
 		});
 	
