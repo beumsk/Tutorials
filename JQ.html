@@ -6,17 +6,16 @@ JQuery
 <!DOCTYPE html>
 <html>
 <head>
-<title>JQuery</title>
+	<title>JQuery</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!--Bootstrap css-->
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!--jQuery library; always before js files-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script><!--IU jQuery for better animations-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!--Latest compiled JavaScript-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!--Latest compiled bootstrap JavaScript-->
 
 	<!--Best way is to write JQuery in an external js file but for a better view, i will combine in one here-->
 	<!--JQuery has 2 models: one for developement and one for online version (.min)-->
@@ -129,8 +128,9 @@ JQuery
 		});
 		
 		
-		// create html tag
-		$("<p></p>"); // creates p tag; need to append it later
+		// create
+		$("<p></p>"); // creates p tag (or anything else); need to append it later
+		var a = $([]); // create empty jquery object
 
 
 		// get value
@@ -179,7 +179,7 @@ JQuery
 		});
 	
 
-		// 
+		// get value from a form
 		$(document).ready(function () { // will add what you type in form
 			$('#button').click(function () {
 				var toAdd = $('input[name="message"]').val(); // get the value of the input tag 'name=mesage'
@@ -189,7 +189,7 @@ JQuery
 		// little trick; we would use a div instead of a button, to prevent the page to reload
 	
 
-	
+		// hover adding class and removing after
 		$(document).ready(function() {
 			$('div').hover( // can have to functions separated by a coma; what to do when hover, and what to do after
 				function() {
@@ -211,8 +211,9 @@ JQuery
   	});
 
 	
+		// code to let you move image in the 4 directions
 		$(document).ready(function() {
-			$(document).keydown(function(key) { // code to let you move image in the 4 directions
+			$(document).keydown(function(key) { 
 				switch(parseInt(key.which,10)) {
 					// left arrow pressed
 					case 37:
@@ -283,9 +284,6 @@ JQuery
 		});
 	
 	
-		var a = $([]); // create empty jquery object
-	
-
 		// a is an object which selects all 'div' tags
 		$(function() {
 			var a = $('div'); 
@@ -314,7 +312,7 @@ JQuery
 	</script>
 	
 
-	// display '#item' on click
+	<!--display '#item' on click-->
 	<a>Click</a> 
 	<p id="item">Hidden message</p>
 	<script>
@@ -326,7 +324,7 @@ JQuery
 	</script>
 	
 
-	// display '#item' on click and a pop-up
+	<!--display '#item' on click and a pop-up-->
 	<a>Click</a> 
 	<p id="item">Hidden message</p>
 	<script>
@@ -341,7 +339,7 @@ JQuery
 	</script>
 	
 
-	// dropdown button; need data-toggle on 'h1' to work
+	<!--dropdown button; need data-toggle on 'h1' to work-->
 	<div class="btn-group"> 
 		<h1 data-toggle="dropdown"><span class="label label-default">Pass on me !</span></h1>
 		<ul class="dropdown-menu">
@@ -359,7 +357,7 @@ JQuery
 	</script>
 	
 
-	// Modal windows; need '#info' tags and html files
+	<!--Modal windows; need '#info' tags and html files-->
 	<div class="container">  
 		<div class="btn-group">
 			<button id="page1" type="button" class="btn btn-primary">Page 1</button>
@@ -390,7 +388,7 @@ JQuery
 	</script>
 	
 
-	// Basic modal window
+	<!--Basic modal window-->
 	<button class="btn btn-primary">Informations</button>
 	<div class="modal" id="infos">
 		<div class="modal-dialog">
@@ -417,7 +415,7 @@ JQuery
 	</script>
 	
 
-	// Tab
+	<!--Tab-->
 	<ul class="nav nav-pills nav-justified">
 		<li><a href="#accueil">Home</a></li>
 		<li class="active"><a href="#livres">Books</a></li>
@@ -438,7 +436,7 @@ JQuery
 	</script>
 
 
-	// Waiting button
+	<!--Waiting button-->
 	<a class="btn btn-primary" data-loading-text="Chargement...">Cliquez !</a>
 	<script>
 		$(function (){
@@ -454,7 +452,7 @@ JQuery
 	</script>
 
 
-	// Carousel with commands and status
+	<!--Carousel with commands and status-->
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-offset-2 col-lg-8">
@@ -517,7 +515,7 @@ JQuery
 	</script>
 
 
-	// Tooltip
+	<!--Tooltip-->
 	<a data-toggle="tooltip" title="Tooltip">Tooltip</a>
 	<a data-toggle="tooltip" data-placement="bottom" title="Tooltip bottom">Tooltip bottom</a><!--also right and left-->
 	<script>
@@ -527,7 +525,7 @@ JQuery
 	</script>
 
 
-	// Popover
+	<!--Popover-->
 	<a href="#" class="btn btn-info" data-toggle="popover" data-content="Popover" data-trigger="focus" title="Popover">Popover</a><!--data-trigger="focus" change the way popover goes away-->
 	<a href="#" class="btn btn-info" data-toggle="popover" data-content="<i>Popover</i>" data-html="true" title="<b>Popover</b>">Popover bottom</a><!--allow html in popover-->
 	<script>
@@ -537,7 +535,7 @@ JQuery
 	</script>
 
 
-	// Panel
+	<!--Panel-->
 	<div class="container">
 		<div class="col-lg-6">
 			<div class="btn-group btn-group-justified" data-toggle="buttons">
@@ -569,8 +567,7 @@ JQuery
 	</script>
 
 
-	// Scrollspy animation
-
+	<!--Scrollspy animation-->
 	<script>
 		$(function () {
 			$('li>a').on('click', function(e) {
@@ -586,8 +583,7 @@ JQuery
 	</script>
 
 
-	// 
-
+	<!---->
 	<script>
 		$(function() {
 			
@@ -595,8 +591,7 @@ JQuery
 	</script>
 
 
-	// 
-
+	<!---->
 	<script>
 		$(function() {
 			
@@ -604,8 +599,7 @@ JQuery
 	</script>
 
 
-	// 
-
+	<!---->
 	<script>
 		$(function() {
 			
@@ -613,8 +607,7 @@ JQuery
 	</script>
 
 
-	// 
-
+	<!---->
 	<script>
 		$(function() {
 			
