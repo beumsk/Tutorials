@@ -38,6 +38,20 @@ for (i = 0; i < a.length; i++) {code block} // for loop
 
 a.forEach(function(element) {code block}); // forEach loop
 
+// DOM syntax
+
+document.getElementsByTagNamegName("tag"); // will return tag elements as an array
+document.getElementsByClassName("class"); // will return .class elements as an array
+document.getElementById("id"); // will return #id element
+document.querySelector("tag"); // will return first tag of document; querySelectorAll to get all tags as an array; works as CSS
+
+document.getElementById("id").setAttribute("src", "www.lol.com"); // set/change attribute; can often be written something.src("change");
+document.body.innerHTML = "some text"; // change all body content
+document.getElementById("id").textContent = "some text"; // similar to innerHTML; can use += to add some text
+document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
+
+
+
 
 CONSOLELOG
 // required to show something in js
@@ -1479,7 +1493,7 @@ DOM CHANGE
 	// innerHTML is more often used to clear an element content
 	document.getElementById('example').innerHTML = ''; // clear #example
 
-	// add some html using textContent
+	// add some text using textContent
 	document.querySelector('h1').textContent += ' more text in h1 title';
 
 
@@ -1640,6 +1654,56 @@ DOM EVENTS
     console.log("Continuez plutôt à lire le cours ;)");
     e.preventDefault(); // cancel the link navigation
 	});
+	
+	// one button count the clicks and another one disables the counting
+	var count = 0;
+	function e() {
+		count++;
+		document.getElementById("clickCounter").textContent = count;
+	}
+	document.getElementById("clicker").addEventListener("click", e);
+	document.getElementById("disable").addEventListener("click", function () {
+		document.getElementById("clicker").removeEventListener("click", e);
+	});
+	
+	// get pressed key and change background color accordingly
+	var Elts = document.getElementsByTagName("div");
+	var color = "";
+	document.addEventListener("keypress", function(e) {
+		switch (e.charCode) {
+			case 98:
+				color = "blue";
+				break;
+			case 103:
+				color = "green";
+				break;
+			case 114:
+				color = "red";
+				break;
+			case 121:
+				color = "yellow";
+				break;
+			default:
+				console.log("Wrong key");
+		}
+		for (i=0; i<Elts.length; i++) {
+			Elts[i].style.backgroundColor = color;
+		}
+	})
+	
+	// Add li to ul with prompt and change those with click
+	document.querySelector("button").addEventListener("click", function() {
+		var dessert = prompt("type your dessert");
+		var newElt = document.createElement("li");
+		newElt.textContent = dessert;
+		newElt.addEventListener("click", function() {
+			var newName = prompt("Change dessert name of ", this.textContent);
+			this.textContent = newName;
+		});
+		document.getElementById("desserts").appendChild(newElt);
+	});
+	
+	
 	
 
 API 
