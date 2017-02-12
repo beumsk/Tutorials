@@ -50,6 +50,11 @@ document.body.innerHTML = "some text"; // change all body content
 document.getElementById("id").textContent = "some text"; // similar to innerHTML; can use += to add some text
 document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
 
+newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
+document.body.removeChild(newDiv); // remove newDiv
+document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
+
+// add animation, events, 
 
 
 
