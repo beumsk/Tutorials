@@ -46,7 +46,7 @@ document.getElementById("id"); // will return #id element
 document.querySelector("tag"); // will return first tag of document; querySelectorAll to get all tags as an array; works as CSS
 
 document.getElementById("id").setAttribute("src", "www.lol.com"); // set/change attribute; can often be written something.src("change");
-document.body.innerHTML = "some text"; // change all body content
+document.getElementById("id").innerHTML = "some text"; // change #id content
 document.getElementById("id").textContent = "some text"; // similar to innerHTML; can use += to add some text
 document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
 
@@ -510,17 +510,21 @@ FUNCTIONS TEXT
 	// length with variables
 	var word = 'Kangaroo';
 	var wordLength = word.length;
-	console.log(wordLength);
+	console.log(wordLength); // 8
 
 	// Lower case
 	var word = 'Kangaroo';
 	var lowerWord = word.toLowerCase();
-	console.log(lowerWord);
+	console.log(lowerWord); // kangaroo
 
 	// Upper case
 	var word = 'Kangaroo';
 	var upperWord = word.toUpperCase();
-	console.log(upperWord);
+	console.log(upperWord); // KANGAROO
+
+	// check if string starts with something
+	var str = "http://jojo.be";
+	console.log(str.startsWith("http://")); // true
 
 	// return specific caracter
 	var word = 'Kangaroo';
@@ -1582,6 +1586,12 @@ DOM STYLE
 	// show style from external
 	var stylePara = getComputedStyle(document.getElementById('para'));
 	console.log(stylePara.color);
+	
+	// hide element
+	document.getElementById("toHide").style.display = "none";
+	
+	// show element
+	document.getElementById("toShow").style.display = "block"; // or inline
 
 	// change multiple tags style
 	var divColor = prompt('New text color :');
@@ -1708,7 +1718,20 @@ DOM EVENTS
 		document.getElementById("desserts").appendChild(newElt);
 	});
 	
+
+DOM FORMS 
+// get values, check values, 
+
+	// 
+
+
+
+DOM ANIMATIONS 
+// all animations
+
+	// 
 	
+
 	
 
 API 
