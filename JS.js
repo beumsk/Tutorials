@@ -1727,10 +1727,33 @@ DOM FORMS
 
 
 DOM ANIMATIONS 
-// all animations
+// all animations; use intervals for basics; CSS whenever you can; requestAnimationFrame() for the rest
 
-	// 
+	// set interval; can define an end of it
+	setInterval(function() {console.log("hello")}, 1000); // log "hello" every second
+
+	// clear interval; you must name your setInterval() in a var to be able to use clearInterval()
+	clearInterval(varSetInterval); // stops interval
+
+	// set timeout; 
+	setTimeout(function() {console.log("hello")}, 2000); // starts log after 2sec
 	
+	// clear timeout; you must name your setTimeout() in a var to be able to use clearTimeout()
+	clearTimeout(varSetInterval); // stops timeout
+
+	// request animation frame; 
+	function animate() {
+		// animation code...
+		requestAnimationFrame(animate);
+	}
+	requestAnimationFrame(animate);
+
+	// cancel animation frame; you must name your requestAnimationFrame() in a var to be able to use cancelAnimationFrame()
+	cancelAnimationFrame(varRequestAnimationFrame)
+
+	// you can also use CSS animations
+
+
 
 	
 
