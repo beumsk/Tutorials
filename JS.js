@@ -1327,13 +1327,17 @@ ARRAYS
 REGEXP 
 // regular expression object for matching text with a pattern
 
+	abc // Find strings containing "abc"
 	[abc] // Find any characters between the brackets
 	[^abc] // Find any character NOT between the brackets
+	[a-z] // Find any letters in lowercase
+	[A-Z] // Find any letters in uppercase
 	[0-9] // Find any digits between the brackets
 	[^0-9] // Find any character NOT between the brackets (any non-digit)
 	(x|y)	// Find any alternatives separated with |
 	\d	// Find a digit
 	\s	// Find a whitespace character
+	\w // Find any letter/digit or _ ; similar to [A-Za-z0-9_]
 	n+	// Matches any string that contains at least one n
 	n*	// Matches any string that contains zero or more occurrences of n
 	n?	// Matches any string that contains zero or one occurrences of n
@@ -1514,6 +1518,7 @@ DOM CHANGE
 
 	// standalone attributes
 	document.querySelector("h1").disabled = false; // or true
+	document.querySelector("h1").setAttribute("required", "false"); // other way to achieve it
 
 	// classList
 	var titleElt = document.querySelector('h1');
@@ -1725,8 +1730,61 @@ DOM EVENTS
 DOM FORMS 
 // get values, check values, 
 
-	// 
+	// prevent form submit; so no reload page anymore
+	document.querySelector("form").addEventListener("submit", function(e) {
+		e.preventDefault();
+	});
 
+	// get value of an input
+	var getValue = document.getElementsByTagName('input').value;
+	console.log(getValue); // log input value
+
+	// put focus or remove it
+	document.querySelector("input").focus(); 
+	document.querySelector("input").blur(); 
+
+	// add event with focus on input element or blur
+	document.querySelector("input").addEventListener("focus", function() { // just replace with "blur"
+		document.querySelector("input").style.color = "red";
+	});
+
+	// add event when a checkbox is checked or unchecked
+	document.querySelector("input").addEventListener("change", function () {
+		console.log("checkbox checked : " + e.target.checked); // true of false if checked or unchecked
+	});
+
+	// event when radio is changed to return value
+	for (i = 0; i < document.querySelectorAll("input").length; i++) {
+		document.querySelectorAll("input")[i].addEventListener("change", function (e) {
+			console.log("chosen radio input : " + e.target.value); // returns value attribute of the new chosen radio input
+		});
+	}
+
+	// event when dropping list option is changed
+	document.querySelector("select").addEventListener("change", function (e) {
+		console.log("Option selected from list : " + e.target.value); // returns value attribute of the new chosen option
+	});
+
+	// validation on submitting with submit event
+	document.querySelector("form").addEventListener("submit", function(e) {
+		if (e.target.value.indexOf("http://") === -1) {
+			console.log("not an URL !");
+		}
+	});
+
+	// validation while typing with input event
+	document.querySelector("form").addEventListener("input", function (e) {
+		if (e.target.value.length < 8) {
+			console.log("Password too short");
+		}
+	});
+
+	// validation when input loses focus
+	document.querySelector("form").addEventListener("blur", function(e) {
+		if (e.target.value.indexOf("@") === -1) {
+			console.log("email adress invalid");
+		}
+	});
 
 
 DOM ANIMATIONS 
@@ -1778,7 +1836,7 @@ DOM ANIMATIONS
 
 	// rebounding ball with start/stop animation
 	var box = document.getElementById("box");
-	var ball = document.getElementById("ball");
+	var ball = document.getElementById("ball"); // #ball must be position: relative and left : 0;
 	var start = document.getElementById("start");
 	var stop = document.getElementById("stop");
 	var ballWidth = parseFloat(getComputedStyle(ball).width);
