@@ -1512,6 +1512,9 @@ DOM CHANGE
 	// 'id', 'href', 'src' and 'value' are easier
 	document.querySelector('h1').id = 'title';
 
+	// standalone attributes
+	document.querySelector("h1").disabled = false; // or true
+
 	// classList
 	var titleElt = document.querySelector('h1');
 	titleElt.classList.remove('main');
@@ -1752,6 +1755,54 @@ DOM ANIMATIONS
 	cancelAnimationFrame(varRequestAnimationFrame)
 
 	// you can also use CSS animations
+
+	// start timer and be able to pause/start
+	var start = document.getElementById("start");
+	var stop = document.getElementById("stop");
+	var span = document.getElementById("time");
+	var time = 0;
+	span.innerHTML = time;
+	start.addEventListener("click", function() { // on start
+		stop.style.display = "block";
+		start.style.display = "none";
+		setTime = setInterval(function() {
+			time ++;
+			span.innerHTML = time;
+		}, 1000);
+	});
+	stop.addEventListener("click", function() { // on stop
+		start.style.display = "block";
+		stop.style.display = "none";
+		clearTimeout(setTime);
+	});
+
+	// rebounding ball with start/stop animation
+	var box = document.getElementById("box");
+	var ball = document.getElementById("ball");
+	var start = document.getElementById("start");
+	var stop = document.getElementById("stop");
+	var ballWidth = parseFloat(getComputedStyle(ball).width);
+	var direction = 1;
+	function moveBall() {
+		var xBall = parseFloat(getComputedStyle(ball).left); // get ball position
+		var xMax = parseFloat(getComputedStyle(box).width); // get max width
+		if ((xBall + ballWidth > xMax) || (xBall < 0)) {
+			direction *= -1; // change direction
+		}
+		ball.style.left = (xBall + 10 * direction) + "px"; // actual moving line
+		animationId = requestAnimationFrame(moveBall);
+	}
+	start.addEventListener("click", function() { // starts animation
+		stop.disabled = false;
+		start.disabled = true;
+		animationId = requestAnimationFrame(moveBall);
+	});
+	stop.addEventListener("click", function() { // stops animation
+		start.disabled = false;
+		stop.disabled = true;
+		cancelAnimationFrame(animationId);
+	});
+
 
 
 
