@@ -49,6 +49,7 @@ HYPERTEXT MARKUP LANGUAGE
 	<![endif]-->
 </head>
 
+
 <!--BODY ELEMENTS-->    
 <body><!--Visible content of the page--><br><hr><br><br>
 	<div id="id">div with id</div><!--id="" allows to target elements in CSS using # ; useful to link to a place in the page--><hr>
@@ -69,6 +70,7 @@ HYPERTEXT MARKUP LANGUAGE
 	<progress value="60" max="100"><!-- display progress bar; takes color as background-->
 	<time>10:30</time><!--not very useful since it changes nothing-->
 	
+
 	<!--LINKS-->
 	<a href="url" target="_blank">url</a><br><!--to create a link, blank open in a new tab--><hr>
 	<a href="url" title="bull text">url with bubble</a><br><!--link with some bull text--><hr>
@@ -78,12 +80,14 @@ HYPERTEXT MARKUP LANGUAGE
 	<a href="#id">reach #id</a><br><!--reach the id="id" section of the page--><hr>
 	<a href="#"><img src="img/html.jpg" width="200px"></a><br><!--link on an image--><hr>
 
+
 	<!--IMAGES OR FRAMES-->
 	<a href="img/html.jpg"><img src="img/html.jpg" alt="mini" title="mini" width="200px"></a><!--link img to bigger image--><br><hr>
 	<img src="img/html.jpg" alt="" width="200px" /><!--to insert an image, can also be .png, .jpg, .gif--><br><hr>
 	<img src="img/html.jpg" alt="" title="bull text" width="200px"><!--infobull--><br><hr>
 	<iframe src="HTML.html"></iframe><!--display a webpage inside one--><br><hr>
 	<iframe src="http://www.youtube.com/embed/xxxxxxxxx"></iframe><!--to insert a Youtube video--><br><hr>
+
 
 	<!--NAVIGATION-->
 	<nav><!--for navigation links (menu with <a> tags)-->
@@ -92,6 +96,7 @@ HYPERTEXT MARKUP LANGUAGE
 		<a href="">Trois</a>
 	</nav><hr>
 
+
 	<!--PRDERED LIST-->
 	<ol>
 		<li>Un</li><!--list elements-->
@@ -99,12 +104,14 @@ HYPERTEXT MARKUP LANGUAGE
 		<li>Trois</li>
 	</ol><hr>
 
+
 	<!--UNORDERED LIST-->
 	<ul>
 		<li>Bleu</li><!--list element-->
 		<li>Rouge</li>
 		<li>Jaune</li>
 	</ul><hr>
+
 
 	<!--DESCRIPTIVE LIST-->
 	<dl>
@@ -115,6 +122,7 @@ HYPERTEXT MARKUP LANGUAGE
 	</dl><hr>
 
 	<!--float:left or display:inline to display a list horizontally-->
+
 
 	<!--TABLE-->
 	<table border="solid">
@@ -155,6 +163,7 @@ HYPERTEXT MARKUP LANGUAGE
 	</tfoot>
 	</table><hr>
 
+
 	<!--TEXT MODIFICATIONS-->
 	<b>bold</b><!--bold similar to <strong></strong>--><br><hr>
 	<i>italic</i><!--italic similar to <em></em>--><br><hr>
@@ -165,6 +174,7 @@ HYPERTEXT MARKUP LANGUAGE
 	<sub>subscripted</sub><!--subscripted--><br><hr>
 	<del>crossed</del><!--crossed--><br><hr>
 	<ins>underline</ins><!--underline--><br><hr>
+
 
 	<!--ICONS-->
 	<i class="fa fa-cloud" style="font-size:24px;"></i><!--font-awesome icon, use fa-1x to fa-5x to resize-->
@@ -258,9 +268,10 @@ HYPERTEXT MARKUP LANGUAGE
 		<area shape="circle" coords="124,58,8" alt="Venus" href=""/>
 	</map><hr>
 
+
 	<!--FORMS-->
 	<form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
-		<fieldset><!--borders the questions-->
+		<fieldset><!--borders the questions; can create different parts in the form-->
 			<legend>Information</legend><!--name of the fieldset-->
 			<input type="text" name="firstname" required><!--one line field to answer, use autofocus to focus directly on that input, required to be able to submit--><hr>
 			<label for="label">Label</label><input type="text" name="label" id="label"><!--Label helps the user to know what he has to write in the form; need for & id--><hr>
@@ -286,6 +297,7 @@ HYPERTEXT MARKUP LANGUAGE
 			<input type="submit" value="submit"><!--submit button to send answers-->
 		</fieldset>
 	</form><hr>
+
 
 	<!--EXPANDABLE-->
 	<details><!--Details and summary elements; no need of javascript to use expandables-->
