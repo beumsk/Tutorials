@@ -1813,6 +1813,94 @@ DOM FORMS
 		e.preventDefault();
 	});
 
+	// select an option and make a list appear accordingly
+	var houses = [ // array of object
+    {
+      code: "ST",
+      name: "Stark"
+    },
+    {
+      code: "LA",
+      name: "Lannister"
+    },
+    {
+      code: "BA",
+      name: "Baratheon"
+    },
+    {
+      code: "TA",
+      name: "Targaryen"
+    }
+	];
+	function getChar(houseCode) { // check code and return names
+    switch (houseCode) {
+    case "ST":
+      return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];
+    case "LA":
+      return ["Tywin", "Cersei", "Jaime", "Tyrion"];
+    case "BA":
+      return ["Robert", "Stannis", "Renly"];
+    case "TA":
+      return ["Aerys", "Daenerys", "Viserys"];
+    default:
+      return [];
+    }
+	}
+	for (i = 0; i < houses.length; i++) { // create form list
+    var option = document.createElement("option");
+    option.innerHTML = houses[i].name;
+    option.setAttribute("value", houses[i].code);
+    document.getElementById("house").appendChild(option);
+	}
+	document.getElementById("house").addEventListener("change", function (e) { // create list with names linked to code
+    var char = getChar(e.target.value);
+    document.getElementById("char").innerHTML = "";
+    for (j = 0; j < char.length; j++) {
+      var li = document.createElement("li");
+      li.innerHTML = char[j];
+      document.getElementById("char").appendChild(li);
+    }
+	});
+
+	// get suggestions and select one
+	var countryList = [
+    "Afghanistan",
+    "Afrique du Sud",
+    "Albanie",
+    "Algérie",
+    "Allemagne",
+    "Andorre",
+    "Angola",
+    "Anguilla",
+    "Antarctique",
+    "Antigua-et-Barbuda",
+    "Antilles néerlandaises",
+    "Arabie saoudite",
+    "Argentine",
+    "Arménie",
+    "Aruba",
+    "Australie",
+    "Autriche",
+    "Azerbaïdjan"
+];
+var country = document.getElementById("pays");
+var suggestions = document.getElementById("suggestions")
+country.addEventListener("input", function (e) { // when typing
+    suggestions.innerHTML = "";
+    for (i = 0; i < countryList.length; i++) { 
+        if (countryList[i].indexOf(e.target.value) !== -1) { // check if country name have typed letters
+            var suggest = document.createElement("div");
+            suggest.classList.add("suggestion");
+            suggest.innerHTML = countryList[i];
+            suggestions.appendChild(suggest); // add true elements as suggestions
+            suggestions.addEventListener("click", function(f) { // on click on element, put that element in input
+                country.value = f.target.textContent;
+                suggestions.innerHTML = "";
+            });
+        }
+    }
+});
+
 
 
 DOM ANIMATIONS 
