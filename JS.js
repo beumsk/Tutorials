@@ -1640,7 +1640,7 @@ DOM EVENTS
 	document.getElementById("button").removeEventListener("click", namedFunction());
 	
 	// get event type and target content
-	document.getElementById("button").addEventListener("click", function(e) {
+	document.getElementById("button").addEventListener("click", function (e) {
 		console.log("Event :" + e.type + ", target text :" + e.target.textContent);
 	});
 	
@@ -1650,7 +1650,7 @@ DOM EVENTS
 	});
 	
 	// info on pressed key; work also with "keyup"
-	document.addEventListener("keydown", function(e) {
+	document.addEventListener("keydown", function (e) {
 		console.log("Evènement clavier : " + e.type + ", touche : " + e.keyCode);
 	});
 	
@@ -1660,7 +1660,7 @@ DOM EVENTS
 	});
 	
 	// warning before leaving page or tab
-	window.addEventListener("beforeunload", function(e) {
+	window.addEventListener("beforeunload", function (e) {
 		var message = "We are chill here !";
 		e.returnValue = message; // usual confirmation
 		return message; // confirmation for some browsers
@@ -1692,7 +1692,7 @@ DOM EVENTS
 	// get pressed key and change background color accordingly
 	var Elts = document.getElementsByTagName("div");
 	var color = "";
-	document.addEventListener("keypress", function(e) {
+	document.addEventListener("keypress", function (e) {
 		switch (e.charCode) {
 			case 98:
 				color = "blue";
@@ -1727,17 +1727,24 @@ DOM EVENTS
 	});
 	
 
+
 DOM FORMS 
 // get values, check values, 
 
 	// prevent form submit; so no reload page anymore
-	document.querySelector("form").addEventListener("submit", function(e) {
+	document.querySelector("form").addEventListener("submit", function (e) {
 		e.preventDefault();
 	});
 
 	// get value of an input
 	var getValue = document.getElementsByTagName('input').value;
 	console.log(getValue); // log input value
+
+	// check form elements
+	var form = document.querySelector("form");
+	console.log(form.elements.length); // number of inputs inside form
+	console.log(form.elements[0].name); // first input name
+	console.log(form.elements.mdp.type); // mdp input type
 
 	// put focus or remove it
 	document.querySelector("input").focus(); 
@@ -1785,6 +1792,27 @@ DOM FORMS
 			console.log("email adress invalid");
 		}
 	});
+
+	// check passwords
+	document.querySelector("form").addEventListener("submit", function (e) {
+		var pass1 = document.getElementById("pass1");
+		var pass2 = document.getElementById("pass2");
+		var info = document.getElementById("infoPass");
+		if (pass1.value !== pass2.value) { // if passwords are different
+			info.innerHTML += "The passwords are not the same. Please try again. </br>";
+		}
+		if (pass1.value.length < 6) { // if password is shorter than 6 char
+			info.innerHTML += "The password must contain at least 6 characters. </br>"
+		}
+		if (!/[0-9]/.test(pass1.value)) { // if no digit
+			info.innerHTML += "The password must have at least one number. </br>";
+		}
+		if (pass1.value === pass2.value && pass1.value.length >=6 && /[0-9]/.test(pass1.value)) { // if all true
+			info.innerHTML = "Correct Password !"
+		}
+		e.preventDefault();
+	});
+
 
 
 DOM ANIMATIONS 
