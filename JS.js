@@ -2277,8 +2277,8 @@ DOM ANIMATIONS
 
 
 
-SERVER
-// 
+SERVER REQUESTS
+// manage requests to the server
 
 
 	// synchronous GET requet of a doc through web server
@@ -2290,7 +2290,7 @@ SERVER
 
 	// asynchronous GET request
 	var req = new XMLHttpRequest();
-	req.open("GET", "http://localhost/repository/file.txt", false); 
+	req.open("GET", "http://localhost/repository/file.txt"); // no false because asynchronous request
 	req.addEventListener("load", function () { // use of load event to make it asynchronous
 		console.log(req.responseText);
 	});
@@ -2298,7 +2298,70 @@ SERVER
 
 
 	// handling errors
-	
+	var req = new XMLHttpRequest();
+	req.open("GET", "http://localhost/repository/file.txt");
+	req.addEventListener("load", function () {
+		if (req.status >= 200 && req.status < 400) { // server succeed with the request
+			console.log(req.responseText);
+		}
+		else {
+			console.error(req.status + " " + req.statusText); // error with request information
+		}
+	});
+	req.addEventListener("error", function () {
+		console.error("Network error"); // request did not reach server
+	});
+	req.send(null);
+
+
+	// generic AJAX function (AJAX = asynchronous HTTP); it is better to define the function in another js file when you have multiple js file that will need it
+	function ajaxGet(url, callback) {
+		var req = new XMLHttpRequest();
+		req.open("GET", url);
+		req.addEventListener("load", function () {
+			if (req.status >= 200 && req.status < 400) {
+				callback(req.responseText);
+			}
+			else {
+				console.error(req.status + " " + req.statusText + " " + url);
+			}
+		});
+		req.addEventListener("error", function () {
+			console.error("Network error with URL " + url);
+		});
+		req.send(null);
+	}
+	function call(answer) { // function that handle the answer (aka callback)
+		console.log(answer);
+	}
+	ajaxGet("http://localhost/repository/file.txt", call);
+	// ajaxGet("http://localhost/repository/file.txt", function (answer) {console.log(answer)}); shorter way with anonym function
+
+
+	// move from JS to JSON and from JSON to JS
+	var planes = [
+		{
+			brand: "Airbus",
+			model: "A320"
+		},
+		{
+			brand: "Airbus",
+			model: "A380"
+		}
+	];
+	console.log(planes);
+	var textPlanes = JSON.stringify(planes); // JS objects array into JSON string
+	console.log(textPlanes);
+	console.log(JSON.parse(textPlanes)); // JSON string into JS objects array
+
+
+	// get data from server converting JSON to JS and display list
+	ajaxGet("http://localhost/repository/file.txt", function (answer) {
+		var list = JSON.parse(answer); // JS objects array
+		list.forEach(function (smth) {
+			console.log(smth.thing); // have thing for each smth
+		})
+	});
 
 
 	
