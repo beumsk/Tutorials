@@ -3,11 +3,17 @@ JAVASCRIPT
 		-by Beumsk
 	
 
+		
+		
 TODO: better way to present 
 
 // To create a comment. Shown in code only. Indent 2spaces
+
 /* Multiple line comment */
+
 // Use inspect(f12) & debugger(source) to check easily js file
+
+
 
 
 MAIN JS 
@@ -56,97 +62,156 @@ document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
 
 // add animation, events, 
 
+___
+
+
 
 
 CONSOLELOG
 // required to show something in js
 
+
 	console.log("Text"); // show text
+
 	console.log("up \n down"); // \n acts like enter
+
 	console.log("\' \" \\ "); // to use those tricky characters
+
 	console.log(3 + 4 - 1 * 4 / 2); // process and give answer
+
 	console.log(10 % 3); // show the rest of division -> it is called modulo
+
 	console.log("hel" + "lo"); // show addition of the two strings "bonjour"
+
 	console.log("hello", "you"); // show both strings with a space between "hello you"
+
 	console.log("Text".length); // count number of characters
+
 	console.log("hi, how are you?".length); // works with sentences also
+
 	console.log("Text".substring(0, 2)); // show letters (start, end-1); here 'Te'; we could say we start from 0 position and go for a number = difference between two numbers
+
 	console.log("repeat ".repeat(9)); // show 9 times "repeat "
+
 	console.log("slice".slice(0, 3)); // show sliced string from 0 to 2 "sli" (3 is not included)
+
 	console.log("A".charCodeAt()); // show charCode of "A"; 65 here
+
 	console.log(String.fromCharCode(65)); // show letter of 65; "A" here
+
 	console.log(isNaN(10)); // returns false (true if it is actually NotaNumber)
+
 	console.log(typeof "string"); // can return number, boolean, string, function, object (array return object in JS)
+
+
 
 
 ERRORS 
 // error example -> ReferenceError: not defined; ends the work of JS (the code afterwards will never be processed)
 
 
+
+
 VARIABLES
 // JavaScript variables are containers for storing data values.
 
+
 	var a; console.log(a); // creates variable without value
+
 	var a; a = 10; console.log(a); // create variable with value of '10'
+
 	var a = 10; console.log(a); // shortened method
+
 	var a = 0; a += 1; a ++; console.log(a); // add 1 and 1 to 'a' variable to reach 2
+
 	var a = 5; a -= 1; a --; console.log(a); // substracts 1 and 1 to reach 3
+
 	var a = 5; a *= 5; a /= 5; console.log(a); // multiply by 5 and divide by 5 to reach 5
+
 	var a = 3; var b = a + 2; console.log(b); // 'b' will value 5 (3+2)
+
 	var a = Number("5"); console.log(a); // 'a' will value  the number 5 and not the string '5'
+
 	var a = String(5); console.log(a); // 'a' will value the string '5' and not the number 5
+
 	var a = "five" * 2; console.log(a); // NaN; Not a Number
+
 	var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
+
+
 
 
 POP-UPS
 // launch pop-up
 
+
 	confirm("Are you sure to leave?"); // launch pop-up to confirm -> return true/false
+
 	prompt("Enter tour name"); // launch pop-up where user can answer -> return the answer
+
 	alert("hello"); // launch pop-up with text
+
 	var name = prompt("Enter your name :"); alert("hello, " + name); // pop-up to type name and another one to say 'hello name'
+
 	var nb = Number(prompt("Enter a number ")); // by default the value type will be string; use Number() to change it
+
 	var ht = Number(prompt("enter your ht price : ")); ttc = ht * 1.196; alert("Price TTC = " + ttc); // process full price
+
+
 
 
 COMPARISONS
 // Comparison and Logical operators are used to test for true or false
 
+
 	// smaller than 
 		8 < 10 
+		
 	// greater than
 		10 > 8 
+		
 	// smaller or equal to
 		10 <= 10 
+		
 	// greater or equal to
 		10 >= 10 
+		
 	// equal to (weak)
 		10 == 10
+		
 	// different from (weak)
 		10 != 8
+		
 	// equal to and same type (strict)
 		10 === 10
+		
 	// different and different type from (strict)
 		10 !== 8
+		
 	// 'AND'
 		(10 > 8) && (10 ===10)
+		
 	// 'OR'
 		(8 < 10) || (8 > 10)
+		
 	// opposite of instruction
 		!(10 < 8)
 
 	// counts number of characters and compares it to 10 to finally return true (or false accordingly)
 	"I code like a champion".length > 10 
 
+	
+	
 
 CONDITIONS
 // Conditional statements are used to perform different actions based on different conditions
+
 
 	// return the sentence because it is true
 	if ("Rémy".length = 4) {
 		console.log("You're name may be Rémy");
 	} 
+
 
 	// return the else because it's false
 	if ("Rémy".length > 4) {
@@ -155,6 +220,7 @@ CONDITIONS
 	else {
 		console.log ("You're definitely not Rémy")
 	} 
+
 
 	// according to number typed, it will answer differently
 	var number = Number(prompt("Enter a number :")); 
@@ -169,6 +235,7 @@ CONDITIONS
 			console.log(number + " is negative");
 		}
 	}
+
 
 	// switch is a better way for defined options // do not forget the break; !
 	var weather = prompt("What is the weather ?"); 
@@ -186,6 +253,7 @@ CONDITIONS
 			console.log("I did not understand");
 			break;
 	}
+
 
 	// if you do not use breaks, cases will merge till the next break
 	var answer = "";
@@ -207,6 +275,7 @@ CONDITIONS
 			break;
 	}
 
+
 	// what you can drive by age using 'else if' (which is more efficient)
 	var age = Number(prompt("Enter your age :")); 
 	if (age >= 18) {
@@ -218,6 +287,7 @@ CONDITIONS
 	else {
 		console.log("You can walk, run or bike !");
 	}
+
 
 	// comparison of two numbers
 	var number1 = Number(prompt("Enter first number"));
@@ -235,11 +305,11 @@ CONDITIONS
 		console.log("not");
 	}
 
+
 	// the hour one second later
 	var hours = Number(prompt("Enter hour"));
 	var minutes = Number(prompt("Enter minute"));
 	var seconds = Number(prompt("Enter second"));
-
 	if ((hours >= 0) && (hours <= 23) && (minutes >= 0) && (minutes <= 59) && (seconds >= 0) && (seconds <= 59)) {
 		seconds++;
 		if (seconds === 60) {
@@ -260,8 +330,11 @@ CONDITIONS
 	}
 
 
+
+
 LOOPS
 // while the condition is true, the code is looping
+
 
 	// while loop; use it by default
 	var number = 1;
@@ -270,12 +343,14 @@ LOOPS
 		number++;
 	}
 
+
 	// while with prompt inside
 	var lettre = "";
 	while (lettre !== "X") {
 		lettre = prompt("type a letter; you can quit with 'X'");
 		console.log(lettre);
 	}
+
 
 	// while with prompt outside
 	var nbTours = Number(prompt("number of tours"));
@@ -285,12 +360,14 @@ LOOPS
 		tours++;
 	}
 
+
 	// number between 50 and 100
 	var number = 0;
 	while ((number > 100) || (number < 50)) {
 		number = Number(prompt("enter number between 50 and 100"));
 	}
 	console.log("gg");
+
 
 	// multiplication table between 1 and 10
 	var table = 0;
@@ -303,6 +380,7 @@ LOOPS
 		mult++;
 	}
 
+
 	// Yes or No game
 	var word = prompt("Do you want to play Yes or No?");
 	while ((word !== "yes") && (word !== "no")) {
@@ -310,11 +388,13 @@ LOOPS
 	}
 	console.log("You lose !")
 
+	
 	// /!\ careful with infinite loops
 	var number = 1;
 	while (number <= 4) {
 		console.log(number); // the condition will always be true and will therefore lead to infinite loop
 	}
+
 
 	// do while loop; while alike, but will do the first block code at least once (even if while is false)
 	var count = 11;
@@ -324,16 +404,19 @@ LOOPS
 	}
 	while (count <= 5); // will log 11
 
+
 	// for loop; use when you know the number of loops
 	var number;
 	for (number = 1; number <= 4; number++) {
 		console.log(number);
 	}
 
+
 	// when variable is only used in the for loop
 	for (var number = 1; number <= 4; number++) {
 		console.log(number);
 	}
+
 
 	// break; end of the loop
 	for (var i  =0; i <= 5; i++) {
@@ -343,6 +426,7 @@ LOOPS
 		console.log(i);
 	} // 0 1 2; stops when 3 reached
 
+
 	// continue; breaks one iteration in the loop
 	for (var i = 0; i <= 5; i++) {
 		if (i === 3) {
@@ -350,6 +434,7 @@ LOOPS
 		}
 		console.log(i);
 	} // 0 1 2 4 5; no 3
+
 
 	// for with prompt and condition
 	var number = Number(prompt("Enter a number"));
@@ -362,12 +447,14 @@ LOOPS
 		}
 	}
 
+
 	// Show more and more characters
 	var ligne ="";
 	for (i = 1; i <= 7; i++) {
 		ligne += "#"; // equal to 'ligne = ligne + "#";'
 		console.log(ligne);
 	}
+
 
 	// fizzbuzz (similar to dingdingbottle)
 	for (i = 1; i <= 100; i++) {
@@ -385,11 +472,13 @@ LOOPS
 		}
 	}
 
+
 	// /!\ careful with double increment
 	for (var number = 1; number <= 5; number++) {
 		console.log(number);
 		number++; // will display 1, 3 and 5 because of double increment !
 	}
+
 
 	//forEach loop
 	var a = [1, 2, 3, 4, 5];
@@ -398,8 +487,11 @@ LOOPS
 	});
 
 
+
+
 FUNCTIONS
 // A JavaScript function is a block of code designed to perform a particular task. You need to invoke it
+
 
 	// simple function
 	function sayHello() {
@@ -407,11 +499,13 @@ FUNCTIONS
 	}
 	sayHello();
 
+
 	// function with return; function exits at return statement, whatever comes after never outputs
 	function sayHello() {
 		return 'Hello !';
 	}
 	console.log(sayHello());
+
 
 	// function with return and variable
 	function sayHello() {
@@ -419,6 +513,7 @@ FUNCTIONS
 	}
 	var resultat = sayHello;
 	console.log(resultat);
+
 
 	// local variables; they can't be used outside the function
 	function sayHello() {
@@ -428,6 +523,7 @@ FUNCTIONS
 	console.log(sayHello()); // that works perfectly
 	console.log(message); // error, variable works only inside function
 
+
 	// function with parameters
 	function sayHello(name) {
 		var message = 'Hello, ' + name + ' !';
@@ -436,6 +532,7 @@ FUNCTIONS
 	console.log(sayHello('Nicolas'));
 	console.log(sayHello('Rémy'));
 
+
 	// function with multiple parameters
 	function sayHello(name, surname) {
 		var message = 'Hello, ' + name + ' ' + surname + ' !';
@@ -443,6 +540,7 @@ FUNCTIONS
 	}
 	console.log(sayHello('Nicolas', 'Beumier')); // must be in right irder of course
 	console.log(sayHello('Rémy', 'Beumier'));
+
 
 	// function with prompt
 	function sayHello (name, surname) {
@@ -453,6 +551,7 @@ FUNCTIONS
 	var s = prompt('enter your surname');
 	console.log(sayHello(n, s));
 
+
 	// function with for loop
 	function carre(number) {
 		var resultat = number * number;
@@ -461,6 +560,7 @@ FUNCTIONS
 	for (var i = 0; i <= 10; i++) {
 		console.log(carre(i));
 	}
+
 
 	// function with if
 	function min(number1, number2) {
@@ -472,6 +572,7 @@ FUNCTIONS
 		}
 	}
 	console.log(min(9, 1));
+
 
 	// calculator
 	function calculator(number1, mult, number2) {
@@ -493,11 +594,11 @@ FUNCTIONS
 	console.log(calculator(2, "*", 0)); // returns 0
 	console.log(calculator(12, "/", 0)); // returns Infinity
 
+
 	// circle perimeter and radius
 	function perimeter(radius) {
 		return 2 * Math.PI * radius;
 	}
-
 	function area(radius) {
 		return Math.PI * radius * radius;
 	}
@@ -506,38 +607,47 @@ FUNCTIONS
 	console.log(area(radius));
 
 
+
+
 FUNCTIONS TEXT 
 // functions working on text strings
+
 
 	// length with variables
 	var word = 'Kangaroo';
 	var wordLength = word.length;
 	console.log(wordLength); // 8
 
+
 	// Lower case
 	var word = 'Kangaroo';
 	var lowerWord = word.toLowerCase();
 	console.log(lowerWord); // kangaroo
+
 
 	// Upper case
 	var word = 'Kangaroo';
 	var upperWord = word.toUpperCase();
 	console.log(upperWord); // KANGAROO
 
+
 	// check if string starts with something
 	var str = "http://jojo.be";
 	console.log(str.startsWith("http://")); // true
+
 
 	// return specific caracter
 	var word = 'Kangaroo';
 	console.log(word[3]);
 	console.log(word.charAt(3));
 
+
 	// return all caracter from a variable
 	var word = 'Kangaroo';
 	for (var i = 0; i < word.length; i++) {
 		console.log(word[i]);
 	}
+
 
 	// lots of process on a word
 	var word = prompt('Enter a word');
@@ -605,49 +715,63 @@ FUNCTIONS TEXT
 
 
 
+
 FUNCTIONS MATH 
 // Functions working on numbers; they start with 'Math.'
+
 
 	// Math.min; returns the smallest number from parameters
 	console.log(Math.min(9, 7, 6, 1)); // 1
 
+
 	// Math.max; returns the biggest number from parameters
 	console.log(Math.max(9, 1, 6, 3, 5)); // 9
 
+
 	// Math.random; returns a random number between 0 and 1
 	console.log(Math.random());
+
 
 	// Math.random; 
 	console.log(Math.random() * 100); // random number 1 to 100; change '100' to change possibilities of course
 	console.log(Math.floor(Math.random() * 100)); // random number without decimals
 
+
 	// Math.pow; returns first parameter powered by second parameter
 	console.log(Math.pow(5, 2)); // 25
 
+
 	// Math.sqrt; returns square root of parameter
 	console.log(Math.sqrt(16)); // 16
+
 
 	// Math.abs; returns absolute of parameter
 	console.log(Math.abs(-12)); // 12
 	
 	
 
+
 DATE
 // Date object enables us to work with dates; dates are calculated from 01 Jan 1970 00:00:00
+
 
 	// current date and time
 	var d = new Date();
 	console.log(d); // now
 
+
 	// set date easily
 	var d2 = new Date("January 2, 2015 10:42:00"); // Fri Jan 02 2015 10:42:00
+
 
 	// set date with numbers
 	var d3 = new Date(88,5,11,11,42,0,0); // Sat Jun 11 1988 11:42:00
 
+
 	// get hours; returns hour of date
 	var d = new Date();
 	var hours = d.getHours(); // current hour; getMinutes(), getSeconds(), getMilliseconds()
+
 
 	// get year; returns year of date
 	var d = new Date();
@@ -655,8 +779,10 @@ DATE
 
 
 
+
 OBJECTS
 // they are like complexed variables; they include multiple parameters and functions; you can have objects nested in an array too
+
 
 	// simple object with 3 properties
 	var pen = {
@@ -667,20 +793,27 @@ OBJECTS
 	console.log(pen.type);
 	console.log(pen.color);
 	console.log(pen.brand);
+
 	// change property
 	pen.color = 'red';
+
 	// other way to reach properties; useful for var or parameters, or with var containing spaces
 	console.log(pen['color']);
+
 	// in a single line
 	console.log(pen.type + ' ' + pen.color + ' ' + pen.brand);
+
 	// add property
 	pen.price = 2;
-	console.log('My ' + pen.brand + ' ' + pen.color + ' ' + pen.type + 'pen costs ' + pen.price + ' euros.' )
+	console.log('My ' + pen.brand + ' ' + pen.color + ' ' + pen.type + 'pen costs ' + pen.price + ' euros.' );
+	
 	// delete a property
 	delete pen.price;
 
+
 	// check if a propery exists; true or false
 	pen.hasOwnProperty(type);
+
 
 	// basic rpg
 	var char = {
@@ -692,6 +825,7 @@ OBJECTS
 	console.log(char.name + ' is hurt by an arrow! 20 hp lost...');
 	char.hp = char.hp - 20;
 	console.log(char.name + ' has ' + char.hp + ' hp and ' + char.strength + ' strength.');
+
 
 	// basic rpg with function inside object
 	var char = {
@@ -711,6 +845,7 @@ OBJECTS
 	char.strength = char.strength + 10;
 	console.log(char.describe());
 
+
 	// dog describe + function
 	var dog = {
 		name: 'Medor',
@@ -722,6 +857,7 @@ OBJECTS
 	};
 	console.log(dog.name + ' is a ' + dog.race + ' of ' + dog.size + ' cm.');
 	console.log('Watch out ! A cat ! ' + dog.name + ' Bark : ' + dog.bark());
+
 
 	// prompt radius to give perimeter and area
 	var r = Number(prompt("Enter the circle radius :"));
@@ -735,6 +871,7 @@ OBJECTS
 	};
 	console.log("Perimeter = " + circle.perimeter());
 	console.log("Area = " + circle.area());
+
 
 	// account debit and credit
 	var account = {
@@ -754,6 +891,7 @@ OBJECTS
 	account.credit(200);
 	account.debit(150);
 	console.log(account.describe());
+
 
 	// account debit and credit with prompt
 	var credit = Number(prompt('Enter your credit'));
@@ -777,8 +915,11 @@ OBJECTS
 	console.log(account.describe());
 
 
+
+
 PROTOTYPES
 // they allow objects to get values from other objects
+
 
 	// simple prototype
 	var anObject = {
@@ -787,6 +928,7 @@ PROTOTYPES
 	var anotherObject = Object.create(anObject);
 	console.log(anObject.a);
 	console.log(anotherObject.a);
+
 
 	// multiple prototype
 	var anObject = {
@@ -797,6 +939,7 @@ PROTOTYPES
 	console.log(anObject.a);
 	console.log(anotherObject.a);
 	console.log(stillAnotherObject.a);
+
 
 	// use prototype to create new characters
 	var char = {
@@ -819,6 +962,7 @@ PROTOTYPES
 	console.log(nala.describe());
 	console.log(apa.describe());
 
+
 	// faster way
 	var char = {
 		init: function(name, hp, strength) {
@@ -837,6 +981,7 @@ PROTOTYPES
 	apa.init('Apa', 300, 200);
 	console.log(nala.describe());
 	console.log(apa.describe());
+
 
 	// with ennemies
 	var char = {
@@ -998,19 +1143,25 @@ PROTOTYPES
 	console.log(account2.describe());
 
 
+
+
 ARRAYS
 // JavaScript arrays are used to store multiple values in a single variable.
+
 
 	// basic
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	
+
 	// array length
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	console.log(languages.length); // 5
 
+
 	// call a array element
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	console.log(languages[0]); // HTML
+
 
 	// call all elements
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
@@ -1018,11 +1169,13 @@ ARRAYS
 		console.log(languages[i]);
 	}
 
+
 	// call all elements with forEach
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.forEach(function(language) {
 	console.log(language);
 	});
+
 
 	// call all elements backwards
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
@@ -1030,30 +1183,37 @@ ARRAYS
 		console.log('I would like to master ' + languages[i]);
 	}
 
+
 	// add an element (to the end)
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.push('BS'); // possible to add multiple elements .push(1, 2, 3, 'etc');
 	console.log(languages[5]);
 
+
 	// delete last element
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.pop(); // no more 'MySQL'
+
 
 	// pop() element and store the deleted value
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	var deleted = languages.pop(); // 'MySQL' is no more in array and stored in 'deleted'
 
+
 	// remove first element
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.shift(); // no more 'HTML'
+
 
 	// shift() element and store the deleted value
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	var deleted = languages.shift(); // 'HTML' is no more in array and stored in 'deleted'
 
+
 	// add an element (from the front)
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
+
 
 	// change arguments of a function into an array
 	function array(arr) {
@@ -1061,6 +1221,7 @@ ARRAYS
 		console.log(args); // [1, 2, 3, 4]
 	}
 	array(1, 2, 3, 4); 
+
 
 	// going through function arguments
 	function lol(arr1, arr2, arr3) {
@@ -1070,12 +1231,14 @@ ARRAYS
 	}
 	lol(1, 3, 7); // 1 3 7
 
+
 	// make change on arrays; iterate
 	var oldArray = [1, 2, 3];
 	var newArray = oldArray.map(function(val) {
 		return val * 3;
 	});
 	console.log(newArray); // [3, 6, 9]; they have been multiplied
+
 
 	// use all values, one at a time, to get a single one; condense
 	var oldArray = [1, 2, 3, 4, 5];
@@ -1084,12 +1247,14 @@ ARRAYS
 	}, 0); // start at value[0]
 	console.log(singleVal); // will result in -1-2-3-4-5 = -15
 
+
 	// filter an array
 	var oldArray = [1, 2, 3, 4, 5];
 	var newArray = oldArray.filter(function(val) {
 		return val < 4; // keep what is said; all values under 4
 	});
 	console.log(newArray); // [1, 2, 3]
+
 
 	// delete some array values
 	var arr = ["one", "two", "three"];
@@ -1098,11 +1263,13 @@ ARRAYS
 	arr.filter(Boolean); // to remove null, undefined etc.
 	console.log(arr); // ["one", "two"]
 
+
 	// filter Boolean, will delete false, null, 0, "", undefined, and NaN.
 	function numbersLettersOnly(arr) {
 		return arr.filter(Boolean);
 	}
 	numbersLettersOnly([7, "abc", false, null, 0, 9, NaN, "hello", undefined, ""]); // [7, "abc", 9, "hello"]
+
 
 	// sort an array
 	var array = [1, 2, 3, 4, 5];
@@ -1111,15 +1278,18 @@ ARRAYS
 	});
 	console.log(array); // [5, 4, 3, 2, 1]
 
+
 	// get index position of a value in an array
 	var array = [10, 20, 30, 40, 50];
 	var a = array.indexOf(30);
 	console.log(a); // 2; position of value 30
 
+
 	// reverse an array
 	var array = [1, 2, 3];
 	var newArray = array.reverse();
 	console.log(newArray); // [3, 2, 1]
+
 
 	// concatenate an array with another one
 	var oldArray = [1, 2, 3];
@@ -1127,39 +1297,47 @@ ARRAYS
 	var newArray = oldArray.concat(concatenateMe);
 	console.log(newArray); // [1, 2, 3, 4, 5, 6]
 
+
 	// split a string into an array
 	var string = 'Split me into an array';
 	var array = string.split(' '); // can be other character
 	console.log(array); // ['Split', 'me', 'into', 'an', 'array']
+
 
 	// split number into an array 
 	var num = 137;
 	var arr = (""+num).split("");
 	console.log(arr); // ["1", "3", "7"]
 
+
 	// join an array into a string
 	var array = ['Join', 'me', 'into', 'a', 'string'];
 	var string = array.join(' ');
 	console.log(string); // 'Join me into a string'
+
 
 	// slice an array
 	var array = ['Keep', 'us', 'delete', 'the', 'others'];
 	array = array.slice(0, 2);
 	console.log(array); // ['Keep', 'us']
 
+
 	// splice an array
 	var array = ['Delete', 'the', 'others', 'keep', 'us'];
 	array = array.splice(3);
 	console.log(array); // ['keep', 'us']
+
 
   // replace smth in a string
   var str = "Salut, c'est chouette !";
   str = str.replace("chouette", "cool");
   console.log(str); // "Salut, c'est cool !"
 
+
 	// use replace to add spaces before uppercases; or smth else
 	"myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
 	"myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
+
 
 	// reverse a string
 	function reverseString(str) {
@@ -1169,8 +1347,6 @@ ARRAYS
 		return str;
 	}
 	reverseString("hello"); // return olleh
-
-
 
 
 	// array of objects
@@ -1197,6 +1373,7 @@ ARRAYS
 		console.log(language.describe());
 	});
 
+
 	// find the right card 
 	var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
 	var currentCard = 'Heart';
@@ -1206,6 +1383,7 @@ ARRAYS
 		currentCard = cards[randomNumber];
 	}
 	console.log('Spade found !');
+
 
 	// 3 and 4 Mousquetaires
 	var Mousquetaires = ['Arthos', 'Porthos', 'Aramis'];
@@ -1219,6 +1397,7 @@ ARRAYS
 		console.log(Mousquetaires);
 	});
 
+
 	// sum of values
 	var Values = [11, 3, 7, 2, 9, 10];
 	var sum = 0;
@@ -1226,6 +1405,7 @@ ARRAYS
 		sum = sum + Values[i]; // could write 'sum += Values[i];'
 	}
 	console.log('the sum of the elements is : ' + sum); // 42
+
 
 	// max of values
 	var Values = [11, 3, 7, 2, 9, 10];
@@ -1236,6 +1416,7 @@ ARRAYS
 		}
 	}
 	console.log('the max of the elements is : ' + max);
+
 
 	// adding words to a list until 'stop'
 	var list = [];
@@ -1249,6 +1430,7 @@ ARRAYS
 	list.forEach(function(list) {
 		console.log(list);
 	});
+
 
 	// list of films
 	var Films = [];
@@ -1274,6 +1456,7 @@ ARRAYS
 	Films.forEach(function(Film) {
 		console.log(Film.describe());
 	});
+
 
 	// contact manager
 	console.log('Welcome in the contact manager !');
@@ -1326,60 +1509,88 @@ ARRAYS
 
 
 
+
 REGEXP 
 // regular expression object for matching text with a pattern
 
+
 	abc // Find strings containing "abc"
+	
 	[abc] // Find any characters between the brackets
+	
 	[^abc] // Find any character NOT between the brackets
+	
 	[a-z] // Find any letters in lowercase
+	
 	[A-Z] // Find any letters in uppercase
+	
 	[0-9] // Find any digits between the brackets
+	
 	[^0-9] // Find any character NOT between the brackets (any non-digit)
+	
 	(x|y)	// Find any alternatives separated with |
+	
 	\d	// Find a digit
+	
 	\s	// Find a whitespace character
+	
 	\w // Find any letter/digit or _ ; similar to [A-Za-z0-9_]
+	
 	n+	// Matches any string that contains at least one n
+		
 	n*	// Matches any string that contains zero or more occurrences of n
+		
 	n?	// Matches any string that contains zero or one occurrences of n
+		
 	i	// Perform case-insensitive matching
+	
 	g	// Perform a global match (find all matches rather than stopping after the first match)
+	
 	m	// Perform multiline matching
+	
 	
 	// The search() method uses an expression to search for a match, and returns the position of the match.
 	"try to find me".search(/me/i); // 12
 	
+	
 	// The replace() method returns a modified string where the pattern is replaced.
 	"try to find him".replace(/him/i, "me"); // try to find me
 	
+	
 	// The test() method searches a string and return true or false
 	/me/i.test("Am I in this string?"); // false
+	
 	
 	// The exec() method searches a string and return the found text or null
 	/me/i.exec("Am I in this string?"); // null
 	
 
 
+	
 DOM BASIS
 // nodes are linked to html tags; 2 types: element () and textual ()
+	
 	
 	// show html part in console; here body
 	console.log(document.body);
 
+	
 	// element node check
 	if (document.body.nodeType === document.ELEMENT_NODE) {
 		console.log(Body is an element node);
 	}
 
+	
 	// textual node check
 	if (document.body.nodeType === document.TEXTUAL_NODE) {
 		console.log(Body is a textual node);
 	}
 
+	
 	// access element node first child (here body element)
 	console.log(document.body.childNodes[0]); // notice that it will return #text because it counts the space before first html tag
 	console.log(document.body.childNodes[1]); // return real first html tag
+	
 	
 	// access element relationships (here header element)
 	console.log(getElementsByTagName("header").childeNodes); // returns an array of header child nodes
@@ -1390,15 +1601,18 @@ DOM BASIS
 	console.log(getElementsByTagName("header").previousSibling); // returns previous node on same level
 	console.log(getElementsByTagName("header").parentNode); //returns parent node
 
+	
 	// check the child list
 	for (var i = 0; i < document.body.childNodes.length; i++) {
 		console.log(document.body.childNodes[i]);
 	}
 
+	
 	// check node parent
 	var h1 = document.body.childNodes[1]; // must be done, otherwise h1 would be undefined
 	console.log(h1.parentNode); // return body node
 
+	
 	// function childNodes with error console
 	function showChild(node, index) {
 			if (node.nodeType === document.ELEMENT_NODE) {
@@ -1419,18 +1633,23 @@ DOM BASIS
 	showChild(document.body.childNodes[0], 0);
 
 
+	
+	
 DOM GET/QUERY
 // all ways to reach html elements
 
+	
 	// multiple childNodes; not very effective
 	console.log(document.body.childNodes[1].childNodes[1].childNodes[1]);
 
+	
 	// get Elements By Tag Name
 	var titleElts = document.getElementsByTagName('h2'); // all h2 titles; 'Elts' is common abreviation for elements
 	console.log(titreElts[0]); // first h2 title
 	console.log(titleElts.length); // number of titles
 	console.log(document.getElementsByTagName('h2')[0]); // faster way
 
+	
 	// get Elements By Class Name
 	var wondersElts = document.getElementsByClassName('wonders');
 	for (var i = 0; i < wondersElts; i++) {
@@ -1438,29 +1657,37 @@ DOM GET/QUERY
 	}
 	console.log(document.getElementsByClassName('wonders')[0]) // faster way to get the first one
 
+	
 	// get Element By Id; pay attention to Element which is singular here
 	console.log(document.getElementById('news'));
 
+	
 	// css selector
 	console.log(querySelectorAll('p')[1]); // second 'p'
 	console.log(querySelectorAll('#content p')[1]); // second 'p' of #content
 	console.log(querySelectorAll('.main')[1]); // second tag of .main
 
+	
 	// css selector; first only
 	console.log(querySelector('p')); // first 'p' only
 
+	
 	// return all html code
 	console.log(document.body.innerHTML); // works with all above get commands
 
+	
 	// return html text without tags
 	console.log(document.body.textContent); // works with all above get commands
 
+	
 	// get Attribute
 	console.log(document.querySelector('a').getAttribute('href')); // return 'href' attriubte of first 'a'
 
+	
 	// 'id', 'href' and 'value' are easier
 	console.log(document.querySelector('a').href);
 
+	
 	// check presence of attribute
 	if (document.querySelector('a').hasAttribute('target')) {
 		console.log('First "a" has target attribute');
@@ -1469,9 +1696,11 @@ DOM GET/QUERY
 		console.log('First "a" has no target attribute');
 	}
 
+	
 	// List of classes of a DOM element
 	console.log(document.getElementById('news').classList[0]);
 
+	
 	// check presence of a class in a DOM element
 	if (document.getElementById("news").classList.contains("wonder")) {
 			console.log("Identified element has 'wonder' class");
@@ -1480,12 +1709,14 @@ DOM GET/QUERY
 			console.log("Identified element has not 'wonder' class");
 	}
 
+	
 	// function count elements
 	function countElements(selector) {
 		return document.querySelectorAll(selector).length;
 	}
 	console.log(countElements("p")); // return number of 'p' elements
 
+	
 	// info on links function
 	function infoLinks() {
 		console.log(document.querySelectorAll('a').length);
@@ -1494,20 +1725,26 @@ DOM GET/QUERY
 	}
 	infoLinks();
 
+	
 	// get value of an input
 	var getValue = document.getElementsByTagName('input').value;
 	console.log(getValue); // log input value
 
 
+	
+	
 DOM CHANGE
 // ways to change html elements; clear, add, etc.
 
+	
 	// add some html using innerHTML
 	document.getElementById('example').innerHTML += '<li id="c">C</li>'; // adds C to the ul #example
 
+	
 	// innerHTML is more often used to clear an element content
 	document.getElementById('example').innerHTML = ''; // clear #example
 
+	
 	// add some text using textContent
 	document.querySelector('h1').textContent += ' more text in h1 title';
 
@@ -1515,13 +1752,16 @@ DOM CHANGE
 	// create and or set an attribute
 	document.querySelector('h1').setAttribute('id', 'title'); // first its name and secondly its value 
 
+	
 	// 'id', 'href', 'src' and 'value' are easier
 	document.querySelector('h1').id = 'title';
 
+	
 	// standalone attributes
 	document.querySelector("h1").disabled = false; // or true
 	document.querySelector("h1").setAttribute("required", "false"); // other way to achieve it
 
+	
 	// classList
 	var titleElt = document.querySelector('h1');
 	titleElt.classList.remove('main');
@@ -1529,39 +1769,46 @@ DOM CHANGE
 	// would be the same as below
 	document.querySelector('h1').setAttribute('class', 'titre');
 
+	
 	// adding an element
 	var addedElt = document.createElement('li'); // li created
 	addedElt.id = 'added'; // define id
 	addedElt.textContent = 'Added element'; // define text content
 	document.getElementById('example').appendChild(addedElt); // new element insertion
 
+	
 	// adding a node
 	var addedElt = document.createElement('li'); // li created
 	addedElt.id = 'added'; // define id
 	addedElt.appendChild(document.createTextNode('Added element')); // define text content
 	document.getElementById('example').appendChild(addedElt); // new element insertion
 
+	
 	// add a node before another node
 	var addedElt = document.createElement('li');
 	addedElt.id = 'added';
 	addedElt.textContent = 'Added element';
 	document.getElementById('example').insertBefore(addedElt, document.getElementById('existing-element'));
 
+	
 	// more accurate node position with insertAdjdacentHTML
 	document.getElementById('example').insertAdjacentHTML('beforeBegin', '<li id="added">Added element</li>'); // before element itself (outside)
 	document.getElementById('example').insertAdjacentHTML('afterBegin', '<li id="added">Added element</li>'); // just before firstchild
 	document.getElementById('example').insertAdjacentHTML('beforeEnd', '<li id="added">Added element</li>'); // just after lastchild
 	document.getElementById('example').insertAdjacentHTML('afterEnd', '<li id="added">Added element</li>'); // after element itself (outside)
 
+	
 	// replace a node
 	var addedElt = document.createElement('li');
 	addedElt.id = 'added';
 	addedElt.textContent = 'Added element';
 	document.getElementById('example').replaceChild(addedElt, document.getElementById('existing-element')); // 'addedElt' replace existing-element
 
+	
 	// remove a node
 	document.getElementById('example').removeChild(document.getElementById('existing-element')); // remove existing-element
 
+	
 	// add from an array
 	var news = ["http://bbc.com", "http://news.com", "http://independant.ie"];
 	for (var i = 0; i < news.length; i++) {
@@ -1571,38 +1818,47 @@ DOM CHANGE
 		document.getElementById('contenu').appendChild(linkElt);
 		document.getElementById('contenu').appendChild(document.createElement('br'));
 	}
+	
+	
+	// PRACTICE ADDING HTML ELEMENTS !!!!!!!
 
-	// 
-	PRACTICE ADDING HTML ELEMENTS !!!!!!!
 
-
+	
+		
 DOM STYLE
 // give style to elements
+	
 	
 	// style element
 	var pElt = document.querySelector('p');
 	pElt.style.color = 'red';
 	pElt.style.margin = '50px';
 
+	
 	// style element with composed css properties
 	var pElt = document.querySelector('p');
 	pElt.style.backgroundColor = 'red'; // used camelCase for composed properties
 	pElt.style.fontFamily = 'Arial';
 
+	
 	// show style (only style within html, not external or head)
 	var pElt = document.querySelector('p');
 	console.log(pElt.style.color); // you can't get info about external that way
 
+	
 	// show style from external
 	var stylePara = getComputedStyle(document.getElementById('para'));
 	console.log(stylePara.color);
 	
+	
 	// hide element
 	document.getElementById("toHide").style.display = "none";
+	
 	
 	// show element
 	document.getElementById("toShow").style.display = "block"; // or inline
 
+	
 	// change multiple tags style
 	var divColor = prompt('New text color :');
 	var divBack = prompt('New background color :');
@@ -1612,11 +1868,13 @@ DOM STYLE
 		divElts[i].style.backgroundColor = divBack;
 	}
 
+	
 	// change style external
 	var contenu = document.getElementById('contenu');
 	console.log(getComputedStyle(contenu).height);
 	console.log(getComputedStyle(contenu).width);
 
+	
 	// add list with measures of another tag
 	var styleElement = getComputedStyle(document.getElementById("contenu"));
 	var listeElt = document.createElement("ul");
@@ -1630,36 +1888,45 @@ DOM STYLE
 	document.getElementById("infos").appendChild(listeElt);
 
 	
+	
+	
 DOM EVENTS
 // help to react to user's actions
+	
 	
 	// add an event
 	document.getElementById("button").addEventListener("click", function() {
 		console.log("Click !");
 	});
 	
+	
 	// remove an event; function can't be anonymous
 	document.getElementById("button").removeEventListener("click", namedFunction());
+	
 	
 	// get event type and target content
 	document.getElementById("button").addEventListener("click", function (e) {
 		console.log("Event :" + e.type + ", target text :" + e.target.textContent);
 	});
 	
+	
 	// keypress event returning the pressed key (only for characters)
 	document.addEventListener("keypress", function (e) {
 			console.log("Vous avez appuyé sur la touche " + String.fromCharCode(e.charCode));
 	});
+	
 	
 	// info on pressed key; work also with "keyup"
 	document.addEventListener("keydown", function (e) {
 		console.log("Evènement clavier : " + e.type + ", touche : " + e.keyCode);
 	});
 	
+	
 	// Wait until the page is fully loaded to make an action
 	window.addEventListener("load", function() {
 		console.log("Page fully loaded");
 	});
+	
 	
 	// warning before leaving page or tab
 	window.addEventListener("beforeunload", function (e) {
@@ -1668,17 +1935,20 @@ DOM EVENTS
 		return message; // confirmation for some browsers
 	});
 	
+	
 	// stop propagation; propagation goes from child to parents
 	document.getElementById("propa").addEventListener("click", function (e) {
     console.log("Gestionnaire bouton");
 		e.stopPropagation();
 	});
 	
+	
 	// prevent default behavior
 	document.getElementById("interdit").addEventListener("click", function (e) {
     console.log("Continuez plutôt à lire le cours ;)");
     e.preventDefault(); // cancel the link navigation
 	});
+	
 	
 	// one button count the clicks and another one disables the counting
 	var count = 0;
@@ -1690,6 +1960,7 @@ DOM EVENTS
 	document.getElementById("disable").addEventListener("click", function () {
 		document.getElementById("clicker").removeEventListener("click", e);
 	});
+	
 	
 	// get pressed key and change background color accordingly
 	var Elts = document.getElementsByTagName("div");
@@ -1716,6 +1987,7 @@ DOM EVENTS
 		}
 	})
 	
+	
 	// Add li to ul with prompt and change those with click
 	document.querySelector("button").addEventListener("click", function() {
 		var dessert = prompt("type your dessert");
@@ -1730,17 +2002,21 @@ DOM EVENTS
 	
 
 
+
 DOM FORMS 
 // get values, check values, 
+
 
 	// prevent form submit; so no reload page anymore
 	document.querySelector("form").addEventListener("submit", function (e) {
 		e.preventDefault();
 	});
 
+
 	// get value of an input
 	var getValue = document.getElementsByTagName('input').value;
 	console.log(getValue); // log input value
+
 
 	// check form elements
 	var form = document.querySelector("form");
@@ -1748,19 +2024,23 @@ DOM FORMS
 	console.log(form.elements[0].name); // first input name
 	console.log(form.elements.mdp.type); // mdp input type
 
+
 	// put focus or remove it
 	document.querySelector("input").focus(); 
 	document.querySelector("input").blur(); 
+
 
 	// add event with focus on input element or blur
 	document.querySelector("input").addEventListener("focus", function() { // just replace with "blur"
 		document.querySelector("input").style.color = "red";
 	});
 
+
 	// add event when a checkbox is checked or unchecked
 	document.querySelector("input").addEventListener("change", function () {
 		console.log("checkbox checked : " + e.target.checked); // true of false if checked or unchecked
 	});
+
 
 	// event when radio is changed to return value
 	for (i = 0; i < document.querySelectorAll("input").length; i++) {
@@ -1769,10 +2049,12 @@ DOM FORMS
 		});
 	}
 
+
 	// event when dropping list option is changed
 	document.querySelector("select").addEventListener("change", function (e) {
 		console.log("Option selected from list : " + e.target.value); // returns value attribute of the new chosen option
 	});
+
 
 	// validation on submitting with submit event
 	document.querySelector("form").addEventListener("submit", function(e) {
@@ -1781,6 +2063,7 @@ DOM FORMS
 		}
 	});
 
+
 	// validation while typing with input event
 	document.querySelector("form").addEventListener("input", function (e) {
 		if (e.target.value.length < 8) {
@@ -1788,12 +2071,14 @@ DOM FORMS
 		}
 	});
 
+
 	// validation when input loses focus
 	document.querySelector("form").addEventListener("blur", function(e) {
 		if (e.target.value.indexOf("@") === -1) {
 			console.log("email adress invalid");
 		}
 	});
+
 
 	// check passwords
 	document.querySelector("form").addEventListener("submit", function (e) {
@@ -1814,6 +2099,7 @@ DOM FORMS
 		}
 		e.preventDefault();
 	});
+
 
 	// select an option and make a list appear accordingly
 	var houses = [ // array of object
@@ -1864,6 +2150,7 @@ DOM FORMS
     }
 	});
 
+
 	// get suggestions and select one
 	var countryList = [
     "Afghanistan",
@@ -1905,20 +2192,26 @@ country.addEventListener("input", function (e) { // when typing
 
 
 
+
 DOM ANIMATIONS 
 // all animations; use intervals for basics; CSS whenever you can; requestAnimationFrame() for the rest
+
 
 	// set interval; can define an end of it
 	setInterval(function() {console.log("hello")}, 1000); // log "hello" every second
 
+
 	// clear interval; you must name your setInterval() in a var to be able to use clearInterval()
 	clearInterval(varSetInterval); // stops interval
+
 
 	// set timeout; 
 	setTimeout(function() {console.log("hello")}, 2000); // starts log after 2sec
 	
+
 	// clear timeout; you must name your setTimeout() in a var to be able to use clearTimeout()
 	clearTimeout(varSetInterval); // stops timeout
+
 
 	// request animation frame; 
 	function animate() {
@@ -1927,11 +2220,12 @@ DOM ANIMATIONS
 	}
 	requestAnimationFrame(animate);
 
+
 	// cancel animation frame; you must name your requestAnimationFrame() in a var to be able to use cancelAnimationFrame()
 	cancelAnimationFrame(varRequestAnimationFrame)
-
 	// you can also use CSS animations
 
+	
 	// start timer and be able to pause/start
 	var start = document.getElementById("start");
 	var stop = document.getElementById("stop");
@@ -1951,6 +2245,7 @@ DOM ANIMATIONS
 		stop.style.display = "none";
 		clearTimeout(setTime);
 	});
+
 
 	// rebounding ball with start/stop animation
 	var box = document.getElementById("box");
@@ -1982,10 +2277,35 @@ DOM ANIMATIONS
 
 
 
+SERVER
+// 
+
+
+	// synchronous GET requet of a doc through web server
+	var req = new XMLHttpRequest(); // create HTTP request
+	req.open("GET", "http://localhost/repository/file.txt", false); // synchronous GET request; could be POST or PUT
+	req.send(null); // sending request; could be POST or PUT
+	console.log(req.responseText);
+
+
+	// asynchronous GET request
+	var req = new XMLHttpRequest();
+	req.open("GET", "http://localhost/repository/file.txt", false); 
+	req.addEventListener("load", function () { // use of load event to make it asynchronous
+		console.log(req.responseText);
+	});
+	req.send(null);
+
+
+	// handling errors
+	
+
+
 	
 
 API 
 // Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
+
 
 	// get geolocation data; must have user authorization
   if (navigator.geolocation) {
@@ -1993,6 +2313,7 @@ API
       $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
     }); // insert latitude and longitude into #data
   }
+
 
 	// API with JSON
 	
