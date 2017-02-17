@@ -75,6 +75,8 @@ CONSOLELOG
 	console.log("slice".slice(0, 3)); // show sliced string from 0 to 2 "sli" (3 is not included)
 	console.log("A".charCodeAt()); // show charCode of "A"; 65 here
 	console.log(String.fromCharCode(65)); // show letter of 65; "A" here
+	console.log(isNaN(10)); // returns false (true if it is actually NotaNumber)
+	console.log(typeof "string"); // can return number, boolean, string, function, object (array return object in JS)
 
 
 ERRORS 
