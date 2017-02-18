@@ -2364,6 +2364,30 @@ SERVER REQUESTS
 	});
 
 
+	// split string and create list of li elements
+	ajaxGet("http://localhost/javascript-web-srv/data/langages.txt", function (answer) {
+		var arr = answer.split(";");
+		console.log(arr);
+		arr.forEach(function (element) {
+			li = document.createElement("li");
+			li.innerHTML = element;
+			document.getElementById("languages").appendChild(li);
+		})
+	});
+
+
+	// get data from JSON and put it into table
+	ajaxGet("http://localhost/javascript-web-srv/data/tableaux.json", function (answer) {
+		arr = JSON.parse(answer);
+		console.log(arr);
+		arr.forEach( function(element) {
+			tr = document.createElement("tr");
+			tr.innerHTML = "<td>" + element.nom + "</td>" + "<td>" + element.annee + "</td>" + "<td>" + element.peintre + "</td>";
+			document.getElementById("table").appendChild(tr);
+		})
+	});
+
+
 	
 
 API 
