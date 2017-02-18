@@ -28,11 +28,11 @@ function example() {code block} // function; also var example function() {};
 var numbers = [one, two, three]; // array
 	console.log(numbers[0]);
 
-var dog = {name: "Rex", race: "Pitbul", age: "6"} // object
+var dog = {name: "Rex", race: "Pitbul", age: "6"}; // object
 	console.log(dog.name);
 	console.log(dog['name']); // same effect
 
-if (a == 1) {code block}; else if (a == 2) {code block}; else {code block}; // condition
+if (a == 1) {code block} else if (a == 2) {code block} else {code block} // condition
 
 switch (a) {case 1: code block; break; case 2: code block; break;} // switch condition
 
@@ -2278,7 +2278,7 @@ DOM ANIMATIONS
 
 
 SERVER REQUESTS
-// manage requests to the server
+// manage requests to the server (HTTP, AJAX, JSON)
 
 
 	// synchronous GET requet of a doc through web server
@@ -2314,7 +2314,7 @@ SERVER REQUESTS
 	req.send(null);
 
 
-	// generic AJAX function (AJAX = asynchronous HTTP); it is better to define the function in another js file when you have multiple js file that will need it
+	// generic AJAX function (AJAX = asynchronous HTTP); it is better to define the function in another js file when you have multiple js file that will need it (link it with script tag above other script tags)
 	function ajaxGet(url, callback) {
 		var req = new XMLHttpRequest();
 		req.open("GET", url);
@@ -2360,7 +2360,7 @@ SERVER REQUESTS
 		var list = JSON.parse(answer); // JS objects array
 		list.forEach(function (smth) {
 			console.log(smth.thing); // have thing for each smth
-		})
+		});
 	});
 
 
@@ -2372,7 +2372,7 @@ SERVER REQUESTS
 			li = document.createElement("li");
 			li.innerHTML = element;
 			document.getElementById("languages").appendChild(li);
-		})
+		});
 	});
 
 
@@ -2384,7 +2384,7 @@ SERVER REQUESTS
 			tr = document.createElement("tr");
 			tr.innerHTML = "<td>" + element.nom + "</td>" + "<td>" + element.annee + "</td>" + "<td>" + element.peintre + "</td>";
 			document.getElementById("table").appendChild(tr);
-		})
+		});
 	});
 
 
@@ -2392,6 +2392,51 @@ SERVER REQUESTS
 
 API 
 // Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
+
+
+	// API with JSON (works the same but with online url); need ajax faile with ajaxGet function defined
+	ajaxGet("http://api-website/api/file", function (answer) {
+		var arr = JSON.parse(answer);
+		arr.forEach(function (element) {code block});
+	});
+
+
+	// Github profile
+	function ajaxGet(url, callback) { // usual ajaxGet func
+		var req = new XMLHttpRequest();
+		req.open("GET", url);
+		req.addEventListener("load", function () {
+			if (req.status >= 200 && req.status < 400) {
+				callback(req.responseText);
+			}
+			else {
+				console.error(req.status + " " + req.statusText + " " + url);
+			}
+		});
+		req.addEventListener("error", function () {
+			console.error("Network error with URL " + url);
+		});
+		req.send(null);
+	}
+	document.querySelector("form").addEventListener("submit", function (e) { // get user value on click
+		user = document.getElementById("user").value;
+		e.preventDefault();
+		ajaxGet("https://api.github.com/users/" + user, function (answer) { // request API
+			var profile = JSON.parse(answer);	
+			img = document.createElement("img"); // avatar
+			img.src = profile.avatar_url;
+			img.style.width = "200px";
+			h1 = document.createElement("h1"); // pseudo
+			h1.innerHTML = profile.name;
+			h1.style.color = "#3D7B74";
+			p = document.createElement("p"); // website
+			p.innerHTML = "<a href='" + profile.blog + "'>" + profile.blog + "</a>";
+			document.getElementById("profile").innerHTML = ""; // empty previous search
+			document.getElementById("profile").appendChild(img);
+			document.getElementById("profile").appendChild(h1);
+			document.getElementById("profile").appendChild(p);
+		});
+	});
 
 
 	// get geolocation data; must have user authorization
@@ -2402,5 +2447,96 @@ API
   }
 
 
-	// API with JSON
+
+
+SEND DATA TO SERVER
+// 
+
+
+	// Basic data sending code
+	var identite = new FormData();
+	identite.append("login", "Bob"); // adding info example
+	identite.append("password", "azerty");
+	var req = new XMLHttpRequest(); 
+	req.open("POST", "http://localhost/javascript-web-srv/post_form.php"); // http POST
+	req.send(identite);
+
+
+	// Generic data sending function
+	function ajaxPost(url, data, callback) {
+		var req = new XMLHttpRequest();
+		req.open("POST", url);
+		req.addEventListener("load", function () {
+			if (req.status >= 200 && req.status < 400) {
+				callback(req.responseText);
+			} else {
+				console.error(req.status + " " + req.statusText + " " + url);
+			}
+		});
+		req.addEventListener("error", function () {
+			console.error("Erreur réseau avec l'URL " + url);
+		});
+		req.send(data);
+	}
+	var commande = new FormData(); // adaptation of basic code
+	commande.append("couleur", "rouge"); // adding other info example (they erase previous ofc)
+	commande.append("pointure", "43");
+	ajaxPost("http://localhost/javascript-web-srv/post_form.php", commande,
+		function (reponse) {
+			console.log("Commande envoyée au serveur");
+		}
+	);
+
+
+	// handle form submission
+	var form = document.querySelector("form");
+	form.addEventListener("submit", function (e) {
+		e.preventDefault();
+		var data = new FormData(form);
+		ajaxPost("http://localhost/javascript-web-srv/post_form.php", data, function () {}); // callback func is empty here
+	});
+
+
+	// Send JSON data
+	function ajaxPost(url, data, callback, isJson) {
+		var req = new XMLHttpRequest();
+		req.open("POST", url);
+		req.addEventListener("load", function () {
+			if (req.status >= 200 && req.status < 400) {
+				callback(req.responseText);
+			} else {
+				console.error(req.status + " " + req.statusText + " " + url);
+			}
+		});
+		req.addEventListener("error", function () {
+			console.error("Erreur réseau avec l'URL " + url);
+		});
+		if (isJson) { // check if json format
+			req.setRequestHeader("Content-Type", "application/json");
+			data = JSON.stringify(data);
+		}
+		req.send(data);
+	}
+	var film = { // creation of a movie object
+		titre: "Zootopie",
+		annee: "2016",
+		realisateur: "Byron Howard et Rich Moore"
+	};
+	ajaxPost("http://localhost/javascript-web-srv/post_json.php", film,
+		function (reponse) {
+			console.log("Le film " + JSON.stringify(film) + " a été envoyé au serveur");
+		},
+		true // json parameter value
+	);
+
+
+	
+	
+
+
+
+
+
+
+
 	
