@@ -17,52 +17,63 @@ TODO: better way to present
 
 
 MAIN JS 
-// main syntax
+// Main syntax
 
-var a = "example"; // variable
-	console.log(a);
+	// Variable
+	var a = "example"; 
+		console.log(a);
 
-function example() {code block} // function; also var example function() {};
-	console.log(example);
+	// Function; also var example function() {};
+	function example() {code block} 
+		console.log(example);
 
-var numbers = [one, two, three]; // array
-	console.log(numbers[0]);
+	// Array
+	var numbers = [one, two, three]; 
+		console.log(numbers[0]);
 
-var dog = {name: "Rex", race: "Pitbul", age: "6"}; // object
-	console.log(dog.name);
-	console.log(dog['name']); // same effect
+	// Object
+	var dog = {name: "Rex", race: "Pitbul", age: "6"}; 
+		console.log(dog.name);
+		console.log(dog['name']); // same effect
 
-if (a == 1) {code block} else if (a == 2) {code block} else {code block} // condition
+	// Condition
+	if (a == 1) {code block} else if (a == 2) {code block} else {code block}
 
-switch (a) {case 1: code block; break; case 2: code block; break;} // switch condition
+	// Switch condition
+	switch (a) {case 1: code block; break; case 2: code block; break;} 
 
-while (a == 1) {code block} // while loop
+	// While loop
+	while (a == 1) {code block} 
 
-do {code block} while (false); // will execute code block at least once
+	// Do while loop; Will execute code block at least once
+	do {code block} while (false); 
 
-for (i = 0; i < a.length; i++) {code block} // for loop
+	// For loop
+	for (i = 0; i < a.length; i++) {code block} 
 
-a.forEach(function(element) {code block}); // forEach loop
+	// ForEach loop
+	a.forEach(function(element) {code block}); 
+
 
 // DOM syntax
 
-document.getElementsByTagNamegName("tag"); // will return tag elements as an array
-document.getElementsByClassName("class"); // will return .class elements as an array
-document.getElementById("id"); // will return #id element
-document.querySelector("tag"); // will return first tag of document; querySelectorAll to get all tags as an array; works as CSS
+	document.getElementsByTagNamegName("tag"); // will return tag elements as an array
+	document.getElementsByClassName("class"); // will return .class elements as an array
+	document.getElementById("id"); // will return #id element
+	document.querySelector("tag"); // will return first tag of document; querySelectorAll to get all tags as an array; works as CSS
 
-document.getElementById("id").setAttribute("src", "www.lol.com"); // set/change attribute; can often be written something.src("change");
-document.getElementById("id").innerHTML = "some text"; // change #id content
-document.getElementById("id").textContent = "some text"; // similar to innerHTML; can use += to add some text
-document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
+	document.getElementById("id").setAttribute("src", "www.lol.com"); // set/change attribute; can often be written something.src("change");
+	document.getElementById("id").innerHTML = "some text"; // change #id content
+	document.getElementById("id").textContent = "some text"; // similar to innerHTML; can use += to add some text
+	document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
 
-newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
-document.body.removeChild(newDiv); // remove newDiv
-document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
+	newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
+	document.body.removeChild(newDiv); // remove newDiv
+	document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
 
 // add animation, events, 
 
-___
+	___
 
 
 
@@ -2004,45 +2015,45 @@ DOM EVENTS
 
 
 DOM FORMS 
-// get values, check values, 
+// Get values, check values, 
 
 
-	// prevent form submit; so no reload page anymore
+	// Prevent form submit; so no reload page anymore
 	document.querySelector("form").addEventListener("submit", function (e) {
 		e.preventDefault();
 	});
 
 
-	// get value of an input
+	// Get value of an input
 	var getValue = document.getElementsByTagName('input').value;
 	console.log(getValue); // log input value
 
 
-	// check form elements
+	// Check form elements
 	var form = document.querySelector("form");
 	console.log(form.elements.length); // number of inputs inside form
 	console.log(form.elements[0].name); // first input name
 	console.log(form.elements.mdp.type); // mdp input type
 
 
-	// put focus or remove it
+	// Put focus or remove it
 	document.querySelector("input").focus(); 
 	document.querySelector("input").blur(); 
 
 
-	// add event with focus on input element or blur
+	// Add event with focus on input element or blur
 	document.querySelector("input").addEventListener("focus", function() { // just replace with "blur"
 		document.querySelector("input").style.color = "red";
 	});
 
 
-	// add event when a checkbox is checked or unchecked
+	// Add event when a checkbox is checked or unchecked
 	document.querySelector("input").addEventListener("change", function () {
 		console.log("checkbox checked : " + e.target.checked); // true of false if checked or unchecked
 	});
 
 
-	// event when radio is changed to return value
+	// Event when radio is changed to return value
 	for (i = 0; i < document.querySelectorAll("input").length; i++) {
 		document.querySelectorAll("input")[i].addEventListener("change", function (e) {
 			console.log("chosen radio input : " + e.target.value); // returns value attribute of the new chosen radio input
@@ -2050,13 +2061,13 @@ DOM FORMS
 	}
 
 
-	// event when dropping list option is changed
+	// Event when dropping list option is changed
 	document.querySelector("select").addEventListener("change", function (e) {
 		console.log("Option selected from list : " + e.target.value); // returns value attribute of the new chosen option
 	});
 
 
-	// validation on submitting with submit event
+	// Validation on submitting with submit event
 	document.querySelector("form").addEventListener("submit", function(e) {
 		if (e.target.value.indexOf("http://") === -1) {
 			console.log("not an URL !");
@@ -2064,7 +2075,7 @@ DOM FORMS
 	});
 
 
-	// validation while typing with input event
+	// Validation while typing with input event
 	document.querySelector("form").addEventListener("input", function (e) {
 		if (e.target.value.length < 8) {
 			console.log("Password too short");
@@ -2072,7 +2083,7 @@ DOM FORMS
 	});
 
 
-	// validation when input loses focus
+	// Validation when input loses focus
 	document.querySelector("form").addEventListener("blur", function(e) {
 		if (e.target.value.indexOf("@") === -1) {
 			console.log("email adress invalid");
@@ -2080,7 +2091,7 @@ DOM FORMS
 	});
 
 
-	// check passwords
+	// Check passwords
 	document.querySelector("form").addEventListener("submit", function (e) {
 		var pass1 = document.getElementById("pass1");
 		var pass2 = document.getElementById("pass2");
@@ -2101,7 +2112,7 @@ DOM FORMS
 	});
 
 
-	// select an option and make a list appear accordingly
+	// Select an option and make a list appear accordingly
 	var houses = [ // array of object
     {
       code: "ST",
@@ -2151,7 +2162,7 @@ DOM FORMS
 	});
 
 
-	// get suggestions and select one
+	// Get suggestions and select one
 	var countryList = [
     "Afghanistan",
     "Afrique du Sud",
@@ -2194,26 +2205,26 @@ country.addEventListener("input", function (e) { // when typing
 
 
 DOM ANIMATIONS 
-// all animations; use intervals for basics; CSS whenever you can; requestAnimationFrame() for the rest
+// All animations; use intervals for basics; CSS whenever you can; requestAnimationFrame() for the rest
 
 
-	// set interval; can define an end of it
+	// Set interval; can define an end of it
 	setInterval(function() {console.log("hello")}, 1000); // log "hello" every second
 
 
-	// clear interval; you must name your setInterval() in a var to be able to use clearInterval()
+	// Clear interval; you must name your setInterval() in a var to be able to use clearInterval()
 	clearInterval(varSetInterval); // stops interval
 
 
-	// set timeout; 
+	// Set timeout; 
 	setTimeout(function() {console.log("hello")}, 2000); // starts log after 2sec
 	
 
-	// clear timeout; you must name your setTimeout() in a var to be able to use clearTimeout()
+	// Clear timeout; you must name your setTimeout() in a var to be able to use clearTimeout()
 	clearTimeout(varSetInterval); // stops timeout
 
 
-	// request animation frame; 
+	// Request animation frame; 
 	function animate() {
 		// animation code...
 		requestAnimationFrame(animate);
@@ -2221,12 +2232,12 @@ DOM ANIMATIONS
 	requestAnimationFrame(animate);
 
 
-	// cancel animation frame; you must name your requestAnimationFrame() in a var to be able to use cancelAnimationFrame()
+	// Cancel animation frame; you must name your requestAnimationFrame() in a var to be able to use cancelAnimationFrame()
 	cancelAnimationFrame(varRequestAnimationFrame)
 	// you can also use CSS animations
 
 	
-	// start timer and be able to pause/start
+	// Start timer and be able to pause/start
 	var start = document.getElementById("start");
 	var stop = document.getElementById("stop");
 	var span = document.getElementById("time");
@@ -2247,7 +2258,7 @@ DOM ANIMATIONS
 	});
 
 
-	// rebounding ball with start/stop animation
+	// Rebounding ball with start/stop animation
 	var box = document.getElementById("box");
 	var ball = document.getElementById("ball"); // #ball must be position: relative and left : 0;
 	var start = document.getElementById("start");
@@ -2278,17 +2289,17 @@ DOM ANIMATIONS
 
 
 SERVER REQUESTS
-// manage requests to the server (HTTP, AJAX, JSON)
+// Manage requests to the server (HTTP, AJAX, JSON)
 
 
-	// synchronous GET requet of a doc through web server
+	// Synchronous GET requet of a doc through web server
 	var req = new XMLHttpRequest(); // create HTTP request
 	req.open("GET", "http://localhost/repository/file.txt", false); // synchronous GET request; could be POST or PUT
 	req.send(null); // sending request; could be POST or PUT
 	console.log(req.responseText);
 
 
-	// asynchronous GET request
+	// Asynchronous GET request
 	var req = new XMLHttpRequest();
 	req.open("GET", "http://localhost/repository/file.txt"); // no false because asynchronous request
 	req.addEventListener("load", function () { // use of load event to make it asynchronous
@@ -2297,7 +2308,7 @@ SERVER REQUESTS
 	req.send(null);
 
 
-	// handling errors
+	// Handling errors
 	var req = new XMLHttpRequest();
 	req.open("GET", "http://localhost/repository/file.txt");
 	req.addEventListener("load", function () {
@@ -2314,7 +2325,8 @@ SERVER REQUESTS
 	req.send(null);
 
 
-	// generic AJAX function (AJAX = asynchronous HTTP); it is better to define the function in another js file when you have multiple js file that will need it (link it with script tag above other script tags)
+	// Generic AJAX function (AJAX = asynchronous HTTP); 
+	// Better to define the function in another js file when you have multiple js file that will need it (link it with script tag above other script tags)
 	function ajaxGet(url, callback) {
 		var req = new XMLHttpRequest();
 		req.open("GET", url);
@@ -2338,7 +2350,7 @@ SERVER REQUESTS
 	// ajaxGet("http://localhost/repository/file.txt", function (answer) {console.log(answer)}); shorter way with anonym function
 
 
-	// move from JS to JSON and from JSON to JS
+	// Transform from JS to JSON and from JSON to JS
 	var planes = [
 		{
 			brand: "Airbus",
@@ -2355,7 +2367,7 @@ SERVER REQUESTS
 	console.log(JSON.parse(textPlanes)); // JSON string into JS objects array
 
 
-	// get data from server converting JSON to JS and display list
+	// Get data from server converting JSON to JS and display list
 	ajaxGet("http://localhost/repository/file.txt", function (answer) {
 		var list = JSON.parse(answer); // JS objects array
 		list.forEach(function (smth) {
@@ -2364,7 +2376,7 @@ SERVER REQUESTS
 	});
 
 
-	// split string and create list of li elements
+	// Split string and create list of li elements
 	ajaxGet("http://localhost/javascript-web-srv/data/langages.txt", function (answer) {
 		var arr = answer.split(";");
 		console.log(arr);
@@ -2376,7 +2388,7 @@ SERVER REQUESTS
 	});
 
 
-	// get data from JSON and put it into table
+	// Get data from JSON and put it into table
 	ajaxGet("http://localhost/javascript-web-srv/data/tableaux.json", function (answer) {
 		arr = JSON.parse(answer);
 		console.log(arr);
@@ -2418,18 +2430,18 @@ API
 		});
 		req.send(null);
 	}
-	document.querySelector("form").addEventListener("submit", function (e) { // get user value on click
+	document.querySelector("form").addEventListener("submit", function (e) { // Get user value on click
 		user = document.getElementById("user").value;
 		e.preventDefault();
-		ajaxGet("https://api.github.com/users/" + user, function (answer) { // request API
+		ajaxGet("https://api.github.com/users/" + user, function (answer) { // Request API
 			var profile = JSON.parse(answer);	
-			img = document.createElement("img"); // avatar
+			img = document.createElement("img"); // Avatar
 			img.src = profile.avatar_url;
 			img.style.width = "200px";
-			h1 = document.createElement("h1"); // pseudo
+			h1 = document.createElement("h1"); // Pseudo
 			h1.innerHTML = profile.name;
 			h1.style.color = "#3D7B74";
-			p = document.createElement("p"); // website
+			p = document.createElement("p"); // Website
 			p.innerHTML = "<a href='" + profile.blog + "'>" + profile.blog + "</a>";
 			document.getElementById("profile").innerHTML = ""; // empty previous search
 			document.getElementById("profile").appendChild(img);
@@ -2439,26 +2451,26 @@ API
 	});
 
 
-	// get geolocation data; must have user authorization
+	// Get geolocation data; must have user authorization
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
-    }); // insert latitude and longitude into #data
+    }); // Insert latitude and longitude into #data
   }
 
 
 
 
 SEND DATA TO SERVER
-// 
+// Use http and json to send data to servers
 
 
 	// Basic data sending code
 	var identite = new FormData();
-	identite.append("login", "Bob"); // adding info example
+	identite.append("login", "Bob"); // Adding info example
 	identite.append("password", "azerty");
 	var req = new XMLHttpRequest(); 
-	req.open("POST", "http://localhost/javascript-web-srv/post_form.php"); // http POST
+	req.open("POST", "http://localhost/javascript-web-srv/post_form.php"); // HTTP POST
 	req.send(identite);
 
 
@@ -2478,8 +2490,8 @@ SEND DATA TO SERVER
 		});
 		req.send(data);
 	}
-	var commande = new FormData(); // adaptation of basic code
-	commande.append("couleur", "rouge"); // adding other info example (they erase previous ofc)
+	var commande = new FormData(); // Adaptation of basic code
+	commande.append("couleur", "rouge"); // Adding other info example (they erase previous ofc)
 	commande.append("pointure", "43");
 	ajaxPost("http://localhost/javascript-web-srv/post_form.php", commande,
 		function (reponse) {
@@ -2488,12 +2500,12 @@ SEND DATA TO SERVER
 	);
 
 
-	// handle form submission
+	// Handle form submission
 	var form = document.querySelector("form");
 	form.addEventListener("submit", function (e) {
 		e.preventDefault();
 		var data = new FormData(form);
-		ajaxPost("http://localhost/javascript-web-srv/post_form.php", data, function () {}); // callback func is empty here
+		ajaxPost("http://localhost/javascript-web-srv/post_form.php", data, function () {}); // Callback func is empty here
 	});
 
 
@@ -2511,13 +2523,13 @@ SEND DATA TO SERVER
 		req.addEventListener("error", function () {
 			console.error("Erreur réseau avec l'URL " + url);
 		});
-		if (isJson) { // check if json format
+		if (isJson) { // Check if json format
 			req.setRequestHeader("Content-Type", "application/json");
 			data = JSON.stringify(data);
 		}
 		req.send(data);
 	}
-	var film = { // creation of a movie object
+	var film = { // Creation of a movie object
 		titre: "Zootopie",
 		annee: "2016",
 		realisateur: "Byron Howard et Rich Moore"
@@ -2526,7 +2538,7 @@ SEND DATA TO SERVER
 		function (reponse) {
 			console.log("Le film " + JSON.stringify(film) + " a été envoyé au serveur");
 		},
-		true // json parameter value
+		true // JSON parameter value
 	);
 
 
