@@ -2484,12 +2484,12 @@ SEND DATA TO SERVER
 
 
 	// Basic data sending code
-	var identite = new FormData();
-	identite.append("login", "Bob"); // Adding info example
-	identite.append("password", "azerty");
+	var identity = new FormData();
+	identity.append("login", "Bob"); // Adding info example
+	identity.append("password", "azerty");
 	var req = new XMLHttpRequest(); 
-	req.open("POST", "http://localhost/javascript-web-srv/post_form.php"); // HTTP POST
-	req.send(identite);
+	req.open("POST", "http://localhost/repository/post_form.php"); // HTTP POST
+	req.send(identity);
 
 
 	// Generic data sending function
@@ -2504,16 +2504,16 @@ SEND DATA TO SERVER
 			}
 		});
 		req.addEventListener("error", function () {
-			console.error("Erreur réseau avec l'URL " + url);
+			console.error("Network error with URL " + url);
 		});
 		req.send(data);
 	}
-	var commande = new FormData(); // Adaptation of basic code
-	commande.append("couleur", "rouge"); // Adding other info example (they erase previous ofc)
-	commande.append("pointure", "43");
-	ajaxPost("http://localhost/javascript-web-srv/post_form.php", commande,
+	var command = new FormData(); // Adaptation of basic code
+	command.append("color", "red"); // Adding other info example (they erase previous ofc)
+	command.append("size", "43");
+	ajaxPost("http://localhost/repository/post_form.php", command,
 		function (reponse) {
-			console.log("Commande envoyée au serveur");
+			console.log("Command sent to server");
 		}
 	);
 
@@ -2539,7 +2539,7 @@ SEND DATA TO SERVER
 			}
 		});
 		req.addEventListener("error", function () {
-			console.error("Erreur réseau avec l'URL " + url);
+			console.error("Network error with URL " + url);
 		});
 		if (isJson) { // Check if json format
 			req.setRequestHeader("Content-Type", "application/json");
@@ -2547,14 +2547,14 @@ SEND DATA TO SERVER
 		}
 		req.send(data);
 	}
-	var film = { // Creation of a movie object
-		titre: "Zootopie",
-		annee: "2016",
-		realisateur: "Byron Howard et Rich Moore"
+	var movie = { // Creation of a movie object
+		title: "Zootopie",
+		year: "2016",
+		director: "Byron Howard and Rich Moore"
 	};
-	ajaxPost("http://localhost/javascript-web-srv/post_json.php", film,
+	ajaxPost("http://localhost/javascript-web-srv/post_json.php", movie,
 		function (reponse) {
-			console.log("Le film " + JSON.stringify(film) + " a été envoyé au serveur");
+			console.log("The movie " + JSON.stringify(movie) + " has been sent to the server");
 		},
 		true // JSON parameter value
 	);
