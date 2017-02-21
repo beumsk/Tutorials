@@ -40,7 +40,7 @@ function ajaxPost(url, data, callback, isJson) { // isJson checks if data is jso
         }
     });
     req.addEventListener("error", function () {
-        console.error("Erreur réseau avec l'URL " + url);
+        console.error("Network error with URL : " + url);
     });
     if (isJson) {
         // request content is JSON

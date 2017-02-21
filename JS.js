@@ -2511,11 +2511,9 @@ SEND DATA TO SERVER
 	var command = new FormData(); // Adaptation of basic code
 	command.append("color", "red"); // Adding other info example (they erase previous ofc)
 	command.append("size", "43");
-	ajaxPost("http://localhost/repository/post_form.php", command,
-		function (reponse) {
+	ajaxPost("http://localhost/repository/post_form.php", command, function (reponse) {
 			console.log("Command sent to server");
-		}
-	);
+	});
 
 
 	// Handle form submission
@@ -2527,7 +2525,7 @@ SEND DATA TO SERVER
 	});
 
 
-	// Send JSON data
+	// Data sending checking if JSON data
 	function ajaxPost(url, data, callback, isJson) {
 		var req = new XMLHttpRequest();
 		req.open("POST", url);
@@ -2552,12 +2550,27 @@ SEND DATA TO SERVER
 		year: "2016",
 		director: "Byron Howard and Rich Moore"
 	};
-	ajaxPost("http://localhost/javascript-web-srv/post_json.php", movie,
-		function (reponse) {
+	ajaxPost("http://localhost/javascript-web-srv/post_json.php", movie, function (reponse) {
 			console.log("The movie " + JSON.stringify(movie) + " has been sent to the server");
 		},
 		true // JSON parameter value
 	);
+
+
+	// send feedback from a form (function is defined before ofc)
+	document.querySelector("form").addEventListener("submit", function (e) {
+		e.preventDefault();
+		var feedback = {
+			pseudo: e.target.elements.pseudo.value,
+			evaluation: e.target.elements.evaluation.value,
+			message: e.target.elements.message.value,
+		};
+		ajaxPost("http://oc-jswebsrv.herokuapp.com/api/temoignage", feedback, function (reponse) {
+			var messageElt = document.createElement("p");
+			messageElt.textContent = "Feedback added";
+			document.getElementById("result").appendChild(messageElt);
+		}, true);
+	});
 
 
 	
