@@ -24,8 +24,17 @@ MAIN JS
 		console.log(a);
 
 	// Function; also var example function() {};
-	function example() {code block} 
+	function example () {code block} 
 		console.log(example);
+
+	// Double arg Function
+	function say (arg1) {
+		return function (arg2) {
+			return arg1 + " " + arg2;
+		}
+	}
+	say ("hello")("world"); // hello world
+
 
 	// Array
 	var numbers = [one, two, three]; 
@@ -583,6 +592,15 @@ FUNCTIONS
 		}
 	}
 	console.log(min(9, 1));
+
+
+	// Double arg Function
+	function say (arg1) {
+		return function (arg2) {
+			return arg1 + " " + arg2;
+		}
+	}
+	say ("hello")("world"); // hello world
 
 
 	// calculator
