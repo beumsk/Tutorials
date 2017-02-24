@@ -1838,6 +1838,11 @@ DOM CHANGE
 	// remove a node
 	document.getElementById('example').removeChild(document.getElementById('existing-element')); // remove existing-element
 
+
+	// remove element
+	var example = document.getElementById("example");
+	example.parentNode.removeChild(example);
+
 	
 	// add from an array
 	var news = ["http://bbc.com", "http://news.com", "http://independant.ie"];
@@ -1932,6 +1937,15 @@ DOM EVENTS
 	
 	// remove an event; function can't be anonymous
 	document.getElementById("button").removeEventListener("click", namedFunction());
+
+
+	// add event (remove on click) using class names
+	var remove = document.getElementsByClassName("remove");
+	for (i=0; i<remove.length; i++) {
+		remove[i].addEventListener("click", function () {
+			this.parentNode.remove();
+		});
+	}
 	
 	
 	// get event type and target content
