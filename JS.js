@@ -36,7 +36,7 @@ MAIN JS
 	say ("hello")("world"); // hello world
 
 
-	// Array
+	// Array (careful!-> if var is set equals to an array, they will be linked and influence each other)
 	var numbers = [one, two, three]; 
 		console.log(numbers[0]);
 
@@ -1176,6 +1176,7 @@ PROTOTYPES
 
 ARRAYS
 // JavaScript arrays are used to store multiple values in a single variable.
+// Careful! -> if var is set equals to an array, they will be linked and influence each other (may cause infinite loops)
 
 
 	// basic
@@ -1844,8 +1845,8 @@ DOM CHANGE
 		var linkElt = document.createElement('a');
 		linkElt.textContent = news[i];
 		linkElt.href = news[i];
-		document.getElementById('contenu').appendChild(linkElt);
-		document.getElementById('contenu').appendChild(document.createElement('br'));
+		document.getElementById('content').appendChild(linkElt);
+		document.getElementById('content').appendChild(document.createElement('br'));
 	}
 	
 	
@@ -1899,22 +1900,22 @@ DOM STYLE
 
 	
 	// change style external
-	var contenu = document.getElementById('contenu');
-	console.log(getComputedStyle(contenu).height);
-	console.log(getComputedStyle(contenu).width);
+	var content = document.getElementById('content');
+	console.log(getComputedStyle(content).height);
+	console.log(getComputedStyle(content).width);
 
 	
 	// add list with measures of another tag
-	var styleElement = getComputedStyle(document.getElementById("contenu"));
-	var listeElt = document.createElement("ul");
-	var longueurElt = document.createElement("li");
-	longueurElt.textContent = "Longueur : " + styleElement.width;
-	var hauteurElt = document.createElement("li");
-	hauteurElt.textContent = "Hauteur : " + styleElement.height;
-	listeElt.appendChild(hauteurElt);
-	listeElt.appendChild(longueurElt);
-	document.getElementById("infos").appendChild(document.createTextNode("Informations sur l'élément"));
-	document.getElementById("infos").appendChild(listeElt);
+	var styleElement = getComputedStyle(document.getElementById("content"));
+	var listElt = document.createElement("ul");
+	var lengthElt = document.createElement("li");
+	lengthElt.textContent = "Length : " + styleElement.width;
+	var heightElt = document.createElement("li");
+	heightElt.textContent = "Height : " + styleElement.height;
+	listElt.appendChild(heightElt);
+	listElt.appendChild(lengthElt);
+	document.getElementById("info").appendChild(document.createTextNode("Info about element"));
+	document.getElementById("info").appendChild(listElt);
 
 	
 	
@@ -1941,13 +1942,13 @@ DOM EVENTS
 	
 	// keypress event returning the pressed key (only for characters)
 	document.addEventListener("keypress", function (e) {
-			console.log("Vous avez appuyé sur la touche " + String.fromCharCode(e.charCode));
+			console.log("You hitted the key " + String.fromCharCode(e.charCode));
 	});
 	
 	
 	// info on pressed key; work also with "keyup"
 	document.addEventListener("keydown", function (e) {
-		console.log("Evènement clavier : " + e.type + ", touche : " + e.keyCode);
+		console.log("keyboard event : " + e.type + ", key : " + e.keyCode);
 	});
 	
 	
@@ -1967,14 +1968,19 @@ DOM EVENTS
 	
 	// stop propagation; propagation goes from child to parents
 	document.getElementById("propa").addEventListener("click", function (e) {
-    console.log("Gestionnaire bouton");
+    console.log("button manager");
 		e.stopPropagation();
 	});
+
+	// set propagation from parents to child (capturing); really useful for similar events for multiple DOM elements superposed
+	document.getElementById("propa").addEventListener("click", function () {
+		console.log("button manager")
+	}, true); // default value is false (child to parents)
 	
 	
 	// prevent default behavior
-	document.getElementById("interdit").addEventListener("click", function (e) {
-    console.log("Continuez plutôt à lire le cours ;)");
+	document.getElementById("forbidden").addEventListener("click", function (e) {
+    console.log("Keep on studying the course instead");
     e.preventDefault(); // cancel the link navigation
 	});
 	
