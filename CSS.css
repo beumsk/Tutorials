@@ -5,8 +5,10 @@ CASCADING STYLE SHEET
 
 TODO: link to html file to show result
 
+
 /* To create a comment. Shown in code only. Indent 2 spaces */
 /* Inspect(f12) to check easily css file */
+
 
 ADD IN HTML
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
@@ -96,16 +98,19 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	font-variant: small-caps; /* Small capitalized letters */
 }
 
+
 @font-face {
 	font-family: Fontname; /* define the name of new font to be used as font-family */
 	src: url(font.ttf); /* locate the font */
 }
+
 
 .COLOR {
 	color: red; /* color text in red */
 	color: #FF0000; /* red text */
 	color: rgb(255, 0, 0); /* red text */
 }
+
 
 .BACKGROUND {
 	background-color: lightblue; /* use color as bg */
@@ -119,6 +124,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
 }
 
+
 .BORDERS {
 	border-style: solid dotted dashed double groove ridge inset outset none hidden; /* use one */
 	border-style: dotted dashed solid double; /* each side different border type */
@@ -128,6 +134,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	border-radius: 5px; /* round borders */
 	border-left: 6px solid red; /* only one side */
 }
+
 
 .MARGIN { /* Space around elements */
 	margin-bottom: 10px; /* top, right, bottom, left */
@@ -139,11 +146,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	/* h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;} */
 }
 
+
 .PADDING { /* Space around content */
 	padding-right: 10px; /* top, right, bottom, left */
 	padding-left: 5% 5vh 5vw 5em; /* use one */
 	padding: 10px, 5px, 10px, 5px; /* shortened method */
 }
+
 
 .HEIGHT { /* While px are fixed, em and % depends on parents */
 	height: 200px;
@@ -151,16 +160,19 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	min-height: 20em;
 }
 
+
 .WIDTH { /* While px are fixed, em and % depends on parents */
 	width: 400px;
 	max-width: 100%;
 	min-width: 20em;
 }
 
+
 .OUTLINE { /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
 	outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
 	outline: 5px dotted red; /* shortened method */
 }
+
 
 .TEXT {
 	color: red;
@@ -179,6 +191,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	text-shadow: 2px 2px #FF0000; /* shadow */
 }
 
+
 .LIST {
 	list-style-type: circle square upper-roman lower-alpha none; /* kind of listing for ul */
 	list-style-type: upper-roman lower-alpha; /* kind of listing for ol */
@@ -186,6 +199,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	list-style-position: inside; /* inside or outside the content flow (outside by default) */
 	list-style: square inside url("sqpurple.gif"); /* shortened way */
 }
+
 
 .TABLE {
 	border: solid 1px; /* set to table, th and td it make it look like a table (thanks to borders) */
@@ -195,6 +209,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	empty-cells: hide show; /* can hide empty cells */
 }
 
+
 .DISPLAY { 
 	display: inline; /* by default for <a> <span> <img> displays elements in line */
 	display: block; /* by default for most of tags displays elements by full width block */
@@ -202,6 +217,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	display: none; /* hide item and affect layout, visibility is the same */
 	display: inline-block; /* displays elements in line as blocks; allows to use vertical-align */
 }
+
 
 .POSITION {
 	position: static; /* by default, they are not affected by top-right-bottom-left properties */
@@ -217,11 +233,13 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	overflow: auto; /* chose best option */
 }
 
+
 .FLOAT {
 	float: right left; /* item floats to a side */
 	clear: right left; /* stop floating for next items */
 	overflow: auto; /* needed if an element is taller than the element containing it */
 }
+
 
 .ALIGN {
 	margin: auto; /* center element but need to specify width */
@@ -231,16 +249,19 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	top: 50%;     left: 50%;    transform: translate(-50%, -50%); /* will center horizontally */
 }
 
+
 .OPACITY {
 	opacity: 0.5; /* from 1 to 0, very useful with :hover; effect on other elements too ! */
 	background: rgba(76, 175, 80, 0.5); /* works also with rgba; better way because it changes only this element */
 }
+
 
 .SHADOW {
 	/* multiple shadow effects possible with comas */
 	box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
 	text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
 }
+
 
 .TOOLTIP {
   position: relative;
@@ -263,6 +284,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
   visibility: visible;
 }
 
+
 .TRANSFORM-2D {
 	transform: translate(50px, 100px); /* moves 50px to right and 100px down */
 	transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
@@ -271,6 +293,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	-webkit-transform: rotate(10deg); /* for safari */
 	transform: scale(0.7) rotate(30deg); /* shortened method */
 }
+
 
 .TRANSFORM-3D {
 	transform: rotateX(150deg); /* rotate around X-axis */
@@ -282,6 +305,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
 }
 
+
 .TRANSITION {
 	/* multiple transformations all at once */
 	transition-property: background-color, width, height; /* change those properties; they must be defined elsewhere */
@@ -290,6 +314,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
 	transition: color 2s ease, width 1s linear; /* shortened method */
 }
+
 
 @keyframes keyframe_name { /* needed for animation */
 	0% {
@@ -302,7 +327,6 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 		transform: translateX(150px) rotate(30deg);
 	}
 }
-
 @-webkit-keyframes keyframe_name { /* needed for animation on chrome safari and opera */
 	0% {
 		transform: translateX(0px);
@@ -314,7 +338,6 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 		transform: translateX(150px) rotate(30deg);
 	}
 }
-
 .ANIMATION {
 	/* multiple animations step by step; need @keyframes */
 	animation: keyframe_name 2s; /* use animation created before in @keyframes */
@@ -322,18 +345,22 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	animation: keyframe_name 2s linear alternate infinite; /* alternate to make it play a loop; infinite for never-ending animation */
 }
 
+
 .CURSOR {
 	cursor: progress wait crosshair help move pointer text; /* different types of cursors */
 	cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /* direction of resize */
 }
 
+
 .BOX-MODEL {
 	box-sizing: border-box; /* keep border inside the height and width of elements; use with '*' is better */
 }
 
+
 .IMAGE {
 	max-width: 100%; height: auto; /* easy resize images */
 }
+
 
 .FLEX-CONTAINER {
 	display: flex;/* in a container, change the disposition to flex and allow following properties */
@@ -345,12 +372,14 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	flex-flow: row wrap; /* shortened way to direction and wrap */
 }
 
+
 .FLEX-ITEMS {
 	margin: auto; /* center all elements; need to be on items and not on container */
 	align-self: flex-end; /* align a single item differently; influence on secondary axis */
 	order: 1 2 3; /* change order of html code; need to order every item; 0 by default */
 	flex: 1 2 3; /* change size ...; need to flex every item */
 }
+
 
 .MULTI-COLUMNS {
 	-webkit-columns: 4 100px; /* Chrome, Safari, Opera */
@@ -363,6 +392,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	column-span: all; /* to span over multiple (all) columns a title for example */
 	/* check columns jumps */
 }
+
 
 .GRADIENT {
 	background-image: linear-gradient(blue, green); /* gradient from blue(top) to green(bottom) */
