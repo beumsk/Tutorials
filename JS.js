@@ -830,19 +830,29 @@ OBJECTS
 	console.log(pen.color);
 	console.log(pen.brand);
 
+
+	// other way to create object
+	var obj = new Object();
+	obj.prop = "anything";
+
+
 	// change property
 	pen.color = 'red';
+
 
 	// other way to reach properties; useful for var or parameters, or with var containing spaces
 	console.log(pen['color']);
 
+
 	// in a single line
 	console.log(pen.type + ' ' + pen.color + ' ' + pen.brand);
+
 
 	// add property
 	pen.price = 2;
 	console.log('My ' + pen.brand + ' ' + pen.color + ' ' + pen.type + 'pen costs ' + pen.price + ' euros.' );
 	
+
 	// delete a property
 	delete pen.price;
 
