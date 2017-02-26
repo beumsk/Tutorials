@@ -35,7 +35,6 @@ MAIN JS
 	}
 	say ("hello")("world"); // hello world
 
-
 	// Array (careful!-> if var is set equals to an array, they will be linked and influence each other)
 	var numbers = [one, two, three]; 
 		console.log(numbers[0]);
@@ -80,9 +79,17 @@ MAIN JS
 	document.body.removeChild(newDiv); // remove newDiv
 	document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
 
-// add animation, events, 
+	newDiv.addEventListener("click", function () {code block}); // new event click
+	setTimeout(function (){code block}, 1000); // run code after 1sec; can clearTimeout()
+	setInterval(function (){code block}, 1000); // run code every 1sec; can clearInterval()
 
-	___
+	document.querySelector("form").addEventListener("submit", function (e) {e.preventDefault();}); // prevent default (submit and refresh)
+
+	JSON.stringify(objectJS); // JS objects array into JSON string
+	JSON.parse(stringJSON); // JSON string into JS objects array
+
+
+// add animation, events, 
 
 
 
@@ -2298,7 +2305,7 @@ DOM ANIMATIONS
 
 	// Rebounding ball with start/stop animation
 	var box = document.getElementById("box");
-	var ball = document.getElementById("ball"); // #ball must be position: relative and left : 0;
+	var ball = document.getElementById("ball"); // #ball must be position: relative and left: 0;
 	var start = document.getElementById("start");
 	var stop = document.getElementById("stop");
 	var ballWidth = parseFloat(getComputedStyle(ball).width);
