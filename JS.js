@@ -861,6 +861,13 @@ OBJECTS
 	pen.hasOwnProperty(type);
 
 
+	// for in loop
+	var person = {firstName: "John", lastName: "Doe", age: 25};
+	for (var x in person) {
+		console.log(person[x]);
+	}
+
+
 	// basic rpg
 	var char = {
 		name: 'Beumsk',
