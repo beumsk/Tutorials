@@ -1877,9 +1877,6 @@ DOM CHANGE
 		document.getElementById('content').appendChild(linkElt);
 		document.getElementById('content').appendChild(document.createElement('br'));
 	}
-	
-	
-	// PRACTICE ADDING HTML ELEMENTS !!!!!!!
 
 
 	
@@ -2025,7 +2022,7 @@ DOM EVENTS
 	
 	// one button count the clicks and another one disables the counting
 	var count = 0;
-	function e() {
+	function e () {
 		count++;
 		document.getElementById("clickCounter").textContent = count;
 	}
