@@ -1569,6 +1569,10 @@ REGEXP
 
 
 	abc // Find strings containing "abc"
+
+	^abc // Find strings starting with "abc"
+
+	abc$ // Find strings ending with "abc"
 	
 	[abc] // Find any characters between the brackets
 	
@@ -1584,23 +1588,37 @@ REGEXP
 	
 	(x|y)	// Find any alternatives separated with |
 	
-	\d	// Find a digit
+	\d // Find a digit
+
+	\D // Find a non digit
 	
-	\s	// Find a whitespace character
+	\s // Find a whitespace character
+
+	\S // Find anything but a whitespace character
 	
 	\w // Find any letter/digit or _ ; similar to [A-Za-z0-9_]
+
+	\W // opposite of \w
+
+	\n // Find a newline
+
+	\t // Find a tab
 	
-	n+	// Matches any string that contains at least one n
+	n+ // Matches any string that contains at least one n
 		
-	n*	// Matches any string that contains zero or more occurrences of n
+	n* // Matches any string that contains zero or more occurrences of n
 		
-	n?	// Matches any string that contains zero or one occurrences of n
+	n? // Matches any string that contains zero or one occurrences of n
+
+	a{2, 5} // find strings whit 2 to 5 a
 		
 	i	// Perform case-insensitive matching
 	
 	g	// Perform a global match (find all matches rather than stopping after the first match)
 	
 	m	// Perform multiline matching
+
+	. // anything 
 	
 	
 	// The search() method uses an expression to search for a match, and returns the position of the match.
