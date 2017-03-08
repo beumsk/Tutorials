@@ -34,7 +34,7 @@ SELECT HTML
 	.main {} /* Selects all elements with class="main" */
 	#main {} /* Selects the element with id="main" */
 	p.main {} /* Selects p elements with class="main" */
-	p * {} /* Selects everything in pplate */
+	p * {} /* Selects everything in p */
 
 	a:link {} /* Selects all unvisited links */
 	a:visited {} /* Selects all visited links */
