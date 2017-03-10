@@ -66,6 +66,7 @@ SELECT HTML
 	p:not(.main) /* Selects p without .main class */
 
 	:required {} /* Selects required form elements */
+	:valid {} /* Selects valid form elements */
 	:invalid {} /* Selects invalid form elements */
 	:focus {} /* Selects focused form element */
 
