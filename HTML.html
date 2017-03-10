@@ -277,7 +277,9 @@ HYPERTEXT MARKUP LANGUAGE
 	<form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
 		<fieldset><!--borders the questions; can create different parts in the form-->
 			<legend>Information</legend><!--name of the fieldset-->
-			<input type="text" name="firstname" required><!--one line field to answer, use autofocus to focus directly on that input, required to be able to submit--><hr>
+			<input type="text" name="firstname"><!--one line field to answer, use autofocus to focus directly on that input--><hr>
+			<input type="text" name="firstname" required><!--need to fill it to be able to submit--><hr>
+			<input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!--input required and made from 4 letters--><hr>
 			<label for="label">Label</label><input type="text" name="label" id="label"><!--Label helps the user to know what he has to write in the form; need for & id--><hr>
 			<textarea type="text" name="quote" rows="3" cols="30"></textarea><!--long text area--><hr>
 			<input type="password" name="psw"><!--password field--><hr>
