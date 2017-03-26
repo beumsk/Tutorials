@@ -773,6 +773,11 @@ FUNCTIONS MATH
 	console.log(Math.floor(Math.random() * 100)); // random number without decimals
 
 
+	// Math.round
+	Math.round(0.6666 * 100) / 100; // 0.67
+	Math.round(0.66666666 * 10000) / 10000; // 0.6667
+
+
 	// Math.pow; returns first parameter powered by second parameter
 	console.log(Math.pow(5, 2)); // 25
 
@@ -783,6 +788,10 @@ FUNCTIONS MATH
 
 	// Math.abs; returns absolute of parameter
 	console.log(Math.abs(-12)); // 12
+
+
+	// eval; takes a string and do the math
+	eval("10 * 5 + 10 / 2") // 55
 	
 	
 
@@ -1210,6 +1219,16 @@ ARRAYS
 	// array length
 	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
 	console.log(languages.length); // 5
+
+
+	// check if array is empty
+	var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+	if (languages.length !== 0) {
+		console.log("Array is not empty !");
+	}
+	else {
+		console.log("Array is empty");
+	}
 
 
 	// call a array element

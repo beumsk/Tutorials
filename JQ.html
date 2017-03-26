@@ -58,17 +58,17 @@ JQuery
 
 		// effect methods
 		$(function() {
-			$('p').show(1000, linear); // show element
-			$('p').hide(1000, linear); // hide element
-			$('p').toggle(1000, linear); // show/hide element
-			$('p').fadeIn(1000, linear); // fade element in
-			$('p').fadeOut(1000, linear); // fade element out
-			$('p').fadeToggle(1000, linear); // switch between fadeIn and fadeOut
+			$('p').show(1000, "linear"); // show element
+			$('p').hide(1000, "linear"); // hide element
+			$('p').toggle(1000, "linear"); // show/hide element
+			$('p').fadeIn(1000, "linear"); // fade element in
+			$('p').fadeOut(1000, "linear"); // fade element out
+			$('p').fadeToggle(1000, "linear"); // switch between fadeIn and fadeOut
 			$('p').fadeTo('slow', 0); // fade element to some opacity; speed and opacity as paramters
 			$('p').toggleClass("newClass"); // switch between oldClass and newClass for every event
-			$('p').slideUp(1000, linear); // hide element uping
-			$('p').slideDown(1000, linear); // hide element downing
-			$('p').slideToggle(1000, linear); // hide element same position
+			$('p').slideUp(1000, "linear"); // hide element uping
+			$('p').slideDown(1000, "linear"); // hide element downing
+			$('p').slideToggle(1000, "linear"); // hide element same position
 			$('button').prop('disabled', 'true'); // disables button
 			$('p').animate({left:'+=10px'}, 500); // animates p to 10px to the right
 			$('p').stop(); // stop currently running animation
