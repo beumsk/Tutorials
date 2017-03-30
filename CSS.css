@@ -42,6 +42,7 @@ SELECT HTML
 	a:active {} /* Selects the active link */
 	a:focus {} /* Selects focused link */
 	a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
+	a:target {} /* Selects the target link; very useful to make things pop up */
 
 	p:first-line {} /* Selects first line of <p> */
 	p:first-letter {} /* Selects first letter of <p> */
@@ -214,9 +215,9 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 .DISPLAY { 
 	display: inline; /* by default for <a> <span> <img> displays elements in line */
 	display: block; /* by default for most of tags displays elements by full width block */
-	display: hidden; /* hide item */
 	display: none; /* hide item and affect layout, visibility is the same */
 	display: inline-block; /* displays elements in line as blocks; allows to use vertical-align */
+	visibility: hidden; /* hide item */
 }
 
 
