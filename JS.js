@@ -2125,6 +2125,10 @@ DOM FORMS
 	console.log(getValue); // log input value
 
 
+	// Set value of an input
+	document.getElementsByTagName('input').value = "Hello"; // input value is now 'hello';
+
+
 	// Check form elements
 	var form = document.querySelector("form");
 	console.log(form.elements.length); // number of inputs inside form
