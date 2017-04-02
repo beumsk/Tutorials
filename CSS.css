@@ -39,8 +39,8 @@ SELECT HTML
 	a:link {} /* Selects all unvisited links */
 	a:visited {} /* Selects all visited links */
 	a:hover {} /* Selects links on mouse over */
-	a:active {} /* Selects the active link */
-	a:focus {} /* Selects focused link */
+	a:active {} /* Selects the active link; when you click on it */
+	a:focus {} /* Selects focused link; mainly for input */
 	a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
 	a:target {} /* Selects the target link; very useful to make things pop up */
 
@@ -133,8 +133,24 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	border-width: 5px; /* or medium */
 	border-color: red;
 	border: 5px solid red; /* shortened method */
-	border-radius: 5px; /* round borders */
 	border-left: 6px solid red; /* only one side */
+	border: 10px 5px 20px 15px; /* make some irregular borders */
+	border-radius: 5px; /* round borders */
+	border-radius: 20px 5px 10px 15px; /* make some irregular radius */
+}
+
+
+.HALF-CIRCLE {
+	height: 100px;
+	width: 50px;
+	border-radius: 100px 0 0 100px; /* change places for other side */
+}
+
+
+.QUARTER-CIRCLE {
+	height: 100px;
+	width: 100px;
+	border-radius: 100% 0 0 0; /* Change places for another side */
 }
 
 
@@ -403,4 +419,9 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1)); /* you can use it with transparency of course */
 	background-image: linear-gradient(to right, blue 0%, green 30%); /* % or pixels to change space of each color */
 	background-image: radial-gradient(circle at center, white, green); /* radial gradient; other positions available; ellipse too */
+}
+
+
+.GRIDS {
+	/* check if supported accross browsers */
 }
