@@ -423,5 +423,16 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 
 
 .GRIDS {
-	/* check if supported accross browsers */
+	/* available in chrome and firefox only */
+	display: grid;
+	grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
+	grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
+	grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
+}
+.GRIDS-ELEMENTS {
+	grid-column-start: 1; /* starts at vertical line 1 */
+	grid-column-end: span 3; /* ends after 3 vertical line */
+	grid-column: 1 / 3; /* shorter method */
+	grid-row: 1 / 5; /* starts at horizontal line 1 and ends at 5 */
+	grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
 }
