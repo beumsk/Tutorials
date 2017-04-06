@@ -38,6 +38,8 @@ JQuery
 			$('p:eq(1)') // selects second p; works as an array
 			$('p:gt(0)') // selects p greater than 0
 			$('p:lt(3)') // selects p lower than 3
+			$('p:even') // selects p even (first element is 0 !)
+			$('p:odd') // selects p odd (first element is 0 !); 
 			$('p:not(".main")') // selects p without 'main' class
 		});
 	
@@ -46,14 +48,32 @@ JQuery
 		$(function() {
 			$('p:hidden') // selects p hidden
 			$('p:visible') // selects p visible
+			$(':header') // h1 to h6 tags
 			$('p:contains("text")') // selects p with 'text'
 			$('p:has("element")') // selects p with 'element' as element
 			$('[align]') // selects elements with align attribut
-			$('[align=center]') // selects elements with align center
-			$('[align!=center]') // selects elements without align center
+			$('[align="center"]') // selects elements with align center
+			$('[align!="center"]') // selects elements without align center
+			$('[src^="he"]') // selects elements with src starting with 'he'
+			$('[src$="llo"]') // selects elements with src ending with "llo"
 			$('input[name="lol"]') // selects input elements with name lol
 			$('[href="#home"]') // selects elements with #home href
 		});
+
+
+		// switch from js var to jquery var
+		var variableJS = "anything";
+		var variableJQ = $(variableJS);
+
+
+		// switch from jquery object to js object
+		var divs = $("div").get();
+
+
+		// input
+		$('input').val(); // get input value
+		$('input[id="name"]').val(); // get input id="name" value
+		$('input').val('John'); // set John as new input value
 	
 
 		// effect methods
@@ -83,15 +103,23 @@ JQuery
 			$('p').replaceWith('<p>Hey Red !</p>'); // replace entirely p
 			$('p').remove(); // remove p and children
 			$('p').empty(); // remove everything inside p
-			$('p').before('Content'); // insert content before p
-			$('p').after('Content'); // insert content after p
-			$('p').prepend('Content'); // insert inside p (after opening tag)
-			$('p').append('Content'); // insert inside p (before closing tag)
-			$('p').appendTo('div'); // insert p in div (before closing tag)
+			$('p').before('Content'); // move content before p
+			$('p').after('Content'); // move content after p
+			$('p').prepend('Content'); // move inside p (after opening tag)
+			$('p').append('Content'); // move inside p (before closing tag)
 			$('p').prependTo('div'); // insert p in div (after opening tag)
+			$('p').appendTo('div'); // insert p in div (before closing tag)
+			$('p').insertBefore('div'); // insert p before div
+			$('p').insertAfter('div'); // insert p after div
+			$('p').wrap('<i></i>'); // wrap p with i tags
+			$('p').wrapInner('<i></i>'); // wrap with i tags inside p tag
 			$('a').attr('href', 'http://somewhere.lol'); // add attribut and value; removeAttr() too
-			$('p').addClass('Class'); // add class; removeClass() too; toggleClass() too
-			$('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p)
+			$('p').addClass('class1 class2'); // add one or multiple class
+			$('p').removeClass('class1 class2'); // remove one or multiple class
+			$('p').toggleClass('class1 class2'); // switch between class 
+			$('p').hasClass('class1'); // return true if p has class1
+			$('p').is('.class1'); // return true if p has class1; possible with all selectors
+			$('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p
 		});
 	
 
@@ -107,8 +135,19 @@ JQuery
 
 		// Size and position
 		$(function() {
-			$('p').height(''); // basic height (no margins, padding and borders)
-			$('p').width(''); // basic width (no margins, padding and borders)
+			$('p').offset().left; // position absolute of p from left; .right
+			$('p').offset().top; // position absolute of p from top; .bottom
+			$('p').offset({top: 100, left: 100}); // set position absolute;
+			$('p').position().right; // position relative of p from right; .left
+			$('p').position().bottom; // position relative of p from bottom; .top
+			$('p').height(); // basic height (no margins, paddings and borders)
+			$('p').innerHeight(); // height + paddings
+			$('p').outerHeight(); // height + paddings + borders
+			$('p').outerHeight(true); // height + paddings + borders + margins
+			$('p').width(); // basic width (no margins, paddings and borders)
+			$('p').innerWidth(); // width + paddings
+			$('p').outerWidth(); // width + paddings + borders
+			$('p').outerWidth(true); // width + paddings + borders + margins
 		});
 	
 
@@ -132,11 +171,6 @@ JQuery
 		// create
 		$("<p></p>"); // creates p tag (or anything else); need to append it later
 		var a = $([]); // create empty jquery object
-
-
-		// get value
-		var getValue = $("input").val(); // gets value of input (maybe multiple)
-		var getValue2 = $("input[id='name']").val(); // gets value of input id name
 	
 
 		// change opacity when mouse enters/leaves
