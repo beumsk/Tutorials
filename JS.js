@@ -2324,6 +2324,15 @@ DOM ANIMATIONS
 	clearTimeout(varSetInterval); // stops timeout
 
 
+	// Set timeout in a loop; tricky because you need to copy the i otherwise it will log only last i value
+	var time = 10;
+	for (var i = 1; i <= time; i++){
+	  (function(copy){
+	    setTimeout(function() { console.log(copy); }, 1000 * i);
+	  })(i);
+	}
+
+
 	// Request animation frame; 
 	function animate() {
 		// animation code...
@@ -2335,6 +2344,10 @@ DOM ANIMATIONS
 	// Cancel animation frame; you must name your requestAnimationFrame() in a var to be able to use cancelAnimationFrame()
 	cancelAnimationFrame(varRequestAnimationFrame)
 	// you can also use CSS animations
+
+
+	// reload page
+	location.reload(true);
 
 	
 	// Start timer and be able to pause/start

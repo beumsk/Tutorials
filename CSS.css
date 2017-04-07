@@ -365,7 +365,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 
 
 .CURSOR {
-	cursor: progress wait crosshair help move pointer text; /* different types of cursors */
+	cursor: progress wait crosshair help move pointer text not-allowed; /* different types of cursors */
 	cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /* direction of resize */
 }
 
