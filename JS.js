@@ -47,6 +47,12 @@ MAIN JS
 	// Condition
 	if (a == 1) {code block} else if (a == 2) {code block} else {code block}
 
+	// Short circuiting
+	var a = true && true; // returns true
+	var a = true && false; // returns false
+	var a = false || false; // returns false
+	var a = true || false; // returns true
+
 	// Switch condition
 	switch (a) {case 1: code block; break; case 2: code block; break;} 
 
@@ -164,6 +170,54 @@ VARIABLES
 	var a = "five" * 2; console.log(a); // NaN; Not a Number
 
 	var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
+
+	var a = true && true; // true
+ 
+	var a = true || false; // true
+
+
+
+
+CONST
+// Javascript const are containers you can only read; best use for value that will not change
+
+
+	// basic const
+	const a = 23;
+
+
+	// exception to rewrite const -> in a block
+	if (a === 23) {
+		const a = 7; // here and only here a = 7
+	}
+	console.log(a); // 23 again
+
+
+	// with objects
+	const myObject = {"key": "value"};
+	myObject.key = "otherValue"; // keys are not protected; can be with Object.freeze()
+
+
+	// with arrays
+	const myArray = [];
+	myArray = [8]; // not possible
+	myArray.push(8); // possible
+
+
+
+
+	LET 
+	// Javascript let are containers with small scope (a block)
+
+
+		// let vs var
+		var a = 5, b = 10;
+		if (a === 5) {
+			let a = 4; // only 4 in if block
+			var b = 1;
+			console.log(a, b); // 4 1
+		}
+		console.log(a, b); //  5 1
 
 
 
@@ -354,6 +408,38 @@ CONDITIONS
 	}
 	else {
 		console.log("Error with your Hour");
+	}
+
+
+
+
+SHORT CIRCUIT
+// handy way to manage short conditions
+
+	
+	// Logical &&
+	var a = true && true; // true
+	var a = true && false; // false
+	var a = false && false; // false
+	var a = "cat" && "dog"; // "dog"
+
+
+	// Logical ||
+	var a = true || true; // true
+	var a = true || false; // true
+	var a = false || false; // false
+	var a = "cat" || "dog"; // "cat"
+
+
+	// with a function
+	function short(test) {
+		var a = test || "Test is not defined"; // a = test value if defined; otherwise a = string
+	}
+
+
+	// chose between functions
+	function short() {
+		func1() || func2(); // runs func1 if it exists; otherwise runs func2
 	}
 
 
@@ -1297,7 +1383,7 @@ ARRAYS
 
 
 	// going through function arguments
-	function lol(arr1, arr2, arr3) {
+	function lol(arr1, arr2, arr3) {+
 		for (i=0; i<arguments.length; i++) {
 			console.log(arguments[i]);
 		}
@@ -1642,6 +1728,10 @@ REGEXP
 	
 	// The search() method uses an expression to search for a match, and returns the position of the match.
 	"try to find me".search(/me/i); // 12
+
+
+	// The match() method uses an expression to search for a match and return that match
+	"try to find me".match(/me/i); // "me"
 	
 	
 	// The replace() method returns a modified string where the pattern is replaced.
