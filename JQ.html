@@ -164,6 +164,8 @@ JQuery
 			$('p').on('focus', function() { … }) // if field gets focus
 			$('p').on('blur', function() { … }) // if field loses focus
 			$('p').on('resize', function() { … }) // 
+			$('p').off(); // remove all event handlers of p
+			$('p').off('click', functionName); // remove functionName event of p
 		});
 		
 		
