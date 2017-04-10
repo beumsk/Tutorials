@@ -88,7 +88,7 @@ MEDIA QUERIES
 	@media only screen and (orientation: landscape) {} /* screen landscape */
 	@media only screen and (orientation: portrait) {} /* screen portrait */
 
-http://www.alsacreations.com/article/lire/930-css3-media-queries.html
+/* http://www.alsacreations.com/article/lire/930-css3-media-queries.html */
 
 
 .FONT {
@@ -202,6 +202,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	letter-spacing: 3px; /* space between letters*/
 	word-spacing: 3px; /* space between words*/
 	word-wrap: break-word; /* break word to make it fit in box*/
+	overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
 	line-height: 0.8; /* space between lines */
 	direction: rtl; /* change text direction to right-to-left */
 	word-spacing: 10px;
@@ -264,7 +265,7 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 	text-align: center; /* center text or image inside element */
 	padding-top: 30px; /* if div padding defined, will by default be centered horizontally */
 	line-height: 100px; /* if div and line height are the same, it will be centered vertically */
-	top: 50%;     left: 50%;    transform: translate(-50%, -50%); /* will center horizontally */
+	top: 50%;	left: 50%;	transform: translate(-50%, -50%); /* will center horizontally */
 }
 
 
@@ -377,6 +378,14 @@ http://www.alsacreations.com/article/lire/930-css3-media-queries.html
 
 .IMAGE {
 	max-width: 100%; height: auto; /* easy resize images */
+	filter: grayscale(100%); /* set a grayscale to 100% */
+	filter: sepia(100%); /* set a grayscale to 100% */
+	filter: saturate(100%); /* set a grayscale to 100% */
+	filter: brightness(100%); /* set a grayscale to 100% */
+	filter: invert(100%); /* set a grayscale to 100% */
+	filter: contrast(100%); /* set a grayscale to 100% */
+	filter: blur(5px); /* set a blur of 5px */
+	filter: initial; /* set a grayscale to 100% */
 }
 
 
