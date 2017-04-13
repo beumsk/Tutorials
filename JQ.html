@@ -48,6 +48,7 @@ JQuery
 		$(function() {
 			$('p:hidden') // selects p hidden
 			$('p:visible') // selects p visible
+			$(':input') // all input type forms (input, textarea, button, etc)
 			$(':header') // h1 to h6 tags
 			$('p:contains("text")') // selects p with 'text'
 			$('p:has("element")') // selects p with 'element' as element
@@ -140,6 +141,33 @@ JQuery
 			$('p').hasClass('class1'); // return true if p has class1
 			$('p').is('.class1'); // return true if p has class1; possible with all selectors
 			$('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p
+			location.reload(); // reload page
+		});
+
+
+		// text methods
+		$(function() {
+			$.trim("   Hello  "); // remove extern spaces "Hello"
+			"Hello".charAt(1); // "e"
+			$("div:contains('hello')"); // selects div containing 'hello'
+			$("div").replaceWith('<p>Hola</p>'); // replace div content
+			$("div").replaceWith("#replacer"); // deletes div and moves #replacer to the div location
+		});
+
+
+		// array methods
+		$(function() {
+			var myArray = ['html', 'css', 'js'];
+			myArray.join(', '); // "html, css, js"
+			$.grep(myArray, function(el, ind) { // 'js'
+				return (el != 'css' && ind > 0); // checker
+			}, false); // inverse checker if true
+			$.map(myArray, function(el, ind) { // 1-->html, 2-->css, 3-->js
+				return (ind + '-->' + el.toUpperCase()); 
+			});
+			$.inArray('js', myArray, 0); // 2; returns index; 3d parameters is the start of the search (if 0, search the whole array)
+			var yourArray = ['jq', 'bs'];
+			$.merge(myArray, yourArray); // myArray -> html, css, js, jq, bs
 		});
 	
 
@@ -294,6 +322,12 @@ JQuery
 			$('#deux').after($paragraphe);
 		});
 	
+
+		// reset form values
+		function resetForm() {
+			$(':input').not(':button, :reset, :submit, :hidden').val('').prop('checked', false).prop('selected', false);
+		}
+
 
 		// get value from a form
 		$(document).ready(function () { // will add what you type in form
