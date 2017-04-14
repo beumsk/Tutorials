@@ -351,14 +351,16 @@ HYPERTEXT MARKUP LANGUAGE
 
 
 	<!-- SCRIPTS -->
-	<?php ?> <? ?> <!--to code PHP-->
-	<script type="text/javascript"> // use src="" if external js file
-		console.log('Texte javascript') // pas affiché dans la page web
-	</script><!--to code JS-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><!--jQuery library; always before js files-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script><!--IU jQuery for better animations-->
-	<script type="text/javascript" src="JS.js"></script>
-	<noscript>Sorry, your browser does not support JavaScript!</noscript><!--for user with disabled JS-->
+	<?php ?> <? ?> <!-- to code PHP -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <!-- jQuery library; always before js files -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> <!-- IU jQuery for better animations -->
+
+	<script type="text/javascript"> 
+		console.log('Texte javascript') // internal JS, always after jquery !
+	</script>
+	<script type="text/javascript" src="JS.js"></script> <!-- External JS -->
+
+	<noscript>Sorry, your browser does not support JavaScript!</noscript><!-- for user with disabled JS -->
 	
 
 	<a href="More tags at http://www.w3schools.com/tags/default.asp"></a>
