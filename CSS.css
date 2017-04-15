@@ -119,6 +119,7 @@ MEDIA QUERIES
 	background-image: url("paper.gif"); /* use img as bg */
 	background-repeat: no-repeat repeat-y repeat-x; /* by default, bg img will repeat */
 	background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
+	background-size: 100% 100vh; /* fit while size, can also be pixels */
 	background-image: -webkit-linear-gradient(#666CCC, #BC1324); /* gradient from one color to the other */
 	background-attachment: fixed; /* Fix the background image */
 	background: url("") no-repeat top center; /* shortened method */
