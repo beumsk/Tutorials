@@ -37,7 +37,7 @@ MAIN JS
 
 	// Array (careful!-> if var is set equals to an array, they will be linked and influence each other)
 	var numbers = [one, two, three]; 
-		console.log(numbers[0]);
+		console.log(numbers[0]); // 'one'
 
 	// Object
 	var dog = {name: "Rex", race: "Pitbul", age: "6"}; 
@@ -74,11 +74,12 @@ MAIN JS
 	document.getElementsByTagNamegName("tag"); // will return tag elements as an array
 	document.getElementsByClassName("class"); // will return .class elements as an array
 	document.getElementById("id"); // will return #id element
-	document.querySelector("tag"); // will return first tag of document; querySelectorAll to get all tags as an array; works as CSS
+	document.querySelector("tag"); // will return first tag of document; selection similar to css (or jquery)
+	document.querySelectorAll("tag"); // will return all tags as an array; 
 
-	document.getElementById("id").setAttribute("src", "www.lol.com"); // set/change attribute; can often be written something.src("change");
+	document.getElementById("id").setAttribute("src", "www.site.com"); // set/change attribute; can often be written something.src("change");
 	document.getElementById("id").innerHTML = "some text"; // change #id content
-	document.getElementById("id").textContent = "some text"; // similar to innerHTML; can use += to add some text
+	document.getElementById("id").textContent = "some text"; // similar to innerHTML without tag understanding; can use += to add some text
 	document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
 
 	newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
