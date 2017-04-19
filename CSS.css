@@ -10,18 +10,18 @@ TODO: link to html file to show result
 /* Inspect(f12) to check easily css file */
 
 
-ADD IN HTML
+.ADD-IN-HTML
 	<link rel="stylesheet" type="text/css" href="mystyle.css">
 
 
-PRIORITY
+.PRIORITY
 	>!important /* body { color: red !important; } */
 	>Inline style (inside an HTML element) 
 	>External and internal style sheets (in the head section) /* id atributes take precedence; their style will value more than class for example */
 	>Browser default
 
 
-SELECT HTML
+.SELECT-HTML
 	* {} /* Selects all elements */
 	html {} 
 	body {}
@@ -80,9 +80,19 @@ SELECT HTML
 	input[type="button"] {} /* selects elements with type="button" */
 
 	p {color: red !important;} /* become most important */
+
+
+.CSS-VARIABLES {
+
+}
+
+
+.CSS-CALC {
+	
+}
 	
 
-MEDIA QUERIES
+.MEDIA-QUERIES 
 	@media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
 	@media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
 	@media only screen and (orientation: landscape) {} /* screen landscape */
