@@ -82,13 +82,22 @@ TODO: link to html file to show result
 	p {color: red !important;} /* become most important */
 
 
+:root {
+	--main-color: red;
+	--semi-transparent: rgba(256, 256, 256, 0.6);
+	--anything: 10px;
+}
 .CSS-VARIABLES {
-
+	color: red; border: solid 2px currentColor; /* will have border red because currentColor refers to element's color */
+	color: var(--main-color); /* uses variable and colors to red */
+	background: var(--semi-transparent); /* uses variable to color background */
+	padding: var(--anything, 10px); /* uses variable for padding and a value used if the variables is undefined */
+	color: initial; /* reset value */
 }
 
 
 .CSS-CALC {
-	
+	width: calc(100% - 80px); /* calculates */
 }
 	
 
