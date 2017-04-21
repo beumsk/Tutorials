@@ -254,6 +254,18 @@ JQuery
 		});
 
 
+		// disable/enable button event; only works with button tag
+		$("#ok").on("click", function() {
+		  $(this).animate({width:"+=50px"}, 1000);
+		});
+		$("#off").on("click", function() {
+		  $("#ok").attr("disabled", "disabled");
+		});
+		$("#on").on("click", function() {
+		  $("#ok").removeAttr("disabled");
+		});
+
+
 		// remove jquery animations
 		$(function() {
 			$('p').on('click', function() {
