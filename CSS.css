@@ -154,7 +154,7 @@ TODO: link to html file to show result
 	border-color: red;
 	border: 5px solid red; /* shortened method */
 	border-left: 6px solid red; /* only one side */
-	border: 10px 5px 20px 15px; /* make some irregular borders */
+	border-width: 10px 5px 20px 15px; /* make some irregular borders */
 	border-radius: 5px; /* round borders */
 	border-radius: 20px 5px 10px 15px; /* make some irregular radius */
 }
@@ -352,6 +352,7 @@ TODO: link to html file to show result
 	transition-delay: 0.5s; /* the time before transition starts */
 	transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
 	transition: color 2s ease, width 1s linear; /* shortened method */
+	transition: all 1.5s ease; /* handle all transition at once */
 }
 
 
