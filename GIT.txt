@@ -18,6 +18,8 @@ OR git clone remote_location clone_name // clone the directory in a new one name
 - git stash pop // to get your modifications stashed
 - git stash apply // to keep modifications in stash
 
+- git diff HEAD // show modification between last commit and current
+
 - git log // view historic of commits
 - git merge branch_name // merge branch_name in actual branch
 - git blame filename // list all modifications with modificators names
