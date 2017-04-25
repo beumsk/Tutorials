@@ -143,7 +143,9 @@ TODO: link to html file to show result
 	background-attachment: fixed; /* Fix the background image */
 	background: url("") no-repeat top center; /* shortened method */
 	background: url(""), url(""); /* 2 different background images; first will be on top */
-	background-clip: padding-box content-box border-box text; /* border box is default; padding clip to padding; content clip to content; text for text only ! */
+	background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
+	-webkit-background-clip: text; /* to show background through text */
+	-webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
 }
 
 
