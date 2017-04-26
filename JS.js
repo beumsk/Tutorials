@@ -732,8 +732,8 @@ FUNCTIONS
 
 
 
-FUNCTIONS TEXT 
-// functions working on text strings
+STRING METHODS 
+// methods working on text strings
 
 
 	// length with variables
@@ -835,6 +835,27 @@ FUNCTIONS TEXT
 		console.log('Palindrome : False');
 	}
 	console.log(convertLeetSpeak(word));
+
+
+
+
+NUMBERS METHODS
+// methods working on numbers
+
+
+	// toString; number to string
+	(123).toString(); // 123
+	var x = 123; x.toString(); // 123
+	(100 + 23).toString(); // 123
+	
+
+	// toFixed; number of decimals
+	(2.343).toFixed(0); // 2
+	(2.343).toFixed(2); // 2.34
+	(2.343).toFixed(4); // 2.3430
+
+
+	// 
 
 
 
