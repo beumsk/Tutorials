@@ -847,7 +847,7 @@ NUMBERS METHODS
 	(123).toString(); // 123
 	var x = 123; x.toString(); // 123
 	(100 + 23).toString(); // 123
-	
+
 
 	// toFixed; number of decimals
 	(2.343).toFixed(0); // 2
@@ -855,7 +855,26 @@ NUMBERS METHODS
 	(2.343).toFixed(4); // 2.3430
 
 
-	// 
+	// Number; turns value into number
+	Number(true); // 1; 0 if false
+	Number("10"); // 10
+	Number("10 20"); // NaN
+
+
+	// parseInt; first number returned
+	parseInt("10"); // 10
+	parseInt("10.33"); // 10
+	parseInt("10 20"); // 10
+	parseInt("10 years"); // 10
+	parseInt("years 10"); // NaN
+
+
+	// parseInt; first number returned (same as parseInt but with decimals)
+	parseFloat("10"); // 10
+	parseFloat("10.33"); // 10.33
+	parseFloat("10 20"); // 10
+	parseFloat("10 years"); // 10
+	parseFloat("years 10"); // NaN
 
 
 
@@ -865,20 +884,20 @@ FUNCTIONS MATH
 
 
 	// Math.min; returns the smallest number from parameters
-	console.log(Math.min(9, 7, 6, 1)); // 1
+	Math.min(9, 7, 6, 1); // 1
 
 
 	// Math.max; returns the biggest number from parameters
-	console.log(Math.max(9, 1, 6, 3, 5)); // 9
+	Math.max(9, 1, 6, 3, 5); // 9
 
 
 	// Math.random; returns a random number between 0 and 1
-	console.log(Math.random());
+	Math.random();
 
 
 	// Math.random; 
-	console.log(Math.random() * 100); // random number 1 to 100; change '100' to change possibilities of course
-	console.log(Math.floor(Math.random() * 100)); // random number without decimals
+	Math.random() * 100; // random number 1 to 100; change '100' to change possibilities of course
+	Math.floor(Math.random() * 100); // random integer
 
 
 	// Math.round
@@ -886,16 +905,28 @@ FUNCTIONS MATH
 	Math.round(0.66666666 * 10000) / 10000; // 0.6667
 
 
+	// Math.ceil; round value up
+	Math.ceil(4.3); // 5
+
+
+	// Math.floor; round value down
+	Math.floor(4.7); // 4
+
+
 	// Math.pow; returns first parameter powered by second parameter
-	console.log(Math.pow(5, 2)); // 25
+	Math.pow(5, 2); // 25
 
 
 	// Math.sqrt; returns square root of parameter
-	console.log(Math.sqrt(16)); // 16
+	Math.sqrt(16); // 16
 
 
 	// Math.abs; returns absolute of parameter
-	console.log(Math.abs(-12)); // 12
+	Math.abs(-12); // 12
+
+
+	// Math.PI
+	Math.PI // 3.141592653589793
 
 
 	// eval; takes a string and do the math
