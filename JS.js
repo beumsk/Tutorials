@@ -146,6 +146,30 @@ ERRORS
 
 
 
+TYPES 
+// Check types of elements;
+
+
+	// Typeof the main type checker
+	typeof 27; // number
+	typeof NaN; // number; weird i know
+	typeof "Hello"; // string
+	typeof (typeof 1); // string; typeof always returns a string
+	typeof true; // boolean
+	typeof Symbol(); // symbol
+	typeof undefined; // undefined
+	typeof what; // undefined
+	typeof {a:1}; // object
+	typeof [1, 2, 3]; // object
+	Array.isArray(arrayName); // true if an array
+	typeof function(){}; // function
+	typeof class C {}; // function
+	typeof Math.PI; // function
+	typeof null; // object
+
+
+
+
 VARIABLES
 // JavaScript variables are containers for storing data values.
 
@@ -965,7 +989,7 @@ DATE
 
 
 OBJECTS
-// they are like complexed variables; they include multiple parameters and functions; you can have objects nested in an array too
+// they are like complexed variables; they include multiple parameters and functions; they are named indexed
 
 
 	// simple object with 3 properties
@@ -1347,7 +1371,7 @@ PROTOTYPES
 
 
 ARRAYS
-// JavaScript arrays are used to store multiple values in a single variable.
+// JavaScript arrays are used to store multiple values in a single variable; they are number indexed
 // Careful! -> if var is set equals to an array, they will be linked and influence each other (may cause infinite loops)
 
 
@@ -1483,7 +1507,7 @@ ARRAYS
 	numbersLettersOnly([7, "abc", false, null, 0, 9, NaN, "hello", undefined, ""]); // [7, "abc", 9, "hello"]
 
 
-	// sort an array
+	// sort an array; for alphabetic sorting, just need sort()
 	var array = [1, 2, 3, 4, 5];
 	array.sort(function(a, b) {
 		return b - a; // from largest; a - b to sort from smallest
