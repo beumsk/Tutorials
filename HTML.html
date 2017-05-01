@@ -1,199 +1,199 @@
 HYPERTEXT MARKUP LANGUAGE
-	-Page Structure
-		-by Beumsk
-		
+  -Page Structure
+    -by Beumsk
+    
 
 <!--To create a comment. Shown in code only. Indent 2 spaces-->
 <!--Inspect(f12) to check easily html file-->
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 
 <!-- HEAD ELEMENTS -->
 <head><!--Everything about title, CSS link, SEO, description, ...-->
-	<meta charset="utf-8"/> <!--allow special characters to be displayed-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!---->
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> <!--make media queries work-->
-	<meta name="description" content="description"/> <!--Website description-->
-	<meta name="keywords" content="keywords"/> <!--keywords = for SEO-->
-	<meta name="author" content="author"/> <!--Page author-->
-	
-	<meta property="og:title" content="Title Here" /> <!--open graph data; for Facebook-->
-	<meta property="og:type" content="website" /> <!--article if article-->
-	<meta property="og:url" content="http://www.example.com/" />
-	<meta property="og:image" content="http://example.com/image.jpg" />
-	<meta property="og:description" content="Description Here" /> 
-	<meta property="og:site_name" content="Site Name" />
-	<meta property="fb:admins" content="Facebook numeric ID" />
+  <meta charset="utf-8"/> <!--allow special characters to be displayed-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!---->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!--make media queries work-->
+  <meta name="description" content="description"/> <!--Website description-->
+  <meta name="keywords" content="keywords"/> <!--keywords = for SEO-->
+  <meta name="author" content="author"/> <!--Page author-->
+  
+  <meta property="og:title" content="Title Here" /> <!--open graph data; for Facebook-->
+  <meta property="og:type" content="website" /> <!--article if article-->
+  <meta property="og:url" content="http://www.example.com/" />
+  <meta property="og:image" content="http://example.com/image.jpg" />
+  <meta property="og:description" content="Description Here" /> 
+  <meta property="og:site_name" content="Site Name" />
+  <meta property="fb:admins" content="Facebook numeric ID" />
 
-	<meta itemprop="name" content="The Name or Title Here"> <!-- Schema.org markup for Google+ -->
-	<meta itemprop="description" content="This is the page description">
-	<meta itemprop="image" content="http://www.example.com/image.jpg">
+  <meta itemprop="name" content="The Name or Title Here"> <!-- Schema.org markup for Google+ -->
+  <meta itemprop="description" content="This is the page description">
+  <meta itemprop="image" content="http://www.example.com/image.jpg">
 
-	<meta name="twitter:card" content="summary"> <!-- Twitter Card data -->
-	<meta name="twitter:site" content="@publisher_handle">
-	<meta name="twitter:title" content="Page Title">
-	<meta name="twitter:description" content="Page description less than 200 characters">
-	<meta name="twitter:creator" content="@author_handle">
-	<meta name="twitter:image" content="http://www.example.com/image.jpg"> <!--Twitter Summary card images must be at least 200x200px-->
+  <meta name="twitter:card" content="summary"> <!-- Twitter Card data -->
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="Page Title">
+  <meta name="twitter:description" content="Page description less than 200 characters">
+  <meta name="twitter:creator" content="@author_handle">
+  <meta name="twitter:image" content="http://www.example.com/image.jpg"> <!--Twitter Summary card images must be at least 200x200px-->
 
-	<link href='https://fonts.googleapis.com/css?...' rel='stylesheet' type='text/css'/> <!--more fonts via google-->
-	<link rel="stylesheet" href="CSS.css"/> <!--link to CSS file-->
-	<link rel="icon" type="image/png" href="PNG.png" /> <!--tab icon-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--font awesome icons-->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--bootstrap icons-->
-	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"> <!--Dev icons-->
+  <link href='https://fonts.googleapis.com/css?...' rel='stylesheet' type='text/css'/> <!--more fonts via google-->
+  <link rel="stylesheet" href="CSS.css"/> <!--link to CSS file-->
+  <link rel="icon" type="image/png" href="PNG.png" /> <!--tab icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--font awesome icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- google icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!--bootstrap icons-->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"> <!--Dev icons-->
 
-	<title></title> <!--tab title-->
-	<style></style> <!--Defines CSS but it is better to use an extern file-->
+  <title></title> <!--tab title-->
+  <style></style> <!--Defines CSS but it is better to use an extern file-->
 
-	<!--because of use of html5 tags, need to add following link to JS to let IE to run the page-->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	<![endif]-->
+  <!--because of use of html5 tags, need to add following link to JS to let IE to run the page-->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <![endif]-->
 </head>
 
 
 <!-- BODY ELEMENTS -->    
 <body><!--Visible content of the page--><br><hr><br><br>
-	<div id="id">div with id</div><!--id="" allows to target elements in CSS using # ; useful to link to a place in the page--><hr>
-	<div class="">div with class</div><!-- class="" allows to target elemnts in CSS using . --><hr>
-	<div class="class1 class2 class-etc">div with multiple class</div><!--multiple class--><hr>
-	
-	<!-- MAIN TAGS -->
-	<header>header of page</header><!--header of a page--><hr>
-	<footer>footer of page</footer><!--footer of a page--><hr>
-	<h1>title h1</h1><!--1 to 6, decreasing size--><hr>
-	<h2>title h2</h2><hr>
-	<p title="I'm a tooltip">paragraph</p><!--paragraph, title shows when cursor over text--><hr>
-	<pre></pre><!--The pre tag preserves both spaces and line breaks--><hr>
-	<div>div</div><!--Very useful to structure the code in blocks--><hr>
-	<span></span><!--Very useful to structure the code in lines--><hr>
-	<kbd></kbd><!--keybord input-->
-	<dfn>Mdr</dfn><!--definition in italic-->
-	<progress value="60" max="100"></progress><!-- display progress bar; takes color as background-->
-	<time>10:30</time><!--not very useful since it changes nothing-->
-	
+  <div id="id">div with id</div><!--id="" allows to target elements in CSS using # ; useful to link to a place in the page--><hr>
+  <div class="">div with class</div><!-- class="" allows to target elemnts in CSS using . --><hr>
+  <div class="class1 class2 class-etc">div with multiple class</div><!--multiple class--><hr>
+  
+  <!-- MAIN TAGS -->
+  <header>header of page</header><!--header of a page--><hr>
+  <footer>footer of page</footer><!--footer of a page--><hr>
+  <h1>title h1</h1><!--1 to 6, decreasing size--><hr>
+  <h2>title h2</h2><hr>
+  <p title="I'm a tooltip">paragraph</p><!--paragraph, title shows when cursor over text--><hr>
+  <pre></pre><!--The pre tag preserves both spaces and line breaks--><hr>
+  <div>div</div><!--Very useful to structure the code in blocks--><hr>
+  <span></span><!--Very useful to structure the code in lines--><hr>
+  <kbd></kbd><!--keybord input-->
+  <dfn>Mdr</dfn><!--definition in italic-->
+  <progress value="60" max="100"></progress><!-- display progress bar; takes color as background-->
+  <time>10:30</time><!--not very useful since it changes nothing-->
+  
 
-	<!-- LINKS -->
-	<a href="url" target="_blank">url</a><br> <!-- to create a link, blank open in a new tab --> <hr>
-	<a href="url" title="bull text">url with bubble</a><br> <!-- link with some bull text --> <hr>
-	<a href="mailto:votrenom@bidule.com">mail</a><br><!--link to send mail--><hr>
-	<a href="img/html.jpg">url to image</a><br><!--link to image only--><hr>
-	<a href="file.txt" download="file.txt">url to download</a><br><!--download file--><hr>
-	<a href="#id">reach #id</a><br><!--reach the id="id" section of the page--><hr>
-	<a href="#"><img src="img/html.jpg" width="200px"></a><br><!--link on an image--><hr>
-
-
-	<!-- IMAGES OR FRAMES -->
-	<a href="img/html.jpg"><img src="img/html.jpg" alt="mini" title="mini" width="200px"></a><!--link img to bigger image--><br><hr>
-	<img src="img/html.jpg" alt="" width="200px" /><!--to insert an image, can also be .png, .jpg, .gif--><br><hr>
-	<img src="img/html.jpg" alt="" title="bull text" width="200px"><!--infobull--><br><hr>
-	<img src="img/html.jpg" alt="" style="width: 200px"><!--better to use style than width to be prior to external css--><br><hr>
-	<iframe src="HTML.html"></iframe><!--display a webpage inside one--><br><hr>
-	<iframe src="http://www.youtube.com/embed/xxxxxxxxx"></iframe><!--to insert a Youtube video--><br><hr>
+  <!-- LINKS -->
+  <a href="url" target="_blank">url</a><br> <!-- to create a link, blank open in a new tab --> <hr>
+  <a href="url" title="bull text">url with bubble</a><br> <!-- link with some bull text --> <hr>
+  <a href="mailto:votrenom@bidule.com">mail</a><br><!--link to send mail--><hr>
+  <a href="img/html.jpg">url to image</a><br><!--link to image only--><hr>
+  <a href="file.txt" download="file.txt">url to download</a><br><!--download file--><hr>
+  <a href="#id">reach #id</a><br><!--reach the id="id" section of the page--><hr>
+  <a href="#"><img src="img/html.jpg" width="200px"></a><br><!--link on an image--><hr>
 
 
-	<!-- NAVIGATION -->
-	<nav><!--for navigation links (menu with <a> tags)-->
-		<a href="">Un</a>
-		<a href="">Deux</a>
-		<a href="">Trois</a>
-	</nav><hr>
+  <!-- IMAGES OR FRAMES -->
+  <a href="img/html.jpg"><img src="img/html.jpg" alt="mini" title="mini" width="200px"></a><!--link img to bigger image--><br><hr>
+  <img src="img/html.jpg" alt="" width="200px" /><!--to insert an image, can also be .png, .jpg, .gif--><br><hr>
+  <img src="img/html.jpg" alt="" title="bull text" width="200px"><!--infobull--><br><hr>
+  <img src="img/html.jpg" alt="" style="width: 200px"><!--better to use style than width to be prior to external css--><br><hr>
+  <iframe src="HTML.html"></iframe><!--display a webpage inside one--><br><hr>
+  <iframe src="http://www.youtube.com/embed/xxxxxxxxx"></iframe><!--to insert a Youtube video--><br><hr>
 
 
-	<!-- ORDERED LIST -->
-	<ol type="A"><!-- can also be "a" "I" "i" -->
-		<li>Un</li><!--list elements-->
-		<li>Deux</li>
-		<li>Trois</li>
-	</ol><hr>
+  <!-- NAVIGATION -->
+  <nav><!--for navigation links (menu with <a> tags)-->
+    <a href="">Un</a>
+    <a href="">Deux</a>
+    <a href="">Trois</a>
+  </nav><hr>
 
 
-	<!-- UNORDERED LIST -->
-	<ul>
-		<li>Bleu</li><!--list element-->
-		<li>Rouge</li>
-		<li>Jaune</li>
-	</ul><hr>
+  <!-- ORDERED LIST -->
+  <ol type="A"><!-- can also be "a" "I" "i" -->
+    <li>Un</li><!--list elements-->
+    <li>Deux</li>
+    <li>Trois</li>
+  </ol><hr>
 
 
-	<!-- DESCRIPTIVE LIST -->
-	<dl>
-		<dt>Tiger</dt><!--term-->
-		<dd>best animal</dd><!--description-->
-		<dt>Spider</dt>
-		<dd>worst animal</dd>
-	</dl><hr>
-
-	<!--float:left or display:inline to display a list horizontally-->
+  <!-- UNORDERED LIST -->
+  <ul>
+    <li>Bleu</li><!--list element-->
+    <li>Rouge</li>
+    <li>Jaune</li>
+  </ul><hr>
 
 
-	<!-- TABLE -->
-	<table border="solid">
-	<thead><!--head of table-->
-		<tr><!--tableau row-->
-			<th>Company Name</th><!--column title-->
-			<th>Number of Items to Ship</th>
-			<th>Next Action</th>
-		</tr>
-	</thead>    
-	<tbody><!--body of table-->
-		<tr>
-			<td>Strike Fitness</td><!--column content-->
-			<td>1</td>
-			<td>Enter Order</td>
-		</tr>
-		<tr>
-			<td rowspan="3">Adam's Greenworks</td><!--merge 2 vertical cells in 1; will fill 3 boxes-->
-			<td colspan="2">No order</td><!--merge 2 horizontal cells in 1; will fill 2 boxes-->
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Send Invoice</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Enter Order</td>
-		</tr>
-		<tr>
-			<td>Miss Sally's Southern</td>
-			<td>4</td>
-			<td>Ship</td>
-		</tr>
-	</tbody>    
-	<tfoot><!--foot of table; better to put it between thead and tbody-->
-		<td>Total</td>
-		<td>28</td>
-	</tfoot>
-	</table><hr>
+  <!-- DESCRIPTIVE LIST -->
+  <dl>
+    <dt>Tiger</dt><!--term-->
+    <dd>best animal</dd><!--description-->
+    <dt>Spider</dt>
+    <dd>worst animal</dd>
+  </dl><hr>
+
+  <!--float:left or display:inline to display a list horizontally-->
 
 
-	<!-- TEXT MODIFICATIONS -->
-	<b>bold</b><!--bold similar to <strong></strong>--><br><hr>
-	<i>italic</i><!--italic similar to <em></em>--><br><hr>
-	<u>underline</u><!--underline--><br><hr>
-	<s>crossed</s><!--crossed--><br><hr>
-	<mark>highlight</mark><!--highlighted--><br><hr>
-	<sup>exponent</sup><!--exponent--><br><hr>
-	<sub>subscripted</sub><!--subscripted--><br><hr>
-	<del>crossed</del><!--crossed--><br><hr>
-	<ins>underline</ins><!--underline--><br><hr>
+  <!-- TABLE -->
+  <table border="solid">
+  <thead><!--head of table-->
+    <tr><!--tableau row-->
+      <th>Company Name</th><!--column title-->
+      <th>Number of Items to Ship</th>
+      <th>Next Action</th>
+    </tr>
+  </thead>    
+  <tbody><!--body of table-->
+    <tr>
+      <td>Strike Fitness</td><!--column content-->
+      <td>1</td>
+      <td>Enter Order</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Adam's Greenworks</td><!--merge 2 vertical cells in 1; will fill 3 boxes-->
+      <td colspan="2">No order</td><!--merge 2 horizontal cells in 1; will fill 2 boxes-->
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Send Invoice</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Enter Order</td>
+    </tr>
+    <tr>
+      <td>Miss Sally's Southern</td>
+      <td>4</td>
+      <td>Ship</td>
+    </tr>
+  </tbody>    
+  <tfoot><!--foot of table; better to put it between thead and tbody-->
+    <td>Total</td>
+    <td>28</td>
+  </tfoot>
+  </table><hr>
 
 
-	<!-- ICONS -->
-	<i class="fa fa-cloud" aria-hidden="true" style="font-size:24px;"></i><!--font-awesome icon, use fa-1x to fa-5x to resize-->
-	<i class="glyphicon glyphicon-cloud" style="font-size:36px;"></i><!--bootstrap icon-->
-	<i class="material-icons" style="font-size:48px;color:red;">cloud</i><!--google icon-->
-	<i class="devicon-html5-plain colored"></i><!--dev icon-->
+  <!-- TEXT MODIFICATIONS -->
+  <b>bold</b><!--bold similar to <strong></strong>--><br><hr>
+  <i>italic</i><!--italic similar to <em></em>--><br><hr>
+  <u>underline</u><!--underline--><br><hr>
+  <s>crossed</s><!--crossed--><br><hr>
+  <mark>highlight</mark><!--highlighted--><br><hr>
+  <sup>exponent</sup><!--exponent--><br><hr>
+  <sub>subscripted</sub><!--subscripted--><br><hr>
+  <del>crossed</del><!--crossed--><br><hr>
+  <ins>underline</ins><!--underline--><br><hr>
 
 
-	<!-- BREAKS -->
-	<hr><!--horizontal bar-->
-	<br><!--new line or <br/>-->
+  <!-- ICONS -->
+  <i class="fa fa-cloud" aria-hidden="true" style="font-size:24px;"></i><!--font-awesome icon, use fa-1x to fa-5x to resize-->
+  <i class="glyphicon glyphicon-cloud" style="font-size:36px;"></i><!--bootstrap icon-->
+  <i class="material-icons" style="font-size:48px;color:red;">cloud</i><!--google icon-->
+  <i class="devicon-html5-plain colored"></i><!--dev icon-->
+
+
+  <!-- BREAKS -->
+  <hr><!--horizontal bar-->
+  <br><!--new line or <br/>-->
     
   
   <!-- TOOLTIPS -->
@@ -202,168 +202,168 @@ HYPERTEXT MARKUP LANGUAGE
   </div>
 
 
-	<!-- QUOTES -->
-	<q>Quote</q><!--"Quote text"-->
-	<blockquote>Block quote</blockquote><!--Indented quote from another source--><hr>
-	<abbr title="Hypertext Markup Language">HTML</abbr><!--help with abbreviations and acronyms--><hr>
-	<address>Address</address><!--Show address in italic--><hr>
-	<cite>Work title</cite><!--Define title of a work in italic--><br><hr>
-	<bdo dir="rtl">right to left</bdo><!--write text from right to left--><hr>
+  <!-- QUOTES -->
+  <q>Quote</q><!--"Quote text"-->
+  <blockquote>Block quote</blockquote><!--Indented quote from another source--><hr>
+  <abbr title="Hypertext Markup Language">HTML</abbr><!--help with abbreviations and acronyms--><hr>
+  <address>Address</address><!--Show address in italic--><hr>
+  <cite>Work title</cite><!--Define title of a work in italic--><br><hr>
+  <bdo dir="rtl">right to left</bdo><!--write text from right to left--><hr>
 
 
-	<!-- HTML5 TAGS -->
-	<article>Article</article><!--Defines an article in the document--><hr>
-	<aside>Aside</aside><!--Defines content aside from the page content--><hr>
-	<canvas>Canvas</canvas><!--Draw graphics, on the fly, via scripting--><hr>
-	<section>Section</section><!--Defines a section in the document--><hr>
-	<dialog>Dialog</dialog><!--Defines a dialog box or window--><hr>
-	<figure><!--Defines self-contained content, like illustrations-->
-		Figure
-		<figcaption>figure footer</figcaption><!--img footer-->
-	</figure><hr>
-	<legend>media legend</legend><!--legend to medias--><hr>
+  <!-- HTML5 TAGS -->
+  <article>Article</article><!--Defines an article in the document--><hr>
+  <aside>Aside</aside><!--Defines content aside from the page content--><hr>
+  <canvas>Canvas</canvas><!--Draw graphics, on the fly, via scripting--><hr>
+  <section>Section</section><!--Defines a section in the document--><hr>
+  <dialog>Dialog</dialog><!--Defines a dialog box or window--><hr>
+  <figure><!--Defines self-contained content, like illustrations-->
+    Figure
+    <figcaption>figure footer</figcaption><!--img footer-->
+  </figure><hr>
+  <legend>media legend</legend><!--legend to medias--><hr>
 
 
-	<!-- SCALABLE VECTOR GRAPHIC -->
-	<svg>
-		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-		<!--circle; cx & cy for positioning; r for radius; stroke for highlighted lines; fill for color-->
-	</svg><br> <hr>
-	<svg>
-		<rect width="400" height="100" fill="red" style="stroke-width:10;stroke:rgb(0,0,0)" />
-		<!--rectangle; you can chose to modif in style or outside-->
-	</svg><br><hr>
-	<svg>
-		<line x1="10" y1="10" x2="200" y2="100" stroke="black" />
-		<!--line; with no stroke we won't see the line ofc-->
-	</svg><br><hr>
-	<svg>
-		<polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
-		<!--will create form based on points; fill-rule to chose how to fill; auto close of the points-->
-	</svg><br><hr>
-	<svg>
-		<polyline points="100 100, 150 150, 200 100" stroke-linejoin="miter" stroke="black" stroke-width="10" fill="none" />
-		<!--quite similar to polygon; links only between 2 points side by side-->
-	</svg><br><hr>
-	<svg>
-		<ellipse cx="200" cy="100" rx="150" ry="75" fill="green" />
-		<!--radius x and y to adjust size-->
-	</svg>
-	<svg viewBox="0 0 300 300">
-		<!--viewBox sets min-x, min-y, width and height-->
-	</svg><br><hr>
+  <!-- SCALABLE VECTOR GRAPHIC -->
+  <svg>
+    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    <!--circle; cx & cy for positioning; r for radius; stroke for highlighted lines; fill for color-->
+  </svg><br> <hr>
+  <svg>
+    <rect width="400" height="100" fill="red" style="stroke-width:10;stroke:rgb(0,0,0)" />
+    <!--rectangle; you can chose to modif in style or outside-->
+  </svg><br><hr>
+  <svg>
+    <line x1="10" y1="10" x2="200" y2="100" stroke="black" />
+    <!--line; with no stroke we won't see the line ofc-->
+  </svg><br><hr>
+  <svg>
+    <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+    <!--will create form based on points; fill-rule to chose how to fill; auto close of the points-->
+  </svg><br><hr>
+  <svg>
+    <polyline points="100 100, 150 150, 200 100" stroke-linejoin="miter" stroke="black" stroke-width="10" fill="none" />
+    <!--quite similar to polygon; links only between 2 points side by side-->
+  </svg><br><hr>
+  <svg>
+    <ellipse cx="200" cy="100" rx="150" ry="75" fill="green" />
+    <!--radius x and y to adjust size-->
+  </svg>
+  <svg viewBox="0 0 300 300">
+    <!--viewBox sets min-x, min-y, width and height-->
+  </svg><br><hr>
 
 
-	<!-- VIDEO -->
-	<video controls width="200px"><!--video; use poster, loop, autoplay, preload(auto, none);-->
-		<source src="video/html.mp4" type="video/mp4"><!--use different format to work on all browsers-->
-	</video> <br><hr>
+  <!-- VIDEO -->
+  <video controls width="200px"><!--video; use poster, loop, autoplay, preload(auto, none);-->
+    <source src="video/html.mp4" type="video/mp4"><!--use different format to work on all browsers-->
+  </video> <br><hr>
 
 
-	<!-- AUDIO -->
-	<audio controls><!--audio; use loop, autoplay, preload(auto, none);-->
-		<source src="audio/ukulele.mp3" type="audio/mp3"><!--use different format to work on all browsers-->
-	</audio> <br><hr>
+  <!-- AUDIO -->
+  <audio controls><!--audio; use loop, autoplay, preload(auto, none);-->
+    <source src="audio/ukulele.mp3" type="audio/mp3"><!--use different format to work on all browsers-->
+  </audio> <br><hr>
 
-	<!-- BG SOUND -->
-	<bgsound src="" loop="infinite"></bgsound><!--background sound became obsolete !!-->
-
-
-	<!-- IMAGE MAP -->
-	<img src="img/html.jpg" alt="Planets" usemap="#map" style="width:145px;height:126px;"/><!--image with clickable areas-->
-	<map name="map">
-		<area shape="rect" coords="0,0,82,126" alt="Sun" href=""/>
-		<area shape="circle" coords="90,58,3" alt="Mercury" href=""/>
-		<area shape="circle" coords="124,58,8" alt="Venus" href=""/>
-	</map><hr>
+  <!-- BG SOUND -->
+  <bgsound src="" loop="infinite"></bgsound><!--background sound became obsolete !!-->
 
 
-	<!-- FORMS -->
-	<form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
-		<fieldset><!--borders the questions; can create different parts in the form-->
-			<legend>Information</legend><!--name of the fieldset-->
-			<input type="text" name="firstname"><!--one line field to answer, use autofocus to focus directly on that input--><hr>
-			<input type="text" name="firstname" required><!--need to fill it to be able to submit--><hr>
-			<input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!--input required and made from 4 letters--><hr>
-			<label for="label">Label</label><input type="text" name="label" id="label"><!--Label helps the user to know what he has to write in the form; need for & id--><hr>
-			<textarea type="text" name="quote" rows="3" cols="30"></textarea><!--long text area--><hr>
-			<input type="password" name="psw"><!--password field--><hr>
-			<input type="number" name="quantity" min="1" max="5" step="1"><!--let type number between from 1 to 5--><hr>
-			<input type="date" name="bday" max="1979-12-31"><!--date before 1980--><hr>
-			<input type="email" name="email"><!--check it's an email format--><hr>
-			<input type="url" name="homepage"><!--check if it's url format--><hr>
-			<label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!--cursor range--><hr>
-			<input type="search" name=""><!--create a search area--><hr>
-			<label>Genre</label><!--text before question--><hr>
-			<label><input type="radio" name="gender" value="male" checked>Male</label><br/><!--button to chose one between different options; 'checked' is radio by default--><hr>
-			<label><input type="radio" name="gender" value="female">Female</label><br/><hr><!--must be same 'name' to force not to click on both answers-->
-			<label><input type="checkbox" name="">Check1</label> <!--button to chose multiple options--><hr>
-			<label><input type="checkbox" name="" checked>Check2</label> <!--this checkbox will be 'check' by default--><hr>
-			<input type="button" onclick="alert('Hello')" value="pop-up"><!--display message --><hr>
-			<input type="reset" value="reset"><!--reset fields--><hr>
-			<select><!--menu dréoulant-->
-				<option value="Belgique" selected>Belgique</option><!--'selected' by default-->
-				<option value="France">France</option>
-			</select><hr>
-			<input type="submit" value="submit"><!--submit button to send answers-->
-		</fieldset>
-	</form><hr>
+  <!-- IMAGE MAP -->
+  <img src="img/html.jpg" alt="Planets" usemap="#map" style="width:145px;height:126px;"/><!--image with clickable areas-->
+  <map name="map">
+    <area shape="rect" coords="0,0,82,126" alt="Sun" href=""/>
+    <area shape="circle" coords="90,58,3" alt="Mercury" href=""/>
+    <area shape="circle" coords="124,58,8" alt="Venus" href=""/>
+  </map><hr>
 
 
-	<!-- EXPANDABLE -->
-	<details> <!-- Details and summary elements; no need of javascript to use expandables -->
-		<summary>
-			Distribution and habitat
-		</summary>
-		<p>The red panda is endemic to the temperate forests of the Himalayas, and ranges from the foothills of western Nepal to China in the east. Its easternmost limit is the Qinling Mountains of the Shaanxi Province in China. Its range includes southern Tibet, Sikkim and Assam in India, Bhutan, the northern mountains of Burma, and in south-western China, in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan.</p>
-	</details>
-	<details>
-		<summary>
-			Curious facts
-		</summary>
-		<p>The red panda's local names differ from place to place. The Lepcha people call it sak nam. In Nepal, the species is called bhalu biralo (bear-cat) and habre.</p>
-		<p>The red panda was recognized as the state animal of Sikkim in the early 1990s, and was the mascot of the Darjeeling Tea Festival.</p>
-	</details>
+  <!-- FORMS -->
+  <form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
+    <fieldset><!--borders the questions; can create different parts in the form-->
+      <legend>Information</legend><!--name of the fieldset-->
+      <input type="text" name="firstname"><!--one line field to answer, use autofocus to focus directly on that input--><hr>
+      <input type="text" name="firstname" required><!--need to fill it to be able to submit--><hr>
+      <input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!--input required and made from 4 letters--><hr>
+      <label for="label">Label</label><input type="text" name="label" id="label"><!--Label helps the user to know what he has to write in the form; need for & id--><hr>
+      <textarea type="text" name="quote" rows="3" cols="30"></textarea><!--long text area--><hr>
+      <input type="password" name="psw"><!--password field--><hr>
+      <input type="number" name="quantity" min="1" max="5" step="1"><!--let type number between from 1 to 5--><hr>
+      <input type="date" name="bday" max="1979-12-31"><!--date before 1980--><hr>
+      <input type="email" name="email"><!--check it's an email format--><hr>
+      <input type="url" name="homepage"><!--check if it's url format--><hr>
+      <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!--cursor range--><hr>
+      <input type="search" name=""><!--create a search area--><hr>
+      <label>Genre</label><!--text before question--><hr>
+      <label><input type="radio" name="gender" value="male" checked>Male</label><br/><!--button to chose one between different options; 'checked' is radio by default--><hr>
+      <label><input type="radio" name="gender" value="female">Female</label><br/><hr><!--must be same 'name' to force not to click on both answers-->
+      <label><input type="checkbox" name="">Check1</label> <!--button to chose multiple options--><hr>
+      <label><input type="checkbox" name="" checked>Check2</label> <!--this checkbox will be 'check' by default--><hr>
+      <input type="button" onclick="alert('Hello')" value="pop-up"><!--display message --><hr>
+      <input type="reset" value="reset"><!--reset fields--><hr>
+      <select><!--menu dréoulant-->
+        <option value="Belgique" selected>Belgique</option><!--'selected' by default-->
+        <option value="France">France</option>
+      </select><hr>
+      <input type="submit" value="submit"><!--submit button to send answers-->
+    </fieldset>
+  </form><hr>
 
 
-	<!-- MAIL FORM -->
-	<form action="mailto:mail@mail.com?subject=form_submission" method="post" enctype="text/plain"> <!-- send mail -->
-		<fieldset>
-			<legend>Mail</legend>
-			<input type="text" name="name">
-			<input type="submit" name="submit">
-		</fieldset>
-	</form><hr>
+  <!-- EXPANDABLE -->
+  <details> <!-- Details and summary elements; no need of javascript to use expandables -->
+    <summary>
+      Distribution and habitat
+    </summary>
+    <p>The red panda is endemic to the temperate forests of the Himalayas, and ranges from the foothills of western Nepal to China in the east. Its easternmost limit is the Qinling Mountains of the Shaanxi Province in China. Its range includes southern Tibet, Sikkim and Assam in India, Bhutan, the northern mountains of Burma, and in south-western China, in the Hengduan Mountains of Sichuan and the Gongshan Mountains in Yunnan.</p>
+  </details>
+  <details>
+    <summary>
+      Curious facts
+    </summary>
+    <p>The red panda's local names differ from place to place. The Lepcha people call it sak nam. In Nepal, the species is called bhalu biralo (bear-cat) and habre.</p>
+    <p>The red panda was recognized as the state animal of Sikkim in the early 1990s, and was the mascot of the Darjeeling Tea Festival.</p>
+  </details>
 
 
-	<!-- SYMBOLS -->
-	<p>less than = < = &lt; = &#60; </p><hr>
-	<p>greater than = > = &gt; = &#62; </p><hr>
-	<p>ampersand = & = &amp; = &#38; </p><hr>
-	<p>quote = " = &quot; = &#34; </p><hr>
-	<p>apostrophe = ' = &apos; = &#39; </p><hr>
-	<p>euro = € = &euro; = &#8364; </p><hr>
-	<p>copyright = © = &copy; = &#169; </p><hr>
-	<p>registered = ® = &reg; = &#174; </p><hr>
-	<p>trademark = ™ = &trade; = &#8482; </p><hr>
+  <!-- MAIL FORM -->
+  <form action="mailto:mail@mail.com?subject=form_submission" method="post" enctype="text/plain"> <!-- send mail -->
+    <fieldset>
+      <legend>Mail</legend>
+      <input type="text" name="name">
+      <input type="submit" name="submit">
+    </fieldset>
+  </form><hr>
+
+
+  <!-- SYMBOLS -->
+  <p>less than = < = &lt; = &#60; </p><hr>
+  <p>greater than = > = &gt; = &#62; </p><hr>
+  <p>ampersand = & = &amp; = &#38; </p><hr>
+  <p>quote = " = &quot; = &#34; </p><hr>
+  <p>apostrophe = ' = &apos; = &#39; </p><hr>
+  <p>euro = € = &euro; = &#8364; </p><hr>
+  <p>copyright = © = &copy; = &#169; </p><hr>
+  <p>registered = ® = &reg; = &#174; </p><hr>
+  <p>trademark = ™ = &trade; = &#8482; </p><hr>
 
 
 
 
-	<!-- SCRIPTS -->
-	<?php ?> <? ?> <!-- to code PHP -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library; always before js files -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> <!-- IU jQuery for better animations -->
+  <!-- SCRIPTS -->
+  <?php ?> <? ?> <!-- to code PHP -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!-- jQuery library; always before js files -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> <!-- IU jQuery for better animations -->
 
-	<script type="text/javascript"> 
-		console.log('Texte javascript') // internal JS, always after jquery !
-	</script>
-	<script type="text/javascript" src="JS.js"></script> <!-- External JS -->
+  <script type="text/javascript"> 
+    console.log('Texte javascript') // internal JS, always after jquery !
+  </script>
+  <script type="text/javascript" src="JS.js"></script> <!-- External JS -->
 
-	<noscript>Sorry, your browser does not support JavaScript!</noscript><!-- for user with disabled JS -->
-	
+  <noscript>Sorry, your browser does not support JavaScript!</noscript><!-- for user with disabled JS -->
+  
 
-	<a href="More tags at http://www.w3schools.com/tags/default.asp"></a>
+  <a href="More tags at http://www.w3schools.com/tags/default.asp"></a>
 </body>
 
 </html>

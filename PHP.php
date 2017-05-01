@@ -1,6 +1,6 @@
 HYPERTEXT PREPROCESSOR
-	-Server Scripting
-		-by Beumsk
+  -Server Scripting
+    -by Beumsk
 
 
 // To create a comment. Shown in code only. Indent 2spaces
@@ -39,11 +39,11 @@ if ($nombre < 0) // AND et OR pour des conditions multiples
 }
 elseif ($nombre > 0) //plusieurs elseif sont possibles
 {
-	echo "t'es un bg";
+  echo "t'es un bg";
 }
 else
 {
-	echo "loser ou bg?";
+  echo "loser ou bg?";
 }
 ?>
 
@@ -51,23 +51,23 @@ else
 $note = 10;
 switch ($note) //permet de clarifier le code seulement pour tester l'égalité
 {
-	case 0:
-		echo "footix" ;
-	break;
-	case 5:
-		echo "loser" ;
-	break;
-	case 10:
-		echo "mouais" ;
-	break;
-	case 15:
-		echo "good job" ;
-	break;
-	case 20:
-		echo "perfect!" ;
-	break;
-	default: //equivalent de else
-		echo "trouve une cote narvalo"
+  case 0:
+    echo "footix" ;
+  break;
+  case 5:
+    echo "loser" ;
+  break;
+  case 10:
+    echo "mouais" ;
+  break;
+  case 15:
+    echo "good job" ;
+  break;
+  case 20:
+    echo "perfect!" ;
+  break;
+  default: //equivalent de else
+    echo "trouve une cote narvalo"
 }
 ?>
 
@@ -75,11 +75,11 @@ switch ($note) //permet de clarifier le code seulement pour tester l'égalité
 $age = 22;
 if ($age >= 18)
 {
-	$majeur = true;
+  $majeur = true;
 }
 else
 {
-	$majeur = false;
+  $majeur = false;
 }
 ?>
 
@@ -94,15 +94,15 @@ $majeur = ($age >=18) ? true : false;
 $nombre_de_lignes = 1;
 while ($nombre_de_lignes <= 100)
 {
-	echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br />' ;
-	$nombre_de_lignes++; //incrémentation, on ajoute 1 à la variable
+  echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br />' ;
+  $nombre_de_lignes++; //incrémentation, on ajoute 1 à la variable
 }
 ?>
 
 <?php
 for ($nombre_de_lignes = 1; $nombre_de_lignes <= 100; $nombre_de_lignes++) // a utiliser plutot que for quand on sait combien de fois on veut répéter
 {
-	echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br />';
+  echo 'Ceci est la ligne n°' . $nombre_de_lignes . '<br />';
 }
 ?>
 
@@ -111,18 +111,18 @@ for ($nombre_de_lignes = 1; $nombre_de_lignes <= 100; $nombre_de_lignes++) // a 
 <?php
 $phrase = 'La fonction permet de compte le nombre de caractères que compte cette phrase. Incroyable !';
 $longueur = strlen($phrase);
-	echo 'La phrase ci-dessous comporte ' . $longueur . ' caractères :<br />' . $phrase;
+  echo 'La phrase ci-dessous comporte ' . $longueur . ' caractères :<br />' . $phrase;
 ?>
 
 <?php
 $ma_variable = str_replace('b', 'p', 'bim bam boum');
-	echo $ma_variable;
+  echo $ma_variable;
 ?>
 
 <?php
 $chaine = 'cette chaine va changer';
 $chaine  = str_shuffle ($chaine); // strtolower pour minusculer et strtoupper pour majusculer
-	echo $chaine;
+  echo $chaine;
 ?>
 
 <?php
@@ -137,7 +137,7 @@ echo 'Bonjour, nous sommes le ' . $jour. '/' . $mois . '/' . $année . ' et il e
 <?php
 function direbonjour ($nom) // creation de fonction
 {
-	echo 'Bonjour ' . $nom . ' ! <br />';
+  echo 'Bonjour ' . $nom . ' ! <br />';
 }
 direbonjour('Pierre');
 direbonjour('Mathieu');
@@ -146,8 +146,8 @@ direbonjour('Mathieu');
 <?php
 function volumecone ($rayon, $hauteur)
 {
-	$volume = $rayon * $rayon * 3.14 * $hauteur * (1/3);
-	return $volume; // indique la valeur à renvoyer, ici le volume
+  $volume = $rayon * $rayon * 3.14 * $hauteur * (1/3);
+  return $volume; // indique la valeur à renvoyer, ici le volume
 }
 $volume = volumecone (3, 1);
 echo 'Ce cone a un volume de ' . $volume . ' cm³.';
@@ -169,7 +169,7 @@ echo $coordonnees['prenom'] . ', ' . $coordonnees['age'] . ' de ' . $coordonnees
 $prenom = array ('mathieu', 'pierre', 'andre', 'alex', 'victor');
 for ($numero = 0; $numero < 5; $numero++) // montre les 5 premiers du tableau
 {
-	echo $prenom[$numero] . '<br />';
+  echo $prenom[$numero] . '<br />';
 }
 ?>
 
@@ -177,28 +177,28 @@ for ($numero = 0; $numero < 5; $numero++) // montre les 5 premiers du tableau
 $prenom = array ('felix', 'max', 'baptiste', 'simon', 'pierre', 'milan', 'florian');
 foreach ($prenom as $elements) // foreach est plus adequat pour les tableaux
 {
-	echo $elements . '<br />';
+  echo $elements . '<br />';
 }
 ?>
 
 <?php
 $coordonnees = array (
-	'prenom' => 'Remy',
-	'nom' => 'Beumier',
-	'adresse' => '3 clos du chemin creux',
-	'ville' => 'Bruxelles');
+  'prenom' => 'Remy',
+  'nom' => 'Beumier',
+  'adresse' => '3 clos du chemin creux',
+  'ville' => 'Bruxelles');
 foreach($coordonnees as $cle => $element) // foreach fonctionne aussi pour tableaux associatifs
 {
-	echo '[' . $cle . '] : ' . $element . '<br />';
+  echo '[' . $cle . '] : ' . $element . '<br />';
 }
 ?>
 
 <?php
 $coordonnees = array (
-	'prenom' => 'Remy',
-	'nom' => 'Beumier',
-	'adresse' => '3 clos du chemin creux',
-	'ville' => 'Bruxelles');
+  'prenom' => 'Remy',
+  'nom' => 'Beumier',
+  'adresse' => '3 clos du chemin creux',
+  'ville' => 'Bruxelles');
 echo '<pre>';
 print_r ($coordonnees); // rapide façon d'afficher le contenu d'array mais oblige les <pre>
 echo '<pre>';
@@ -206,17 +206,17 @@ echo '<pre>';
 
 <?php
 $coordonnees = array (
-	'prenom' => 'Remy',
-	'nom' => 'Beumier',
-	'adresse' => '3 clos du chemin creux',
-	'ville' => 'Bruxelles');
+  'prenom' => 'Remy',
+  'nom' => 'Beumier',
+  'adresse' => '3 clos du chemin creux',
+  'ville' => 'Bruxelles');
 if (array_key_exists('nom', $coordonnees)) // la clé existe?
 {
-	echo 'La clé "nom" se trouve dans les coordonnées !';
+  echo 'La clé "nom" se trouve dans les coordonnées !';
 }
 if (array_key_exists('pays', $coordonnees))
 {
-	echo 'La clé "pays" se trouve dans les coordonnées !';
+  echo 'La clé "pays" se trouve dans les coordonnées !';
 }
 ?>
 
@@ -224,11 +224,11 @@ if (array_key_exists('pays', $coordonnees))
 $fruits = array ('banane', 'mangue', 'fraise', 'ananas', 'pomme', 'poire');
 if (in_array('banane', $fruits)) // la valeur existe?
 {
-	echo 'La valeur banane se trouve dans les fruits.';
+  echo 'La valeur banane se trouve dans les fruits.';
 }
 if (in_array('cerise', $fruits))
 {
-	echo 'la valeur cerise se trouve dans les fruits.'; 
+  echo 'la valeur cerise se trouve dans les fruits.'; 
 }
 ?>
 
@@ -261,17 +261,17 @@ echo 'Il faut renseigner un nom et un prénom !';
 <?php
 if (isset($_GET['prenom']) AND isset($_GET['nom']) AND isset($_GET['repeter']))
 {
-	// 1 : On force la conversion en nombre entier
-	$_GET['repeter'] = (int) $_GET['repeter']; //c'est le transtypage
+  // 1 : On force la conversion en nombre entier
+  $_GET['repeter'] = (int) $_GET['repeter']; //c'est le transtypage
 
-	// 2 : Le nombre doit être compris entre 1 et 100 pour eviter un chargement trop long
-	if ($_GET['repeter'] >= 1 AND $_GET['repeter'] <= 100) 
-	{   
-		for ($i = 0 ; $i < $_GET['repeter'] ; $i++)
-		{
-			echo 'Bonjour ' . $_GET['prenom'] . ' ' . $_GET['nom'] . ' !<br />';
-		}
-	}
+  // 2 : Le nombre doit être compris entre 1 et 100 pour eviter un chargement trop long
+  if ($_GET['repeter'] >= 1 AND $_GET['repeter'] <= 100) 
+  {   
+    for ($i = 0 ; $i < $_GET['repeter'] ; $i++)
+    {
+      echo 'Bonjour ' . $_GET['prenom'] . ' ' . $_GET['nom'] . ' !<br />';
+    }
+  }
 }
 else
 {
@@ -283,39 +283,39 @@ else
 
 1er fichier (form)
 <form method="post" action="cible.php">
-	<p>
-		Quel est ton pseudo ? <br />
-		<input type="text" name="pseudo" value="footix"/>
-	</p>
-	<p>
-		Un avis sur le site ? <br />
-		<textarea name="avis" rows="8" cols="45"></textarea>
-	</p>
-	<p>
-		Quel est ton genre ? <br />
-		<select name="choix">
-			<option value="homme">Homme</option>
-			<option value="femme">Femme</option>
-			<option value="autre">Autre</option>
-		</select>
-	</p>
-	<p>
-		Choisis un langage <br/>
-		<input type="checkbox" name="lang" id="html" /> <label for="html">HTML</label><br /> // label permet de cliquer sur le texte pour choisir
-		<input type="checkbox" name="lang" id="css" /> <label for="css">CSS</label><br/> // c'est donc plus ergonomique
-		<input type="checkbox" name="lang" id="php" /> <label for="php">PHP</label><br/>
-		<input type="checkbox" name="lang" id="mysql" /> <label for="mysql">MySQL</label><br/>
-	</p>
-	<p>
-		Aimes-tu coder ?<br/>
-		<input type="radio" name="coder" value="oui" id="oui" checked="checked" /> <label for="oui">Oui</label>
-		<input type="radio" name="coder" value="non" id="non" /> <label for="non">Non</label>
-		<input type="radio" name="coder" value="bof" id="bof" /> <label for="bof">Bof</label>
-	</p>
-	<p>
-		<input type="hidden" name="cache" value="MDR" /> // champs caché
-	</p>
-	<p><input type="submit" value="Valider"/></p> // bouton valider
+  <p>
+    Quel est ton pseudo ? <br />
+    <input type="text" name="pseudo" value="footix"/>
+  </p>
+  <p>
+    Un avis sur le site ? <br />
+    <textarea name="avis" rows="8" cols="45"></textarea>
+  </p>
+  <p>
+    Quel est ton genre ? <br />
+    <select name="choix">
+      <option value="homme">Homme</option>
+      <option value="femme">Femme</option>
+      <option value="autre">Autre</option>
+    </select>
+  </p>
+  <p>
+    Choisis un langage <br/>
+    <input type="checkbox" name="lang" id="html" /> <label for="html">HTML</label><br /> // label permet de cliquer sur le texte pour choisir
+    <input type="checkbox" name="lang" id="css" /> <label for="css">CSS</label><br/> // c'est donc plus ergonomique
+    <input type="checkbox" name="lang" id="php" /> <label for="php">PHP</label><br/>
+    <input type="checkbox" name="lang" id="mysql" /> <label for="mysql">MySQL</label><br/>
+  </p>
+  <p>
+    Aimes-tu coder ?<br/>
+    <input type="radio" name="coder" value="oui" id="oui" checked="checked" /> <label for="oui">Oui</label>
+    <input type="radio" name="coder" value="non" id="non" /> <label for="non">Non</label>
+    <input type="radio" name="coder" value="bof" id="bof" /> <label for="bof">Bof</label>
+  </p>
+  <p>
+    <input type="hidden" name="cache" value="MDR" /> // champs caché
+  </p>
+  <p><input type="submit" value="Valider"/></p> // bouton valider
 </form>
 
 2e fichier (cible)
@@ -340,83 +340,83 @@ PROTECTION PAGE MDP
 1er fichier (form_secret)
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>Page protégée par mdp</title>
-	</head>
-	<body>
-		<form method="post" action="secret.php">
-			<p>Veuillez taper le mot de passe pour accéder aux informations.</p>
-			<input type="password" name="mdp"/>
-			<input type="submit" value="OK"/>
-		</form>
-	</body>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Page protégée par mdp</title>
+  </head>
+  <body>
+    <form method="post" action="secret.php">
+      <p>Veuillez taper le mot de passe pour accéder aux informations.</p>
+      <input type="password" name="mdp"/>
+      <input type="submit" value="OK"/>
+    </form>
+  </body>
 </html>  
 
 2e fichier (secret)
 <!DOCTYPE html>
 <html>
-	<head>
-			<meta charset="utf-8"/>
-			<title>Page secrète !</title>
-	</head>
-	<body>
-			
-		<?php 
-		if (isset($_POST['mdp']) AND $_POST['mdp'] ==  "kangourou") 
-		{ 
-		?>
-			<h1>Bienvenue sur cette page réservée au personnel de la Nasa.</h1> <!--préférable de fermer la balise php en cas de texte long-->
-			<p>Voici les codes d'accès :</p>
-			<p><strong>4509_2493_5974_2376</strong></p>
-		<?php
-		}
-		else 
-		{
-			echo '<p>Mot de passe incorrect.</p>'; //ici, on ne ferme pas la balise car il est plus rapide d'utiliser echo
-		}
-		?>
-	</body>
+  <head>
+      <meta charset="utf-8"/>
+      <title>Page secrète !</title>
+  </head>
+  <body>
+      
+    <?php 
+    if (isset($_POST['mdp']) AND $_POST['mdp'] ==  "kangourou") 
+    { 
+    ?>
+      <h1>Bienvenue sur cette page réservée au personnel de la Nasa.</h1> <!--préférable de fermer la balise php en cas de texte long-->
+      <p>Voici les codes d'accès :</p>
+      <p><strong>4509_2493_5974_2376</strong></p>
+    <?php
+    }
+    else 
+    {
+      echo '<p>Mot de passe incorrect.</p>'; //ici, on ne ferme pas la balise car il est plus rapide d'utiliser echo
+    }
+    ?>
+  </body>
 </html>
 
 En 1 seul fichier
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>Infos secretes</title>
-	</head>
-	<body>
-		<?php
-			if (!isset($_POST['mdp']) OR $_POST['mdp'] != 'kangourou') // faire l'opposé de la commande grâce à "!" ex: !isset ou !=
-			{
-				echo '<form method="post" action="work.php">
-								<p>Veuillez entrer le mot de passe</p>
-								<input type="password" name="mdp"/>
-								<input type="submit" value="OK"/>
-							</form>';
-			}
-	
-			elseif (isset($_POST['mdp']) AND $_POST['mdp'] != 'kangourou') // probleme : elseif ne fonctionne pas. PQ?
-			{
-				echo '<p>Mot de passe incorrect<p>';
-			}
-	
-			else
-			{
-				echo '<p>INFOS SECRETES !<p>';
-			}
-		?>
-			
-	</body>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Infos secretes</title>
+  </head>
+  <body>
+    <?php
+      if (!isset($_POST['mdp']) OR $_POST['mdp'] != 'kangourou') // faire l'opposé de la commande grâce à "!" ex: !isset ou !=
+      {
+        echo '<form method="post" action="work.php">
+                <p>Veuillez entrer le mot de passe</p>
+                <input type="password" name="mdp"/>
+                <input type="submit" value="OK"/>
+              </form>';
+      }
+  
+      elseif (isset($_POST['mdp']) AND $_POST['mdp'] != 'kangourou') // probleme : elseif ne fonctionne pas. PQ?
+      {
+        echo '<p>Mot de passe incorrect<p>';
+      }
+  
+      else
+      {
+        echo '<p>INFOS SECRETES !<p>';
+      }
+    ?>
+      
+  </body>
 </html>
 
 VARIABLES SUPERGLOBALES
 
 <pre> 
-	<?php
-	print_r($_GET); // permet d'afficher le contenu d'une superglobale
-	?>
+  <?php
+  print_r($_GET); // permet d'afficher le contenu d'une superglobale
+  ?>
 </pre>
 
 $_SERVER['REMOTE_ADDR'] // valeurs renvoyées par le serveur, ici l'adresse IP
@@ -435,14 +435,14 @@ $_SESSION['age'] = 22;
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>MDR</title>
-	</head>
-	<body>
-		<p>Salut <?php echo $_SESSION['prenom']; echo $_SESSION['nom']; echo $_SESSION['age'] ?> !</p>
-			<!-- Si l'utilisateur change de page, il gardera ses variables -->
-	</body>
+  <head>
+    <meta charset="utf-8"/>
+    <title>MDR</title>
+  </head>
+  <body>
+    <p>Salut <?php echo $_SESSION['prenom']; echo $_SESSION['nom']; echo $_SESSION['age'] ?> !</p>
+      <!-- Si l'utilisateur change de page, il gardera ses variables -->
+  </body>
 </html>
 
 Cookies
@@ -456,17 +456,17 @@ setcookie('pays', 'Belgique', time() + 365*24*3600, null, null, false, true); //
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Ma super page PHP</title>
-	</head>
-	<body>
-		<p>
-			Hé ! Je me souviens de toi !<br />
-			Tu t'appelles <?php echo $_COOKIE['pseudo']; ?> et tu viens de <?php echo $_COOKIE['pays']; ?> c'est bien ça ?
-			<!--importance de l'isset pour vérifier que le cookie existe-->
-		</p>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Ma super page PHP</title>
+  </head>
+  <body>
+    <p>
+      Hé ! Je me souviens de toi !<br />
+      Tu t'appelles <?php echo $_COOKIE['pseudo']; ?> et tu viens de <?php echo $_COOKIE['pays']; ?> c'est bien ça ?
+      <!--importance de l'isset pour vérifier que le cookie existe-->
+    </p>
+  </body>
 </html>
 
 LIRE dans un fichier
@@ -511,7 +511,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 catch(Exception $e) // permet de garder les logs secrets en cas d'erreur, plus sécure !
 {
 // En cas d'erreur, on affiche un message et on arrête tout
-	die('Erreur : '.$e->getMessage());
+  die('Erreur : '.$e->getMessage());
 }
 ?>
 
@@ -524,7 +524,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
-	die('Erreur : '.$e->getMessage());
+  die('Erreur : '.$e->getMessage());
 }
 
 // Si tout va bien, on peut continuer
@@ -536,11 +536,11 @@ $reponse = $bdd->query('SELECT * FROM jeux_video');
 while ($donnees = $reponse->fetch())
 {
 ?>
-	<p>
-	<strong>Jeu</strong> : <?php echo $donnees['nom']; ?><br />
-	Le possesseur de ce jeu est : <?php echo $donnees['possesseur']; ?>, et il le vend à <?php echo $donnees['prix']; ?> euros !<br />
-	Ce jeu fonctionne sur <?php echo $donnees['console']; ?> et on peut y jouer à <?php echo $donnees['nbre_joueurs_max']; ?> au maximum<br />
-	<?php echo $donnees['possesseur']; ?> a laissé ces commentaires sur <?php echo $donnees['nom']; ?> : <em><?php echo $donnees['commentaires']; ?></em>
+  <p>
+  <strong>Jeu</strong> : <?php echo $donnees['nom']; ?><br />
+  Le possesseur de ce jeu est : <?php echo $donnees['possesseur']; ?>, et il le vend à <?php echo $donnees['prix']; ?> euros !<br />
+  Ce jeu fonctionne sur <?php echo $donnees['console']; ?> et on peut y jouer à <?php echo $donnees['nbre_joueurs_max']; ?> au maximum<br />
+  <?php echo $donnees['possesseur']; ?> a laissé ces commentaires sur <?php echo $donnees['nom']; ?> : <em><?php echo $donnees['commentaires']; ?></em>
  </p>
 <?php
 }
@@ -557,7 +557,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
-	die('Erreur : '.$e->getMessage());
+  die('Erreur : '.$e->getMessage());
 }
 
 $reponse = $bdd->query('SELECT nom, possesseur FROM jeux_video WHERE possesseur=\'Patrick\'  AND prix < 20'); // \' indispensable pour spécifier patrick // AND et OR sont utilisés pour ajouter des conditions
@@ -576,18 +576,18 @@ FAIRE UNE REQUETE ORDER BY
 <?php
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
-	die('Erreur : '.$e->getMessage());
+  die('Erreur : '.$e->getMessage());
 }
 
 $reponse = $bdd->query('SELECT nom, prix FROM jeux_video ORDER BY prix'); // DESC ajouté à la fin permet de trier decroissant
 
 while ($donnees = $reponse->fetch())
 {
-	echo $donnees['nom'] . ' coûte ' . $donnees['prix'] . ' €<br />';
+  echo $donnees['nom'] . ' coûte ' . $donnees['prix'] . ' €<br />';
 }
 
 $reponse->closeCursor();
@@ -599,11 +599,11 @@ FAIRE UNE REQUETE LIMIT
 <?php
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
-	die('Erreur : '.$e->getMessage());
+  die('Erreur : '.$e->getMessage());
 }
 
 $reponse = $bdd->query('SELECT nom FROM jeux_video LIMIT 0, 10'); // LIMIT permet de n'afficger que certaines entrées (0=début, 10=nombre)
@@ -611,7 +611,7 @@ $reponse = $bdd->query('SELECT nom FROM jeux_video LIMIT 0, 10'); // LIMIT perme
 echo '<p>Voici les 10 premiers jeux :<p>';
 while ($donnees = $reponse->fetch())
 {
-	echo $donnees['nom'] . '<br/>';
+  echo $donnees['nom'] . '<br/>';
 }
 
 $reponse->closeCursor();
@@ -622,11 +622,11 @@ REQUETE ALL IN
 <?php
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
 }
 catch(Exception $e)
 {
-	die('Erreur : '.$e->getMessage());
+  die('Erreur : '.$e->getMessage());
 }
 
 $reponse = $bdd->query('SELECT nom, console, prix FROM jeux_video WHERE console=\'PS2\' OR console=\'Xbox\' ORDER BY prix DESC LIMIT 0,25');
@@ -635,7 +635,7 @@ $reponse = $bdd->query('SELECT nom, console, prix FROM jeux_video WHERE console=
 echo '<p>Voici les jeux PS2 et XBOX classés par prix décroissants :</p>';
 while ($donnees = $reponse->fetch())
 {
-	echo $donnees['nom'] . ' sur ' . $donnees['console'] . ' au prix de ' . $donnees['prix'] . '€<br/>' ;
+  echo $donnees['nom'] . ' sur ' . $donnees['console'] . ' au prix de ' . $donnees['prix'] . '€<br/>' ;
 }
 
 $reponse->closeCursor();

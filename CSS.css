@@ -1,6 +1,6 @@
 CASCADING STYLE SHEET
-	-Element Styling
-		-by Beumsk
+  -Element Styling
+    -by Beumsk
 
 
 TODO: link to html file to show result
@@ -11,306 +11,306 @@ TODO: link to html file to show result
 
 
 .ADD-IN-HTML
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 
 .PRIORITY
-	>!important /* body { color: red !important; } */
-	>Inline style (inside an HTML element) 
-	>External and internal style sheets (in the head section) /* id atributes take precedence; their style will value more than class for example */
-	>Browser default
+  >!important /* body { color: red !important; } */
+  >Inline style (inside an HTML element) 
+  >External and internal style sheets (in the head section) /* id atributes take precedence; their style will value more than class for example */
+  >Browser default
 
 
 .SELECT-HTML
-	* {} /* Selects all elements */
-	html {} 
-	body {}
-	p {} /* Selects all <p> elements*/
-	div, p {} /* Selects all <div> elements and all <p> elements */
-	div p {} /* Selects all <p> elements inside <div> elements */
-	div > p {} /* Selects all <p> elements where the parent is a <div> element */
-	div + p {} /* Selects all <p> elements that are placed immediately after <div> elements */
-	div ~ p {} /* Selects every <p> element that are preceded by a <div> element */
-	.main {} /* Selects all elements with class="main" */
-	#main {} /* Selects the element with id="main" */
-	p.main {} /* Selects p elements with class="main" */
-	p * {} /* Selects everything in p */
+  * {} /* Selects all elements */
+  html {} 
+  body {}
+  p {} /* Selects all <p> elements*/
+  div, p {} /* Selects all <div> elements and all <p> elements */
+  div p {} /* Selects all <p> elements inside <div> elements */
+  div > p {} /* Selects all <p> elements where the parent is a <div> element */
+  div + p {} /* Selects all <p> elements that are placed immediately after <div> elements */
+  div ~ p {} /* Selects every <p> element that are preceded by a <div> element */
+  .main {} /* Selects all elements with class="main" */
+  #main {} /* Selects the element with id="main" */
+  p.main {} /* Selects p elements with class="main" */
+  p * {} /* Selects everything in p */
 
-	a:link {} /* Selects all unvisited links */
-	a:visited {} /* Selects all visited links */
-	a:hover {} /* Selects links on mouse over */
-	a:active {} /* Selects the active link; when you click on it */
-	a:focus {} /* Selects focused link; mainly for input */
-	a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
-	a:target {} /* Selects the target link; very useful to make things pop up */
+  a:link {} /* Selects all unvisited links */
+  a:visited {} /* Selects all visited links */
+  a:hover {} /* Selects links on mouse over */
+  a:active {} /* Selects the active link; when you click on it */
+  a:focus {} /* Selects focused link; mainly for input */
+  a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
+  a:target {} /* Selects the target link; very useful to make things pop up */
 
-	p:first-line {} /* Selects first line of <p> */
-	p:first-letter {} /* Selects first letter of <p> */
-	p:before {content: "Read this -";} /* insert some content before the content of <p> */
-	p:before {content: attr(href);} /* can also be other attribute or other */
-	p:after {content: " -Read more… ";} /* insert some content after the content of <p> */
-	p:selection {} /* Selects the portion of <p> that is selected by a user */
+  p:first-line {} /* Selects first line of <p> */
+  p:first-letter {} /* Selects first letter of <p> */
+  p:before {content: "Read this -";} /* insert some content before the content of <p> */
+  p:before {content: attr(href);} /* can also be other attribute or other */
+  p:after {content: " -Read more… ";} /* insert some content after the content of <p> */
+  p:selection {} /* Selects the portion of <p> that is selected by a user */
 
-	p:first-child {} /* Selects first p only */
-	p:nth-child(2) {} /* Selects 2d child; or other */
-	p:nth-child(n) {} /* Selects nth child */
-	p:nth-child(even) {} /* Selects even'th child */
-	p:only-child {} /* Selects the only p element */
-	p:last-child {} /* Selects the last p only */
-	p:nth-last-child(2) {} /* Selects 2d last child; or other */
-	p:first-of-type {} /* Selects first p element */
-	p:nth-of-type(odd) {} /* Selects odd p elements */
-	p:nth-of-type(2n+3) {} /* Selects every 2nd plate starting from the 3rd */
-	p:only-of-type {} /* Selects p if its the only p in there */
-	p:last-of-type {} /* Selects last p element */
-	p:empty {} /* Selects empty p elements */
-	p:not(.main) /* Selects p without .main class */
+  p:first-child {} /* Selects first p only */
+  p:nth-child(2) {} /* Selects 2d child; or other */
+  p:nth-child(n) {} /* Selects nth child */
+  p:nth-child(even) {} /* Selects even'th child */
+  p:only-child {} /* Selects the only p element */
+  p:last-child {} /* Selects the last p only */
+  p:nth-last-child(2) {} /* Selects 2d last child; or other */
+  p:first-of-type {} /* Selects first p element */
+  p:nth-of-type(odd) {} /* Selects odd p elements */
+  p:nth-of-type(2n+3) {} /* Selects every 2nd plate starting from the 3rd */
+  p:only-of-type {} /* Selects p if its the only p in there */
+  p:last-of-type {} /* Selects last p element */
+  p:empty {} /* Selects empty p elements */
+  p:not(.main) /* Selects p without .main class */
 
-	:required {} /* Selects required form elements */
-	:valid {} /* Selects valid form elements */
-	:invalid {} /* Selects invalid form elements */
-	:focus {} /* Selects focused form element */
+  :required {} /* Selects required form elements */
+  :valid {} /* Selects valid form elements */
+  :invalid {} /* Selects invalid form elements */
+  :focus {} /* Selects focused form element */
 
-	a[target="_blank"] {} /* Selects all elements with that attribute and value */
-	[title~="flower"] {} /* select elements with an attribute value containing a specified word */
-	[class|="top"] {} /* select elements with the specified attribute starting with the specified value */
-	[class^="top"] {} /* select elements whose attribute value begins with a specified value */
-	[class$="test"] {} /* select elements whose attribute value ends with a specified value */
-	[class*="te"] {} /* select elements whose attribute value contains a specified value */
-	input[type="button"] {} /* selects elements with type="button" */
+  a[target="_blank"] {} /* Selects all elements with that attribute and value */
+  [title~="flower"] {} /* select elements with an attribute value containing a specified word */
+  [class|="top"] {} /* select elements with the specified attribute starting with the specified value */
+  [class^="top"] {} /* select elements whose attribute value begins with a specified value */
+  [class$="test"] {} /* select elements whose attribute value ends with a specified value */
+  [class*="te"] {} /* select elements whose attribute value contains a specified value */
+  input[type="button"] {} /* selects elements with type="button" */
 
-	p {color: red !important;} /* become most important */
+  p {color: red !important;} /* become most important */
 
 
 :root {
-	--main-color: red;
-	--semi-transparent: rgba(256, 256, 256, 0.6);
-	--anything: 10px;
+  --main-color: red;
+  --semi-transparent: rgba(256, 256, 256, 0.6);
+  --anything: 10px;
 }
 .CSS-VARIABLES {
-	color: red; border: solid 2px currentColor; /* will have border red because currentColor refers to element's color */
-	color: var(--main-color); /* uses variable and colors to red */
-	background: var(--semi-transparent); /* uses variable to color background */
-	padding: var(--anything, 10px); /* uses variable for padding and a value used if the variables is undefined */
-	color: initial; /* reset value */
+  color: red; border: solid 2px currentColor; /* will have border red because currentColor refers to element's color */
+  color: var(--main-color); /* uses variable and colors to red */
+  background: var(--semi-transparent); /* uses variable to color background */
+  padding: var(--anything, 10px); /* uses variable for padding and a value used if the variables is undefined */
+  color: initial; /* reset value */
 }
 
 
 .CSS-CALC {
-	width: calc(100% - 80px); /* calculates */
+  width: calc(100% - 80px); /* calculates */
 }
-	
+  
 
 .MEDIA-QUERIES 
-	@media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
-	@media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
-	@media only screen and (orientation: landscape) {} /* screen landscape */
-	@media only screen and (orientation: portrait) {} /* screen portrait */
+  @media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
+  @media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
+  @media only screen and (orientation: landscape) {} /* screen landscape */
+  @media only screen and (orientation: portrait) {} /* screen portrait */
 
 /* http://www.alsacreations.com/article/lire/930-css3-media-queries.html */
 
 
 .FONT {
-	font-family: "Times New Roman", Times, serif;
-	font-family: 'Fontname';
-	font-style: normal italic oblique; 
-	font-size: 14px 14em 14vh 14vw 14%; /* Use one. 1em = 16px */ 
-	font-weight: bold normal; /* Weight work also with %, ... */
-	font-variant: small-caps; /* Small capitalized letters */
+  font-family: "Times New Roman", Times, serif;
+  font-family: 'Fontname';
+  font-style: normal italic oblique; 
+  font-size: 14px 14em 14vh 14vw 14%; /* Use one. 1em = 16px */ 
+  font-weight: bold normal; /* Weight work also with %, ... */
+  font-variant: small-caps; /* Small capitalized letters */
 }
 
 
 @font-face {
-	font-family: Fontname; /* define the name of new font to be used as font-family */
-	src: url(font.ttf); /* locate the font */
+  font-family: Fontname; /* define the name of new font to be used as font-family */
+  src: url(font.ttf); /* locate the font */
 }
 
 
 .COLOR {
-	color: red; /* color text in red */
-	color: #FF0000; /* red text */
-	color: rgb(255, 0, 0); /* red text */
+  color: red; /* color text in red */
+  color: #FF0000; /* red text */
+  color: rgb(255, 0, 0); /* red text */
 }
 
 
 .BACKGROUND {
-	background-color: lightblue; /* use color as bg */
-	background-image: url("paper.gif"); /* use img as bg */
-	background-repeat: no-repeat repeat-y repeat-x; /* by default, bg img will repeat */
-	background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
-	background-size: 100% 100vh; /* fit while size, can also be pixels */
-	background-image: -webkit-linear-gradient(#666CCC, #BC1324); /* gradient from one color to the other */
-	background-attachment: fixed; /* Fix the background image */
-	background: url("") no-repeat top center; /* shortened method */
-	background: url(""), url(""); /* 2 different background images; first will be on top */
-	background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
-	-webkit-background-clip: text; /* to show background through text */
-	-webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
+  background-color: lightblue; /* use color as bg */
+  background-image: url("paper.gif"); /* use img as bg */
+  background-repeat: no-repeat repeat-y repeat-x; /* by default, bg img will repeat */
+  background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
+  background-size: 100% 100vh; /* fit while size, can also be pixels */
+  background-image: -webkit-linear-gradient(#666CCC, #BC1324); /* gradient from one color to the other */
+  background-attachment: fixed; /* Fix the background image */
+  background: url("") no-repeat top center; /* shortened method */
+  background: url(""), url(""); /* 2 different background images; first will be on top */
+  background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
+  -webkit-background-clip: text; /* to show background through text */
+  -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
 }
 
 
 .GRADIENT {
-	background-image: linear-gradient(blue, green); /* gradient from blue(top) to green(bottom) */
-	background-image: linear-gradient(to right, blue, green); /* to change direction; bottom right possible; 180deg also */
-	background-image: linear-gradient(to top left, blue, green, yellow); /* more colors possible */
-	background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1)); /* you can use it with transparency of course */
-	background-image: linear-gradient(to right, blue 0%, green 30%); /* % or pixels to change space of each color */
-	background-image: radial-gradient(circle at center, white, green); /* radial gradient; other positions available; ellipse too */
+  background-image: linear-gradient(blue, green); /* gradient from blue(top) to green(bottom) */
+  background-image: linear-gradient(to right, blue, green); /* to change direction; bottom right possible; 180deg also */
+  background-image: linear-gradient(to top left, blue, green, yellow); /* more colors possible */
+  background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1)); /* you can use it with transparency of course */
+  background-image: linear-gradient(to right, blue 0%, green 30%); /* % or pixels to change space of each color */
+  background-image: radial-gradient(circle at center, white, green); /* radial gradient; other positions available; ellipse too */
 }
 
 
 .BORDERS {
-	border-style: solid dotted dashed double groove ridge inset outset none hidden; /* use one */
-	border-style: dotted dashed solid double; /* each side different border type */
-	border-width: 5px; /* or medium */
-	border-color: red;
-	border: 5px solid red; /* shortened method */
-	border-left: 6px solid red; /* only one side */
-	border-width: 10px 5px 20px 15px; /* make some irregular borders */
-	border-radius: 5px; /* round borders */
-	border-radius: 20px 5px 10px 15px; /* make some irregular radius */
+  border-style: solid dotted dashed double groove ridge inset outset none hidden; /* use one */
+  border-style: dotted dashed solid double; /* each side different border type */
+  border-width: 5px; /* or medium */
+  border-color: red;
+  border: 5px solid red; /* shortened method */
+  border-left: 6px solid red; /* only one side */
+  border-width: 10px 5px 20px 15px; /* make some irregular borders */
+  border-radius: 5px; /* round borders */
+  border-radius: 20px 5px 10px 15px; /* make some irregular radius */
 }
 
 
 .HALF-CIRCLE {
-	height: 100px;
-	width: 50px;
-	border-radius: 100px 0 0 100px; /* change places for other side */
+  height: 100px;
+  width: 50px;
+  border-radius: 100px 0 0 100px; /* change places for other side */
 }
 
 
 .QUARTER-CIRCLE {
-	height: 100px;
-	width: 100px;
-	border-radius: 100% 0 0 0; /* Change places for another side */
+  height: 100px;
+  width: 100px;
+  border-radius: 100% 0 0 0; /* Change places for another side */
 }
 
 
 .MARGIN { /* Space around elements */
-	margin-bottom: 10px; /* top, right, bottom, left */
-	margin-top: 5% 5vh 5vw 5em; /* use one */
-	margin: 10px, 5px, 10px, 5px; /* shortened method */
-	margin: auto; /* center element but need to specify width */
-	margin-left: inherit; /* gets the value from parent element */
-	/* margin collapse make only biggest margin appear if 2 follow each other */
-	/* h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;} */
+  margin-bottom: 10px; /* top, right, bottom, left */
+  margin-top: 5% 5vh 5vw 5em; /* use one */
+  margin: 10px, 5px, 10px, 5px; /* shortened method */
+  margin: auto; /* center element but need to specify width */
+  margin-left: inherit; /* gets the value from parent element */
+  /* margin collapse make only biggest margin appear if 2 follow each other */
+  /* h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;} */
 }
 
 
 .PADDING { /* Space around content */
-	padding-right: 10px; /* top, right, bottom, left */
-	padding-left: 5% 5vh 5vw 5em; /* use one */
-	padding: 10px, 5px, 10px, 5px; /* shortened method */
+  padding-right: 10px; /* top, right, bottom, left */
+  padding-left: 5% 5vh 5vw 5em; /* use one */
+  padding: 10px, 5px, 10px, 5px; /* shortened method */
 }
 
 
 .HEIGHT { /* While px are fixed, em and % depends on parents */
-	height: 200px;
-	max-height: 100%;
-	min-height: 20em;
+  height: 200px;
+  max-height: 100%;
+  min-height: 20em;
 }
 
 
 .WIDTH { /* While px are fixed, em and % depends on parents */
-	width: 400px;
-	max-width: 100%;
-	min-width: 20em;
+  width: 400px;
+  max-width: 100%;
+  min-width: 20em;
 }
 
 
 .OUTLINE { /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
-	outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
-	outline: 5px dotted red; /* shortened method */
+  outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
+  outline: 5px dotted red; /* shortened method */
 }
 
 
 .TEXT {
-	color: red;
-	text-align: center left right justify; /* justify(=text of exact same width) */
-	text-decoration: none; /* very useful for links */
-	text-decoration: overline underline line-through;
-	text-transform: uppercase lowercase capitalize;
-	text-indent: 50px; /* alineas */
-	letter-spacing: 3px; /* space between letters*/
-	word-spacing: 3px; /* space between words*/
-	word-wrap: break-word; /* break word to make it fit in box*/
-	overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
-	line-height: 0.8; /* space between lines */
-	direction: rtl; /* change text direction to right-to-left */
-	word-spacing: 10px;
-	vertical-align: middle text-top text-bottom; /* align image to text */
-	text-shadow: 2px 2px #FF0000; /* shadow */
+  color: red;
+  text-align: center left right justify; /* justify(=text of exact same width) */
+  text-decoration: none; /* very useful for links */
+  text-decoration: overline underline line-through;
+  text-transform: uppercase lowercase capitalize;
+  text-indent: 50px; /* alineas */
+  letter-spacing: 3px; /* space between letters*/
+  word-spacing: 3px; /* space between words*/
+  word-wrap: break-word; /* break word to make it fit in box*/
+  overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
+  line-height: 0.8; /* space between lines */
+  direction: rtl; /* change text direction to right-to-left */
+  word-spacing: 10px;
+  vertical-align: middle text-top text-bottom; /* align image to text */
+  text-shadow: 2px 2px #FF0000; /* shadow */
 }
 
 
 .LIST {
-	list-style-type: circle square upper-roman lower-alpha none; /* kind of listing for ul */
-	list-style-type: upper-roman lower-alpha; /* kind of listing for ol */
-	list-style-image: url('sqpurple.gif'); /* img listing for ul */
-	list-style-position: inside; /* inside or outside the content flow (outside by default) */
-	list-style: square inside url("sqpurple.gif"); /* shortened way */
+  list-style-type: circle square upper-roman lower-alpha none; /* kind of listing for ul */
+  list-style-type: upper-roman lower-alpha; /* kind of listing for ol */
+  list-style-image: url('sqpurple.gif'); /* img listing for ul */
+  list-style-position: inside; /* inside or outside the content flow (outside by default) */
+  list-style: square inside url("sqpurple.gif"); /* shortened way */
 }
 
 
 .TABLE {
-	border: solid 1px; /* set to table, th and td it make it look like a table (thanks to borders) */
-	border-collapse: collapse; /* delete space between cells and table */
-	vertical-align: bottom top; /* align vertically */
-	caption-side: top bottom; /* display title on top or underneath */
-	empty-cells: hide show; /* can hide empty cells */
+  border: solid 1px; /* set to table, th and td it make it look like a table (thanks to borders) */
+  border-collapse: collapse; /* delete space between cells and table */
+  vertical-align: bottom top; /* align vertically */
+  caption-side: top bottom; /* display title on top or underneath */
+  empty-cells: hide show; /* can hide empty cells */
 }
 
 
 .DISPLAY { 
-	display: inline; /* by default for <a> <span> <img> displays elements in line */
-	display: block; /* by default for most of tags displays elements by full width block */
-	display: none; /* hide item and affect layout, visibility is the same */
-	display: inline-block; /* displays elements in line as blocks; allows to use vertical-align */
-	visibility: hidden; /* hide item */
+  display: inline; /* by default for <a> <span> <img> displays elements in line */
+  display: block; /* by default for most of tags displays elements by full width block */
+  display: none; /* hide item and affect layout, visibility is the same */
+  display: inline-block; /* displays elements in line as blocks; allows to use vertical-align */
+  visibility: hidden; /* hide item */
 }
 
 
 .POSITION {
-	position: static; /* by default, they are not affected by top-right-bottom-left properties */
-	position: relative; /* follow properties */
-	position: fixed; /* is fixed on viewport -> does not move when scrolling */
-	position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
-	z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
-	/* possible to write over an image with position:absolute; and controls of location */
-	clip: rect(0px,60px,200px,0px); /* sets shape of an element */
-	overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
-	overflow-x: hidden; /* Hide horizontal scrollbar */
-	overflow-y: scroll; /* Add vertical scrollbar */
-	overflow: auto; /* chose best option */
+  position: static; /* by default, they are not affected by top-right-bottom-left properties */
+  position: relative; /* follow properties */
+  position: fixed; /* is fixed on viewport -> does not move when scrolling */
+  position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
+  z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
+  /* possible to write over an image with position:absolute; and controls of location */
+  clip: rect(0px,60px,200px,0px); /* sets shape of an element */
+  overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+  overflow: auto; /* chose best option */
 }
 
 
 .FLOAT {
-	float: right left; /* item floats to a side */
-	clear: right left; /* stop floating for next items */
-	overflow: auto; /* needed if an element is taller than the element containing it */
+  float: right left; /* item floats to a side */
+  clear: right left; /* stop floating for next items */
+  overflow: auto; /* needed if an element is taller than the element containing it */
 }
 
 
 .ALIGN {
-	margin: auto; /* center element but need to specify width */
-	text-align: center; /* center text or image inside element */
-	padding-top: 30px; /* if div padding defined, will by default be centered horizontally */
-	line-height: 100px; /* if div and line height are the same, it will be centered vertically */
-	top: 50%;	left: 50%;	transform: translate(-50%, -50%); /* will center horizontally */
+  margin: auto; /* center element but need to specify width */
+  text-align: center; /* center text or image inside element */
+  padding-top: 30px; /* if div padding defined, will by default be centered horizontally */
+  line-height: 100px; /* if div and line height are the same, it will be centered vertically */
+  top: 50%; left: 50%;  transform: translate(-50%, -50%); /* will center horizontally */
 }
 
 
 .OPACITY {
-	opacity: 0.5; /* from 1 to 0, very useful with :hover; effect on other elements too ! */
-	background: rgba(76, 175, 80, 0.5); /* works also with rgba; better way because it changes only this element */
+  opacity: 0.5; /* from 1 to 0, very useful with :hover; effect on other elements too ! */
+  background: rgba(76, 175, 80, 0.5); /* works also with rgba; better way because it changes only this element */
 }
 
 
 .SHADOW {
-	/* multiple shadow effects possible with comas */
-	box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
-	text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
+  /* multiple shadow effects possible with comas */
+  box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
+  text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
 }
 
 
@@ -337,136 +337,136 @@ TODO: link to html file to show result
 
 
 .TRANSFORM-2D {
-	transform: translate(50px, 100px); /* moves 50px to right and 100px down */
-	transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
-	transform: scale(0.5, 0.5); /* decrease and/or increase size via width and height */
-	transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
-	-webkit-transform: rotate(10deg); /* for safari */
-	transform: scale(0.7) rotate(30deg); /* shortened method */
+  transform: translate(50px, 100px); /* moves 50px to right and 100px down */
+  transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
+  transform: scale(0.5, 0.5); /* decrease and/or increase size via width and height */
+  transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
+  -webkit-transform: rotate(10deg); /* for safari */
+  transform: scale(0.7) rotate(30deg); /* shortened method */
 }
 
 
 .TRANSFORM-3D {
-	transform: rotateX(150deg); /* rotate around X-axis */
-	transform: rotateY(150deg); /* rotate around Y-axis */
-	transform: rotateZ(150deg); /* rotate around Z-axis */
-	transform: rotate3d(x, y, z); /* shortened method */
-	transform: translate3d(x, y, z); /* translation */
-	transform: scale3d(x, y, z); /* scale */
-	backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
+  transform: rotateX(150deg); /* rotate around X-axis */
+  transform: rotateY(150deg); /* rotate around Y-axis */
+  transform: rotateZ(150deg); /* rotate around Z-axis */
+  transform: rotate3d(x, y, z); /* shortened method */
+  transform: translate3d(x, y, z); /* translation */
+  transform: scale3d(x, y, z); /* scale */
+  backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
 }
 
 
 .TRANSITION {
-	/* multiple transformations all at once */
-	transition-property: background-color, width, height; /* change those properties; they must be defined elsewhere */
-	transition-duration: 1s; /* the time it takes to make the transition */
-	transition-delay: 0.5s; /* the time before transition starts */
-	transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
-	transition: color 2s ease, width 1s linear; /* shortened method */
-	transition: all 1.5s ease; /* handle all transition at once */
+  /* multiple transformations all at once */
+  transition-property: background-color, width, height; /* change those properties; they must be defined elsewhere */
+  transition-duration: 1s; /* the time it takes to make the transition */
+  transition-delay: 0.5s; /* the time before transition starts */
+  transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
+  transition: color 2s ease, width 1s linear; /* shortened method */
+  transition: all 1.5s ease; /* handle all transition at once */
 }
 
 
 @keyframes keyframe_name { /* needed for animation */
-	0% {
-		transform: translateX(0px);
-	}
-	50% {
-		transform: translateX(150px);
-	}
-	100% {
-		transform: translateX(150px) rotate(30deg);
-	}
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+  100% {
+    transform: translateX(150px) rotate(30deg);
+  }
 }
 @-webkit-keyframes keyframe_name { /* needed for animation on chrome safari and opera */
-	0% {
-		transform: translateX(0px);
-	}
-	50% {
-		transform: translateX(150px);
-	}
-	100% {
-		transform: translateX(150px) rotate(30deg);
-	}
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(150px);
+  }
+  100% {
+    transform: translateX(150px) rotate(30deg);
+  }
 }
 .ANIMATION {
-	/* multiple animations step by step; need @keyframes */
-	animation: keyframe_name 2s; /* use animation created before in @keyframes */
-	-webkit-animation: keyframe_name; /* for safari, opera and chrome */
-	animation: keyframe_name 2s linear alternate infinite; /* alternate to make it play a loop; infinite for never-ending animation */
+  /* multiple animations step by step; need @keyframes */
+  animation: keyframe_name 2s; /* use animation created before in @keyframes */
+  -webkit-animation: keyframe_name; /* for safari, opera and chrome */
+  animation: keyframe_name 2s linear alternate infinite; /* alternate to make it play a loop; infinite for never-ending animation */
 }
 
 
 .CURSOR {
-	cursor: progress wait crosshair help move pointer text not-allowed; /* different types of cursors */
-	cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /* direction of resize */
+  cursor: progress wait crosshair help move pointer text not-allowed; /* different types of cursors */
+  cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /* direction of resize */
 }
 
 
 .BOX-MODEL {
-	box-sizing: border-box; /* keep border inside the height and width of elements; use with '*' is better */
+  box-sizing: border-box; /* keep border inside the height and width of elements; use with '*' is better */
 }
 
 
 .IMAGE {
-	max-width: 100%; height: auto; /* easy resize images */
-	filter: grayscale(100%); /* set a grayscale to 100% */
-	filter: sepia(100%); /* set a grayscale to 100% */
-	filter: saturate(100%); /* set a grayscale to 100% */
-	filter: brightness(100%); /* set a grayscale to 100% */
-	filter: invert(100%); /* set a grayscale to 100% */
-	filter: contrast(100%); /* set a grayscale to 100% */
-	filter: blur(5px); /* set a blur of 5px */
-	filter: initial; /* set a grayscale to 100% */
+  max-width: 100%; height: auto; /* easy resize images */
+  filter: grayscale(100%); /* set a grayscale to 100% */
+  filter: sepia(100%); /* set a grayscale to 100% */
+  filter: saturate(100%); /* set a grayscale to 100% */
+  filter: brightness(100%); /* set a grayscale to 100% */
+  filter: invert(100%); /* set a grayscale to 100% */
+  filter: contrast(100%); /* set a grayscale to 100% */
+  filter: blur(5px); /* set a blur of 5px */
+  filter: initial; /* set a grayscale to 100% */
 }
 
 
 .FLEX-CONTAINER {
-	display: flex;/* in a container, change the disposition to flex and allow following properties */
-	flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
-	flex-wrap: wrap wrap-reverse; /* by default items will stay on same line; wrap helps going down */
-	justify-content: flex-start flex-end center space-between space-around; /* how items will display on a lign; works also with column direction; manage primary axis */
-	align-items: stretch flex-end flex-start center baseline; /* manage secondary axis; how items will display in a column or lign */
-	align-content: flex-start flex-end center space-between space-around stretch; /* manage secondary axis if there is multiple lines */
-	flex-flow: row wrap; /* shortened way to direction and wrap */
+  display: flex;/* in a container, change the disposition to flex and allow following properties */
+  flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
+  flex-wrap: wrap wrap-reverse; /* by default items will stay on same line; wrap helps going down */
+  justify-content: flex-start flex-end center space-between space-around; /* how items will display on a lign; works also with column direction; manage primary axis */
+  align-items: stretch flex-end flex-start center baseline; /* manage secondary axis; how items will display in a column or lign */
+  align-content: flex-start flex-end center space-between space-around stretch; /* manage secondary axis if there is multiple lines */
+  flex-flow: row wrap; /* shortened way to direction and wrap */
 }
 
 
 .FLEX-ITEMS {
-	margin: auto; /* center all elements; need to be on items and not on container */
-	align-self: flex-end; /* align a single item differently; influence on secondary axis */
-	order: 1 2 3; /* change order of html code; need to order every item; 0 by default */
-	flex: 1 2 3; /* change size ...; need to flex every item */
+  margin: auto; /* center all elements; need to be on items and not on container */
+  align-self: flex-end; /* align a single item differently; influence on secondary axis */
+  order: 1 2 3; /* change order of html code; need to order every item; 0 by default */
+  flex: 1 2 3; /* change size ...; need to flex every item */
 }
 
 
 .MULTI-COLUMNS {
-	-webkit-columns: 4 100px; /* Chrome, Safari, Opera */
-	-moz-columns: 4 100px; /* Firefox */
-	columns: 4 100px; /* IE */
-	column-count: 4; /* 4 columns */
-	column-width: 200px; /* width of columns */
-	column-gap: 50px; /* gap bewteen columns */
-	column-rule: 2px solid black; /* as a border between columns */
-	column-span: all; /* to span over multiple (all) columns a title for example */
-	/* check columns jumps */
+  -webkit-columns: 4 100px; /* Chrome, Safari, Opera */
+  -moz-columns: 4 100px; /* Firefox */
+  columns: 4 100px; /* IE */
+  column-count: 4; /* 4 columns */
+  column-width: 200px; /* width of columns */
+  column-gap: 50px; /* gap bewteen columns */
+  column-rule: 2px solid black; /* as a border between columns */
+  column-span: all; /* to span over multiple (all) columns a title for example */
+  /* check columns jumps */
 }
 
 
 .GRIDS {
-	/* available in chrome and firefox only */
-	display: grid;
-	grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
-	grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
-	grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
+  /* available in chrome and firefox only */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
+  grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
+  grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
 }
 .GRIDS-ELEMENTS {
-	grid-column-start: 1; /* starts at vertical line 1 */
-	grid-column-end: span 3; /* ends after 3 vertical line */
-	grid-column: 1 / 3; /* shorter method */
-	grid-row: 1 / 5; /* starts at horizontal line 1 and ends at 5 */
-	grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
+  grid-column-start: 1; /* starts at vertical line 1 */
+  grid-column-end: span 3; /* ends after 3 vertical line */
+  grid-column: 1 / 3; /* shorter method */
+  grid-row: 1 / 5; /* starts at horizontal line 1 and ends at 5 */
+  grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
 }
 
 
