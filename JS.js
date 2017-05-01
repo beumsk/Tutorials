@@ -146,25 +146,51 @@ ERRORS
 
 
 
+STRICT MODE 
+// the strict mode changes bad syntax into actual errors; helping writing ecure JS
+
+
+	// usage of strict mode; must be placed on top of code (or function)
+	"use strict";
+	x = 3; // not allowed; you must declare every variables
+
+
+
+
 TYPES 
 // Check types of elements;
 
 
 	// Typeof the main type checker
+
 	typeof 27; // number
+
 	typeof NaN; // number; weird i know
+
 	typeof "Hello"; // string
+
 	typeof (typeof 1); // string; typeof always returns a string
+
 	typeof true; // boolean
+
 	typeof Symbol(); // symbol
+
 	typeof undefined; // undefined
+
 	typeof what; // undefined
+
 	typeof {a:1}; // object
+
 	typeof [1, 2, 3]; // object
+
 	Array.isArray(arrayName); // true if an array
+
 	typeof function(){}; // function
+
 	typeof class C {}; // function
+
 	typeof Math.PI; // function
+
 	typeof null; // object
 
 
