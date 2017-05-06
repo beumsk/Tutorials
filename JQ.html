@@ -173,13 +173,21 @@ JQuery
     });
   
 
-    // DOM traversing 
-    // add other parents etc
+    // DOM traversing
     $(function() {
-      $('p').find('span'); // access to span inside p to for example change css
+      $('p').children(); // access all direct children
+      $('p').find('span'); // access to all span inside p
+      $('p').parent(); // access direct parent
+      $('p').parents(); // access all parents elements
+      $('p').parentsUntil('section'); // access all elements until 'section'
       $('p').siblings(); // access siblings (tag on same level)
-      $('p').parent(); // access to parent to for example, change css (parents possible too)
-      $('p').children(); // access to children to for example, change css
+      $('p').next(); // access next siblings (tag on same level)
+      $('p').prev(); // access previous siblings (tag on same level)
+      $('div p').first(); // access first p inside div
+      $('div p').last(); // access last p inside div
+      $('p').eq(0); // access first p
+      $('p').filter('.info'); // access all p with info class
+      $('p').not('.info'); // access all p without info class
       $('p:nth-child(3)'); // access to third child
     });
   
