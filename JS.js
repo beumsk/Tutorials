@@ -1590,6 +1590,12 @@ ARRAYS
   console.log(array); // ['keep', 'us']
 
 
+  // splice a number
+  var array = ['Keep', 'everybody', 'but', 'him'];
+  array.splice(2, 1);
+  console.log(array); // ['Keep', 'everybody', 'him']for
+
+
   // replace smth in a string
   var str = "Salut, c'est chouette !";
   str = str.replace("chouette", "cool");
