@@ -130,6 +130,7 @@ TODO: link to html file to show result
   color: red; /* color text in red */
   color: #FF0000; /* red text */
   color: rgb(255, 0, 0); /* red text */
+  color: transparent; /* will make anything transparent */
 }
 
 
