@@ -21,6 +21,14 @@ TODO: link to html file to show result
   >Browser default
 
 
+.DECLARATION-ORDER
+  >Positionning
+  >Box-model
+  >Typography
+  >Visual
+  >Misc
+
+
 .SELECT-HTML
   * {} /* Selects all elements */
   html {} 
@@ -41,7 +49,7 @@ TODO: link to html file to show result
   a:hover {} /* Selects links on mouse over */
   a:active {} /* Selects the active link; when you click on it */
   a:focus {} /* Selects focused link; mainly for input */
-  a:hover {transition: all 0.3s ease} /* smooth transition of 0.3sec */
+  a:hover {transition: all .3s ease} /* smooth transition of 0.3sec */
   a:target {} /* Selects the target link; very useful to make things pop up */
 
   p:first-line {} /* Selects first line of <p> */
@@ -84,7 +92,7 @@ TODO: link to html file to show result
 
 :root {
   --main-color: red;
-  --semi-transparent: rgba(256, 256, 256, 0.6);
+  --semi-transparent: rgba(256, 256, 256, .6);
   --anything: 10px;
 }
 .CSS-VARIABLES {
@@ -112,7 +120,7 @@ TODO: link to html file to show result
 
 .FONT {
   font-family: "Times New Roman", Times, serif;
-  font-family: 'Fontname';
+  font-family: "Fontname";
   font-style: normal italic oblique; 
   font-size: 14px 14em 14vh 14vw 14%; /* Use one. 1em = 16px */ 
   font-weight: bold normal; /* Weight work also with %, ... */
@@ -128,7 +136,7 @@ TODO: link to html file to show result
 
 .COLOR {
   color: red; /* color text in red */
-  color: #FF0000; /* red text */
+  color: #ff0000; /* red text */
   color: rgb(255, 0, 0); /* red text */
   color: transparent; /* will make anything transparent */
 }
@@ -140,7 +148,7 @@ TODO: link to html file to show result
   background-repeat: no-repeat repeat-y repeat-x; /* by default, bg img will repeat */
   background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
   background-size: 100% 100vh; /* fit while size, can also be pixels */
-  background-image: -webkit-linear-gradient(#666CCC, #BC1324); /* gradient from one color to the other */
+  background-image: -webkit-linear-gradient(#666ccc, #bc1324); /* gradient from one color to the other */
   background-attachment: fixed; /* Fix the background image */
   background: url("") no-repeat top center; /* shortened method */
   background: url(""), url(""); /* 2 different background images; first will be on top */
@@ -154,7 +162,7 @@ TODO: link to html file to show result
   background-image: linear-gradient(blue, green); /* gradient from blue(top) to green(bottom) */
   background-image: linear-gradient(to right, blue, green); /* to change direction; bottom right possible; 180deg also */
   background-image: linear-gradient(to top left, blue, green, yellow); /* more colors possible */
-  background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1)); /* you can use it with transparency of course */
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* you can use it with transparency of course */
   background-image: linear-gradient(to right, blue 0%, green 30%); /* % or pixels to change space of each color */
   background-image: radial-gradient(circle at center, white, green); /* radial gradient; other positions available; ellipse too */
 }
@@ -236,7 +244,7 @@ TODO: link to html file to show result
   word-spacing: 3px; /* space between words*/
   word-wrap: break-word; /* break word to make it fit in box*/
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
-  line-height: 0.8; /* space between lines */
+  line-height: .8; /* space between lines */
   direction: rtl; /* change text direction to right-to-left */
   word-spacing: 10px;
   vertical-align: middle text-top text-bottom; /* align image to text */
@@ -278,7 +286,7 @@ TODO: link to html file to show result
   position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
   z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
   /* possible to write over an image with position:absolute; and controls of location */
-  clip: rect(0px,60px,200px,0px); /* sets shape of an element */
+  clip: rect(0px, 60px, 200px, 0px); /* sets shape of an element */
   overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
   overflow-x: hidden; /* Hide horizontal scrollbar */
   overflow-y: scroll; /* Add vertical scrollbar */
@@ -303,8 +311,8 @@ TODO: link to html file to show result
 
 
 .OPACITY {
-  opacity: 0.5; /* from 1 to 0, very useful with :hover; effect on other elements too ! */
-  background: rgba(76, 175, 80, 0.5); /* works also with rgba; better way because it changes only this element */
+  opacity: .5; /* from 1 to 0, very useful with :hover; effect on other elements too ! */
+  background: rgba(76, 175, 80, .5); /* works also with rgba; better way because it changes only this element */
 }
 
 
@@ -340,10 +348,10 @@ TODO: link to html file to show result
 .TRANSFORM-2D {
   transform: translate(50px, 100px); /* moves 50px to right and 100px down */
   transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
-  transform: scale(0.5, 0.5); /* decrease and/or increase size via width and height */
+  transform: scale(.5, .5); /* decrease and/or increase size via width and height */
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
   -webkit-transform: rotate(10deg); /* for safari */
-  transform: scale(0.7) rotate(30deg); /* shortened method */
+  transform: scale(.7) rotate(30deg); /* shortened method */
 }
 
 
@@ -362,7 +370,7 @@ TODO: link to html file to show result
   /* multiple transformations all at once */
   transition-property: background-color, width, height; /* change those properties; they must be defined elsewhere */
   transition-duration: 1s; /* the time it takes to make the transition */
-  transition-delay: 0.5s; /* the time before transition starts */
+  transition-delay: .5s; /* the time before transition starts */
   transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
   transition: color 2s ease, width 1s linear; /* shortened method */
   transition: all 1.5s ease; /* handle all transition at once */
@@ -371,7 +379,7 @@ TODO: link to html file to show result
 
 @keyframes keyframe_name { /* needed for animation */
   0% {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
   50% {
     transform: translateX(150px);
@@ -382,7 +390,7 @@ TODO: link to html file to show result
 }
 @-webkit-keyframes keyframe_name { /* needed for animation on chrome safari and opera */
   0% {
-    transform: translateX(0px);
+    transform: translateX(0);
   }
   50% {
     transform: translateX(150px);
