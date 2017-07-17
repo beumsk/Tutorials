@@ -125,7 +125,7 @@ TODO: link to html file to show result
   font-size: 14px 14em 14vh 14vw 14%; /* Use one. 1em = 16px */ 
   font-weight: bold normal; /* Weight work also with %, ... */
   font-variant: small-caps; /* Small capitalized letters */
-  font: italic bold 20px/30px arial; /* shortened method; style, weight, size, line-height, family */
+  font: italic bold 20px/30px arial; /* shortened method; style, weight, size, line-height, family; size and family are mandatory */
 }
 
 
