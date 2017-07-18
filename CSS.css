@@ -297,7 +297,7 @@ TODO: link to html file to show result
 
 .FLOAT {
   float: right left; /* item floats to a side */
-  clear: right left; /* stop floating for next items */
+  clear: right left both; /* stop floating for next items, both clears right and left */
   overflow: auto; /* needed if an element is taller than the element containing it */
 }
 
