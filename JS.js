@@ -46,6 +46,7 @@ MAIN JS
 
   // Condition
   if (a == 1) {code block} else if (a == 2) {code block} else {code block}
+  var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
 
   // Short circuiting
   var a = true && true; // returns true
