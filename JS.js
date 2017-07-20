@@ -1507,7 +1507,7 @@ ARRAYS
   var oldArray = [1, 2, 3, 4, 5];
   var singleVal = oldArray.reduce(function(previousVal, currentVal) {
     return previousVal - currentVal;
-  }, 0); // start at value[0]
+  }, 0); // start at value[0]; do not use it for multiplications
   console.log(singleVal); // will result in -1-2-3-4-5 = -15
 
 
@@ -1827,7 +1827,7 @@ REGEXP
 
   a{2, 5} // find strings whit 2 to 5 a
     
-  i // Perform case-insensitive matching
+  i // Perform case-insensitive matching; meaning upper or lowercased 
   
   g // Perform a global match (find all matches rather than stopping after the first match)
   
@@ -1846,6 +1846,10 @@ REGEXP
   
   // The replace() method returns a modified string where the pattern is replaced.
   "try to find him".replace(/him/i, "me"); // try to find me
+
+
+  // replace() works also like this
+  "this code is shit".replace(/[aeiou]/gi, ''); // ths cd s sht
   
   
   // The test() method searches a string and return true or false
