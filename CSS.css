@@ -404,7 +404,7 @@ TODO: link to html file to show result
   /* multiple animations step by step; need @keyframes */
   animation: keyframe_name 2s; /* use animation created before in @keyframes */
   -webkit-animation: keyframe_name; /* for safari, opera and chrome */
-  animation: keyframe_name 2s linear alternate infinite; /* alternate to make it play a loop; infinite for never-ending animation */
+  animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
 }
 
 
