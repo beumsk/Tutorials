@@ -810,10 +810,20 @@ STRING METHODS
   console.log(str.startsWith("http://")); // true
 
 
-  // return specific caracter
+  // return specific character
   var word = 'Kangaroo';
-  console.log(word[3]);
-  console.log(word.charAt(3));
+  console.log(word[3]); // g
+  console.log(word.charAt(3)); // g
+
+
+  // return position of a character
+  var word = 'Kangaroo';
+  console.log(word.indexOf('a')); // 1
+
+
+  // return position of a character
+  var word = 'Kangaroo';
+  console.log(word.lastIndexOf('a')); // 4
 
 
   // return all caracter from a variable
@@ -1546,6 +1556,12 @@ ARRAYS
   var array = [10, 20, 30, 40, 50];
   var a = array.indexOf(30);
   console.log(a); // 2; position of value 30
+
+
+  // get index position of a value in an array (starting from the end)
+    var array = [10, 20, 30, 40, 30, 50];
+    var a = array.lastIndexOf(30);
+    console.log(a); // 4; position of last value 30
 
 
   // reverse an array
