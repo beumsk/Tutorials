@@ -112,6 +112,9 @@ TODO: link to html file to show result
 .MEDIA-QUERIES 
   @media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
   @media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
+  @media only screen and (min-width: 360px), (orientation: portrait) {} /* screen +360 or portrait */
+  @media only screen and (min-width: 360px) and (orientation: portrait), (min-resolution: 300dpi) {} /* screen +360 and portrait or resolution +300dpi */
+	@media only screen and (min-resolution: 150dpi) {} /* screen resolution +150dpi */
   @media only screen and (orientation: landscape) {} /* screen landscape */
   @media only screen and (orientation: portrait) {} /* screen portrait */
 
@@ -122,7 +125,7 @@ TODO: link to html file to show result
   font-family: "Times New Roman", Times, serif;
   font-family: "Fontname";
   font-style: normal italic oblique; 
-  font-size: 14px 14em 14vh 14vw 14%; /* Use one. 1em = 16px */ 
+  font-size: 14px 14em 14rem 14vh 14vw 14%; /* Use one. 1em = 16px; 1rem is based on root font-size while 1em is based on navigator or parent font-size */ 
   font-weight: bold normal; /* Weight work also with %, ... */
   font-variant: small-caps; /* Small capitalized letters */
   font: italic bold 20px/30px arial; /* shortened method; style, weight, size, line-height, family; size and family are mandatory */
