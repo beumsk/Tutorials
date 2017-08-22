@@ -5,3 +5,25 @@ SYNTACTICALLY AWESOME STYLESHEETS
 /* change from sass to css; makes the browser able to understand the style; must be done in the command (ruby) */
 sass SASS.scss CSS.css
 
+/* nesting selectors */
+.parent {
+	.child {
+		
+	}
+}
+
+/* nesting properties */
+border : {
+	top: 2px solid black;
+	bottom: 1px solid grey;
+}
+
+/* variables */
+$translucent-white: rgba(255,255,255,0.3);
+background-color: $translucent-white;
+$icon-width: 200px;
+width: $icon-width;
+$main-font: 12px Arial bold;
+font: $main-font;
+
+
