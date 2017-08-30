@@ -2,8 +2,10 @@ SYNTACTICALLY AWESOME STYLESHEETS
   -Element Styling
     -by Beumsk
 
+
 /* change from sass to css; makes the browser able to understand the style; must be done in the command (ruby) */
 sass SASS.scss CSS.css
+
 
 /* nesting selectors */
 .parent {
@@ -25,5 +27,57 @@ $icon-width: 200px;
 width: $icon-width;
 $main-font: 12px Arial bold;
 font: $main-font;
+
+/* nesting pseudo-elements */
+div {
+	color: red;
+	&:hover: {
+		color: blue;
+	}
+}
+
+/* mixins */
+@mixin backface-visibility($visibility: hidden) { /* default value is passed here */
+  backface-visibility: $visibility;
+  -webkit-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  -ms-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+}
+@mixin backface-visibility(hidden);
+
+@mixin dashed-border($width, $color: #FFF) {
+  border: {
+     color: $color;
+     width: $width;
+     style: dashed;
+  }
+}
+//only passes non-default argument
+span { @include dashed-border(3px); }
+//passes both arguments
+p { @include dashed-border(3px, green); }
+//passes out of order but explicitly defined
+div { @include dashed-border(color: purple, width: 5px); }
+
+/* list arguments */
+$stripe-properties: to bottom, 15%, blue, white;
+@include stripes($stripe-properties...);
+
+/* string interpolation */
+@mixin photo-content($file) {
+	content: url(#{$file}.jpg);
+}
+@include photo-content('profile-pic');
+
+/* & selector in mixins */
+@mixin text-hover($color){
+  &:hover {
+      color: $color; 
+  }
+}
+p {
+	@include text-hover(red);
+}
 
 
