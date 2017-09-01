@@ -80,4 +80,40 @@ p {
 	@include text-hover(red);
 }
 
+/* color functions */
+color: red + blue; 
+color: #333 + #f5f5f5;
+color: fade-in(#62fdca, 0.5);
+color: fade-out(#62fdca, 0.5);
+color: adjust-hue(#62fdca, 20%);
+
+/* arithemtic */
+height: 100px + 10;
+height: 10px * 5;
+height: 100px - 10;
+height: (100) / 10 + 0px;
+height: 9%2em;
+
+/* each loop */
+$list: (orange, purple, teal);
+@each $item in $list {
+  .#{$item} {
+    background: $item;
+  }
+}
+
+/* for loop */
+$total: 10; //Number of .ray divs in our html
+$step: 360deg / $total;
+@for $i from 1 through $total {
+  .ray:nth-child(#{$i}) {
+    background: adjust-hue(blue, $i * $step);
+   }
+}
+
+/* conditionals */
+
+
+
+
 
