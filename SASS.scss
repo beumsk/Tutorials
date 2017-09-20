@@ -88,11 +88,10 @@ color: fade-out(#62fdca, 0.5);
 color: adjust-hue(#62fdca, 20%);
 
 /* arithemtic */
-height: 100px + 10;
-height: 10px * 5;
-height: 100px - 10;
-height: (100) / 10 + 0px;
-height: 9%2em;
+height: 100px + 10; // 110px
+height: 10px * 5; // 50px
+height: 100px - 10; // 90px
+height: (100) / 10 + 0px; // 10px
 
 /* each loop */
 $list: (orange, purple, teal);
@@ -112,7 +111,9 @@ $step: 360deg / $total;
 }
 
 /* conditionals */
+width: if(2 == 2, 50px, 100px); // condition, if true, if false
 
+/*  */
 
 
 
