@@ -482,6 +482,19 @@ JQuery
       });  
     });
 
+
+    // menu closing on click outside
+    $('html').click(function() {
+      // Hide the menus if visible here
+      $('.menu').hide();
+    });
+
+    $('#menucontainer').click(function(event){
+      event.stopPropagation();
+      // show menu here
+      $('.menu').toggle();
+    });
+
   </script>
   
 
