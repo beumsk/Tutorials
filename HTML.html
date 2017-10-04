@@ -106,7 +106,7 @@ HYPERTEXT MARKUP LANGUAGE
 
 
   <!-- ORDERED LIST -->
-  <ol type="A"><!-- can also be "a" "I" "i" -->
+  <ol type="A" start="3" reversed><!-- can also be "a" "I" "i"; start does not work with reversed -->
     <li>Un</li><!--list elements-->
     <li>Deux</li>
     <li>Trois</li>
@@ -308,6 +308,10 @@ HYPERTEXT MARKUP LANGUAGE
       <input type="submit" value="submit"><!--submit button to send answers-->
     </fieldset>
   </form><hr>
+
+
+  <!-- CONTENT EDITABLE -->
+  <p contenteditable="true">Edit me</p>
 
 
   <!-- EXPANDABLE -->
