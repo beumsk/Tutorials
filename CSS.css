@@ -251,13 +251,13 @@ TODO: link to html file to show result
   line-height: .8; /* space between lines */
   direction: rtl; /* change text direction to right-to-left */
   word-spacing: 10px;
-  vertical-align: middle text-top text-bottom; /* align image to text */
+  vertical-align: middle text-top text-bottom top bottom; /* align image to text */
   text-shadow: 2px 2px #FF0000; /* shadow */
 }
 
 
 .LIST {
-  list-style-type: circle square upper-roman lower-alpha none; /* kind of listing for ul */
+  list-style-type: circle square disc upper-roman lower-alpha none; /* kind of listing for ul */
   list-style-type: upper-roman lower-alpha; /* kind of listing for ol */
   list-style-image: url('sqpurple.gif'); /* img listing for ul */
   list-style-position: inside; /* inside or outside the content flow (outside by default) */
@@ -268,7 +268,7 @@ TODO: link to html file to show result
 .TABLE {
   border: solid 1px; /* set to table, th and td it make it look like a table (thanks to borders) */
   border-collapse: collapse; /* delete space between cells and table */
-  vertical-align: bottom top; /* align vertically */
+  vertical-align: bottom top middle baseline sub super text-top text-bottom; /* align vertically */
   caption-side: top bottom; /* display title on top or underneath */
   empty-cells: hide show; /* can hide empty cells */
 }
@@ -299,7 +299,7 @@ TODO: link to html file to show result
 
 
 .FLOAT {
-  float: right left; /* item floats to a side */
+  float: right left none inline-start inline-end; /* item floats to a side */
   clear: right left both; /* stop floating for next items, both clears right and left */
   overflow: auto; /* needed if an element is taller than the element containing it */
 }
