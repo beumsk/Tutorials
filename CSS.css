@@ -31,6 +31,7 @@ TODO: link to html file to show result
 
 .SELECT-HTML
   * {} /* Selects all elements */
+  *, *:before, *:after {} /* better to reach really everything; for example, box-sizing */
   html {} 
   body {}
   p {} /* Selects all <p> elements*/
@@ -38,6 +39,7 @@ TODO: link to html file to show result
   div p {} /* Selects all <p> elements inside <div> elements */
   div > p {} /* Selects all <p> elements where the parent is a <div> element */
   div + p {} /* Selects all <p> elements that are placed immediately after <div> elements */
+  div - p {} /* Selects all <p> elements that are not placed right after <div> elements */
   div ~ p {} /* Selects every <p> element that are preceded by a <div> element */
   .main {} /* Selects all elements with class="main" */
   #main {} /* Selects the element with id="main" */
