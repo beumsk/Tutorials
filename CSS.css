@@ -291,7 +291,6 @@ TODO: link to html file to show result
   position: fixed; /* is fixed on viewport -> does not move when scrolling */
   position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
   z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
-  /* possible to write over an image with position:absolute; and controls of location */
   clip: rect(0px, 60px, 200px, 0px); /* sets shape of an element */
   overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
   overflow-x: hidden; /* Hide horizontal scrollbar */
