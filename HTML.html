@@ -98,10 +98,18 @@ HYPERTEXT MARKUP LANGUAGE
 
 
   <!-- NAVIGATION -->
-  <nav><!--for navigation links (menu with <a> tags)-->
-    <a href="">Un</a>
-    <a href="">Deux</a>
-    <a href="">Trois</a>
+  <nav><!--for navigation links (menu with <a> tags); directly inline-->
+    <a href="">One</a>
+    <a href="">Two</a>
+    <a href="">Threes</a>
+  </nav><hr>
+
+  <nav>
+    <ul style="display: inline-block;"><!--navigation links; inline-block-ed; comments used to remove white space in-between-->
+      <li><a href="">One</a></li><!--
+      --><li><a href="">Two</a></li><!--
+      --><li><a href="">Three</a></li>
+    </ul>
   </nav><hr>
 
 
