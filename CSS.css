@@ -116,7 +116,7 @@ TODO: link to html file to show result
   @media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
   @media only screen and (min-width: 360px), (orientation: portrait) {} /* screen +360 or portrait */
   @media only screen and (min-width: 360px) and (orientation: portrait), (min-resolution: 300dpi) {} /* screen +360 and portrait or resolution +300dpi */
-	@media only screen and (min-resolution: 150dpi) {} /* screen resolution +150dpi */
+  @media only screen and (min-resolution: 150dpi) {} /* screen resolution +150dpi */
   @media only screen and (orientation: landscape) {} /* screen landscape */
   @media only screen and (orientation: portrait) {} /* screen portrait */
 
@@ -165,6 +165,7 @@ TODO: link to html file to show result
 
 
 .GRADIENT {
+  background: blue; /* best practice to set a backup background color for unsupporting browsers */
   background-image: linear-gradient(blue, green); /* gradient from blue(top) to green(bottom) */
   background-image: linear-gradient(to right, blue, green); /* to change direction; bottom right possible; 180deg also */
   background-image: linear-gradient(to top left, blue, green, yellow); /* more colors possible */
@@ -322,9 +323,9 @@ TODO: link to html file to show result
 
 
 .SHADOW {
-  /* multiple shadow effects possible with comas */
   box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
   text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
+  box-shadow: 6px 6px 3px 3px black, 12px 12px 3px 3px black: /* multiple shadow effects possible with comas */
 }
 
 
@@ -355,7 +356,8 @@ TODO: link to html file to show result
   transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
   transform: scale(.5, .5); /* decrease and/or increase size via width and height */
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
-  -webkit-transform: rotate(10deg); /* for safari */
+  -webkit-transform: rotate(10deg); /* for unsupporting browser */
+  -ms-transform: rotate(10deg); /* for unsupporting browser */
   transform: scale(.7) rotate(30deg); /* shortened method */
 }
 
@@ -367,6 +369,8 @@ TODO: link to html file to show result
   transform: rotate3d(x, y, z); /* shortened method */
   transform: translate3d(x, y, z); /* translation */
   transform: scale3d(x, y, z); /* scale */
+  -webkit-transform: rotateZ(150deg); /* for unsupporting browser */
+  -ms-transform: rotateZ(150deg); /* for unsupporting browser */
   backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
 }
 
@@ -407,8 +411,9 @@ TODO: link to html file to show result
 .ANIMATION {
   /* multiple animations step by step; need @keyframes */
   animation: keyframe_name 2s; /* use animation created before in @keyframes */
-  -webkit-animation: keyframe_name; /* for safari, opera and chrome */
+  -webkit-animation: keyframe_name; /* for safari and chrome */
   animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
+  -webkit-animation: keyframe_name 2s linear alternate infinite steps(1); /* for chrome and safari */
 }
 
 
