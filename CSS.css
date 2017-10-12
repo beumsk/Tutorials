@@ -423,6 +423,14 @@ TODO: link to html file to show result
 }
 
 
+.USER-SELECT {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+
 .BOX-MODEL {
   box-sizing: border-box; /* keep border inside the height and width of elements; use with '*' is better */
 }
