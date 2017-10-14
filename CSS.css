@@ -29,6 +29,14 @@ TODO: link to html file to show result
   >Misc
 
 
+.VENDOR-PREFIX {
+  -o-prefix: opera;
+  -moz-prefix: mozilla;
+  -webkit-prefix: chrome, safari, android;
+  -ms-prefix: ie;
+}
+
+
 .SELECT-HTML
   * {} /* Selects all elements */
   *, *:before, *:after {} /* better to reach really everything; for example, box-sizing */
