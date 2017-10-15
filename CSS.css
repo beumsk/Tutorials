@@ -30,10 +30,10 @@ TODO: link to html file to show result
 
 
 .VENDOR-PREFIX {
-  -o-prefix: opera;
-  -moz-prefix: mozilla;
+       -o-prefix: opera;
+     -moz-prefix: mozilla;
   -webkit-prefix: chrome, safari, android;
-  -ms-prefix: ie;
+      -ms-prefix: ie;
 }
 
 
@@ -117,7 +117,7 @@ TODO: link to html file to show result
 .CSS-CALC {
   width: calc(100% - 80px); /* calculates */
 }
-  
+
 
 .MEDIA-QUERIES 
   @media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
@@ -166,7 +166,7 @@ TODO: link to html file to show result
   background-attachment: fixed; /* Fix the background image */
   background: url("") no-repeat top center; /* shortened method */
   background: url(""), url(""); /* 2 different background images; first will be on top */
-  background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
+          background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
   -webkit-background-clip: text; /* to show background through text */
   -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
 }
@@ -320,7 +320,7 @@ TODO: link to html file to show result
   text-align: center; /* center text or image inside element */
   padding-top: 30px; /* if div padding defined, will by default be centered horizontally */
   line-height: 100px; /* if div and line height are the same, it will be centered vertically */
-  top: 50%; left: 50%;  transform: translate(-50%, -50%); /* will center horizontally */
+  top: 50%; left: 50%; transform: translate(-50%, -50%); /* will center horizontally */
 }
 
 
@@ -364,9 +364,10 @@ TODO: link to html file to show result
   transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
   transform: scale(.5, .5); /* decrease and/or increase size via width and height */
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
-  -webkit-transform: rotate(10deg); /* for unsupporting browser */
-  -ms-transform: rotate(10deg); /* for unsupporting browser */
   transform: scale(.7) rotate(30deg); /* shortened method */
+  -webkit-transform: rotate(10deg); /* for unsupporting browser */
+      -ms-transform: rotate(10deg); /* for unsupporting browser */
+          transform: rotate(10deg); /* for unsupporting browser */
 }
 
 
@@ -377,9 +378,10 @@ TODO: link to html file to show result
   transform: rotate3d(x, y, z); /* shortened method */
   transform: translate3d(x, y, z); /* translation */
   transform: scale3d(x, y, z); /* scale */
-  -webkit-transform: rotateZ(150deg); /* for unsupporting browser */
-  -ms-transform: rotateZ(150deg); /* for unsupporting browser */
   backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
+  -webkit-transform: rotateZ(150deg); /* for unsupporting browser */
+      -ms-transform: rotateZ(150deg); /* for unsupporting browser */
+          transform: rotateZ(150deg); /* for unsupporting browser */
 }
 
 
@@ -418,10 +420,10 @@ TODO: link to html file to show result
 }
 .ANIMATION {
   /* multiple animations step by step; need @keyframes */
-  animation: keyframe_name 2s; /* use animation created before in @keyframes */
-  -webkit-animation: keyframe_name; /* for safari and chrome */
-  animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
+  -webkit-animation: keyframe_name 2s; /* for safari and chrome */
+          animation: keyframe_name 2s; /* use animation created before in @keyframes */
   -webkit-animation: keyframe_name 2s linear alternate infinite steps(1); /* for chrome and safari */
+          animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
 }
 
 
