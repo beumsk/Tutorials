@@ -159,7 +159,7 @@ TODO: link to html file to show result
 .BACKGROUND {
   background-color: lightblue; /* use color as bg */
   background-image: url("paper.gif"); /* use img as bg */
-  background-repeat: no-repeat repeat-y repeat-x; /* by default, bg img will repeat */
+  background-repeat: no-repeat repeat-y repeat-x repeat space round; /* by default, bg img will repeat */
   background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
   background-size: 100% 100vh; /* fit while size, can also be pixels */
   background-image: -webkit-linear-gradient(#666ccc, #bc1324); /* gradient from one color to the other */
