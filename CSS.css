@@ -259,7 +259,7 @@ TODO: link to html file to show result
   word-spacing: 3px; /* space between words*/
   word-wrap: break-word; /* break word to make it fit in box*/
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
-  line-height: .8; /* space between lines */
+  line-height: .8; /* space between lines; common practice is to set around 150% */
   direction: rtl; /* change text direction to right-to-left */
   word-spacing: 10px;
   vertical-align: middle text-top text-bottom top bottom; /* align image to text */
