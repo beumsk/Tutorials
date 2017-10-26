@@ -376,6 +376,7 @@ TODO: link to html file to show result
   transform: rotate3d(x, y, z); /* shortened method */
   transform: translate3d(x, y, z); /* translation */
   transform: scale3d(x, y, z); /* scale */
+  transform: rotate(180deg) translateX(100px); /* multiple transformation; if written in two different transforms it cancels the first one (as other css properties) */
   backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
   -webkit-transform: rotateZ(150deg); /* for unsupporting browser */
       -ms-transform: rotateZ(150deg); /* for unsupporting browser */
