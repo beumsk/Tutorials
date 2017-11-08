@@ -39,7 +39,7 @@ MAIN JS
   }
   say ("hello")("world"); // hello world
 
-  // Array (careful!-> if var is set equals to an array, they will be linked and influence each other)
+  // Array (careful!-> if variable is set equal to another array, they will be linked and influence each other)
   var numbers = [one, two, three]; 
     console.log(numbers[0]); // 'one'
 
@@ -99,9 +99,6 @@ MAIN JS
 
   JSON.stringify(objectJS); // JS objects array into JSON string
   JSON.parse(stringJSON); // JSON string into JS objects array
-
-
-// add animation, events, 
 
 
 
