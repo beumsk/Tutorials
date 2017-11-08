@@ -11,6 +11,10 @@ TODO: better way to present
 
 /* Multiple line comment */
 
+// TODO: --> best practice to indicate things to do in the code
+
+// FIXME: --> best practice to indicate things to fix in the code
+
 // Use inspect(f12) & debugger(source) to check easily js file
 
 
