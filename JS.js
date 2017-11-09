@@ -25,15 +25,16 @@ MAIN JS
 
   // Variable
   var a = "example"; 
-    console.log(a);
+  console.log(a); // example
 
   // Function; also var example function() {};
-  function example () {code block} 
-    console.log(example);
+  function example() {
+    code block;
+  } 
 
   // Double arg Function
-  function say (arg1) {
-    return function (arg2) {
+  function say(arg1) {
+    return function(arg2) {
       return arg1 + " " + arg2;
     }
   }
@@ -41,15 +42,21 @@ MAIN JS
 
   // Array (careful!-> if variable is set equal to another array, they will be linked and influence each other)
   var numbers = [one, two, three]; 
-    console.log(numbers[0]); // 'one'
+  console.log(numbers[0]); // 'one'
 
   // Object
   var dog = {name: "Rex", race: "Pitbul", age: "6"}; 
-    console.log(dog.name);
-    console.log(dog['name']); // same effect
+  console.log(dog.name); // Rex
+  console.log(dog['name']); // same effect
 
   // Condition
-  if (a == 1) {code block} else if (a == 2) {code block} else {code block}
+  if (a == 1) {
+    code block
+  } else if (a == 2) {
+    code block
+  } else {
+    code block
+  }
   var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
 
   // Short circuiting
@@ -59,19 +66,33 @@ MAIN JS
   var a = true || false; // returns true
 
   // Switch condition
-  switch (a) {case 1: code block; break; case 2: code block; break;} 
+  switch (a) {
+    case 1: code block; 
+      break; 
+    case 2: code block; 
+      break;
+    default: code block;
+  } 
 
   // While loop
-  while (a == 1) {code block} 
+  while (a == 1) {
+    code block
+  } 
 
   // Do while loop; Will execute code block at least once
-  do {code block} while (false); 
+  do {
+    code block
+  } while (false); 
 
   // For loop
-  for (i = 0; i < a.length; i++) {code block} 
+  for (i = 0; i < a.length; i++) {
+    code block
+  } 
 
   // ForEach loop
-  a.forEach(function(element) {code block}); 
+  a.forEach(function(element) {
+    code block
+  }); 
 
 
 // DOM syntax
