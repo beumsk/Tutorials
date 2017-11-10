@@ -371,8 +371,7 @@ CONDITIONS
   // return the else because it's false
   if ("Rémy".length > 4) {
     console.log("You may be Rémy");
-  }
-  else {
+  } else {
     console.log ("You're definitely not Rémy")
   } 
 
@@ -381,12 +380,10 @@ CONDITIONS
   var number = Number(prompt("Enter a number :")); 
   if (number  >0) {
     console.log(number + " is positive");
-  }
-  else {
+  } else {
     if (number === 0) {
       console.log(number + " is nul");
-    }
-    else {
+    } else {
       console.log(number + " is negative");
     }
   }
@@ -435,11 +432,9 @@ CONDITIONS
   var age = Number(prompt("Enter your age :")); 
   if (age >= 18) {
     console.log("You can drive a car !");
-  }
-  else if (age >= 16) {
+  } else if (age >= 16) {
     console.log("You can drive a scooter !");
-  }
-  else {
+  } else {
     console.log("You can walk, run or bike !");
   }
 
@@ -449,14 +444,11 @@ CONDITIONS
   var number2 = Number(prompt("Enter second number"));
   if (number1 > number2) {
     console.log(number1 + " is biggger than " + number2);
-  }
-  else if (number1 < number2) {
+  } else if (number1 < number2) {
     console.log(number1 + " is smaller than " + number2);
-  }
-  else if (number1 === number2) {
+  } else if (number1 === number2) {
     console.log(number1 + " is equal to " + number2);
-  }
-  else {
+  } else {
     console.log("not");
   }
 
@@ -479,8 +471,7 @@ CONDITIONS
       }
     }
     console.log("In a second, it will be " + hours + " hour, " + minutes + " minutes and " + seconds + " seconds");
-  }
-  else {
+  } else {
     console.log("Error with your Hour");
   }
 
@@ -628,8 +619,7 @@ LOOPS
   for (var i = number; i < number+10; i++) {
     if (i % 2 === 0) {
       console.log(i + " is an even number");
-    }
-    else {
+    } else {
       console.log (i + " is an odd number");
     }
   }
@@ -647,14 +637,11 @@ LOOPS
   for (i = 1; i <= 100; i++) {
     if ((i % 3 === 0) && (i % 5 === 0)) {
       console.log("FizzBuzz");
-    }
-    else if (i % 3 === 0) {
+    } else if (i % 3 === 0) {
       console.log("Fizz");
-    }
-    else if (i % 5 === 0) {
+    } else if (i % 5 === 0) {
       console.log("Buzz");
-    }
-    else {
+    } else {
       console.log(i);
     }
   }
@@ -753,8 +740,7 @@ FUNCTIONS
   function min(number1, number2) {
     if (number1 > number2) {
       return number2;
-    }
-    else {
+    } else {
       return number1;
     }
   }
@@ -774,14 +760,11 @@ FUNCTIONS
   function calculator(number1, mult, number2) {
     if (mult === '+') {
       return number1 + number2;
-    }
-    else if (mult === '-') {
+    } else if (mult === '-') {
       return number1 - number2;
-    }
-    else if (mult === '*') {
+    } else if (mult === '*') {
       return number1 * number2;
-    }
-    else if (mult === '/') {
+    } else if (mult === '/') {
       return number1 / number2;
     }
   }
@@ -913,8 +896,7 @@ STRING METHODS
   console.log('Backwards : ' + backWards(word));
   if (word === backWards(word)) {
     console.log('Palindrome : True');
-  }
-  else {
+  } else {
     console.log('Palindrome : False');
   }
   console.log(convertLeetSpeak(word));
@@ -1315,13 +1297,11 @@ PROTOTYPES
         target.hp = target.hp - damages;
         if (target.hp > 0) {
           console.log(target.name + ' have now ' + target.hp + ' hp.');
-        }
-        else {
+        } else {
           target.hp = 0;
           console.log(target.name + ' is dead!');
         }
-      }
-      else {
+      } else {
         console.log(this.name + ' can not attack, he is dead...');
       }
     }
@@ -1447,8 +1427,7 @@ ARRAYS
   var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
   if (languages.length !== 0) {
     console.log("Array is not empty !");
-  }
-  else {
+  } else {
     console.log("Array is empty");
   }
 
@@ -1802,8 +1781,7 @@ ARRAYS
       Contacts.forEach(function(Contact) {
         console.log(Contact.describe());
       });
-    }
-    else if (option === 2) {
+    } else if (option === 2) {
       // add
       var contact3 = Object.create(Contact);
       contact3.init(prompt('Enter the surname :'), prompt('Enter the name :'));
@@ -1951,12 +1929,10 @@ DOM BASIS
       if (node.nodeType === document.ELEMENT_NODE) {
         if ((index >= 0) && (index < node.childNodes.length)) {
           console.log(node.childNodes[index]);
-        }
-        else {
+        } else {
           console.error('incorrect index');
         }
-    }
-    else {
+    } else {
       console.error('Incorrect node type');
     }
   }
@@ -2024,8 +2000,7 @@ DOM GET/QUERY
   // check presence of attribute
   if (document.querySelector('a').hasAttribute('target')) {
     console.log('First "a" has target attribute');
-  }
-  else {
+  } else {
     console.log('First "a" has no target attribute');
   }
 
@@ -2036,10 +2011,9 @@ DOM GET/QUERY
   
   // check presence of a class in a DOM element
   if (document.getElementById("news").classList.contains("wonder")) {
-      console.log("Identified element has 'wonder' class");
-  } 
-  else {
-      console.log("Identified element has not 'wonder' class");
+    console.log("Identified element has 'wonder' class");
+  } else {
+    console.log("Identified element has not 'wonder' class");
   }
 
   
@@ -2669,8 +2643,7 @@ SERVER REQUESTS
   req.addEventListener("load", function () {
     if (req.status >= 200 && req.status < 400) { // server succeed with the request
       console.log(req.responseText);
-    }
-    else {
+    } else {
       console.error(req.status + " " + req.statusText); // error with request information
     }
   });
@@ -2688,8 +2661,7 @@ SERVER REQUESTS
     req.addEventListener("load", function () {
       if (req.status >= 200 && req.status < 400) {
         callback(req.responseText);
-      }
-      else {
+      } else {
         console.error(req.status + " " + req.statusText + " " + url);
       }
     });
@@ -2775,8 +2747,7 @@ API
     req.addEventListener("load", function () {
       if (req.status >= 200 && req.status < 400) {
         callback(req.responseText);
-      }
-      else {
+      } else {
         console.error(req.status + " " + req.statusText + " " + url);
       }
     });
