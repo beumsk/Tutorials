@@ -2308,8 +2308,30 @@ DOM EVENTS
     for (i=0; i<Elts.length; i++) {
       Elts[i].style.backgroundColor = color;
     }
-  })
+  });
   
+
+  // listen to arrow keys pressed and move accordingly
+  var Elt = document.getElementById("ball");
+  document.addEventListener("keydown", function (e) {
+    switch (e.keyCode) {
+      case 37:
+        Elt.style.left += 10;
+        break;
+      case 38:
+        Elt.style.top += 10;
+        break;
+      case 39:
+        Elt.style.right += 10;
+        break;
+      case 40:
+        Elt.style.bottom += 10;
+        break;
+      default:
+        console.log("Wrong key");
+    }
+  });
+
   
   // Add li to ul with prompt and change those with click
   document.querySelector("button").addEventListener("click", function() {
