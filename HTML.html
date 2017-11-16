@@ -286,34 +286,34 @@ HYPERTEXT MARKUP LANGUAGE
 
 
   <!-- FORMS -->
-  <form action="action-page.php" method="get" autocomplete="on"><!--method="post" also available and not visible in url =safer; autocomplete allow to get previous answers-->
-    <fieldset><!--borders the questions; can create different parts in the form-->
-      <legend>Information</legend><!--name of the fieldset-->
-      <input type="text" name="firstname"><!--one line field to answer, use autofocus to focus directly on that input--><hr>
-      <input type="text" name="firstname" required><!--need to fill it to be able to submit--><hr>
-      <input type="text" name="firstname" readonly><!--makes the input uneditable--><hr>
-      <input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!--input required and made from 4 letters--><hr>
-      <label for="label">Label</label><input type="text" name="label" id="label"><!--Label helps the user to know what he has to write in the form; need for & id--><hr>
-      <textarea type="text" name="quote" rows="3" cols="30"></textarea><!--long text area--><hr>
-      <input type="password" name="psw"><!--password field--><hr>
-      <input type="number" name="quantity" min="1" max="5" step="1"><!--let type number between from 1 to 5--><hr>
-      <input type="date" name="bday" max="1979-12-31"><!--date before 1980--><hr>
-      <input type="email" name="email"><!--check it's an email format--><hr>
-      <input type="url" name="homepage"><!--check if it's url format--><hr>
-      <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!--cursor range--><hr>
-      <input type="search" name=""><!--create a search area--><hr>
-      <label>Genre</label><!--text before question--><hr>
-      <label><input type="radio" name="gender" value="male" checked>Male</label><br/><!--button to chose one between different options; 'checked' is radio by default--><hr>
-      <label><input type="radio" name="gender" value="female">Female</label><br/><hr><!--must be same 'name' to force not to click on both answers-->
-      <label><input type="checkbox" name="">Check1</label> <!--button to chose multiple options--><hr>
-      <label><input type="checkbox" name="" checked>Check2</label> <!--this checkbox will be 'check' by default--><hr>
-      <input type="button" onclick="alert('Hello')" value="pop-up"><!--display message --><hr>
-      <input type="reset" value="reset"><!--reset fields--><hr>
-      <select><!--menu dréoulant-->
-        <option value="Belgique" selected>Belgique</option><!--'selected' by default-->
+  <form action="action-page.php" method="get" autocomplete="on"><!-- method="post" also available and not visible in url =safer; autocomplete allow to get previous answers -->
+    <fieldset><!-- borders the questions; can create different parts in the form -->
+      <legend>Information</legend><!-- name of the fieldset -->
+      <input type="text" name="firstname"><!-- one line field to answer, use autofocus to focus directly on that input --><hr>
+      <input type="text" name="firstname" required><!-- need to fill it to be able to submit --><hr>
+      <input type="text" name="firstname" readonly><!-- makes the input uneditable --><hr>
+      <input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!-- input required and made from 4 letters --><hr>
+      <label for="label">Label</label><input type="text" name="label" id="label"><!-- Label helps the user to know what he has to write in the form; need for & id --><hr>
+      <textarea type="text" name="quote" rows="3" cols="30"></textarea><!-- long text area --><hr>
+      <input type="password" name="psw"><!-- password field --><hr>
+      <input type="number" name="quantity" min="1" max="5" step="1"><!-- let type number between from 1 to 5 --><hr>
+      <input type="date" name="bday" max="1979-12-31"><!-- date before 1980 --><hr>
+      <input type="email" name="email"><!-- check it's an email format --><hr>
+      <input type="url" name="homepage"><!-- check if it's url format --><hr>
+      <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><hr>
+      <input type="search" name=""><!-- create a search area --><hr>
+      <label>Genre</label><!-- text before question --><hr>
+      <label><input type="radio" name="gender" value="male" checked>Male</label><br/><!-- button to chose one between different options; 'checked' is radio by default --><hr>
+      <label><input type="radio" name="gender" value="female">Female</label><br/><hr><!-- must be same 'name' to force not to click on both answers -->
+      <label><input type="checkbox" name="">Check1</label> <!-- button to chose multiple options --><hr>
+      <label><input type="checkbox" name="" checked>Check2</label> <!-- this checkbox will be 'check' by default --><hr>
+      <input type="button" onclick="alert('Hello')" value="pop-up"><!-- display message --><hr>
+      <input type="reset" value="reset"><!-- reset fields --><hr>
+      <select><!-- menu dréoulant -->
+        <option value="Belgique" selected>Belgique</option><!-- 'selected' by default -->
         <option value="France">France</option>
       </select><hr>
-      <input type="submit" value="submit"><!--submit button to send answers-->
+      <input type="submit" value="submit"><!-- submit button to send answers -->
     </fieldset>
   </form><hr>
 
