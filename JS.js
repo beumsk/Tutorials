@@ -1795,6 +1795,24 @@ ARRAYS
 
 
 
+CLASSES
+// kind of special functions; classes cannot be called before it appears in the code (such as functions)
+
+  
+  // syntax example
+  class Rectangle {
+    constructor(hauteur, largeur) {
+      this.hauteur = hauteur;
+      this.largeur = largeur;
+    }
+  }
+
+  // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes
+
+
+
+
+
 REGEXP 
 // regular expression object for matching text with a pattern
 
