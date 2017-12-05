@@ -45,7 +45,10 @@ MAIN JS
   console.log(numbers[0]); // 'one'
 
   // Object
-  var dog = {name: "Rex", race: "Pitbul", age: "6"}; 
+  var dog = {
+    name: "Rex", 
+    race: "Pitbul", 
+    age: "6"}; 
   console.log(dog.name); // Rex
   console.log(dog['name']); // same effect
 
@@ -57,7 +60,7 @@ MAIN JS
   } else {
     code block
   }
-  var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
+  var a = (b > 10) ? "Over ten" : "Under ten"; // if b > 10, a value will become "Over ten"; otherwise, "Under ten"
 
   // Short circuiting
   var a = true && true; // returns true
