@@ -130,6 +130,14 @@ TODO: link to html file to show result
   /* http://www.alsacreations.com/article/lire/930-css3-media-queries.html */
 
 
+.SUPPORTS
+  @supports (display: grid) {} /* browser understands grid display */
+  @supports (display: grid) and (display: flex) {} /* browser understands grid and flex display */
+  @supports (display: grid) or (display: flex) {} /* browser understands grid or flex display */
+  @supports not (display: grid) {} /* browser does not understand grid display */
+  @supports not ((display: grid) or (display: flex)) {} /* browser does not understand grid or flex display */
+
+
 .FONT {
   font-family: "Times New Roman", Times, serif;
   font-family: "Fontname";
