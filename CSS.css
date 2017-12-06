@@ -499,7 +499,7 @@ TODO: link to html file to show result
 
 
 .GRIDS {
-  /* available in chrome and firefox only */
+  /* not available in IE and Edge; best to use @supports for workaround */
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
