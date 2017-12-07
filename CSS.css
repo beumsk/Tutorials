@@ -216,7 +216,8 @@ TODO: link to html file to show result
 }
 
 
-.MARGIN { /* Space around elements */
+.MARGIN { 
+  /* Space around elements */
   margin-bottom: 10px; /* top, right, bottom, left */
   margin-top: 5% 5vh 5vw 5em; /* use one */
   margin: 10px, 5px, 10px, 5px; /* shortened method */
@@ -227,21 +228,24 @@ TODO: link to html file to show result
 }
 
 
-.PADDING { /* Space around content */
+.PADDING { 
+  /* Space around content */
   padding-right: 10px; /* top, right, bottom, left */
   padding-left: 5% 5vh 5vw 5em; /* use one */
   padding: 10px, 5px, 10px, 5px; /* shortened method */
 }
 
 
-.HEIGHT { /* While px are fixed, em and % depends on parents */
+.HEIGHT { 
+  /* While px are fixed, em and % depends on parents */
   height: 200px;
   max-height: 100%;
   min-height: 20em;
 }
 
 
-.WIDTH { /* While px are fixed, em and % depends on parents */
+.WIDTH { 
+  /* While px are fixed, em and % depends on parents */
   width: 400px;
   max-width: 100%;
   min-width: 20em;
@@ -348,6 +352,7 @@ TODO: link to html file to show result
   display: inline-block;
   border-bottom: 1px dotted black;
 }
+
 .TOOLTIP .TOOLTIPTEXT {
   visibility: hidden;
   width: 120px;
@@ -360,6 +365,7 @@ TODO: link to html file to show result
   position: absolute;
   z-index: 1;
 }
+
 .TOOLTIP:hover .TOOLTIPTEXT {
   visibility: visible;
 }
@@ -414,6 +420,7 @@ TODO: link to html file to show result
     transform: translateX(150px) rotate(30deg);
   }
 }
+
 @-webkit-keyframes keyframe_name { /* needed for animation on chrome safari and opera */
   0% {
     transform: translateX(0);
@@ -425,6 +432,7 @@ TODO: link to html file to show result
     transform: translateX(150px) rotate(30deg);
   }
 }
+
 .ANIMATION {
   /* multiple animations step by step; need @keyframes */
   -webkit-animation: keyframe_name 2s; /* for safari and chrome */
@@ -478,7 +486,6 @@ TODO: link to html file to show result
   flex-flow: row wrap; /* shortened way to direction and wrap */
 }
 
-
 .FLEX-ITEMS {
   margin: auto; /* center all elements; need to be on items and not on container */
   align-self: flex-end; /* align a single item differently; influence on secondary axis */
@@ -488,6 +495,7 @@ TODO: link to html file to show result
 
 
 .MULTI-COLUMNS {
+  /* not so useful; probably better to use grids */
   -webkit-columns: 4 100px; /* Chrome, Safari, Opera */
   -moz-columns: 4 100px; /* Firefox */
   columns: 4 100px; /* IE */
@@ -507,6 +515,7 @@ TODO: link to html file to show result
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
   grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
 }
+
 .GRIDS-ELEMENTS {
   grid-column-start: 1; /* starts at vertical line 1 */
   grid-column-end: span 3; /* ends after 3 vertical line */
