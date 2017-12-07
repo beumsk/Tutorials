@@ -463,7 +463,7 @@ TODO: link to html file to show result
 
 .IMAGE {
   max-width: 100%; height: auto; /* easy resize images */
-  object-fix: fill cover contain none; /* make img element to act as css background image property (see background-size) !!IE-Edge */
+  object-fit: fill cover contain none; /* make img element to act as css background image property (see background-size) !!IE-Edge */
   object-position: center; /* make img elements to act as css background image porperty (see background-position) !!IE-Edge */
   filter: grayscale(100%); /* set a grayscale to 100% !!IE */
   filter: sepia(100%); /* set a grayscale to 100% !!IE */
