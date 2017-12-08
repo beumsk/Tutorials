@@ -2093,7 +2093,9 @@ DOM CHANGE
   // classList
   var titleElt = document.querySelector('h1');
   titleElt.classList.remove('main');
+  titleElt.classList.remove('main', 'other');
   titleElt.classList.add('title');
+  titleElt.classList.add('main', 'other');
   // would be the same as below
   document.querySelector('h1').setAttribute('class', 'title');
 
