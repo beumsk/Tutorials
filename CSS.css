@@ -514,6 +514,9 @@ TODO: link to html file to show result
   grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
   grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
+  grid-column-gap: 10px; /* gap between columns */
+  grid-row-gap: 20px; /* gap between rows */
+  grid-gap: 20px 10px; /* shortened syntax to define row and column gap */
 }
 
 .GRIDS-ELEMENTS {
