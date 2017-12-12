@@ -288,6 +288,16 @@ JQuery
     // create
     $("<p></p>"); // creates p tag (or anything else); need to append it later
     var a = $([]); // create empty jquery object
+    
+    
+    // swap elements place in DOM
+    function swapElts(elt1, elt2) {
+      var $temp = $("<div>");
+      elt1.before($temp);
+      elt2.before(elt1);
+      $temp.before(elt2);
+      $temp.remove;
+    }
 
 
     // show/hide one after the other
