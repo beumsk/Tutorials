@@ -2153,6 +2153,16 @@ DOM CHANGE
     document.getElementById('content').appendChild(linkElt);
     document.getElementById('content').appendChild(document.createElement('br'));
   }
+  
+  
+  // swap 2 elements DOM position
+  function swapElts(elt1, elt2) {
+    var temp = document.createElement("div");
+    elt1.parentNode.insertBefore(temp, elt1);
+    elt2.parentNode.insertBefore(elt1, elt2);
+    temp.parentNode.insertBefore(elt2, temp);
+    temp.parentNode.removeChild(temp);
+  }
 
 
   
