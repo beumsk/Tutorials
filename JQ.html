@@ -28,40 +28,36 @@ JQuery
     $(function() { // always the beginning of jquery code
     });
 
-    // JQuery filters 
-    $(function() {
-      $('p') // selects all p
-      $('.class') // selects class named 'class'
-      $('#id') // selects id named 'id'
-      $(this) // selects same selector as function
-      $(this).find('p') // selects p in function
-      $('p').next() // selects selector right after 'p'; very useful with this
-      $('p:first') // selects first p; last works too
-      $('p:eq(1)') // selects second p; works as an array
-      $('p:gt(0)') // selects p greater than 0
-      $('p:lt(3)') // selects p lower than 3
-      $('p:even') // selects p even (first element is 0 !)
-      $('p:odd') // selects p odd (first element is 0 !); 
-      $('p:not(".main")') // selects p without 'main' class
-    });
+    // JQuery filters
+    $("p") // selects all p
+    $(".class") // selects class named 'class'
+    $("#id") // selects id named 'id'
+    $(this) // selects same selector as function
+    $(this).find("p") // selects p in function
+    $("p").next() // selects selector right after "p"; very useful with this
+    $("p:first") // selects first p; last works too
+    $("p:eq(1)") // selects second p; works as an array
+    $("p:gt(0)") // selects p greater than 0
+    $("p:lt(3)") // selects p lower than 3
+    $("p:even") // selects p even (first element is 0 !)
+    $("p:odd") // selects p odd (first element is 0 !); 
+    $("p:not('.main')") // selects p without 'main' class
   
 
     // more filters
-    $(function() {
-      $('p:hidden') // selects p hidden
-      $('p:visible') // selects p visible
-      $(':input') // all input type forms (input, textarea, button, etc)
-      $(':header') // h1 to h6 tags
-      $('p:contains("text")') // selects p with 'text'
-      $('p:has("element")') // selects p with 'element' as element
-      $('[align]') // selects elements with align attribut
-      $('[align="center"]') // selects elements with align center
-      $('[align!="center"]') // selects elements without align center
-      $('[src^="he"]') // selects elements with src starting with 'he'
-      $('[src$="llo"]') // selects elements with src ending with "llo"
-      $('input[name="lol"]') // selects input elements with name lol
-      $('[href="#home"]') // selects elements with #home href
-    });
+    $("p:hidden") // selects p hidden
+    $("p:visible") // selects p visible
+    $(":input") // all input type forms (input, textarea, button, etc)
+    $(":header") // h1 to h6 tags
+    $("p:contains('text')") // selects p with 'text'
+    $("p:has('element')") // selects p with 'element' as element
+    $("[align]") // selects elements with align attribut
+    $("[align='center']") // selects elements with align center
+    $("[align!='center']") // selects elements without align center
+    $("[src^='he']") // selects elements with src starting with 'he'
+    $("[src$='llo']") // selects elements with src ending with "llo"
+    $("input[name='lol']") // selects input elements with name lol
+    $("[href='#home']") // selects elements with #home href
 
 
     // switch from js var to jquery var
@@ -69,199 +65,196 @@ JQuery
     var variableJQ = $(variableJS);
 
 
+    // create
+    $("<p>"); // creates p tag (or anything else); need to append it later
+    $("<p>Hello</p>"); // creates a p tag with text 'Hello'; need to append it later
+    $("<p class='justify'>Hello</p>"); // creates a p tag with text 'Hello'and class '.justify'; need to append it later
+    $("<p>", { // other way to create this element; need to append it later anyway
+      html: "Hello",
+      "class": "justify"
+    });
+    var a = $([]); // create empty jquery object
+
+
     // switch from jquery object to js object
     var divs = $("div").get();
 
 
     // input
-    $('input').val(); // get input value
-    $('input[id="name"]').val(); // get input id="name" value
-    $('input').val('John'); // set John as new input value
+    $("input").val(); // get input value
+    $("input[id='name']").val(); // get input id="name" value
+    $("input").val("John"); // set John as new input value
   
 
     // effect methods
-    $(function() {
-      $('p').show(1000, "linear"); // show element
-      $('p').hide(1000, "linear"); // hide element
-      $('p').toggle(1000, "linear"); // show/hide element
-      $('p').fadeIn(1000, "linear"); // fade element in
-      $('p').fadeOut(1000, "linear"); // fade element out
-      $('p').fadeToggle(1000, "linear"); // switch between fadeIn and fadeOut
-      $('p').fadeTo(1000, 0.5); // fade element to some opacity; speed and opacity as paramters
-      $('p').toggleClass("oldClass newClass"); // switch between oldClass and newClass for every event
-      $('p').slideUp(1000, "linear"); // hide element uping
-      $('p').slideDown(1000, "linear"); // hide element downing
-      $('p').slideToggle(1000, "linear"); // hide element same position
-      $('button').prop('disabled', 'true'); // disables button
-      $('p').fadeIn().delay(2000).fadeOut(); // fadeIn hen fadeOut after 2sec
-    });
+    $("p").show(1000, "linear"); // show element
+    $("p").hide(1000, "linear"); // hide element
+    $("p").toggle(1000, "linear"); // show/hide element
+    $("p").fadeIn(1000, "linear"); // fade element in
+    $("p").fadeOut(1000, "linear"); // fade element out
+    $("p").fadeToggle(1000, "linear"); // switch between fadeIn and fadeOut
+    $("p").fadeTo(1000, 0.5); // fade element to some opacity; speed and opacity as paramters
+    $("p").toggleClass("oldClass newClass"); // switch between oldClass and newClass for every event
+    $("p").slideUp(1000, "linear"); // hide element uping
+    $("p").slideDown(1000, "linear"); // hide element downing
+    $("p").slideToggle(1000, "linear"); // hide element same position
+    $("button").prop("disabled", "true"); // disables button
+    $("p").fadeIn().delay(2000).fadeOut(); // fadeIn hen fadeOut after 2sec
 
 
     // animate
-    $(function() {
-      $('p').animate({left:'+=10px'}, 500, "linear"); // animates p to 10px to the right
-      $('p').animate({left:'+=10px'}, 500, "linear", function() { … }); // the function will be executed after the animation
-      $('p').animate({left:'+=10px', top:'+=10px'}, 1000); // multiple animations at the same time
-      $('p').animate({left:'+=10px'}, 1000).animate({top:'+=10px'}, 1000); // multiple animations one after another
-      $('p').animate({left:'+=10px'}, {duration:500, queue: true}); // other syntax allowing queues, (effective to vary duration of animations)
-      $('p').stop(); // stop currently running animation
-      $('p').stop(false, false); // first boolean manage queue erasement and second manages the final statement
-      function bis() { $('p').animate({left:'+=10px'}, 500, bis); }; bis(); // never-ending animation
-    });
+    $("p").animate({left:"+=10px"}, 500, "linear"); // animates p to 10px to the right
+    $("p").animate({left:"+=10px"}, 500, "linear", function() { … }); // the function will be executed after the animation
+    $("p").animate({left:"+=10px", top:"+=10px"}, 1000); // multiple animations at the same time
+    $("p").animate({left:"+=10px"}, 1000).animate({top:"+=10px"}, 1000); // multiple animations one after another
+    $("p").animate({left:"+=10px"}, {duration:500, queue: true}); // other syntax allowing queues, (effective to vary duration of animations)
+    $("p").stop(); // stop currently running animation
+    $("p").stop(false, false); // first boolean manage queue erasement and second manages the final statement
+    function bis() { $("p").animate({left:"+=10px"}, 500, bis); }; bis(); // never-ending animation
 
-
-    // queue
-    var myQueue = $('p').queue(); // return an array of queued animations for p
-    varqueueLength = $('p').queue().length; // return length of queue
-    $('p').queue(function() { … }); // add animations to the queue
-    $('p').dequeue(); // play and removes animation from the queue
-    $('p').clearQueue(); // clears the queue
-  
 
     // manipulation methods
-    $(function() {
-      $('p').css('color', 'red') // change css of p
-      $('p').html('Hey <span>Red</span> !'); // replace content of first p with html tags understood
-      $('p').text('Hey Red !'); // replace text of p without tags understood
-      $('p').replaceWith('<p>Hey Red !</p>'); // replace entirely p
-      $('p').remove(); // remove p and children
-      $('p').empty(); // remove everything inside p
-      $('p').before('Content'); // move content before p
-      $('p').after('Content'); // move content after p
-      $('p').prepend('Content'); // move inside p (after opening tag)
-      $('p').append('Content'); // move inside p (before closing tag)
-      $('p').prependTo('div'); // insert p in div (after opening tag)
-      $('p').appendTo('div'); // insert p in div (before closing tag)
-      $('p').insertBefore('div'); // insert p before div
-      $('p').insertAfter('div'); // insert p after div
-      $('p').wrap('<i></i>'); // wrap p with i tags
-      $('p').wrapInner('<i></i>'); // wrap with i tags inside p tag
-      $('a').attr('href', 'http://somewhere.lol'); // add attribut and value; removeAttr() too
-      $('p').addClass('class1 class2'); // add one or multiple class
-      $('p').removeClass('class1 class2'); // remove one or multiple class
-      $('p').toggleClass('class1 class2'); // switch between class 
-      $('p').hasClass('class1'); // return true if p has class1
-      $('p').is('.class1'); // return true if p has class1; possible with all selectors
-      $('p').clone().appendTo('div'); // clone p and insert inside in div (before closing tag; there will be 2 times the same p
-      location.reload(); // reload page
-    });
-
-
-    // text methods
-    $(function() {
-      $.trim("   Hello  "); // remove extern spaces "Hello"
-      "Hello".charAt(1); // "e"
-      $("div:contains('hello')"); // selects div containing 'hello'
-      $("div").replaceWith('<p>Hola</p>'); // replace div content
-      $("div").replaceWith("#replacer"); // deletes div and moves #replacer to the div location
-    });
-
-
-    // array methods
-    $(function() {
-      var myArray = ['html', 'css', 'js'];
-      myArray.join(', '); // "html, css, js"
-      $.grep(myArray, function(el, ind) { // 'js'
-        return (el != 'css' && ind > 0); // checker
-      }, false); // inverse checker if true
-      $.map(myArray, function(el, ind) { // 1-->html, 2-->css, 3-->js
-        return (ind + '-->' + el.toUpperCase()); 
-      });
-      $.inArray('js', myArray, 0); // 2; returns index; 3d parameters is the start of the search (if 0, search the whole array)
-      var yourArray = ['jq', 'bs'];
-      $.merge(myArray, yourArray); // myArray -> html, css, js, jq, bs
-    });
+    $("p").css("color", "red"); // change css of p
+    $("p").html("Hey <span>Red</span> !"); // replace content of first p with html tags understood
+    $("p").text("Hey Red !"); // replace text of p without tags understood
+    $("p").replaceWith("<p>Hey Red !</p>"); // replace entirely p
+    $("p").remove(); // remove p and children
+    $("p").empty(); // remove everything inside p
+    $("p").before("Content"); // move content before p
+    $("p").after("Content"); // move content after p
+    $("p").prepend("Content"); // move inside p (after opening tag)
+    $("p").append("Content"); // move inside p (before closing tag)
+    $("p").prependTo("div"); // insert p in div (after opening tag)
+    $("p").appendTo("div"); // insert p in div (before closing tag)
+    $("p").insertBefore("div"); // insert p before div
+    $("p").insertAfter("div"); // insert p after div
+    $("p").wrap("<i></i>"); // wrap p with i tags
+    $("p").wrapInner("<i></i>"); // wrap with i tags inside p tag
+    $("a").attr("href", "http://somewhere.lol"); // add attribut and value; removeAttr() too
+    $("p").addClass("class1 class2"); // add one or multiple class
+    $("p").removeClass("class1 class2"); // remove one or multiple class
+    $("p").toggleClass("class1 class2"); // switch between class 
+    $("p").hasClass("class1"); // return true if p has class1
+    $("p").is(".class1"); // return true if p has class1; possible with all selectors
+    $("p").clone().appendTo("div"); // clone p and insert inside in div (before closing tag; there will be 2 times the same p
+    location.reload(); // reload page
   
 
     // DOM traversing
-    $(function() {
-      $('p').children(); // access all direct children
-      $('p').find('span'); // access to all span inside p
-      $('p').parent(); // access direct parent
-      $('p').parents(); // access all parents elements
-      $('p').parentsUntil('section'); // access all elements until 'section'
-      $('p').siblings(); // access siblings (tag on same level)
-      $('p').next(); // access next siblings (tag on same level)
-      $('p').prev(); // access previous siblings (tag on same level)
-      $('div p').first(); // access first p inside div
-      $('div p').last(); // access last p inside div
-      $('p').eq(0); // access first p
-      $('p').filter('.info'); // access all p with info class
-      $('p').not('.info'); // access all p without info class
-      $('p:nth-child(3)'); // access to third child
-    });
+    $("p").children(); // access all direct children
+    $("p").find("span"); // access to all span inside p
+    $("p").parent(); // access direct parent
+    $("p").parents(); // access all parents elements
+    $("p").parentsUntil("section"); // access all elements until 'section'
+    $("p").siblings(); // access siblings (tag on same level)
+    $("p").next(); // access next siblings (tag on same level)
+    $("p").prev(); // access previous siblings (tag on same level)
+    $("div p").first(); // access first p inside div
+    $("div p").last(); // access last p inside div
+    $("p").eq(0); // access first p
+    $("p").filter(".info"); // access all p with info class
+    $("p").not(".info"); // access all p without info class
+    $("p:nth-child(3)"); // access to third child
   
 
     // Size and position
-    $(function() {
-      $('p').offset().left; // position absolute of p from left; .right
-      $('p').offset().top; // position absolute of p from top; .bottom
-      $('p').offset({top: 100, left: 100}); // set position absolute;
-      $('p').position().right; // position relative of p from right; .left
-      $('p').position().bottom; // position relative of p from bottom; .top
-      $('p').height(); // basic height (no margins, paddings and borders)
-      $('p').innerHeight(); // height + paddings
-      $('p').outerHeight(); // height + paddings + borders
-      $('p').outerHeight(true); // height + paddings + borders + margins
-      $('p').width(); // basic width (no margins, paddings and borders)
-      $('p').innerWidth(); // width + paddings
-      $('p').outerWidth(); // width + paddings + borders
-      $('p').outerWidth(true); // width + paddings + borders + margins
-    });
+    $("p").offset().left; // position absolute of p from left; .right
+    $("p").offset().top; // position absolute of p from top; .bottom
+    $("p").offset({top: 100, left: 100}); // set position absolute;
+    $("p").position().right; // position relative of p from right; .left
+    $("p").position().bottom; // position relative of p from bottom; .top
+    $("p").height(); // basic height (no margins, paddings and borders)
+    $("p").innerHeight(); // height + paddings
+    $("p").outerHeight(); // height + paddings + borders
+    $("p").outerHeight(true); // height + paddings + borders + margins
+    $("p").width(); // basic width (no margins, paddings and borders)
+    $("p").innerWidth(); // width + paddings
+    $("p").outerWidth(); // width + paddings + borders
+    $("p").outerWidth(true); // width + paddings + borders + margins
   
 
     // events
-    $(function() {
-      $('p').on('click', function() { … }); // if click; dblclick too
-      $('p').on('scroll', function() { … }); // if scroll on an element
-      $('p').on('mouseover', function() { … }); // if mouse enter element
-      $('p').on('mouseenter', function() { … }); // if mouse enter element
-      $('p').on('mouseleave', function() { … }); // if mouse leave element
-      $('p').on('mouseout', function() { … }); // if mouse leave element
-      $('p').on('mousedown', function() { … }); // if you press on mouse on an element
-      $('p').on('mouseup', function() { … }); // if you stop pressing on mouse on an element
-      $('p').on('keydown', function() { … }); // if you press a key on your keyboard; each key has a number to select it
-      $('p').on('keyup', function() { … }); // if you stop pressing a key
-      $('p').on('keypress', function() { … }); // if you keep on pressing a key
-      $('p').on('resize', function() { … }); // if window is resized
-      $('input').on('focus', function() { … }); // if field gets focus
-      $('input').on('blur', function() { … }); // if field loses focus
-      $('input').on('change', function() { … }); // when input, textarea or select value is changed
-      $(window).on('load', function() { … }); // when everything is loaded on page
-      $(window).on('unload', function() { … }); // when you quit the current page
-      $('p').on('mouseover mouseenter', function() { … }); // multiple event in one line
-      $('p').off(); // remove all event handlers of p
-      $('p').off('click', functionName); // remove functionName event of p
-      $('p').on('click.namespace', function() { … }); // namespaces works like css classes; 
-      $('p').off('click.namespace'); // will switch off event for this namespace only
-      $('p').one('click', function() { … }); // event only works first time
-      $('p').trigger('click'); // useful to trigger an event from another element; some events are not triggerable (load, mouse, resize)
-      $('p').on('personalised', function() { … }); // create personalised event
-      $('p').trigger('personalised'); // trigger your personalised event
-      $('p').on('click', 'span', function() { … }); // event delegation; from p to span tags
-      $('p').off('click', 'span'); // remove event delegation
+    $("p").on("click", function() { … }); // if click; dblclick too
+    $("p").on("scroll", function() { … }); // if scroll on an element
+    $("p").on("mouseover", function() { … }); // if mouse enter element
+    $("p").on("mouseenter", function() { … }); // if mouse enter element
+    $("p").on("mouseleave", function() { … }); // if mouse leave element
+    $("p").on("mouseout", function() { … }); // if mouse leave element
+    $("p").on("mousedown", function() { … }); // if you press on mouse on an element
+    $("p").on("mouseup", function() { … }); // if you stop pressing on mouse on an element
+    $("p").on("keydown", function() { … }); // if you press a key on your keyboard; each key has a number to select it
+    $("p").on("keyup", function() { … }); // if you stop pressing a key
+    $("p").on("keypress", function() { … }); // if you keep on pressing a key
+    $("p").on("resize", function() { … }); // if window is resized
+    $("input").on("focus", function() { … }); // if field gets focus
+    $("input").on("blur", function() { … }); // if field loses focus
+    $("input").on("change", function() { … }); // when input, textarea or select value is changed
+    $(window).on("load", function() { … }); // when everything is loaded on page
+    $(window).on("unload", function() { … }); // when you quit the current page
+    $("p").on("mouseover mouseenter", function() { … }); // multiple event in one line
+    $("p").off(); // remove all event handlers of p
+    $("p").off("click", functionName); // remove functionName event of p
+    $("p").on("click.namespace", function() { … }); // namespaces works like css classes; 
+    $("p").off("click.namespace"); // will switch off event for this namespace only
+    $("p").one("click", function() { … }); // event only works first time
+    $("p").trigger("click"); // useful to trigger an event from another element; some events are not triggerable (load, mouse, resize)
+    $("p").on("personalised", function() { … }); // create personalised event
+    $("p").trigger("personalised"); // trigger your personalised event
+    $("p").on("click", "span", function() { … }); // event delegation; from p to span tags
+    $("p").off("click", "span"); // remove event delegation
+
+
+    // queue
+    var myQueue = $("p").queue(); // return an array of queued animations for p
+    varqueueLength = $("p").queue().length; // return length of queue
+    $("p").queue(function() { … }); // add animations to the queue
+    $("p").dequeue(); // play and removes animation from the queue
+    $("p").clearQueue(); // clears the queue
+
+
+    // text methods
+    $.trim("   Hello  "); // remove extern spaces "Hello"
+    "Hello".charAt(1); // "e"
+    $("div:contains('hello')"); // selects div containing 'hello'
+    $("div").replaceWith("<p>Hola</p>"); // replace div content
+    $("div").replaceWith("#replacer"); // deletes div and moves #replacer to the div location
+
+
+    // array methods
+    var myArray = ["html", "css", "js"];
+    myArray.join(", "); // "html, css, js"
+    $.grep(myArray, function(el, ind) { // 'js'
+      return (el != "css" && ind > 0); // checker
+    }, false); // inverse checker if true
+    $.map(myArray, function(el, ind) { // 1-->html, 2-->css, 3-->js
+      return (ind + "-->" + el.toUpperCase()); 
+    });
+    $.inArray("js", myArray, 0); // 2; returns index; 3d parameters is the start of the search (if 0, search the whole array)
+    var yourArray = ["jq", "bs"];
+    $.merge(myArray, yourArray); // myArray -> html, css, js, jq, bs
+
+
+    // iterate with jquery
+    $("p").each(function(index, elem) {
+      $(elem).prepend(index + ": ");
     });
 
 
     // type and which event
-    $(function() {
-      $('#target').on('event', function(e){
-        console.log('Event : ' + e.type + '. Button pressed : ' +  e.which );
-      });
+    $("#target").on("event", function(e){
+      console.log("Event : " + e.type + ". Button pressed : " +  e.which );
     });
 
 
     // switch on and off an event
-    $(function() {
-      function switch() {
-        alert('Image cliquée');
-      }
-      $('#on').on('click', function() {
-        $("img").click(switch);
-      });
-      $("#off").on('click', function() {
-        $('img').off('click', switch);
-      });
+    function switch() {
+      alert("Image cliquée");
+    }
+    $("#on").on("click", function() {
+      $("img").click(switch);
+    });
+    $("#off").on("click", function() {
+      $("img").off("click", switch);
     });
 
 
@@ -278,16 +271,9 @@ JQuery
 
 
     // remove jquery animations
-    $(function() {
-      $('p').on('click', function() {
-        jQuery.fx.off = true;
-      });
+    $("p").on("click", function() {
+      jQuery.fx.off = true;
     });
-    
-    
-    // create
-    $("<p></p>"); // creates p tag (or anything else); need to append it later
-    var a = $([]); // create empty jquery object
     
     
     // swap elements place in DOM
@@ -302,14 +288,14 @@ JQuery
 
     // show/hide one after the other
     $(function() {
-      $('#affiche').click(function() {
-        $('img').first().show('slow', function showNextOne() {
-          $(this).next('img').show('slow', showNextOne);
+      $("#affiche").click(function() {
+        $("img").first().show("slow", function showNextOne() {
+          $(this).next("img").show("slow", showNextOne);
         });    
       });
-      $('#cache').click(function() {
-        $('img').first().hide('slow', function hideNextOne() {
-          $(this).next('img').hide('slow', hideNextOne);
+      $("#cache").click(function() {
+        $("img").first().hide("slow", function hideNextOne() {
+          $(this).next("img").hide("slow", hideNextOne);
         });    
       });
     });
@@ -317,56 +303,56 @@ JQuery
 
     // change opacity when mouse enters/leaves
     $(document).ready(function() {
-      $('div').mouseenter(function() {
-        $('div').fadeTo('fast', 1);
+      $("div").mouseenter(function() {
+        $("div").fadeTo("fast", 1);
       });
-      $('div').mouseleave(function() {
-        $('div').fadeTo('fast', 0.5); 
+      $("div").mouseleave(function() {
+        $("div").fadeTo("fast", 0.5); 
       });
     });
     
     
     // toggle between two classes; can easily modify css of an object
-    $('div').on("click", function() {
+    $("div").on("click", function() {
       $(this).toggleClass("newClass");
     });
   
 
     // use this to have action only on the div clicked and not all the div
     $(document).ready(function() {
-      $('div').click(function() {
-        $(this).fadeOut('slow');
+      $("div").click(function() {
+        $(this).fadeOut("slow");
       });
     });
   
 
     // show .panel toggle
     $(document).ready(function() {
-      $('.pull-me').click(function() {
-        $('.panel').slideToggle('slow');
+      $(".pull-me").click(function() {
+        $(".panel").slideToggle("slow");
       });
     });
   
 
     // thanks to the variable, the p moves and does not stand in the first place; no need to delete afterwards
     $(document).ready(function() {
-      var $paragraphe = $('<p>mdr</p>');
-      $('#un').after($paragraphe); 
-      $('#deux').after($paragraphe);
+      var $paragraphe = $("<p>mdr</p>");
+      $("#un").after($paragraphe); 
+      $("#deux").after($paragraphe);
     });
   
 
     // reset form values
     function resetForm() {
-      $(':input').not(':button, :reset, :submit, :hidden').val('').prop('checked', false).prop('selected', false);
+      $(":input").not(":button, :reset, :submit, :hidden").val("").prop("checked", false).prop("selected", false);
     }
 
 
     // get value from a form
     $(document).ready(function () { // will add what you type in form
-      $('#button').click(function () {
-        var toAdd = $('input[name="message"]').val(); // get the value of the input tag 'name=mesage'
-        $('#destination').append('<p>' + toAdd + '</p>') // append the message in a p tag
+      $("#button").click(function () {
+        var toAdd = $("input[name='message']").val(); // get the value of the input tag 'name=mesage'
+        $("#destination").append("<p>" + toAdd + "</p>") // append the message in a p tag
       });
     });
     // little trick; we would use a div instead of a button, to prevent the page to reload
@@ -374,19 +360,19 @@ JQuery
 
     // hover adding class and removing after
     $(document).ready(function() {
-      $('div').hover( // can have to functions separated by a coma; what to do when hover, and what to do after
+      $("div").hover( // can have to functions separated by a coma; what to do when hover, and what to do after
         function() {
-          $(this).addClass('miseenvaleur');
+          $(this).addClass("miseenvaleur");
         },
         function() {
-          $(this).removeClass('miseenvaleur');
+          $(this).removeClass("miseenvaleur");
         }
       );
     });
   
 
     // validate form with enter without page refresh
-    $('input').keypress(function (e) {
+    $("input").keypress(function (e) {
       if (e.which == 13) {
         e.preventDefault();
         $("#button").click();   
@@ -400,19 +386,19 @@ JQuery
         switch(parseInt(key.which,10)) {
           // left arrow pressed
           case 37:
-            $('img').animate({left: "-=10px"}, 'fast');
+            $("img").animate({left: "-=10px"}, "fast");
             break;
           // up arrow pressed
           case 38:
-            $('img').animate({top: '-=10px'}, 'fast');
+            $("img").animate({top: "-=10px"}, "fast");
             break;
           // right arrow pressed
           case 39:
-            $('img').animate({left: '+=10px'}, 'fast');
+            $("img").animate({left: "+=10px"}, "fast");
             break;
           // down arrow pressed
           case 40:
-            $('img').animate({top: '+=10px'}, 'fast');
+            $("img").animate({top: "+=10px"}, "fast");
             break;
         }
       });
@@ -421,115 +407,115 @@ JQuery
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').click(function() {
-        $('div').effect('explode'); // exploses
+      $("div").click(function() {
+        $("div").effect("explode"); // exploses
       });
     });
   
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').click(function() {
-        $('div').effect('bounce', {times:3}, 200); // bounces
+      $("div").click(function() {
+        $("div").effect("bounce", {times:3}, 200); // bounces
       });
     });
   
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').click(function() {
-        $('div').effect('slide'); // slides to become visible
+      $("div").click(function() {
+        $("div").effect("slide"); // slides to become visible
       });
     });
   
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').draggable(); // drag and drop div
+      $("div").draggable(); // drag and drop div
     });
   
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').resizable(); // resize div
+      $("div").resizable(); // resize div
     });
   
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').sortable(); // reorders a list
+      $("div").sortable(); // reorders a list
     });
   
 
     // better animation thanks to IU jQuery
     $(document).ready(function() {
-      $('div').accordion(); // creates an accordion from titles and div
+      $("div").accordion(); // creates an accordion from titles and div
     });
   
   
-    // a is an object which selects all 'div' tags
+    // a is an object which selects all "div" tags
     $(function() {
-      var a = $('div'); 
+      var a = $("div"); 
     });
 
   
-    // add 'my_class' class to all 'img' elements
+    // add 'my_class' class to all "img" elements
     $(function() {
-      $('img').addClass('my_class'); 
+      $("img").addClass("my_class"); 
     });
   
 
     // change properties of '#el' 
     $(function() {
-      $('#el').css('background-color', 'red').fadeIn('slow');  
+      $("#el").css("background-color", "red").fadeIn("slow");  
     });
   
 
     // code will process when clicking on '#action'
     $(function() {
-      $('#action').click(function() { 
+      $("#action").click(function() { 
       /*my code*/ 
       });  
     });
 
 
     // menu closing on click outside
-    $('html').click(function() {
+    $("html").click(function() {
       // Hide the menus if visible here
-      $('.menu').hide();
+      $(".menu").hide();
     });
 
-    $('#menucontainer').click(function(event){
+    $("#menucontainer").click(function(event){
       event.stopPropagation();
       // show menu here
-      $('.menu').toggle();
+      $(".menu").toggle();
     });
 
   </script>
   
 
-  <!--display '#item' on click-->
+  <!--display "#item" on click-->
   <a>Click</a> 
   <p id="item">Hidden message</p>
   <script>
     $(function() {
-      $('a').click(function() { 
-        $('#item').collapse('toggle'); 
+      $("a").click(function() { 
+        $("#item").collapse("toggle"); 
       }); 
     });
   </script>
   
 
-  <!--display '#item' on click and a pop-up-->
+  <!--display "#item" on click and a pop-up-->
   <a>Click</a> 
   <p id="item">Hidden message</p>
   <script>
     $(function() {
-      $('a').click(function() { 
-        $('#item').collapse('toggle'); 
+      $("a").click(function() { 
+        $("#item").collapse("toggle"); 
       });
-      $('#item').on('shown.bs.collapse', function() { 
-        alert('On me voit !');
+      $("#item").on("shown.bs.collapse", function() { 
+        alert("On me voit !");
       });
     });
   </script>
@@ -546,8 +532,8 @@ JQuery
   </div>
   <script>
     $(function() {
-      $('h1').mouseover(function() {
-        $(this).dropdown('toggle');
+      $("h1").mouseover(function() {
+        $(this).dropdown("toggle");
       });  
     });
   </script>
@@ -604,8 +590,8 @@ JQuery
   </div>
   <script>
     $(function() {
-      $('.btn').click(function() {
-        $('.modal').modal('show');
+      $(".btn").click(function() {
+        $(".modal").modal("show");
       });
     });
   </script>
@@ -624,9 +610,9 @@ JQuery
   </div>
   <script>
     $(function() {
-      $('a').click(function(e) {
+      $("a").click(function(e) {
         e.preventDefault();
-        $(this).tab('show');
+        $(this).tab("show");
       });
     });
   </script>
@@ -636,11 +622,11 @@ JQuery
   <a class="btn btn-primary" data-loading-text="Chargement...">Cliquez !</a>
   <script>
     $(function (){
-      $('a').click(function () {
+      $("a").click(function () {
         with($(this)) {
-          button('loading');
+          button("loading");
           setTimeout(function () {
-            button('reset');
+            button("reset");
           }, 4000);
         }
       })
@@ -691,20 +677,20 @@ JQuery
   <script src="assets/js/bootstrap.min.js"></script>
   <script>
     function affichage() {
-      var total = $('.item').length;
-      var current = $('.item.active').index() + 1;
-      $('.label').text(current + ' / '+ total);
+      var total = $(".item").length;
+      var current = $(".item.active").index() + 1;
+      $(".label").text(current + " / "+ total);
     }
     $(function () {
       affichage();
-      $('.carousel').carousel({ interval: 2000 });
-      $('#first').click(function() { $('.carousel').carousel(0); });
-      $('#previous').click(function() { $('.carousel').carousel('prev'); }); 
-      $('#pause').click(function() { $('.carousel').carousel('pause'); });
-      $('#play').click(function() { $('.carousel').carousel('cycle'); });
-      $('#next').click(function() { $('.carousel').carousel('next'); });
-      $('#last').click(function() { $('.carousel').carousel(2); });
-      $('.carousel').on('slid.bs.carousel', function () {
+      $(".carousel").carousel({ interval: 2000 });
+      $("#first").click(function() { $(".carousel").carousel(0); });
+      $("#previous").click(function() { $(".carousel").carousel("prev"); }); 
+      $("#pause").click(function() { $(".carousel").carousel("pause"); });
+      $("#play").click(function() { $(".carousel").carousel("cycle"); });
+      $("#next").click(function() { $(".carousel").carousel("next"); });
+      $("#last").click(function() { $(".carousel").carousel(2); });
+      $(".carousel").on("slid.bs.carousel", function () {
         affichage();
       });
     });
@@ -716,7 +702,7 @@ JQuery
   <a data-toggle="tooltip" data-placement="bottom" title="Tooltip bottom">Tooltip bottom</a><!--also right and left-->
   <script>
     $(function() {
-      $('a').tooltip({trigger:'hover', delay:100}); // by default trigger:'hover', try click; delay in ms
+      $("a").tooltip({trigger:"hover", delay:100}); // by default trigger:"hover", try click; delay in ms
     });
   </script>
 
@@ -726,7 +712,7 @@ JQuery
   <a href="#" class="btn btn-info" data-toggle="popover" data-content="<i>Popover</i>" data-html="true" title="<b>Popover</b>">Popover bottom</a><!--allow html in popover-->
   <script>
     $(function() {
-      $('a').popover(); //same as tooltip can be done here
+      $("a").popover(); //same as tooltip can be done here
     });
   </script>
 
@@ -755,9 +741,9 @@ JQuery
   </div>
   <script>
     $(function() {
-      $('.panel').collapse();
-      $('#show, #hide, #toggle').click(function(){
-        $('.panel').collapse($(this).attr('id'));
+      $(".panel").collapse();
+      $("#show, #hide, #toggle").click(function(){
+        $(".panel").collapse($(this).attr("id"));
       });
     });
   </script>
@@ -766,10 +752,10 @@ JQuery
   <!--Scrollspy animation-->
   <script>
     $(function () {
-      $('li>a').on('click', function(e) {
+      $("li > a").on("click", function(e) {
         e.preventDefault();
         var hash = this.hash;
-        $('html, body').animate({
+        $("html, body").animate({
           scrollTop: $(this.hash).offset().top
         }, 1000, function(){
           window.location.hash = hash;
