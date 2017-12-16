@@ -378,6 +378,7 @@ TODO: link to html file to show result
   transform: scale(.5, .5); /* decrease and/or increase size via width and height */
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
   transform: scale(.7) rotate(30deg); /* shortened method */
+  transform-origin: 0px 100px /* default is 50% 50%; specifies x and y origin for transformations */
   -webkit-transform: rotate(10deg); /* for unsupporting browser */
       -ms-transform: rotate(10deg); /* for unsupporting browser */
           transform: rotate(10deg); /* for unsupporting browser */
