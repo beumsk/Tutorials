@@ -6,6 +6,8 @@ SYNTACTICALLY AWESOME STYLESHEETS
 /* change from sass to css; makes the browser able to understand the style; must be done in the command (ruby) */
 sass SASS.scss CSS.css
 
+/* SASS and SCSS only difference is in the use or not of '{}' and ',' */
+
 
 /* nesting selectors */
 .parent {
@@ -48,9 +50,9 @@ div {
 
 @mixin dashed-border($width, $color: #FFF) {
   border: {
-     color: $color;
-     width: $width;
-     style: dashed;
+    color: $color;
+    width: $width;
+    style: dashed;
   }
 }
 //only passes non-default argument
@@ -73,7 +75,7 @@ $stripe-properties: to bottom, 15%, blue, white;
 /* & selector in mixins */
 @mixin text-hover($color){
   &:hover {
-      color: $color; 
+    color: $color; 
   }
 }
 p {
@@ -107,7 +109,7 @@ $step: 360deg / $total;
 @for $i from 1 through $total {
   .ray:nth-child(#{$i}) {
     background: adjust-hue(blue, $i * $step);
-   }
+  }
 }
 
 /* conditionals */
