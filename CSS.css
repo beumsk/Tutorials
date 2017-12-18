@@ -119,7 +119,7 @@ TODO: link to html file to show result
 }
 
 
-.MEDIA-QUERIES 
+.MEDIA-QUERIES {
   @media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
   @media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
   @media only screen and (min-width: 360px), (orientation: portrait) {} /* screen +360 or portrait */
@@ -128,14 +128,16 @@ TODO: link to html file to show result
   @media only screen and (orientation: landscape) {} /* screen landscape */
   @media only screen and (orientation: portrait) {} /* screen portrait */
   /* http://www.alsacreations.com/article/lire/930-css3-media-queries.html */
+}
 
 
-.SUPPORTS
+.SUPPORTS {
   @supports (display: grid) {} /* browser understands grid display */
   @supports (display: grid) and (display: flex) {} /* browser understands grid and flex display */
   @supports (display: grid) or (display: flex) {} /* browser understands grid or flex display */
   @supports not (display: grid) {} /* browser does not understand grid display */
   @supports not ((display: grid) or (display: flex)) {} /* browser does not understand grid or flex display */
+}
 
 
 .FONT {
