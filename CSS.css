@@ -346,7 +346,7 @@ TODO: link to html file to show result
 .SHADOW {
   box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
   text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
-  box-shadow: 6px 6px 3px 3px black, 12px 12px 3px 3px black: /* multiple shadow effects possible with comas */
+  box-shadow: 6px 6px 3px 3px black, 12px 12px 3px 3px black; /* multiple shadow effects possible with comas */
 }
 
 
@@ -380,7 +380,7 @@ TODO: link to html file to show result
   transform: scale(.5, .5); /* decrease and/or increase size via width and height */
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
   transform: scale(.7) rotate(30deg); /* shortened method */
-  transform-origin: 0px 100px /* default is 50% 50%; specifies x and y origin for transformations */
+  transform-origin: 0px 100px; /* default is 50% 50%; specifies x and y origin for transformations */
   -webkit-transform: rotate(10deg); /* for unsupporting browser */
       -ms-transform: rotate(10deg); /* for unsupporting browser */
           transform: rotate(10deg); /* for unsupporting browser */
@@ -530,5 +530,3 @@ TODO: link to html file to show result
   grid-row: 1 / 5; /* starts at horizontal line 1 and ends at 5 */
   grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
 }
-
-
