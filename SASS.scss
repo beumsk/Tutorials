@@ -18,71 +18,80 @@ sass SASS.scss CSS.css
   }
 }
 
-/* nesting properties */
-border : {
-  top: 2px solid black;
-  bottom: 1px solid grey;
-}
-
-/* variables */
-$translucent-white: rgba(255,255,255,0.3);
-background-color: $translucent-white;
-$header-height: 200px;
-height: $header-height;
-$main-font: 12px Arial bold;
-font: $main-font;
-
-/* nesting pseudo-elements */
-div {
-  color: red;
-  &:hover: {
-    color: blue;
+.nesting-properties {
+  border : {
+    top: 2px solid black;
+    bottom: 1px solid grey;
   }
 }
 
-/* mixins */
-@mixin backface-visibility($visibility: hidden) { /* default value is passed here */
-  backface-visibility: $visibility;
-  -webkit-backface-visibility: $visibility;
-  -moz-backface-visibility: $visibility;
-  -ms-backface-visibility: $visibility;
-  -o-backface-visibility: $visibility;
+.variables {
+  $translucent-white: rgba(255,255,255,0.3);
+  background-color: $translucent-white;
+  $header-height: 200px;
+  height: $header-height;
+  $main-font: 12px Arial bold;
+  font: $main-font;
 }
-@mixin backface-visibility(hidden);
 
-@mixin dashed-border($width, $color: #FFF) {
-  border: {
-    color: $color;
-    width: $width;
-    style: dashed;
+.nesting-pseudo-elements {
+  div {
+    color: red;
+    &:hover: {
+      color: blue;
+    }
   }
 }
-//only passes non-default argument
-span { @include dashed-border(3px); }
-//passes both arguments
-p { @include dashed-border(3px, green); }
-//passes out of order but explicitly defined
-div { @include dashed-border(color: purple, width: 5px); }
 
-/* list arguments */
-$stripe-properties: to bottom, 15%, blue, white;
-@include stripes($stripe-properties...);
+.mixins {
+  @mixin backface-visibility($visibility: hidden) { /* default value is passed here */
+    backface-visibility: $visibility;
+    -webkit-backface-visibility: $visibility;
+    -moz-backface-visibility: $visibility;
+    -ms-backface-visibility: $visibility;
+    -o-backface-visibility: $visibility;
+  }
+  @mixin backface-visibility(hidden);
 
-/* string interpolation */
-@mixin photo-content($file) {
-  content: url(#{$file}.jpg);
+  @mixin dashed-border($width, $color: #FFF) {
+    border: {
+      color: $color;
+      width: $width;
+      style: dashed;
+    }
+  }
+  //only passes non-default argument
+  span { @include dashed-border(3px); }
+  //passes both arguments
+  p { @include dashed-border(3px, green); }
+  //passes out of order but explicitly defined
+  div { @include dashed-border(color: purple, width: 5px); }
 }
-@include photo-content('profile-pic');
 
-/* & selector in mixins */
-@mixin text-hover($color){
-  &:hover {
-    color: $color; 
+.list-arguments {
+  $stripe-properties: to bottom, 15%, blue, white;
+  @include stripes($stripe-properties...);
+}
+
+.string-interpolation {
+  @mixin photo-content($file) {
+    content: url(#{$file}.jpg);
+  }
+  @include photo-content('profile-pic');
+}
+
+
+.selector-in-mixins {
+  @mixin text-hover($color){
+    &:hover {
+      color: $color; 
+    }
+  }
+  p {
+    @include text-hover(red);
   }
 }
-p {
-  @include text-hover(red);
-}
+
 
 .color-functions {
   color: red + blue; 
@@ -92,12 +101,14 @@ p {
   color: adjust-hue(#62fdca, 20%);
 }
 
+
 .arithemtic {
   height: 100px + 10; // 110px
   height: 10px * 5; // 50px
   height: 100px - 10; // 90px
   height: (100) / 10 + 0px; // 10px
 }
+
 
 .each-loop {
   $list: (orange, purple, teal);
@@ -108,7 +119,7 @@ p {
   }
 }
 
-/* for loop */
+
 .for-loop {
   $total: 10; //Number of .ray divs in our html
   $step: 360deg / $total;
@@ -119,15 +130,18 @@ p {
   }
 }
 
+
 .conditionals {
   width: if(2 == 2, 50px, 100px); /* condition, if true, if false */
 }
+
 
 .import-partials {
   @import "partials-name"; /* note that the real file should use an underscore (_) as prefix */
 }
 
-.extend-class {
+
+.extend-class { /* better than mixins if there is no argument */
   .original {
     color: pink;
   }
