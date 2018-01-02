@@ -9,7 +9,7 @@ sass SASS.scss CSS.css
 /* SASS and SCSS only difference is in the use or not of '{}' and ',' */
 
 
-.nesting-selectors {
+.NESTING-SELECTORS {
   .parent {
     width: 100px;
     .child {
@@ -18,14 +18,14 @@ sass SASS.scss CSS.css
   }
 }
 
-.nesting-properties {
+.NESTING-PROPERTIES {
   border : {
     top: 2px solid black;
     bottom: 1px solid grey;
   }
 }
 
-.variables {
+.VARIABLES {
   $translucent-white: rgba(255,255,255,0.3);
   background-color: $translucent-white;
   $header-height: 200px;
@@ -34,7 +34,7 @@ sass SASS.scss CSS.css
   font: $main-font;
 }
 
-.nesting-pseudo-elements {
+.NESTING-PSEUDO-ELEMENTS {
   div {
     color: red;
     &:hover: {
@@ -43,7 +43,7 @@ sass SASS.scss CSS.css
   }
 }
 
-.mixins {
+.MIXINS {
   @mixin backface-visibility($visibility: hidden) { /* default value is passed here */
     backface-visibility: $visibility;
     -webkit-backface-visibility: $visibility;
@@ -68,12 +68,12 @@ sass SASS.scss CSS.css
   div { @include dashed-border(color: purple, width: 5px); }
 }
 
-.list-arguments {
+.LIST-ARGUMENTS {
   $stripe-properties: to bottom, 15%, blue, white;
   @include stripes($stripe-properties...);
 }
 
-.string-interpolation {
+.STRING-INTERPOLATION {
   @mixin photo-content($file) {
     content: url(#{$file}.jpg);
   }
@@ -81,7 +81,7 @@ sass SASS.scss CSS.css
 }
 
 
-.selector-in-mixins {
+.SELECTOR-IN-MIXINS {
   @mixin text-hover($color){
     &:hover {
       color: $color; 
@@ -93,7 +93,7 @@ sass SASS.scss CSS.css
 }
 
 
-.color-functions {
+.COLOR-FUNCTIONS {
   color: red + blue; 
   color: #333 + #f5f5f5;
   color: fade-in(#62fdca, 0.5);
@@ -102,7 +102,7 @@ sass SASS.scss CSS.css
 }
 
 
-.arithemtic {
+.ARITHMETIC {
   height: 100px + 10; // 110px
   height: 10px * 5; // 50px
   height: 100px - 10; // 90px
@@ -110,7 +110,7 @@ sass SASS.scss CSS.css
 }
 
 
-.each-loop {
+.EACH-LOOP {
   $list: (orange, purple, teal);
   @each $item in $list {
     .#{$item} {
@@ -120,7 +120,7 @@ sass SASS.scss CSS.css
 }
 
 
-.for-loop {
+.FOR-LOOP {
   $total: 10; //Number of .ray divs in our html
   $step: 360deg / $total;
   @for $i from 1 through $total {
@@ -131,17 +131,17 @@ sass SASS.scss CSS.css
 }
 
 
-.conditionals {
+.CONDITIONALS {
   width: if(2 == 2, 50px, 100px); /* condition, if true, if false */
 }
 
 
-.import-partials {
+.IMPORT-PARTIALS {
   @import "partials-name"; /* note that the real file should use an underscore (_) as prefix */
 }
 
 
-.extend-class { /* better than mixins if there is no argument */
+.EXTEND-CLASS { /* better than mixins if there is no argument */
   .original {
     color: pink;
   }
