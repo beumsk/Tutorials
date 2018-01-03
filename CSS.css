@@ -277,6 +277,7 @@ TODO: link to html file to show result
   word-spacing: 10px;
   vertical-align: middle text-top text-bottom top bottom; /* align image to text */
   text-shadow: 2px 2px #FF0000; /* shadow */
+  text-shadow: 1px 1px #fff, 2px 2px #333; /* multiple text shadows */
 }
 
 
