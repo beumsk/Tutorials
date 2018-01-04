@@ -6,7 +6,7 @@ It is not really meant to be tried in a browser even if some partly work.
 More complex language are not only theorical, they present examples too.
 
 2017.12.11
-TODO : Continue Sass & start React
+TODO : Start React
 
 2017.12.11
 -HTML
