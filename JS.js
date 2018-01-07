@@ -2348,17 +2348,17 @@ DOM EVENTS
   var Elt = document.getElementById("ball");
   document.addEventListener("keydown", function (e) {
     switch (e.keyCode) {
-      case 37:
-        Elt.style.left += 10;
+      case 37: // left
+        Elt.style.left -= 10;
         break;
-      case 38:
-        Elt.style.top += 10;
+      case 38: // up
+        Elt.style.top -= 10;
         break;
-      case 39:
-        Elt.style.right += 10;
+      case 39: // right
+        Elt.style.right -= 10;
         break;
-      case 40:
-        Elt.style.bottom += 10;
+      case 40: // down
+        Elt.style.bottom -= 10;
         break;
       default:
         console.log("Wrong key");
