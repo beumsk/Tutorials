@@ -268,9 +268,10 @@ TODO: link to html file to show result
   text-decoration: overline underline line-through;
   text-transform: uppercase lowercase capitalize;
   text-indent: 50px; /* alineas */
-  letter-spacing: 3px; /* space between letters*/
-  word-spacing: 3px; /* space between words*/
-  word-wrap: break-word; /* break word to make it fit in box*/
+  letter-spacing: 3px; /* space between letters */
+  word-spacing: 3px; /* space between words */
+  word-wrap: break-word; /* break word to make it fit in box */
+  white-space: nowrap; /* prevent line to wrap to a new line */
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
   line-height: .8; /* space between lines; common practice is to set around 150% */
   direction: rtl; /* change text direction to right-to-left */
