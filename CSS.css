@@ -72,7 +72,7 @@ TODO: link to html file to show result
   p:first-child {} /* Selects first p only */
   p:nth-child(2) {} /* Selects 2d child; or other */
   p:nth-child(n) {} /* Selects nth child */
-  p:nth-child(even) {} /* Selects even'th child */
+  p:nth-child(even) {} /* Selects even'th child (or 2n); can be odd (or 2n+1) */
   p:only-child {} /* Selects the only p element */
   p:last-child {} /* Selects the last p only */
   p:nth-last-child(2) {} /* Selects 2d last child; or other */
