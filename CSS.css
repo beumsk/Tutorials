@@ -486,9 +486,9 @@ TODO: link to html file to show result
   display: flex;/* in a container, change the disposition to flex and allow following properties */
   flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
   flex-wrap: wrap wrap-reverse; /* by default items will stay on same line; wrap helps going down */
-  justify-content: flex-start flex-end center space-between space-around; /* how items will display on a lign; works also with column direction; manage primary axis */
+  justify-content: flex-start flex-end center space-between space-around space-evenly; /* how items will display on a lign; works also with column direction; manage primary axis */
   align-items: stretch flex-end flex-start center baseline; /* manage secondary axis; how items will display in a column or lign */
-  align-content: flex-start flex-end center space-between space-around stretch; /* manage secondary axis if there is multiple lines */
+  align-content: flex-start flex-end center space-between space-around space-evenly stretch; /* manage secondary axis if there is multiple lines */
   flex-flow: row wrap; /* shortened way to direction and wrap */
 }
 
