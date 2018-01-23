@@ -947,7 +947,7 @@ NUMBERS METHODS
 
 
 
-FUNCTIONS MATH 
+FUNCTIONS MATH
 // Functions working on numbers; they start with 'Math.'
 
 
