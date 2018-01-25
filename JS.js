@@ -226,27 +226,27 @@ VARIABLES
 // JavaScript variables are containers for storing data values.
 
 
-  var a; console.log(a); // creates variable without value
+  var a; // creates variable without value
 
-  var a; a = 10; console.log(a); // create variable with value of '10'
+  var a; a = 10; // create variable with value of '10'
 
-  var a = 10; console.log(a); // shortened method
+  var a = 10; // shortened method
 
-  var a = 0; a += 1; a ++; console.log(a); // add 1 and 1 to 'a' variable to reach 2
+  var a = 0; a += 1; a ++; // add 1 and 1 to 'a' variable to reach 2
 
-  var a = 5; a -= 1; a --; console.log(a); // substracts 1 and 1 to reach 3
+  var a = 5; a -= 1; a --; // substracts 1 and 1 to reach 3
 
-  var a = 5; a *= 5; a /= 5; console.log(a); // multiply by 5 and divide by 5 to reach 5
+  var a = 5; a *= 5; a /= 5; // multiply by 5 and divide by 5 to reach 5
 
-  var a = 3; var b = a + 2; console.log(b); // 'b' will value 5 (3+2)
+  var a = 3; var b = a + 2; // 'b' will value 5 (3+2)
 
-  var a = Number("5"); console.log(a); // 'a' will value  the number 5 and not the string '5'
+  var a = Number("5"); // 'a' will value  the number 5 and not the string '5'
 
-  var a = String(5); console.log(a); // 'a' will value the string '5' and not the number 5
+  var a = String(5); // 'a' will value the string '5' and not the number 5
 
-  var a = "five" * 2; console.log(a); // NaN; Not a Number
+  var a = "five" * 2; // 'a' is NaN; Not a Number
 
-  var a = (b > 10)?"Over ten": "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
+  var a = (b > 10) ? "Over ten" : "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
 
   var a = true && true; // true
  
