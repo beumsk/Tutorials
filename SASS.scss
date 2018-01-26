@@ -151,4 +151,13 @@ sass SASS.scss CSS.css
 }
 
 
-
+.MULTIPLE-SHADOW {
+  $list: -1px -1px #fff;
+  $total: 100;
+  @for $i from 1 through $total {
+    $list: #{$list}, #{$i}px #{$i}px #fff; /* adds shadow layers with a list */
+  }
+  .object-shadow {
+    text-shadow: $list;
+  }
+}
