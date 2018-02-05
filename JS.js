@@ -116,6 +116,9 @@ MAIN JS
   document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
 
   newDiv.addEventListener("click", function () {code block}); // new event click
+  newDiv.removeEventListener("click", namedFunction); // remove event click
+  newDiv.addEventListener("click", function once() {this.removeEventListener("click", once)}); // event click only once
+
   setTimeout(function (){code block}, 1000); // run code after 1sec; can clearTimeout()
   setInterval(function (){code block}, 1000); // run code every 1sec; can clearInterval()
 
@@ -2243,7 +2246,7 @@ DOM EVENTS
   
   
   // remove an event; function can't be anonymous
-  document.getElementById("button").removeEventListener("click", namedFunction());
+  document.getElementById("button").removeEventListener("click", namedFunction);
 
 
   // add event (remove on click) using class names
