@@ -445,20 +445,6 @@ CONDITIONS
   }
 
 
-  // comparison of two numbers
-  var number1 = Number(prompt("Enter first number"));
-  var number2 = Number(prompt("Enter second number"));
-  if (number1 > number2) {
-    console.log(number1 + " is biggger than " + number2);
-  } else if (number1 < number2) {
-    console.log(number1 + " is smaller than " + number2);
-  } else if (number1 === number2) {
-    console.log(number1 + " is equal to " + number2);
-  } else {
-    console.log("not");
-  }
-
-
   // the hour one second later
   var hours = Number(prompt("Enter hour"));
   var minutes = Number(prompt("Enter minute"));
