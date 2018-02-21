@@ -115,12 +115,46 @@ class Something
 Something smth = new Something(); // creation of an object
 
 
+// Property
+public string Name 
+{
+  get // computation or retrieve value and return it
+  {
+    return _name = value;
+  }
+  set // validations to protect your object
+  {
+    if(!String.IsNullOrEmpty(value))
+    {
+      _name = value;
+    }
+  }
+}
+private string _name; // field
+book.Name = "Rem's"; // Rem's
+book.Name = null; // Rem's; or nothing if nothing is passed before
+
+
+// delegate (events)
+public delegate void NameChangedDelegate(string old, string new);
+public NameChangedDelegate NameChanged; // field
+NameChanged(_name, value);
+static void onNameChanged(string old, string new)
+{
+  Console.WriteLine($"Name changing from {old} to {new}");
+}
+book.NameChanged = new NameChangedDelegate(onNameChanged); // use
+
+
 // public vs private vs internal
 
 
 // Types
 string name = "beumsk";
 int = 3;
+float = ;
+double = ;
+object = ;
 
 
 // Assemblies
@@ -176,3 +210,4 @@ namespace Grades.Tests
 cw -> Console.WriteLine();
 ctor -> creates constructor;
 testm -> creates testMethod;
+prop -> creates property;
