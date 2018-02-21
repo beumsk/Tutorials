@@ -4,12 +4,16 @@ C#
 // file > new project > web web app > basic + MVC
 
 
-// useful starting lines
-using System;
-using System.Collections.Generic;
+// useful starting lines; they are assemblies (libraries) that contain useful objects, methods, functions.
+using System; // contain for example the Console object
+using System.Collections.Generic; // contains the list 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+// less usual assembly
+using System.Speech.Synthesis; // synthesize strings and more
+using Microsoft.VisualStudio.TestTools.UnitTesting; // testing assembly
+using anyClass; // could be any crafted class (Grades ie)
 
 
 // Hello world
@@ -68,15 +72,27 @@ namespace Sleep
 
 // list
 List<int> grades = new List<int>();
-grades.Add(17);
-grades.Add(15);
-grades.Insert(2, 13);
-grades.Remove(13);
-grades.Count;
+grades.Add(17); // 17
+grades.Add(15); // 17, 15
+grades.Insert(2, 13); // 17, 15, 13
+grades.Remove(13); // 17, 15
+grades.Count; // 2
 foreach (int grade in grades)
 {
   Console.WriteLine(grade);
 }
+
+
+// object
+static void writeResult(string description, int result) 
+{
+  Console.WriteLine(description + ": " + result);
+  // OR
+  Console.WriteLine("{0}: {1}", description, result); // c# string formatting; can add other strings and characters
+  // OR
+  Console.WriteLine($"{description}: {result}");
+}
+writeResult("My age", 24); // My age: 24
 
 
 // constructor; instiancates an instance of that class, creates an object
@@ -103,6 +119,8 @@ Something smth = new Something(); // creation of an object
 
 
 // Types
+string name = "beumsk";
+int = 3;
 
 
 // Assemblies
