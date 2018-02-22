@@ -29,10 +29,6 @@ namespace Hello
 }
 
 
-string name = "Rémy";
-int number = 10;
-
-
 // Hello world with prompt
 namespace Hello 
 {
@@ -67,6 +63,32 @@ namespace Sleep
       }
     }
   }
+}
+// ternary operator
+string test = 18 > 20 ? "passed" : "failed";
+
+
+// switch
+string result;
+switch(letterGrade)
+{
+  case "A":
+    result = "Excellent";
+    break;
+  case "B":
+    result = "Good";
+    break;
+  case "C":
+    result = "Average";
+    break;
+  case "D":
+    result = "Below Average";
+    break;
+  default:
+    result = "Failing";
+    break;
+  }
+  return result;
 }
 
 
@@ -136,14 +158,22 @@ book.Name = null; // Rem's; or nothing if nothing is passed before
 
 
 // delegate (events)
-public delegate void NameChangedDelegate(string old, string new);
-public NameChangedDelegate NameChanged; // field
-NameChanged(_name, value);
-static void onNameChanged(string old, string new)
+public class NameChangedEventArgs : Event Args // object; convention is to use objects in events
 {
-  Console.WriteLine($"Name changing from {old} to {new}");
+  public string ExistingName { get; set; }
+  public string NewName { get; set; }
 }
-book.NameChanged = new NameChangedDelegate(onNameChanged); // use
+public delegate void NameChangedDelegate(object sender, NameChangedEventArgs);
+public event NameChangedDelegate NameChanged; // event (field)
+NameChangedEventArgs args = new NameChangedEventArgs();
+args.ExistingName = _name;
+args.NewName = value;
+NameChanged(this, args);
+static void onNameChanged(object sender, NameChangedEventArgs args) 
+{
+  Console.WriteLine($"Name changing from {args.ExistingName} to {args.NewName}");
+}
+book.NameChanged += onNameChanged; // use
 
 
 // public vs private vs internal
@@ -151,10 +181,10 @@ book.NameChanged = new NameChangedDelegate(onNameChanged); // use
 
 // Types
 string name = "beumsk";
-int = 3;
-float = ;
-double = ;
-object = ;
+int age = 24;
+float number = 24.66;
+double number = 24.66666;
+object obj = ;
 
 
 // Assemblies
