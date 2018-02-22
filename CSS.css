@@ -223,11 +223,12 @@ TODO: link to html file to show result
   /* Space around elements */
   margin-bottom: 10px; /* top, right, bottom, left */
   margin-top: 5% 5vh 5vw 5em; /* use one */
-  margin: 10px, 5px, 10px, 5px; /* shortened method */
+  margin: 10px 5px; /* shortened method; vertical horizontal */
+  margin: 10px 5px 10px 5px; /* shortened method; top right bottom left */
   margin: auto; /* center element but need to specify width */
   margin-left: inherit; /* gets the value from parent element */
   /* margin collapse make only biggest margin appear if 2 follow each other */
-  /* h1 {margin: 0 0 50px 0;} and h2 {margin: 20px 0 0 0;} */
+  /* h1 {margin-bottom: 50px;} and h2 {margin-top: 20px;} */
 }
 
 
@@ -235,7 +236,8 @@ TODO: link to html file to show result
   /* Space around content */
   padding-right: 10px; /* top, right, bottom, left */
   padding-left: 5% 5vh 5vw 5em; /* use one */
-  padding: 10px, 5px, 10px, 5px; /* shortened method */
+  padding: 10px 5px; /* shortened method; vertical horizontal */
+  padding: 10px 5px 10px 5px; /* shortened method; top right bottom left */
 }
 
 
