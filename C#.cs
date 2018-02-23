@@ -99,10 +99,36 @@ grades.Add(15); // 17, 15
 grades.Insert(2, 13); // 17, 15, 13
 grades.Remove(13); // 17, 15
 grades.Count; // 2
+
+
+// foreach loop
 foreach (int grade in grades)
 {
   Console.WriteLine(grade);
 }
+
+
+// for loop
+for (int i = 0; i<grades.Count; i++) 
+{
+  Console.WriteLine(grade);
+}
+
+
+// while loop
+while (age > 0)
+{
+  age -= 1;
+  Console.WriteLine(age);
+}
+
+
+// do while loop 
+do 
+{
+  age++;
+  Console.WriteLine(age);
+} while (age < 50);
 
 
 // object
@@ -195,11 +221,36 @@ Math.Max(10, 11); // 11
 Math.Min(10, 11); // 10
 
 
-// 
+// Throwing
+if (string.IsNullOrEmpty(value)) 
+{
+  throw new ApplicationException("Name cannot be null or empty");
+}
 
 
+// try catch (handling)
+try 
+{
+  Console.WriteLine("Enter a name");
+  book.Name = Console.ReadLine();
+}
+catch (ArgumentException ex)
+{
+  Console.WriteLine(ex.Message);
+}
+// multiple catch possible; but more specific must come above less specific
+finally
+{
+  // code that will execute anyway
+}
 
 
+// file
+using (StreamWriter outputFiles = File.CreateText("grades.txt"))
+{
+  book.WriteGrades(outputFiles);
+  // outputFiles.Close(); not needed with inside using
+}
 
 
 
@@ -241,3 +292,8 @@ cw -> Console.WriteLine();
 ctor -> creates constructor;
 testm -> creates testMethod;
 prop -> creates property;
+for -> for loop;
+
+// format
+ -> comment
+ctrl+k, ctrl+d -> reformat the code 
