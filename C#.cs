@@ -18,11 +18,11 @@ using anyClass; // could be any crafted class (Grades ie)
 
 
 // Hello world
-namespace Hello 
+namespace Hello
 {
-  class Program 
+  class Program
   {
-    static void Main(string[] args) 
+    static void Main(string[] args) // Mais method is MANDATORY for the code to work
     {
       Console.WriteLine("Hello, World!");
     }
@@ -31,11 +31,11 @@ namespace Hello
 
 
 // Hello world with prompt
-namespace Hello 
+namespace Hello
 {
   class Program
   {
-    static void Main(string[] args) 
+    static void Main(string[] args)
     {
       Console.WriteLine("Your name?");
       string name = Console.ReadLine();
@@ -267,11 +267,16 @@ internal ->
 
 
 // Types
-string name = "beumsk";
-int age = 24;
-float number = 24.66;
-double number = 24.66666;
-object obj = ;
+byte number = 255; // integer 0 à 255
+short number = 265; // integer -32768 à 32767
+int number = 24; // integer -2147483648 à 2147483647
+byte number = 255; // integer -9223372036854775808 à 9223372036854775807
+float number = 24.66; // simple precision -3,402823e38 à 3,402823e38
+double number = 24.66666; // double precision  -1,79769313486232e308 à 1,79769313486232e308
+decimal age = 2.7865746786; // for financial values
+char letter = "e"; // single character
+string name = "beumsk"; // character string
+bool diff = ("yes" == "no"); // true or false
 
 
 // Assemblies
@@ -353,5 +358,6 @@ for -> for loop;
 // format
 F5 -> start Debugging
 ctrl+F5 -> start without Debugging
- -> comment
+ctrl+k, ctrl+c -> comment
+ctrl+K, ctrl+u -> uncomment
 ctrl+k, ctrl+d -> reformat the code 
