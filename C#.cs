@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 // less usual assembly
+using System.IO; // File methods like creating, writing, saving 
 using System.Speech.Synthesis; // synthesize strings and more
 using Microsoft.VisualStudio.TestTools.UnitTesting; // testing assembly
 using anyClass; // could be any crafted class (Grades ie)
@@ -42,6 +43,15 @@ namespace Hello
     }
   }
 }
+
+
+// list
+List<int> grades = new List<int>();
+grades.Add(17); // 17
+grades.Add(15); // 17, 15
+grades.Insert(2, 13); // 17, 15, 13
+grades.Remove(13); // 17, 15
+grades.Count; // 2
 
 
 // conditions
@@ -92,15 +102,6 @@ switch(letterGrade)
 }
 
 
-// list
-List<int> grades = new List<int>();
-grades.Add(17); // 17
-grades.Add(15); // 17, 15
-grades.Insert(2, 13); // 17, 15, 13
-grades.Remove(13); // 17, 15
-grades.Count; // 2
-
-
 // foreach loop
 foreach (int grade in grades)
 {
@@ -131,6 +132,28 @@ do
 } while (age < 50);
 
 
+// break
+for (int i = 0; i<5; i++) 
+{
+  if (i == 3)
+  {
+    break;
+  }
+  Console.WriteLine(i);
+} // 0, 1, 2
+
+
+// continue
+for (int i = 0; i<5; i++) 
+{
+  if (i == 3)
+  {
+    continue;
+  }
+  Console.WriteLine(i);
+} // 0, 1, 2, 4
+
+
 // object
 static void writeResult(string description, int result) 
 {
@@ -151,6 +174,21 @@ public GradeBook() // custom constructor
 }
 
 
+// Interface
+internal interface IThing
+{
+  // ... no access modifiers allowed (because not needed)
+}
+
+
+// abstract class
+ abstract class Thing
+{
+  // ... abstract for abstract elements
+  // ... normal for others but public or protected !
+}
+
+
 // classes
 class Something 
 {
@@ -158,9 +196,28 @@ class Something
   {
     // init
   }
+  public virtual void DoSomething() // use virtual only for inherited classes which need override
+  {
+    // ...
+  }
   // rest of code
 }
 Something smth = new Something(); // creation of an object
+
+
+// inherited class
+class Else : Something // class inherits content and have its own content
+{
+  public override void DoSomething()
+  {
+    // ...
+  }
+  public virtual void DoSomethingElse()
+  {
+    // ...
+  }
+}
+Something smth = new Else();
 
 
 // Property
@@ -184,7 +241,7 @@ book.Name = null; // Rem's; or nothing if nothing is passed before
 
 
 // delegate (events)
-public class NameChangedEventArgs : Event Args // object; convention is to use objects in events
+public class NameChangedEventArgs : Event Args // object; convention is to use objects in events; colon is used to inherit from class Event Args
 {
   public string ExistingName { get; set; }
   public string NewName { get; set; }
@@ -202,7 +259,11 @@ static void onNameChanged(object sender, NameChangedEventArgs args)
 book.NameChanged += onNameChanged; // use
 
 
-// public vs private vs internal
+// access modifiers
+private -> access in that class
+protected -> access in that class and derived class
+public -> access in all
+internal -> 
 
 
 // Types
@@ -255,7 +316,6 @@ using (StreamWriter outputFiles = File.CreateText("grades.txt"))
 
 
 
-
 // TESTING
 
 // new project > test unit > for testing apps
@@ -281,10 +341,6 @@ namespace Grades.Tests
 
 
 
-
-
-
-
 // SHORTCUTS in VS 
 
 // use double tab to use those
@@ -295,5 +351,7 @@ prop -> creates property;
 for -> for loop;
 
 // format
+F5 -> start Debugging
+ctrl+F5 -> start without Debugging
  -> comment
 ctrl+k, ctrl+d -> reformat the code 
