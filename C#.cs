@@ -45,13 +45,49 @@ namespace Hello
 }
 
 
-// list
-List<int> grades = new List<int>();
-grades.Add(17); // 17
-grades.Add(15); // 17, 15
-grades.Insert(2, 13); // 17, 15, 13
-grades.Remove(13); // 17, 15
-grades.Count; // 2
+// list; can be in 2 dimension
+List<string> days = new List<string>();
+days.Add("Monday"); // "Monday"
+days.Add("Tuesday"); // "Monday", "Tuesday"
+days.Insert(2, "Wednesday"); // "Monday", "Tuesday", "Wednesday"
+days.Remove("Wednesday"); // "Monday", "Tuesday"
+days.RemoveAt(1); // "Monday"
+int length = days.Count; // 1
+int index = days.indexOf("Monday"); // 0
+// shortened way
+List<string> days = new List<string> {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+// write
+Console.WriteLine(days[0]); // Monday
+
+
+// array; fixed length
+string[] days = new string[7];
+days[0] = "Monday";
+days[1] = "Tuesday";
+days[2] = "Wednesday";
+days[3] = "Thursday";
+days[4] = "Friday";
+days[5] = "Saturday";
+days[6] = "Sunday";
+// shortened way
+string[] days = new string[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+// write
+Console.WriteLine(days[0]); // Monday
+
+
+// enum
+enum Days
+{
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday,
+  Sunday
+}
+// write
+Console.WriteLine(Days.Monday); // Monday
 
 
 // conditions
@@ -285,6 +321,8 @@ bool diff = ("yes" == "no"); // true or false
 // Math
 Math.Max(10, 11); // 11
 Math.Min(10, 11); // 10
+Math.Sqrt(4); // 2
+Math.Pow(2, 2); // 4
 
 
 // Throwing
