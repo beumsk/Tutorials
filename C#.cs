@@ -45,7 +45,7 @@ namespace Hello
 }
 
 
-// list; can be in 2 dimension
+// LIST; can be in 2 dimension
 List<string> days = new List<string>();
 days.Add("Monday"); // "Monday"
 days.Add("Tuesday"); // "Monday", "Tuesday"
@@ -60,7 +60,7 @@ List<string> days = new List<string> {"Monday", "Tuesday", "Wednesday", "Thursda
 Console.WriteLine(days[0]); // Monday
 
 
-// array; fixed length
+// ARRAY; fixed length
 string[] days = new string[7];
 days[0] = "Monday";
 days[1] = "Tuesday";
@@ -69,6 +69,8 @@ days[3] = "Thursday";
 days[4] = "Friday";
 days[5] = "Saturday";
 days[6] = "Sunday";
+int length = days.Length; // 7
+Array.Sort(days); // sort alpha
 // shortened way
 string[] days = new string[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 // write
@@ -139,9 +141,9 @@ switch(letterGrade)
 
 
 // foreach loop
-foreach (int grade in grades)
+foreach (int day in days)
 {
-  Console.WriteLine(grade);
+  Console.WriteLine(day);
 }
 
 
@@ -303,16 +305,19 @@ internal ->
 
 
 // Types
-byte number = 255; // integer 0 à 255
-short number = 265; // integer -32768 à 32767
-int number = 24; // integer -2147483648 à 2147483647
-byte number = 255; // integer -9223372036854775808 à 9223372036854775807
-float number = 24.66; // simple precision -3,402823e38 à 3,402823e38
-double number = 24.66666; // double precision  -1,79769313486232e308 à 1,79769313486232e308
-decimal age = 2.7865746786; // for financial values
-char letter = "e"; // single character
-string name = "beumsk"; // character string
-bool diff = ("yes" == "no"); // true or false
+byte number; // integer 0 à 255
+short number; // integer -32768 à 32767
+int number; // integer -2147483648 à 2147483647
+byte number; // integer -9223372036854775808 à 9223372036854775807
+float number; // simple precision -3,402823e38 à 3,402823e38
+double number; // double precision  -1,79769313486232e308 à 1,79769313486232e308
+decimal number; // for financial values with lots of decimals
+char letter; // single character
+string name; // character string
+bool diff; // true or false
+int[] arr; // array of integer
+List<int> list; // list of integer
+DayOfWeek day; // day of week enum
 
 
 // Assemblies
