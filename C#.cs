@@ -45,6 +45,63 @@ namespace Hello
 }
 
 
+// Types
+byte number; // integer 0 à 255
+short number; // integer -32768 à 32767
+int number; // integer -2147483648 à 2147483647
+byte number; // integer -9223372036854775808 à 9223372036854775807
+float number; // simple precision -3,402823e38 à 3,402823e38
+double number; // double precision  -1,79769313486232e308 à 1,79769313486232e308
+decimal number; // for financial values with lots of decimals
+char letter; // single character
+string name; // character string
+bool diff; // true or false
+int[] arr; // array of integer
+List<int> list; // list of integer
+DayOfWeek day; // day of week enum
+
+
+// Type casting
+short s = 200; int i = s; // 200 becomes of int type
+int i = 200; short s = i; // not possible; short could be too specific for the number
+int i = 200; short s = (short)i; // possible because we cast 'explicitly'
+int i = 40000; short s = (short)i; // not possible even with cast 'explicitly'
+int i = 20; double d = i; // 20 becomes of double type
+int age = 24; string ageStr = Convert.ToString(age); // converts int to string "24"
+string ageStr = "24"; int age = int.Parse(ageStr); // converts string to int 24
+int.TryParse(ageStr, out age); // checks if parse is authorized; will return true here
+
+
+// Console methods
+Console.WriteLine("Hello"); // writes the string
+string input = Console.ReadLine(); // ask user to type a line; needs to be stored
+Console.ReadKey(true); // ask user to type on a key to continue; true prevents the write the key typed on
+ConsoleKeyInfo typed = Console.ReadKey(true).key; // contains the key
+
+
+// readline of a number
+static void Main(string[] args)
+{
+  bool inputValid = false;
+  int age = -1;
+  while (!inputValid)
+  {
+    Console.WriteLine("Please type your age");
+    string input = Console.ReadLine();
+    if (int.TryParse(input, out age))
+    {
+      inputValid = true;
+    }
+    else
+    {
+      inputValid = false;
+      Console.WriteLine("Your age input is invalid !");
+    }
+  }
+  Console.WriteLine("You are " + age + " years old");
+}
+
+
 // LIST; can be in 2 dimension
 List<string> days = new List<string>();
 days.Add("Monday"); // "Monday"
@@ -302,22 +359,6 @@ private -> access in that class
 protected -> access in that class and derived class
 public -> access in all
 internal -> 
-
-
-// Types
-byte number; // integer 0 à 255
-short number; // integer -32768 à 32767
-int number; // integer -2147483648 à 2147483647
-byte number; // integer -9223372036854775808 à 9223372036854775807
-float number; // simple precision -3,402823e38 à 3,402823e38
-double number; // double precision  -1,79769313486232e308 à 1,79769313486232e308
-decimal number; // for financial values with lots of decimals
-char letter; // single character
-string name; // character string
-bool diff; // true or false
-int[] arr; // array of integer
-List<int> list; // list of integer
-DayOfWeek day; // day of week enum
 
 
 // Assemblies
