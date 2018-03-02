@@ -343,12 +343,13 @@ Something smth = new Else();
 // Property
 public string Name 
 {
-  get // computation or retrieve value and return it
+  get // computation or retrieve value and return it; youcan remove it to forbid people to get property
   {
     return _name = value;
   }
-  set // validations to protect your object
+  set // gives value; you can remove it to forbid people to set property
   {
+    // validations to protect your object
     if(!String.IsNullOrEmpty(value))
     {
       _name = value;
@@ -358,6 +359,11 @@ public string Name
 private string _name; // field
 book.Name = "Rem's"; // Rem's
 book.Name = null; // Rem's; or nothing if nothing is passed before
+book.Name; // return Rem's
+
+
+// Shorter property
+public string Name { get; set; }
 
 
 // delegate (events)
@@ -380,10 +386,11 @@ book.NameChanged += onNameChanged; // use
 
 
 // access modifiers
-private -> access in that class
+private -> access in that class only
 protected -> access in that class and derived class
-public -> access in all
-internal -> 
+public -> access everywhere
+internal -> access in the same assembly
+protected internal -> access in the same assembly or derived class
 
 
 // Math
@@ -454,7 +461,7 @@ namespace Grades.Tests
 
 // SHORTCUTS in VS 
 
-// use double tab to use those
+// Snippets: double tab to use those
 cw -> Console.WriteLine();
 ctor -> creates constructor;
 testm -> creates testMethod;
