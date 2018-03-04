@@ -243,6 +243,10 @@ VARIABLES
 
   var a = 3; var b = a + 2; // 'b' will value 5 (3+2)
 
+  var a = 2 ** 3; // a = 8
+
+  var a = 1e6; // 1000000
+
   var a = Number("5"); // 'a' will value  the number 5 and not the string '5'
 
   var a = String(5); // 'a' will value the string '5' and not the number 5
