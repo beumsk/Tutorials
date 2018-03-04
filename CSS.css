@@ -174,7 +174,7 @@ TODO: link to html file to show result
   background-position: center top; /* will adjust background position; right, bottom, left also */
   background-attachment: fixed; /* Fix the background image */
   background: url("") no-repeat top center; /* shortened method */
-  background: url(""), url(""); /* 2 different background images; first will be on top */
+  background: url("") top, url("") bottom; /* 2 different background images; first will be on top */
           background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
   -webkit-background-clip: text; /* to show background through text */
   -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
