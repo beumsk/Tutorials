@@ -22,7 +22,7 @@ namespace Hello
 {
   class Program
   {
-    static void Main(string[] args) // Mais method is MANDATORY for the code to work
+    static void Main(string[] args) // Main method is MANDATORY for the code to work
     {
       Console.WriteLine("Hello, World!");
     }
@@ -72,7 +72,7 @@ decimal number; // for financial values with lots of decimals
 char letter; // single character
 string name; // character string
 bool diff; // true or false
-type[] arr; // array of any type (ex int)
+type[] arr; // array of any type (ex int); reference type
 List<type> list; // list of any type (ex int)
 DayOfWeek day; // day of week enum
 
@@ -340,7 +340,7 @@ class Else : Something // class inherits content and have its own content
 Something smth = new Else();
 
 
-// Property
+// Property; kind of class's caracteristics
 public string Name 
 {
   get // computation or retrieve value and return it; youcan remove it to forbid people to get property
