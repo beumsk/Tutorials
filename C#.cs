@@ -88,6 +88,20 @@ string ageStr = "24"; int age = int.Parse(ageStr); // converts string to int 24
 int.TryParse(ageStr, out age); // checks if parse is authorized and stores value in out int; will return true here
 
 
+// Boxing
+int i = 5;
+object o = i;
+o = 6; // i = 5; o = 6
+
+
+// Unboxing
+int i =5;
+object o = i;
+o = 6;
+int j = (int)o;
+j = 7; // i = 5; o = 6; j = 7
+
+
 // Console methods
 Console.WriteLine("Hello"); // writes the string
 string input = Console.ReadLine(); // ask user to type a line; needs to be stored
@@ -330,7 +344,8 @@ class Else : Something // class inherits content and have its own content
 {
   public override void DoSomething()
   {
-    // ...
+    // override an inherited method (needs visual on mothers method)
+    base.DoSomething(); // gather body instructions from inherited method
   }
   public virtual void DoSomethingElse()
   {
