@@ -264,6 +264,7 @@ VARIABLES
 
 CONST
 // Javascript const are containers you can only read; best use for value that will not change
+// ES6 !!
 
 
   // basic const
@@ -292,6 +293,7 @@ CONST
 
   LET 
   // Javascript let are containers with small scope (a block)
+  // ES6 !!
 
 
     // let vs var
@@ -713,6 +715,7 @@ FUNCTIONS
 
 
   // arrow function
+  // ES6 !!
   var arr = [1, 2, 3];
   var squares = arr.map(x => x * x); // 1, 4, 9
 
@@ -814,6 +817,11 @@ STRING METHODS
   // check if string starts with something
   var str = "http://jojo.be";
   console.log(str.startsWith("http://")); // true
+
+
+  // remove spaces at beginning and end of a string
+  var str = '   Kangaroo   ';
+  console.log(str.trim());
 
 
   // return specific character
@@ -2786,7 +2794,7 @@ API
 // Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
 
 
-  // API with JSON (works the same but with online url); need ajax faile with ajaxGet function defined
+  // API with JSON (works the same but with online url); need ajax file with ajaxGet function defined
   ajaxGet("http://api-website/api/file", function (answer) {
     var arr = JSON.parse(answer);
     arr.forEach(function (element) {code block});
