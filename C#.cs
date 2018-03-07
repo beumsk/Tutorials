@@ -352,7 +352,9 @@ class Else : Something // class inherits content and have its own content
     // ...
   }
 }
-Something smth = new Else();
+Else smth = new Else();
+Else e = smth as Else; // checks if e is an instance of Else; returns null if not; check with "e != null"
+smth is Else; // same as above; returns true or false
 
 
 // Property; kind of class's caracteristics
@@ -491,4 +493,4 @@ F11 -> step into
 ctrl+F5 -> start without Debugging
 ctrl+k, ctrl+c -> comment
 ctrl+K, ctrl+u -> uncomment
-ctrl+k, ctrl+d -> reformat the code 
+ctrl+k, ctrl+d -> reformat the code
