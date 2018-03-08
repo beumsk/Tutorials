@@ -22,7 +22,7 @@ namespace Hello
 {
   class Program
   {
-    static void Main(string[] args) // Main method is MANDATORY for the code to work
+    static void Main(string[] args) // Main method is MANDATORY for the code to work and must be STATIC
     {
       Console.WriteLine("Hello, World!");
     }
@@ -35,7 +35,7 @@ namespace Hello
 {
   class Program
   {
-    static void Main(string[] args)
+    static void Main(string[] args) // void is used when there is no return in a method
     {
       Console.WriteLine("Your name?");
       string name = Console.ReadLine();
@@ -62,6 +62,7 @@ namespace Hello
 
 
 // Types
+var anyType; // var force the compiler to find the right type for us; should be avoided for clarity
 byte number; // integer 0 à 255
 short number; // integer -32768 à 32767
 int number; // integer -2147483648 à 2147483647
@@ -355,6 +356,17 @@ class Else : Something // class inherits content and have its own content
 Else smth = new Else();
 Else e = smth as Else; // checks if e is an instance of Else; returns null if not; check with "e != null"
 smth is Else; // same as above; returns true or false
+
+
+// Partial classes
+partial class Some 
+{ 
+  // body part 1 
+}
+partial class Some
+{
+  // body part 2
+}
 
 
 // Property; kind of class's caracteristics
