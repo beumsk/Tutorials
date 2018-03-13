@@ -232,9 +232,8 @@ switch(letterGrade)
   default:
     result = "Failing";
     break;
-  }
-  return result;
 }
+return result;
 
 
 // foreach loop
@@ -321,6 +320,17 @@ internal interface IThing
 {
   // ... abstract for abstract elements
   // ... normal for others but public or protected !
+}
+
+
+// static classes; they can be accessed without instance
+public static class static
+{
+  private static Random random = new Random();
+  public static int GetRandom(int max) 
+  {
+    return random.Next(1, max + 1);
+  }
 }
 
 
