@@ -1,12 +1,7 @@
-JAVASCRIPT
-  -Page Behavior
-    -by Beumsk
-  
+// JAVASCRIPT - Page Behavior - by Beumsk
 
     
     
-TODO: better way to present 
-
 // To create a comment. Shown in code only. Indent 2spaces
 
 /* Multiple line comment */
@@ -15,13 +10,9 @@ TODO: better way to present
 
 // FIXME: --> best practice to indicate things to fix in the code
 
-// Use inspect(f12) & debugger(source) to check easily js file
 
 
-
-
-MAIN JS 
-// Main syntax
+// MAIN JS - main syntax
 
   // Variable
   var a = "example"; 
@@ -29,7 +20,7 @@ MAIN JS
 
   // Function; also var example function() {};
   function example() {
-    code block;
+    // code block;
   } 
 
   // Double arg Function
@@ -54,11 +45,11 @@ MAIN JS
 
   // Condition
   if (a == 1) {
-    code block
+    // code block;
   } else if (a == 2) {
-    code block
+    // code block;
   } else {
-    code block
+    // code block;
   }
   var a = (b > 10) ? "Over ten" : "Under ten"; // if b > 10, a value will become "Over ten"; otherwise, "Under ten"
 
@@ -70,31 +61,34 @@ MAIN JS
 
   // Switch condition
   switch (a) {
-    case 1: code block; 
+    case 1: 
+    // code block; 
       break; 
-    case 2: code block; 
+    case 2: 
+    // code block; 
       break;
-    default: code block;
+    default: 
+    // code block;
   } 
 
   // While loop
   while (a == 1) {
-    code block
+    // code block;
   } 
 
   // Do while loop; Will execute code block at least once
   do {
-    code block
+    // code block;
   } while (false); 
 
   // For loop
   for (i = 0; i < a.length; i++) {
-    code block
+    // code block;
   } 
 
   // ForEach loop
   a.forEach(function(element) {
-    code block
+    // code block;
   }); 
 
 
@@ -115,12 +109,12 @@ MAIN JS
   document.body.removeChild(newDiv); // remove newDiv
   document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
 
-  newDiv.addEventListener("click", function () {code block}); // new event click
+  newDiv.addEventListener("click", function () {/*code block;*/}); // new event click
   newDiv.removeEventListener("click", namedFunction); // remove event click
   newDiv.addEventListener("click", function once() {this.removeEventListener("click", once)}); // event click only once
 
-  setTimeout(function (){code block}, 1000); // run code after 1sec; can clearTimeout()
-  setInterval(function (){code block}, 1000); // run code every 1sec; can clearInterval()
+  setTimeout(function (){/*code block;*/}, 1000); // run code after 1sec; can clearTimeout()
+  setInterval(function (){/*code block;*/}, 1000); // run code every 1sec; can clearInterval()
 
   document.querySelector("form").addEventListener("submit", function (e) {e.preventDefault();}); // prevent default (submit and refresh)
 
@@ -130,8 +124,8 @@ MAIN JS
 
 
 
-CONSOLELOG
-// required to show something in js
+// CONSOLELOG
+// show something in js console
 
 
   console.log("Text"); // show text
@@ -169,13 +163,13 @@ CONSOLELOG
 
 
 
-ERRORS 
+// ERRORS 
 // error example -> ReferenceError: not defined; ends the work of JS (the code afterwards will never be processed)
 
 
 
 
-STRICT MODE 
+// STRICT MODE 
 // the strict mode changes bad syntax into actual errors; helping writing ecure JS
 
 
@@ -186,7 +180,7 @@ STRICT MODE
 
 
 
-TYPES 
+// TYPES 
 // Check types of elements;
 
 
@@ -225,7 +219,7 @@ TYPES
 
 
 
-VARIABLES
+// VARIABLES
 // JavaScript variables are containers for storing data values.
 
 
@@ -262,7 +256,7 @@ VARIABLES
 
 
 
-CONST
+// CONST
 // Javascript const are containers you can only read; best use for value that will not change
 // ES6 !!
 
@@ -291,7 +285,7 @@ CONST
 
 
 
-  LET 
+  // LET 
   // Javascript let are containers with small scope (a block)
   // ES6 !!
 
@@ -308,7 +302,7 @@ CONST
 
 
 
-POP-UPS
+// POP-UPS
 // launch pop-up
 
 
@@ -327,7 +321,7 @@ POP-UPS
 
 
 
-COMPARISONS
+// COMPARISONS
 // Comparison and Logical operators are used to test for true or false
 
 
@@ -370,7 +364,7 @@ COMPARISONS
   
   
 
-CONDITIONS
+// CONDITIONS
 // Conditional statements are used to perform different actions based on different conditions
 
 
@@ -410,7 +404,7 @@ CONDITIONS
     case "rain":
       console.log("Have an umbrella");
       break;
-    case "snow";
+    case "snow":
       console.log("Wear gloves and hat");
       break;
     default: // if none of cases is true
@@ -476,7 +470,7 @@ CONDITIONS
 
 
 
-SHORT CIRCUIT
+// SHORT CIRCUIT
 // handy way to manage short conditions
 
   
@@ -508,7 +502,7 @@ SHORT CIRCUIT
 
 
 
-LOOPS
+// LOOPS
 // while the condition is true, the code is looping
 
 
@@ -661,7 +655,7 @@ LOOPS
 
 
 
-FUNCTIONS
+// FUNCTIONS
 // A JavaScript function is a block of code designed to perform a particular task. You need to invoke it
 
 
@@ -792,7 +786,7 @@ FUNCTIONS
 
 
 
-STRING METHODS 
+// STRING METHODS 
 // methods working on text strings
 
 
@@ -913,7 +907,7 @@ STRING METHODS
 
 
 
-NUMBERS METHODS
+// NUMBERS METHODS
 // methods working on numbers
 
 
@@ -953,7 +947,7 @@ NUMBERS METHODS
 
 
 
-FUNCTIONS MATH
+// FUNCTIONS MATH
 // Functions working on numbers; they start with 'Math.'
 
 
@@ -1009,7 +1003,7 @@ FUNCTIONS MATH
   
 
 
-DATE
+// DATE
 // Date object enables us to work with dates; dates are calculated from 01 Jan 1970 00:00:00
 
 
@@ -1038,7 +1032,7 @@ DATE
 
 
 
-OBJECTS
+// OBJECTS
 // they are like complexed variables; they include multiple parameters and functions; they are named indexed
 
 
@@ -1418,7 +1412,7 @@ PROTOTYPES
 
 
 
-ARRAYS
+// ARRAYS
 // JavaScript arrays are used to store multiple values in a single variable; they are number indexed
 // Careful! -> if var is set equals to an array, they will be linked and influence each other (may cause infinite loops)
 
@@ -1507,7 +1501,7 @@ ARRAYS
 
 
   // going through function arguments
-  function lol(arr1, arr2, arr3) {+
+  function lol(arr1, arr2, arr3) {
     for (i=0; i<arguments.length; i++) {
       console.log(arguments[i]);
     }
@@ -1804,7 +1798,7 @@ ARRAYS
 
 
 
-CLASSES
+// CLASSES
 // kind of special functions; classes cannot be called before it appears in the code (such as functions)
 
   
@@ -1822,7 +1816,7 @@ CLASSES
 
 
 
-REGEXP 
+// REGEXP 
 // regular expression object for matching text with a pattern
 
 
@@ -1905,7 +1899,7 @@ REGEXP
 
 
   
-DOM BASIS
+// DOM BASIS
 // nodes are linked to html tags; 2 types: element () and textual ()
   
   
@@ -1971,7 +1965,7 @@ DOM BASIS
 
   
   
-DOM GET/QUERY
+// DOM GET/QUERY
 // all ways to reach html elements
 
   
@@ -2067,7 +2061,7 @@ DOM GET/QUERY
 
   
   
-DOM CHANGE
+// DOM CHANGE
 // ways to change html elements; clear, add, etc.
 
   
@@ -2173,7 +2167,7 @@ DOM CHANGE
 
   
     
-DOM STYLE
+// DOM STYLE
 // give style to elements
   
   
@@ -2238,7 +2232,7 @@ DOM STYLE
   
   
   
-DOM EVENTS
+// DOM EVENTS
 // help to react to user's actions
   
   
@@ -2387,7 +2381,7 @@ DOM EVENTS
 
 
 
-DOM FORMS 
+// DOM FORMS 
 // Get values, check values, 
 
 
@@ -2581,7 +2575,7 @@ country.addEventListener("input", function (e) { // when typing
 
 
 
-DOM ANIMATIONS 
+// DOM ANIMATIONS 
 // All animations; use intervals for basics; CSS whenever you can; requestAnimationFrame() for the rest
 
 
@@ -2678,7 +2672,7 @@ DOM ANIMATIONS
 
 
 
-SERVER REQUESTS
+// SERVER REQUESTS
 // Manage requests to the server (HTTP, AJAX, JSON)
 
 
@@ -2790,14 +2784,14 @@ SERVER REQUESTS
 
   
 
-API 
+// API 
 // Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
 
 
   // API with JSON (works the same but with online url); need ajax file with ajaxGet function defined
   ajaxGet("http://api-website/api/file", function (answer) {
     var arr = JSON.parse(answer);
-    arr.forEach(function (element) {code block});
+    arr.forEach(function (element) {code block;});
   });
 
 
@@ -2848,7 +2842,7 @@ API
 
 
 
-SEND DATA TO SERVER
+// SEND DATA TO SERVER
 // Use http and json to send data to servers
 
 
@@ -2940,15 +2934,3 @@ SEND DATA TO SERVER
       document.getElementById("result").appendChild(messageElt);
     }, true);
   });
-
-
-  
-  
-
-
-
-
-
-
-
-  

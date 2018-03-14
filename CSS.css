@@ -1,32 +1,30 @@
-CASCADING STYLE SHEET
-  -Element Styling
-    -by Beumsk
+/* CASCADING STYLE SHEET - Element Styling - by Beumsk */
 
-
-TODO: link to html file to show result
 
 
 /* To create a comment. Shown in code only. Indent 2 spaces */
-/* Inspect(f12) to check easily css file */
 
 
-.ADD-IN-HTML
+.ADD-IN-HTML {
   <link rel="stylesheet" type="text/css" href="mystyle.css">
+}
 
 
-.PRIORITY
+.PRIORITY {
   >!important /* body { color: red !important; } */
   >Inline style (inside an HTML element) 
   >External and internal style sheets (in the head section) /* id atributes take precedence; their style will value more than class for example */
   >Browser default
+}
 
 
-.DECLARATION-ORDER
+.DECLARATION-ORDER {
   >Positionning
   >Box-model
   >Typography
   >Visual
   >Misc
+}
 
 
 .VENDOR-PREFIX {
@@ -88,6 +86,7 @@ TODO: link to html file to show result
   :valid {} /* Selects valid form elements */
   :invalid {} /* Selects invalid form elements */
   :focus {} /* Selects focused form element */
+  ::placeholder {}; /* Selects placeholder value */
 
   a[target="_blank"] {} /* Selects all elements with that attribute and value */
   [title~="flower"] {} /* select elements with an attribute value containing a specified word */

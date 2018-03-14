@@ -1,6 +1,5 @@
-JQuery
-  -Javascript Framework
-    -by Beumsk
+<!-- JQUERY - Javascript Library - by Beumsk -->
+
 
 
 <!DOCTYPE html>
@@ -104,7 +103,7 @@ JQuery
 
     // animate
     $("p").animate({left:"+=10px"}, 500, "linear"); // animates p to 10px to the right
-    $("p").animate({left:"+=10px"}, 500, "linear", function() { … }); // the function will be executed after the animation
+    $("p").animate({left:"+=10px"}, 500, "linear", function() {}); // the function will be executed after the animation
     $("p").animate({left:"+=10px", top:"+=10px"}, 1000); // multiple animations at the same time
     $("p").animate({left:"+=10px"}, 1000).animate({top:"+=10px"}, 1000); // multiple animations one after another
     $("p").animate({left:"+=10px"}, {duration:500, queue: true}); // other syntax allowing queues, (effective to vary duration of animations)
@@ -174,40 +173,40 @@ JQuery
   
 
     // events
-    $("p").on("click", function() { … }); // if click; dblclick too
-    $("p").on("scroll", function() { … }); // if scroll on an element
-    $("p").on("mouseover", function() { … }); // if mouse enter element
-    $("p").on("mouseenter", function() { … }); // if mouse enter element
-    $("p").on("mouseleave", function() { … }); // if mouse leave element
-    $("p").on("mouseout", function() { … }); // if mouse leave element
-    $("p").on("mousedown", function() { … }); // if you press on mouse on an element
-    $("p").on("mouseup", function() { … }); // if you stop pressing on mouse on an element
-    $("p").on("keydown", function() { … }); // if you press a key on your keyboard; each key has a number to select it
-    $("p").on("keyup", function() { … }); // if you stop pressing a key
-    $("p").on("keypress", function() { … }); // if you keep on pressing a key
-    $("p").on("resize", function() { … }); // if window is resized
-    $("input").on("focus", function() { … }); // if field gets focus
-    $("input").on("blur", function() { … }); // if field loses focus
-    $("input").on("change", function() { … }); // when input, textarea or select value is changed
-    $(window).on("load", function() { … }); // when everything is loaded on page
-    $(window).on("unload", function() { … }); // when you quit the current page
-    $("p").on("mouseover mouseenter", function() { … }); // multiple event in one line
+    $("p").on("click", function() {}); // if click; dblclick too
+    $("p").on("scroll", function() {}); // if scroll on an element
+    $("p").on("mouseover", function() {}); // if mouse enter element
+    $("p").on("mouseenter", function() {}); // if mouse enter element
+    $("p").on("mouseleave", function() {}); // if mouse leave element
+    $("p").on("mouseout", function() {}); // if mouse leave element
+    $("p").on("mousedown", function() {}); // if you press on mouse on an element
+    $("p").on("mouseup", function() {}); // if you stop pressing on mouse on an element
+    $("p").on("keydown", function() {}); // if you press a key on your keyboard; each key has a number to select it
+    $("p").on("keyup", function() {}); // if you stop pressing a key
+    $("p").on("keypress", function() {}); // if you keep on pressing a key
+    $("p").on("resize", function() {}); // if window is resized
+    $("input").on("focus", function() {}); // if field gets focus
+    $("input").on("blur", function() {}); // if field loses focus
+    $("input").on("change", function() {}); // when input, textarea or select value is changed
+    $(window).on("load", function() {}); // when everything is loaded on page
+    $(window).on("unload", function() {}); // when you quit the current page
+    $("p").on("mouseover mouseenter", function() {}); // multiple event in one line
     $("p").off(); // remove all event handlers of p
     $("p").off("click", functionName); // remove functionName event of p
-    $("p").on("click.namespace", function() { … }); // namespaces works like css classes; 
+    $("p").on("click.namespace", function() {}); // namespaces works like css classes; 
     $("p").off("click.namespace"); // will switch off event for this namespace only
-    $("p").one("click", function() { … }); // event only works first time
+    $("p").one("click", function() {}); // event only works first time
     $("p").trigger("click"); // useful to trigger an event from another element; some events are not triggerable (load, mouse, resize)
-    $("p").on("personalised", function() { … }); // create personalised event
+    $("p").on("personalised", function() {}); // create personalised event
     $("p").trigger("personalised"); // trigger your personalised event
-    $("p").on("click", "span", function() { … }); // event delegation; from p to span tags
+    $("p").on("click", "span", function() {}); // event delegation; from p to span tags
     $("p").off("click", "span"); // remove event delegation
 
 
     // queue
     var myQueue = $("p").queue(); // return an array of queued animations for p
     varqueueLength = $("p").queue().length; // return length of queue
-    $("p").queue(function() { … }); // add animations to the queue
+    $("p").queue(function() {}); // add animations to the queue
     $("p").dequeue(); // play and removes animation from the queue
     $("p").clearQueue(); // clears the queue
 
@@ -247,14 +246,14 @@ JQuery
 
 
     // switch on and off an event
-    function switch() {
+    function switchh() {
       alert("Image cliquée");
     }
     $("#on").on("click", function() {
-      $("img").click(switch);
+      $("img").click(switchh);
     });
     $("#off").on("click", function() {
-      $("img").off("click", switch);
+      $("img").off("click", switchh);
     });
 
 
