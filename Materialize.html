@@ -1,0 +1,61 @@
+<!-- MATERIALIZE CSS - Front-End Framework - by Beumsk -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Materialize CSS</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!-- Google icon font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"><!-- Latest compiled and minified CSS -->
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  
+  <div class="container"><!--provides a responsive fixed width container-->
+    <h1>Container</h1>
+  </div>
+
+<div class="container">
+
+<h4>Grid System</h4>
+  <div class="row"><!--sum of row must always be equal to 12-->
+    <div class="col s12 m4">s12 m4</div><!--size = s (phone<=600px) < m (tablet>600px) < l (desktop>=992px) < xl (large desktop) -->
+    <div class="col s12 m4">s12 m4</div>
+    <div class="col s12 m4">s12 m4</div>
+  </div>
+  <div class="row">
+    <div class="col s12 ">s12</div>
+    <div class="col s6 offset-s6">offset 6 and s6</div><!--offset creates a gap col before actual col-->
+  </div>
+  <div class="row">
+    <div class="col s7 push-s5">col s7 push-s5</div><!-- push and pull to change order -->
+    <div class="col s5 pull-s7">col s5 pull-s7</div>
+  </div>
+  <div class="hide"></div><!-- div hidden; hide-on-large-only -->
+  <div class="show-on-small"></div><!-- div only shown for small; show-on-medium-and-down -->
+  <div class="valign-wrapper"><h1>Vertically aligned h1</h1></div>
+  <div class=""></div>
+
+
+<h4>Typography</h4>
+  <p class="left-align">left align</p><!-- also right-align; .center-align -->
+
+
+  
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--jQuery library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script><!--Latest compiled JavaScript-->        
+</body>
+</html>
