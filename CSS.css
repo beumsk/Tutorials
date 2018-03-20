@@ -11,10 +11,14 @@
 
 
 .PRIORITY {
-  >!important /* body { color: red !important; } */
-  >Inline style (inside an HTML element) 
-  >External and internal style sheets (in the head section) /* id atributes take precedence; their style will value more than class for example */
-  >Browser default
+  <Browser default /* usually padding, fonts and sizes */
+  <User default /* usually sizes and fonts */
+  <External and internal style sheets /* each selector gives 001, 010 or 100; the bigger the more important */
+    <elements and pseudo-elements /* p, p::first-line, p::before; 001 */
+    <class, attributes and pseudo-classes /* .class, a[title], a:hover; 010 */
+    <id /* #id; 100 */
+  <Inline style (inside an HTML element) /* should be avoided */
+  <!important /* body { color: red !important; } */
 }
 
 
@@ -52,6 +56,16 @@
   p.main {} /* Selects p elements with class="main" */
   p * {} /* Selects everything in p */
 
+  /* pseudo elements; style a certain part of an element */
+  p::first-line {} /* Selects first line of <p> */
+  p::first-letter {} /* Selects first letter of <p> */
+  p::before {content: "Read this -";} /* insert some content before the content of <p> */
+  p::before {content: attr(href);} /* can also be other attribute or other */
+  p::after {content: " -Read more… ";} /* insert some content after the content of <p> */
+  p::selection {} /* Selects the portion of <p> that is selected by a user */
+  ::placeholder {}; /* Selects placeholder value */
+
+  /* pseudo classes; style an element according to its state */
   a:link {} /* Selects all unvisited links */
   a:visited {} /* Selects all visited links */
   a:hover {} /* Selects links on mouse over */
@@ -59,13 +73,6 @@
   a:focus {} /* Selects focused link; mainly for input */
   a:hover {transition: all .3s ease} /* smooth transition of 0.3sec */
   a:target {} /* Selects the target link; very useful to make things pop up */
-
-  p:first-line {} /* Selects first line of <p> */
-  p:first-letter {} /* Selects first letter of <p> */
-  p:before {content: "Read this -";} /* insert some content before the content of <p> */
-  p:before {content: attr(href);} /* can also be other attribute or other */
-  p:after {content: " -Read more… ";} /* insert some content after the content of <p> */
-  p:selection {} /* Selects the portion of <p> that is selected by a user */
 
   p:first-child {} /* Selects first p only */
   p:nth-child(2) {} /* Selects 2d child; or other */
@@ -86,7 +93,6 @@
   :valid {} /* Selects valid form elements */
   :invalid {} /* Selects invalid form elements */
   :focus {} /* Selects focused form element */
-  ::placeholder {}; /* Selects placeholder value */
 
   a[target="_blank"] {} /* Selects all elements with that attribute and value */
   [title~="flower"] {} /* select elements with an attribute value containing a specified word */
