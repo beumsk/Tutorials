@@ -146,8 +146,9 @@
 
 
 .FONT {
-  font-family: "Times New Roman", Times, serif;
-  font-family: "Fontname";
+  font-family: "Times New Roman", Times, serif; /* font-family with backup fonts */
+  font-family: serif sans-serif monospace cursive fantasy; /* main native font types; times, arial, console-like, comic, papyrus */
+  font-family: "Fontname"; /* non-native font */
   font-style: normal italic oblique; 
   font-size: 14px 14em 14rem 14vh 14vw 14%; /* Use one. 1em = 16px; 1rem is based on root font-size while 1em is based on navigator or parent font-size */ 
   font-weight: bold normal; /* Weight work also with %, ... */
@@ -232,8 +233,8 @@
   margin: 10px 5px 10px 5px; /* shortened method; top right bottom left */
   margin: auto; /* center element but need to specify width */
   margin-left: inherit; /* gets the value from parent element */
-  /* margin collapse make only biggest margin appear if 2 follow each other */
-  /* h1 {margin-bottom: 50px;} and h2 {margin-top: 20px;} */
+  /* margin collapse causes 2 succint margins to collapse keeping only the biggest margin of the 2 */
+  /* h1 {margin-bottom: 50px;} and h2 {margin-top: 20px;} will result in 5Opx margin */
 }
 
 
@@ -308,11 +309,11 @@
 
 
 .DISPLAY { 
-  display: inline; /* by default for <a> <span> <img> displays elements in line */
-  display: block; /* by default for most of tags displays elements by full width block */
-  display: none; /* hide item and affect layout, visibility is the same */
-  display: inline-block; /* displays elements in line as blocks; allows to use vertical-align */
-  visibility: hidden; /* hide item */
+  display: inline; /* by default for <a> <span> <img> displays elements in line; cannot set width on inline elements, they expend to fit all the inner content */
+  display: block; /* by default for most of tags displays elements by full width block; can set width */
+  display: none; /* hide item and affect layout; no space will be taken by this element */
+  display: inline-block; /* displays elements in line as blocks; allows to set width and vertical-align */
+  visibility: hidden; /* hide item but takes the place it should have when shown */
 }
 
 
