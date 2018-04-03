@@ -274,11 +274,12 @@
   text-align: center left right justify; /* justify(=text of exact same width) */
   text-decoration: none; /* very useful for links */
   text-decoration: overline underline line-through;
-  text-transform: uppercase lowercase capitalize;
+  text-transform: uppercase lowercase capitalize none;
   text-indent: 50px; /* alineas */
   letter-spacing: 3px; /* space between letters */
   word-spacing: 3px; /* space between words */
-  word-wrap: break-word; /* break word to make it fit in box */
+  overflow-wrap: break-word normal; /* break word to make it fit in box */
+  word-break: break-all keep-all break-word normal; /* similar to overflow-wrap; break all breaks everything */
   white-space: nowrap; /* prevent line to wrap to a new line */
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
   line-height: .8; /* space between lines; common practice is to set around 150% */
