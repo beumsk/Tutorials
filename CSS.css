@@ -450,10 +450,19 @@
 
 .ANIMATION {
   /* multiple animations step by step; need @keyframes */
+  animation-name: keyframe_name; /* link to the @keyframes */
+  animation-duration: 2s; /* time for the animation */
+  animation-timing-function: ease linear ease-in ease-out ease-in-out step-start step-end steps(1); /* different type of animation */
+  animation-delay: 1s; /* delay before animation; can be negative value */
+  animation-direction: normal reverse alternate alternate-reverse; /* specify in which order will the animation be played */
+  animation-iteration-count: 3 infinite; /* number of time the animation will be played */
+  animation-fill-mode: none forwards backwards both; /* how the animation apply style to its target */
+  animation-play-state: running paused; /* run or pause the animation */
   -webkit-animation: keyframe_name 2s; /* for safari and chrome */
           animation: keyframe_name 2s; /* use animation created before in @keyframes */
   -webkit-animation: keyframe_name 2s linear alternate infinite steps(1); /* for chrome and safari */
           animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
+          animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
 }
 
 
