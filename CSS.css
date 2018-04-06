@@ -248,18 +248,22 @@
 
 
 .HEIGHT { 
-  /* While px are fixed, em and % depends on parents */
+  /* While px are fixed, em and % depends on parents, and vh, vw, vmin and vmax depends on viewport */
   height: 200px;
   max-height: 100%;
   min-height: 20em;
+  height: 10vh; /* 10% of viewport height */
+  height: 10vmin; /* 10% of smaller viewport dimension (vh or vw) */
 }
 
 
 .WIDTH { 
-  /* While px are fixed, em and % depends on parents */
+  /* While px are fixed, em and % depends on parents, and vh, vw, vmin and vmax depends on viewport */
   width: 400px;
   max-width: 100%;
   min-width: 20em;
+  width: 10vw; /* 10% of viewport width */
+  width: 10vmax; /* 10% of bigger viewport dimension (vh or vw) */
 }
 
 
