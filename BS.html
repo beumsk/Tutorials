@@ -39,8 +39,8 @@
     <div class="col-sm-3 bg-danger">sm-3</div>
   </div>
   <div class="row">
-    <div class="col-md-4 bg-primary">md-4</div>
-    <div class="col-md-offset-4 col-md-4 bg-danger">md-4 + md-offset-4</div><!--offset creates a gap col before actual col-->
+    <div class="col-md-4 col-lg-6 bg-primary">md-4</div>
+    <div class="col-md-offset-4 col-md-4 col-lg-offset-0 col-lg-6 bg-danger">md-4 + md-offset-4</div><!--offset creates a gap col before actual col; you can remove it with offset-0-->
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 bg-primary">sm-12 md-6 lg-4</div><!--multiple class to define col behavior on different devices-->
@@ -501,8 +501,11 @@
   </div>
 
 
-<h4>Buttons</h4>
-  <a class="btn btn-success" data-toggle="button">Simple Bascule</a>
+<h4>Toggle button</h4>
+  <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Single toggle</button>
+
+
+<h4>Checkbox/radio buttons</h4>
   <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-success">
       <input type="radio">One
@@ -513,6 +516,21 @@
     <label class="btn btn-success">
       <input type="radio">Three
     </label>
+  </div>
+
+
+<h4>Button dropdown</h4>
+  <div class='btn-group'>
+    <button type='button' class='btn btn-default btn-lg dropdown-toggle' data-toggle="dropdown">
+      Take the Tour <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href='#'>Transporter</a></li>
+      <li><a href='#'>Orbital Elevator</a></li>
+      <li><a href='#'>RocketBus</a></li>
+      <li class="divider"></li>
+      <li><a href='#'>Learn More</a></li>
+    </ul>
   </div>
 
 
@@ -630,20 +648,21 @@
 
 
 <h4>Navbar Collapse</h4>
-  <nav class="navbar navbar-inverse" role="navigation"><!--try navbar-static-bottom-->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation"><!-- navbar-static-bottom, navbar-fixed-top, navbar-fixed-bottom -->
+    <!-- add a container div to center and pad nav content -->
     <div class="navbar-header">   
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><!--collapse by default under 768px-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><!-- collapse by default under 768px -->
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Tigers</a><!--name of the website-->
+      <a class="navbar-brand" href="#">Tigers</a><!-- name of the website; can add image or be an image only -->
     </div>
     <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li> <a href="#">Home</a> </li>
-        <li class="dropdown"> 
-          <a data-toggle="dropdown" href="#">Witness <b class="caret"></b></a>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Home</a></li>
+        <li class="dropdown"><!-- dropdown link -->
+          <a  href="witness.html" data-target="#" data-toggle="dropdown">Witness <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Petters</a></li>
             <li><a href="#">Zoos</a></li>
@@ -652,8 +671,8 @@
             <li><a href="#">Other</a></li>
           </ul>
         </li> 
-        <li> <a href="#">Link</a> </li>
-        <li> <a href="#">References</a> </li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">References</a></li>
       </ul>
     </div>
   </nav>
@@ -662,7 +681,7 @@
 <h4>Scrollspy</h4>
   <body data-spy="scroll" data-target=".navbar">
   <div class="container-fluid">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
