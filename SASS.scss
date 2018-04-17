@@ -6,50 +6,58 @@
 
 /* SASS and SCSS only difference is in the use or not of '{}' and ',' */
 
+/* comment written with double slash // will not be compiled in the css code; they are sass specific */
+
 
 .NESTING-SELECTORS {
-  .parent {
+  .parent { /* .parent */
     width: 100px;
-    .child {
+    .child { /* .parent .child */
       width: 50px;
+      &.child-one { /* .parent .child.child-one */
+        width: 40px;
+      }
     }
   }
 }
 
 .NESTING-PROPERTIES {
   border : {
-    top: 2px solid black;
-    bottom: 1px solid grey;
+    top: 2px solid black; /* border-top */
+    bottom: 1px solid grey; /* border-bottom */
   }
 }
 
 .VARIABLES {
   $translucent-white: rgba(255,255,255,0.3);
+  $translucent-white: rgba(256,256,256,0.1) !default; /* !default makes sure it will not override previous variable */
   background-color: $translucent-white;
   $header-height: 200px;
   height: $header-height;
   $main-font: 12px Arial bold;
   font: $main-font;
+  $side: top;
+  #{$side}: 10px; /* top: 10px; */
 }
 
 .NESTING-PSEUDO-ELEMENTS {
   div {
     color: red;
-    &:hover: {
+    &:hover: { /* div:hover */
       color: blue;
     }
   }
 }
 
-.MIXINS {
-  @mixin backface-visibility($visibility: hidden) { /* default value is passed here */
+.MIXINS { /* mixins should always comes before imports to avoid sass error !!! */
+  @mixin backface-visibility($visibility: hidden) { /* default value is passed here; can be override as argument later */
     backface-visibility: $visibility;
     -webkit-backface-visibility: $visibility;
     -moz-backface-visibility: $visibility;
     -ms-backface-visibility: $visibility;
     -o-backface-visibility: $visibility;
   }
-  @mixin backface-visibility(hidden);
+  div { @include backface-visibility(visible); }
 
   @mixin dashed-border($width, $color: #FFF) {
     border: {
@@ -58,12 +66,17 @@
       style: dashed;
     }
   }
-  //only passes non-default argument
+  /* only passes non-default argument */
   span { @include dashed-border(3px); }
-  //passes both arguments
+  /* passes both arguments */
   p { @include dashed-border(3px, green); }
-  //passes out of order but explicitly defined
+  /* passes out of order but explicitly defined */
   div { @include dashed-border(color: purple, width: 5px); }
+
+  @mixin double-box-shadow($shadows...) { /* without the 3dots, mixin will result in an error when getting double shadow; it will think it is 2 arguments !! */
+    box-shadow: $shadows;
+  }
+  div { @include double-box-shadow(0 0 2px #333, 2 2 4px #333); }
 }
 
 .LIST-ARGUMENTS {
@@ -129,8 +142,40 @@
 }
 
 
+.WHILE-LOOP {
+  $i: 1;
+  .item {
+    position: absolute;
+    right: 0;
+    @while $i < 4 {
+      top: $i * 30px;
+    }
+    $i: $i + 1;
+  }
+}
+
+
 .CONDITIONALS {
-  width: if(2 == 2, 50px, 100px); /* condition, if true, if false */
+  width: @if(2 == 2, 50px, 100px); /* condition, if true, if false */
+
+  $theme: light;
+  header {
+    @if $theme == dark {
+      background: #000;
+    } @else if $theme == pink {
+      background: pink;
+    } @else {
+      background: #fff;
+    }
+  }
+}
+
+
+.FUNCTIONS { /* use when you want values to be returned */
+  @function setWdith($target; $context) {
+    @return ($target / $context) * 100%;
+  }
+  div { width: setWidth(350px, 1000px); }
 }
 
 
@@ -146,6 +191,18 @@
   .extended {
     @extend .original; /*gets pink color from .original */
   }
+}
+
+
+.PLACEHOLDER-SELECTOR {
+  %ir {
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background-color: transparent;
+  }
+  .logo { @extend %ir; }
 }
 
 
