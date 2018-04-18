@@ -149,8 +149,8 @@
     right: 0;
     @while $i < 4 {
       top: $i * 30px;
+      $i: $i + 1;
     }
-    $i: $i + 1;
   }
 }
 
