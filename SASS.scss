@@ -84,6 +84,20 @@
 }
 
 
+.MEDIA-QUERIES {
+  @mixin respond-to($type, $query) {
+    @media ($type: $query) {
+      @content
+    }
+  }
+  .element { /* rule will apply under media query rules */
+    @include respond-to(min-width, 900px) {
+      width: 30%;
+    }
+  }
+}
+
+
 .LIST-ARGUMENTS {
   $stripe-properties: to bottom, 15%, blue, white;
   @include stripes($stripe-properties...);
