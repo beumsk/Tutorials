@@ -1,7 +1,6 @@
 /* CASCADING STYLE SHEET - Element Styling - by Beumsk */
 
 
-
 /* To create a comment. Shown in code only. Indent 2 spaces */
 
 
@@ -150,7 +149,7 @@
   font-family: serif sans-serif monospace cursive fantasy; /* main native font types; times, arial, console-like, comic, papyrus */
   font-family: "Fontname"; /* non-native font */
   font-style: normal italic oblique; 
-  font-size: 14px 14em 14rem 14vh 14vw 14%; /* Use one. 1em = 16px; 1rem is based on root font-size while 1em is based on navigator or parent font-size */ 
+  font-size: 14px 14em 14rem 14vh 14vw 14%; /* Use one. 1em = 16px; 1rem is based on root font-size while 1em is based on parent(context) font-size */ 
   font-weight: bold normal; /* Weight work also with %, ... */
   font-variant: small-caps; /* Small capitalized letters */
   font: italic bold 20px/30px arial; /* shortened method; style, weight, size, line-height, family; size and family are mandatory */
