@@ -159,6 +159,10 @@
 
   console.log(typeof "string"); // can return number, boolean, string, function, object (array return object in JS)
 
+  console.warn("Warning"); // display some content as a warning message
+
+  console.assert(2 == 2); // returns undefined if true and returns detailed error when false
+
 
 
 
