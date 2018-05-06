@@ -3,13 +3,12 @@
     
     
 // To create a comment. Shown in code only. Indent 2spaces
-
 /* Multiple line comment */
+
 
 // TODO: --> best practice to indicate things to do in the code
 
 // FIXME: --> best practice to indicate things to fix in the code
-
 
 
 // MAIN JS - main syntax
