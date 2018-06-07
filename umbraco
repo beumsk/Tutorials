@@ -1,0 +1,14 @@
+
+
+umbraco?
+cshtml ?
+razor ?
+
+@(RenderBody)
+
+@(Html.Partial("nameOfTheFile", ...))
+
+Html.RequiresCss("/path")
+@Html.RenderCssHere()
+
+@(Umbraco.GetDictionnaryValue("ValueName"))
