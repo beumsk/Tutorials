@@ -1,8 +1,56 @@
 
+mlebreton@netkoders.com
+mlb$35473@
 
 umbraco?
 cshtml ?
 razor ?
+
+Installation: 
+  1. Create project
+  2. nuget console or nuget store --> Install-Package UmbracoCms
+  2. or download umbraco on site and launch solution on Visual studio
+  3. Run to create umbraco solution and log in (whatever you like, but remember it)
+  4. Use SQL CE and no template
+  5. activate https --> SSL field to true in web.config
+
+Content:
+  Defined by a content type
+  Publish/Unpublish
+
+Media:
+  Used for images
+
+Settings:
+  Document types: create pages (metadata, content)
+  Templates: renders the content of the pages
+  Partials views: parts of pages reused in a lot of places
+  Languages: manages a multi-language site
+  Dictionary: store word in different languages
+  Media types: img settings
+
+Developers:
+  Packages: find leblender, robots.txt, etc.
+  Data types: textbox, image uploader, etc. to use in document types
+  Macros: create parts to integrate later (better to use partials)
+
+Members:
+  People accessing the frontend
+
+Users:
+  People accessing the backend
+
+
+
+Umbraco.Web.Mvc.UmbracoTemplatePage
+Umbraco.Web.Mvc.UmbracoTemplatePage<Model>
+
+Umbraco.Web.Mvc.UmbracoViewPage
+Umbraco.Web.Mvc.UmbracoViewPage<Model>
+
+UmbracoApplication
+UmbracoContext
+UmbracoHelper
 
 @(RenderBody)
 
@@ -12,3 +60,20 @@ Html.RequiresCss("/path")
 @Html.RenderCssHere()
 
 @(Umbraco.GetDictionnaryValue("ValueName"))
+
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+  var pageId = Model.MacroParameters["pageId"];
+  var page = default(IPublishedContent);
+
+  if  (page != null && page.Children.Any())
+  {
+    <ul>
+      @foreach (var subPage in page.Children)
+      {
+        <li><a href="@(subPage.Url)">@(subPage.Name)</a></li>
+      }
+    </ul>
+  }
+}
+
