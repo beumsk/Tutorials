@@ -56,6 +56,13 @@ UmbracoHelper
 
 @(Html.Partial("nameOfTheFile", ...))
 
+@(Html.Action("nameOfAction", "nameOfController"));
+
+@using (Html.BeginUmbracoForm<App.LoginForm>("Login")) {}
+
+@(Html.LabelFor(m->m.Login))
+@(Html.EditorFor(m->m.Login))
+
 Html.RequiresCss("/path")
 @Html.RenderCssHere()
 
