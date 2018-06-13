@@ -364,7 +364,7 @@
   box-shadow: 6px 6px 3px 3px black, 12px 12px 3px 3px black; /* multiple shadow effects possible with comas */
 }
 
-
+/* to remove??*/
 .TOOLTIP {
   position: relative;
   display: inline-block;
