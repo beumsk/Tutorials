@@ -40,6 +40,11 @@ Members:
 Users:
   People accessing the backend
 
+Create pages:
+  1. Create document type (check permission to set as root or set children)
+  2. Create content (click on the dots)
+  3. to display content, use a template (and link it via doc type)
+
 
 
 Umbraco.Web.Mvc.UmbracoTemplatePage
