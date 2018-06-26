@@ -324,6 +324,17 @@
 
 
 
+// USEFUL TOOLS
+// other useful snippet of codes
+
+
+  // create audio and start it
+  var audio = new Audio("file.mp3");
+  audio.play();
+
+
+
+
 // COMPARISONS
 // Comparison and Logical operators are used to test for true or false
 
