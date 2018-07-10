@@ -25,7 +25,7 @@
 <div class="container-fluid">
 
 <h4>Grid System</h4>
-  <div class="row"><!--sum of row must alwaysbe equal to 12-->
+  <div class="row"><!--sum of row must always be equal to 12-->
     <div class="col-sm-6 bg-danger">sm-6</div><!--size = xs (phone<768px) < sm (tablet>=768px) < md (desktop>=992px) < lg (large desktop>=1200px)-->
     <div class="col-sm-3 bg-primary">sm-3</div>
     <div class="col-sm-3 bg-danger">sm-3</div>
@@ -34,14 +34,29 @@
     <div class="col-md-4 col-lg-6 bg-primary">md-4</div>
     <div class="col-md-offset-4 col-md-4 col-lg-offset-0 col-lg-6 bg-danger">md-4 + md-offset-4</div><!--offset creates a gap col before actual col; you can remove it with offset-0-->
   </div>
+  <div class="row"><!-- BS4 is smart enough to divide multiple columns in egal parts without specifying their size -->
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+  <div class="row"><!-- create a linebreak with the .w-100 class (add hidden/visible classes to manage the break according to screen size) -->
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="w-100"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 bg-primary">sm-12 md-6 lg-4</div><!--multiple class to define col behavior on different devices-->
     <div class="col-sm-12 col-md-6 col-lg-4 bg-danger">sm-12 md-6 lg-4</div>
     <div class="col-sm-12 col-md-6 col-lg-4 bg-primary">sm-12 md-6 lg-4</div>
   </div>
   <div class="clearfix"></div><!--Stop floating effects; clear:both; -->
-  <div class="visible-lg"></div><!-- div only visible when large (>1200px) -->
-  <div class="hidden-xs"></div><!-- div only hidden when xsmall -->
+  <div class="d-none"></div><!-- hidden on all -->
+  <div class="d-block"></div><!-- visible on all -->
+  <div class="d-none d-xl-block"></div><!-- div only visible when Xlarge (>1200px) -->
+  <div class="d-none d-sm-block"></div><!-- div only hidden when Xsmall (<576px) -->
 
 
 <h4>Typography</h4>
