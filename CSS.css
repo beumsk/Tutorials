@@ -365,13 +365,13 @@
 }
 
 /* to remove??*/
-.TOOLTIP {
+/*.TOOLTIP {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
-}
+}*/
 
-.TOOLTIP .TOOLTIPTEXT {
+/*.TOOLTIP .TOOLTIPTEXT {
   visibility: hidden;
   width: 120px;
   background-color: black;
@@ -380,13 +380,13 @@
   border-radius: 6px;
   padding: 5px 0;
   /* Position the tooltip */
-  position: absolute;
+/*  position: absolute;
   z-index: 1;
-}
-
+}*/
+/*
 .TOOLTIP:hover .TOOLTIPTEXT {
   visibility: visible;
-}
+}*/
 
 
 .TRANSFORM-2D {
