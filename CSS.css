@@ -364,30 +364,6 @@
   box-shadow: 6px 6px 3px 3px black, 12px 12px 3px 3px black; /* multiple shadow effects possible with comas */
 }
 
-/* to remove??*/
-/*.TOOLTIP {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}*/
-
-/*.TOOLTIP .TOOLTIPTEXT {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  /* Position the tooltip */
-/*  position: absolute;
-  z-index: 1;
-}*/
-/*
-.TOOLTIP:hover .TOOLTIPTEXT {
-  visibility: visible;
-}*/
-
 
 .TRANSFORM-2D {
   transform: translate(50px, 100px); /* moves 50px to right and 100px down */
