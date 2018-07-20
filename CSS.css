@@ -502,8 +502,8 @@
 .MULTI-COLUMNS {
   /* not so useful; probably better to use grids */
   -webkit-columns: 4 100px; /* Chrome, Safari, Opera */
-  -moz-columns: 4 100px; /* Firefox */
-  columns: 4 100px; /* IE */
+     -moz-columns: 4 100px; /* Firefox */
+          columns: 4 100px; /* IE */
   column-count: 4; /* 4 columns */
   column-width: 200px; /* width of columns */
   column-gap: 50px; /* gap bewteen columns */
