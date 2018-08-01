@@ -71,6 +71,8 @@ UmbracoHelper
 Html.RequiresCss("/path")
 @Html.RenderCssHere()
 
+anyString.Replace(" ", "-")
+
 @(Umbraco.GetDictionnaryValue("ValueName"))
 
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
