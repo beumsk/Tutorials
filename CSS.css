@@ -72,7 +72,8 @@
   a:active {} /* Selects the active link; when you click on it */
   a:focus {} /* Selects focused link; mainly for input */
   a:hover {transition: all .3s ease} /* smooth transition of 0.3sec */
-  a:target {} /* Selects the target link; very useful to make things pop up */
+  a:target {} /* Selects the target link (eg: #about); very useful to make things pop up when reached */
+
 
   p:first-child {} /* Selects first p only */
   p:nth-child(2) {} /* Selects 2d child; or other */
@@ -93,6 +94,9 @@
   :valid {} /* Selects valid form elements */
   :invalid {} /* Selects invalid form elements */
   :focus {} /* Selects focused form element */
+  :enabled {} /* Selects enabled element */
+  :disabled {} /* Selects disabled element */
+  :checked {} /* Selects checked radio and checbox elements */
 
   a[target="_blank"] {} /* Selects all elements with that attribute and value */
   [title~="flower"] {} /* select elements with an attribute value containing a specified word */
