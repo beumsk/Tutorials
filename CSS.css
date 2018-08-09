@@ -481,6 +481,7 @@
   filter: invert(100%); /* set a grayscale to 100% !!IE */
   filter: contrast(100%); /* set a grayscale to 100% !!IE */
   filter: blur(5px); /* set a blur of 5px !!IE */
+  filter: blur(5px) hue-rotate(90deg); /* set a blur of 5px and a rotation in the color circle of 90deg !!IE */
   filter: initial; /* set a grayscale to 100% !!IE */
 }
 
