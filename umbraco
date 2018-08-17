@@ -91,3 +91,4 @@ anyString.Replace(" ", "-")
   }
 }
 
+@Umbraco.Content(CurrentPage.GetPropertyValue("authorr"))
