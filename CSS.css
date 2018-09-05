@@ -519,7 +519,7 @@
 
 
 .GRIDS {
-  /* not available in IE and Edge; best to use @supports for workaround */
+  /* not available in IE; best to use @supports for workaround */
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
@@ -536,3 +536,6 @@
   grid-row: 1 / 5; /* starts at horizontal line 1 and ends at 5 */
   grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
 }
+
+
+/* add css shapes ? */
