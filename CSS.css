@@ -432,6 +432,15 @@
   }
 }
 
+@keyframes shortcut {
+  0%, 5%, 15%, 100% { /* 0% and 100% are not even needed here */
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(10px);
+  }
+}
+
 .ANIMATION {
   /* multiple animations step by step; need @keyframes */
   animation-name: keyframe_name; /* link to the @keyframes */
