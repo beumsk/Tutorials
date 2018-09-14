@@ -2634,6 +2634,12 @@ country.addEventListener("input", function (e) { // when typing
   // reload page
   location.reload(true);
 
+  // Change url
+  window.location.replace("new url");
+
+  // Get current url
+  document.URL;
+
   
   // Start timer and be able to pause/start
   var start = document.getElementById("start");
