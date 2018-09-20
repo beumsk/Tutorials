@@ -146,6 +146,7 @@
   height: 100px - 10; /* 90px */
   height: (100px / 10); /* 10px; division needs parentheses or other workaround such as variables */
   height: 12 % 5 + 0px; /* 2px */
+  height: 100/4*1%; /* 25% */
 }
 
 
