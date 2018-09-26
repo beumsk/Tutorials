@@ -92,3 +92,8 @@ anyString.Replace(" ", "-")
 }
 
 @Umbraco.Content(CurrentPage.GetPropertyValue("authorr"))
+
+@foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias")
+{ 
+  @item 
+}
