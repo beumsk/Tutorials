@@ -10,7 +10,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"><!--Latest compiled and minified CSS-->
+  <!--Latest compiled and minified CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 
 <body>
@@ -55,11 +56,39 @@
     <div class="col-sm-12 col-md-6 col-lg-4 bg-danger">sm-12 md-6 lg-4</div>
     <div class="col-sm-12 col-md-6 col-lg-4 bg-primary">sm-12 md-6 lg-4</div>
   </div>
+  <div class="row justify-content-md-center"><!-- align horizontally the columns inside; also start, end, around and between -->
+    <div class="col-3">
+    <div class="col-3">
+  </div>
+  <div class="row align-items-center"><!-- align vertically the columns inside; also start & end -->
+    <div class="col-3">
+    <div class="col-3">
+  </div>
+  <div class="row">
+    <div class="col-3 align-self-start"><!-- align vertically the columns inside -->
+    <div class="col-3 align-self-center">
+    <div class="col-3 align-self-end">
+  </div>
+  <div class="row">
+    <div class="col-3 order-12"><!-- change item order -->
+    <div class="col-3">
+    <div class="col-3 order-1">
+  </div>
   <div class="clearfix"></div><!-- clear floating effects; clear:both; -->
   <div class="d-none"></div><!-- hidden on all -->
   <div class="d-block"></div><!-- visible on all -->
   <div class="d-none d-xl-block"></div><!-- div only visible when Xlarge (>1200px) -->
   <div class="d-none d-sm-block"></div><!-- div only hidden when Xsmall (<576px) -->
+
+
+<h4>Media</h4>
+  <div class="media"><!-- help create repetitive contents: comments, tweets etc; possible to change alignement, order, nesting -->
+    <img class="mr-3" src="" alt="">
+    <div class="media-body">
+      <h4 class="mt-0">Media heading</h4>
+      Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+  </div>
 
 
 <h4>Typography</h4>
@@ -287,18 +316,6 @@
   <img class="img-responsive img" src="http://wallpapercave.com/wp/EX7yydn.jpg">
   <div class="caption text-center">Batman: The animated series - 1992</div>
 </div>
-
-
-<h4>Media</h4>
-  <div class="media col-lg-12"><!--help integrate image, video, etc-->
-    <div class="media-left">
-      <iframe width="420" height="320" src="http://www.youtube.com/embed/VmnIeLmjuHA" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Un tigre domestique dans son canapé</h4>
-      Admirez ce noble animal...
-    </div>
-  </div>
 
 
 <h4>Embed responsive</h4>
@@ -742,9 +759,11 @@
 
   
 </div>
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><!--jQuery library-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script><!--IU jQuery for better animations-->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script><!--Latest compiled JavaScript-->   
+  <!--jQuery library-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!--IU jQuery for better animations-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <!--Latest compiled JavaScript-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>   
 </body>
 </html>
