@@ -104,13 +104,24 @@
   <pre>This text is useful for multiple lines of code</br></pre><!--for multiple lines of code; .pre-scrollable to scroll on it-->
 
 
-<h4>Text and Background Color</h4>
+<h4>Text and Background Colors</h4>
   <p class="text-muted">This text is muted.</p><!--add color to text-->
   <p class="bg-primary">This text is important.</p><!--try those with .bg-primary etc to add color to background-->
+  <p class="text-secondary">This text is secondary.</p>
   <p class="text-success">This text indicates success.</p>
   <p class="bg-info">This text represents some information.</p>
   <p class="text-warning">This text represents a warning.</p>
-  <p class="bg-danger">This text represents danger.</p> 
+  <p class="bg-danger">This text represents danger.</p>
+  <p class="text-light">This text is light.</p>
+  <p class="bg-dark">This background is dark.</p>
+
+
+<h4>Borders</h4>
+  <p class="border"></p><!-- adds borders; use -0 to remove borders -->
+  <p class="border-top"></p><!-- adds border top; use -0 to remove top border -->
+  <p class="border border-primary"></p> <!-- adds border of a certain color -->
+  <p class="rounded"></p><!-- adds border-radius; use -0 to remove border-radius -->
+  <p class="rounded-circle"></p><!-- adds border-radius circle -->
 
 
 <h4>Lists</h4>
@@ -201,107 +212,6 @@
       </tr>
     </table>
   </section>
-
-
-<h4>Forms</h4>
-  <form><!--.form-inline -->
-    <legend>Legend</legend>
-      <div class="form-group"><!--form-group creates group in a form-->
-        <label for="texte">Text : </label>
-        <input id="text" type="text" class="form-control" placeholder="Insert your text"><!--form-control make form vertical and full width-->
-      </div>
-
-      <div class="form-group">
-        <label for="textarea">Textarea : </label>
-        <textarea id="textarea" type="textarea" class="form-control" placeholder="Insert your text"></textarea><!--placeholder shows text before typing-->
-      </div>
-
-      <div class="form-group">
-        <label for="select">Select : </label>
-        <select id="select" class="form-control">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Amount :</label>
-        <div class="input-group"><!--input-group stick information before or after a form-->
-          <span class="input-group-addon">€</span><!--input-group-addon is needed to stick info-->
-          <input type="text" name="" class="form-control input-lg" placeholder="100,000"><!--input-lg makes it large-->
-          <span class="input-group-addon">.00</span>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="sr-only">label</label><!--helps screen readers with your form while you don't actually show the label-->
-        <div class="input-group">
-          <input type="text" class="form-control input-sm" placeholder="100,000"><!--input-sm makes it small-->
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-default btn-sm">Confirm</button><!--.btn-block to make it full width-->
-            <button type="submit" class="btn btn-default btn-sm">Cancel</button> 
-          </span>
-        </div>
-      </div>
-
-      <div class="input-group">   
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox">
-            </span>
-            <input type="text" class="form-control">
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon">
-              <input type="checkbox">
-            </span>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">
-              <input type="radio">
-            </span>
-            <input type="text" class="form-control">
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon">
-              <input type="radio">
-            </span>
-            <input type="text" class="form-control">
-          </div>
-        </div>
-      </div>
-
-      <fieldset>
-        <legend>Validation, erreur et succès</legend>
-        <div class="form-group has-error has-feedback"><!--colorise div-->
-          <label class="control-label" for="idError">Erreur</label>
-          <input type="text" class="form-control" id="idError">
-          <span class="glyphicon glyphicon-remove form-control-feedback"></span><!--add icon; works only with form-control input-->
-          <span class="help-block">Corrigez l'erreur s'il vous plait</span>
-        </div>
-        <div class="form-group has-warning has-feedback">
-          <label class="control-label" for="idWarning">Avertissement</label>
-          <input type="text" class="form-control" id="idWarning">
-          <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
-          <span class="help-block">Il y a un problème dans la saisie</span>
-        </div>
-        <div class="form-group has-success has-feedback">
-          <label class="control-label" for="idSuccess">Réussite</label>
-          <input type="text" class="form-control" id="idSuccess">
-          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-          <span class="help-block">Saisie correcte</span>
-        </div>
-      </fieldset>
-
-      <button type="submit" class="btn btn-default">Envoyer</button>
-  </form>
-
-  <!--Rewrite BS forms; add horizontal, more titles, radio, help text, ect-->
 
 
 <h4>Images</h4>
@@ -434,12 +344,6 @@
   <h4><span class="label label-info">Info Label</span></h4>
   <h5><span class="label label-warning">Warning Label</span></h5>
   <h6><span class="label label-danger">Danger Label</span></h6>
-
-
-<h4>Pagination</h4>
-
-
-<h4>Pager</h4>
 
 
 <h4>Image button</h4>
