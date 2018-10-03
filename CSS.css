@@ -118,7 +118,7 @@
   color: red; border: solid 2px currentColor; /* will have border red because currentColor refers to element's color */
   color: var(--main-color); /* uses variable and colors to red */
   background: var(--semi-transparent); /* uses variable to color background */
-  padding: var(--anything, 10px); /* uses variable for padding and a value used if the variables is undefined */
+  padding: var(--anything, 10px); /* uses variable for padding and a fallback value used if the variables is undefined */
   color: initial; /* reset value */
 }
 
@@ -199,6 +199,8 @@
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* you can use it with transparency of course */
   background-image: linear-gradient(to right, blue 0%, green 30%); /* % or pixels to change space of each color */
   background-image: radial-gradient(circle at center, white, green); /* radial gradient; other positions available; ellipse too */
+  background-image: repeating-linear-gradient(45deg, yellow 0px, yellow 40px, black 40px, black 80px); /* repeats pattern; not working before IE11 */
+  /* conical-gradient to come one day */
 }
 
 
