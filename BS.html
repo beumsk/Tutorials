@@ -74,11 +74,26 @@
     <div class="col-3">
     <div class="col-3 order-1">
   </div>
+
+
+<h4>Spacing</h4>
+  <div class="p-2"></div><!-- padding; p-0, p-1, p-5 -->
+  <div class="m-2"></div><!-- margin; m-0, m-1, m-5; m-auto -->
+  <div class="pt-2"></div><!-- padding-top; pr, pb, pl -->
+  <div class="ml-2"></div><!-- margin-left; mt, mr, mb -->
+  <div class="px-2"></div><!-- padding-left and right; py -->
+  <div class="my-2"></div><!-- margin-top and bottom; mx -->
+  <div class="mx-auto"></div><!-- margin auto -->
+
+
+<h4>Display</h4>
   <div class="clearfix"></div><!-- clear floating effects; clear:both; -->
   <div class="d-none"></div><!-- hidden on all -->
   <div class="d-block"></div><!-- visible on all -->
   <div class="d-none d-xl-block"></div><!-- div only visible when Xlarge (>1200px) -->
   <div class="d-none d-sm-block"></div><!-- div only hidden when Xsmall (<576px) -->
+  <div class="visible"></div><!-- visibility: visible -->
+  <div class="invisible"></div><!-- visibility: hidden -->
 
 
 <h4>Media</h4>
@@ -92,16 +107,12 @@
 
 
 <h4>Typography</h4>
-  <p class="lead">.lead text</p><!--stand out-->
-  <p class="small">.small text</p><!--smaller-->
-  <p class="text-left">.text-left</p><!--also .text-right; .text-center; .text-justify; .text-nowrap-->
-  <p class="text-lowercase">.text-lowercase</p><!--also .text-uppercase; .text-capitalize-->
-  <p>This text is <small>small</small> ! </p><!--smaller than the rest-->
-  <p>This text is <mark>marked</mark> ! </p><!--highlighted-->
-  <p>This text is <abbr title="Abbreviation">abbr</abbr> ! </p><!--abbreviation with info hover-->
-  <p>This text is <code>code</code> ! </p><!--useful to show code-->
-  <p>This text is <kbd>ctrl + c</kbd> ! </p><!--to indicate keyboard commands-->
-  <pre>This text is useful for multiple lines of code</br></pre><!--for multiple lines of code; .pre-scrollable to scroll on it-->
+  <p class="lead">.lead text</p><!-- stand out -->
+  <p class="small">.small text</p><!-- smaller -->
+  <p class="text-left">.text-left</p><!-- also .text-right; .text-center; .text-justify; .text-nowrap -->
+  <p class="text-lowercase">.text-lowercase</p><!-- also .text-uppercase; .text-capitalize -->
+  <p class="text-monospace">.text-monospace</p><!-- monospace -->
+  <p class="font-weight-light">.font-weight-light</p><!-- font-weight-light -->
 
 
 <h4>Text and Background Colors</h4>
@@ -122,6 +133,18 @@
   <p class="border border-primary"></p> <!-- adds border of a certain color -->
   <p class="rounded"></p><!-- adds border-radius; use -0 to remove border-radius -->
   <p class="rounded-circle"></p><!-- adds border-radius circle -->
+
+
+<h4>Shadows</h4>
+  <div class="shadow"><!-- adds shadow -->
+  <div class="shadow-sm"><!-- small shadow; also shadow-lg -->
+  <div class="shadow-none"><!-- no shadow -->
+
+
+<h4>Position</h4>
+  <div class="position-relative"></div><!-- can also be absolute, fixed, static -->
+  <div class="fixed-top"></div><!-- fixed to top -->
+  <div class="sticky-top"></div><!-- position sticky for browser that support the feature -->
 
 
 <h4>Lists</h4>
@@ -215,10 +238,10 @@
 
 
 <h4>Images</h4>
-  <img src="img/html.jpg" alt="" class="img-rounded" width="33%">
-  <img src="img/html.jpg" alt="" class="img-circle" width="33%">
+  <img src="img/html.jpg" alt="" class="rounded" width="33%">
+  <img src="img/html.jpg" alt="" class="rounded-circle" width="33%">
   <img src="img/html.jpg" alt="" class="img-thumbnail" width="33%">
-  <img src="img/html.jpg" alt="" class="img-responsive center-block" width="100%"><!--center the block-->
+  <img src="img/html.jpg" alt="" class="img-fluid center-block" width="100%"><!--center the block-->
 
 
 <h4>Images with caption in thumbnail</h4>
@@ -229,7 +252,7 @@
 
 
 <h4>Embed responsive</h4>
-  <div class="embed-responsive embed-responsive-16by9"><!--ratio can be 4by3-->
+  <div class="embed-responsive embed-responsive-16by9"><!-- ratio can be 1by1, 4by3 or 21by9 -->
     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2-w1vZX_K_c"></iframe><!--video responsive-->
   </div>
 
