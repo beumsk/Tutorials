@@ -198,43 +198,43 @@
   </blockquote>
 
 
-<h4>Panel</h4>
-  <div class="panel panel-default"><!--try put other things in a panel-->
-    <div class="panel-heading">
-      <h3 class="panel-title">Titre</h3>
+<h4>Card</h4>
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Title</h3>
     </div>
-    <div class="panel-body">Contenu</div>
-    <div class="panel-footer">Pied de panneau</div>
+    <div class="card-body">Body</div>
+    <div class="card-footer">Footer</div>
   </div>
 
 
 <h4>Progress bar</h4>
   <div class="container">
     <div class="progress">
-      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><!--style is most important to show-->
+      <div class="progress-bar bg-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><!--style is most important to show-->
     </div>
     <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+      <div class="progress-bar bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
     </div>
     <div class="progress progress-striped">
-      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+      <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
     </div>
     <div class="progress progress-striped">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+      <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
     </div>
   </div>
 
 
 <h4>Table</h4>
-  <section class="table-responsive"><!--create a scroll bar when width is too short for content-->
-    <table class="table"><!-- .table-striped .table-bordered .table-hover .table.responsive .table-condensed-->
+  <div class="table-responsive"><!--create a scroll bar when width is too short for content-->
+    <table class="table"><!-- .table-striped .table-bordered .table-borderless .table-hover .table.responsive .table-dark .table-sm -->
       <tr>
-        <td class="danger">danger</td><!--add color to elements-->
-        <td class="success">success</td><!--check also .warning-->
-        <td class="info">info</td>
+        <td class="table-danger">danger</td><!--add color to elements-->
+        <td class="table-success">success</td><!--check also .table-warning-->
+        <td class="table-info">info</td>
       </tr>
     </table>
-  </section>
+  </div>
 
 
 <h4>Images</h4>
@@ -257,12 +257,6 @@
   </div>
 
 
-<h4>Jumbotron, Page-header and Wells</h4>
-  <div class="jumbotron">Jumbotron: big box for extra attention</div><!--big box for extra attention-->
-  <div class="page-header">Page-header: section divider like; add an horizontal line after</div><!--section divider like; add an horizontal line after-->
-  <div class="well">Well: Box with rounded borders; also .well-sm .well-lg</div>
-
-
 <h4>Alerts</h4>
   <div class="alert alert-success"><strong>Success!</strong> Indicates a successful or positive action.</div>
   <div class="alert alert-info"><strong>Info!</strong> Indicates a neutral informative change or action.</div>
@@ -283,123 +277,60 @@
 
 
 <h4>Buttons</h4>
-  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn">Default</button>
   <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-success">Success</button><!-- danger, warning, info, light, dark -->
+  <button type="button" class="btn btn-outline-secondary">Secondary outlined</button><!-- and all other color classes -->
   <button type="button" class="btn btn-link">Link</button>
   <a href="#" class="btn btn-info" role="button">Link Button</a>
-  <input type="button" class="btn btn-info" value="Input Button">
-  <input type="submit" class="btn btn-info" value="Submit Button">
-  <button type="button" class="btn btn-primary btn-lg">Large</button>
-  <button type="button" class="btn btn-primary btn-md">Medium</button>
-  <button type="button" class="btn btn-primary btn-sm">Small</button>
-  <button type="button" class="btn btn-primary btn-xs">XSmall</button>
+  <input type="button" class="btn btn-info" value="Input Button"><!-- also submit type -->
+  <button type="button" class="btn btn-primary btn-lg">Large</button><!-- also btn-sm -->
   <button type="button" class="btn btn-primary active">Active Primary</button><!--appear pressed-->
   <button type="button" class="btn btn-primary disabled">Disabled Primary</button><!--not working-->
   <button type="button" class="btn btn-primary btn-block">Button block</button><!--takes all width-->
 
 
 <h4>Button Groups</h4>
-  <div class="btn-group btn-group-lg">
+  <div class="btn-group btn-group-lg" role="group" aria-label="..."><!-- also btn-group--sm -->
     <button type="button" class="btn btn-primary">button</button>
     <button type="button" class="btn btn-primary">grouped</button>
     <button type="button" class="btn btn-primary">horizontally</button>
   </div>
 
-  <div class="btn-group-vertical">
+  <div class="btn-group-vertical" role="group" aria-label="...">
     <button type="button" class="btn btn-primary">button</button>
     <button type="button" class="btn btn-primary">grouped</button>
     <button type="button" class="btn btn-primary">vertically</button>
   </div>
 
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary">button</button>
-    <button type="button" class="btn btn-primary">grouped</button>
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-      And <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">dropdown</a></li>
-        <li><a href="#">menu</a></li>
-      </ul>
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-secondary">1</button>
+    <button type="button" class="btn btn-secondary">2</button>
+
+    <div class="btn-group" role="group">
+      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+        <a class="dropdown-item" href="#">Dropdown link</a>
+        <a class="dropdown-item" href="#">Dropdown link</a>
+      </div>
     </div>
   </div>
-
-  <div class="btn-group">
-    <button type="button" class="btn btn-primary">toggle</button>
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="#">dropdown</a></li>
-      <li><a href="#">menu</a></li>
-    </ul>
-  </div>
-
-  <div class="btn-group btn-group-justified">
-    <a href="#" class="btn btn-primary">button</a>
-    <a href="#" class="btn btn-primary">grouped</a>
-    <a href="#" class="btn btn-primary">full width</a>
-  </div>
-  
-
-<h4>Glyphicons</h4>
-  <span class="glyphicon glyphicon-envelope">Envelope</span>
-  <span class="glyphicon glyphicon-search">Search</span>
-  <span class="glyphicon glyphicon-print">Print</span>
-  <span class="glyphicon glyphicon-plus"><a href="http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp" target="_blank">Plus</a></span>
   
 
 <h4>Badges</h4>
   <a href="#">News <span class="badge">5</span></a>
   <a href="#">Comments <span class="badge">10</span></a>
   <a href="#">Updates <span class="badge">2</span></a>
-  <button type="button" class="btn btn-primary">Primary <span class="badge">7</span></button>
-  
-
-<h4>Labels</h4>
-  <h1><span class="label label-default">Default Label</span></h1>
-  <h2><span class="label label-primary">Primary Label</span></h2>
-  <h3><span class="label label-success">Success Label</span></h3>
-  <h4><span class="label label-info">Info Label</span></h4>
-  <h5><span class="label label-warning">Warning Label</span></h5>
-  <h6><span class="label label-danger">Danger Label</span></h6>
+  <button type="button" class="btn btn-primary">Primary <span class="badge badge-light">7</span></button>
+  <span class="badge badge-primary">Primary</span><!-- and other colors -->
+  <span class="badge badge-pill badge-secondary">Secondary</span>
+  <a href="#" class="badge badge-dark">Dark</a>
 
 
-<h4>Image button</h4>
-  <div class="container">
-    <div class="row" >
-      <div class="col-lg-3">
-        <div class="btn-group">
-            <a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-fast-backward"></span> </a>
-            <a class="btn btn-info" href="#"><span class="glyphicon glyphicon-backward"></span> </a>
-            <a class="btn btn-warning" href="#"><span class="glyphicon glyphicon-play"></span> </a>
-            <a class="btn btn-info" href="#"><span class="glyphicon glyphicon-forward"></span> </a>
-            <a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-fast-forward"></span> </a>
-        </div>
-      </div>
-      <div class="col-lg-1">
-        <div class="btn-group-vertical">
-            <a class="btn btn-danger" href="#"><span class="glyphicon glyphicon-pencil"></span> </a>
-            <a class="btn btn-info" href="#"><span class="glyphicon glyphicon-search"></span> </a>
-            <a class="btn btn-warning" href="#"><span class="glyphicon glyphicon-print"></span> </a>
-            <a class="btn btn-success" href="#"><span class="glyphicon glyphicon-picture"></span> </a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-
-<h4>Image button text</h4>
-  <button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-user"></span><br>Utilisateurs</button>
-  <button class="btn btn-warning btn-lg"><span class="glyphicon glyphicon-comment"></span><br>Commentaires</button>
-  <button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-calendar"></span><br>Evénements</button>
-  <button class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span><br>Boutique</button>
-  <button class="btn btn-info btn-lg"><span class="glyphicon glyphicon-bullhorn"></span><br>Messages</button>
-  
+<!-- TO UPDATE BELOW -->
 
 <h4>Dropdown Menu</h4>
     <nav class="navbar navbar-default">
