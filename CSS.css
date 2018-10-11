@@ -213,6 +213,7 @@
   border-width: 10px 5px 20px 15px; /* make some irregular borders */
   border-radius: 5px; /* round borders */
   border-radius: 20px 5px 10px 15px; /* make some irregular radius */
+  border-radius: 20px / 10px; /* top-left & bottom-right / top-right & bottom-left */
 }
 
 
@@ -253,7 +254,7 @@
 
 
 .HEIGHT { 
-  /* While px are fixed, em and % depends on parents, and vh, vw, vmin and vmax depends on viewport */
+  /* px are fixed, em, % depend on parents, and vh, vw, vmin, vmax depend on viewport */
   height: 200px;
   max-height: 100%;
   min-height: 20em;
@@ -332,6 +333,8 @@
   position: relative; /* follow properties */
   position: fixed; /* is fixed on viewport -> does not move when scrolling */
   position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
+  position: sticky; /* switches from relative to fixed depending on the scroll; not well supported  !!IE */
+  position: -webkit-sticky; /* for safari */
   z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
   clip: rect(0px, 60px, 200px, 0px); /* sets shape of an element */
   overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
@@ -446,7 +449,7 @@
   /* multiple animations step by step; need @keyframes */
   animation-name: keyframe_name; /* link to the @keyframes */
   animation-duration: 2s; /* time for the animation */
-  animation-timing-function: ease linear ease-in ease-out ease-in-out step-start step-end steps(1); /* different type of animation */
+  animation-timing-function: ease linear ease-in ease-out ease-in-out step-start step-end steps(1); /* different type of animation; cubic-bezier() function possible for custom animation */
   animation-delay: 1s; /* delay before animation; can be negative value */
   animation-direction: normal reverse alternate alternate-reverse; /* specify in which order will the animation be played */
   animation-iteration-count: 3 infinite; /* number of time the animation will be played */
