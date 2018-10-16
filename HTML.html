@@ -90,6 +90,8 @@
   <!-- LINKS -->
   <a href="url" target="_blank">url</a><!-- to create a link, blank open in a new tab --><br>
   <a href="url" title="bull text">url with bubble</a><!-- link with some bull text --><br>
+  <a href="url" accesskey="u">url with bubble</a><!-- link with accesskey for disabled readers; access it with "u" key --><br>
+  <a href="url" tabindex="0">url with bubble</a><!-- force element to have focus with tab key; link and input have that by default --><br>
   <a href="mailto:votrenom@bidule.com">mail</a><!-- link to send mail --><br>
   <a href="img/html.jpg">url to image</a><!-- link to image only --><br>
   <a href="file.txt" download="file.txt">url to download</a><!-- download file --><br>
@@ -217,7 +219,7 @@
   <var>x</var><!-- name of variables --><br>
   <samp>Press F1</samp><!-- sample output from a program --><br>
   <dfn>Mdr</dfn><!-- definition in italic --><br>
-  <time>10:30</time><!-- useful for semantic only --><br>
+  <time datetime="2018-12-10">Monday the 10th</time><!-- useful for disabled people and screen readers --><br>
   <hr>
 
 
@@ -320,8 +322,7 @@
   <!-- FORMS -->
   <form action="action-page.php" method="get" autocomplete="on"><!-- method="post" also available and not visible in url =safer; autocomplete allow to get previous answers (can be set off) -->
     <fieldset><!-- borders the questions; can create different parts in the form -->
-      <legend>Information</legend><!-- name of the fieldset -->
-
+      <legend>Basic inputs</legend><!-- name of the fieldset -->
       <input type="text" name="firstname"><!-- one line field to answer --><br>
       <input type="text" name="firstname" autofocus><!-- autofocus to focus directly on that input --><br>
       <input type="text" name="firstname" placeholder="firstname"><!-- places helper text which disappear when typing --><br>
@@ -329,7 +330,10 @@
       <input type="text" name="firstname" required minlength="3" maxlength="16"><!-- need to write min 3 characters (and max 16) to be able to submit --><br>
       <input type="text" name="firstname" readonly><!-- makes the input uneditable --><br>
       <input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!-- input required and made from 4 letters; pattern works with regexp --><br>
+    </fieldset>
 
+    <fieldset>
+      <legend> different input types</legend>
       <label for="label">Label</label><input type="text" name="label" id="label"><!-- Label helps the user to know what he has to write in the form; need for & id --><br>
       <textarea type="text" name="quote" rows="3" cols="30"></textarea><!-- long text area --><br>
       <input type="password" name="psw"><!-- password field --><br>
@@ -339,18 +343,31 @@
       <input type="url" name="homepage"><!-- check if it's url format --><br>
       <input type="search" name=""><!-- create a search area --><br>
       <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
+    </fieldset>
 
-      <label>Gender</label><br><!-- text before question -->
-      <label><input type="radio" name="gender" value="male" checked>Male</label><br><!-- button to chose one between different options; 'checked' is radio by default -->
-      <label><input type="radio" name="gender" value="female">Female</label><!-- must be same 'name' to force not to click on both answers --><br>
+    <fieldset>
+      <legend>radio inputs</legend>
+      <input type="radio" name="gender" id="gender1" value="male" checked><!-- button to chose one between different options; 'checked' is radio by default -->
+      <label for="gender1">Male</label>
+      <input type="radio" name="gender" id="gender2" value="female"><!-- must be same 'name' to force not to click on both answers -->
+      <label for="gender2">Female</label>
+    </fieldset>
 
-      <label><input type="checkbox" name="">Check1</label><br><!-- button to chose multiple options -->
-      <label><input type="checkbox" name="" checked>Check2</label><!-- this checkbox will be 'check' by default --><br>
+    <fieldset>
+      <legend>checkbox input</legend>
+      <input type="checkbox" name="" id="check1"><!-- button to chose multiple options -->
+      <label for="check1">Check1</label>
+      <input type="checkbox" name="" id="check2" checked><!-- this checkbox will be 'check' by default -->
+      <label for="check2">Check2</label>
+    </fieldset>
 
+    <fieldset>
+      <legend>Select dropdown</legend>
       <select><!-- dropdown field -->
         <option value="Belgium" selected>Belgium</option><!-- 'selected' by default -->
         <option value="France">France</option>
-      </select><br>
+      </select>
+    </fieldset>
 
       <input type="button" onclick="alert('Hello')" value="pop-up"><!-- display message --><br>
       <input type="reset" value="reset"><!-- reset fields --><br>
