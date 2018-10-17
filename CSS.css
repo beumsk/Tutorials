@@ -214,6 +214,7 @@
   border-radius: 5px; /* round borders */
   border-radius: 20px 5px 10px 15px; /* make some irregular radius */
   border-radius: 20px / 10px; /* top-left & bottom-right / top-right & bottom-left */
+  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; /* top-left top-right bottom-right bottom-left / left-top right-top right-bottom left-bottom */
 }
 
 
@@ -280,7 +281,7 @@
 
 
 .TEXT {
-  color: red;
+  color: red; /* contrast should be 4.5 or superior to be readable easily; B/W is 21 */
   text-align: center left right justify; /* justify(=text of exact same width) */
   text-decoration: none; /* very useful for links */
   text-decoration: overline underline line-through;
@@ -325,6 +326,16 @@
   display: none; /* hide item and affect layout; no space will be taken by this element */
   display: inline-block; /* displays elements in line as blocks; allows to set width and vertical-align */
   visibility: hidden; /* hide item but takes the place it should have when shown */
+}
+
+.sr-only {
+  /* add this class to element only meant for screen readers  */
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
 }
 
 
@@ -511,9 +522,12 @@
 
 .FLEX-ITEMS {
   margin: auto; /* center all elements; need to be on items and not on container */
-  align-self: flex-end; /* align a single item differently; influence on secondary axis */
-  order: 1 2 3; /* change order of html code; need to order every item; 0 by default */
-  flex: 1 2 3; /* change size ...; need to flex every item */
+  align-self: stretch center start end; /* align a single item differently; influence on secondary axis */
+  flex-grow: 2; /* the higher, the bigger compared other flex items; base is 1 */
+  flex-shrink: 2; /* the higher, the smaller compared other flex items; base is 1 */
+  flex-basis: 100px; /* size basis for flex items before any shrink or grow */
+  flex: 2 2 100px; /* shorthand property for grow, shrink and basis */
+  order: 2; /* change order of html code; need to order every item; 0 by default */
 }
 
 
