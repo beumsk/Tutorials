@@ -340,7 +340,9 @@
       <input type="number" name="quantity" min="1" max="5" step="1"><!-- let type number between from 1 to 5 --><br>
       <input type="date" name="bday" max="1979-12-31"><!-- date before 1980 --><br>
       <input type="email" name="email"><!-- check it's an email format --><br>
+      <input type="tel" placeholder="Telephone" pattern="^((\+|00)32\s?|0)4(60|[789]\d)(\s?\d{2}){3}$"><!-- telephone input with pattern to match Belgian phone numbers --><br>
       <input type="url" name="homepage"><!-- check if it's url format --><br>
+      <input type="file" accept=".png, .jpg, .jpeg" name="file upload"><!-- upload of file --><br>
       <input type="search" name=""><!-- create a search area --><br>
       <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
     </fieldset>
