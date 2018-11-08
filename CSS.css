@@ -156,7 +156,7 @@
   font-size: 14px 14em 14rem 14vh 14vw 14%; /* Use one. 1em = 16px; 1rem is based on root font-size while 1em is based on parent(context) font-size */ 
   font-weight: bold normal; /* Weight work also with %, ... */
   font-variant: small-caps; /* Small capitalized letters */
-  font: italic bold 20px/30px arial; /* shortened method; style, weight, size, line-height, family; size and family are mandatory */
+  font: italic bold 20px/1.2 Arial, Helvetica, sans-serif; /* shortened method; style, weight, size, line-height, family; size and family are mandatory */
 }
 
 
