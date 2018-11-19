@@ -90,10 +90,32 @@ anyString.Replace(" ", "-")
 }
 
 // get current page name
-var pageName = Model.Content.GetPropertyValue("onPageTitle");
+var pageName = Model.Content.Name;
+
+// get current page name from partial
+var pageName = Model.Content.GetPropertyValue("alias");
 
 // get each item from a checkbox list
-@foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias")
+foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias"))
 { 
-  @item 
+  item;
+}
+
+// get yes/no value
+Model.Content.GetPropertyValue<bool>("alias");
+
+// get content from a list
+List<IPublishedContent> allItems = Model.Content.GetPropertyValue<List<IPublishedContent>>("alias");
+
+// go through the list
+if (allItems != null && allItems.Count > 0) 
+{
+  foreach (IPublishedContent singleItem in allItems) 
+  {
+    if (singleItem != null)
+    {
+      var link = singleItem.Url;
+      var date = singleItem.GetPropertyValue<DateTime>("alias").ToString("dd.MM.yyyy");
+    }
+  }
 }
