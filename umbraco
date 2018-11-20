@@ -104,6 +104,14 @@ foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias")
 // get yes/no value
 Model.Content.GetPropertyValue<bool>("alias");
 
+// get an image
+var image = Model.Content.GetPropertyValue<IPublishedContent>("alias");
+if (image != null)
+{
+  var imageUrl = image.Url;
+}
+
+
 // get content from a list
 List<IPublishedContent> allItems = Model.Content.GetPropertyValue<List<IPublishedContent>>("alias");
 
