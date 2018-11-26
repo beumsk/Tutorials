@@ -297,7 +297,7 @@
   direction: rtl; /* change text direction to right-to-left */
   writing-mode: horizontal-tb vertical-rl vertical-lr; /* used to write vertical text */
   vertical-align: middle text-top text-bottom top bottom; /* align image to text */
-  text-shadow: 2px 2px #FF0000; /* shadow */
+  text-shadow: 2px 2px 1px #FF0000; /* shadow;  offset-x offset-y blur-radius color  */
   text-shadow: 1px 1px #fff, 2px 2px #333; /* multiple text shadows */
 }
 
