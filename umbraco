@@ -95,6 +95,9 @@ var pageName = Model.Content.Name;
 // get current page name from partial
 var pageName = Model.Content.GetPropertyValue("alias");
 
+// get site name from global settings
+var siteName = Model.GlobalSettings.WebsiteName;
+
 // get each item from a checkbox list
 foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias"))
 { 
