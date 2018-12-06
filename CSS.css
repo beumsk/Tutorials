@@ -17,7 +17,7 @@
     <elements and pseudo-elements /* p, p::first-line, p::before; 001 */
     <class, attributes and pseudo-classes /* .class, a[title], a:hover; 010 */
     <id /* #id; 100 */
-  <Inline style (inside an HTML element) /* should be avoided */
+  <Inline style (inside an HTML element) /* should be avoided; for maintenance reasons */
   <!important /* body { color: red !important; } */
 }
 
@@ -73,10 +73,9 @@
   a:hover {transition: all .3s ease} /* smooth transition of 0.3sec */
   a:target {} /* Selects the target link (eg: #about); very useful to make things pop up when reached */
 
-
-  p:first-child {} /* Selects first p only */
-  p:nth-child(2) {} /* Selects 2d child; or other */
-  p:nth-child(n) {} /* Selects nth child */
+  p:first-child {} /* Selects first p among a group of p elements */
+  p:nth-child(2) {} /* Selects 2d p; or other */
+  p:nth-child(n) {} /* Selects nth p */
   p:nth-child(even) {} /* Selects even'th child (or 2n); can be odd (or 2n+1) */
   p:only-child {} /* Selects the only p element */
   p:last-child {} /* Selects the last p only */
