@@ -175,7 +175,7 @@
 
 .BACKGROUND {
   background-color: lightblue; /* use color as bg */
-  background-image: url("paper.gif"); /* use img as bg */
+  background-image: url(""); /* use img as bg */
   background-repeat: no-repeat repeat-y repeat-x repeat space round; /* by default, bg img will repeat */
   background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
   background-size: 100% 100vh; /* fit while size, can also be pixels */
@@ -210,6 +210,8 @@
   border: 5px solid red; /* shortened method */
   border-left: 6px solid red; /* only one side */
   border-width: 10px 5px 20px 15px; /* make some irregular borders */
+  border-image: url(""); /* image in border */
+  border-image: linear-gradient(blue, green); /* gradient borders */
   border-radius: 5px; /* round borders */
   border-radius: 20px 5px 10px 15px; /* make some irregular radius */
   border-radius: 20px / 10px; /* top-left & bottom-right / top-right & bottom-left */
