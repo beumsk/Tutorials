@@ -275,7 +275,8 @@
 }
 
 
-.OUTLINE { /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
+.OUTLINE { 
+  /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
   outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
   outline: 5px dotted red; /* shortened method */
 }
