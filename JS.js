@@ -250,7 +250,9 @@
 
   var a = "five" * 2; // 'a' is NaN; Not a Number
 
-  var a = (b > 10) ? "Over ten" : "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"
+  var a = (b > 10) ? "Over ten" : "Under ten"; // if b>10, a will equal "Over ten"; otherwise, "Under ten"; it's called ternary operator
+
+  var a = b > 0 ? "positive" : b < 0 ? "negative" : "zero"; // a will be positive, negative or zero according to b value
 
   var a = true && true; // true
  
