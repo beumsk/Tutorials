@@ -327,7 +327,7 @@
   display: block; /* by default for most of tags displays elements by full width block; can set width */
   display: none; /* hide item and affect layout; no space will be taken by this element */
   display: inline-block; /* displays elements in line as blocks; allows to set width and vertical-align */
-  visibility: hidden; /* hide item but takes the place it should have when shown */
+  visibility: hidden; /* hide item but takes the place it should have when shown; visible by default */
 }
 
 .sr-only {
@@ -544,6 +544,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
+  grid-template-columns: 100px minmax(50px, 200px); /* first col is 100px wide and second has min 50px and max 200px */
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* put the content with flexibility */
   grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
   grid-column-gap: 10px; /* gap between columns */
   grid-row-gap: 20px; /* gap between rows */
