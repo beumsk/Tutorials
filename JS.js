@@ -2030,7 +2030,7 @@ PROTOTYPES
   console.log(document.querySelector('a').getAttribute('href')); // return 'href' attriubte of first 'a'
 
   
-  // 'id', 'href' and 'value' are easier
+  // 'id', 'href' and 'value' are easier; note that href will return full URL !
   console.log(document.querySelector('a').href);
 
   
@@ -2275,6 +2275,13 @@ PROTOTYPES
   document.getElementById("button").addEventListener("click", function (e) {
     console.log("Event :" + e.type + ", target text :" + e.target.textContent);
   });
+
+
+  // create event with external function pointing to clicked element
+  document.querySelector(".action").addEventListener("click", functionName);
+  function functionName(e) {
+    e.target.style.color = "red";
+  }
   
   
   // keypress event returning the pressed key (only for characters)
@@ -2600,6 +2607,7 @@ country.addEventListener("input", function (e) { // when typing
 
 
   // Clear interval; you must name your setInterval() in a var to be able to use clearInterval()
+  var varSetInterval = setInterval(function() {console.log("hello")}, 1000);
   clearInterval(varSetInterval); // stops interval
 
 
@@ -2608,7 +2616,8 @@ country.addEventListener("input", function (e) { // when typing
   
 
   // Clear timeout; you must name your setTimeout() in a var to be able to use clearTimeout()
-  clearTimeout(varSetInterval); // stops timeout
+  var varSetTimeout = setTimeout(function() {console.log("hello")}, 1000);
+  clearTimeout(varSetTimeout); // stops timeout
 
 
   // Set timeout in a loop; tricky because you need to copy the i otherwise it will log only last i value
