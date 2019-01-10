@@ -115,7 +115,8 @@
   setTimeout(function (){/*code block;*/}, 1000); // run code after 1sec; can clearTimeout()
   setInterval(function (){/*code block;*/}, 1000); // run code every 1sec; can clearInterval()
 
-  document.querySelector("form").addEventListener("submit", function (e) {e.preventDefault();}); // prevent default (submit and refresh)
+  document.querySelector("form").addEventListener("submit", function (e) {e.PreventDefault();}); // prevent default (submit and refresh)
+  document.querySelector(".item").addEventListener("click", someFunc); function someFunc(e) {e.target.style.color = "red"} // targets clicked element 
 
   JSON.stringify(objectJS); // JS objects array into JSON string
   JSON.parse(stringJSON); // JSON string into JS objects array
@@ -173,7 +174,7 @@
 
 
 // STRICT MODE 
-// the strict mode changes bad syntax into actual errors; helping writing ecure JS
+// the strict mode changes bad syntax into actual errors; helping writing secure JS
 
 
   // usage of strict mode; must be placed on top of code (or function)
