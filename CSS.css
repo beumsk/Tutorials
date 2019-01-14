@@ -41,36 +41,35 @@
 
 .SELECT-HTML
   * {} /* Selects all elements */
-  *, *:before, *:after {} /* better to reach really everything; for example, box-sizing */
-  html {} 
-  body {}
+  *, *:before, *:after {} /* better to reach really everything; for example, it is used broadly for box-sizing */
+  html {} /* Selects <html> element */
+  body {} /* Selects <body> element */
   p {} /* Selects all <p> elements*/
   div, p {} /* Selects all <div> elements and all <p> elements */
   div p {} /* Selects all <p> elements inside <div> elements */
   div > p {} /* Selects all <p> elements where the parent is a <div> element */
   div + p {} /* Selects first <p> element that is placed immediately after <div> elements */
-  div ~ p {} /* Selects every <p> element that are preceded by a <div> element */
+  div ~ p {} /* Selects all <p> element that are placed after a <div> element */
   .main {} /* Selects all elements with class="main" */
   #main {} /* Selects the element with id="main" */
   p.main {} /* Selects p elements with class="main" */
   p * {} /* Selects everything in p */
 
-  /* pseudo elements; style a certain part of an element */
+  /* Pseudo elements; style a certain part of an element */
   p::first-line {} /* Selects first line of <p> */
   p::first-letter {} /* Selects first letter of <p> */
-  p::before {content: "Read this -";} /* insert some content before the content of <p> */
-  p::before {content: attr(href);} /* display the href value of p tag; can also be other attribute value */
-  p::after {content: " -Read more… ";} /* insert some content after the content of <p> */
+  p::before {content: "Read this -";} /* Insert some content before the content of <p>; it can be empty */
+  p::before {content: attr(href);} /* Display the href value of p tag; can also be other attribute value */
+  p::after {content: " -Read more… ";} /* Insert some content after the content of <p>; it can be empty */
   p::selection {} /* Selects the portion of <p> that is selected by a user */
   ::placeholder {}; /* Selects placeholder value */
 
-  /* pseudo classes; style an element according to its state */
+  /* Pseudo classes; style an element according to its state */
   a:link {} /* Selects all unvisited links */
   a:visited {} /* Selects all visited links */
   a:hover {} /* Selects links on mouse over */
   a:active {} /* Selects the active link; when you click on it */
   a:focus {} /* Selects focused link; mainly for input */
-  a:hover {transition: all .3s ease} /* smooth transition of 0.3sec */
   a:target {} /* Selects the target link (eg: #about); very useful to make things pop up when reached */
 
   p:first-child {} /* Selects first p among a group of p elements */
@@ -97,12 +96,12 @@
   :checked {} /* Selects checked radio and checbox elements */
 
   a[target="_blank"] {} /* Selects all elements with that attribute and value */
-  [title~="flower"] {} /* select elements with an attribute value containing a specified word */
-  [class|="top"] {} /* select elements with the specified attribute starting with the specified value */
-  [class^="top"] {} /* select elements whose attribute value begins with a specified value */
-  [class$="test"] {} /* select elements whose attribute value ends with a specified value */
-  [class*="te"] {} /* select elements whose attribute value contains a specified value */
-  input[type="button"] {} /* selects elements with type="button" */
+  [title~="flower"] {} /* Selects elements with an attribute value containing a specified word */
+  [class|="top"] {} /* Selects elements with the specified attribute starting with the specified value */
+  [class^="top"] {} /* Selects elements whose attribute value begins with a specified value */
+  [class$="test"] {} /* Selects elements whose attribute value ends with a specified value */
+  [class*="te"] {} /* Selects elements whose attribute value contains a specified value */
+  input[type="button"] {} /* Selects elements with type="button" */
 
   p {color: red !important;} /* become most important */
 
