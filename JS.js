@@ -97,7 +97,7 @@
   document.getElementsByClassName("class"); // will return .class elements as an array
   document.getElementById("id"); // will return #id element
   document.querySelector("tag"); // will return first tag of document; selection similar to css (or jquery)
-  document.querySelectorAll("tag"); // will return all tags as an array; 
+  document.querySelectorAll("tag"); // will return all tags as an array; Note that it isn't updated live as other selectors are
 
   document.getElementById("id").setAttribute("src", "www.site.com"); // set/change attribute; can often be written something.src("change");
   document.getElementById("id").innerHTML = "some text"; // change #id content
