@@ -6,7 +6,7 @@
 
 
 .ADD-IN-HTML {
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <link rel="stylesheet" type="text/css" href="CSS.css">
 }
 
 
@@ -19,6 +19,15 @@
     <id /* #id; 100 */
   <Inline style (inside an HTML element) /* should be avoided; for maintenance reasons */
   <!important /* body { color: red !important; } */
+}
+
+
+.BEM {
+  /* naming convention based on Block, Element and Modifiers */}
+  .block-name {}
+  .block-name__header {}
+  .block-name--red {}
+  .block-name__header--red {}
 }
 
 
