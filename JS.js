@@ -1579,6 +1579,12 @@ PROTOTYPES
   console.log(a); // 2; position of value 30
 
 
+  // indexOf can be used to check if an array includes an element
+  var array = [10, 20, 30, 40, 50];
+  var a = array.indexOf(60);
+  console.log(a); // -1; the value isn't in the array
+
+
   // get index position of a value in an array (starting from the end)
     var array = [10, 20, 30, 40, 30, 50];
     var a = array.lastIndexOf(30);
