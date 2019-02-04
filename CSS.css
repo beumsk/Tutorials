@@ -163,7 +163,7 @@
   font-size: 14px 14em 14rem 14vh 14vw 14%; /* Use one. 1em = 16px; 1rem is based on root font-size while 1em is based on parent(context) font-size */ 
   font-weight: bold normal; /* Weight work also with %, ... */
   font-variant: small-caps; /* Small capitalized letters */
-  font: italic bold 20px/1.2 Arial, Helvetica, sans-serif; /* shortened method; style, weight, size, line-height, family; size and family are mandatory */
+  font: italic bold 20px/1.2 Arial, Helvetica, sans-serif; /* shorthand property; style, weight, size, line-height, family; size and family are mandatory */
 }
 
 
@@ -189,7 +189,7 @@
   background-size: 100% 100vh; /* fit while size, can also be pixels */
   background-position: center top; /* will adjust background position; right, bottom, left also */
   background-attachment: fixed; /* Fix the background image */
-  background: url("") no-repeat top center; /* shortened method */
+  background: url("") no-repeat top center; /* shorthand property */
   background: url("") top, url("") bottom; /* 2 different background images; first will be on top */
           background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
   -webkit-background-clip: text; /* to show background through text */
@@ -215,7 +215,7 @@
   border-style: dotted dashed solid double; /* each side different border type */
   border-width: 5px; /* or medium */
   border-color: red;
-  border: 5px solid red; /* shortened method */
+  border: 5px solid red; /* shorthand property */
   border-left: 6px solid red; /* only one side */
   border-width: 10px 5px 20px 15px; /* make some irregular borders */
   border-image: url(""); /* image in border */
@@ -245,8 +245,8 @@
   /* Space around elements */
   margin-bottom: 10px; /* top, right, bottom, left */
   margin-top: 5% 5vh 5vw 5em; /* use one */
-  margin: 10px 5px; /* shortened method; vertical horizontal */
-  margin: 10px 5px 10px 5px; /* shortened method; top right bottom left */
+  margin: 10px 5px; /* shorthand property; vertical horizontal */
+  margin: 10px 5px 10px 5px; /* shorthand property; top right bottom left */
   margin: auto; /* center element but need to specify width */
   margin-left: inherit; /* gets the value from parent element */
   /* margin collapse causes 2 succint margins to collapse keeping only the biggest margin of the 2 */
@@ -258,8 +258,8 @@
   /* Space around content */
   padding-right: 10px; /* top, right, bottom, left */
   padding-left: 5% 5vh 5vw 5em; /* use one */
-  padding: 10px 5px; /* shortened method; vertical horizontal */
-  padding: 10px 5px 10px 5px; /* shortened method; top right bottom left */
+  padding: 10px 5px; /* shorthand property; vertical horizontal */
+  padding: 10px 5px 10px 5px; /* shorthand property; top right bottom left */
 }
 
 
@@ -286,7 +286,7 @@
 .OUTLINE { 
   /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
   outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
-  outline: 5px dotted red; /* shortened method */
+  outline: 5px dotted red; /* shorthand property */
 }
 
 
@@ -317,7 +317,7 @@
   list-style-type: upper-roman lower-alpha; /* kind of listing for ol */
   list-style-image: url('sqpurple.gif'); /* img listing for ul */
   list-style-position: inside; /* inside or outside the content flow (outside by default) */
-  list-style: square inside url("sqpurple.gif"); /* shortened way */
+  list-style: square inside url("sqpurple.gif"); /* shorthand property */
 }
 
 
@@ -399,7 +399,7 @@
   transform: rotate(45deg); /* rotate 45 degrees clockwise; counter-clockwise if negative */
   transform: scale(.5, .5); /* decrease and/or increase size via width and height */
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
-  transform: scale(.7) rotate(30deg); /* shortened method */
+  transform: scale(.7) rotate(30deg); /* shorthand property */
   transform-origin: 0px 100px; /* default is 50% 50%; specifies x and y origin for transformations */
   -webkit-transform: rotate(10deg); /* for unsupporting browser */
       -ms-transform: rotate(10deg); /* for unsupporting browser */
@@ -411,7 +411,7 @@
   transform: rotateX(150deg); /* rotate around X-axis */
   transform: rotateY(150deg); /* rotate around Y-axis */
   transform: rotateZ(150deg); /* rotate around Z-axis */
-  transform: rotate3d(x, y, z); /* shortened method */
+  transform: rotate3d(x, y, z); /* shorthand property */
   transform: translate3d(x, y, z); /* translation */
   transform: scale3d(x, y, z); /* scale */
   transform: rotate(180deg) translateX(100px); /* multiple transformation; if written in two different transforms it cancels the first one (as other css properties) */
@@ -428,7 +428,8 @@
   transition-duration: 1s; /* the time it takes to make the transition */
   transition-delay: .5s; /* the time before transition starts */
   transition-timing-function: ease linear ease-in ease-out ease-in-out; /* different type of transition */
-  transition: color 2s ease, width 1s linear; /* shortened method */
+  transition: color 2s ease 1s; /* shorthand property; property duration timing-function delay */
+  transition: color 2s ease, width 1s linear; /* shorthand property with 2 */
   transition: all 1.5s ease; /* handle all transition at once */
 }
 
@@ -519,7 +520,7 @@
   justify-content: flex-start flex-end center space-between space-around space-evenly; /* how items will display on a lign; works also with column direction; manage primary axis */
   align-items: stretch flex-end flex-start center baseline; /* manage secondary axis; how items will display in a column or lign */
   align-content: flex-start flex-end center space-between space-around space-evenly stretch; /* manage secondary axis if there is multiple lines */
-  flex-flow: row wrap; /* shortened way to direction and wrap */
+  flex-flow: row wrap; /* shorthand property to direction and wrap */
 }
 
 .FLEX-ITEMS {
@@ -557,7 +558,7 @@
   grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
   grid-column-gap: 10px; /* gap between columns */
   grid-row-gap: 20px; /* gap between rows */
-  grid-gap: 20px 10px; /* shortened syntax to define row and column gap */
+  grid-gap: 20px 10px; /* shorthand property to define row and column gap */
 }
 
 .GRIDS-ELEMENTS {
