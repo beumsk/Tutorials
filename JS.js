@@ -2710,6 +2710,30 @@ country.addEventListener("input", function (e) { // when typing
 
 
 
+// CANVAS
+// Draw graphics via scripting to build graphs, modify photos or create animations
+
+
+  // First point to your canvas element; by default canvas will be 300x150px
+  var canvas = document.querySelector("#myCanvas");
+
+  // Update canvas area with width and height
+  canvas.width = 400;
+  canvas.height = 400;
+
+  // You can check if canvas are supported by the browser
+  if (canvas.getContext) {console.log("We can use canvas here !");}
+
+  // To be able to manipulate the points, you have to refer to the context
+  var ctx = canvas.getContext("2d");
+
+
+  // Draw rectangles by defining their x, y, width and height
+  ctx.fillRect(0, 0, 10, 10); // here it is a 10px square starting at top left corner (0,0)
+  ctx.strokeRect(0, 0, 10, 10); // here it is a 10px square outline starting at top left corner (0,0)
+  ctx.clearRect(0, 0, 10, 10); // here it is a 10px transparent square starting at top left corner (0,0)
+
+
 // SERVER REQUESTS
 // Manage requests to the server (HTTP, AJAX, JSON)
 
