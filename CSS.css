@@ -143,6 +143,7 @@
   @media only screen and (orientation: landscape) {} /* screen landscape */
   @media only screen and (orientation: portrait) {} /* screen portrait */
   /* http://www.alsacreations.com/article/lire/930-css3-media-queries.html */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {} /* target IE10 & IE11*/
 }
 
 
@@ -188,7 +189,7 @@
   background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
   background-size: 100% 100vh; /* fit while size, can also be pixels */
   background-position: center top; /* will adjust background position; right, bottom, left also */
-  background-attachment: fixed; /* Fix the background image */
+  background-attachment: fixed scroll local; /* Fix the background image, local is default */
   background: url("") no-repeat top center; /* shorthand property */
   background: url("") top, url("") bottom; /* 2 different background images; first will be on top */
           background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
