@@ -2646,7 +2646,6 @@ country.addEventListener("input", function (e) { // when typing
 
   // Cancel animation frame; you must name your requestAnimationFrame() in a var to be able to use cancelAnimationFrame()
   cancelAnimationFrame(varRequestAnimationFrame)
-  // you can also use CSS animations
 
 
   // reload page
@@ -2732,6 +2731,22 @@ country.addEventListener("input", function (e) { // when typing
   ctx.fillRect(0, 0, 10, 10); // here it is a 10px square starting at top left corner (0,0)
   ctx.strokeRect(0, 0, 10, 10); // here it is a 10px square outline starting at top left corner (0,0)
   ctx.clearRect(0, 0, 10, 10); // here it is a 10px transparent square starting at top left corner (0,0)
+
+
+  // Draw paths to create other shapes
+  ctx.beginPath(); // start drawing
+  ctx.moveTo(75, 50); // move to a certain pos(x, y)
+  ctx.lineTo(100, 75); // draws line from pos defined by moveTo to the ones in lineTo(x, y)
+  ctx.fill(); // draws a solid shape from the path content area (need enough points)
+  ctx.closePath(); // add a straight line to the path to close it
+  ctx.stroke(); // draws shape by stroking its outline
+
+
+  // Draw arcs to create rounded shapes
+  ctx.beginPath(); // start drawing
+  ctx.arc(0, 0, 10, 0, Math.PI*2, false); // x, y, radius, startAngle, endAngle, antiClockwise()
+  ctx.fill(); // to make it a circle
+  ctx.stroke(); // to make it a circled outline
 
 
 // SERVER REQUESTS
