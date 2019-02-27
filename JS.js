@@ -2749,6 +2749,26 @@ country.addEventListener("input", function (e) { // when typing
   ctx.stroke(); // to make it a circled outline
 
 
+  // Styles and colors to canvas
+  ctx.fillStyle = "red"; // fill with red; can use other color such as hexa, rgb, rgba
+  ctx.strokeStyle = "blue"; // stroke to blue
+  ctx.globalAlpha = 0.2; // 0 to 1 total transparency
+  ctx.lineWidth = 4; // sets width for lines
+  ctx.lineCap = "round"; // default is "butt"; "round" goes a bit off rounded and "square" does the same squared
+  ctx.lineJoin = "round"; // default is "miter"; "round" makes joint rounded and "bevel" makes joint flat
+  ctx.setLineDash([10, 5]); // size of dash and spaces
+
+
+  // Drawing text
+  ctx.font = "48px Arial"; // sets font to be used
+  ctx.textAlign = "left"; // start, left, center, right, end
+  ctx.textBaseline = "middle"; // top, hanging, alphabetic, ideographic, bottom
+  ctx.fillText(); // draws normal text
+  ctx.strokeText();// draws text stroke
+
+
+
+
 // SERVER REQUESTS
 // Manage requests to the server (HTTP, AJAX, JSON)
 
