@@ -212,7 +212,7 @@
 
 
 .FUNCTIONS { /* use when you want values to be returned */
-  @function setWdith($target; $context) {
+  @function setWdith($target, $context) {
     @return ($target / $context) * 100%;
   }
   div { width: setWidth(350px, 1000px); }
