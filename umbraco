@@ -31,11 +31,11 @@ Developers:
   Data types: textbox, image uploader, etc. to use in document types
   Macros: create parts to integrate later (better to use partials)
 
-Members:
-  People accessing the frontend
-
 Users:
   People accessing the backend
+
+Members:
+  People accessing the frontend
 
 Create pages:
   1. Create document type (check permission to set as root or set children)
@@ -129,4 +129,10 @@ if (allItems != null && allItems.Count > 0)
       var date = singleItem.GetPropertyValue<DateTime>("alias").ToString("dd.MM.yyyy");
     }
   }
+}
+
+// check that a string isn't empty
+@if (!string.IsNullOrWhiteSpace(stringName))
+{
+  <p>@stringName</p>
 }
