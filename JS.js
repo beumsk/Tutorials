@@ -2252,6 +2252,12 @@ PROTOTYPES
   document.getElementById("info").appendChild(document.createTextNode("Info about element"));
   document.getElementById("info").appendChild(listElt);
 
+
+  // check media query in JS
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    // do something when window is wider (equal to) than 768px
+  }
+
   
   
   
