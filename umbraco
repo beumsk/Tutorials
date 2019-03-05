@@ -136,3 +136,10 @@ if (allItems != null && allItems.Count > 0)
 {
   <p>@stringName</p>
 }
+
+// use dictionnary for multiple languages
+@umbraco.library.GetDictionaryItem("Name of the dictionary item")
+
+
+// escape razor @ by adding another @ in front
+@@media only screen and (min-wdith: 768px) {}
