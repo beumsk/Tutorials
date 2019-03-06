@@ -1624,8 +1624,16 @@ PROTOTYPES
 
   // slice an array
   var array = ['Keep', 'us', 'delete', 'the', 'others'];
-  array = array.slice(0, 2);
+  array.slice(0, 2);
   console.log(array); // ['Keep', 'us']
+  var array2 = array.slice(0, 2);
+  console.log(array2); // ['Keep', 'us']
+
+
+  // slice to copy an array
+  var array = ['copy', 'this', 'array'];
+  var arrayCopy = array.slice();
+  console.log(arrayCopy); // ['copy', 'this', 'array']
 
 
   // splice an array
