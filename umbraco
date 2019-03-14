@@ -1,15 +1,15 @@
 
-umbraco?
-cshtml ?
-razor ?
+@* Umbraco uses Razor for its pages; page.cshtml *@
 
+@*
 Installation: 
   1. Create project
   2. nuget console or nuget store --> Install-Package UmbracoCms
   2. or download umbraco on site and launch solution on Visual studio
   3. Run to create umbraco solution and log in (whatever you like, but remember it)
-  4. Use SQL CE and no template
-  5. activate https --> SSL field to true in web.config
+  4. Use SQL CE if no DB provided
+  5. Use no template
+  6. activate https --> SSL field to true in web.config
 
 Content:
   Defined by a content type
@@ -32,47 +32,52 @@ Developers:
   Macros: create parts to integrate later (better to use partials)
 
 Users:
-  People accessing the backend
+  People accessing the backend via site.com/umbraco
+  They are part of user groups that define their permissions
 
 Members:
-  People accessing the frontend
+  People accessing the frontend via site.com/login
+  They are part of member group that define their page access
 
 Create pages:
   1. Create document type (check permission to set as root or set children)
   2. Create content (click on the dots)
   3. to display content, use a template (and link it via doc type)
+*@
 
+@* great intro to razot --> https://weblogs.asp.net/scottgu/introducing-razor *@
 
+@{
+  Umbraco.Web.Mvc.UmbracoTemplatePage
+  Umbraco.Web.Mvc.UmbracoTemplatePage<Model>
 
-Umbraco.Web.Mvc.UmbracoTemplatePage
-Umbraco.Web.Mvc.UmbracoTemplatePage<Model>
+  Umbraco.Web.Mvc.UmbracoViewPage
+  Umbraco.Web.Mvc.UmbracoViewPage<Model>
 
-Umbraco.Web.Mvc.UmbracoViewPage
-Umbraco.Web.Mvc.UmbracoViewPage<Model>
+  UmbracoApplication
+  UmbracoContext
+  UmbracoHelper
+}
 
-UmbracoApplication
-UmbracoContext
-UmbracoHelper
+@(RenderBody);
 
-@(RenderBody)
+@Html.Partial("nameOfTheFile", ...);
 
-@(Html.Partial("nameOfTheFile", ...))
-
-@(Html.Action("nameOfAction", "nameOfController"));
+@Html.Action("nameOfAction", "nameOfController");
 
 @using (Html.BeginUmbracoForm<App.LoginForm>("Login")) {}
 
-@(Html.LabelFor(m->m.Login))
-@(Html.EditorFor(m->m.Login))
+@Html.LabelFor(m->m.Login);
+@Html.EditorFor(m->m.Login);
 
-Html.RequiresCss("/path")
-@Html.RenderCssHere()
+@Html.RequiresCss("/path");
+@Html.RenderCssHere();
 
-anyString.Replace(" ", "-")
+@anyString.Replace(" ", "-");
 
-@(Umbraco.GetDictionnaryValue("ValueName"))
+@Umbraco.GetDictionnaryValue("ValueName");
 
-// subpage listing
+@* subpage listing *@
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 @{
   var pageId = Model.MacroParameters["pageId"];
@@ -89,37 +94,49 @@ anyString.Replace(" ", "-")
   }
 }
 
-// get current page name
-var pageName = Model.Content.Name;
-
-// get current page name from partial
-var pageName = Model.Content.GetPropertyValue("alias");
-
-// get site name from global settings
-var siteName = Model.GlobalSettings.WebsiteName;
-
-// get each item from a checkbox list
-foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias"))
-{ 
-  item;
+@* get current page name *@
+@{
+  var pageName = Model.Content.Name;
 }
 
-// get yes/no value
-Model.Content.GetPropertyValue<bool>("alias");
+@* get current page name from partial *@
+@{
+  var pageName = Model.Content.GetPropertyValue("alias");
+}
 
-// get an image
-var image = Model.Content.GetPropertyValue<IPublishedContent>("alias");
-if (image != null)
-{
-  var imageUrl = image.Url;
+@* get site name from global settings *@
+@{
+  var siteName = Model.GlobalSettings.WebsiteName;
+}
+
+@* get each item from a checkbox list *@
+@{
+  foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias"))
+  { 
+    item;
+  }
+}
+
+@* get yes/no value *@
+@Model.Content.GetPropertyValue<bool>("alias");
+
+@* get an image *@
+@{
+  var image = Model.Content.GetPropertyValue<IPublishedContent>("alias");
+  if (image != null)
+  {
+    var imageUrl = image.Url;
+  }
 }
 
 
-// get content from a list
-List<IPublishedContent> allItems = Model.Content.GetPropertyValue<List<IPublishedContent>>("alias");
+@* get content from a list *@
+@{
+  List<IPublishedContent> allItems = Model.Content.GetPropertyValue<List<IPublishedContent>>("alias");
+}
 
-// go through the list
-if (allItems != null && allItems.Count > 0) 
+@* go through the list *@
+@if (allItems != null && allItems.Count > 0) 
 {
   foreach (IPublishedContent singleItem in allItems) 
   {
@@ -131,13 +148,13 @@ if (allItems != null && allItems.Count > 0)
   }
 }
 
-// check that a string isn't empty
+@* check that a string isn't empty *@
 @if (!string.IsNullOrWhiteSpace(stringName))
 {
   <p>@stringName</p>
 }
 
-// use dictionnary for multiple languages
+@* use dictionnary for multiple languages *@
 @umbraco.library.GetDictionaryItem("Name of the dictionary item")
 
 
