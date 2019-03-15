@@ -47,6 +47,7 @@ Create pages:
 
 @* great intro to razot --> https://weblogs.asp.net/scottgu/introducing-razor *@
 
+
 @{
   Umbraco.Web.Mvc.UmbracoTemplatePage
   Umbraco.Web.Mvc.UmbracoTemplatePage<Model>
@@ -58,6 +59,39 @@ Create pages:
   UmbracoContext
   UmbracoHelper
 }
+
+
+@* Comments *@
+@{
+  // comments in statement block 
+  /*
+    multi line comments in statement block
+  */
+}
+
+
+@* Variables *@
+@{
+  var myNumber = 19;
+  <p>My number is @myNumber</p>
+}
+
+@* Conditional *@
+@{
+  var howMuch = 19;
+  if(howMuch > 19) {
+    // do something
+  }else if(howMuch < 19) {
+    // do something else
+  }else{
+    // do something else else
+  }
+}
+
+
+@DateTime.Now.Year;
+@DateTime.Now.Month;
+@DateTime.Now.Day;
 
 @RenderBody();
 
