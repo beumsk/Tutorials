@@ -76,6 +76,7 @@ Create pages:
   <p>My number is @myNumber</p>
 }
 
+
 @* Conditional *@
 @{
   var howMuch = 19;
@@ -129,19 +130,16 @@ Create pages:
 }
 
 @* get current page name *@
-@{
-  var pageName = Model.Content.Name;
-}
+@Model.Content.Name;
+
+@* get current page url *@
+@Model.Content.Url;
 
 @* get current page name from partial *@
-@{
-  var pageName = Model.Content.GetPropertyValue("alias");
-}
+@Model.Content.GetPropertyValue("alias");
 
 @* get site name from global settings *@
-@{
-  var siteName = Model.GlobalSettings.WebsiteName;
-}
+@Model.GlobalSettings.WebsiteName;
 
 @* get each item from a checkbox list *@
 @{
