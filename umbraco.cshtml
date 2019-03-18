@@ -90,11 +90,23 @@ Create pages:
 }
 
 
+@* Loop *@
+@{
+  foreach(var item in itemList)
+  {
+    <p>item</p>
+  }
+}
+
+
 @DateTime.Now.Year;
 @DateTime.Now.Month;
 @DateTime.Now.Day;
 
 @RenderBody();
+
+@* displays text without html tags *@
+@Html.Raw("<p>Simple sentence.</p>");
 
 @Html.Partial("nameOfTheFile", ...);
 
