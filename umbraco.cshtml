@@ -124,21 +124,15 @@ Create pages:
 
 @Umbraco.GetDictionnaryValue("ValueName");
 
-@* subpage listing *@
-@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@* subpage listing from root *@
 @{
-  var pageId = Model.MacroParameters["pageId"];
-  var page = default(IPublishedContent);
-
-  if  (page != null && page.Children.Any())
-  {
-    <ul>
-      @foreach (var subPage in page.Children)
-      {
-        <li><a href="@(subPage.Url)">@(subPage.Name)</a></li>
-      }
-    </ul>
-  }
+  <ul>
+    @* needs true/false umbracoNaviHide to filter visible page *@
+    @foreach (var page in Model.Content.AncestorOrSelf(1).Children.Where("Visible"))
+    {
+      <li><a href="@page.Url">@page.Name</a></li>
+    }
+  </ul>
 }
 
 @* get current page name *@
