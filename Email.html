@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Email</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- layout coming from https://webdesign.tutsplus.com/articles/build-an-html-email-template-from-scratch--webdesign-12770 -->
+  <!-- guide for responsive email https://webdesign.tutsplus.com/articles/creating-a-simple-responsive-html-email--webdesign-12978 -->
+  <!-- guide to improve content https://webdesign.tutsplus.com/articles/the-complete-guide-to-designing-for-email--webdesign-12941 -->
+  <style>
+    * {
+      border: none;
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0; background: #f5f5f5">
+  <table border="1" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td bgcolor="#f5f5f5">
+        <table align="center" border="1" cellpadding="0" cellspacing="0" width="600">
+
+          <!-- header -->
+          <tr>
+            <td align="center" bgcolor="#009688" width="600" height="200" style="padding: 40px 0 30px 0; color: #ffffff; font-size: 32px; font-family: Arial, sans-serif; letter-spacing: 4px; background-color:#FFC107; background-size:cover; background-position-x:50%; background-position-y:50%; background-repeat-x:no-repeat; background-repeat-y:no-repeat; background-image:url('https://res.cloudinary.com/beumsk/image/upload/v1552514634/Road-to-Perdition_zcviwp.jpg');">
+              <!-- <img src="img/html.jpg" alt="Creating Email Magic" width="300" height="auto" style="display: block;" /> -->
+              Super cool email !
+            </td>
+          </tr>
+          <!-- // header -->
+
+          <!-- body -->
+          <tr>
+            <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+              <table border="1" cellpadding="0" cellspacing="0" width="100%">
+
+                <tr>
+                  <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px; line-height: 20px;">
+                    Lorem ipsum dolor sit amet!
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 20px 0 30px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="260" valign="top">
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td>
+                                <img src="-img/html.jpg" alt="" width="100%" height="140" style="display: block; background: #E91E63;" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 25px 0 0 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                                Incididunt consectetur in deserunt qui ullamco velit minim consectetur anim sunt fugiat. Dolor sunt minim dolore dolor irure aute sit. Est tempor voluptate et sint laborum magna mollit labore ea laboris labore et quis minim laborum magna.
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+
+                        <td style="font-size: 0; line-height: 0;" width="20">
+                          &nbsp;
+                        </td>
+
+                        <td width="260" valign="top">
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                              <td>
+                                <img src="-img/html.jpg" alt="" width="100%" height="140" style="display: block; background: #f7c626;" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="padding: 25px 0 0 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px;">
+                                Ad cillum nulla culpa cillum incididunt nostrud cillum cillum dolor. Qui excepteur reprehenderit non enim magna mollit occaecat in commodo pariatur sint nulla ea. In dolore veniam excepteur in reprehenderit deserunt pariatur do pariatur.
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- // body -->
+
+          <!-- footer -->
+          <tr>
+            <td bgcolor="#f68c2f" style="padding: 30px 30px 30px 30px; background: linear-gradient(270deg,#f7c626 5%,#FFC107 40%,#E91E63 80%);">
+              <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="75%" style="color: #ffffff; font-family: Helvetica, Arial, sans-serif; font-size: 14px;">
+                    &reg; Someone, somewhere 2013<br/>
+                    <a href="#" style="color: #ffffff;"><font color="#ffffff">Unsubscribe</font></a> to this newsletter instantly
+                  </td>
+              
+                  <td align="right">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td>
+                          <a href="http://www.twitter.com/">
+                            <svg viewBox="0 0 44.71 36.327" id="icon-twitter" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="white"><path d="M44.71 4.295c-1.656.724-3.415 1.242-5.278 1.45A9.146 9.146 0 0 0 43.468.673a18.75 18.75 0 0 1-5.796 2.225C35.965 1.138 33.584 0 30.945 0a9.145 9.145 0 0 0-9.16 9.16c0 .724.052 1.448.208 2.12-7.607-.413-14.335-3.88-18.888-9.417-.777 1.345-1.242 2.742-1.242 4.45 0 3.157 1.604 5.95 4.088 7.607a9.376 9.376 0 0 1-4.14-1.138v.103c0 4.45 3.16 8.176 7.35 9.004-.77.2-1.6.31-2.43.31-.57 0-1.14-.06-1.71-.16 1.14 3.62 4.56 6.31 8.54 6.36-3.1 2.48-7.09 4.34-11.38 4.34-.72 0-1.45-.05-2.17-.16 4.04 2.59 8.9 3.72 14.08 3.72 16.87 0 26.08-13.97 26.08-26.08V9.05c1.76-1.294 3.32-2.9 4.56-4.76"></path></svg>
+                          </a>
+                        </td>
+                        <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+                        <td>
+                          <a href="http://www.facebook.com/">
+                            <svg viewBox="0 0 21.406 43.754" id="icon-facebook" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="white"><path d="M5.43 43.754v-20.53H0V15.83h5.43V9.518C5.43 4.558 8.635 0 16.024 0c2.99 0 5.204.286 5.204.286l-.175 6.903s-2.257-.03-4.72-.03c-2.663 0-3.09 1.23-3.09 3.26v5.4h8.022l-.35 7.39h-7.672v20.53H5.43z"></path></svg>
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- // footer -->
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
