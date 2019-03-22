@@ -103,6 +103,7 @@ Create pages:
 @DateTime.Now.Month;
 @DateTime.Now.Day;
 
+@* will implement the partial inheriting from current template *@
 @RenderBody();
 
 @* displays text without html tags *@
@@ -152,6 +153,14 @@ Create pages:
   foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias"))
   { 
     item;
+  }
+}
+
+@* get item from dropdown list *@
+@{
+  if (Model.Content.HasValue("category"))
+  {
+    var dropdownValue = Model.Content.GetPropertyValue<string>("category");
   }
 }
 
