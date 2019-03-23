@@ -136,6 +136,24 @@ Create pages:
   </ul>
 }
 
+@* get list of links from related links *@
+@using Umbraco.Web.Models
+@{
+    var navigation = Umbraco.TypedContentSingleAtXPath("//navigationSettings");
+    var typedRelatedLinksConverted = navigation.GetPropertyValue<RelatedLinks>("footerLinks");
+
+    if (typedRelatedLinksConverted.Any())
+    {
+        <ul>
+            @foreach (var item in typedRelatedLinksConverted)
+            {
+                var linkTarget = (item.NewWindow) ? "_blank" : null;
+                <li><a href="@item.Link" target="@linkTarget">@item.Caption</a></li>
+            }
+        </ul>
+    }
+}
+
 @* get current page name *@
 @Model.Content.Name;
 
@@ -146,7 +164,7 @@ Create pages:
 @Model.Content.GetPropertyValue("alias");
 
 @* get site name from global settings *@
-@Model.GlobalSettings.WebsiteName;
+@Umbraco.TypedContentSingleAtXPath("//globalSettings").GetPropertyValue("websiteName");
 
 @* get each item from a checkbox list *@
 @{
@@ -173,6 +191,9 @@ Create pages:
   if (image != null)
   {
     var imageUrl = image.Url;
+    <img src="@imageUrl" alt="">
+    <!-- use cropping; first argument is element and second is crop alias -->
+    <img src="@Url.GetCropUrl(image, "cropAlias")" alt="">
   }
 }
 
