@@ -125,6 +125,9 @@ Create pages:
 
 @Umbraco.GetDictionnaryValue("ValueName");
 
+@* truncates to 10 characters, and add ellipsis because true *@
+@Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true);
+
 @* subpage listing from root *@
 @{
   <ul>
