@@ -131,8 +131,8 @@ Create pages:
 @* subpage listing from root *@
 @{
   <ul>
-    @* needs true/false umbracoNaviHide to filter visible page *@
-    @foreach (var page in Model.Content.AncestorOrSelf(1).Children.Where("Visible"))
+    @* needs true/false umbracoNaviHide to filter visible page; change documenttypealias to your own naming *@
+    @foreach (var page in Model.Content.AncestorOrSelf(1).Children.Where("Visible").Where(x => x.DocumentTypeAlias == "page"))
     {
       <li><a href="@page.Url">@page.Name</a></li>
     }
