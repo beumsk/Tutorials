@@ -128,6 +128,14 @@ Create pages:
 @* truncates to 10 characters, and add ellipsis because true *@
 @Umbraco.Truncate("I wish I was a tweet, at least then I get 140 chars", 10, true);
 
+@* subpage listing from current page *@
+@{
+  foreach (var subPage in Model.Content.Children.Where(x => x.DocumentTypeAlias == "page")) 
+  {
+    <a href="@subPage.Url">@subPage.Name</a>
+  }
+}
+
 @* subpage listing from root *@
 @{
   <ul>
