@@ -251,3 +251,12 @@ Create pages:
     </a>
   }
 }
+
+@* go through multi node tree picker *@
+@{
+    var typedMultiNodeTreePicker = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("alias");
+    foreach (var item in typedMultiNodeTreePicker)
+    {
+        <p>@item.Name</p>
+    }
+}
