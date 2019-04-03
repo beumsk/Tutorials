@@ -174,6 +174,9 @@ Create pages:
 @* get current page name from partial *@
 @Model.Content.GetPropertyValue("alias");
 
+@* check if alias has value; usefull to check if RTE have content or not *@
+@Model.Content.HasValue("alias");
+
 @* get site name from global settings *@
 @Umbraco.TypedContentSingleAtXPath("//globalSettings").GetPropertyValue("websiteName");
 
