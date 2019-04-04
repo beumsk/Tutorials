@@ -106,8 +106,11 @@ Create pages:
 @* will implement the partial inheriting from current template *@
 @RenderBody();
 
-@* displays text without html tags *@
+@* displays text without html tags keeping formating *@
 @Html.Raw("<p>Simple sentence.</p>");
+
+@* displays text without html tags without formating *@
+@{"<p>Simple sentence.</p>".StripHtml()};
 
 @Html.Partial("nameOfTheFile", ...);
 
