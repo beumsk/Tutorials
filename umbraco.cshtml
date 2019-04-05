@@ -150,6 +150,14 @@ Create pages:
   </ul>
 }
 
+@* get homepage descendants ID with a certain document type *@
+@{
+  @foreach (var page in Model.Content.AncestorOrSelf("homepage").Descendants().Where(x => x.DocumentTypeAlias == "page"))
+  {
+    <p>page.Id</p>
+  }
+}
+
 @* get list of links from related links *@
 @using Umbraco.Web.Models
 @{
