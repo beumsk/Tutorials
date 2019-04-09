@@ -237,6 +237,8 @@ Create pages:
     {
       var link = singleItem.Url;
       var date = singleItem.GetPropertyValue<DateTime>("alias").ToString("dd.MM.yyyy");
+      var time = singleItem.GetPropertyValue<DateTime>("alias").ToString("HH:mm:ss");
+      var dateTime = singleItem.GetPropertyValue<DateTime>("alias").ToString("dd.MM.yyyy HH:mm:ss");
     }
   }
 }
