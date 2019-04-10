@@ -215,8 +215,7 @@ Create pages:
   var image = Model.Content.GetPropertyValue<IPublishedContent>("alias");
   if (image != null)
   {
-    var imageUrl = image.Url;
-    <img src="@imageUrl" alt="">
+    <img src="@image.Url" alt="">
     <!-- use cropping; first argument is element and second is crop alias -->
     <img src="@Url.GetCropUrl(image, "cropAlias")" alt="">
   }
@@ -250,10 +249,10 @@ Create pages:
 }
 
 @* use dictionnary for multiple languages *@
-@umbraco.library.GetDictionaryItem("Name of the dictionary item")
+@umbraco.library.GetDictionaryItem("Name of the dictionary item");
 
 
-// escape razor @ by adding another @ in front
+@* escape razor @ by adding another @ in front *@
 @@media only screen and (min-wdith: 768px) {}
 
 
