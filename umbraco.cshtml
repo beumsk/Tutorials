@@ -188,6 +188,11 @@ Create pages:
 @* check if alias has value; usefull to check if RTE have content or not *@
 @Model.Content.HasValue("alias");
 
+@* quickly take on or another value *@
+@{
+  var alias1or2 = Model.Content.HasValue("alias1") ? Model.Content.GetPropertyValue("alias1") : Model.Content.GetPropertyValue("alias2");
+}
+
 @* get site name from global settings *@
 @Umbraco.TypedContentSingleAtXPath("//globalSettings").GetPropertyValue("websiteName");
 
