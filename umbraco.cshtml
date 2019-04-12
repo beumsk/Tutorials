@@ -226,6 +226,15 @@ Create pages:
   }
 }
 
+@* get multiple images *@
+@{
+    var images = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("alias");
+    foreach (var image in images)
+    {
+        <img src="@image.Url" alt=""/>
+    }
+}
+
 
 @* get content from a list *@
 @{
