@@ -81,7 +81,8 @@
   a:focus {} /* Selects focused link; mainly for input */
   a:target {} /* Selects the target link (eg: #about); very useful to make things pop up when reached */
 
-  p:first-child {} /* Selects first p among a group of p elements */
+  p :first-child {} /* selects first element in p */
+  p:first-child {} /* Selects first p among a group of p elements (if another element is the first-child, it returns nothing) */
   p:nth-child(2) {} /* Selects 2d p; or other */
   p:nth-child(n) {} /* Selects nth p */
   p:nth-child(even) {} /* Selects even'th child (or 2n); can be odd (or 2n+1) */
