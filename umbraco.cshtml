@@ -9,7 +9,7 @@ Installation:
   3. Run to create umbraco solution and log in (whatever you like, but remember it)
   4. Use SQL CE if no DB provided
   5. Use no template
-  6. activate https --> SSL field to true in web.config
+  6. activate https --> SSL field to true in web.config + copy https localhost and paste in solution settings
 
 Content:
   Defined by a content type
@@ -188,7 +188,7 @@ Create pages:
 @* check if alias has value; usefull to check if RTE have content or not *@
 @Model.Content.HasValue("alias");
 
-@* quickly take on or another value *@
+@* quickly take one or another value *@
 @{
   var alias1or2 = Model.Content.HasValue("alias1") ? Model.Content.GetPropertyValue("alias1") : Model.Content.GetPropertyValue("alias2");
 }
