@@ -276,6 +276,18 @@ Create pages:
 @@media only screen and (min-wdith: 768px) {}
 
 
+@* color picker *@
+@{
+    var hexColor = Model.Content.Alias;
+    String colorLabel = Model.Content.Alias.Label;
+
+    if (hexColor != null)
+    {
+        <div style="background-color: @hexColor">@colorLabel</div>
+    }
+}
+
+
 @* content picker element *@
 @{
   IPublishedContent item = Model.Content.GetPropertyValue<IPublishedContent>("alias");
