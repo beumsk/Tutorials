@@ -199,6 +199,19 @@ Create pages:
 @* get site name from global settings *@
 @Umbraco.TypedContentSingleAtXPath("//globalSettings").GetPropertyValue("websiteName");
 
+@* list of tags; can create page listing by tag -> https://shermandigital.com/blog/get-umbraco-content-by-tag/ *@
+@{ 
+  var tagList = Model.Content.GetPropertyValue<IEnumerable<string>>("tags");
+
+  if (tagList != null)
+  {
+    @foreach (var tag in tagList)
+    {
+      <span>@tag</span>
+    }
+  }
+}
+
 @* get each item from a checkbox list *@
 @{
   foreach(var item in Model.Content.GetPropertyValue<IEnumerable<string>>("alias"))
