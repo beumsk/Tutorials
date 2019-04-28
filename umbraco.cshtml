@@ -114,6 +114,9 @@ Create pages:
 
 @Html.Partial("nameOfTheFile", ...);
 
+@* pass a variable into the partial *@
+@Html.Partial("Component/ImageSingle", new ViewDataDictionary { { "comp", component.Id } });
+
 @Html.Action("nameOfAction", "nameOfController");
 
 @using (Html.BeginUmbracoForm<App.LoginForm>("Login")) {}
