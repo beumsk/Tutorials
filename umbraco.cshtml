@@ -234,6 +234,18 @@ Create pages:
   }
 }
 
+@* get items from dropdown list *@
+@if (Model.Content.HasValue("categories"))
+{
+  var categories = Model.Content.GetPropertyValue<string>("categories").Split(',');
+  <ul>
+    @foreach (var category in categories)
+    {
+      <li>@category</li>
+    }
+  </ul>
+}
+
 @* get yes/no value *@
 @Model.Content.GetPropertyValue<bool>("alias");
 
