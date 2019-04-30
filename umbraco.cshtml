@@ -234,16 +234,18 @@ Create pages:
   }
 }
 
-@* get items from dropdown list *@
-@if (Model.Content.HasValue("categories"))
-{
-  var categories = Model.Content.GetPropertyValue<string>("categories").Split(',');
-  <ul>
-    @foreach (var category in categories)
-    {
-      <li>@category</li>
-    }
-  </ul>
+@* get multiple items from dropdown list *@
+@{
+  if (Model.Content.HasValue("alias"))
+  {
+    var dropdownValues = Model.Content.GetPropertyValue<string>("alias").Split(',');
+    <ul>
+      @foreach (var dropdownValue in dropdownValues)
+      {
+        <li>@dropdownValue</li>
+      }
+    </ul>
+  }
 }
 
 @* get yes/no value *@
