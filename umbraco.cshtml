@@ -228,9 +228,9 @@ Create pages:
 
 @* get item from dropdown list *@
 @{
-  if (Model.Content.HasValue("category"))
+  if (Model.Content.HasValue("alias"))
   {
-    var dropdownValue = Model.Content.GetPropertyValue<string>("category");
+    var dropdownValue = Model.Content.GetPropertyValue<string>("alias");
   }
 }
 
