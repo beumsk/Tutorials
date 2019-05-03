@@ -1045,6 +1045,13 @@
   // get year; returns year of date
   var d = new Date();
   var year = d.getFullYear(); // current year; getMonth(), getDate();day of month, getDay();day of week
+  // add days, months, years to a date
+  var oldDate = new Date(); // today
+  var newDate = new Date(base.getFullYear(), base.getMonth(), base.getDate()+1); // tomorrow
+  var newDate = new Date(base.getFullYear(), base.getMonth()+1, base.getDate()); // next month
+  var newDate = new Date(base.getFullYear()+1, base.getMonth(), base.getDate()); // next year
+
+
   // function to change date format easily
   function convertDate(inputFormat) {
     function pad(s) { return (s < 10) ? '0' + s : s; }
