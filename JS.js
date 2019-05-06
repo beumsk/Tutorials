@@ -1037,9 +1037,12 @@
   var d3 = new Date(88,5,11,11,42,0,0); // Sat Jun 11 1988 11:42:00
 
 
-  // get hours; returns hour of date
+  // time values
   var d = new Date();
-  var hours = d.getHours(); // current hour; getMinutes(), getSeconds(), getMilliseconds()
+  var hours = d.getHours(); // current hour
+  var minutes = d.getMinutes(); // current minute
+  var seconds = d.getSeconds(); // current second
+  var milliseconds = d.getMilliseconds(); // current millisecond
 
 
   // get year; returns year of date
