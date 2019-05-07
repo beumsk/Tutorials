@@ -1045,9 +1045,14 @@
   var milliseconds = d.getMilliseconds(); // current millisecond
 
 
-  // get year; returns year of date
+  // day values
   var d = new Date();
-  var year = d.getFullYear(); // current year; getMonth(), getDate();day of month, getDay();day of week
+  var day = d.getDay(); // day of week
+  var date = d.getDate(); // day of month
+  var month = d.getMonth()+1; // add 1 because month count starts at 0 (jan=0; dec=11)
+  var year = d.getFullYear(); // current year
+
+
   // add days, months, years to a date
   var oldDate = new Date(); // today
   var newDate = new Date(base.getFullYear(), base.getMonth(), base.getDate()+1); // tomorrow
