@@ -1055,9 +1055,9 @@
 
   // add days, months, years to a date
   var oldDate = new Date(); // today
-  var newDate = new Date(base.getFullYear(), base.getMonth(), base.getDate()+1); // tomorrow
-  var newDate = new Date(base.getFullYear(), base.getMonth()+1, base.getDate()); // next month
-  var newDate = new Date(base.getFullYear()+1, base.getMonth(), base.getDate()); // next year
+  var newDate = new Date(oldDate.getFullYear(), oldDate.getMonth(), oldDate.getDate()+1); // tomorrow
+  var newDate = new Date(oldDate.getFullYear(), oldDate.getMonth()+1, oldDate.getDate()); // next month
+  var newDate = new Date(oldDate.getFullYear()+1, oldDate.getMonth(), oldDate.getDate()); // next year
 
 
   // function to change date format easily
