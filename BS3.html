@@ -51,6 +51,25 @@
   <div class="visible-lg"></div><!-- div only visible when large (>1200px) -->
   <div class="hidden-xs"></div><!-- div only hidden when xsmall -->
 
+<h4>Flexed boxes</h4>
+  <style>
+    /* forces col blocks to take the entire height */
+    .row.is-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row.is-flex > [class*='col'] {
+        display: flex;
+        /*flex-direction: column;*/
+    }
+  </style>
+  <div class="row is-flex">
+    <div class="col-lg-4 bg-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>    
+    <div class="col-lg-4 bg-danger">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vestibulum purus in turpis tincidunt suscipit.</div>
+    <div class="col-lg-4 bg-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vestibulum purus in turpis tincidunt suscipit. Sed aliquam interdum nulla, in varius odio ultrices quis. </div>    
+  </div>
+
 
 <h4>Typography</h4>
   <p class="lead">.lead text</p><!--stand out-->
