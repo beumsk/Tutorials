@@ -256,9 +256,9 @@ Create pages:
   var image = Model.Content.GetPropertyValue<IPublishedContent>("alias");
   if (image != null)
   {
-    <img src="@image.Url" alt="">
+    <img src="@image.Url" alt="@image.Name">
     <!-- use cropping; first argument is element and second is crop alias -->
-    <img src="@Url.GetCropUrl(image, "cropAlias")" alt="">
+    <img src="@Url.GetCropUrl(image, "cropAlias")" alt="@image.Name">
   }
 }
 
@@ -267,7 +267,7 @@ Create pages:
     var images = Model.Content.GetPropertyValue<IEnumerable<IPublishedContent>>("alias");
     foreach (var image in images)
     {
-        <img src="@image.Url" alt=""/>
+        <img src="@image.Url" alt="@image.Name"/>
     }
 }
 
