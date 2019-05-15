@@ -271,6 +271,16 @@ Create pages:
     }
 }
 
+@* get cropped image from sub partial; comp is given through partial call (ViewDataDictionary) *@
+@{
+  var compId = ViewData["comp"];
+  var image = Umbraco.Content(compId).GetPropertyValue<IPublishedContent>("alias");
+  if (image != null) {
+    var imageCrop = Umbraco.Media(image.Id).GetCropUrl("cropAlias");
+    <img src="@imageCrop" alt="@image.Name">
+  }
+}
+
 
 @* get content from a list *@
 @{
