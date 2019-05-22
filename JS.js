@@ -1112,7 +1112,9 @@
 
 
   // check if a propery exists; true or false
-  pen.hasOwnProperty(type);
+  pen.hasOwnProperty("type");
+  // or
+  "type" in pen;
 
 
   // for in loop
