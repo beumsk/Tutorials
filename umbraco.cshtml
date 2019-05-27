@@ -251,6 +251,11 @@ Create pages:
 @* get yes/no value *@
 @Model.Content.GetPropertyValue<bool>("alias");
 
+@* get a grid layout *@
+@Html.GetGridHtml(Model.Content, "alias", "bootstrap3");
+@* or *@
+@Model.Content.GetGridHtml(Html, "alias", "bootstrap3");
+
 @* get an image *@
 @{
   var image = Model.Content.GetPropertyValue<IPublishedContent>("alias");
