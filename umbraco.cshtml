@@ -103,6 +103,11 @@ Create pages:
 @DateTime.Now.Month;
 @DateTime.Now.Day;
 
+
+@* Change 404 page with XPath; go into config/umbracoSettings.config; page is documentType and Not found is page name *@
+@* <error404>//page[@nodeName='Not found']</error404> *@
+
+
 @* will implement the partial inheriting from current template *@
 @RenderBody();
 
