@@ -122,6 +122,12 @@ Create pages:
 @* pass a variable into the partial *@
 @Html.Partial("Component/ImageSingle", new ViewDataDictionary { { "comp", component.Id } });
 
+@* use helpers in sub partials *@
+@foreach(var child in Model.Content.Children())
+{
+    @Html.Partial("MyPartialName", child)
+}
+
 @Html.Action("nameOfAction", "nameOfController");
 
 @using (Html.BeginUmbracoForm<App.LoginForm>("Login")) {}
