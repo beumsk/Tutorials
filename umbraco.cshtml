@@ -174,6 +174,7 @@ Create pages:
   </ul>
 }
 
+
 @* get homepage descendants ID with a certain document type *@
 @{
   @foreach (var page in Model.Content.AncestorOrSelf("homepage").Descendants().Where(x => x.DocumentTypeAlias == "page"))
@@ -182,7 +183,20 @@ Create pages:
   }
 }
 
-@* get list of links from related links *@
+
+@* get single link from related link; AVOID *@
+@using Umbraco.Web.Models
+@{
+  var links = Model.Content.GetPropertyValue<RelatedLinks>("links");
+
+  if (links != null)
+  {
+    var link = links.FirstOrDefault();
+    <p><a role="button" target="@(link.NewWindow ? "_blank" : null)" href="@link.Link">@link.Caption</a></p>
+  }
+}
+
+@* get list of links from related links; AVOID *@
 @using Umbraco.Web.Models
 @{
     var navigation = Umbraco.TypedContentSingleAtXPath("//navigationSettings");
@@ -193,8 +207,13 @@ Create pages:
         <ul>
             @foreach (var item in typedRelatedLinksConverted)
             {
-                var linkTarget = (item.NewWindow) ? "_blank" : null;
-                <li><a href="@item.Link" target="@linkTarget">@item.Caption</a></li>
+                <li><a href="@item.Link" target="@(item.NewWindow ? "_blank" : null)">@item.Caption</a></li>
+            }
+        </ul>
+    }
+}
+
+
             }
         </ul>
     }
