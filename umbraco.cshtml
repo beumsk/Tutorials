@@ -214,10 +214,31 @@ Create pages:
 }
 
 
+@* get single link from multi url picker *@
+@using Umbraco.Web.Models
+@{
+    var link = Model.Content.GetPropertyValue<Link>("link");
+    if (link != null)
+    {
+      <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
+    }
+}
+
+@* get list of links from multi url picker *@
+@using Umbraco.Web.Models
+@{
+    var links = Model.Content.GetPropertyValue<IEnumerable<Link>>("links");
+    if (links.Any())
+    {
+        <ul>
+            @foreach (var link in links)
+            {
+                <li><a href="@link.Url" target="@link.Target">@link.Name</a></li>
             }
         </ul>
     }
 }
+
 
 @* get current page name *@
 @Model.Content.Name;
