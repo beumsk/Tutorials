@@ -370,6 +370,17 @@ Create pages:
 @* check if member is logged; returns a bool *@
 @Umbraco.MemberIsLoggedOn();
 
+@* Member listing *@
+@{
+    int totalRecords;
+    var members = ApplicationContext.Current.Services.MemberService.GetAll(0, int.MaxValue, out totalRecords);
+    
+    foreach (var member in members)
+    {
+        <p>member.Name</p>
+    }
+}
+
 @* use dictionnary for multiple languages *@
 @umbraco.library.GetDictionaryItem("Name of the dictionary item");
 
