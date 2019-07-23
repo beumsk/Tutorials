@@ -307,6 +307,13 @@
 
 
 
+  // arrow function
+  // ES6 !!
+  var arr = [1, 2, 3];
+  var squares = arr.map(x => x * x); // 1, 4, 9
+
+
+
 
 // POP-UPS
 // launch pop-up
@@ -723,12 +730,6 @@
   }
   console.log(sayHello('Nicolas', 'Beumier')); // must be in right irder of course
   console.log(sayHello('Rémy', 'Beumier'));
-
-
-  // arrow function
-  // ES6 !!
-  var arr = [1, 2, 3];
-  var squares = arr.map(x => x * x); // 1, 4, 9
 
 
   // function with prompt
