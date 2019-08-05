@@ -174,41 +174,42 @@
 
   <!-- TABLE -->
   <table border="solid">
-  <thead><!-- head of table -->
-    <tr><!-- table row -->
-      <th>Company Name</th><!-- column title -->
-      <th>Number of Items to Ship</th>
-      <th>Next Action</th>
-    </tr>
-  </thead>    
-  <tbody><!-- body of table -->
-    <tr>
-      <td>Strike Fitness</td><!-- column content -->
-      <td>1</td>
-      <td>Enter Order</td>
-    </tr>
-    <tr>
-      <td rowspan="3">Adam's Greenworks</td><!-- merge 2 vertical cells in 1; will fill 3 boxes -->
-      <td colspan="2">No order</td><!-- merge 2 horizontal cells in 1; will fill 2 boxes -->
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Send Invoice</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Enter Order</td>
-    </tr>
-    <tr>
-      <td>Miss Sally's Southern</td>
-      <td>4</td>
-      <td>Ship</td>
-    </tr>
-  </tbody>    
-  <tfoot><!-- foot of table; better to put it between thead and tbody -->
-    <td>Total</td>
-    <td>28</td>
-  </tfoot>
+    <caption>Table caption</caption><!-- very useful for accessibility -->
+    <thead><!-- head of table -->
+      <tr><!-- table row -->
+        <th>Company Name</th><!-- column title -->
+        <th>Number of Items to Ship</th>
+        <th>Next Action</th>
+      </tr>
+    </thead>    
+    <tbody><!-- body of table -->
+      <tr>
+        <td>Strike Fitness</td><!-- column content -->
+        <td>1</td>
+        <td>Enter Order</td>
+      </tr>
+      <tr>
+        <td rowspan="3">Adam's Greenworks</td><!-- merge 2 vertical cells in 1; will fill 3 boxes -->
+        <td colspan="2">No order</td><!-- merge 2 horizontal cells in 1; will fill 2 boxes -->
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Send Invoice</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Enter Order</td>
+      </tr>
+      <tr>
+        <td>Miss Sally's Southern</td>
+        <td>4</td>
+        <td>Ship</td>
+      </tr>
+    </tbody>    
+    <tfoot><!-- foot of table; better to put it between thead and tbody -->
+      <td>Total</td>
+      <td>28</td>
+    </tfoot>
   </table>
   <hr>
   <!--// TABLE -->
@@ -360,43 +361,44 @@
       <textarea type="text" name="quote" rows="3" cols="30"></textarea><!-- long text area --><br>
       <input type="password" name="psw"><!-- password field --><br>
       <input type="number" name="quantity" min="1" max="5" step="1"><!-- let type number between from 1 to 5 --><br>
-      <input type="date" name="bday" max="1979-12-31"><!-- date before 1980 --><br>
+      <input type="date" name="bday" max="1979-12-31"><!-- date before 1980; not working in IE --><br>
       <input type="email" name="email"><!-- check it's an email format --><br>
-      <input type="tel" placeholder="Telephone" pattern="^((\+|00)32\s?|0)4(60|[789]\d)(\s?\d{2}){3}$"><!-- telephone input with pattern to match Belgian phone numbers --><br>
-      <input type="url" name="homepage"><!-- check if it's url format --><br>
-      <input type="file" accept=".png, .jpg, .jpeg" name="file upload"><!-- upload of file --><br>
+      <input type="tel" name="tel" placeholder="Telephone" pattern="^((\+|00)32\s?|0)4(60|[789]\d)(\s?\d{2}){3}$"><!-- telephone input with pattern to match Belgian phone numbers; useful for mobile --><br>
+      <input type="url" name="url"><!-- check if it's url format --><br>
+      <input type="file" name="file" accept=".png, .jpg, .jpeg" multiple><!-- upload a file; or multiple if specified --><br>
       <input type="search" name=""><!-- create a search area --><br>
-      <label for="range"></label><input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
+      <input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
+      <input type="color" name="color" value="#ffffff"><!-- color input; doesn't work in IE --><br>
     </fieldset>
 
     <fieldset>
       <legend>radio inputs</legend>
-      <input type="radio" name="gender" id="gender1" value="male" checked><!-- button to chose one between different options; 'checked' is radio by default -->
-      <label for="gender1">Male</label>
-      <input type="radio" name="gender" id="gender2" value="female"><!-- must be same 'name' to force not to click on both answers -->
-      <label for="gender2">Female</label>
+      <input type="radio" name="radio" id="radio1" value="Radio1" checked><!-- button to chose one between different options; 'checked' is radio by default -->
+      <label for="radio1">Radio1</label>
+      <input type="radio" name="radio" id="radio2" value="Radio2"><!-- must be same 'name' to force not to click on both answers -->
+      <label for="radio2">Radio2</label>
     </fieldset>
 
     <fieldset>
       <legend>checkbox input</legend>
-      <input type="checkbox" name="" id="check1"><!-- button to chose multiple options -->
+      <input type="checkbox" name="check" id="check1"><!-- button to chose multiple options -->
       <label for="check1">Check1</label>
-      <input type="checkbox" name="" id="check2" checked><!-- this checkbox will be 'check' by default -->
+      <input type="checkbox" name="check" id="check2" checked><!-- this checkbox will be 'check' by default -->
       <label for="check2">Check2</label>
     </fieldset>
 
     <fieldset>
       <legend>Select dropdown</legend>
       <select><!-- dropdown field -->
-        <option value="Belgium" selected>Belgium</option><!-- 'selected' by default -->
-        <option value="France">France</option>
+        <option value="select1" selected>Select1</option><!-- 'selected' by default -->
+        <option value="select2">Select2</option>
       </select>
     </fieldset>
 
+    <fieldset>
       <input type="button" onclick="alert('Hello')" value="pop-up"><!-- display message --><br>
       <input type="reset" value="reset"><!-- reset fields --><br>
-
-      <input type="submit" value="submit"><!-- submit button to send answers -->
+      <input type="submit" value="submit"><!-- submit button to send answers --><br>
     </fieldset>
   </form>
   <hr>
