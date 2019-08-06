@@ -109,11 +109,12 @@
 
 
   <!-- IMAGES OR FRAMES -->
-  <a href="img/html.jpg"><img src="img/html.jpg" alt="mini" title="mini" width="200px"></a><!-- link img to bigger image --><br>
   <img src="img/html.jpg" alt="" width="200px"><!-- to insert an image, can also be .png, .jpg, .gif --><br>
   <img src="img/html.jpg" alt="" title="bull text" width="200px"><!-- infobull --><br>
   <img src="img/html.jpg" alt="" style="width: 200px"><!-- better to use style than width to be prior to external css --><br>
-  <iframe src="HTML.html"></iframe><!-- display a webpage inside one --><br>
+  <img src="img/html.jpg" alt="" srcset="img/html-sm.jpg 768w, img/html-md.jpg 992w"><!-- 100w defines the window width; srcset not working in IE --><br>
+  <iframe src="HTML.html"></iframe><!-- display content from another origin --><br>
+  <iframe src="HTML.html" sandbox="allow-scripts allow-modals"></iframe><!-- sandbox offers to filter the permissions of the iframe --><br>
   <iframe src="https://www.youtube.com/embed/xxxxxxxxx"></iframe><!-- to insert a Youtube video; add ?rel=0 at the end of the url to remove related videos at the end; other parameters possible --><br>
   <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/xxxxxxxxx" style="position:absolute;left:0;top:0;width:100%;height:100%;"></iframe></div><!-- responsive video frame -->
   <embed src="PDF.pdf" style="width: 800px; height: 1200px;"><!-- display PDF content on page; more options here: https://stackoverflow.com/questions/20562543/zoom-to-fit-pdf-embedded-in-html -->
