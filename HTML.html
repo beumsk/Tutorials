@@ -32,6 +32,7 @@
   <meta property="og:image:width" content="1200"> <!-- once width and height are specified, Facebook can directly fetch the image -->
   <meta property="og:image:height" content="600">
   <meta property="og:image:secure_url" content="https://example.com/image.jpg"> <!-- ensure the image is understood both with http and https -->
+  <meta property="og:image:alt" content="Alt text">
   <meta property="og:description" content="Description Here"> 
   <meta property="og:site_name" content="Site Name">
   <meta property="fb:admins" content="Facebook numeric ID">
@@ -42,6 +43,7 @@
   <meta name="twitter:description" content="Page description less than 200 characters">
   <meta name="twitter:creator" content="@author_handle">
   <meta name="twitter:image" content="https://www.example.com/image.jpg"> <!-- Twitter Summary card images must be at least 200x200px -->
+  <meta name="twitter:image:alt" content="Alt text">
 
   <link rel="icon" type="image/png" href="PNG.png"> <!-- tab icon -->
   <link rel="apple-touch-icon" href="PNG.png"> <!-- apple icon -->
@@ -98,7 +100,7 @@
   <a href="url" target="_blank" rel="noreferrer noopener">url</a><!-- to create a link, blank open in a new tab; noopener/noreferrer is useful for security and performance on _blank links --><br>
   <a href="url" title="bull text">url with bubble</a><!-- link with some bull text --><br>
   <a href="url" accesskey="u">url with bubble</a><!-- link with accesskey for disabled readers; access it with "u" key --><br>
-  <a href="url" tabindex="0">url with bubble</a><!-- force element to have focus with tab key; link and input have that by default --><br>
+  <a href="url" tabindex="0">url with bubble</a><!-- force element to have focus with tab key; link and input have that by default; set to -1 to disable it --><br>
   <a href="mailto:votrenom@bidule.com">mail</a><!-- link to send mail --><br>
   <a href="img/html.jpg">url to image</a><!-- link to image only --><br>
   <a href="file.txt" download="file.txt">url to download</a><!-- download file --><br>
@@ -225,8 +227,8 @@
   <mark>highlight</mark><!-- highlighted --><br>
   <sup>exponent</sup><!-- exponent --><br>
   <sub>subscripted</sub><!-- subscripted --><br>
-  <strong>bold</strong><!--bold; important content--><br>
-  <em>italic</em><!--italic; emphasized content--><br>
+  <strong>strong</strong><!--bold; important content--><br>
+  <em>emphasized</em><!--italic; emphasized content--><br>
   <ins>underline</ins><!-- underline; inserted content --><br>
   <del>crossed</del><!-- crossed; removed content --><br>
   <code>computer code</code><!-- computer code --><br>
@@ -453,6 +455,19 @@
   <p>trademark = ™ = &trade; = &#8482; </p><br>
   <hr>
   <!--// SYMBOLS -->
+
+
+  <!-- ACCESSIBILITY -->
+  <h1>H1 Title</h1><!-- use once per page, and be consistent with hierarchy of other header tags --><br>
+  <strong>Important content</strong><!-- use to make text important --><br>
+  <em>Emphasized content</em><!-- use to make text emphasized --><br>
+  <table><caption>Table description</caption></table><!-- use caption to describe a table --><br>
+  <img src="img/html.jpg" alt="image description"><!-- use alt to describe the image --><br>
+  <div role="navigation">Navigation</div><!-- role can be used to make any element understood as anything (button, navigation, search...) --><br>
+  <div tabindex="0">Focusable element</div><!-- force element to have focus with tab key; link and input have that by default; set to -1 to disable it --><br>
+  <p aria-label="description of the element">Described element</p><!-- use aria-label to give more description to an element --><br>
+  <p aria-hidden="true">Hidden element for screen readers</p><!-- tells screen readers to ignore this element --><br>
+  <!--// ACCESSIBILITY -->
 
 
 
