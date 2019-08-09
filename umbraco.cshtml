@@ -391,12 +391,11 @@ Create pages:
 
 @* color picker *@
 @{
-    var hexColor = Model.Content.Alias;
-    String colorLabel = Model.Content.Alias.Label;
+    var color = Model.Content.GetPropertyValue("alias");
 
-    if (hexColor != null)
+    if (color != null)
     {
-        <div style="background-color: @hexColor">@colorLabel</div>
+        <div style="background-color: @color">colored text</div>
     }
 }
 
