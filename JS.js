@@ -278,6 +278,11 @@
   console.log(a); // 23 again
 
 
+  // with arrays
+  const myArray = [1, 2, 3];
+  myArray[0] = 4; // can be freezed with Object.freeze()
+
+
   // with objects
   const myObject = {"key": "value"};
   myObject.key = "otherValue"; // keys are not protected; can be with Object.freeze()
