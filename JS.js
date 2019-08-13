@@ -768,9 +768,20 @@
   console.log(min(9, 1));
 
 
+  // function nested in function
+  function first() {
+    console.log("first");
+    return function() {
+      console.log("second");
+    }
+  }
+  first(); // logs first
+  first()(); // logs first and second
+
+
   // Double arg Function
-  function say (arg1) {
-    return function (arg2) {
+  function say(arg1) {
+    return function(arg2) {
       return arg1 + " " + arg2;
     }
   }
