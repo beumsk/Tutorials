@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prism</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/prism.css">
+</head>
+<body>
+  <div class="container">
+
+    <h1 class="text-center">PRISM</h1>
+
+
+    <article>
+      <h2>HTML</h2>
+
+      <h3>Example</h3>
+      <figure>
+<pre><code class="language-markup"><script type="prism-html-markup"><div>
+  <h1>Prism, it's working !</h1>
+</div></script></code></pre>
+      </figure>
+
+      <h3>Code snippet</h3>
+      <figure>
+<pre><code class="language-markup">&lt;pre>&lt;code class="language-markup">&lt;/code>&lt;/pre></code></pre>
+        <figcaption>Replace less than signs with <kbd>&amp;lt;</kbd> inside the code tags</figcaption>
+      </figure>
+
+      <h3>Code snippet with Javascript</h3>
+      <figure>
+<pre><code class="language-markup">&lt;pre>&lt;code class="language-markup">&lt;script type="prism-html-markup">&lt;/script>&lt;/code>&lt;/pre></code></pre>
+        <figcaption>No need to replace less than signs thanks to Javascript</figcaption>
+      </figure>
+    </article>
+    <hr><br>
+
+
+    <article>
+      <h2>CSS</h2>
+
+      <h3>Example</h3>
+      <figure>
+<pre><code class="language-css">.prism::after {
+  content: "Prism, it's working !";
+}</code></pre>
+      </figure>
+    </article>
+
+      <h3>Code snippet</h3>
+      <figure>
+<pre><code class="language-markup">&lt;pre>&lt;code class="language-css">&lt;/code>&lt;/pre></code></pre>
+      </figure>
+    </article>
+    <hr><br>
+
+
+    <article>
+      <h2>Javascript</h2>
+
+      <h3>Example</h3>
+      <figure>
+<pre><code class="language-javascript">function Prism() {
+  console.log("Prism, it's working !");
+};</code></pre>
+      </figure>
+
+      <h3>Code snippet</h3>
+      <figure>
+<pre><code class="language-markup">&lt;pre>&lt;code class="language-javascript">&lt;/code>&lt;/pre></code></pre>
+      </figure>
+    </article>
+    <hr><br>
+
+  </div>
+  <script src="js/prism.js"></script>
+</body>
+</html>
