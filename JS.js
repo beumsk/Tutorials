@@ -1891,57 +1891,69 @@ PROTOTYPES
 // regular expression object for matching text with a pattern
 
 
-  abc // Find strings containing "abc"
+  /abc/; // Find strings containing "abc"
 
-  ^abc // Find strings starting with "abc"
+  /^abc/; // Find strings starting with "abc"
 
-  abc$ // Find strings ending with "abc"
-  
-  [abc] // Find any characters between the brackets
-  
-  [^abc] // Find any character NOT between the brackets
-  
-  [a-z] // Find any letters in lowercase
-  
-  [A-Z] // Find any letters in uppercase
-  
-  [0-9] // Find any digits between the brackets
-  
-  [^0-9] // Find any character NOT between the brackets (any non-digit)
-  
-  (x|y) // Find any alternatives separated with |
-  
-  \d // Find a digit
+  /abc$/; // Find strings ending with "abc"
 
-  \D // Find a non digit
+  /^abc.*abc$/; // Find strings starting with "abc" and ending with "abc"
   
-  \s // Find a whitespace character
-
-  \S // Find anything but a whitespace character
+  /[abc]/; // Find any characters between the brackets
   
-  \w // Find any letter/digit or _ ; similar to [A-Za-z0-9_]
-
-  \W // opposite of \w
-
-  \n // Find a newline
-
-  \t // Find a tab
+  /[^abc]/; // Find any character NOT between the brackets
   
-  n+ // Matches any string that contains at least one n
+  /[a-c]/; // Find any letters between a and c
+
+  /[a-z]/; // Find any letters in lowercase
+  
+  /[A-C]/; // Find any letters between A and C
+
+  /[A-Z]/; // Find any letters in uppercase
+  
+  /[0-9]/; // Find any digits between the brackets; similar to \d
+  
+  /[^0-9]/; // Find any non-digit between the brackets; similar to \D
+  
+  /(abc|xyz)/; // Find any alternatives separated with |
+  
+  /\d/; // Find a digit; similar to [0-9]
+
+  /\D/; // Find a non digit; similar to [^0-9]
+  
+  /\s/; // Find a whitespace character
+
+  /\S/; // Find anything but a whitespace character
+  
+  /\w/; // Find any alphanumeric character (and underscore); similar to [A-Za-z0-9_]
+
+  /\W/; // Find any non-alphanumeric character; opposite of \w
+
+  /\n/; // Find a newline
+
+  /\t/; // Find a tab
+  
+  /n+/; // Matches any string that contains at least one n
     
-  n* // Matches any string that contains zero or more occurrences of n
+  /n*/; // Matches any string that contains zero or more occurrences of n
     
-  n? // Matches any string that contains zero or one occurrences of n
+  /n?/; // Matches any string that contains zero or one occurrences of n
 
-  a{2, 5} // find strings whit 2 to 5 a
+  /a{2}/; // find strings with 2 a
+
+  /a{2,5}/; // find strings with 2 to 5 a
     
-  i // Perform case-insensitive matching; meaning upper or lowercased 
+  /i/; // Perform case-insensitive matching; meaning upper or lowercased 
   
-  g // Perform a global match (find all matches rather than stopping after the first match)
+  /g/; // Perform a global match (find all matches rather than stopping after the first match)
   
-  m // Perform multiline matching
+  /m/; // Perform multiline matching
 
-  . // anything 
+  /./; // anything 
+
+
+  // Special characters to be escaped
+  // \ / [ ] ( ) { } ? + * | . ^ $
   
   
   // The search() method uses an expression to search for a match, and returns the position of the match.
