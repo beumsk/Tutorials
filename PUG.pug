@@ -1,0 +1,40 @@
+//- Pug - HTML preprocessor - by Beumsk
+
+
+
+//- Basic HTML
+doctype html
+html
+  head
+    title
+    link(rel="stylesheet" href="CSSS.css")
+  body
+    header
+    main
+    footer
+    script(src="JSS.js")
+
+
+//- Variables
+- var string = "Hello"
+h1 #{string} World
+
+- var superString = string + " World"
+h1= superString
+
+
+
+//- Mixin
+mixin image(url, caption)
+  figure
+    img(src=url, alt=caption)
+    figcaption= caption
+  
++image("https://media.giphy.com/media/2NKQ8MmushHi0/giphy.gif", "a sailing pug")
+
+
+
+
+
+//- https://codepen.io/mimoduo/post/pug-js-cheat-sheet
+//- https://pugjs.org/api/getting-started.html
