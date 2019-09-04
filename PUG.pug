@@ -23,6 +23,23 @@ h1 #{string} World
 h1= superString
 
 
+//- Iterations
+each value in ["one", "two", "three"]
+  p= value
+
+while x < 10
+  p= x
+  x++
+
+
+//- Conditionals
+if false
+  h1 This is false !
+else if true
+  h1 This is true !
+else
+  h1 This is bleh !
+
 
 //- Mixin
 mixin image(url, caption)
@@ -32,6 +49,12 @@ mixin image(url, caption)
   
 +image("https://media.giphy.com/media/2NKQ8MmushHi0/giphy.gif", "a sailing pug")
 
+
+//- Includes
+include anotherPugFile.pug
+
+include otherFileTypeAsPlainText.css
+include otherFileTypeAsPlainText.js
 
 
 
