@@ -301,7 +301,12 @@ https://css-tricks.com/the-shapes-of-css/
   color: red; /* contrast should be 4.5 or superior to be readable easily; B/W is 21 */
   text-align: center left right justify; /* justify(=text of exact same width) */
   text-decoration: none; /* very useful for links */
-  text-decoration: overline underline line-through;
+  text-decoration-line: overline underline line-through;
+  text-decoration-style: solid dotted dashed double wavy;
+  text-decoration-color: red;
+  text-decoration: underline dashed red;
+  text-decoration-thickness: 0.5rem; /* not implemented yet!! */
+  text-decoration-offset: 2px; /* not implemented yet!! */
   text-transform: uppercase lowercase capitalize none;
   text-indent: 50px; /* alineas */
   letter-spacing: 3px; /* space between letters */
