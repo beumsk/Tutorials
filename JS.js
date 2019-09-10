@@ -38,7 +38,8 @@
   var dog = {
     name: "Rex", 
     race: "Pitbul", 
-    age: "6"}; 
+    age: "6"
+  }; 
   console.log(dog.name); // Rex
   console.log(dog['name']); // same effect
 
@@ -675,7 +676,7 @@
   }
 
 
-  //forEach loop
+  // forEach loop
   var a = [1, 2, 3, 4, 5];
   a.forEach(function(element) {
     console.log(element); // 1 2 3 4 5, each on a different line
