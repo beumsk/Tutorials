@@ -1916,7 +1916,7 @@ PROTOTYPES
   
   /[^0-9]/; // Find any non-digit between the brackets; similar to \D
   
-  /(abc|xyz)/; // Find any alternatives separated with |
+  /abc|xyz/; // Find any alternatives separated with |
   
   /\d/; // Find a digit; similar to [0-9]
 
@@ -1943,12 +1943,14 @@ PROTOTYPES
   /a{2}/; // find strings with 2 a
 
   /a{2,5}/; // find strings with 2 to 5 a
+
+  /a{3,}/; // find strings with 3 or more a
     
-  /i/; // Perform case-insensitive matching; meaning upper or lowercased 
+  /test/i; // Perform case-insensitive matching; meaning upper or lowercased Test, TEST, tEST, etc.
   
-  /g/; // Perform a global match (find all matches rather than stopping after the first match)
+  /test/g; // Perform a global match (find all matches rather than stopping after the first match)
   
-  /m/; // Perform multiline matching
+  /test/m; // Perform multiline matching
 
   /./; // anything 
 
@@ -1957,12 +1959,22 @@ PROTOTYPES
   // \ / [ ] ( ) { } ? + * | . ^ $
   
   
-  // The search() method uses an expression to search for a match, and returns the position of the match.
-  "try to find me".search(/me/i); // 12
+  // The test() method searches a string and return true or false
+  /me/i.test("Am I in this string?"); // false
+  /am/i.test("I am in this string!"); // true
+  
+  
+  // The exec() method searches a string and return the found text or null
+  /me/i.exec("Am I in this string?"); // null
+  /am/i.exec("I am in this string!"); // 'am'
 
 
   // The match() method uses an expression to search for a match and return that match
   "try to find me".match(/me/i); // "me"
+  
+  
+  // The search() method uses an expression to search for a match, and returns the position of the match.
+  "try to find me".search(/me/i); // 12
   
   
   // The replace() method returns a modified string where the pattern is replaced.
@@ -1971,14 +1983,6 @@ PROTOTYPES
 
   // replace() works also like this
   "this code is shit".replace(/[aeiou]/gi, ''); // ths cd s sht
-  
-  
-  // The test() method searches a string and return true or false
-  /me/i.test("Am I in this string?"); // false
-  
-  
-  // The exec() method searches a string and return the found text or null
-  /me/i.exec("Am I in this string?"); // null
   
 
 
