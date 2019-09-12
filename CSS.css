@@ -81,7 +81,7 @@
   a:focus {} /* Selects focused link; mainly for input */
   a:target {} /* Selects the target link (eg: #about); very useful to make things pop up when reached */
 
-  p :first-child {} /* selects first element in p */
+  p:first-child {} /* selects first element in p */
   p:first-child {} /* Selects first p among a group of p elements (if another element is the first-child, it returns nothing) */
   p:nth-child(2) {} /* Selects 2d p; or other */
   p:nth-child(n) {} /* Selects nth p */
@@ -193,7 +193,7 @@
   background-attachment: fixed scroll local; /* Fix the background image, local is default */
   background: url("") no-repeat top center; /* shorthand property */
   background: url("") top, url("") bottom; /* 2 different background images; first will be on top */
-          background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
+  background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
   -webkit-background-clip: text; /* to show background through text */
   -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
 }
