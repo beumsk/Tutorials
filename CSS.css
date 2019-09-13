@@ -369,7 +369,6 @@ https://css-tricks.com/the-shapes-of-css/
   position: sticky; /* switches from relative to fixed depending on the scroll; not well supported  !!IE */
   position: -webkit-sticky; /* for safari */
   z-index: -1; /* defines stack order -> bigger is in front ! if not defined, last will be in front */
-  clip: rect(0px, 60px, 200px, 0px); /* sets shape of an element */
   overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
   overflow-x: hidden; /* Hide horizontal scrollbar */
   overflow-y: scroll; /* Add vertical scrollbar */
@@ -493,6 +492,7 @@ https://css-tricks.com/the-shapes-of-css/
           animation: keyframe_name 2s; /* use animation created before in @keyframes */
   -webkit-animation: keyframe_name 2s linear alternate infinite steps(1); /* for chrome and safari */
           animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
+  -webkit-animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
           animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
 }
 
