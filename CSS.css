@@ -315,6 +315,7 @@ https://css-tricks.com/the-shapes-of-css/
   word-break: break-all keep-all break-word normal; /* similar to overflow-wrap; break all breaks everything */
   white-space: nowrap; /* prevent line to wrap to a new line */
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; /* hide and replace lines exceeding the clamp with '...' !!IE */
   line-height: .8; /* space between lines; common practice is to set around 150% */
   direction: rtl; /* change text direction to right-to-left */
   writing-mode: horizontal-tb vertical-rl vertical-lr; /* used to write vertical text */
