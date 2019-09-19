@@ -236,7 +236,7 @@
 
   var a = 0; a += 1; a ++; // add 1 and 1 to 'a' variable to reach 2
 
-  var a = 5; a -= 1; a --; // substracts 1 and 1 to reach 3
+  var a = 5; a -= 1; a --; // subtracts 1 and 1 to reach 3
 
   var a = 5; a *= 5; a /= 5; // multiply by 5 and divide by 5 to reach 5
 
