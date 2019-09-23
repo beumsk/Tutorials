@@ -315,8 +315,29 @@
 
   // arrow function
   // ES6 !!
-  var arr = [1, 2, 3];
-  var squares = arr.map(x => x * x); // 1, 4, 9
+
+  const myFunc = () => {
+    const myVar = "value";
+    return myVar;
+  }
+  
+  // or shorter
+  const myFunc = () => "value";
+  myFunc(); // "value"
+
+  // and with parameter
+  const myFunc = (item) => item * 2;
+  myFunc(3); // 6
+
+  // and with parameters
+  const myConcat = (arr1, arr2) => arr1.concat(arr2);
+  myConcat([1,2], [3,4]); // [1,2,3,4]
+
+  // and with higher order functions (.map)
+  const arr = [1, 2, 3];
+  const squares = arr.map(x => x * x); // 1, 4, 9
+
+
 
 
 
