@@ -359,7 +359,7 @@
     </fieldset>
 
     <fieldset>
-      <legend> different input types</legend>
+      <legend>Input types</legend>
       <label for="label">Label</label><input type="text" name="label" id="label"><!-- Label helps the user to know what he has to write in the form; need for & id --><br>
       <textarea type="text" name="quote" rows="3" cols="30"></textarea><!-- long text area --><br>
       <input type="password" name="psw"><!-- password field --><br>
@@ -372,6 +372,12 @@
       <input type="search" name=""><!-- create a search area --><br>
       <input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
       <input type="color" name="color" value="#ffffff"><!-- color input; doesn't work in IE --><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Autocomplete</legend>
+      <input name="name" autocomplete="name"><!-- helps autocomplete browser features -->
+      <input type="email" name="email" autocomplete="email"><!-- https://developer.mozilla.org/fr/docs/Web/HTML/Attributs/autocomplete -->
     </fieldset>
 
     <fieldset>
