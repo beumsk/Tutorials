@@ -338,6 +338,13 @@
   const squares = arr.map(x => x * x); // 1, 4, 9
 
 
+  // default parameter for function
+  function greet(name = "Anonymous") {
+    console.log("Hello" + name);
+  }
+  great(); // Hello Anonymous
+  great("Einstein"); // Hello Einstein
+
 
 
 
