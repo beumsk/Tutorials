@@ -345,6 +345,17 @@
   great(); // Hello Anonymous
   great("Einstein"); // Hello Einstein
 
+  // Rest operator
+  function howMany(...args) {
+    return args.length + " arguments";
+  }
+  howMany("hi", 1, true); // 3 arguments
+
+  // Spread operator
+  const arr = [1,9,3,4];
+  const maximus = Math.max(...arr); // 4
+
+
 
 
 
