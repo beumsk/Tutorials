@@ -356,6 +356,12 @@
   const maximus = Math.max(...arr); // 4
 
 
+  // Template literals
+  const easyText = `<p class="danger">
+  It's way easier to write strings with "quotes" and breaks
+  </p>`;
+
+
 
 
 
