@@ -520,6 +520,11 @@ https://css-tricks.com/the-shapes-of-css/
 }
 
 
+.BUTTON {
+  -webkit-appearance: button; /* especially useful for iOS browsers to render buttons correctly */
+}
+
+
 .BOX-MODEL {
   box-sizing: border-box; /* keep border and padding inside the height and width of elements; use with '*' is better */
   box-sizing: content-box; /* border and padding are not kept inside height and width of elements; default value */
