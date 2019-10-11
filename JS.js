@@ -362,6 +362,28 @@
   </p>`;
 
 
+  // Class syntax; replaces constructor function
+  class SpaceShuttle {
+    constructor(targetPlanet){
+      this.targetPlanet = targetPlanet;
+    }
+  }
+  const zeus = new SpaceShuttle('Jupiter');
+
+  // Getters and Setters
+  class Thermostat {
+    constructor(farenheit) {
+      this.farenheit = farenheit;
+    }
+    get temperature() {
+      return (this.farenheit - 32) * 5/9;
+    }
+    set temperature(celsius){
+      this.farenheit = celsius * 9.0 / 5 + 32;
+    }
+  }
+  const thermos = new Thermostat(76); // setting in Fahrenheit scale
+  let temp = thermos.temperature; // 24.44 °C
 
 
 
