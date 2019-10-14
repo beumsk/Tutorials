@@ -51,6 +51,8 @@
   } else {
     // code block;
   }
+
+  // Ternary operator
   var a = (b > 10) ? "Over ten" : "Under ten"; // if b > 10, a value will become "Over ten"; otherwise, "Under ten"
 
   // Short circuiting
@@ -86,8 +88,8 @@
     // code block;
   } 
 
-  // ForEach loop
-  a.forEach(function(element) {
+  // ForEach loop from an array
+  a.forEach(function(item) {
     // code block;
   }); 
 
