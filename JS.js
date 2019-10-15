@@ -2804,6 +2804,14 @@ country.addEventListener("input", function (e) { // when typing
   // Change url
   window.location.replace("new url");
 
+  // Get window sizes
+  window.innerWidth;
+  window.innerHeight;
+
+  // Get window scrolls
+  window.scrollX;
+  window.scrollY;
+
   // Get current url
   document.URL;
 
