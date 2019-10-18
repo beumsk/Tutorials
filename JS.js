@@ -3189,3 +3189,31 @@ country.addEventListener("input", function (e) { // when typing
       document.getElementById("result").appendChild(messageElt);
     }, true);
   });
+
+
+
+
+// COOKIES
+// 
+
+
+  // set a cookie
+  document.cookie = "cookieName=cookieValue";
+
+  // set a cookie lasting more than a session
+  document.cookie = "cookieName=cookieValue; expires=Wed, 19 Aug 2020 22:00:00 GMT"; // date must be in this format...
+
+  // return list of cookies
+  document.cookie.split(";"); // cookieName=cookieValue
+
+  // check if a cookie is set
+  document.cookie.split(";").indexOf("cookieName=cookieValue"); // true
+
+
+  // create cookie function
+  function createCookie(cookieName, cookieValue, daysToExpire) {
+    var date = new Date();
+    date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+    document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toGMTString();
+  }
+  createCookie("name", "value", 100);
