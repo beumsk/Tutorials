@@ -1323,7 +1323,23 @@
 
 
 
-PROTOTYPES
+// OOP
+// Object Oriented programming
+
+
+// Capitalize first letter of an object constructor
+function Dog(name, sex, age) {
+  this.name = name;
+  this.sex = sex;
+  this.age = age;
+}
+var example = new Dog("Dogidog", "male", 3);
+
+
+
+
+
+// PROTOTYPES
 // they allow objects to get values from other objects
 
 
