@@ -1335,6 +1335,17 @@ function Dog(name, sex, age) {
 }
 var example = new Dog("Dogidog", "male", 3);
 
+// check if object is an instance of a constructor
+example instanceof Dog; // true
+fake instanceof Dog; // false
+
+// check own properties
+var ownProps = [];
+for (var property in example) {
+  if(example.hasOwnProperty(property)) {
+    ownProps.push(property); // "name", "sex", "age"
+  }
+}
 
 
 
