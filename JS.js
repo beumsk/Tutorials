@@ -224,6 +224,17 @@
   typeof null; // object
 
 
+  // Type conversion
+
+  String(true); // turns a type into a string --> "true"
+
+  Number("123"); // turns a type into a number --> 123
+
+  Number("hello"); // if the type isn't convertible --> NaN
+
+  Boolean(1); // turns a type into a boolean --> true
+
+
 
 
 // VARIABLES
