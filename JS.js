@@ -1610,7 +1610,7 @@ for (var property in example) {
   }
 
 
-  // call a array element
+  // call an array element
   var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
   console.log(languages[0]); // HTML
 
@@ -1803,7 +1803,7 @@ for (var property in example) {
   // splice a number
   var array = ['Keep', 'everybody', 'but', 'him'];
   array.splice(2, 1);
-  console.log(array); // ['Keep', 'everybody', 'him']for
+  console.log(array); // ['Keep', 'everybody', 'him']
 
 
   // replace smth in a string
