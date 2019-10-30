@@ -269,9 +269,9 @@
 
   var a = b > 0 ? "positive" : b < 0 ? "negative" : "zero"; // a will be positive, negative or zero according to b value
 
-  var a = true && true; // true
+  var a = true && false; // false; returns the first falsy value; default is last value
  
-  var a = true || false; // true
+  var a = true || false; // true; returns the first truthy value; default is last value
 
 
 
