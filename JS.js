@@ -1601,6 +1601,12 @@ for (var property in example) {
   console.log(languages.length); // 5
 
 
+  // empty an array
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.length = 0;
+  console.log(languages); // []
+
+
   // check if array is empty
   var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
   if (languages.length !== 0) {
