@@ -2453,6 +2453,10 @@ for (var property in example) {
 // help to react to user's actions
   
   
+  // monitor events; use window for example
+  monitorEvents(); // write it in the console
+
+
   // add an event
   document.getElementById("button").addEventListener("click", function() {
     console.log("Click !");
