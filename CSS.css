@@ -32,11 +32,11 @@
 
 
 .DECLARATION-ORDER {
-  >Positionning
-  >Box-model
-  >Typography
-  >Visual
-  >Misc
+  >Positionning /* position, right, bottom... */
+  >Box-model /* display, float, width, height, padding, margin, border, overflow, clip, clear... */
+  >Text /* font, text-align, list-style, cursor... */
+  >Color /* color, background */
+  >Other /* opacity, visibility, transform, animation, transition... */
 }
 
 
