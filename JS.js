@@ -255,7 +255,7 @@
 
   var a = 3; var b = a + 2; // 'b' will value 5 (3+2)
 
-  var a = 2 ** 3; // a = 8
+  var a = 2 ** 3; // a = 8 !!IE
 
   var a = 1e6; // 1000000
 
