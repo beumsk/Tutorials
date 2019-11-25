@@ -700,7 +700,7 @@
 
   // break; end of the loop
   for (var i  =0; i <= 5; i++) {
-    if (i===3) {
+    if (i === 3) {
       break;  
     }
     console.log(i);
@@ -2039,7 +2039,7 @@ for (var property in example) {
   
   /[^0-9]/; // Find any non-digit between the brackets; similar to \D
   
-  /abc|xyz/; // Find any alternatives separated with |
+  /(abc|xyz)/; // Find any alternatives separated with |
   
   /\d/; // Find a digit; similar to [0-9]
 
