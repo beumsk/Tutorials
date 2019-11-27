@@ -160,6 +160,13 @@ Create pages:
   var linkChildren = ((IEnumerable<dynamic>)Umbraco.Content(linkId).Children).Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "widepage");
 }
 
+@* find Homepage *@
+@{
+  Model.Content.AncestorOrSelf(1);
+  @* OR *@
+  Model.Content.Site();
+}
+
 @* subpage listing from current page of doctype 'page' or 'article' *@
 @{
   foreach (var subPage in Model.Content.Children.Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "article")) 
