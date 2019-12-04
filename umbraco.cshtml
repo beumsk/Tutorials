@@ -272,7 +272,12 @@ Create pages:
 }
 
 @* get site name from global settings *@
-@Umbraco.TypedContentSingleAtXPath("//globalSettings").GetPropertyValue("websiteName");
+@{
+  Umbraco.TypedContentSingleAtXPath("//globalSettings").GetPropertyValue("websiteName");
+  @* OR if specified in home page *@
+  Model.Content.AncestorOrSelf(1).GetPropertyValue<IPublishedContent>("websiteConfigurationNode").Descendant("globalSettings").GetPropertyValue("websiteName");
+}
+
 
 @* list of tags; can create page listing by tag -> https://shermandigital.com/blog/get-umbraco-content-by-tag/ *@
 @{ 
