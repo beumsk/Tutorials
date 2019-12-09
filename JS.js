@@ -2863,6 +2863,9 @@ country.addEventListener("input", function (e) { // when typing
   // Get current url
   document.URL;
 
+  // Highlight current page
+  document.querySelector(".navbar a[href*='" + location.pathname + "']").classList.add("active");
+
   
   // Start timer and be able to pause/start
   var start = document.getElementById("start");
