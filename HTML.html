@@ -176,24 +176,25 @@
 
 
   <!-- TABLE -->
+  <!-- scope attribute helps to improve accessibility; use it on first row/col elements -->
   <table border="solid">
-    <caption>Table caption</caption><!-- very useful for accessibility -->
+    <caption>Table caption</caption><!-- table title; very useful for accessibility -->
     <thead><!-- head of table -->
       <tr><!-- table row -->
-        <th>Company Name</th><!-- column title -->
-        <th>Number of Items to Ship</th>
-        <th>Next Action</th>
+        <th scope="col">Company Name</th><!-- column title -->
+        <th scope="col">Number of Items to Ship</th>
+        <th scope="col">Next Action</th>
       </tr>
     </thead>    
     <tbody><!-- body of table -->
       <tr>
-        <td>Strike Fitness</td><!-- column content -->
+        <td scope="row">Strike Fitness</td><!-- column content -->
         <td>1</td>
         <td>Enter Order</td>
       </tr>
       <tr>
-        <td rowspan="3">Adam's Greenworks</td><!-- merge 2 vertical cells in 1; will fill 3 boxes -->
-        <td colspan="2">No order</td><!-- merge 2 horizontal cells in 1; will fill 2 boxes -->
+        <td scope="rowgroup" rowspan="3">Adam's Greenworks</td><!-- merge 2 vertical cells in 1; will fill 3 boxes -->
+        <td scope="colgroup" colspan="2">No order</td><!-- merge 2 horizontal cells in 1; will fill 2 boxes -->
       </tr>
       <tr>
         <td>2</td>
@@ -204,14 +205,16 @@
         <td>Enter Order</td>
       </tr>
       <tr>
-        <td>Miss Sally's Southern</td>
+        <td scope="row">Miss Sally's Southern</td>
         <td>4</td>
         <td>Ship</td>
       </tr>
     </tbody>    
     <tfoot><!-- foot of table; better to put it between thead and tbody -->
-      <td>Total</td>
-      <td>28</td>
+      <tr>
+        <td scope="row">Total</td>
+        <td>28</td>
+      </tr>
     </tfoot>
   </table>
   <hr>
