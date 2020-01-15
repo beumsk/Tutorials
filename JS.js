@@ -226,13 +226,19 @@
 
   // Type conversion
 
-  String(true); // turns a type into a string --> "true"
+  String(true); // turns a value into a string --> "true"
+  
+  100 + ""; // turns a value into a string --> "100"
 
-  Number("123"); // turns a type into a number --> 123
+  Number("123"); // turns a value into a number --> 123
+  
+  +null; // turns a value into a number --> 0
 
   Number("hello"); // if the type isn't convertible --> NaN
 
-  Boolean(1); // turns a type into a boolean --> true
+  Boolean(1); // turns a value into a boolean --> true
+
+  !!0; // turns a value into a boolean --> false
 
 
 
@@ -259,9 +265,6 @@
 
   var a = 1e6; // 1000000
 
-  var a = Number("5"); // 'a' will value  the number 5 and not the string '5'
-
-  var a = String(5); // 'a' will value the string '5' and not the number 5
 
   var a = "five" * 2; // 'a' is NaN; Not a Number
 
