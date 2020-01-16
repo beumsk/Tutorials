@@ -2479,9 +2479,15 @@ for (var property in example) {
   }
   
   
-  // get event type and target content
+  // get event type and target content of clicked element
   document.getElementById("button").addEventListener("click", function (e) {
     console.log("Event :" + e.type + ", target text :" + e.target.textContent);
+  });
+
+
+  // get event type and target content of event handler element
+  document.getElementById("button").addEventListener("click", function (e) {
+    console.log("Event :" + e.type + ", target text :" + e.currentTarget.textContent);
   });
 
 
