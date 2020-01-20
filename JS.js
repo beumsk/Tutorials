@@ -279,14 +279,13 @@
 
 
 
-// CONST
-// Javascript const are containers you can only read; best use for value that will not change
-// ES6 !!
+// ECMASCRIPT 6 !!
 
+  // CONST
+  // Javascript const are containers you can only read; best use for value that will not change
 
   // basic const
   const a = 23;
-
 
   // exception to rewrite const -> in a block
   if (a === 23) {
@@ -294,16 +293,13 @@
   }
   console.log(a); // 23 again
 
-
   // with arrays
   const myArray = [1, 2, 3];
   myArray[0] = 4; // can be freezed with Object.freeze()
 
-
   // with objects
   const myObject = {"key": "value"};
   myObject.key = "otherValue"; // keys are not protected; can be with Object.freeze()
-
 
   // with arrays
   const myArray = [];
@@ -311,26 +307,20 @@
   myArray.push(8); // possible
 
 
-
-
-  // LET 
+  // LET
   // Javascript let are containers with small scope (a block)
-  // ES6 !!
-
-
-    // let vs var
-    var a = 5, b = 10;
-    if (a === 5) {
-      let a = 4; // only 4 in if block
-      var b = 1;
-      console.log(a, b); // 4 1
-    }
-    console.log(a, b); //  5 1
-
+  
+  // let vs var
+  var a = 5, b = 10;
+  if (a === 5) {
+    let a = 4; // only 4 in if block
+    var b = 1;
+    console.log(a, b); // 4 1
+  }
+  console.log(a, b); //  5 1
 
 
   // arrow function
-  // ES6 !!
 
   const myFunc = () => {
     const myVar = "value";
@@ -360,6 +350,7 @@
   }
   great(); // Hello Anonymous
   great("Einstein"); // Hello Einstein
+
 
   // Rest operator
   function howMany(...args) {
