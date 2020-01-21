@@ -265,6 +265,7 @@
 
   var a = 1e6; // 1000000
 
+  var a = 3; a = (a++, a*=3, a-=3); // serie of expression in one line --> a = 9
 
   var a = "five" * 2; // 'a' is NaN; Not a Number
 
