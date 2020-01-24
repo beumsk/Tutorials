@@ -57,6 +57,7 @@ $ git log (view historic of commits)
 $ git show HEAD (show changes)
 $ git checkout HEAD filename (restore to commit)
 $ git reset HEAD filename (unstage a file from staging area)
+$ git reset --soft HEAD~1
 $ git log (take the first seven characters of the commit version you want)
 $ git reset 7777777 (the 7 characters to reset to that commit version)
 
