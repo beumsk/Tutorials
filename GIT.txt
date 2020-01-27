@@ -4,15 +4,15 @@ GIT COMMANDS
 
 Most important commands:
 
-- git init // make directory become git project
+- git init // Turn an existing directory into a git repository
 - git status // get the status of git
-- git clone https://github.com/8trust/godzilist.git // to clone 8trust github for example
-OR git clone remote_location clone_name // clone the directory in a new one named
+- git clone remoteLocation // Clone (download) a repository that already exists, including all of the files, branches, and commits
+OR git clone remoteLocation cloneName // clone a repository in a new one
 
-- git branch newbranch // create new branch called newbranch
-- git checkout master (or any branchname) // move to that branch
+- git branch branchName // Creates new branch
+- git checkout branchName // Switches to the specified branch and updates the working directory
 - git add filename // add file to staging area
-- git commit -m "message" // stores changes from staging area to repository with message
+- git commit -m "message" // commit changes from staging area to repository with message
 
 - git stash // keep modifications on stash to let you work on another branch without committing unfinished work
 - git stash pop // to get your modifications stashed
@@ -20,7 +20,7 @@ OR git clone remote_location clone_name // clone the directory in a new one name
 
 - git diff HEAD // show modification between last commit and current
 
-- git log // view historic of commits
+- git log // Lists version history for the current branch
 - git merge branch_name // merge branch_name in actual branch
 - git blame filename // list all modifications with modificators names
 
@@ -32,7 +32,7 @@ OR git clone remote_location clone_name // clone the directory in a new one name
 
 Work with git lets you work on a project with multitude of people as long as you are methodical
 
-Here is an exampe of the git-flow -> http://nurelm.com/wp-content/uploads/2015/05/git-flow.png
+Here is a git cheat sheet -> https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
 
 Master branch handle the working code
 Hotfix branch handle random bugs
