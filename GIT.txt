@@ -2,37 +2,31 @@ GIT COMMANDS
 
 
 
-Most important commands:
+git init | git init [folder] // Turn an existing directory into a git repository
+git clone [repo URL] | git clone [repo URL] [folder] // Clone an existing repository including files, branches and commits
+git add [directory | file] // add directory or file to staging area
+git commit -m "[message]" // commit staged changes to local repository with specified message
+git push // push changes to remote repository
+git status // show changes; staged, unstaged, untracked
+git log // display history of commit
+git diff // show changes
+git fetch // retrieve changes from remote without merging
+git pull // retrieve changes from remote and merge to local
 
-- git init // Turn an existing directory into a git repository
-- git status // get the status of git
-- git clone remoteLocation // Clone (download) a repository that already exists, including all of the files, branches, and commits
-OR git clone remoteLocation cloneName // clone a repository in a new one
+git branch // list branches
+git branch [branchname] // create a branch with the specified name
+git branch -d [branchname] // delete the specified branch
+git checkout [branchname] // switch to specified branch
+git merge [branchname] // merge current branch with specified branch
 
-- git branch branchName // Creates new branch
-- git checkout branchName // Switches to the specified branch and updates the working directory
-- git add filename // add file to staging area
-- git commit -m "message" // commit changes from staging area to repository with message
+git revert [commit] // create new commit undoing changes from specified commit
+git reset --soft HEAD~1 // undo last commit keeping changes
 
-- git stash // keep modifications on stash to let you work on another branch without committing unfinished work
-- git stash pop // to get your modifications stashed
-- git stash apply // to keep modifications in stash
 
-- git diff HEAD // show modification between last commit and current
-
-- git log // Lists version history for the current branch
-- git merge branch_name // merge branch_name in actual branch
-- git blame filename // list all modifications with modificators names
-
-- git push origin your_branch_name // send commited to remote repository
-- git pull origin your_branch_name // get latest updates from remote repository
 
 /!\ It is crucial to keep sensible files (passwords, API, config, etc.) in a .gitignore file (should write paths to ignored files in .gitignore file)
 
 
-Work with git lets you work on a project with multitude of people as long as you are methodical
-
-Here is a git cheat sheet -> https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf
 
 Master branch handle the working code
 Hotfix branch handle random bugs
