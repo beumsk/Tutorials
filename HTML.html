@@ -115,6 +115,11 @@
   <img src="img/html.jpg" alt="" title="bull text" width="200px"><!-- infobull --><br>
   <img src="img/html.jpg" alt="" style="width: 200px"><!-- better to use style than width to be prior to external css --><br>
   <img src="img/html.jpg" alt="" srcset="img/html-sm.jpg 768w, img/html-md.jpg 992w"><!-- 100w defines the window width; srcset not working in IE --><br>
+  <picture><!-- define different images based on page width -->
+    <source media="(min-width: 768px)" srcset="img/html.jpg">
+    <source media="(min-width: 1024px)" srcset="img/html.jpg">
+    <img src="img/html.jpg" alt="" style="width: auto;">
+  </picture>
   <iframe src="HTML.html"></iframe><!-- display content from another origin --><br>
   <iframe src="HTML.html" sandbox="allow-scripts allow-modals"></iframe><!-- sandbox offers to filter the permissions of the iframe --><br>
   <iframe src="https://www.youtube.com/embed/xxxxxxxxx"></iframe><!-- to insert a Youtube video; add ?rel=0 at the end of the url to remove related videos at the end; other parameters possible --><br>
