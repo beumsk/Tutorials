@@ -127,6 +127,8 @@
   color: var(--main-color); /* uses variable and colors to red */
   background: var(--semi-transparent); /* uses variable to color background */
   padding: var(--anything, 10px); /* uses variable for padding and a fallback value used if the variables is undefined */
+  --local-variable: 300px; /* can only be used in this element block */
+  width: var(--local-variable);
   color: initial; /* reset value */
 }
 
