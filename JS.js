@@ -2139,6 +2139,10 @@ for (var property in example) {
   console.log(getElementsByTagName("header").previousSibling); // returns previous node on same level
   console.log(getElementsByTagName("header").parentNode); //returns parent node
 
+
+  // access actual child elements
+  console.log(getElementsByTagName("header").children); // returns an array of children elements; no stupid text nodes
+
   
   // check the child list
   for (var i = 0; i < document.body.childNodes.length; i++) {
