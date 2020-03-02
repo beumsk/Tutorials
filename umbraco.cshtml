@@ -169,7 +169,15 @@ Create pages:
 
 @* subpage listing from current page of doctype 'page' or 'article' *@
 @{
-  foreach (var subPage in Model.Content.Children.Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "article")) 
+  foreach (var subPage in Model.Content.Children.Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "article"))
+  {
+    <a href="@subPage.Url">@subPage.Name</a>
+  }
+}
+
+@* subpage listing from current page of doctype 'page' or 'article' and ordering by PostDate *@
+@{
+  foreach (var subPage in Model.Content.Children.Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "article").OrderByDescending(y => y.GetPropertyValue<DateTime>("PostDate")))
   {
     <a href="@subPage.Url">@subPage.Name</a>
   }
