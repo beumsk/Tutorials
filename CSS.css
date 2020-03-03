@@ -556,6 +556,7 @@ https://css-tricks.com/the-shapes-of-css/
 .FLEX-ITEMS {
   margin: auto; /* center all elements; need to be on items and not on container */
   align-self: stretch center start end; /* align a single item differently; influence on secondary axis */
+  flex: 1; /* equal height and width columns */
   flex-grow: 2; /* the higher, the bigger compared other flex items; base is 1 */
   flex-shrink: 2; /* the higher, the smaller compared other flex items; base is 1 */
   flex-basis: 100px; /* size basis for flex items before any shrink or grow */
