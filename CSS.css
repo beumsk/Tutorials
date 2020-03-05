@@ -543,6 +543,12 @@ https://css-tricks.com/the-shapes-of-css/
 }
 
 
+.SCROLL {
+  scroll-behavior: smooth auto; /* smoothen the scroll from links !!IE Edge Safari */
+  scroll-margin-top: 60px; /* defines the top margin of the scroll snap area that is used for snapping this box to the snapport !!IE */
+}
+
+
 .FLEX-CONTAINER {
   display: flex;/* in a container, change the disposition to flex and allow following properties */
   flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
