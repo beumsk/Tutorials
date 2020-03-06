@@ -175,7 +175,7 @@ Create pages:
   }
 }
 
-@* subpage listing from current page of doctype 'page' or 'article' and ordering by PostDate *@
+@* subpage listing from current page of doctype 'page' or 'article' and ordering by descending PostDate; use simply OrderBy for opposite order *@
 @{
   foreach (var subPage in Model.Content.Children.Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "article").OrderByDescending(y => y.GetPropertyValue<DateTime>("PostDate")))
   {
