@@ -167,6 +167,12 @@
 
   console.assert(2 == 2); // returns undefined if true and returns detailed error when false
 
+  console.table(["apples", "oranges", "bananas"]); // returns a nice table with index and values; works with objects as well !!IE
+
+  console.count(); // returns the number of time this particular call to count() has been called
+
+  console.log("%cStyled!", "font-weight: 800; color: red; font-size: 3rem;"); // style your log with some CSS
+
 
 
 
