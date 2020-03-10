@@ -376,6 +376,16 @@
   </p>`;
 
 
+  // some loop
+  const arr = [1, 2, 3, 4, 5];
+  arr.some((value) => { return (value == 3); }); // returns true; a single array value must be true to have a true output from an every loop
+
+
+  // every loop
+  const arr = [1, 2, 3, 4, 5];
+  arr.every((value) => { return (value == 3); }); // returns false; all array values must be true to have a true output from an every loop
+
+
   // Class syntax; replaces constructor function
   class SpaceShuttle {
     constructor(targetPlanet){
