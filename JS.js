@@ -1195,9 +1195,9 @@
 
   // simple object with 3 properties
   var pen = {
-    type: 'ball',
-    color: 'blue',
-    brand: 'Bic'
+    type: "ball",
+    color: "blue",
+    brand: "Bic"
   };
   console.log(pen.type);
   console.log(pen.color);
@@ -1210,7 +1210,7 @@
 
 
   // change property
-  pen.color = 'red';
+  pen.color = "red";
 
 
   // other way to reach properties; useful for var or parameters, or with var containing spaces
@@ -1223,7 +1223,7 @@
 
   // add property
   pen.price = 2;
-  console.log('My ' + pen.brand + ' ' + pen.color + ' ' + pen.type + 'pen costs ' + pen.price + ' euros.' );
+  console.log("My " + pen.brand + " " + pen.color + " " + pen.type + "pen costs " + pen.price + " euros." );
   
 
   // delete a property
