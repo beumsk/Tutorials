@@ -5,6 +5,15 @@
 /**/
 
 
+
+
+// BASICS
+
+// use those import everytime! They are needed in all examples
+import React from "react";
+import ReactDOM from "react-dom";
+
+
 // write JSX elements just as HTML
 const h1 = <h1>React JS</h1>;
 
@@ -31,8 +40,6 @@ const blog = (
 
 
 // render your HTML; first argument is the JSX element and the second points to the HTML where it will be rendered -> <div id="app"></diV>
-import React from "react";
-import ReactDOM from "react-dom";
 ReactDOM.render(<h1>Hello world</h1>, document.getElementById("app"));
 
 // you can use variable of course
@@ -47,7 +54,7 @@ ReactDOM.render(myElt, document.getElementById("app"));
 // class property is special, contrary to HTML, JSX need it to be called className
 const myDiv = <div className="big"></div>;
 
-// self closing tags as well, they need the back slash
+// self closing tags as well, they NEED the back slash
 const myImg = <img src="img.jpg" />;
 const myBr = <br />;
 
@@ -63,8 +70,7 @@ function myFunc() {
 <img onClick={myFunc} />
 
 
-// if else are not possibile inside JSX
-// ternary operator
+// if else are not possibile inside JSX --> use ternary operator
 const isTrue = <p>{1 === 1 ? "true" : "false"}</p>;
 
 // JSX conditionals; will render the HTML only if the JS is true
@@ -79,10 +85,11 @@ const myDiv = (
 // map method and JSX; React understand it needs to make a list out of the array; use key attribute to make list item identifiable!
 const numbers = ["one", "two", "three"];
 const list = numbers.map((number, i) => <li key={"number_"+i}>{number}</li>);
-ReactDOM.render(
-  <ul>{list}</ul>, 
-  document.getElementById("app")
-);
+ReactDOM.render(<ul>{list}</ul>, document.getElementById("app"));
+
+
+
+
 
 
 
