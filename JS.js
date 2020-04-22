@@ -1213,8 +1213,9 @@
   pen.color = "red";
 
 
-  // other way to reach properties; useful for var or parameters, or with var containing spaces
-  console.log(pen['color']);
+  // other way to set and get properties; useful for var or parameters, or with var containing spaces
+  pen["is working"] = true;
+  console.log(pen["is working"]);
 
 
   // in a single line
@@ -1231,9 +1232,9 @@
 
 
   // check if a propery exists; true or false
-  pen.hasOwnProperty("type");
+  pen.hasOwnProperty("color");
   // or
-  "type" in pen;
+  "color" in pen;
 
 
   // for in loop
