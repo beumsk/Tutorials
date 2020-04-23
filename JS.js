@@ -1240,7 +1240,10 @@
   // for in loop
   var person = {firstName: "John", lastName: "Doe", age: 25};
   for (var x in person) {
-    console.log(person[x]);
+    console.log(x + ": " + person[x]); // logs all property value pairs
+  }
+
+
   }
 
 
