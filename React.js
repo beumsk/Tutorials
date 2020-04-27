@@ -39,6 +39,8 @@ const blog = (
 );
 
 
+
+
 // render your HTML; first argument is the JSX element and the second points to the HTML where it will be rendered -> <div id="app"></diV>
 ReactDOM.render(<h1>Hello world</h1>, document.getElementById("app"));
 
@@ -61,6 +63,14 @@ const myBr = <br />;
 // javascript into JSX thanks to curly braces {}
 const text = "The result of 2 + 3 is:";
 const myJS = <p>{text + " " 2 + 3}</p>;
+
+// you can have comments that way
+const myCom = (
+  <div>
+    <h1>Comment</h1>
+    {/* here is a commented text */}
+  </div>
+);
 
 
 // create event listeners
