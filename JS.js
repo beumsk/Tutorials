@@ -1244,6 +1244,18 @@
   }
 
 
+  // copy an object (by reference); objects will always be linked to each other
+  var person = {firstName: "John", lastName: "Doe", age: 25};
+  var copy = person;
+  person.firstName = "David";
+  console.log(copy.firstName); // David and not John
+
+
+  // clone an object; makes object independant;
+  var person = {firstName: "John", lastName: "Doe", age: 25};
+  var clone = {};
+  for (var key in person) {
+    clone[key] = person[key];
   }
 
 
