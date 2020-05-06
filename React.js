@@ -100,6 +100,17 @@ ReactDOM.render(<ul>{list}</ul>, document.getElementById("app"));
 
 
 
+// COMPONENTS
+
+// React Components
+class MyComponentClass extends React.Component {
+  render() {
+    return <h1>Hello world</h1>;
+  }
+};
+ReactDOM.render(<MyComponentClass />, document.getElementById('app'));
+
+
 
 
 
