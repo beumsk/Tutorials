@@ -111,6 +111,20 @@ class MyComponentClass extends React.Component {
 ReactDOM.render(<MyComponentClass />, document.getElementById('app'));
 
 
+// React Component multiline
+class QuoteMaker extends React.Component {
+  render() {
+    return (
+      <blockquote>
+        <p>The world is full of objects, more or less interesting; I do not wish to add any more.</p>
+        <cite>Douglas Huebler</cite>
+      </blockquote>
+    );
+  }
+};
+ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
+
+
 
 
 
