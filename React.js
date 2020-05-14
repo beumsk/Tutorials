@@ -125,6 +125,24 @@ class QuoteMaker extends React.Component {
 ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
 
 
+// React Component with variables
+const owl = {
+  title: 'Excellent Owl',
+  src: 'https://s3.amazonaws.com/codecademy-content/courses/React/react_photo-owl.jpg'
+};
+class Owl extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>{owl.title}</h1>
+        <img src={owl.src} alt={owl.title} />
+      </div>
+    );
+  }
+}
+ReactDOM.render(<Owl />, document.getElementById('app'));
+
+
 
 
 
