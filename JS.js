@@ -1745,7 +1745,7 @@ for (var property in example) {
   var arr = ["one", "two", "three"];
   delete arr[2];
   console.log(arr); // ["one", "two", null]
-  arr.filter(Boolean); // to remove null, undefined etc.
+  arr = arr.filter(Boolean); // to remove null, undefined etc.
   console.log(arr); // ["one", "two"]
 
 
