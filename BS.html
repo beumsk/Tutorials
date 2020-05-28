@@ -27,52 +27,52 @@
 
 <h4>Grid System</h4>
   <div class="row">
-    <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4"><!-- xs < 576px / sm >= 576px / md >= 768px / lg >= 992px / xl > 1200px -->
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">.col-12.col-sm-10.col-md-8.col-lg-6.col-xl-4</div><!-- xs < 576px / sm >= 576px / md >= 768px / lg >= 992px / xl > 1200px -->
   </div>
   <div class="row"><!--sum of row must always be equal to 12-->
-    <div class="col-sm-6 bg-danger">sm-6</div>
-    <div class="col-sm-3 bg-primary">sm-3</div>
-    <div class="col-sm-3 bg-danger">sm-3</div>
+    <div class="col-sm-6">.col-sm-6</div>
+    <div class="col-sm-3">.col-sm-3</div>
+    <div class="col-sm-3">.col-sm-3</div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-lg-6 bg-primary">md-4</div>
-    <div class="offset-md-4 col-md-4 offset-lg-0 col-lg-6 bg-danger">md-4 + offset-md-4</div><!--offset creates a gap col before actual col; you can remove it with offset-0-->
+    <div class="col-md-4 col-lg-6">.col-md-4.col-lg-6</div>
+    <div class="offset-md-4 col-md-4 offset-lg-0 col-lg-6">.col-md-4.offset-md-4.col-lg-6.offset-lg-0</div><!--offset creates a gap col before actual col; you can remove it with offset-0-->
   </div>
   <div class="row"><!-- BS4 is smart enough to divide multiple columns in egal parts without specifying their size -->
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+    <div class="col">.col</div>
   </div>
   <div class="row"><!-- create a linebreak with the .w-100 class (add hidden/visible classes to manage the break according to screen size) -->
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="w-100"></div>
-    <div class="col"></div>
-    <div class="col"></div>
+    <div class="col">.col</div>
+    <div class="col">.col</div>
+    <div class="w-100">.w-100</div>
+    <div class="col">.col</div>
+    <div class="col">.col</div>
   </div>
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 bg-primary">sm-12 md-6 lg-4</div><!--multiple class to define col behavior on different devices-->
-    <div class="col-sm-12 col-md-6 col-lg-4 bg-danger">sm-12 md-6 lg-4</div>
-    <div class="col-sm-12 col-md-6 col-lg-4 bg-primary">sm-12 md-6 lg-4</div>
+    <div class="col-sm-12 col-md-6 col-lg-4">.col-sm-12.col-md-6.col-lg-4</div><!--multiple class to define col behavior on different devices-->
+    <div class="col-sm-12 col-md-6 col-lg-4">.col-sm-12.col-md-6.col-lg-4</div>
+    <div class="col-sm-12 col-md-6 col-lg-4">.col-sm-12.col-md-6.col-lg-4</div>
   </div>
   <div class="row justify-content-md-center"><!-- align horizontally the columns inside; also start, end, around and between -->
-    <div class="col-3">
-    <div class="col-3">
+    <div class="col-3">.col-3</div>
+    <div class="col-3">.col-3</div>
   </div>
   <div class="row align-items-center"><!-- align vertically the columns inside; also start & end -->
-    <div class="col-3">
-    <div class="col-3">
+    <div class="col-3">.col-3</div>
+    <div class="col-3">.col-3</div>
   </div>
   <div class="row">
-    <div class="col-3 align-self-start"><!-- align vertically the columns inside -->
-    <div class="col-3 align-self-center">
-    <div class="col-3 align-self-end">
+    <div class="col-3 align-self-start">.col-3.align-self-start</div><!-- align vertically the columns inside -->
+    <div class="col-3 align-self-center">.col-3.align-self-center</div>
+    <div class="col-3 align-self-end">.col-3.align-self-end</div>
   </div>
   <div class="row">
-    <div class="col-3 order-12"><!-- change item order -->
-    <div class="col-3">
-    <div class="col-3 order-1">
+    <div class="col-3 order-12">.col-3.order-12</div><!-- change item order -->
+    <div class="col-3">.col-3</div>
+    <div class="col-3 order-1">.col-3.order-1</div>
   </div>
 
 
