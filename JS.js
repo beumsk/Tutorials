@@ -2162,14 +2162,18 @@ for (var property in example) {
   console.log(document.body.childNodes[1]); // return real first html tag
   
   
-  // access element relationships (here header element)
-  console.log(getElementsByTagName("header").childeNodes); // returns an array of header child nodes
+  // access element relationships (here header element); can be an element, text or comment...
+  console.log(getElementsByTagName("header").childNodes); // returns an array of header child nodes
   console.log(getElementsByTagName("header").firstChild); // returns an header first child  
   console.log(getElementsByTagName("header").lastChild); // returns an header last child
   console.log(getElementsByTagName("header").hasChildNodes); // returns true if childnodes; false otherwise
   console.log(getElementsByTagName("header").nextSibling); // returns next node on same level
   console.log(getElementsByTagName("header").previousSibling); // returns previous node on same level
   console.log(getElementsByTagName("header").parentNode); //returns parent node
+
+
+  // access the first element node
+  console.log(getElementById("parent").firstElementChild); 
 
 
   // access actual child elements
