@@ -33,6 +33,7 @@
   // Array (careful!-> if variable is set equal to another array, they will be linked and influence each other)
   var numbers = [one, two, three]; 
   console.log(numbers[0]); // 'one'
+  console.log(numbers[0], numbers[1]); // 'one two'
 
   // Object
   var dog = {
@@ -2147,13 +2148,13 @@ for (var property in example) {
   
   // element node check
   if (document.body.nodeType === document.ELEMENT_NODE) {
-    console.log(Body is an element node);
+    console.log("Body is an element node");
   }
 
   
   // textual node check
   if (document.body.nodeType === document.TEXTUAL_NODE) {
-    console.log(Body is a textual node);
+    console.log("Body is a textual node");
   }
 
   
@@ -3138,7 +3139,7 @@ country.addEventListener("input", function (e) { // when typing
   // API with JSON (works the same but with online url); need ajax file with ajaxGet function defined
   ajaxGet("http://api-website/api/file", function (answer) {
     var arr = JSON.parse(answer);
-    arr.forEach(function (element) {code block;});
+    arr.forEach(function (element) {/*code block*/;});
   });
 
 
