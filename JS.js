@@ -370,6 +370,19 @@
   const arr = [1,9,3,4];
   const maximus = Math.max(...arr); // 4
 
+  // Copy an array
+  const arr = [1,2,3,4];
+  const arrCopy = [...arr];
+
+  // Concat 
+  const arr1 = [1,2,3,4];
+  const arr2 = [5,6,7,8];
+  const concat = [...arr1, ...arr2]; // 1, 2, 3, 4, 5, 6, 7, 8
+
+  // String to array
+  const str = "Aloha";
+  const arr = [...str]; // A, l, o, h, a
+
 
   // Template literals
   const easyText = `<p class="danger">
