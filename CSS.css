@@ -148,8 +148,8 @@
   @media only screen and (orientation: portrait) {} /* screen portrait */
   @media only print {} /* styles applied to print only */
   @media not print {} /* styles applied to anything but print  */
-  /* http://www.alsacreations.com/article/lire/930-css3-media-queries.html */
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {} /* target IE10 & IE11*/
+  @media screen and (min-width:0\0) {} /* target IE9 & IE10 */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {} /* target IE10 & IE11 */
 }
 
 
