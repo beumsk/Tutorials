@@ -143,8 +143,53 @@ class Owl extends React.Component {
 ReactDOM.render(<Owl />, document.getElementById('app'));
 
 
+// React Component render with logic
+class Random extends React.Component {
+  render() {
+    const n = Math.floor(Math.random() * 10 + 1);
+    return <h1>The number is {n}!</h1>;
+  }
+}
+ReactDOM.render(<Random />, document.getElementById('app'));
 
 
+// conditionals in components
+const fiftyFifty = Math.random() < 0.5;
+class TonightsPlan extends React.Component {
+  render() {
+    if (fiftyFifty) {
+      return <h1>Tonight I'm going out WOOO</h1>;
+    }
+    else {
+      return <h1>Tonight I'm going to bed WOOO</h1>;
+    }   
+  }
+}
+ReactDOM.render(<TonightsPlan />, document.getElementById('app'));
+
+
+// Components and this
+class MyName extends React.Component {
+  get name() {
+    return 'Einstein';
+  }
+  render() {
+    return <h1>My name is {this.name}.</h1>;
+  }
+}
+ReactDOM.render(<MyName />, document.getElementById('app'));
+
+
+// Event listener in Component
+class Button extends React.Component {
+  scream() {
+    alert('AAAAAAAAHHH!!!!!');
+  }
+  render() {
+    return <button onClick={this.scream}>AAAAAH!</button>;
+  }
+}
+ReactDOM.render(<Button />, document.getElementById('app'));
 
 
 
