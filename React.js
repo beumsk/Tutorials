@@ -413,3 +413,56 @@ class Button extends React.Component {
 Button.defaultProps = {text: 'I am a button'};
 ReactDOM.render(<Button text="heya" />, document.getElementById('app'));
 
+
+
+
+// THIS.STATE
+
+
+// setting and accessing a state
+import React from 'react';
+import ReactDOM from 'react-dom';
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { title: 'Best App' };
+  }
+  render() {
+    return (
+      <h1>
+        {this.state.title}
+      </h1>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById('app'));
+
+
+// update state; don't forget to bind 'this' !; setState automatically calls render !
+import React from 'react';
+import ReactDOM from 'react-dom';
+const green = '#39D1B4';
+const yellow = '#FFD712';
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {color: green};
+    this.changeColor = this.changeColor.bind(this);
+  }
+  changeColor() {
+    const newColor = this.state.color == green ? yellow : green;
+    this.setState({ color: newColor });
+  }
+  render() {
+    return (
+      <div style={{background: this.state.color}}>
+        <h1>Change my color</h1>
+        <button onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+ReactDOM.render(<Toggle />, document.getElementById('app'));
+
+
+
