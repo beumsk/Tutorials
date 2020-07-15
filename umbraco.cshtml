@@ -155,6 +155,9 @@ Create pages:
 @* get a page with its ID; specify its actual ID number *@
 @Umbraco.Content(1000);
 
+@* get a page ID from its name *@
+@GetUmbracoPageId("pageName");
+
 @* make something dynamic *@
 @{
   var linkChildren = ((IEnumerable<dynamic>)Umbraco.Content(linkId).Children).Where(x => x.DocumentTypeAlias == "page" || x.DocumentTypeAlias == "widepage");
