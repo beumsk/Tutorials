@@ -58,3 +58,15 @@ body {color: red;}
 ```javascript
 function javascript(arg) {}
 ```
+
+<!-- backslash escapes -->
+\*literal asterisks*\
+
+<!-- tables -->
+Header 1   | Header 2
+---------- | ----------
+Content A1 | Content B1
+Content A2 | Content B2
+
+<!-- emojis -->
+:+1: :sparkles: :rocket: :metal: :octocat: 
