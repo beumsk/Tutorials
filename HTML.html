@@ -114,7 +114,7 @@
   <img src="img/html.jpg" alt="" width="200px"><!-- to insert an image, can also be .png, .jpg, .gif --><br>
   <img src="img/html.jpg" alt="" title="bull text" width="200px"><!-- infobull --><br>
   <img src="img/html.jpg" alt="" style="width: 200px"><!-- better to use style than width to be prior to external css --><br>
-  <img src="img/html.jpg" alt="" srcset="img/html-sm.jpg 768w, img/html-md.jpg 992w"><!-- 100w defines the window width; srcset not working in IE --><br>
+  <img src="img/html.jpg" alt="" srcset="img/html-sm.jpg 768w, img/html-md.jpg 992w"><!-- 100w defines the window width; srcset not working in !!IE --><br>
   <picture><!-- define different images based on page width -->
     <source media="(min-width: 768px)" srcset="img/html.jpg">
     <source media="(min-width: 1024px)" srcset="img/html.jpg">
@@ -266,7 +266,7 @@
 
   <!-- PROGRESS & METER -->
   <progress value="60" max="100"></progress><!-- display progress bar; takes color as background --><br>
-  <meter value="4" min="0" max="10">4 out of 10</meter><!-- display scalar measurement within a defined range, or a fractional value; eg; a gauge IE!! --><br>
+  <meter value="4" min="0" max="10">4 out of 10</meter><!-- display scalar measurement within a defined range, or a fractional value; eg; a gauge !!IE --><br>
 
 
   <!-- QUOTES -->
@@ -375,14 +375,14 @@
       <textarea name="quote" rows="3" cols="30"></textarea><!-- long text area --><br>
       <input type="password" name="psw"><!-- password field --><br>
       <input type="number" name="quantity" min="1" max="5" step="1"><!-- let type number between from 1 to 5 --><br>
-      <input type="date" name="bday" max="1979-12-31"><!-- date before 1980; not working in IE --><br>
+      <input type="date" name="bday" max="1979-12-31"><!-- date before 1980; not working in !!IE --><br>
       <input type="email" name="email"><!-- check it's an email format --><br>
       <input type="tel" name="tel" placeholder="Telephone" pattern="^((\+|00)32\s?|0)4(60|[789]\d)(\s?\d{2}){3}$"><!-- telephone input with pattern to match Belgian phone numbers; useful for mobile --><br>
       <input type="url" name="url"><!-- check if it's url format --><br>
       <input type="file" name="file" accept=".png, .jpg, .jpeg" multiple><!-- upload a file; or multiple if specified --><br>
       <input type="search" name=""><!-- create a search area --><br>
       <input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
-      <input type="color" name="color" value="#ffffff"><!-- color input; doesn't work in IE --><br>
+      <input type="color" name="color" value="#ffffff"><!-- color input; not working in !!IE --><br>
     </fieldset>
 
     <fieldset>
@@ -431,12 +431,12 @@
 
 
   <!-- CONTENT DRAGGABLE -->
-  <p draggable="true">Drag and drop me.</p> <!-- IE!! -->
+  <p draggable="true">Drag and drop me.</p> <!-- !!IE -->
   <hr>
 
 
   <!-- EXPANDABLE -->
-  <details> <!-- Details and summary elements; no need of javascript to use expandables; IE & Edge not working -->
+  <details> <!-- Details and summary elements; no need of javascript to use expandables; !!IE & Edge not working -->
     <summary>
       Distribution and habitat
     </summary>
