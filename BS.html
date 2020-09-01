@@ -358,16 +358,22 @@
   </div>
 
 
-  <ul class="nav nav-tabs"><!--can use nav-pills, nav-justified, nav-stacked, pull-left, pull-right -->
-    <li class="active"><a href="#accueil" data-toggle="tab">Accueil</a></li>
-    <li><a href="#livres" data-toggle="tab">Livres</a></li>
-    <li><a href="#temoignages" data-toggle="tab">Témoignages</a></li>
 <h4 class="border-top pt-5">Tabs</h4>
+  <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+    </li>
   </ul>
-  <div class="tab-content">
-      <div class="tab-pane active" id="accueil">Texte d'accueil</div><!-- add fade for progressive tab -->
-      <div class="tab-pane" id="livres">Tous les livres</div>
-      <div class="tab-pane" id="temoignages">Tous les temoignages</div>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, cupiditate!</div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, ullam?</div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, iste!</div>
   </div>
 
 
