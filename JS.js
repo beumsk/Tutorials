@@ -45,9 +45,9 @@
   console.log(dog['name']); // same effect
 
   // Condition
-  if (a == 1) {
+  if (a === 1) {
     // code block;
-  } else if (a == 2) {
+  } else if (a === 2) {
     // code block;
   } else {
     // code block;
@@ -335,19 +335,19 @@
     return myVar;
   }
   
-  // or shorter
+  // arrow function shorter
   const myFunc = () => "value";
   myFunc(); // "value"
 
-  // and with parameter
+  // arrow function with parameter
   const myFunc = (item) => item * 2;
   myFunc(3); // 6
 
-  // and with parameters
+  // arrow function with parameters
   const myConcat = (arr1, arr2) => arr1.concat(arr2);
   myConcat([1,2], [3,4]); // [1,2,3,4]
 
-  // and with higher order functions (.map)
+  // arrow function with higher order functions (.map)
   const arr = [1, 2, 3];
   const squares = arr.map(x => x * x); // 1, 4, 9
 
@@ -438,11 +438,6 @@
 
   var name = prompt("Enter your name :"); alert("hello, " + name); // pop-up to type name and another one to say 'hello name'
 
-  var nb = Number(prompt("Enter a number ")); // by default the value type will be string; use Number() to change it
-
-  var ht = Number(prompt("enter your ht price : ")); ttc = ht * 1.196; alert("Price TTC = " + ttc); // process full price
-
-
 
 
 // USEFUL TOOLS
@@ -461,40 +456,48 @@
 
 
   // smaller than 
-    8 < 10 
+  console.log(8 < 10); // true
+  console.log(10 < 8); // false
     
   // greater than
-    10 > 8 
+  console.log(10 > 8); // true
+  console.log(8 > 10); // false
     
   // smaller or equal to
-    10 <= 10 
+  console.log(10 <= 10); // true
+  console.log(10 <= 8); // false
     
   // greater or equal to
-    10 >= 10 
+  console.log(10 >= 10); // true
+  console.log(8 >= 10); // false
     
   // equal to (weak)
-    10 == 10
+  console.log(10 == 10); // true
+  console.log(8 == 10); // false
     
   // different from (weak)
-    10 != 8
+  console.log(10 != 8); // true
+  console.log(8 != 8); // false
     
   // equal to and same type (strict)
-    10 === 10
+  console.log(10 === 10); // true
+  console.log(8 === 10); // false
     
   // different and different type from (strict)
-    10 !== 8
+  console.log(10 !== 8); // true
+  console.log(8 !== 8); // false
     
   // 'AND'
-    (10 > 8) && (10 ===10)
+  console.log((10 > 8) && (10 === 10)); // true
+  console.log((10 > 8) && (8 === 10)); // false
     
   // 'OR'
-    (8 < 10) || (8 > 10)
+  console.log((8 < 10) || (8 > 10)); // true
+  console.log((10 < 8) || (8 > 10)); // false
     
   // opposite of instruction
-    !(10 < 8)
-
-  // counts number of characters and compares it to 10 to finally return true (or false accordingly)
-  "I code like a champion".length > 10 
+  console.log(!(10 < 8)); // true
+  console.log(!(8 < 10)); // false
 
   
   
@@ -504,102 +507,66 @@
 
 
   // return the sentence because it is true
-  if ("Rémy".length = 4) {
-    console.log("You're name may be Rémy");
-  } 
+  var a = 4;
+  if (a === 4) {
+    console.log("a is 4"); // OK
+  }
+
+
+  // return the else if because if is false
+  var a = 4;
+  if (a > 4) {
+    console.log("a is greater than 4");
+  } else if (a === 4) {
+    console.log ("a is 4"); // OK
+  }
 
 
   // return the else because it's false
-  if ("Rémy".length > 4) {
-    console.log("You may be Rémy");
+  var a = 4;
+  if (a > 4) {
+    console.log("a is greater than 4");
+  } else if (a < 4) {
+    console.log("a is less than 4");
   } else {
-    console.log ("You're definitely not Rémy")
-  } 
-
-
-  // according to number typed, it will answer differently
-  var number = Number(prompt("Enter a number :")); 
-  if (number  >0) {
-    console.log(number + " is positive");
-  } else {
-    if (number === 0) {
-      console.log(number + " is nul");
-    } else {
-      console.log(number + " is negative");
-    }
+    console.log ("a isn't greater or less than 4 --> a is 4"); // OK
   }
 
 
   // switch is a better way for defined options // do not forget the break; !
-  var weather = prompt("What is the weather ?"); 
-  switch (weather) {
-    case "sun":
-      console.log("Wear a T-shirt");
+  var a = 4; 
+  switch (a) {
+    case "1":
+      console.log("a is 1");
       break;
-    case "rain":
-      console.log("Have an umbrella");
+    case "2":
+      console.log("a is 2");
       break;
-    case "snow":
-      console.log("Wear gloves and hat");
+    case "4":
+      console.log("a is 4"); // OK
       break;
     default: // if none of cases is true
-      console.log("I did not understand");
+      console.log("a is a variable");
       break;
   }
 
 
   // if you do not use breaks, cases will merge till the next break
-  var answer = "";
-  switch (val) {
+  var a = 4;
+  switch (a) {
     case 1:
     case 2:
     case 3:
-      answer = "Low"; // 1-3 will change to "Low"
+      console.log("a is 1, 2, 3");
       break;
     case 4:
-    case 5:
-    case 6:
-      answer = "Mid"; // 4-6 will change to "Mid"
+      console.log("a is 4"); // OK
       break;
     case 7:
     case 8:
     case 9:
-      answer = "High"; // 7-9 will change to "High"
+      console.log("a is 7, 8, 9");
       break;
-  }
-
-
-  // what you can drive by age using 'else if' (which is more efficient)
-  var age = Number(prompt("Enter your age :")); 
-  if (age >= 18) {
-    console.log("You can drive a car !");
-  } else if (age >= 16) {
-    console.log("You can drive a scooter !");
-  } else {
-    console.log("You can walk, run or bike !");
-  }
-
-
-  // the hour one second later
-  var hours = Number(prompt("Enter hour"));
-  var minutes = Number(prompt("Enter minute"));
-  var seconds = Number(prompt("Enter second"));
-  if ((hours >= 0) && (hours <= 23) && (minutes >= 0) && (minutes <= 59) && (seconds >= 0) && (seconds <= 59)) {
-    seconds++;
-    if (seconds === 60) {
-      seconds = 0;
-      minutes++;
-      if (minutes === 60) {
-        minutes = 0;
-        hours++;
-        if (hours === 24) {
-          hours = 0;
-        }
-      }
-    }
-    console.log("In a second, it will be " + hours + " hour, " + minutes + " minutes and " + seconds + " seconds");
-  } else {
-    console.log("Error with your Hour");
   }
 
 
