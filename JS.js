@@ -609,79 +609,34 @@
 
 
   // while loop; use it by default
-  var number = 1;
-  while (number <= 4) {
-    console.log(number);
-    number++;
-  }
-
-
-  // while with prompt inside
-  var lettre = "";
-  while (lettre !== "X") {
-    lettre = prompt("type a letter; you can quit with 'X'");
-    console.log(lettre);
-  }
-
-
-  // while with prompt outside
-  var nbTours = Number(prompt("number of tours"));
-  var tours = 1;
-  while (tours <= nbTours) {
-    console.log("Tour number" + tours);
-    tours++;
-  }
-
-
-  // number between 50 and 100
-  var number = 0;
-  while ((number > 100) || (number < 50)) {
-    number = Number(prompt("enter number between 50 and 100"));
-  }
-  console.log("gg");
-
-
-  // multiplication table between 1 and 10
-  var table = 0;
-  while (table > 10 || table < 1) {
-    table = Number(prompt("Enter the table you want between 1 and 10"));
-  }
-  var mult = 1;
-  while (mult <= 10) {
-    console.log(table + " * " + mult + " = " + (table*mult));
-    mult++;
-  }
-
-
-  // Yes or No game
-  var word = prompt("Do you want to play Yes or No?");
-  while ((word !== "yes") && (word !== "no")) {
-    word = prompt("Do you want to play Yes or No?");
-  }
-  console.log("You lose !")
+  var a = 1;
+  while (a <= 4) {
+    console.log(a);
+    a++;
+  } // 1 2 3 4
 
   
-  // /!\ careful with infinite loops
-  var number = 1;
-  while (number <= 4) {
-    console.log(number); // the condition will always be true and will therefore lead to infinite loop
+  // /!\ careful with infinite loops --> it breaks applications
+  var a = 1;
+  while (a <= 4) {
+    console.log(a); // the condition will always be true and will therefore lead to infinite loop
   }
 
 
   // do while loop; while alike, but will do the first block code at least once (even if while is false)
-  var count = 11;
+  var a = 1;
   do {
-    console.log(count);
-    count++;
+    console.log(a);
+    a++;
   }
-  while (count <= 5); // will log 11
+  while (a < 1); // 1
 
 
   // for loop; use when you know the number of loops
-  var number;
-  for (number = 1; number <= 4; number++) {
-    console.log(number);
-  }
+  var a;
+  for (a = 1; a <= 4; a++) {
+    console.log(a);
+  } // 1 2 3 4
 
 
   // when variable is only used in the for loop
@@ -691,68 +646,42 @@
 
 
   // break; end of the loop
-  for (var i  =0; i <= 5; i++) {
-    if (i === 3) {
+  for (var a = 1; a <= 4; a++) {
+    if (a === 3) {
       break;  
     }
-    console.log(i);
-  } // 0 1 2; stops when 3 reached
+    console.log(a);
+  } // 1 2; stops when 3 reached
 
 
   // continue; breaks one iteration in the loop
-  for (var i = 0; i <= 5; i++) {
-    if (i === 3) {
+  for (var a = 1; a <= 4; a++) {
+    if (a === 3) {
       continue; 
     }
-    console.log(i);
-  } // 0 1 2 4 5; no 3
-
-
-  // for with prompt and condition
-  var number = Number(prompt("Enter a number"));
-  for (var i = number; i < number+10; i++) {
-    if (i % 2 === 0) {
-      console.log(i + " is an even number");
-    } else {
-      console.log (i + " is an odd number");
-    }
-  }
-
-
-  // Show more and more characters
-  var ligne ="";
-  for (i = 1; i <= 7; i++) {
-    ligne += "#"; // equal to 'ligne = ligne + "#";'
-    console.log(ligne);
-  }
+    console.log(a);
+  } // 1 2 4; skips 3
 
 
   // fizzbuzz (similar to dingdingbottle)
-  for (i = 1; i <= 100; i++) {
-    if ((i % 3 === 0) && (i % 5 === 0)) {
+  for (var a = 1; a <= 100; a++) {
+    if ((a % 3 === 0) && (a % 5 === 0)) {
       console.log("FizzBuzz");
-    } else if (i % 3 === 0) {
+    } else if (a % 3 === 0) {
       console.log("Fizz");
-    } else if (i % 5 === 0) {
+    } else if (a % 5 === 0) {
       console.log("Buzz");
     } else {
-      console.log(i);
+      console.log(a);
     }
-  }
-
-
-  // /!\ careful with double increment
-  for (var number = 1; number <= 5; number++) {
-    console.log(number);
-    number++; // will display 1, 3 and 5 because of double increment !
-  }
+  } // 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz ...
 
 
   // forEach loop
   var a = [1, 2, 3, 4, 5];
   a.forEach(function(element) {
-    console.log(element); // 1 2 3 4 5, each on a different line
-  });
+    console.log(element);
+  }); // 1 2 3 4 5
 
 
 
