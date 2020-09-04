@@ -42,7 +42,7 @@
     age: "6"
   }; 
   console.log(dog.name); // Rex
-  console.log(dog['name']); // same effect
+  console.log(dog["name"]); // same effect
 
   // Condition
   if (a === 1) {
@@ -108,7 +108,7 @@
   document.getElementById("id").textContent = "some text"; // similar to innerHTML without tag understanding; can use += to add some text
   document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
 
-  newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
+  var newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
   document.body.removeChild(newDiv); // remove newDiv
   document.replaceChild(newDiv, otherDiv); // replace newDiv wth otherDiv
 
@@ -116,8 +116,10 @@
   newDiv.removeEventListener("click", namedFunction); // remove event click
   newDiv.addEventListener("click", function once() {this.removeEventListener("click", once)}); // event click only once
 
-  setTimeout(function (){/*code block;*/}, 1000); // run code after 1sec; can clearTimeout()
-  setInterval(function (){/*code block;*/}, 1000); // run code every 1sec; can clearInterval()
+  setTimeout(function (){/*code block;*/}, 1000); // run code after 1sec
+  var timeout = setTimeout(func, 1000); clearTimeout(timeout); // timeout is set and then cleared
+  setInterval(function (){/*code block;*/}, 1000); // run code every 1sec
+  var interval = setInterval(func, 1000); clearInterval(interval); // interval is set and then cleared
 
   document.querySelector("form").addEventListener("submit", function (e) {e.PreventDefault();}); // prevent default (submit and refresh)
   document.querySelector(".item").addEventListener("click", someFunc); function someFunc(e) {e.target.style.color = "red"} // targets clicked element 
@@ -640,9 +642,9 @@
 
 
   // when variable is only used in the for loop
-  for (var number = 1; number <= 4; number++) {
-    console.log(number);
-  }
+  for (var a = 1; a <= 4; a++) {
+    console.log(a);
+  } // 1 2 3 4
 
 
   // break; end of the loop
@@ -704,22 +706,22 @@
   function sayHello() {
     console.log('Hello !');
   }
-  sayHello();
+  sayHello(); // Hello !
 
 
-  // function with return; function exits at return statement, whatever comes after never outputs
+  // function with return; function exits at return statement, whatever comes after a return line never outputs
   function sayHello() {
     return 'Hello !';
   }
-  console.log(sayHello());
+  console.log(sayHello()); // Hello !
 
 
   // function with return and variable
   function sayHello() {
     return 'Hello !';
   }
-  var resultat = sayHello;
-  console.log(resultat);
+  var resultat = sayHello();
+  console.log(resultat); // Hello !
 
 
   // local variables; they can't be used outside the function
@@ -727,7 +729,7 @@
     var message = 'Hello !';
     return message;
   }
-  console.log(sayHello()); // that works perfectly
+  console.log(sayHello()); // Hello !
   console.log(message); // error, variable works only inside function
 
 
@@ -736,8 +738,7 @@
     var message = 'Hello, ' + name + ' !';
     return message;
   }
-  console.log(sayHello('Nicolas'));
-  console.log(sayHello('Rémy'));
+  console.log(sayHello('Beumsk')); // Hello, Beumsk !
 
 
   // function with multiple parameters
@@ -745,18 +746,7 @@
     var message = 'Hello, ' + name + ' ' + surname + ' !';
     return message;
   }
-  console.log(sayHello('Nicolas', 'Beumier')); // must be in right irder of course
-  console.log(sayHello('Rémy', 'Beumier'));
-
-
-  // function with prompt
-  function sayHello (name, surname) {
-    var message = 'Hello, ' + name + ' ' + surname + ' !';
-    return message;
-  }
-  var n = prompt('enter your first name');
-  var s = prompt('enter your surname');
-  console.log(sayHello(n, s));
+  console.log(sayHello('Mr', 'Beumsk')); // Hello, Mr Beumsk !
 
 
   // function with for loop
@@ -815,7 +805,7 @@
   console.log(calculator(4, "+", 6)); // returns 10
   console.log(calculator(4, "-", 6)); // returns -2
   console.log(calculator(2, "*", 0)); // returns 0
-  console.log(calculator(12, "/", 0)); // returns Infinity
+  console.log(calculator(2, "/", 0)); // returns Infinity
 
 
   // circle perimeter and radius
@@ -825,9 +815,8 @@
   function area(radius) {
     return Math.PI * radius * radius;
   }
-  var radius = Number(prompt('Enter the circle radius'));
-  console.log(perimeter(radius));
-  console.log(area(radius));
+  console.log(perimeter(10)); // 62.83185307179586
+  console.log(area(10)); // 314.1592653589793
 
 
 
@@ -837,19 +826,19 @@
 
 
   // length with variables
-  var word = 'Kangaroo';
+  var word = "Kangaroo";
   var wordLength = word.length;
   console.log(wordLength); // 8
 
 
   // Lower case
-  var word = 'Kangaroo';
+  var word = "Kangaroo";
   var lowerWord = word.toLowerCase();
   console.log(lowerWord); // kangaroo
 
 
   // Upper case
-  var word = 'Kangaroo';
+  var word = "Kangaroo";
   var upperWord = word.toUpperCase();
   console.log(upperWord); // KANGAROO
 
@@ -860,54 +849,69 @@
 
 
   // remove spaces at beginning and end of a string
-  var str = '   Kangaroo   ';
+  var str = "   Kangaroo   ";
   console.log(str.trim());
 
 
   // return specific character
-  var word = 'Kangaroo';
+  var word = "Kangaroo";
   console.log(word[3]); // g
   console.log(word.charAt(3)); // g
 
 
   // return position of a character
-  var word = 'Kangaroo';
-  console.log(word.indexOf('a')); // 1
+  var word = "Kangaroo";
+  console.log(word.indexOf("a")); // 1
 
 
   // return position of a character
-  var word = 'Kangaroo';
-  console.log(word.lastIndexOf('a')); // 4
+  var word = "Kangaroo";
+  console.log(word.lastIndexOf("a")); // 4
 
 
   // return all caracter from a variable
-  var word = 'Kangaroo';
+  var word = "Kangaroo";
   for (var i = 0; i < word.length; i++) {
     console.log(word[i]);
   }
 
 
   // lots of process on a word
-  var word = prompt('Enter a word');
+  var word = "Kangaroo";
   function countVowels(word) {
     var vowels = 0;
     for (var i = 0; i < word.length; i++) {
       var letter = word[i].toLowerCase();
-      if ((letter === 'a') || (letter === 'e') || (letter === 'i') || (letter === 'o') || (letter === 'u') || (letter === 'y')) {
+      if ((letter === "a") || (letter === "e") || (letter === "i") || (letter === "o") || (letter === "u") || (letter === "y")) {
         vowels++;
       }
     }
     return vowels;
   }
+  console.log("Vowels: " + countVowels(word)); // Vowels: 4
+  console.log("Consonants: " + (word.length - countVowels(word))); // Consonants: 4
+
+
+  var word = "Kangaroo";
   function backWards(word) {
-    var backWord = '';
+    var backWord = "";
     for (var i = 0; i < word.length; i++) {
       backWord = word[i] + backWord;
     }
     return backWord;
   }
+  console.log("Backwards: " + backWards(word)); // Backwards: ooragnaK
+
+  if (word === backWards(word)) {
+    console.log("Palindrome: True");
+  } else {
+    console.log("Palindrome: False");
+  } // Palindrome: False
+
+
+  var word = "Kangaroo";
   function convertLeetSpeak(word) {
-    var leetWord = '';
+    var leetWord = "";
     for (var i = 0; i < word.length; i++) {
       leetWord = leetWord + findLeetLetter(word[i]);
     }
@@ -916,39 +920,28 @@
   function findLeetLetter(letter) {
     var leetLetter = letter;
     switch (letter.toLowerCase()) {
-    case 'a' :
-      leetLetter = '4';
+    case "a" :
+      leetLetter = "4";
       break;
-    case 'b' :
-      leetLetter = '8';
+    case "b" :
+      leetLetter = "8";
       break;
-    case 'e' : 
-      leetLetter = '3';
+    case "e" : 
+      leetLetter = "3";
       break;
-    case 'l' :
-      leetLetter = '1';
+    case "l" :
+      leetLetter = "1";
       break;
-    case 'o' :
-      leetLetter = '0';
+    case "o" :
+      leetLetter = "0";
       break;
-    case 's' :
-      leetLetter = '5';
+    case "s" :
+      leetLetter = "5";
       break;
     }
     return leetLetter;
-  }
-  console.log('Your word is made of ' + word.length + ' letters');
-  console.log('Uppercase : ' + word.toUpperCase());
-  console.log('Lowercase : ' + word.toLowerCase());
-  console.log('Vowels : ' + countVowels(word));
-  console.log('Consonants : ' + (word.length - countVowels(word)));
-  console.log('Backwards : ' + backWards(word));
-  if (word === backWards(word)) {
-    console.log('Palindrome : True');
-  } else {
-    console.log('Palindrome : False');
-  }
-  console.log(convertLeetSpeak(word));
+  }  
+  console.log(convertLeetSpeak(word)); // K4ng4r00
 
 
 
