@@ -825,51 +825,62 @@
 // methods working on text strings
 
 
-  // length with variables
+  // string.length with variables
   var word = "Kangaroo";
   var wordLength = word.length;
   console.log(wordLength); // 8
 
 
-  // Lower case
+  // string.toLowerCase()
   var word = "Kangaroo";
   var lowerWord = word.toLowerCase();
   console.log(lowerWord); // kangaroo
 
 
-  // Upper case
+  // string.toUpperCase()
   var word = "Kangaroo";
   var upperWord = word.toUpperCase();
   console.log(upperWord); // KANGAROO
 
 
-  // check if string starts with something
+  // string.startsWith() check if string starts with something
   var str = "http://jojo.be";
   console.log(str.startsWith("http://")); // true
 
 
-  // remove spaces at beginning and end of a string
+  // string.trim() remove spaces at beginning and end of a string
   var str = "   Kangaroo   ";
   console.log(str.trim());
 
 
-  // return specific character
+  // string.charAt() return specific character
   var word = "Kangaroo";
   console.log(word[3]); // g
   console.log(word.charAt(3)); // g
 
 
-  // return position of a character
+  // string.indexOf() return position of a character
   var word = "Kangaroo";
   console.log(word.indexOf("a")); // 1
 
 
-  // return position of a character
+  // string.lastIndexOf() return position of a character
   var word = "Kangaroo";
   console.log(word.lastIndexOf("a")); // 4
 
 
-  // return all caracter from a variable
+  // string.replace() replace a string in a string
+  var str = "Salut, c'est chouette !";
+  str = str.replace("chouette", "cool");
+  console.log(str); // "Salut, c'est cool !"
+
+
+  // use replace to add spaces before uppercases; or smth else
+  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
+  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
+
+
+  // return all character from a string
   var word = "Kangaroo";
   for (var i = 0; i < word.length; i++) {
     console.log(word[i]);
@@ -1084,9 +1095,9 @@
 
   // function to change date format easily
   function convertDate(inputFormat) {
-    function pad(s) { return (s < 10) ? '0' + s : s; }
+    function pad(s) { return (s < 10) ? "0" + s : s; }
     var d = new Date(inputFormat);
-    return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('.'); // dd.mm.yyyy
+    return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join("."); // dd.mm.yyyy
   }
 
 
