@@ -1103,6 +1103,412 @@
 
 
 
+// ARRAYS
+// JavaScript arrays are used to store multiple values in a single variable; they are number indexed
+// Careful! -> if var is set equals to an array, they will be linked and influence each other (may cause infinite loops)
+
+
+  // basic
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  
+
+  // array length
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  console.log(languages.length); // 5
+
+
+  // empty an array
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.length = 0;
+  console.log(languages); // []
+
+
+  // check if array is empty
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  if (languages.length !== 0) {
+    console.log("Array is not empty !");
+  } else {
+    console.log("Array is empty");
+  }
+
+
+  // call an array element
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  console.log(languages[0]); // HTML
+
+
+  // call all elements
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  for (var i = 0; i < languages.length; i++) {
+    console.log(languages[i]);
+  }
+
+
+  // call all elements with forEach
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.forEach(function(language) {
+  console.log(language);
+  });
+
+
+  // call all elements backwards
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  for (var i = languages.length-1; i >= 0; i--) {
+    console.log('I would like to master ' + languages[i]);
+  }
+
+
+  // add an element (to the end)
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.push('BS'); // possible to add multiple elements .push(1, 2, 3, 'etc');
+  console.log(languages[5]);
+
+
+  // delete last element
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.pop(); // no more 'MySQL'
+
+
+  // pop() element and store the deleted value
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  var deleted = languages.pop(); // 'MySQL' is no more in array and stored in 'deleted'
+
+
+  // remove first element
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.shift(); // no more 'HTML'
+
+
+  // shift() element and store the deleted value
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  var deleted = languages.shift(); // 'HTML' is no more in array and stored in 'deleted'
+
+
+  // add an element (from the front)
+  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
+
+
+  // change arguments of a function into an array
+  function array(arr) {
+    var args = Array.prototype.slice.call(arguments);
+    console.log(args); // [1, 2, 3, 4]
+  }
+  array(1, 2, 3, 4); 
+
+
+  // going through function arguments
+  function lol(arr1, arr2, arr3) {
+    for (i=0; i<arguments.length; i++) {
+      console.log(arguments[i]);
+    }
+  }
+  lol(1, 3, 7); // 1 3 7
+
+
+  // make change on arrays; iterate
+  var oldArray = [1, 2, 3];
+  var newArray = oldArray.map(function(val) {
+    return val * 3;
+  });
+  console.log(newArray); // [3, 6, 9]; they have been multiplied
+
+
+  // use all values, one at a time, to get a single one; condense
+  var oldArray = [1, 2, 3, 4, 5];
+  var singleVal = oldArray.reduce(function(previousVal, currentVal) {
+    return previousVal - currentVal;
+  }, 0); // start at value[0]; do not use it for multiplications
+  console.log(singleVal); // will result in -1-2-3-4-5 = -15
+
+
+  // filter an array
+  var oldArray = [1, 2, 3, 4, 5];
+  var newArray = oldArray.filter(function(val) {
+    return val < 4; // keep what is said; all values under 4
+  });
+  console.log(newArray); // [1, 2, 3]
+
+
+  // delete some array values
+  var arr = ["one", "two", "three"];
+  delete arr[2];
+  console.log(arr); // ["one", "two", null]
+  arr = arr.filter(Boolean); // to remove null, undefined etc.
+  console.log(arr); // ["one", "two"]
+
+
+  // filter Boolean, will delete false, null, 0, "", undefined, and NaN.
+  function numbersLettersOnly(arr) {
+    return arr.filter(Boolean);
+  }
+  numbersLettersOnly([7, "abc", false, null, 0, 9, NaN, "hello", undefined, ""]); // [7, "abc", 9, "hello"]
+
+
+  // sort an array; for alphabetic sorting, just need sort()
+  var array = [1, 2, 3, 4, 5];
+  array.sort(function(a, b) {
+    return b - a; // from largest; a - b to sort from smallest
+  });
+  console.log(array); // [5, 4, 3, 2, 1]
+
+
+  // get index position of a value in an array
+  var array = [10, 20, 30, 40, 50];
+  var a = array.indexOf(30);
+  console.log(a); // 2; position of value 30
+
+
+  // indexOf can be used to check if an array includes an element
+  var array = [10, 20, 30, 40, 50];
+  var a = array.indexOf(60);
+  console.log(a); // -1; the value isn't in the array
+
+
+  // get index position of a value in an array (starting from the end)
+    var array = [10, 20, 30, 40, 30, 50];
+    var a = array.lastIndexOf(30);
+    console.log(a); // 4; position of last value 30
+
+
+  // reverse an array
+  var array = [1, 2, 3];
+  var newArray = array.reverse();
+  console.log(newArray); // [3, 2, 1]
+
+
+  // concatenate an array with another one
+  var oldArray = [1, 2, 3];
+  var concatenateMe = [4, 5, 6];
+  var newArray = oldArray.concat(concatenateMe);
+  console.log(newArray); // [1, 2, 3, 4, 5, 6]
+
+
+  // split a string into an array
+  var string = 'Split me into an array';
+  var array = string.split(' '); // can be other character
+  console.log(array); // ['Split', 'me', 'into', 'an', 'array']
+
+
+  // split number into an array 
+  var num = 137;
+  var arr = (""+num).split("");
+  console.log(arr); // ["1", "3", "7"]
+
+
+  // join an array into a string
+  var array = ['Join', 'me', 'into', 'a', 'string'];
+  var string = array.join(' ');
+  console.log(string); // 'Join me into a string'
+
+
+  // slice an array
+  var array = ['Keep', 'us', 'delete', 'the', 'others'];
+  array.slice(0, 2);
+  console.log(array); // ['Keep', 'us']
+  var array2 = array.slice(0, 2);
+  console.log(array2); // ['Keep', 'us']
+
+
+  // slice to copy an array
+  var array = ['copy', 'this', 'array'];
+  var arrayCopy = array.slice();
+  console.log(arrayCopy); // ['copy', 'this', 'array']
+
+
+  // splice an array
+  var array = ['Delete', 'the', 'others', 'keep', 'us'];
+  array = array.splice(3);
+  console.log(array); // ['keep', 'us']
+
+
+  // splice a number
+  var array = ['Keep', 'everybody', 'but', 'him'];
+  array.splice(2, 1);
+  console.log(array); // ['Keep', 'everybody', 'him']
+
+
+  // replace smth in a string
+  var str = "Salut, c'est chouette !";
+  str = str.replace("chouette", "cool");
+  console.log(str); // "Salut, c'est cool !"
+
+
+  // use replace to add spaces before uppercases; or smth else
+  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
+  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
+
+
+  // reverse a string
+  function reverseString(str) {
+    var array = str.split("");
+    array.reverse();
+    str = array.join("");
+    return str;
+  }
+  reverseString("hello"); // return olleh
+
+
+  // array of objects
+  var Language = {
+    init: function(code, lvl) {
+      this.code = code;
+      this.lvl= lvl;
+    },
+    describe: function() {
+      return this.code + ' (' + this.lvl + ')';
+    }
+  };
+  var language1 = Object.create(Language);
+  language1.init('HTML', 80);
+  var language2 = Object.create(Language);
+  language2.init('CSS', 70);
+  var language3 = Object.create(Language);
+  language3.init('JS', 50);
+  var languages = [];
+  languages.push(language1);
+  languages.push(language2);
+  languages.push(language3);
+  languages.forEach(function(language) {
+    console.log(language.describe());
+  });
+
+
+  // find the right card 
+  var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
+  var currentCard = 'Heart';
+  while (currentCard !== 'Spade') {
+    console.log(currentCard);
+    var randomNumber = Math.floor(Math.random() * 4);
+    currentCard = cards[randomNumber];
+  }
+  console.log('Spade found !');
+
+
+  // 3 and 4 Mousquetaires
+  var Mousquetaires = ['Arthos', 'Porthos', 'Aramis'];
+  console.log('Here are the three Mousquetaires :')
+  for (var i = 0; i < Mousquetaires.length; i++) {
+    console.log(Mousquetaires[i]);
+  }
+  Mousquetaires.push("d'Artagnan");
+  console.log('Now, they are four !')
+  Mousquetaires.forEach(function(Mousquetaires) {
+    console.log(Mousquetaires);
+  });
+
+
+  // sum of values
+  var Values = [11, 3, 7, 2, 9, 10];
+  var sum = 0;
+  for (var i = 0; i < Values.length; i++) {
+    sum = sum + Values[i]; // could write 'sum += Values[i];'
+  }
+  console.log('the sum of the elements is : ' + sum); // 42
+
+
+  // max of values
+  var Values = [11, 3, 7, 2, 9, 10];
+  var max = -10000000; // could change with 'Values[0]''
+  for (var i = 0; i < Values.length; i++) { // then should change 'i = 1'
+    if (Values[i] > max) {
+      max = Values[i];
+    }
+  }
+  console.log('the max of the elements is : ' + max);
+
+
+  // adding words to a list until 'stop'
+  var list = [];
+  var word = '';
+  while ((word !== 'Stop') && (word !== 'stop') && (word !== 'STOP')) {
+    word = prompt('Enter a word to add it to the list. Use "Stop" to stop the process');
+    if ((word !== 'Stop') && (word !== 'stop') && (word !== 'STOP')) {
+      list.push(word);
+    }
+  }
+  list.forEach(function(list) {
+    console.log(list);
+  });
+
+
+  // list of films
+  var Films = [];
+  var Film = {
+    init: function(title, year, director) {
+      this.title = title;
+      this.year = year;
+      this.director = director;
+    },
+    describe: function() {
+      return this.title + ' (' + this.year + ', ' + this.director + ')';
+    }
+  };
+  var film1 = Object.create(Film);
+  film1.init('Star Wars', 1977, 'Georges Lucas');
+  Films.push(film1);
+  var film2 = Object.create(Film);
+  film2.init('LOTR', 2001, 'Peter Jackson');
+  Films.push(film2);
+  var film3 = Object.create(Film);
+  film3.init('Indiana Jones', 1981, 'Steven Spielberg');
+  Films.push(film3);
+  Films.forEach(function(Film) {
+    console.log(Film.describe());
+  });
+
+
+  // contact manager
+  console.log('Welcome in the contact manager !');
+  // array
+  var Contacts = [];
+  // object
+  var Contact = {
+    init: function(surname, name) {
+      this.surname = surname;
+      this.name = name;
+    },
+    describe: function() {
+      return 'Surname: ' + this.surname + ', Name: ' + this.name;
+    }
+  };
+  // 1st contact
+  var contact1 = Object.create(Contact);
+  contact1.init('Levisse', 'Carole');
+  Contacts.push(contact1);
+  // 2nd contact
+  var contact2 = Object.create(Contact);
+  contact2.init('Nelsonne', 'Mélodie');
+  Contacts.push(contact2);
+  // loop
+  while (option !== 0) {
+    console.log('\n');
+    // options
+    console.log('1 : List contacts');
+    console.log('2 : add a contact');
+    console.log('0 : Quit');
+    // pop-up
+    var option = Number(prompt('Chose your option :'));
+    if (option === 1) {
+      // list
+      console.log('Here is the list of all your contacts :')
+      Contacts.forEach(function(Contact) {
+        console.log(Contact.describe());
+      });
+    } else if (option === 2) {
+      // add
+      var contact3 = Object.create(Contact);
+      contact3.init(prompt('Enter the surname :'), prompt('Enter the name :'));
+      Contacts.push(contact3);
+      console.log('You added a contact!');
+    }
+  }
+  // quit
+  console.log('\nGoodbye !');
+
+
+
+
 // OBJECTS
 // they are like complexed variables; they include multiple parameters and functions; they are named indexed
 
@@ -1524,412 +1930,6 @@ for (var property in example) {
   console.log("Here is the total after transfer and interests :");
   console.log(account1.describe());
   console.log(account2.describe());
-
-
-
-
-// ARRAYS
-// JavaScript arrays are used to store multiple values in a single variable; they are number indexed
-// Careful! -> if var is set equals to an array, they will be linked and influence each other (may cause infinite loops)
-
-
-  // basic
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  
-
-  // array length
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  console.log(languages.length); // 5
-
-
-  // empty an array
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.length = 0;
-  console.log(languages); // []
-
-
-  // check if array is empty
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  if (languages.length !== 0) {
-    console.log("Array is not empty !");
-  } else {
-    console.log("Array is empty");
-  }
-
-
-  // call an array element
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  console.log(languages[0]); // HTML
-
-
-  // call all elements
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  for (var i = 0; i < languages.length; i++) {
-    console.log(languages[i]);
-  }
-
-
-  // call all elements with forEach
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.forEach(function(language) {
-  console.log(language);
-  });
-
-
-  // call all elements backwards
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  for (var i = languages.length-1; i >= 0; i--) {
-    console.log('I would like to master ' + languages[i]);
-  }
-
-
-  // add an element (to the end)
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.push('BS'); // possible to add multiple elements .push(1, 2, 3, 'etc');
-  console.log(languages[5]);
-
-
-  // delete last element
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.pop(); // no more 'MySQL'
-
-
-  // pop() element and store the deleted value
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  var deleted = languages.pop(); // 'MySQL' is no more in array and stored in 'deleted'
-
-
-  // remove first element
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.shift(); // no more 'HTML'
-
-
-  // shift() element and store the deleted value
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  var deleted = languages.shift(); // 'HTML' is no more in array and stored in 'deleted'
-
-
-  // add an element (from the front)
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
-
-
-  // change arguments of a function into an array
-  function array(arr) {
-    var args = Array.prototype.slice.call(arguments);
-    console.log(args); // [1, 2, 3, 4]
-  }
-  array(1, 2, 3, 4); 
-
-
-  // going through function arguments
-  function lol(arr1, arr2, arr3) {
-    for (i=0; i<arguments.length; i++) {
-      console.log(arguments[i]);
-    }
-  }
-  lol(1, 3, 7); // 1 3 7
-
-
-  // make change on arrays; iterate
-  var oldArray = [1, 2, 3];
-  var newArray = oldArray.map(function(val) {
-    return val * 3;
-  });
-  console.log(newArray); // [3, 6, 9]; they have been multiplied
-
-
-  // use all values, one at a time, to get a single one; condense
-  var oldArray = [1, 2, 3, 4, 5];
-  var singleVal = oldArray.reduce(function(previousVal, currentVal) {
-    return previousVal - currentVal;
-  }, 0); // start at value[0]; do not use it for multiplications
-  console.log(singleVal); // will result in -1-2-3-4-5 = -15
-
-
-  // filter an array
-  var oldArray = [1, 2, 3, 4, 5];
-  var newArray = oldArray.filter(function(val) {
-    return val < 4; // keep what is said; all values under 4
-  });
-  console.log(newArray); // [1, 2, 3]
-
-
-  // delete some array values
-  var arr = ["one", "two", "three"];
-  delete arr[2];
-  console.log(arr); // ["one", "two", null]
-  arr = arr.filter(Boolean); // to remove null, undefined etc.
-  console.log(arr); // ["one", "two"]
-
-
-  // filter Boolean, will delete false, null, 0, "", undefined, and NaN.
-  function numbersLettersOnly(arr) {
-    return arr.filter(Boolean);
-  }
-  numbersLettersOnly([7, "abc", false, null, 0, 9, NaN, "hello", undefined, ""]); // [7, "abc", 9, "hello"]
-
-
-  // sort an array; for alphabetic sorting, just need sort()
-  var array = [1, 2, 3, 4, 5];
-  array.sort(function(a, b) {
-    return b - a; // from largest; a - b to sort from smallest
-  });
-  console.log(array); // [5, 4, 3, 2, 1]
-
-
-  // get index position of a value in an array
-  var array = [10, 20, 30, 40, 50];
-  var a = array.indexOf(30);
-  console.log(a); // 2; position of value 30
-
-
-  // indexOf can be used to check if an array includes an element
-  var array = [10, 20, 30, 40, 50];
-  var a = array.indexOf(60);
-  console.log(a); // -1; the value isn't in the array
-
-
-  // get index position of a value in an array (starting from the end)
-    var array = [10, 20, 30, 40, 30, 50];
-    var a = array.lastIndexOf(30);
-    console.log(a); // 4; position of last value 30
-
-
-  // reverse an array
-  var array = [1, 2, 3];
-  var newArray = array.reverse();
-  console.log(newArray); // [3, 2, 1]
-
-
-  // concatenate an array with another one
-  var oldArray = [1, 2, 3];
-  var concatenateMe = [4, 5, 6];
-  var newArray = oldArray.concat(concatenateMe);
-  console.log(newArray); // [1, 2, 3, 4, 5, 6]
-
-
-  // split a string into an array
-  var string = 'Split me into an array';
-  var array = string.split(' '); // can be other character
-  console.log(array); // ['Split', 'me', 'into', 'an', 'array']
-
-
-  // split number into an array 
-  var num = 137;
-  var arr = (""+num).split("");
-  console.log(arr); // ["1", "3", "7"]
-
-
-  // join an array into a string
-  var array = ['Join', 'me', 'into', 'a', 'string'];
-  var string = array.join(' ');
-  console.log(string); // 'Join me into a string'
-
-
-  // slice an array
-  var array = ['Keep', 'us', 'delete', 'the', 'others'];
-  array.slice(0, 2);
-  console.log(array); // ['Keep', 'us']
-  var array2 = array.slice(0, 2);
-  console.log(array2); // ['Keep', 'us']
-
-
-  // slice to copy an array
-  var array = ['copy', 'this', 'array'];
-  var arrayCopy = array.slice();
-  console.log(arrayCopy); // ['copy', 'this', 'array']
-
-
-  // splice an array
-  var array = ['Delete', 'the', 'others', 'keep', 'us'];
-  array = array.splice(3);
-  console.log(array); // ['keep', 'us']
-
-
-  // splice a number
-  var array = ['Keep', 'everybody', 'but', 'him'];
-  array.splice(2, 1);
-  console.log(array); // ['Keep', 'everybody', 'him']
-
-
-  // replace smth in a string
-  var str = "Salut, c'est chouette !";
-  str = str.replace("chouette", "cool");
-  console.log(str); // "Salut, c'est cool !"
-
-
-  // use replace to add spaces before uppercases; or smth else
-  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
-  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
-
-
-  // reverse a string
-  function reverseString(str) {
-    var array = str.split("");
-    array.reverse();
-    str = array.join("");
-    return str;
-  }
-  reverseString("hello"); // return olleh
-
-
-  // array of objects
-  var Language = {
-    init: function(code, lvl) {
-      this.code = code;
-      this.lvl= lvl;
-    },
-    describe: function() {
-      return this.code + ' (' + this.lvl + ')';
-    }
-  };
-  var language1 = Object.create(Language);
-  language1.init('HTML', 80);
-  var language2 = Object.create(Language);
-  language2.init('CSS', 70);
-  var language3 = Object.create(Language);
-  language3.init('JS', 50);
-  var languages = [];
-  languages.push(language1);
-  languages.push(language2);
-  languages.push(language3);
-  languages.forEach(function(language) {
-    console.log(language.describe());
-  });
-
-
-  // find the right card 
-  var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
-  var currentCard = 'Heart';
-  while (currentCard !== 'Spade') {
-    console.log(currentCard);
-    var randomNumber = Math.floor(Math.random() * 4);
-    currentCard = cards[randomNumber];
-  }
-  console.log('Spade found !');
-
-
-  // 3 and 4 Mousquetaires
-  var Mousquetaires = ['Arthos', 'Porthos', 'Aramis'];
-  console.log('Here are the three Mousquetaires :')
-  for (var i = 0; i < Mousquetaires.length; i++) {
-    console.log(Mousquetaires[i]);
-  }
-  Mousquetaires.push("d'Artagnan");
-  console.log('Now, they are four !')
-  Mousquetaires.forEach(function(Mousquetaires) {
-    console.log(Mousquetaires);
-  });
-
-
-  // sum of values
-  var Values = [11, 3, 7, 2, 9, 10];
-  var sum = 0;
-  for (var i = 0; i < Values.length; i++) {
-    sum = sum + Values[i]; // could write 'sum += Values[i];'
-  }
-  console.log('the sum of the elements is : ' + sum); // 42
-
-
-  // max of values
-  var Values = [11, 3, 7, 2, 9, 10];
-  var max = -10000000; // could change with 'Values[0]''
-  for (var i = 0; i < Values.length; i++) { // then should change 'i = 1'
-    if (Values[i] > max) {
-      max = Values[i];
-    }
-  }
-  console.log('the max of the elements is : ' + max);
-
-
-  // adding words to a list until 'stop'
-  var list = [];
-  var word = '';
-  while ((word !== 'Stop') && (word !== 'stop') && (word !== 'STOP')) {
-    word = prompt('Enter a word to add it to the list. Use "Stop" to stop the process');
-    if ((word !== 'Stop') && (word !== 'stop') && (word !== 'STOP')) {
-      list.push(word);
-    }
-  }
-  list.forEach(function(list) {
-    console.log(list);
-  });
-
-
-  // list of films
-  var Films = [];
-  var Film = {
-    init: function(title, year, director) {
-      this.title = title;
-      this.year = year;
-      this.director = director;
-    },
-    describe: function() {
-      return this.title + ' (' + this.year + ', ' + this.director + ')';
-    }
-  };
-  var film1 = Object.create(Film);
-  film1.init('Star Wars', 1977, 'Georges Lucas');
-  Films.push(film1);
-  var film2 = Object.create(Film);
-  film2.init('LOTR', 2001, 'Peter Jackson');
-  Films.push(film2);
-  var film3 = Object.create(Film);
-  film3.init('Indiana Jones', 1981, 'Steven Spielberg');
-  Films.push(film3);
-  Films.forEach(function(Film) {
-    console.log(Film.describe());
-  });
-
-
-  // contact manager
-  console.log('Welcome in the contact manager !');
-  // array
-  var Contacts = [];
-  // object
-  var Contact = {
-    init: function(surname, name) {
-      this.surname = surname;
-      this.name = name;
-    },
-    describe: function() {
-      return 'Surname: ' + this.surname + ', Name: ' + this.name;
-    }
-  };
-  // 1st contact
-  var contact1 = Object.create(Contact);
-  contact1.init('Levisse', 'Carole');
-  Contacts.push(contact1);
-  // 2nd contact
-  var contact2 = Object.create(Contact);
-  contact2.init('Nelsonne', 'Mélodie');
-  Contacts.push(contact2);
-  // loop
-  while (option !== 0) {
-    console.log('\n');
-    // options
-    console.log('1 : List contacts');
-    console.log('2 : add a contact');
-    console.log('0 : Quit');
-    // pop-up
-    var option = Number(prompt('Chose your option :'));
-    if (option === 1) {
-      // list
-      console.log('Here is the list of all your contacts :')
-      Contacts.forEach(function(Contact) {
-        console.log(Contact.describe());
-      });
-    } else if (option === 2) {
-      // add
-      var contact3 = Object.create(Contact);
-      contact3.init(prompt('Enter the surname :'), prompt('Enter the name :'));
-      Contacts.push(contact3);
-      console.log('You added a contact!');
-    }
-  }
-  // quit
-  console.log('\nGoodbye !');
 
 
 
