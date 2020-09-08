@@ -1105,248 +1105,243 @@
 
 // ARRAYS
 // JavaScript arrays are used to store multiple values in a single variable; they are number indexed
-// Careful! -> if var is set equals to an array, they will be linked and influence each other (may cause infinite loops)
+// Careful! -> if variable is set equals to another array variable, they will be linked and influence each other (may cause infinite loops)
 
 
   // basic
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
+  var arr = [0, 1, 2, 3, 4];
   
 
   // array length
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  console.log(languages.length); // 5
+  var arr = [0, 1, 2, 3, 4];
+  console.log(arr.length); // 5
 
 
   // empty an array
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.length = 0;
-  console.log(languages); // []
+  var arr = [0, 1, 2, 3, 4];
+  arr.length = 0;
+  console.log(arr); // []
 
 
   // check if array is empty
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  if (languages.length !== 0) {
+  var arr = [0, 1, 2, 3, 4];
+  if (arr.length !== 0) {
     console.log("Array is not empty !");
   } else {
     console.log("Array is empty");
   }
 
 
-  // call an array element
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  console.log(languages[0]); // HTML
+  // log an array element
+  var arr = [0, 1, 2, 3, 4];
+  console.log(arr[0]); // 0
 
 
-  // call all elements
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  for (var i = 0; i < languages.length; i++) {
-    console.log(languages[i]);
+  // log all array elements
+  var arr = [0, 1, 2, 3, 4];
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+  } // 0 1 2 3 4
+
+
+  // log all array elements with forEach
+  var arr = [0, 1, 2, 3, 4];
+  arr.forEach(function(el) {
+    console.log(el); // return in a forEach() doesn't return the whole function but only a single iteration
+  }); // 0 1 2 3 4
+
+
+  // log all array elements with forEach and a predefined function
+  var arr = [0, 1, 2, 3, 4];
+  function func(el) {
+    console.log(el);
   }
+  arr.forEach(func); // 0 1 2 3 4
 
 
-  // call all elements with forEach
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.forEach(function(language) {
-  console.log(language);
-  });
+  // log all array elements backwards
+  var arr = [0, 1, 2, 3, 4];
+  for (var i = arr.length-1; i >= 0; i--) {
+    console.log(arr[i]);
+  } // 4 3 2 1 0
 
 
-  // call all elements backwards
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  for (var i = languages.length-1; i >= 0; i--) {
-    console.log('I would like to master ' + languages[i]);
+  // push() add an element (to the end)
+  var arr = [0, 1, 2, 3, 4];
+  arr.push(5); // possible to add multiple elements
+  console.log(arr); // [0, 1, 2, 3, 4, 5]
+
+
+  // unshift() add an element (from the front)
+  var arr = [0, 1, 2, 3, 4];
+  arr.unshift(-1); // possible to add multiple elements
+  console.log(arr); // [-1, 0, 1, 2, 3, 4]
+
+  // pop() remove last element
+  var arr = [0, 1, 2, 3, 4];
+  arr.pop();
+  console.log(arr); // [0, 1, 2, 3]
+
+
+  // shift() remove first element
+  var arr = [0, 1, 2, 3, 4];
+  arr.shift();
+  console.log(arr); // [1, 2, 3, 4]
+
+
+  // pop() element and store the removed element
+  var arr = [0, 1, 2, 3, 4];
+  var deleted = arr.pop(); // 4 is no more in array and stored in 'deleted'
+  console.log(deleted); // 4
+  console.log(arr); // [0, 1, 2, 3]
+
+
+  // shift() element and store the removed element
+  var arr = [0, 1, 2, 3, 4];
+  var deleted = arr.shift(); // 0 is no more in array and stored in 'deleted'
+  console.log(deleted); // 0
+  console.log(arr); // [1, 2, 3, 4]
+
+
+  // turn arguments of a function into an array
+  var arr;
+  function func() {
+    arr = Array.prototype.slice.call(arguments);
   }
+  func(0, 1, 2, 3, 4);
+  console.log(arr); // [0, 1, 2, 3, 4]
 
 
-  // add an element (to the end)
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.push('BS'); // possible to add multiple elements .push(1, 2, 3, 'etc');
-  console.log(languages[5]);
-
-
-  // delete last element
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.pop(); // no more 'MySQL'
-
-
-  // pop() element and store the deleted value
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  var deleted = languages.pop(); // 'MySQL' is no more in array and stored in 'deleted'
-
-
-  // remove first element
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.shift(); // no more 'HTML'
-
-
-  // shift() element and store the deleted value
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  var deleted = languages.shift(); // 'HTML' is no more in array and stored in 'deleted'
-
-
-  // add an element (from the front)
-  var languages = ['HTML', 'CSS', 'JS', 'PHP', 'MySQL'];
-  languages.unshift('XML'); // [0] is now 'XML'; possible to add multiple elements
-
-
-  // change arguments of a function into an array
-  function array(arr) {
-    var args = Array.prototype.slice.call(arguments);
-    console.log(args); // [1, 2, 3, 4]
-  }
-  array(1, 2, 3, 4); 
-
-
-  // going through function arguments
-  function lol(arr1, arr2, arr3) {
+  // loop through function arguments
+  function func(arr1, arr2, arr3) {
     for (i=0; i<arguments.length; i++) {
       console.log(arguments[i]);
     }
   }
-  lol(1, 3, 7); // 1 3 7
+  func(0, 1, 2, 3, 4); // 0 1 2 3 4
 
 
-  // make change on arrays; iterate
-  var oldArray = [1, 2, 3];
-  var newArray = oldArray.map(function(val) {
+  // map() make change on arrays; iterate
+  var arr = [1, 2, 3];
+  var arr2 = arr.map(function(val) {
     return val * 3;
   });
-  console.log(newArray); // [3, 6, 9]; they have been multiplied
+  console.log(arr2); // [3, 6, 9]; they have been multiplied
 
 
-  // use all values, one at a time, to get a single one; condense
-  var oldArray = [1, 2, 3, 4, 5];
-  var singleVal = oldArray.reduce(function(previousVal, currentVal) {
+  // reduce() use all values, one at a time, to get a single one; condense
+  var arr = [0, 1, 2, 3, 4];
+  var singleVal = arr.reduce(function(previousVal, currentVal) {
     return previousVal - currentVal;
   }, 0); // start at value[0]; do not use it for multiplications
-  console.log(singleVal); // will result in -1-2-3-4-5 = -15
+  console.log(singleVal); // will result in -0-1-2-3-4 = -10
 
 
-  // filter an array
-  var oldArray = [1, 2, 3, 4, 5];
-  var newArray = oldArray.filter(function(val) {
-    return val < 4; // keep what is said; all values under 4
+  // filter() an array
+  var arr = [0, 1, 2, 3, 4];
+  var arr2 = arr.filter(function(val) {
+    return val < 3; // keep what is said; all values under 3
   });
-  console.log(newArray); // [1, 2, 3]
+  console.log(arr2); // [0, 1, 2]
 
 
   // delete some array values
-  var arr = ["one", "two", "three"];
+  var arr = [0, 1, 2, 3, 4];
   delete arr[2];
-  console.log(arr); // ["one", "two", null]
+  console.log(arr); // [0, 1, null, 3, 4]
   arr = arr.filter(Boolean); // to remove null, undefined etc.
-  console.log(arr); // ["one", "two"]
+  console.log(arr); // [0, 1, 3, 4]
 
 
-  // filter Boolean, will delete false, null, 0, "", undefined, and NaN.
+  // filter() Boolean, will delete false, null, 0, "", undefined, and NaN.
   function numbersLettersOnly(arr) {
     return arr.filter(Boolean);
   }
   numbersLettersOnly([7, "abc", false, null, 0, 9, NaN, "hello", undefined, ""]); // [7, "abc", 9, "hello"]
 
 
-  // sort an array; for alphabetic sorting, just need sort()
-  var array = [1, 2, 3, 4, 5];
-  array.sort(function(a, b) {
+  // sort() an array; for alphabetic sorting, just need sort()
+  var arr = [0, 1, 2, 3, 4];
+  arr.sort(function(a, b) {
     return b - a; // from largest; a - b to sort from smallest
   });
-  console.log(array); // [5, 4, 3, 2, 1]
+  console.log(arr); // [4, 3, 2, 1, 0]
 
 
-  // get index position of a value in an array
-  var array = [10, 20, 30, 40, 50];
-  var a = array.indexOf(30);
-  console.log(a); // 2; position of value 30
+  // indexOf() get index position of a value in an array
+  var arr = [0, 1, 2, 3, 4];
+  var i = arr.indexOf(3);
+  console.log(i); // 3; position of value 3
 
 
-  // indexOf can be used to check if an array includes an element
-  var array = [10, 20, 30, 40, 50];
-  var a = array.indexOf(60);
-  console.log(a); // -1; the value isn't in the array
+  // indexOf() can be used to check if an array includes an element
+  var arr = [0, 1, 2, 3, 4];
+  var i = arr.indexOf(6);
+  console.log(i); // -1; the value isn't in the array
 
 
-  // get index position of a value in an array (starting from the end)
-    var array = [10, 20, 30, 40, 30, 50];
-    var a = array.lastIndexOf(30);
-    console.log(a); // 4; position of last value 30
+  // lastIndexOf() get index position of a value in an array (starting from the end)
+  var arr = [0, 1, 2, 3, 3, 4];
+  var i = arr.lastIndexOf(30);
+  console.log(i); // 4; position of last value 3
 
 
-  // reverse an array
-  var array = [1, 2, 3];
-  var newArray = array.reverse();
-  console.log(newArray); // [3, 2, 1]
+  // reverse() an array
+  var arr = [0, 1, 2, 3, 4];
+  arr.reverse();
+  console.log(arr); // [4, 3, 2, 1, 0]
 
 
-  // concatenate an array with another one
-  var oldArray = [1, 2, 3];
+  // concat() an array with another one
+  var arr = [1, 2, 3];
   var concatenateMe = [4, 5, 6];
-  var newArray = oldArray.concat(concatenateMe);
-  console.log(newArray); // [1, 2, 3, 4, 5, 6]
+  var arr2 = arr.concat(concatenateMe);
+  console.log(arr2); // [1, 2, 3, 4, 5, 6]
 
 
-  // split a string into an array
-  var string = 'Split me into an array';
-  var array = string.split(' '); // can be other character
-  console.log(array); // ['Split', 'me', 'into', 'an', 'array']
+  // split() a string into an array
+  var str = "0 1 2 3 4";
+  var arr = str.split(" "); // can be other character
+  console.log(arr); // [0, 1, 2, 3, 4]
 
 
-  // split number into an array 
-  var num = 137;
+  // split() number into an array 
+  var num = 1234;
   var arr = (""+num).split("");
-  console.log(arr); // ["1", "3", "7"]
+  console.log(arr); // ["1", "2", "3", "4"]
 
 
-  // join an array into a string
-  var array = ['Join', 'me', 'into', 'a', 'string'];
-  var string = array.join(' ');
-  console.log(string); // 'Join me into a string'
+  // join() an array into a string
+  var arr = ["0", "1", "2", "3", "4"];
+  var str = arr.join(" ");
+  console.log(str); // "0 1 2 3 4"
 
 
-  // slice an array
-  var array = ['Keep', 'us', 'delete', 'the', 'others'];
-  array.slice(0, 2);
-  console.log(array); // ['Keep', 'us']
-  var array2 = array.slice(0, 2);
-  console.log(array2); // ['Keep', 'us']
+  // slice() to copy parts of an array
+  var arr = [0, 1, 2, 3, 4];
+  var arr2 = arr.slice(0, 2); // keep from index O to 2 (not taken)
+  console.log(arr); // [0, 1, 2, 3, 4]
+  console.log(arr2); // [0, 1]
 
 
-  // slice to copy an array
-  var array = ['copy', 'this', 'array'];
-  var arrayCopy = array.slice();
-  console.log(arrayCopy); // ['copy', 'this', 'array']
+  // slice() to copy an array
+  var arr = [0, 1, 2, 3, 4];
+  var arr2 = arr.slice(); // keep all
+  console.log(arr2); // [0, 1, 2, 3, 4]
 
 
-  // splice an array
-  var array = ['Delete', 'the', 'others', 'keep', 'us'];
-  array = array.splice(3);
-  console.log(array); // ['keep', 'us']
+  // splice() a single element
+  var arr = [0, 1, 2, 3, 4];
+  var arr2 = arr.splice(2, 1); // arr = from index 2, remove 1 || arr2 = from index 2, keep 1
+  console.log(arr); // [0, 1, 3, 4]
+  console.log(arr2); // [2]
 
 
-  // splice a number
-  var array = ['Keep', 'everybody', 'but', 'him'];
-  array.splice(2, 1);
-  console.log(array); // ['Keep', 'everybody', 'him']
-
-
-  // replace smth in a string
-  var str = "Salut, c'est chouette !";
-  str = str.replace("chouette", "cool");
-  console.log(str); // "Salut, c'est cool !"
-
-
-  // use replace to add spaces before uppercases; or smth else
-  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
-  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
-
-
-  // reverse a string
-  function reverseString(str) {
-    var array = str.split("");
-    array.reverse();
-    str = array.join("");
-    return str;
-  }
-  reverseString("hello"); // return olleh
+  // splice() multiple elements
+  var arr = [0, 1, 2, 3, 4];
+  var arr2 = arr.splice(3, 2); // arr = from index 3, remove 2 || arr2 = from index 3, keep 2
+  console.log(arr); // [0, 1, 2]
+  console.log(arr2); // [3, 4]
 
 
   // array of objects
