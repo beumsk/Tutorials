@@ -42,7 +42,7 @@
     age: "6"
   }; 
   console.log(dog.name); // Rex
-  console.log(dog["name"]); // same effect
+  console.log(dog["name"]); // Rex
 
   // Condition
   if (a === 1) {
@@ -134,7 +134,7 @@
 // show something in js console
 
 
-  console.log("Text"); // show text
+  console.log("Text"); // Text
 
   console.log("up \n down"); // \n acts like enter
 
@@ -1344,31 +1344,6 @@
   console.log(arr2); // [3, 4]
 
 
-  // array of objects
-  var Language = {
-    init: function(code, lvl) {
-      this.code = code;
-      this.lvl= lvl;
-    },
-    describe: function() {
-      return this.code + ' (' + this.lvl + ')';
-    }
-  };
-  var language1 = Object.create(Language);
-  language1.init('HTML', 80);
-  var language2 = Object.create(Language);
-  language2.init('CSS', 70);
-  var language3 = Object.create(Language);
-  language3.init('JS', 50);
-  var languages = [];
-  languages.push(language1);
-  languages.push(language2);
-  languages.push(language3);
-  languages.forEach(function(language) {
-    console.log(language.describe());
-  });
-
-
   // find the right card 
   var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
   var currentCard = 'Heart';
@@ -1378,53 +1353,6 @@
     currentCard = cards[randomNumber];
   }
   console.log('Spade found !');
-
-
-  // 3 and 4 Mousquetaires
-  var Mousquetaires = ['Arthos', 'Porthos', 'Aramis'];
-  console.log('Here are the three Mousquetaires :')
-  for (var i = 0; i < Mousquetaires.length; i++) {
-    console.log(Mousquetaires[i]);
-  }
-  Mousquetaires.push("d'Artagnan");
-  console.log('Now, they are four !')
-  Mousquetaires.forEach(function(Mousquetaires) {
-    console.log(Mousquetaires);
-  });
-
-
-  // sum of values
-  var Values = [11, 3, 7, 2, 9, 10];
-  var sum = 0;
-  for (var i = 0; i < Values.length; i++) {
-    sum = sum + Values[i]; // could write 'sum += Values[i];'
-  }
-  console.log('the sum of the elements is : ' + sum); // 42
-
-
-  // max of values
-  var Values = [11, 3, 7, 2, 9, 10];
-  var max = -10000000; // could change with 'Values[0]''
-  for (var i = 0; i < Values.length; i++) { // then should change 'i = 1'
-    if (Values[i] > max) {
-      max = Values[i];
-    }
-  }
-  console.log('the max of the elements is : ' + max);
-
-
-  // adding words to a list until 'stop'
-  var list = [];
-  var word = '';
-  while ((word !== 'Stop') && (word !== 'stop') && (word !== 'STOP')) {
-    word = prompt('Enter a word to add it to the list. Use "Stop" to stop the process');
-    if ((word !== 'Stop') && (word !== 'stop') && (word !== 'STOP')) {
-      list.push(word);
-    }
-  }
-  list.forEach(function(list) {
-    console.log(list);
-  });
 
 
   // list of films
@@ -1453,55 +1381,6 @@
   });
 
 
-  // contact manager
-  console.log('Welcome in the contact manager !');
-  // array
-  var Contacts = [];
-  // object
-  var Contact = {
-    init: function(surname, name) {
-      this.surname = surname;
-      this.name = name;
-    },
-    describe: function() {
-      return 'Surname: ' + this.surname + ', Name: ' + this.name;
-    }
-  };
-  // 1st contact
-  var contact1 = Object.create(Contact);
-  contact1.init('Levisse', 'Carole');
-  Contacts.push(contact1);
-  // 2nd contact
-  var contact2 = Object.create(Contact);
-  contact2.init('Nelsonne', 'Mélodie');
-  Contacts.push(contact2);
-  // loop
-  while (option !== 0) {
-    console.log('\n');
-    // options
-    console.log('1 : List contacts');
-    console.log('2 : add a contact');
-    console.log('0 : Quit');
-    // pop-up
-    var option = Number(prompt('Chose your option :'));
-    if (option === 1) {
-      // list
-      console.log('Here is the list of all your contacts :')
-      Contacts.forEach(function(Contact) {
-        console.log(Contact.describe());
-      });
-    } else if (option === 2) {
-      // add
-      var contact3 = Object.create(Contact);
-      contact3.init(prompt('Enter the surname :'), prompt('Enter the name :'));
-      Contacts.push(contact3);
-      console.log('You added a contact!');
-    }
-  }
-  // quit
-  console.log('\nGoodbye !');
-
-
 
 
 // OBJECTS
@@ -1514,9 +1393,9 @@
     color: "blue",
     brand: "Bic"
   };
-  console.log(pen.type);
-  console.log(pen.color);
-  console.log(pen.brand);
+  console.log(pen.type); // ball
+  console.log(pen.color); // blue
+  console.log(pen.brand); // Bic
 
 
   // other way to create object
@@ -1530,11 +1409,7 @@
 
   // other way to set and get properties; useful for var or parameters, or with var containing spaces
   pen["is working"] = true;
-  console.log(pen["is working"]);
-
-
-  // in a single line
-  console.log(pen.type + ' ' + pen.color + ' ' + pen.brand);
+  console.log(pen["is working"]); // true
 
 
   // add property
@@ -1572,18 +1447,6 @@
   for (var key in person) {
     clone[key] = person[key];
   }
-
-
-  // basic rpg
-  var char = {
-    name: 'Beumsk',
-    hp: 200,
-    strength: 150
-  };
-  console.log(char.name + ' has ' + char.hp + ' hp and ' + char.strength + ' strength.');
-  console.log(char.name + ' is hurt by an arrow! 20 hp lost...');
-  char.hp = char.hp - 20;
-  console.log(char.name + ' has ' + char.hp + ' hp and ' + char.strength + ' strength.');
 
 
   // basic rpg with function inside object
