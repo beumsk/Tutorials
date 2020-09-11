@@ -133,8 +133,11 @@
 }
 
 
-.CSS-CALC {
+.CSS-MATH {
   width: calc(100% - 80px); /* calculates */
+  width: min(10px, 10vw); /* takes the smallest value !!IE */
+  width: max(10vw, 100px); /* takes the largest value !!IE */
+  width: clamp(10px, 10vw, 100px); /* takes a value with a min and max !!IE */
 }
 
 
