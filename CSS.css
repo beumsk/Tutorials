@@ -23,11 +23,11 @@
 
 
 .BEM {
-  /* naming convention based on Block, Element and Modifiers */}
-  .block-name {}
-  .block-name__header {}
-  .block-name--red {}
-  .block-name__header--red {}
+  /* naming convention based on Block, Element and Modifiers */
+  .block-name {} /* .card */
+  .block-name__element-name {} /* .card__header */
+  .block-name--modifier-name {} /* .card--red */
+  .block-name__element-name--modifier-name {} /* .card__header--red */
 }
 
 
