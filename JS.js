@@ -1421,7 +1421,7 @@
   delete pen.price;
 
 
-  // check if a propery exists; true or false
+  // check if a property exists; true or false
   pen.hasOwnProperty("color");
   // or
   "color" in pen;
