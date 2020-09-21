@@ -329,7 +329,7 @@ https://css-tricks.com/the-shapes-of-css/
   word-spacing: 3px; /* space between words */
   overflow-wrap: break-word normal; /* break word to make it fit in box */
   word-break: break-all keep-all break-word normal; /* similar to overflow-wrap; break all breaks everything */
-  white-space: nowrap; /* prevent line to wrap to a new line */
+  white-space: nowrap pre-wrap pre-line pre normal; /* sets how white space inside an element is handled */
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
   overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; /* hide and replace lines exceeding the clamp with '...' !!IE */
   line-height: .8; /* space between lines; common practice is to set around 150% */
