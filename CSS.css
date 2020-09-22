@@ -203,7 +203,7 @@
   background: url("") top, url("") bottom; /* 2 different background images; first will be on top */
   background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
   -webkit-background-clip: text; /* to show background through text */
-  -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators */
+  -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators; 'unset' to disable */
 }
 
 
@@ -614,4 +614,3 @@ https://css-tricks.com/the-shapes-of-css/
 }
 
 
-/* add css shapes ? */
