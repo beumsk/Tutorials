@@ -1962,24 +1962,6 @@ for (var property in example) {
   var h1 = document.body.childNodes[1]; // must be done, otherwise h1 would be undefined
   console.log(h1.parentNode); // return body node
 
-  
-  // function childNodes with error console
-  function showChild(node, index) {
-      if (node.nodeType === document.ELEMENT_NODE) {
-        if ((index >= 0) && (index < node.childNodes.length)) {
-          console.log(node.childNodes[index]);
-        } else {
-          console.error('incorrect index');
-        }
-    } else {
-      console.error('Incorrect node type');
-    }
-  }
-  showChild(document.body, 1);
-  showChild(document.body, -1);
-  showChild(document.body, 8);
-  showChild(document.body.childNodes[0], 0);
-
 
   
   
@@ -1992,32 +1974,32 @@ for (var property in example) {
 
   
   // get Elements By Tag Name
-  var titleElts = document.getElementsByTagName('h2'); // all h2 titles; 'Elts' is common abreviation for elements
-  console.log(titreElts[0]); // first h2 title
-  console.log(titleElts.length); // number of titles
-  console.log(document.getElementsByTagName('h2')[0]); // faster way
+  var elts = document.getElementsByTagName("h2"); // all h2 titles; elts is common abreviation for elements
+  console.log(elts[0]); // first h2 title
+  console.log(elts.length); // number of titles
+  console.log(document.getElementsByTagName("h2")[0]); // faster way
 
   
   // get Elements By Class Name
-  var wondersElts = document.getElementsByClassName('wonders');
-  for (var i = 0; i < wondersElts; i++) {
-    console.log(wondersElts[i]);
+  var elts = document.getElementsByClassName("elts");
+  for (var i = 0; i < elts; i++) {
+    console.log(elts[i]);
   }
-  console.log(document.getElementsByClassName('wonders')[0]) // faster way to get the first one
+  console.log(document.getElementsByClassName("elts")[0]) // faster way to get the first one
 
   
   // get Element By Id; pay attention to Element which is singular here
-  console.log(document.getElementById('news'));
+  console.log(document.getElementById("elt"));
 
   
   // css selector
-  console.log(querySelectorAll('p')[1]); // second 'p'
-  console.log(querySelectorAll('#content p')[1]); // second 'p' of #content
-  console.log(querySelectorAll('.main')[1]); // second tag of .main
+  console.log(querySelectorAll("p")[1]); // second p
+  console.log(querySelectorAll("#elt p")[1]); // second p of #elt
+  console.log(querySelectorAll(".elts")[1]); // second tag of .elts
 
   
   // css selector; first only
-  console.log(querySelector('p')); // first 'p' only
+  console.log(querySelector("p")); // first p only
 
   
   // return all html code
