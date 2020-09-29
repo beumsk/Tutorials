@@ -2011,51 +2011,35 @@ for (var property in example) {
 
   
   // get Attribute
-  console.log(document.querySelector('a').getAttribute('href')); // return 'href' attriubte of first 'a'
+  console.log(document.querySelector("a").getAttribute("href")); // return href attribute of first a
 
   
-  // 'id', 'href' and 'value' are easier; note that href will return full URL !
-  console.log(document.querySelector('a').href);
+  // id, href and value attributes are direct; note that href will return full URL !
+  console.log(document.querySelector("a").href);
 
   
   // check presence of attribute
-  if (document.querySelector('a').hasAttribute('target')) {
-    console.log('First "a" has target attribute');
+  if (document.querySelector("a").hasAttribute("target")) {
+    console.log("First a has target attribute");
   } else {
-    console.log('First "a" has no target attribute');
+    console.log("First a has no target attribute");
   }
 
   
   // List of classes of a DOM element
-  console.log(document.getElementById('news').classList[0]);
+  console.log(document.getElementById("elt").classList[0]);
 
   
   // check presence of a class in a DOM element
-  if (document.getElementById("news").classList.contains("wonder")) {
-    console.log("Identified element has 'wonder' class");
+  if (document.getElementById("elt").classList.contains("main")) {
+    console.log("Identified element has 'main' class");
   } else {
-    console.log("Identified element has not 'wonder' class");
+    console.log("Identified element has not 'main' class");
   }
-
-  
-  // function count elements
-  function countElements(selector) {
-    return document.querySelectorAll(selector).length;
-  }
-  console.log(countElements("p")); // return number of 'p' elements
-
-  
-  // info on links function
-  function infoLinks() {
-    console.log(document.querySelectorAll('a').length);
-    console.log(document.querySelector('a').href);
-    console.log(document.querySelectorAll('a')[document.querySelectorAll('a').length - 1].href);
-  }
-  infoLinks();
 
   
   // get value of an input
-  var getValue = document.getElementsByTagName('input').value;
+  var getValue = document.getElementsByTagName("input").value;
   console.log(getValue); // log input value
 
 
