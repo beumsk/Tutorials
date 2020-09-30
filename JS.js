@@ -2050,38 +2050,39 @@ for (var property in example) {
 
   
   // add some html using innerHTML
-  document.getElementById('example').innerHTML += '<li id="c">C</li>'; // adds C to the ul #example
+  document.querySelector("p").innerHTML += "<span>!!!</span>"; // adds !!! to p
 
   
   // innerHTML is more often used to clear an element content
-  document.getElementById('example').innerHTML = ''; // clear #example
+  document.querySelector("p").innerHTML = ""; // clear p
 
   
   // add some text using textContent
-  document.querySelector('h1').textContent += ' more text in h1 title';
+  document.querySelector("p").textContent += " more text in p";
 
 
   // create and or set an attribute
-  document.querySelector('h1').setAttribute('id', 'title'); // first its name and secondly its value 
+  document.querySelector("p").setAttribute("id", "title"); // first its name and secondly its value 
 
   
-  // 'id', 'href', 'src' and 'value' are easier
-  document.querySelector('h1').id = 'title';
+  // id, href, src and value are easier
+  document.querySelector("p").id = "title";
 
   
   // standalone attributes
-  document.querySelector("h1").disabled = false; // or true
-  document.querySelector("h1").setAttribute("required", "false"); // other way to achieve it
+  document.querySelector("p").disabled = false; // or true
+  document.querySelector("p").setAttribute("required", "false"); // other way to achieve it
 
   
   // classList
-  var titleElt = document.querySelector('h1');
-  titleElt.classList.remove('main');
-  titleElt.classList.remove('main', 'other');
-  titleElt.classList.add('title');
-  titleElt.classList.add('main', 'other');
+  var elt = document.querySelector("p");
+  elt.classList.remove("main");
+  elt.classList.remove("main", "other");
+  elt.classList.add("title");
+  elt.classList.add("title", "other");
+  elt.classList.toggle("else");
   // would be the same as below
-  document.querySelector('h1').setAttribute('class', 'title');
+  document.querySelector("p").setAttribute("class", "title");
 
   
   // adding an element
