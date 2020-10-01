@@ -2086,63 +2086,52 @@ for (var property in example) {
 
   
   // adding an element
-  var addedElt = document.createElement('li'); // li created
-  addedElt.id = 'added'; // define id
-  addedElt.textContent = 'Added element'; // define text content
-  document.getElementById('example').appendChild(addedElt); // new element insertion
+  var addedElt = document.createElement("span"); // span created
+  addedElt.id = "added"; // define id
+  addedElt.textContent = "Added span"; // define text content
+  document.querySelector("p").appendChild(addedElt); // new element insertion
 
   
   // adding a node
-  var addedElt = document.createElement('li'); // li created
-  addedElt.id = 'added'; // define id
-  addedElt.appendChild(document.createTextNode('Added element')); // define text content
-  document.getElementById('example').appendChild(addedElt); // new element insertion
+  var addedElt = document.createElement("span"); // span created
+  addedElt.id = "added"; // define id
+  addedElt.appendChild(document.createTextNode("Added element")); // define text content
+  document.querySelector("p").appendChild(addedElt); // new element insertion
 
   
   // add a node before another node
-  var addedElt = document.createElement('li');
-  addedElt.id = 'added';
-  addedElt.textContent = 'Added element';
-  document.getElementById('example').insertBefore(addedElt, document.getElementById('existing-element'));
+  var addedElt = document.createElement("span");
+  addedElt.id = "added";
+  addedElt.textContent = "Added element";
+  document.querySelector("p").insertBefore(addedElt, document.getElementById("existing-element"));
 
   
   // more accurate node position with insertAdjdacentHTML
-  document.getElementById('example').insertAdjacentHTML('beforeBegin', '<li id="added">Added element</li>'); // before element itself (outside)
-  document.getElementById('example').insertAdjacentHTML('afterBegin', '<li id="added">Added element</li>'); // just before firstchild
-  document.getElementById('example').insertAdjacentHTML('beforeEnd', '<li id="added">Added element</li>'); // just after lastchild
-  document.getElementById('example').insertAdjacentHTML('afterEnd', '<li id="added">Added element</li>'); // after element itself (outside)
+  document.querySelector("p").insertAdjacentHTML('beforeBegin', '<span id="added">Added element</span>'); // before element itself (outside)
+  document.querySelector("p").insertAdjacentHTML('afterBegin', '<span id="added">Added element</span>'); // just before firstchild
+  document.querySelector("p").insertAdjacentHTML('beforeEnd', '<span id="added">Added element</span>'); // just after lastchild
+  document.querySelector("p").insertAdjacentHTML('afterEnd', '<span id="added">Added element</span>'); // after element itself (outside)
 
   
-  // replace a node
-  var addedElt = document.createElement('li');
-  addedElt.id = 'added';
-  addedElt.textContent = 'Added element';
-  document.getElementById('example').replaceChild(addedElt, document.getElementById('existing-element')); // 'addedElt' replace existing-element
+  // replace a child node
+  var addedElt = document.createElement("span");
+  addedElt.id = "added";
+  addedElt.textContent = "Added element";
+  document.querySelector("p").replaceChild(addedElt, document.getElementById("existing-element")); // 'addedElt' replace existing-element
 
   
-  // remove a node
-  document.getElementById('example').removeChild(document.getElementById('existing-element')); // remove existing-element
+  // remove a child node
+  document.querySelector("p").removeChild(document.getElementById("existing-element")); // remove existing-element
 
 
   // remove element
-  var example = document.getElementById("example");
-  example.parentNode.removeChild(example);
-
-  
-  // add from an array
-  var news = ["http://bbc.com", "http://news.com", "http://independant.ie"];
-  for (var i = 0; i < news.length; i++) {
-    var linkElt = document.createElement('a');
-    linkElt.textContent = news[i];
-    linkElt.href = news[i];
-    document.getElementById('content').appendChild(linkElt);
-    document.getElementById('content').appendChild(document.createElement('br'));
-  }
+  var elt = document.querySelector("p");
+  elt.parentNode.removeChild(elt);
   
   
   // swap 2 elements DOM position
   function swapElts(elt1, elt2) {
-    var temp = document.createElement("div");
+    var temp = document.createElement("p");
     elt1.parentNode.insertBefore(temp, elt1);
     elt2.parentNode.insertBefore(elt1, elt2);
     temp.parentNode.insertBefore(elt2, temp);
