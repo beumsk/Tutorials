@@ -2146,47 +2146,37 @@ for (var property in example) {
   
   
   // style element
-  var pElt = document.querySelector('p');
-  pElt.style.color = 'red';
-  pElt.style.margin = '50px';
+  var elt = document.querySelector("p");
+  elt.style.color = "red";
+  elt.style.margin = "50px";
 
   
   // style element with composed css properties
-  var pElt = document.querySelector('p');
-  pElt.style.backgroundColor = 'red'; // used camelCase for composed properties
-  pElt.style.fontFamily = 'Arial';
+  var elt = document.querySelector("p");
+  elt.style.backgroundColor = "red"; // used camelCase for composed properties
+  elt.style.fontFamily = "Arial";
 
   
   // show style (only style within html, not external or head)
-  var pElt = document.querySelector('p');
-  console.log(pElt.style.color); // you can't get info about external that way
+  var elt = document.querySelector("p");
+  console.log(elt.style.color); // you can't get info about external that way
 
   
   // show style from external
-  var stylePara = getComputedStyle(document.getElementById('para'));
-  console.log(stylePara.color);
-  
-  
-  // hide element
-  document.getElementById("toHide").style.display = "none";
-  
-  
-  // show element
-  document.getElementById("toShow").style.display = "block"; // or inline
+  var eltStyle = getComputedStyle(document.querySelector("p"));
+  console.log(eltStyle.color);
 
   
   // change multiple tags style
-  var divColor = prompt('New text color :');
-  var divBack = prompt('New background color :');
-  var divElts = document.getElementsByTagName('div');
-  for (var i = 0; i < divElts.length; i++) {
-    divElts[i].style.color = divColor;
-    divElts[i].style.backgroundColor = divBack;
+  var elts = document.querySelectorAll("p");
+  for (var i = 0; i < elts.length; i++) {
+    elts[i].style.color = "white";
+    elts[i].style.backgroundColor = "red";
   }
 
   
-  // change style external
-  var content = document.getElementById('content');
+  // get style external
+  var content = document.querySelector("p");
   console.log(getComputedStyle(content).height);
   console.log(getComputedStyle(content).width);
 
