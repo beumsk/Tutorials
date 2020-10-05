@@ -2037,11 +2037,6 @@ for (var property in example) {
     console.log("Identified element has not 'main' class");
   }
 
-  
-  // get value of an input
-  var getValue = document.getElementsByTagName("input").value;
-  console.log(getValue); // log input value
-
 
   
   
@@ -2241,8 +2236,8 @@ for (var property in example) {
   });
 
 
-  // create event with external function pointing to clicked element
-  document.querySelector(".action").addEventListener("click", functionName);
+  // add event with external function pointing to clicked element
+  document.querySelector("button").addEventListener("click", functionName);
   function functionName(e) {
     e.target.style.color = "red";
   }
@@ -2250,13 +2245,14 @@ for (var property in example) {
   
   // keypress event returning the pressed key (only for characters)
   document.addEventListener("keypress", function (e) {
-      console.log("You hitted the key " + String.fromCharCode(e.charCode));
+      console.log("Key: " + String.fromCharCode(e.charCode)); // charCode deprecated
+      console.log("Key: " + e.key);
   });
   
   
-  // info on pressed key; work also with "keyup"
+  // event type on pressed key; work also with "keyup"
   document.addEventListener("keydown", function (e) {
-    console.log("keyboard event : " + e.type + ", key : " + e.keyCode);
+    console.log("Event: " + e.type);
   });
   
   
@@ -2379,12 +2375,12 @@ for (var property in example) {
 
 
   // Get value of an input
-  var getValue = document.getElementsByTagName('input').value;
+  var getValue = document.getElementsByTagName("input").value;
   console.log(getValue); // log input value
 
 
   // Set value of an input
-  document.getElementsByTagName('input').value = "Hello"; // input value is now 'hello';
+  document.getElementsByTagName("input").value = "Hello"; // input value is now 'hello';
 
 
   // Check form elements
