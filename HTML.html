@@ -328,10 +328,16 @@
 
 
   <!-- VIDEO -->
-  <video controls width="200px" poster="img/html.jpg"><!-- video; poster is for image before start; loop, autoplay, playsinline, preload(auto, none); use preload="none" to ensure poster is showing -->
+  <video controls width="200px" poster="img/html.jpg" style="position:absolute;left:0;top:0;width:100%;height:100%;"><!-- video; poster is for image before start; loop, autoplay, playsinline, preload(auto, none); use preload="none" to ensure poster is showing -->
     <source src="video/html.mp4" type="video/mp4"><!-- use different format to work on all browsers -->
-    Your browser does not support the video tag. <!--Message to non-supporting browsers -->
-  </video>
+    Your browser does not support the video tag. <!-- Message to non-supporting browsers -->
+  </video><br>
+  <div style="padding:56.25% 0 0 0;position:relative;"><!-- Responsive video -->
+    <video controls width="200px" poster="img/html.jpg" style="position:absolute;left:0;top:0;width:100%;height:100%;">
+      <source src="video/html.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
   <hr>
   <!--// VIDEO -->
 
