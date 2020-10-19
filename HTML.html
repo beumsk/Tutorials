@@ -363,14 +363,14 @@
 
 
   <!-- FORMS -->
-  <form action="action-page.php" method="get" autocomplete="on"><!-- method="post" also available and not visible in url =safer; autocomplete allow to get previous answers (can be set off) -->
+  <form action="action-page.php" method="get" autocomplete="on"><!-- method="post" also available and not visible in url =safer; autocomplete allow to get previous answers (autocomplete="off") -->
     <fieldset><!-- borders the questions; can create different parts in the form -->
       <legend>Basic inputs</legend><!-- name of the fieldset -->
       <input type="text" name="firstname"><!-- one line field to answer --><br>
       <input type="text" name="firstname" autofocus><!-- autofocus to focus directly on that input --><br>
       <input type="text" name="firstname" placeholder="firstname"><!-- places helper text which disappear when typing --><br>
       <input type="text" name="firstname" required><!-- need to fill it to be able to submit --><br>
-      <input type="text" name="firstname" required minlength="3" maxlength="16"><!-- need to write min 3 characters (and max 16) to be able to submit --><br>
+      <input type="text" name="firstname" required minlength="3" maxlength="16"><!-- need to write min 3 characters (and max 16) to be able to submit; !!IE => use pattern=".{3,16}" --><br>
       <input type="text" name="firstname" readonly><!-- makes the input uneditable --><br>
       <input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!-- input required and made from 4 letters; pattern works with regexp --><br>
     </fieldset>
