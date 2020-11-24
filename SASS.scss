@@ -53,6 +53,15 @@
   }
 }
 
+.AVOID-NESTING {
+  div {
+    color: red;
+    @at-root body { /* body */
+      color: black
+    }
+  }
+}
+
 
 .MIXINS { /* mixins should always comes before imports to avoid sass error !!! */
   @mixin backface-visibility($visibility: hidden) { /* default value is passed here; can be override as argument later */
@@ -66,8 +75,8 @@
 
   @mixin dashed-border($width, $color: #FFF) {
     border: {
-      color: $color;
       width: $width;
+      color: $color;
       style: dashed;
     }
   }
