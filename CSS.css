@@ -225,8 +225,11 @@
   border-style: dotted dashed solid double; /* each side different border type */
   border-width: 5px; /* or medium */
   border-color: red;
-  border: 5px solid red; /* shorthand property */
-  border-left: 6px solid red; /* only one side */
+  border: solid 5px red; /* shorthand property */
+  border-top: solid 5px red; /* only one side */
+  border-right: solid 5px red;
+  border-bottom: solid 5px red;
+  border-left: solid 5px red;
   border-width: 10px 5px 20px 15px; /* make some irregular borders */
   border-image: url(""); /* image in border */
   border-image: linear-gradient(blue, green); /* gradient borders */
@@ -234,6 +237,10 @@
   border-radius: 20px 5px 10px 15px; /* make some irregular radius */
   border-radius: 20px / 10px; /* top-left & bottom-right / top-right & bottom-left */
   border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; /* top-left top-right bottom-right bottom-left / left-top right-top right-bottom left-bottom */
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 
