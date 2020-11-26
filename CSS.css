@@ -273,14 +273,16 @@ https://css-tricks.com/the-shapes-of-css/
 
 .MARGIN { 
   /* Space around elements */
-  margin-bottom: 10px; /* top, right, bottom, left */
-  margin-top: 5% 5vh 5vw 5em; /* use one */
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   margin: 10px 5px; /* shorthand property; vertical horizontal */
   margin: 10px 5px 10px 5px; /* shorthand property; top right bottom left */
-  margin: auto; /* center element but need to specify width */
-  margin-left: inherit; /* gets the value from parent element */
+  margin: auto; /* center element; need to specify width */
+  margin: inherit; /* gets the value from parent element */
   /* margin collapse causes 2 succint margins to collapse keeping only the biggest margin of the 2 */
-  /* h1 {margin-bottom: 50px;} and h2 {margin-top: 20px;} will result in 5Opx margin */
+  /* h1 {margin-bottom: 50px;} and h2 {margin-top: 20px;} will result in 50px margin */
 }
 
 
