@@ -288,8 +288,10 @@ https://css-tricks.com/the-shapes-of-css/
 
 .PADDING { 
   /* Space around content */
-  padding-right: 10px; /* top, right, bottom, left */
-  padding-left: 5% 5vh 5vw 5em; /* use one */
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
   padding: 10px 5px; /* shorthand property; vertical horizontal */
   padding: 10px 5px 10px 5px; /* shorthand property; top right bottom left */
 }
