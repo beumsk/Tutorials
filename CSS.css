@@ -362,8 +362,10 @@ https://css-tricks.com/the-shapes-of-css/
 
 
 .TABLE {
+  table-layout: fixed auto; /* auto by default fits table to content; fixed doesn't check width */
   border: solid 1px; /* set to table, th and td it make it look like a table (thanks to borders) */
-  border-collapse: collapse; /* delete space between cells and table */
+  border-spacing: 2px; /* sets distance between borders of adjacent cells */
+  border-collapse: collapse separate; /* sets cells to share borders or not */
   vertical-align: bottom top middle baseline sub super text-top text-bottom; /* align vertically */
   caption-side: top bottom; /* display title on top or underneath */
   empty-cells: hide show; /* can hide empty cells */
