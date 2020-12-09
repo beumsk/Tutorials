@@ -554,8 +554,8 @@ https://css-tricks.com/the-shapes-of-css/
 
 .IMAGE {
   max-width: 100%; height: auto; /* easy resize images */
-  object-fit: fill cover contain none; /* make img element to act as css background image property (see background-size) !!IE */
-  object-position: center right top left bottom; /* make img elements to act as css background image porperty (see background-position) !!IE */
+  object-fit: fill cover contain none scale-down; /* sets how the content of a replaced element, such as an <img> or <video>, should be resized to fit its container !!IE */
+  object-position: center right top left bottom; /* specifies the alignment of the selected replaced element's contents within the element's box !!IE */
   filter: grayscale(100%) sepia(100%) saturate(100%) brightness(100%) invert(100%) contrast(100%) blur(5px) hue-rotate(90deg) initial; /* set a filter !!IE */
   display: block; /* removes weird space below image */
 }
