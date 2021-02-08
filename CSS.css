@@ -617,12 +617,15 @@ https://css-tricks.com/the-shapes-of-css/
   grid-column-gap: 10px; /* gap between columns */
   grid-row-gap: 20px; /* gap between rows */
   grid-gap: 20px 10px; /* shorthand property to define row and column gap */
+  grid-auto-flow: dense; /* controls how the auto-placement algorithm works; useful to make clean layouts without empty space */
 }
 
 .GRIDS-ELEMENTS {
   grid-column-start: 1; /* starts at vertical line 1 */
   grid-column-end: span 3; /* ends after 3 vertical line */
   grid-column: 1 / 3; /* shorter method */
+  grid-row-start: 1; /* starts at horizontal line 1 */
+  grid-row-end: span 3; /* ends after 3 horizontal line */
   grid-row: 1 / 5; /* starts at horizontal line 1 and ends at 5 */
   grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
   justify-self: start center end; /* default is stretch to take entire space; !!IE */
