@@ -610,6 +610,7 @@ https://css-tricks.com/the-shapes-of-css/
   /* not fully available in IE; use autoprefixer and follow https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer */
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
+  grid-template-columns: min-content auto min-content; /* first and last cols are based on content and the second one will take the remaining space */
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
   grid-template-columns: 100px minmax(50px, 200px); /* first col is 100px wide and second has min 50px and max 200px */
   grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* put the content with flexibility */
