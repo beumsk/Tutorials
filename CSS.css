@@ -352,6 +352,8 @@ https://css-tricks.com/the-shapes-of-css/
   vertical-align: middle text-top text-bottom top bottom; /* align image to text */
   text-shadow: 2px 2px 1px #FF0000; /* shadow;  offset-x offset-y blur-radius color  */
   text-shadow: 1px 1px #fff, 2px 2px #333; /* multiple text shadows */
+  -webkit-text-fill-color: transparent; /* color of the text */
+  -webkit-text-stroke: red; /* color of the text stroke */
 }
 
 
