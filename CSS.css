@@ -612,11 +612,12 @@ https://css-tricks.com/the-shapes-of-css/
   /* not fully available in IE; use autoprefixer and follow https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer */
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2 fraction of remaining space */
-  grid-template-columns: min-content auto min-content; /* first and last cols are based on content and the second one will take the remaining space */
   grid-template-columns: repeat(5, 20%); /* 5 columns of 20% */
-  grid-template-columns: 100px minmax(50px, 200px); /* first col is 100px wide and second has min 50px and max 200px */
-  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* put the content with flexibility */
+  grid-template-columns: auto min-content max-content; /* first will be spaced auto and two last cols are based on content */
+  grid-template-columns: 100px minmax(50px, 200px) fit-content(10rem); /* first col is 100px wide, second has min 50px and max 200px and third fits content with a max of 10rem */
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* put the content with flexibility; try auto-fit as well */
   grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
+  grid-template: 50vh 50vh / 60vw 40vw; /* shorter template method; rows / columns */
   grid-column-gap: 10px; /* gap between columns */
   grid-row-gap: 20px; /* gap between rows */
   grid-gap: 20px 10px; /* shorthand property to define row and column gap */
