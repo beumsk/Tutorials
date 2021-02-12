@@ -621,7 +621,10 @@ https://css-tricks.com/the-shapes-of-css/
   grid-column-gap: 10px; /* gap between columns */
   grid-row-gap: 20px; /* gap between rows */
   grid-gap: 20px 10px; /* shorthand property to define row and column gap */
-  grid-auto-flow: dense; /* controls how the auto-placement algorithm works; useful to make clean layouts without empty space */
+  grid-auto-flow: dense column row; /* controls how the auto-placement algorithm works; useful to make clean layouts without empty space */
+  grid-auto-rows: 5px; /* implicit rows: rows that are not ruled by the template; needs grid-auto-flow: row */
+  grid-auto-columns: 5px; /* implicit columns: columns that are not ruled by the template; needs grid-auto-flow: column */
+  grid: 50px 50px / auto-flow 50px; /* shorter property for template and flow */
 }
 
 .GRIDS-ELEMENTS {
