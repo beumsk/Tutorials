@@ -625,6 +625,10 @@ https://css-tricks.com/the-shapes-of-css/
   grid-auto-rows: 5px; /* implicit rows: rows that are not ruled by the template; needs grid-auto-flow: row */
   grid-auto-columns: 5px; /* implicit columns: columns that are not ruled by the template; needs grid-auto-flow: column */
   grid: 50px 50px / auto-flow 50px; /* shorter property for template and flow */
+  justify-content: start center end space-around space-between space-evenly; /* horizontal alignement; space- will space between grid cells */
+  align-content: start center end space-around space-between space-evenly; /* vertical alignement; space- will space between grid cells */
+  justify-items: start center end stretch; /* horizontal align inside grid cells */
+  align-items: start center end stretch; /* vertical align inside grid cells */
 }
 
 .GRIDS-ELEMENTS {
