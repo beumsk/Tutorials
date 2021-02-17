@@ -640,8 +640,9 @@ https://css-tricks.com/the-shapes-of-css/
   grid-row-end: 3; /* ends at 3 horizontal line */
   grid-row: 1 / -1; /* starts at horizontal line 1 and ends at last horizontal line */
   grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
-  justify-self: start center end; /* default is stretch to take entire space; !!IE */
-  align-self: start center end; /* default is stretch to take entire space */
+  justify-self: start center end stretch; /* self horizontal alignement */
+  align-self: start center end stretch; /* self vertical alignement */
+  order: 1; /* default is 0; 1 means this item will be the last; -1 will be first */
 }
 
 
