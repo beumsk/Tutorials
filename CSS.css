@@ -71,6 +71,7 @@
   p::before {content: attr(href);} /* Display the href value of p tag; can also be other attribute value */
   p::after {content: " -Read more… ";} /* Insert some content after the content of <p>; it can be empty */
   p::selection {} /* Selects the portion of <p> that is selected by a user */
+  li::marker {} /* Selects a list item; you can specify its color, font-size, content */
   ::placeholder {}; /* Selects placeholder value */
 
   /* Pseudo classes; style an element according to its state */
