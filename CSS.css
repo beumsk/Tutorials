@@ -330,7 +330,7 @@ https://css-tricks.com/the-shapes-of-css/
 
 .TEXT {
   color: red; /* contrast should be 4.5 or superior to be readable easily; B/W is 21 */
-  text-align: center left right justify; /* justify(=text of exact same width) */
+  text-align: center left right justify start end; /* justify(=text of exact same width); start & end are preferred for text */
   text-decoration: none; /* very useful for links */
   text-decoration-line: overline underline line-through;
   text-decoration-style: solid dotted dashed double wavy;
