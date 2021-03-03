@@ -98,6 +98,7 @@
   p:empty {} /* Selects empty p elements */
   p:not(.main) /* Selects p without .main class */
   p:not(:empty) /* Selects non empty p elements */
+  p:is(.main, .second) /* Selects p with classes .main or .second !!NOT READY */
 
   :required {} /* Selects required form elements */
   :valid {} /* Selects valid form elements */
