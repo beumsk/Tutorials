@@ -1231,8 +1231,8 @@
 
   // reduce() use all values, one at a time, to get a single one; condense
   var arr = [0, 1, 2, 3, 4];
-  var singleVal = arr.reduce(function(previousVal, currentVal) {
-    return previousVal - currentVal;
+  var singleVal = arr.reduce(function(combinedValue, currentValue) {
+    return combinedValue - currentValue;
   }, 0); // start at value[0]; do not use it for multiplications
   console.log(singleVal); // will result in -0-1-2-3-4 = -10
 
