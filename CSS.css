@@ -203,6 +203,7 @@
   background-size: cover contain; /* fit to horizontal; fit to vertical; possible to define height and width */
   background-size: 100% 100vh; /* fit while size, can also be pixels */
   background-position: center top; /* will adjust background position; right, bottom, left also */
+  background-position: bottom 10px right 10px; /* you can be more precise with this */
   background-attachment: fixed scroll local; /* Fix the background image, local is default */
   background: url("") no-repeat center/contain; /* shorthand property */
   background: url("") top, url("") bottom; /* 2 different background images; first will be on top */
