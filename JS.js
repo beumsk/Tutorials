@@ -2101,7 +2101,7 @@ for (var property in example) {
   document.querySelector("p").insertBefore(addedElt, document.getElementById("existing-element"));
 
   
-  // more accurate node position with insertAdjdacentHTML
+  // more accurate node position with insertAdjdacentHTML; insertAdjacentElement as well !
   document.querySelector("p").insertAdjacentHTML('beforeBegin', '<span id="added">Added element</span>'); // before element itself (outside)
   document.querySelector("p").insertAdjacentHTML('afterBegin', '<span id="added">Added element</span>'); // just before firstchild
   document.querySelector("p").insertAdjacentHTML('beforeEnd', '<span id="added">Added element</span>'); // just after lastchild
