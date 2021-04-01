@@ -107,6 +107,7 @@
   document.getElementById("id").innerHTML = "some text"; // change #id content
   document.getElementById("id").textContent = "some text"; // similar to innerHTML without tag understanding; can use += to add some text
   document.getElementById("id").style.backgroundColor = "red"; // change style of background-color; everything is camelCased
+  document.getElementById("id").classList.add("class"); // add a class
 
   var newDiv = document.createElement("div"); newDiv.innerHTML = "text"; document.body.appendChild(newDiv); // create div, add content and append to body
   document.body.removeChild(newDiv); // remove newDiv
