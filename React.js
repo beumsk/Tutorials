@@ -62,7 +62,7 @@ const myBr = <br />;
 
 // javascript into JSX thanks to curly braces {}
 const text = "The result of 2 + 3 is:";
-const myJS = <p>{text + " " 2 + 3}</p>;
+const myJS = <p>{text + " " + 2 + 3}</p>;
 
 // you can have comments that way
 const myCom = (
