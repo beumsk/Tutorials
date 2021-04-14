@@ -61,6 +61,35 @@
   export class AppModule {}
 
 
+// SERVICES 
+
+  // in a model ts file
+  export class ModelName {
+    id: number;
+    date: Date;
+    weight: number;
+  }
+
+  // in a .service.ts file
+  import { Injectable } from "@angular/core";
+  import { ModelName } from "./modelName";
+
+  @Injectable({
+    providedIn: 'root???'
+  })
+  export class NameService {
+    public arr: ModelName[] = [
+      {id:1, date:new Date(), weight:75},
+      {id:2, date:new Date(), weight:80},
+      {id:3, date:new Date(), weight:85},
+    ]
+
+    constructor(
+      public namesSvc: NameService
+    ) {}
+  }
+
+
 
 // EXPORT
 export class NameComponent {
