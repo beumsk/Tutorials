@@ -90,6 +90,19 @@
   }
 
 
+// INPUT (parent to child)
+
+  // .html (parent)
+  <child-component [show]="show"></child-component>
+
+  // .component.ts (child)
+  import { Component, OnInit, Input } from '@angular/core';
+  @Component({})
+  export class ChildrenComponent implements OnInit {
+    @Input() show: boolean;
+  }
+
+
 
 // EXPORT
 export class NameComponent {
