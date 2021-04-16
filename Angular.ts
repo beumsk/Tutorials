@@ -103,6 +103,28 @@
   }
 
 
+// OUTPUT (child to parent)
+
+  // .component.ts (child)
+  import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+  @Component({})
+  export class ChildrenComponent implements OnInit {
+    @Output() create = new EventEmitter();
+    constructor() {}
+    public createSmth(): void {
+      this.create.emit("Any data you want in your parent");
+    }
+  }
+
+  // .html (parent)
+  <child-component (create)="createSmthElse($event)"></child-component>
+
+  // .component.ts (parent)
+  public createSmthElse(line: string): void {
+    console.log(line);
+  }
+
+
 
 // EXPORT
 export class NameComponent {
