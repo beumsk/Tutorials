@@ -125,6 +125,8 @@
   }
 
 
+// HTML
+
   // inline js 
   <p>{{ namesSvc.arr[0].id }}</p>
   <p>{{ namesSvc.arr[0].date | date:'dd/MM/yyyy' }}</p>
@@ -148,6 +150,32 @@
 [src]=""
 [alt]=""
 [anything]=""
+
+
+// FORM
+
+  // import FormsModule in app.module.ts
+  import { FormsModule } from '@angular/forms';
+  @NgModule({imports:[FormsModule]})
+
+  // model property to hold the data in ts file
+  model;
+  public ngOnInit(): void {
+    this.resetForm();
+  }
+  public createSmth(): void {
+    this.create.emit(this.model);
+  }
+  public resetForm(): void {
+    this.model = {};
+  }
+
+  // create the form and bind it 
+  <form #entryForm="ngForm">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" [(ngModel)]="model.name" required>
+    <button [disabled]="entryForm.form.invalid" (click)="createSmth(); resetForm();">Save</button>
+  </form>
 
 
 
