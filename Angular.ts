@@ -178,16 +178,27 @@
   </form>
 
 
+// HTTP
 
-// EXPORT
-export class NameComponent {
-	public variableName: string;
-	public pretrad: string;
+  // RXJS
+  map()
+  tap()
+  subscribe()
 
-	constructor (
-		private router: Router
-	) {
-		this.pretrad = 'MODULES.NAME.';
-	}
-}
+  // import HTTP
+  import { HTTPClientModule } from '@angular/common/http';
+  @NgModule({imports:[HTTPClientModule]})
+
+  // GET 
+
+
+  // POST
+
+
+
+
+
+
+
+
 
