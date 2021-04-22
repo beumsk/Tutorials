@@ -3,9 +3,18 @@
 
 
 /**/
+// npm install @angular/cli -g
 // npm i @angular/cli -g
 // ng new projectName
 // ng generate component componentName
+// ng g c componentName
+// ng serve 
+// ng build
+// ng build --prod
+// more cli commands -> https://malcoded.com/posts/angular-fundamentals-cli/
+
+
+// Angular cheat sheet -> https://angular.io/guide/cheatsheet
 
 
 // COMPONENTS
@@ -145,11 +154,11 @@
     <child-component></child-component>
   </div>
 
-
-[ngClass]=""
-[src]=""
-[alt]=""
-[anything]=""
+  // attributes
+  [ngClass]=""
+  [src]=""
+  [alt]=""
+  [anything]=""
 
 
 // FORM
@@ -193,10 +202,6 @@
 
 
   // POST
-
-
-
-
 
 
 
