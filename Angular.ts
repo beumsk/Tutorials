@@ -168,6 +168,16 @@
   [anything]=""
 
 
+// ROUTER
+
+  // router module
+  
+
+  // calling router
+  <a [routerLink]="['/home']">Link</a>
+  this.router.navigate(['/home']);
+
+
 // FORM
 
   // import FormsModule in app.module.ts
