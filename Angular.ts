@@ -141,6 +141,22 @@
   }
 
 
+// VIEWCHILD (bind HTML elements with Angular elements)
+
+  // .component.ts
+  import { AfterViewInit, Component, ViewChild } from '@angular/core';
+  @Component({})
+  export class ChildrenComponent implements AfterViewInit {
+    @ViewChild('htmlElement') htmlElement: any;
+    ngAfterViewInit() {
+      console.log(this.htmlElement);
+    }
+  }
+
+  // .html
+  <any-element #htmlElement></any-element>
+
+
 // HTML
 
   // inline js 
