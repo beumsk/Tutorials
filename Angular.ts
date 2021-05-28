@@ -170,7 +170,7 @@
   <p *ngIf="show"></p>
 
   // loops
-  <p *ngFor="let name of namesSvc.arr">{{ name.weight }}</p>
+  <p *ngFor="let name of namesSvc.arr; index as i">{{ name.weight }}</p>
 
   // child component
   <div>
@@ -182,6 +182,21 @@
   [src]=""
   [alt]=""
   [anything]=""
+
+
+
+// TRANSLATE
+
+  // in en.json
+  {
+    "anything": "Anything",
+    "withVariable": "With a variable of {{var}}"
+  }
+
+
+  // in .html
+  <p>{{ 'anything' | translate }}</p>
+  <p>{{ 'withVariable' | translate:{email:'anything'} }}</p>
 
 
 // ROUTER
