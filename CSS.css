@@ -440,6 +440,7 @@ https://css-tricks.com/the-shapes-of-css/
   box-shadow: 6px 6px 3px 3px black inset; /* horizontal, vertical, blur, spread, color, in/out the box */
   text-shadow: 6px 6px 6px black; /* horizontal, vertical, blur, color */
   box-shadow: 6px 6px 3px 3px black, 12px 12px 3px 3px black; /* multiple shadow effects possible with comas */
+  filter: drop-shadow(2px 4px 8px black); /* make shadow appear based on the image; works well with png */
 }
 
 
