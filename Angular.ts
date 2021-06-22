@@ -196,7 +196,7 @@
 
   // in .html
   <p>{{ 'anything' | translate }}</p>
-  <p>{{ 'withVariable' | translate:{email:'anything'} }}</p>
+  <p>{{ 'withVariable' | translate:{var:'anything'} }}</p>
 
 
 // ROUTER
