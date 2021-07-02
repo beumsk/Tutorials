@@ -627,6 +627,7 @@ https://css-tricks.com/the-shapes-of-css/
   grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* put the content with flexibility; try auto-fit as well */
   grid-template-rows: 50vh 50vh; /* 50% of vertical height each */
   grid-template: 50vh 50vh / 60vw 40vw; /* shorter template method; rows / columns */
+  grid-template-areas: "header header" "nav main" "footer footer"; /* define grid-areas with names */
   grid-column-gap: 10px; /* gap between columns */
   grid-row-gap: 20px; /* gap between rows */
   grid-gap: 20px 10px; /* shorthand property to define row and column gap */
@@ -650,6 +651,7 @@ https://css-tricks.com/the-shapes-of-css/
   grid-row-end: 3; /* ends at 3 horizontal line */
   grid-row: 1 / -1; /* starts at horizontal line 1 and ends at last horizontal line */
   grid-area: 1 / 2 / 4 / 6; /* row-start / column-start / row-end / column-end */
+  grid-area: header; /* use names from grid-template-areas */
   justify-self: start center end stretch; /* self horizontal alignement */
   align-self: start center end stretch; /* self vertical alignement */
   order: 1; /* default is 0; 1 means this item will be the last; -1 will be first */
