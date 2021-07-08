@@ -185,6 +185,13 @@
 
 
 
+// CSS
+
+  // access child element from parent
+  .parent ::ng-deep .child {}
+
+
+
 // TRANSLATE
 
   // in en.json
