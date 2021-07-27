@@ -243,7 +243,7 @@
 }
 
 
-.PLACEHOLDER-SELECTOR {
+.PLACEHOLDER-SELECTOR { /* the %placeholder will not be processed, only the @extend */
   %ir {
     border: 0;
     font: 0/0 a;
