@@ -205,8 +205,10 @@ class OMG extends React.Component {
 class Crazy extends React.Component {
   render() {
     return (
-      <OMG />
-      <p>Amazing.</p>
+      <div>
+        <OMG />
+        <p>Amazing.</p>
+      </div>
     );
   }
 }
@@ -224,8 +226,10 @@ import { OMG } from './OMG.js';
 class Crazy extends React.Component {
   render() {
     return (
-      <OMG />
-      <p>Amazing.</p>
+      <div>
+        <OMG />
+        <p>Amazing.</p>
+      </div>
     );
   }
 }
@@ -398,7 +402,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('app'));
 
 
-// default props; of props doesn't exist, it will take the default value
+// default props; if props doesn't exist, it will take the default value
 import React from 'react';
 import ReactDOM from 'react-dom';
 class Button extends React.Component {
