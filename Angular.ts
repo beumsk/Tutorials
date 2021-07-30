@@ -181,6 +181,7 @@
   [ngClass]="{'my-class': true}"
   [ngClass]="{'class-1': true, 'class-2': true}"
   [ngClass]="true ? 'class-1' : 'class-2'"
+  [ngClass]="[true ? 'class-1' : 'class-2', true ? 'class-3 : class-4']"
   [src]=""
   [alt]=""
   [anything]=""
