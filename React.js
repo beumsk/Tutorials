@@ -470,3 +470,34 @@ ReactDOM.render(<Toggle />, document.getElementById('app'));
 
 
 
+
+// STYLED-COMPONENTS
+
+import React from 'react';
+import styled from 'styled-components';
+
+const Box = styled.span`
+  background-color: #ddd;
+  color: #444;
+  padding: 10px;
+`;
+
+const BoxComponent = () => {
+  return (
+    <>
+      <h1>Box component</h1>
+      <Box>I'm a box!</Box>
+    </>
+  );
+};
+
+export default BoxComponent;
+
+
+
+
+// EMOTION
+
+
+
+
