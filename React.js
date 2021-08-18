@@ -476,7 +476,7 @@ ReactDOM.render(<Toggle />, document.getElementById('app'));
 import React from 'react';
 import styled from 'styled-components';
 
-const Box = styled.span`
+const Box = styled.div`
   background-color: #ddd;
   color: #444;
   padding: 10px;
@@ -484,10 +484,10 @@ const Box = styled.span`
 
 const BoxComponent = () => {
   return (
-    <>
+    <div>
       <h1>Box component</h1>
       <Box>I'm a box!</Box>
-    </>
+    </div>
   );
 };
 
