@@ -306,7 +306,7 @@ https://css-tricks.com/the-shapes-of-css/
 
 
 .HEIGHT { 
-  /* px are fixed, em, % depend on parents, and vh, vw, vmin, vmax depend on viewport */
+  /* px are fixed; em and % depend on parents, ch is equal to with of '0' char, and vh, vw, vmin and vmax depend on viewport */
   height: 200px;
   max-height: 100%;
   min-height: 20em;
@@ -316,7 +316,7 @@ https://css-tricks.com/the-shapes-of-css/
 
 
 .WIDTH { 
-  /* While px are fixed, em and % depends on parents, and vh, vw, vmin and vmax depends on viewport */
+  /* px are fixed; em and % depends on parents, ch is equal to with of '0' char, and vh, vw, vmin and vmax depends on viewport */
   width: 400px;
   max-width: 100%;
   min-width: 20em;
