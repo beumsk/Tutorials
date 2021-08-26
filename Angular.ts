@@ -18,6 +18,7 @@
 // npm run <custom-script from package.json>
 // ng build
 // ng build --prod
+// prod files are now in dist/<projectName>
 // more cli commands -> https://malcoded.com/posts/angular-fundamentals-cli/
 
 
@@ -190,7 +191,7 @@
 
 // CSS
 
-  // access child element from parent
+  // access child element from parent element
   .parent ::ng-deep .child {}
 
 
@@ -248,12 +249,12 @@
 // HTTP
 
   // RXJS
-  map()
-  tap()
-  subscribe()
+  map() // to format data
+  tap() // to look at values
+  subscribe() // to be the end client
 
   // import HTTP
-  import { HTTPClientModule } from '@angular/common/http';
+  import { HttpClientModule } from '@angular/common/http';
   @NgModule({imports:[HTTPClientModule]})
 
   // GET 
