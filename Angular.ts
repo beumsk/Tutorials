@@ -213,9 +213,15 @@
 // ROUTER
 
   // router module
-  
+  import { RouterModule } from '@angular/router'
+  imports: [RouterModule.forRoot([
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: 'home', component: HomeComponent},
+    {path: 'entries/:id', component: EntryDetailsComponent}
+  ])]
 
   // calling router
+  <router-outlet></router-outlet/>
   <a [routerLink]="['/home']">Link</a>
   this.router.navigate(['/home']);
 
