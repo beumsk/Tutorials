@@ -263,11 +263,24 @@
   import { HttpClientModule } from '@angular/common/http';
   @NgModule({imports:[HTTPClientModule]})
 
-  // GET 
-
+  // GET
+  import { HttpClient } from '@angular/common/http';
+  constructor(private http: HttpClient) {}
+  public getEntries() {
+    return this.http.get('/api/entries').pipe(
+      map(entries => {
+        return entries.map(e => {
+          e.date = new Date(e.date);
+          return e;
+        })
+      })
+    )
+  }
 
   // POST
-
+  addEntry(entry: Entry) {
+    return this.http.post('/api/entries', entry)
+  }
 
 
 
