@@ -30,7 +30,7 @@ const ah1 = (
 );
 
 // a JSX expression must have exactly one outermost element
-// good habit is to have a div wrapping everything
+// good habit is to have a <div>, or <> wrapping everything
 const blog = (
   <div>
     <h1>Main title</h1>
@@ -102,7 +102,7 @@ ReactDOM.render(<ul>{list}</ul>, document.getElementById("app"));
 
 // COMPONENTS
 
-// React Components
+// React Component
 class MyComponentClass extends React.Component {
   render() {
     return <h1>Hello world</h1>;
@@ -469,6 +469,42 @@ class Toggle extends React.Component {
 ReactDOM.render(<Toggle />, document.getElementById('app'));
 
 
+// component lifecycle methods
+import React from 'react';
+export class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+  startInterval() {
+    let delay = this.props.isPrecise ? 100 : 1000;
+    this.intervalID = setInterval(() => {
+      this.setState({ date: new Date() });
+    }, delay);
+  }
+  render() {
+    return (
+      <div>
+        {this.props.isPrecise
+          ? this.state.date.toISOString()
+          : this.state.date.toLocaleTimeString()}
+      </div>
+    );
+  }
+  componentDidMount() {
+    this.startInterval();
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.isPrecise === prevProps.isPrecise) {
+      return;
+    }
+    clearInterval(this.intervalID);
+    this.startInterval();
+  }
+  componentWillUnmount() {
+    clearInterval(this.intervalID);
+  }
+}
 
 
 // STYLED-COMPONENTS
