@@ -64,15 +64,16 @@
 
   // Switch condition
   switch (a) {
-    case 1: 
-    // code block; 
-      break; 
-    case 2: 
-    // code block; 
-      break;
-    default: 
+    case 1:
     // code block;
-  } 
+      break;
+    case 2:
+    case 3:
+    // code block;
+      break;
+    default:
+    // code block;
+  }
 
   // While loop
   while (a == 1) {
