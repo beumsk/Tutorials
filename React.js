@@ -507,6 +507,29 @@ export class Clock extends React.Component {
 }
 
 
+// FUNCTIONAL COMPONENTS
+
+// React Components
+import React from "react";
+const MyComponentFunction = () => {
+  return <h1>Hello world</h1>;
+};
+ReactDOM.render(<MyComponentFunction />, document.getElementById('app'));
+
+
+// React Component multiline
+import React from "react";
+const QuoteMaker = () => {
+  return (
+    <blockquote>
+      <p>The world is full of objects, more or less interesting; I do not wish to add any more.</p>
+      <cite>Douglas Huebler</cite>
+    </blockquote>
+  );
+}
+ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
+
+
 // STYLED-COMPONENTS
 
 import React from 'react';
