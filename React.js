@@ -530,6 +530,18 @@ const QuoteMaker = () => {
 ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
 
 
+// PROPS
+import React from "react";
+const FunctionalComponent = ({ name }) => {
+ return <h1>Hello, {name}</h1>;
+};
+// OR
+const FunctionalComponent = (props) => {
+ return <h1>Hello, {props.name}</h1>;
+};
+<Component name="Shiori" />
+
+
 // STYLED-COMPONENTS
 
 import React from 'react';
