@@ -542,6 +542,21 @@ const FunctionalComponent = (props) => {
 <Component name="Shiori" />
 
 
+// STATE
+import React from "react";
+import { useState } from 'react';
+const FunctionalComponent = () => {
+ const [count, setCount] = React.useState(0);
+
+ return (
+   <div>
+     <p>count: {count}</p>
+     <button onClick={() => setCount(count + 1)}>Click</button>
+   </div>
+ );
+};
+
+
 // STYLED-COMPONENTS
 
 import React from 'react';
