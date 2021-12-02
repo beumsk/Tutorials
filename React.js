@@ -557,6 +557,29 @@ const FunctionalComponent = () => {
 };
 
 
+// USEEFFECT
+
+// On Mounting
+const FunctionalComponent = () => {
+ React.useEffect(() => {
+   console.log("Mounted");
+ }, []);
+ return <h1>Hello, World</h1>;
+};
+
+// On Unmounting
+const FunctionalComponent = () => {
+ React.useEffect(() => {
+   return () => {
+     console.log("Unmounted");
+   };
+ }, []);
+ return <h1>Bye, World</h1>;
+};
+
+
+
+
 // STYLED-COMPONENTS
 
 import React from 'react';
