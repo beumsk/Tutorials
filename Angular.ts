@@ -201,13 +201,17 @@
   // in en.json
   {
     "anything": "Anything",
-    "withVariable": "With a variable of {{var}}"
+    "withVariable": "With a variable of {{var}}",
+    "item": "Item",
+    "item_plural": "Items"
   }
 
 
   // in .html
-  <p>{{ 'anything' | translate }}</p>
-  <p>{{ 'withVariable' | translate:{var:'anything'} }}</p>
+  <p>{{ 'anything' | translate }}</p> // Anything
+  <p>{{ 'withVariable' | translate:{var:'anything'} }}</p> // With a variable of anything
+  <p>{{ 'item' | translate:{count:1} }}</p> // Item
+  <p>{{ 'item' | translate:{count:2} }}</p> // Items
 
 
 // ROUTER
