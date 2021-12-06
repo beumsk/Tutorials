@@ -507,6 +507,8 @@ export class Clock extends React.Component {
 }
 
 
+
+
 // FUNCTIONAL COMPONENTS
 
 // React Components
@@ -532,14 +534,18 @@ ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
 
 // PROPS
 import React from "react";
+const FunctionalComponent = (props) => {
+ return <h1>Hello, {props.name}</h1>;
+};
+// OR
 const FunctionalComponent = ({ name }) => {
  return <h1>Hello, {name}</h1>;
 };
 // OR
-const FunctionalComponent = (props) => {
- return <h1>Hello, {props.name}</h1>;
+const FunctionalComponent = ({ name, ...props }) => {
+ return <h1>Hello, {name} {props.surname}</h1>;
 };
-<Component name="Shiori" />
+<Component name="John" surname="Doe" />
 
 
 // STATE
