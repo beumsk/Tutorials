@@ -532,8 +532,21 @@ const QuoteMaker = () => {
 ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
 
 
-// PROPS
+// Render Component
 import React from "react";
+const FunctionalComponent = () => { return <h1>Hello world</h1>; };
+ReactDOM.render(<FunctionalComponent />, document.getElementById('app'));
+// OR
+import React from "react";
+const FunctionalComponent = () => { return <h1>Hello world</h1>; };
+export default FunctionalComponent;
+// OR
+import React from "react";
+export default function FunctionalComponent() { return <h1>Hello world</h1>; };
+
+
+// PROPS
+import PropTypes from 'prop-types'; // needs 'npm install prop-types'
 const FunctionalComponent = (props) => {
  return <h1>Hello, {props.name}</h1>;
 };
@@ -545,7 +558,34 @@ const FunctionalComponent = ({ name }) => {
 const FunctionalComponent = ({ name, ...props }) => {
  return <h1>Hello, {name} {props.surname}</h1>;
 };
-<Component name="John" surname="Doe" />
+// default props
+FunctionalComponent.defaultProps = { surname: 'Nobody' };
+// prop types (string, number, bool, func, array, object, symbol)
+FunctionalComponent.propTypes = { name: PropTypes.string.isRequired };
+<FunctionalComponent name="John" surname="Doe" />
+
+
+// PROPS FROM PARENT TO CHILD
+import { ChildrenComponent } from './ChildrenComponent';
+const ParentComponent = () => {
+ return <ChildrenComponent name="John" />;
+};
+const ChildrenComponent = ({ name, ...props }) => {
+ return <h1>Hello, {name}</h1>
+};
+
+
+// PROPS FROM CHILD TO PARENT
+import { ChildrenComponent } from './ChildrenComponent';
+const ParentComponent = () => {
+  const getFromChild = (data) => {
+    console.log(data);
+  }
+ return <ChildrenComponent func={getFromChild} />;
+};
+const ChildrenComponent = ({ func, ...props }) => {
+ return <button onClick={func('This is data')}>Click me to pass data to parent and log it.</button>
+};
 
 
 // STATE
