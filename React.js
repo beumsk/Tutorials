@@ -98,6 +98,15 @@ const list = numbers.map((number, i) => <li key={"number_"+i}>{number}</li>);
 ReactDOM.render(<ul>{list}</ul>, document.getElementById("app"));
 
 
+// filter helps with filtering maps
+const numbers = [
+  {n: "one", ok: true},
+  {n: "twoo", ok: false},
+  {n: "three", ok: true}
+];
+const list = numbers.filter(number => number.ok).map((numberFiltered, i) => <li key={"number_"+i}>{numberFiltered.n}</li>);
+ReactDOM.render(<ul>{list}</ul>, document.getElementById("app"));
+
 
 
 // COMPONENTS
