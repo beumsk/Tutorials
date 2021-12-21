@@ -230,7 +230,7 @@ export class OMG extends React.Component {
     return <h1>Whooaa!</h1>;
   }
 }
-// import OMG class form OMG.js
+// import OMG class from OMG.js
 import { OMG } from './OMG.js';
 class Crazy extends React.Component {
   render() {
@@ -543,24 +543,20 @@ export class Clock extends React.Component {
 // FUNCTIONAL COMPONENTS
 
 // React Components
-import React from "react";
-const MyComponentFunction = () => {
+const FunctionalComponent = () => {
   return <h1>Hello world</h1>;
 };
-ReactDOM.render(<MyComponentFunction />, document.getElementById('app'));
 
 
 // React Component multiline
-import React from "react";
-const QuoteMaker = () => {
+const FunctionalComponent = () => {
   return (
-    <blockquote>
-      <p>The world is full of objects, more or less interesting; I do not wish to add any more.</p>
-      <cite>Douglas Huebler</cite>
-    </blockquote>
+    <div>
+      <h1>Hello world</h1>
+      <p>How you doing?</p>
+    </div>
   );
 }
-ReactDOM.render(<QuoteMaker />, document.getElementById('app'));
 
 
 // Render Component
@@ -597,34 +593,32 @@ FunctionalComponent.propTypes = { name: PropTypes.string.isRequired };
 
 
 // PROPS FROM PARENT TO CHILD
-import { ChildrenComponent } from './ChildrenComponent';
+import { ChildComponent } from './ChildComponent';
 const ParentComponent = () => {
- return <ChildrenComponent name="John" />;
+ return <ChildComponent name="John" />;
 };
-const ChildrenComponent = ({ name, ...props }) => {
+const ChildComponent = ({ name, ...props }) => {
  return <h1>Hello, {name}</h1>
 };
 
 
 // PROPS FROM CHILD TO PARENT
-import { ChildrenComponent } from './ChildrenComponent';
+import { ChildComponent } from './ChildComponent';
 const ParentComponent = () => {
   const getFromChild = (data) => {
     console.log(data);
   }
- return <ChildrenComponent func={getFromChild} />;
+ return <ChildComponent func={getFromChild} />;
 };
-const ChildrenComponent = ({ func, ...props }) => {
+const ChildComponent = ({ func, ...props }) => {
  return <button onClick={func('This is data')}>Click me to pass data to parent and log it.</button>
 };
 
 
 // STATE
-import React from "react";
 import { useState } from 'react';
 const FunctionalComponent = () => {
  const [count, setCount] = React.useState(0);
-
  return (
    <div>
      <p>count: {count}</p>
@@ -632,9 +626,59 @@ const FunctionalComponent = () => {
    </div>
  );
 };
+// OR conditional rendering based on state
+const FunctionalComponent = () => {
+ const [show, setShow] = React.useState(false);
+ return (
+   <div>
+     <button onClick={() => setShow(!show)}>{show ? 'Hide' : 'Show'}</button>
+     {show && <p>{show ? `Ì'm visible` : `Ì'm not visible`}</p>}
+   </div>
+ );
+};
 
 
-// USEEFFECT
+// EFFECT
+import { useEffect } from 'react';
+const FunctionalComponent = () => {
+  // On Mounting
+  useEffect( () => console.log("mount"), [] );
+  // update specific data
+  useEffect( () => console.log("will update data1"), [ data1 ] );
+  // update all
+  useEffect( () => console.log("will update any") );
+  // update specific data or unmount
+  useEffect( () => () => console.log("will update data1 or unmount"), [ data1 ] );
+  // On Unmounting
+  useEffect( () => () => console.log("unmount"), [] );
+  // updated data returned
+  return <h1>{data1}</h1>;
+};
+
+
+// MEMO
+import { useMemo } from 'react';
+// MEMO CONTENT TO BE ADDED
+
+
+
+// REF
+import { useRef } from 'react';
+const counterRef = useRef(0);
+const inputRef = useRef(null);
+const func = () => { 
+  counterRef.current++;
+  inputRef.current.value = "New input value";
+};
+return (
+  <>
+    <p>Counter: {counterRef}</p>
+    <input ref={inputRef} />
+    <button onClick={func}>Click me</button>
+  </>
+);
+
+
 
 // On Mounting
 const FunctionalComponent = () => {
