@@ -749,33 +749,30 @@ const FunctionalComponent = () => {
   return <p>{blogPost}</p> // /blog/test will render 'test'
 };
 
-// STYLED-COMPONENTS
 
+
+
+// STYLE
 import React from 'react';
-import styled from 'styled-components';
-
-const Box = styled.div`
-  background-color: #ddd;
-  color: #444;
-  padding: 10px;
-`;
-
-const BoxComponent = () => {
+const StyleComponent = () => {
   return (
-    <div>
-      <h1>Box component</h1>
-      <Box>I'm a box!</Box>
-    </div>
+      <h1 style={{color: 'red', fontSize: '72px'}}>Styled Title</h1>
+  );
+};
+export default StyleComponent;
+
+
+// STYLE with a CONST
+import React from 'react';
+const styles = {color: 'red', fontSize: '72px'}
+const StyleComponent = () => {
+  return (
+      <h1 style={styles}>Styled Title</h1>
   );
 };
 
-export default BoxComponent;
-
-
-
 
 // EMOTION
-
 import React from 'react';
 import styled from '@emotion/styled';
 const Box = styled.div`
@@ -795,7 +792,6 @@ export default BoxComponent;
 
 
 // EMOTION EXTERNAL
-
 import { forwardRef } from 'react';
 import Styled from './Component.styled';
 const Component = forwardRef((props, ref) => (
@@ -839,5 +835,12 @@ export default {
     `}
   `
 }
+
+
+
+
+// TESTING WITH JEST
+
+
 
 
