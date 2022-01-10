@@ -88,7 +88,7 @@
   }
 
   // in a .service.ts file
-  import { Injectable } from "@angular/core";
+  import { Injectable } from "@angular/core";
   import { ModelName } from "./modelName";
 
   @Injectable({
@@ -110,7 +110,9 @@
 // INPUT (parent to child)
 
   // .html (parent)
-  <child-component [show]="show"></child-component>
+  @component({ template: `
+    <child-component [show]="show"></child-component>
+  `})
 
   // .component.ts (child)
   import { Component, OnInit, Input } from '@angular/core';
@@ -134,7 +136,7 @@
   }
 
   // .html (parent)
-  <child-component (create)="createSmthElse($event)"></child-component>
+  `<child-component (create)="createSmthElse($event)"></child-component>`
 
   // .component.ts (parent)
   public createSmthElse(line: string): void {
@@ -155,28 +157,28 @@
   }
 
   // .html
-  <any-element #htmlElement></any-element>
+  `<any-element #htmlElement></any-element>`
 
 
 // HTML
 
   // inline js 
-  <p>{{ namesSvc.arr[0].id }}</p>
-  <p>{{ namesSvc.arr[0].date | date:'dd/MM/yyyy' }}</p>
-  <p>{{ "lowercase" | uppercase }}</p>
+  `<p>{{ namesSvc.arr[0].id }}</p>`
+  `<p>{{ namesSvc.arr[0].date | date:'dd/MM/yyyy' }}</p>`
+  `<p>{{ "lowercase" | uppercase }}</p>`
 
   // events
-  <div (click)="toggleShow()"></div>
-  <p [hidden]="!show"></p>
-  <p *ngIf="show"></p>
+  `<div (click)="toggleShow()"></div>`
+  `<p [hidden]="!show"></p>`
+  `<p *ngIf="show"></p>`
 
   // loops
-  <p *ngFor="let name of namesSvc.arr; index as i">{{ name.weight }}</p>
+  `<p *ngFor="let name of namesSvc.arr; index as i">{{ name.weight }}</p>`
 
   // child component
-  <div>
+  `<div>
     <child-component></child-component>
-  </div>
+  </div>`
 
   // attributes
   [ngClass]="{'my-class': true}"
@@ -208,10 +210,10 @@
 
 
   // in .html
-  <p>{{ 'anything' | translate }}</p> // Anything
-  <p>{{ 'withVariable' | translate:{var:'anything'} }}</p> // With a variable of anything
-  <p>{{ 'item' | translate:{count:1} }}</p> // Item
-  <p>{{ 'item' | translate:{count:2} }}</p> // Items
+  `<p>{{ 'anything' | translate }}</p>` // Anything
+  `<p>{{ 'withVariable' | translate:{var:'anything'} }}</p>` // With a variable of anything
+  `<p>{{ 'item' | translate:{count:1} }}</p>` // Item
+  `<p>{{ 'item' | translate:{count:2} }}</p>` // Items
 
 
 // ROUTER
@@ -225,8 +227,8 @@
   ])]
 
   // calling router
-  <router-outlet></router-outlet/>
-  <a [routerLink]="['/home']">Link</a>
+  `<router-outlet></router-outlet/>`
+  `<a [routerLink]="['/home']">Link</a>`
   this.router.navigate(['/home']);
 
 
@@ -249,11 +251,11 @@
   }
 
   // create the form and bind it 
-  <form #entryForm="ngForm">
+  `<form #entryForm="ngForm">
     <label for="name">Name</label>
     <input type="text" name="name" id="name" [(ngModel)]="model.name" required>
     <button [disabled]="entryForm.form.invalid" (click)="createSmth(); resetForm();">Save</button>
-  </form>
+  </form>`
 
 
 // HTTP
