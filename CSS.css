@@ -525,7 +525,7 @@ https://css-tricks.com/the-shapes-of-css/
   animation-duration: 2s; /* time for the animation */
   animation-timing-function: ease linear ease-in ease-out ease-in-out step-start step-end steps(1); /* different type of animation; cubic-bezier() function possible for custom animation */
   animation-delay: 1s; /* delay before animation; can be negative value */
-  animation-direction: normal reverse alternate alternate-reverse; /* specify in which order will the animation be played */
+  animation-direction: normal reverse alternate alternate-reverse; /* specify different direction; 0-100, 100-0, 0-100-0, 100-0-100 */
   animation-iteration-count: 3 infinite; /* number of time the animation will be played */
   animation-fill-mode: none forwards backwards both; /* how the animation apply style to its target */
   animation-play-state: running paused; /* run or pause the animation */
