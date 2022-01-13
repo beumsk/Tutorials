@@ -1346,6 +1346,13 @@
   console.log(arr2); // [3, 4]
 
 
+  // array destructuring
+  var arr = [0, 1, 2, 3, 4];
+  var [zero, one, two, ...rest];
+  // var [zero, one, two, ...rest] = [0, 1, 2, 3, 4];
+  console.log(zero, one, two, rest); // 0, 1, 2, [3, 4]
+
+
   // find the right card 
   var cards = ['Diamond', 'Spade', 'Heart', 'Club'];
   var currentCard = 'Heart';
@@ -1449,6 +1456,13 @@
   for (var key in person) {
     clone[key] = person[key];
   }
+
+
+  // object destructuring
+  var obj = {zero: 0, one: 1, two: 2, three: 3, four: 4};
+  var {zero, one, two, ...rest};
+  // var {zero, one, two, ...rest} = {zero: 0, one: 1, two: 2, three: 3, four: 4};
+  console.log(zero, one, two, rest); // 0, 1, 2, {three: 3, four: 4}
 
 
   // basic rpg with function inside object
