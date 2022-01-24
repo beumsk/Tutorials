@@ -206,12 +206,15 @@
 
 .CONDITIONALS {
   width: @if(2 == 2, 50px, 100px); /* condition, if true, if false */
+  width: @if(not true, 100px, 0); // 0
+  width: @if(true and true, 100px, 0); // 100px
+  width: @if(false or true, 100px, 0); // 100px
 
   $theme: light;
   header {
-    @if $theme == dark {
+    @if ($theme == dark) {
       background: #000;
-    } @else if $theme == pink {
+    } @else if ($theme == pink) {
       background: pink;
     } @else {
       background: #fff;
