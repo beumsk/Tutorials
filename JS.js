@@ -150,20 +150,6 @@
 
   console.log("hello", "you"); // show both strings with a space between "hello you"
 
-  console.log("Text".length); // count number of characters
-
-  console.log("hi, how are you?".length); // works with sentences also
-
-  console.log("Text".substring(0, 2)); // show letters (start, end-1); here 'Te'; we could say we start from 0 position and go for a number = difference between two numbers
-
-  console.log("repeat ".repeat(9)); // show 9 times "repeat "
-
-  console.log("slice".slice(0, 3)); // show sliced string from 0 to 2 "sli" (3 is not included)
-
-  console.log("A".charCodeAt()); // show charCode of "A"; 65 here
-
-  console.log(String.fromCharCode(65)); // show letter of 65; "A" here
-
   console.log(isNaN(10)); // returns false (true if it is actually NotaNumber)
 
   console.log(typeof "string"); // can return number, boolean, string, function, object (array return object in JS)
@@ -291,7 +277,7 @@
 
 
 
-// ECMASCRIPT 6 !!
+// ECMASCRIPT 6 !!IE
 
   // CONST
   // Javascript const are containers you can only read; best use for value that will not change
@@ -823,58 +809,85 @@
 
 
 
-// STRING METHODS 
+// STRING 
 // methods working on text strings
 
 
   // string.length with variables
-  var word = "Kangaroo";
-  var wordLength = word.length;
-  console.log(wordLength); // 8
+  var str = "Kangaroo";
+  console.log(str.length); // 8
 
 
-  // string.toLowerCase()
-  var word = "Kangaroo";
-  var lowerWord = word.toLowerCase();
-  console.log(lowerWord); // kangaroo
-
-
-  // string.toUpperCase()
-  var word = "Kangaroo";
-  var upperWord = word.toUpperCase();
-  console.log(upperWord); // KANGAROO
+  // string.includes() check if string includes another stinrg
+  var str = "Kangaroo";
+  console.log(str.includes("anga")); // true
 
 
   // string.startsWith() check if string starts with something
-  var str = "http://jojo.be";
-  console.log(str.startsWith("http://")); // true
+  var str = "Kangaroo";
+  console.log(str.startsWith("Kan")); // true
+
+
+  // string.endsWith() check if string ends with something
+  var str = "Kangaroo";
+  console.log(str.endsWith("roo")); // true
+
+
+  // string.charAt() return specific character
+  var str = "Kangaroo";
+  console.log(str[0]); // "K"
+  console.log(str.charAt(0)); // "K"
+
+
+  // string.charCodeAt() returns charCode
+  var str = "Kangaroo";
+  console.log(str.charCodeAt(0)); // charCode of "K" => 75
+
+
+  // string.fromCharCode() returns character from charCode
+  console.log(String.fromCharCode(75)); // show character of 75 charcode => "A"
+
+
+  // string.indexOf() return position of a character
+  var str = "Kangaroo";
+  console.log(str.indexOf("a")); // 1
+
+
+  // string.lastIndexOf() return position of a character
+  var str = "Kangaroo";
+  console.log(str.lastIndexOf("a")); // 4
 
 
   // string.trim() remove spaces at beginning and end of a string
   var str = "   Kangaroo   ";
-  console.log(str.trim());
+  console.log(str.trim()); // "Kangaroo"
+  console.log(str.trimStart()); // "Kangaroo   "
+  console.log(str.trimEnd()); // "   Kangaroo"
 
 
-  // string.charAt() return specific character
-  var word = "Kangaroo";
-  console.log(word[3]); // g
-  console.log(word.charAt(3)); // g
+  // string.slice() picks part of the string (start, end-1)
+  var str = "Kangaroo";
+  console.log("slice".slice(0, 3)); // "Kan"
 
 
-  // string.indexOf() return position of a character
-  var word = "Kangaroo";
-  console.log(word.indexOf("a")); // 1
+  // string.repeat() multiply a string !!IE
+  var str = "Kangaroo";
+  console.log(str.repeat(3)); // "KangarooKangarooKangaroo"
 
 
-  // string.lastIndexOf() return position of a character
-  var word = "Kangaroo";
-  console.log(word.lastIndexOf("a")); // 4
+  // string.toLowerCase()
+  var str = "Kangaroo";
+  console.log(str.toLowerCase()); // "kangaroo"
+
+
+  // string.toUpperCase()
+  var str = "Kangaroo";
+  console.log(str.toUpperCase()); // "KANGAROO"
 
 
   // string.replace() replace a string in a string
   var str = "Salut, c'est chouette !";
-  str = str.replace("chouette", "cool");
-  console.log(str); // "Salut, c'est cool !"
+  console.log(str.replace("chouette", "cool")); // "Salut, c'est cool !"
 
 
   // use replace to add spaces before uppercases; or smth else
@@ -959,7 +972,7 @@
 
 
 
-// NUMBERS METHODS
+// NUMBERS
 // methods working on numbers
 
 
@@ -999,7 +1012,7 @@
 
 
 
-// FUNCTIONS MATH
+// MATH
 // Functions working on numbers; they start with 'Math.'
 
 
