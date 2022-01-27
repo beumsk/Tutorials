@@ -1,0 +1,83 @@
+<!-- TAILWIND - CSS Framework - by Beumsk -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tailwind</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS Script; allows to modify the CSS config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<div>  
+  <h1>Tailwind</h1>
+
+  <h2>Layout</h2>
+  <div class="container"></div>
+  <div class="columns-3">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="block inline-block inline flex grid"></div>
+  <div class="inset-0 inset-x-0 inset-y-0 top-0 right-0 bottom-0 left-0"></div>
+
+
+  <h2>Flexbox and Grid</h2>
+  <div class="flex flex-row justify-center items-center gap-1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+  <div class="grid grid-cols-3 grid-rows-3 gap-1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+
+  <h2>Typography</h2>
+  <p class="text-xs text-base text-9xl">text</p>
+  <p class="font-thin font-normal font-bold">bold</p>
+  <p class="text-center">center</p>
+
+  <h2>Borders</h2>
+  <div class="border rounded">bordered</div>
+
+  <h2>Spacing</h2>
+  <!-- 0, 1px, 0.25rem -->
+  <div class="p-0 p-px p-1"></div>
+  <!-- margin, horizontal, vertical, top, right, bottom, left -->
+  <div class="m-1 mx-1 my-1 mt-1 mr-1 mb-1 ml-1"></div>
+  <div class="flex space-x-4 ...">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <h2>Color</h2>
+  <p class="text-white bg-blue-500">white text on blue background</p>
+
+  <h2>Effects</h2>
+  <div class="shadow">shadow</div>
+
+  <h2>States</h2>
+  <p class="text-blue-500 hover:text-pink-500">pink on hover</p>
+
+  <h2>Responsive</h2>
+  <p class="text-xs md:text-base lg:text-xl">responsive text</p>
+
+  <h2>Sizing</h2>
+  <!-- 0, 1px, 100%, 100vh, none -->
+  <div class="w-0 h-px min-w-full min-h-screen max-w-none"></div>  
+
+
+</div>
+</body>
+</html>
