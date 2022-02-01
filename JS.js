@@ -3028,6 +3028,30 @@ country.addEventListener("input", function (e) { // when typing
 
 
 
+// LOCALSTORAGE
+// localStorage allows us to save data on the browser; it needs to be a string; window is optional
+
+
+  // set item in localStorage
+  localStorage.setItem("itemName", "itemValue");
+
+  // get item in localStorage
+  localStorage.getItem("itemName");
+
+  // remove item in localStorage
+  localStorage.removeItem("itemName");
+
+  // clear localStorage
+  localStorage.clear();
+
+  // complex storage with JSON
+  var obj = [1, 2, 3];
+  localStorage.setItem("itemName", JSON.stringify(obj));
+  JSON.parse(localStorage.getItem("itemName"));
+
+
+
+
 // COOKIES
 // 
 
