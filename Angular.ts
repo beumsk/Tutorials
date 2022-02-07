@@ -27,11 +27,12 @@
 
 // COMPONENTS
 
-  import { Component } from '@angular/core';
+  import { Component, ViewEncapsulation } from '@angular/core';
   import { Router } from '@angular/router';
 
   @Component({
     selector: 'name-component', // <name-component> in HTML
+    encapsulation: ViewEncapsulation.None, // disables encapsulation (shadow dom) -> css is applied everywhere
     templateUrl: './name.component.html',
     styleUrls: ['./name.component.css']
   })
@@ -192,6 +193,16 @@
 
 
 // CSS
+
+  // access the host element of a component
+  :host {
+    display: block; // needed to see this element
+  }
+
+  // access the host element (with a certain class) of a component
+  :host(.example) {
+    display: block; // needed to see this element
+  }
 
   // access child element from parent element
   .parent ::ng-deep .child {}
