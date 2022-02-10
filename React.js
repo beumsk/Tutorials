@@ -1,4 +1,4 @@
-// REACT - Javascript Framework - by Beumsk
+// REACT - Javascript Library - by Beumsk
 
 
 
@@ -83,12 +83,14 @@ function myFunc() {
 // if else are not possibile inside JSX --> use ternary operator
 const isTrue = <p>{1 === 1 ? "true" : "false"}</p>;
 
-// JSX conditionals; will render the HTML only if the JS is true
-const shouldBeEmpty = true;
+// JSX conditionals; will render the HTML or not based on the left of the logical operator
+const showParagraph = true;
 const myDiv = (
-  <div>
-    {!shouldBeEmpty && <p>Not Empty</p>} 
-  </div>
+  <div>{showParagraph && <p>I'm rendered because the const is true</p>}</div>
+);
+const hideParagraph = false;
+const myDiv = (
+  <div>{hideParagraph || <p>I'm rendered because the const is false</p>}</div>
 );
 
 
@@ -242,6 +244,13 @@ class Crazy extends React.Component {
     );
   }
 }
+
+// Pay attention to the export method !!! 
+export default class ComponentName extends React.Component {};
+import ComponentName from './path';
+
+export class ComponentName extends React.Component {};
+import { ComponentName } from './path';
 
 
 // accurate and full example of imported component
@@ -440,6 +449,10 @@ class App extends React.Component {
     super(props);
     this.state = { title: 'Best App' };
   }
+  // alternative to constructor
+  // state = {
+  //   title: 'Best App'
+  // };
   render() {
     return (
       <h1>
@@ -478,7 +491,7 @@ class Toggle extends React.Component {
 ReactDOM.render(<Toggle />, document.getElementById('app'));
 
 
-// react forms
+// react forms (a form is uncontrolled when react doesn't manage it, meaning real DOM is in charge)
 class ControlledInput extends React.Component {
   constructor(props) {
     super(props);
@@ -572,6 +585,21 @@ import React from "react";
 export default function FunctionalComponent() { return <h1>Hello world</h1>; };
 
 
+// Pay attention to the export method !!! 
+export default function ComponentName() {};
+import ComponentName from './path';
+
+const ComponentName = () => {};
+export default ComponentName;
+import ComponentName from './path';
+
+export function ComponentName() {};
+import { ComponentName } from './path';
+
+export const ComponentName = () => {};
+import { ComponentName } from './path';
+
+
 // PROPS
 import PropTypes from 'prop-types'; // needs 'npm install prop-types'
 const FunctionalComponent = (props) => {
@@ -597,7 +625,7 @@ import { ChildComponent } from './ChildComponent';
 const ParentComponent = () => {
  return <ChildComponent name="John" />;
 };
-const ChildComponent = ({ name, ...props }) => {
+export const ChildComponent = ({ name, ...props }) => {
  return <h1>Hello, {name}</h1>
 };
 
@@ -610,25 +638,26 @@ const ParentComponent = () => {
   }
  return <ChildComponent func={getFromChild} />;
 };
-const ChildComponent = ({ func, ...props }) => {
- return <button onClick={func('This is data')}>Click me to pass data to parent and log it.</button>
+export const ChildComponent = ({ func, ...props }) => {
+  func('This is data')
+  return <></>
 };
 
 
 // STATE
 import { useState } from 'react';
 const FunctionalComponent = () => {
- const [count, setCount] = React.useState(0);
+ const [count, setCount] = useState(0);
  return (
    <div>
      <p>count: {count}</p>
-     <button onClick={() => setCount(count + 1)}>Click</button>
+     <button onClick={() => setCount(count + 1)}>+</button>
    </div>
  );
 };
 // OR conditional rendering based on state
 const FunctionalComponent = () => {
- const [show, setShow] = React.useState(false);
+ const [show, setShow] = useState(false);
  return (
    <div>
      <button onClick={() => setShow(!show)}>{show ? 'Hide' : 'Show'}</button>
