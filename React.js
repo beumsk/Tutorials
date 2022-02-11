@@ -6,8 +6,44 @@
 
 
 
+// REACT FRAMEWORKS
+
+// create-react-app -> 1st party; simple and basic; it is opinionated; many dependencies that could be useless
+// next.js -> ssr or ssg; very fast; integrates best with Vercel hosting which costs
+// gatsby -> very fast; plugins and themes available; hard to migrate; official gatsby hosting costs
+// blitz -> not very established; good doc but not for migration; fast even with API query; needs a server (except on Vercel)
+// redwood -> not very established; JAM stack; tricky migration; deploy everywhere; meant to be serverless
+// remix -> very recent
+
+
+
 
 // BASICS
+
+// start a new react project from scratch -> https://jscomplete.com/learn/1rd-reactful
+cd projectFolder
+// create package.json
+npm init -y
+// express to run node server
+npm i express
+// install react & react-dom
+npm i react react-dom
+// install webpack, a module bundler
+npm i webpack webpack-cli
+// install babel
+npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
+// dev dependencies
+// nodemon or alternative to change server code without restarting node
+npm i -D nodemon
+// eslint -> add a .eslintrc.json file
+npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks /* eslint-config-prettier eslint-config-airbnb eslint-plugin-cypress eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier */
+// jest for testing
+npm i -D jest babel-jest react-test-renderer
+
+
+// start a new react project with a builder
+create-react-app project-name
+npm start
 
 // use those import everytime! They are needed in all examples
 import React from "react";
@@ -685,27 +721,262 @@ const FunctionalComponent = () => {
 };
 
 
-// MEMO
-import { useMemo } from 'react';
-// MEMO CONTENT TO BE ADDED
-
-
 
 // REF
 import { useRef } from 'react';
-const counterRef = useRef(0);
-const inputRef = useRef(null);
-const func = () => { 
-  counterRef.current++;
-  inputRef.current.value = "New input value";
+const FunctionalComponent = () => {
+  const inputEl = useRef(null);
+  const onButtonClick = () => {
+    // `current` points to the mounted text input element
+    inputEl.current.focus();
+  };
+  return (
+    <>
+      <input ref={inputEl} type="text" />
+      <button onClick={onButtonClick}>Focus the input</button>
+    </>
+  );
+}
+
+
+
+// REDUCER
+// useReducer instead of useState for complex state logic
+import { useReducer } from 'react';
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+const FunctionalComponent = () => {
+ const [state, dispatch] = useReducer(reducer, 0);
+  return (
+    <div>
+      <p>count: {state.count}</p>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+    </div>
+  );
 };
-return (
-  <>
-    <p>Counter: {counterRef}</p>
-    <input ref={inputRef} />
-    <button onClick={func}>Click me</button>
-  </>
+
+
+// MEMO
+// memoize functions to update only when a dependency prop is changed in the array
+import { useMemo } from 'react';
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+
+
+// CALLBACK
+// memoize a callback to update only when a dependency prop has changed in the array
+import { useCallback } from 'react';
+const memoizedCallback = useCallback(
+  () => {
+    doSomething(a, b);
+  },
+  [a, b],
 );
+
+
+
+// CONTEXT
+// very useful to pass data deep in the tree
+import { createContext, useState } from 'react';
+export const CountContext = createContext();
+const FunctionalComponent = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <CountContext.Provider value={setCount, count}>
+      <ChildComponent />
+    </CountContext.Provider>
+  )
+}
+
+import { useContext } from 'react';
+import { CountContext } from './FunctionalComponent';
+const ChildComponent = () => {
+  const {setCount, count} = useContext(CountContext);
+  return (
+    <div>
+      <p>count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Click</button>
+    </div>
+  )
+}
+
+
+
+
+// EVENTS
+const EventComponents = () => (
+  <>
+    <button onCLick={}>btn</button>
+    <button onContextMenu={}>btn</button>
+    <button onDoubleClick={}>btn</button>
+    <button onMouseOver={}>btn</button>
+    <button onMouseOut={}>btn</button>
+    <button onChange={}>btn</button>
+    <button onSubmit={}>btn</button>
+    <button onFocus={}>btn</button>
+    <button onBlur={}>btn</button>
+    <button onKeyDown={}>btn</button>
+    <button onKeyPress={}>btn</button>
+    <button onKeyUp={}>btn</button>
+    <button onCopy={}>btn</button>
+    <button onCut={}>btn</button>
+    <button onPaste={}>btn</button>
+  {/* and many more -> https://reactjs.org/docs/events.html */}
+  </>
+)
+
+
+
+
+// FORMS (controlled, react manage the state of the form)
+import { useState } from 'react';
+const ControlledInput = () => {
+  const [input, setInput] = useState('');
+  const [textarea, setTextarea] = useState('');
+  const [select, setSelect] = useState(1);
+  const [checkbox, setCheckbox] = useState(false);
+  const [radio, setRadio] = useState(false);
+  function handleChange(e) {
+    setInput(() => e.target.value);
+  }
+  return (
+    <div>
+      <form>
+        <input value={input} onChange={handleChange} />
+        {/* external OR inline onChange function */}
+        <input value={input} onChange={(e) => setInput(e.target.value)} />
+        <textarea value={textarea} onChange={(e) => setTextarea(e.target.value)} />
+        <select value={select} onChange={(e) => setSelect(e.target.value)}>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+        </select>
+        <input type="checkbox" checked={checkbox} onChange={(e) => setCheckbox(e.target.value)} />
+        <input type="radio" checked={radio} onChange={(e) => setRadio(e.target.value)} />
+      </form>
+      <p>Input value: {input}</p>
+      <p>Textarea value: {textarea}</p>
+      <p>Select value: {select}</p>
+      <p>Checkbox value: {checkbox.toString()}</p>
+      <p>Radio value: {radio.toString()}</p>
+    </div>
+  )
+};
+
+
+// 'react-hook-form' to build forms faster (uncrontrolled forms & more performance)
+import { useForm } from "react-hook-form";
+function ReactHookForm() {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+  console.log(watch("example")); // watch input value by passing the name of it
+  return (
+    /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {/* register your input into the hook by invoking the "register" function */}
+      <input defaultValue="test" {...register("example")} />
+      {/* include validation with required or other standard HTML validation rules */}
+      <input {...register("exampleRequired", { required: true })} />
+      {/* errors will return when field validation fails  */}
+      {errors.exampleRequired && <span>This field is required</span>}
+      <input type="submit" />
+    </form>
+  );
+}
+
+
+// 'formik'  to build forms faster (controlled forms)
+import { Formik, Field, Form } from "formik";
+function FormikForm() {
+  return (
+      <Formik
+        initialValues={{ name: "", email: "" }}
+        onSubmit={async (values) => {
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        <Form>
+          <Field name="name" type="text" />
+          <Field name="email" type="email" />
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik>
+  );
+}
+// 'yup' helps formik with validation
+import { string } from 'yup';
+const schema = Yup.object().shape({
+  name: Yup.string().min(2, 'Too short').required('Required'),
+  email: Yup.string().email('Invalid email').required('Required')
+});
+
+
+// FORM (uncrontolled, DOM manage the form)
+import React, { useRef, useState } from "react";
+const UncontrolledInput = () => {
+  const fileInput = useRef("");
+  const [fileName, setFileName] = useState("");
+  const func = () => {
+    setFileName(fileInput.current.value);
+  };
+  return (
+    <>
+      <input type="file" ref={fileInput} />
+      <button onClick={func}>Upload file</button>
+      {fileName && <p>You uploaded {fileName}</p>}
+    </>
+  );
+};
+
+
+
+
+// ERROR BOUNDARIES
+// https://reactjs.org/docs/error-boundaries.html
+
+
+
+
+// HANDLING ERRORS and async
+import { useEffect, useState } from 'react';
+const FunctionalComponent = () => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
+  // fake data fetching
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  useEffect(() => {
+    async function delayFunc() {
+      try {
+        // fetch data
+        await delay(2000);
+        setIsLoading(false);
+        setData(["waw"]);
+      }
+      catch (e) {
+        setIsLoading(false);
+        setError(e);
+      }
+    }
+    delayFunc();
+  }, []);
+
+  if (error) return <p>Loading failed: {error}</p>
+  if (isLoading) return <p>Loading...</p>
+  return (
+    <p>{data}</p>
+  )
+}
+
 
 
 
@@ -742,7 +1013,18 @@ const FunctionalComponent = () => {
   )
 };
 
-// history
+// navigate
+import ( useNavigate ) from 'react-router-dom';
+const navigate = useNavigate();
+const FunctionalComponent = () => {
+  return (
+    <>
+      <button onClick={() => navigate('/')}>Go Root</button>
+    </>
+  )
+};
+
+// history !stop using in V6! -> useNavigate
 import ( useHistory ) from 'react-router-dom';
 const history = useHistory();
 const FunctionalComponent = () => {
@@ -778,6 +1060,101 @@ const FunctionalComponent = () => {
   return <p>{blogPost}</p> // /blog/test will render 'test'
 };
 
+
+
+
+// API CALLS
+
+// external file with logic (./services/productService)
+const baseUrl = process.env.REACT_APP_API_BASE_URL; // local url eg: http://localhost:3001/ or prod url eg: https://remybeumier.be
+export async function getProducts(category) {
+  const response = await fetch(baseUrl + 'products?category=' + category);
+  if (response.ok) return response.json();
+  throw response;
+}
+// app file
+import React, { useState, useEffect } from 'react';
+import { getProducts } from './services/productService';
+export default function App() {
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  // with promises
+  useEffect(() => {
+    getProducts('shoes')
+      .then((response) => setProducts(response))
+      .catch((e) => setError(e))
+      .finally(() => setLoading(false));
+  }, []);
+  // with async/await
+  useEffect(() => {
+    async function init() {
+      try {
+        const response = await getProducts('shoes');
+        setProducts(response);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    }
+    init();
+  }, []);
+  return (
+    <section>
+      {products.map((p) => (
+        <p>{p.name}</p>
+      ))}
+    </section>
+  )
+}
+
+
+
+
+// API CALL WITH CUSTOM HOOK
+
+// external custom hook
+import { useState, useEffect } from 'react';
+const baseUrl = process.env.REACT_APP_API_BASE_URL; // local url eg: http://localhost:3001/ or prod url eg: https://remybeumier.be
+export default function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    async function init() {
+      try {
+        const response = await fetch(baseUrl + url);
+        if (response.ok) {
+          const json = await response.json();
+          setData(json);
+        } else {
+          throw response;
+        }
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    }
+    init();
+  }, [url]);
+  return { data, error, loading };
+}
+
+// app file
+import React, { useState } from 'react';
+import useFetch from './services/useFetch';
+export default function App() {
+const { data: products, loading, error, } = useFetch('products?category=shoes');
+  return (
+    <section>
+      {products.map((p) => (
+        <p>{p.name}</p>
+      ))}
+    </section>
+  )
+}
 
 
 
@@ -866,6 +1243,10 @@ export default {
 }
 
 
+// DEBUGGING
+
+// add debugger anywhere to add a breakpoint
+debugger;
 
 
 // TESTING WITH JEST
