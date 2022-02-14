@@ -20,7 +20,8 @@ Find directories and files
 	$ ls
 	get the list of files and directory
 
-	$ pwd display current directory
+	$ pwd 
+	display current directory
 
 Path navigation
 
