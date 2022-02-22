@@ -36,7 +36,8 @@ npm i babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react
 // nodemon or alternative to change server code without restarting node
 npm i -D nodemon
 // eslint -> add a .eslintrc.json file
-npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks /* eslint-config-prettier eslint-config-airbnb eslint-plugin-cypress eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier */
+npm i -D eslint babel-eslint eslint-plugin-react eslint-plugin-react-hooks 
+/* eslint-config-prettier eslint-config-airbnb eslint-plugin-cypress eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier */
 // jest for testing
 npm i -D jest babel-jest react-test-renderer
 
@@ -434,7 +435,8 @@ const blog = (
 
 
 
-// render your HTML; first argument is the JSX element and the second points to the HTML where it will be rendered -> <div id="app"></diV>
+// render your HTML; first argument is the JSX element and the second points to the HTML where it will be rendered
+// -> <div id="app"></div>
 ReactDOM.render(<h1>Hello world</h1>, document.getElementById("app"));
 
 // you can use variable of course
@@ -487,7 +489,8 @@ const myDiv = (
 );
 
 
-// map method and JSX; React understand it needs to make a list out of the array; use key attribute to make list item identifiable!
+// map method and JSX; React understand it needs to make a list out of the array
+// use key attribute to make list item identifiable! makte each key unique and avoid index!!
 const numbers = ["one", "two", "three"];
 const list = numbers.map((number, i) => <li key={"number_"+i}>{number}</li>);
 ReactDOM.render(<ul>{list}</ul>, document.getElementById("app"));
@@ -1491,7 +1494,8 @@ export default function App() {
 
 // external custom hook
 import { useState, useEffect } from 'react';
-const baseUrl = process.env.REACT_APP_API_BASE_URL; // local url eg: http://localhost:3001/ or prod url eg: https://remybeumier.be
+// local url eg: http://localhost:3001/ or prod url eg: https://remybeumier.be
+const baseUrl = process.env.REACT_APP_API_BASE_URL;
 export default function useFetch(url) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -1798,6 +1802,96 @@ debugger;
 // npx -p @storybook/cli sb init 
 // npm run storybook
 // work with file.stories.js
+
+
+
+
+// SECURITY
+
+// PREVENTING CROSS SITE SCRIPTING ATTACKS (XSS)
+
+// Avoid getting URL data (such as query string) to write code directly in your page
+// Every data coming from the URL is subject to attack !
+// Make sure those URL data are treated as text only
+// Or modified first -> replace all '<' and '>'
+// JSX handles that for us making sure they are strings. see below
+function Print() {
+  const qs = new URLSearchParams(window.location.search);
+  const bug = {
+    title: decodeURIComponent(qs.get('t')),
+    severity: decodeURIComponent(qs.get('s')),
+    description: decodeURIComponent(qs.get('d')),
+  };
+  return (
+    <div>
+      <h1>{bug.title}</h1>
+      <h3>{bug.severity}</h3>
+      <p>{bug.description}</p>
+    </div>
+  );
+}
+
+// Links can take malicius javascript too inside href
+// pay attention not to take anything from url parameters
+// or add tests such as below
+export function getBackUrl() {
+  const qs = new URLSearchParams(window.location.search);
+  const backUrl = qs.get('backUrl');
+  try {
+    const url = new URL(backurl);
+    if (url.protocol.toLowerCase() !== 'http:') {
+      backUrl = null;
+    }
+  } catch {
+    backUrl = null;
+  }
+  return backUrl;
+}
+
+
+// SAFE DYNAMIC CONTENT RENDERING
+
+// dangerouslySetInnerHTML warns us to be careful with the data it takes
+// avoid taking input data, especially from rich text editors
+// a useful tool is DOMPurify, it removes malicious code but keeps safe code
+// npm install dompurify
+import DOMPurify from 'dompurify';
+export function SafeComponent(props) {
+  // let's say this data is coming from a RTE
+  const inputData = props.inputData;
+  return (
+    <p dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(inputData)}}></p>
+  )
+}
+
+// DOM access with Refs or findDOMNode
+// get rid of Refs if possible
+// otherwise, add testing yourself
+
+
+// SSR vulnerabilities -> stored XSS and reflected XSS
+
+
+// JSON vulnerabilities
+// replace potentially dangerous characters such as '<' and '>'
+JSON.stringify(theString).replace(/</g, '\\u003c');
+// or use a library such as serialize-javascript
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
