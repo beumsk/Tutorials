@@ -1822,6 +1822,16 @@ debugger;
 // test Typescript live -> https://www.typescriptlang.org/play 
 // nice source -> https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
 
+const id: number = 1;
+const title: string = 'Hello';
+const hidden: boolean = false;
+const arr: string[] = ['one', 'two', 'three'];
+const arr: Array<string> = ['one', 'two', 'three'];
+let code: (string | number); code = 123; code = "ABC"; // both work
+const hidden: any = false;
+const arr: any[] = ['one', 2, 'three'];
+function sayHi(): void { console.log('Hi!') } // void is only for function not returning any value
+
 
 // class comp into typescript; respect this order <Props, State>
 class TypescriptComponent extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
