@@ -583,6 +583,22 @@ https://css-tricks.com/the-shapes-of-css/
 }
 
 
+.SCROLLBAR {
+  overflow: auto; /* to force the scroll when content > container */
+  scrollbar-color: #666 transparent; /* thumb color and track color !only FF */
+}
+.SCROLLBAR ::-webkit-scrollbar {
+  height: 8px; /* height of thumb; if vertical, need to change it to width */
+}
+.SCROLLBAR ::-webkit-scrollbar-track {
+  background: transparent; /* track color */
+}
+.SCROLLBAR ::-webkit-scrollbar-thumb {
+  border-radius: 8px; /* thumb border-radius */
+  background: #666; /* thumb color */
+}
+
+
 .FLEX-CONTAINER {
   display: flex;/* in a container, change the disposition to flex and allow following properties */
   flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
