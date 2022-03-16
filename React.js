@@ -1225,7 +1225,8 @@ const ControlledInput = () => {
   return (
     <div>
       <form>
-        <input value={input} onChange={handleChange} />
+        <label htmlFor="input">Name:</label>
+        <input id="input" type="text" name="name" value={input} onChange={handleChange} />
         {/* external OR inline onChange function */}
         <input value={input} onChange={(e) => setInput(e.target.value)} />
         <textarea value={textarea} onChange={(e) => setTextarea(e.target.value)} />
@@ -1357,6 +1358,27 @@ const FunctionalComponent = () => {
 // ROUTING !!very much different in V6
 
 // install react-router-dom (yarn or npm)
+
+// V6 basics
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+const FunctionalComponent = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path="blog">
+            <Route path=":title" element={<BlogPost />} />
+            <Route index element={<Blog />} />
+          </Route>
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>,
+  )
+}
+
+// V5 basics
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import different page components
 const FunctionalComponent = () => {
