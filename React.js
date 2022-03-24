@@ -1140,14 +1140,14 @@ const FunctionalComponent = () => {
 
 
 // MEMO
-// memoize functions to update only when a dependency prop is changed in the array
+// memoize a function to update only when a dependency prop has changed in the array
 import { useMemo } from 'react';
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 
 
 // CALLBACK
-// memoize a callback to update only when a dependency prop has changed in the array
+// memoize a returned value to update only when a dependency prop has changed in the array
 import { useCallback } from 'react';
 const memoizedCallback = useCallback(
   () => {
@@ -1268,30 +1268,32 @@ function ReactHookForm() {
 }
 
 
-// 'formik'  to build forms faster (controlled forms)
+// 'formik' to build forms faster (controlled forms)
 import { Formik, Field, Form } from "formik";
 function FormikForm() {
   return (
-      <Formik
-        initialValues={{ name: "", email: "" }}
-        onSubmit={async (values) => {
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          alert(JSON.stringify(values, null, 2));
-        }}
-      >
-        <Form>
-          <Field name="name" type="text" />
-          <Field name="email" type="email" />
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
+    <Formik
+      initialValues={{ name: "", email: "" }}
+      onSubmit={async (values) => {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        alert(JSON.stringify(values, null, 2));
+      }}
+    >
+      <Form>
+        <Field name="name" type="text" />
+        <Field name="email" type="email" />
+        <button type="submit">Submit</button>
+      </Form>
+    </Formik>
   );
 }
-// 'yup' helps formik with validation
-import { string } from 'yup';
+
+
+// 'yup' helps with validation
+import * as yup from 'yup';
 const schema = Yup.object().shape({
-  name: Yup.string().min(2, 'Too short').required('Required'),
-  email: Yup.string().email('Invalid email').required('Required')
+  name: yup.string().min(2, 'Too short').required('Required'),
+  email: yup.string().email('Invalid email').required('Required')
 });
 
 
@@ -1368,9 +1370,10 @@ const FunctionalComponent = () => {
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="blog">
-            <Route path=":title" element={<BlogPost />} />
+            <Route path=":id" element={<BlogPost />} />
             <Route index element={<Blog />} />
           </Route>
+          <Route path="about" element={<About />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
@@ -1439,7 +1442,7 @@ const FunctionalComponent = () => {
 };
 
 // location; you can check current path or query params
-import ( useLocation ) from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 const { pathname, search } = useLocation();
 const queryParams = new URLSearchParams(search);
 const FunctionalComponent = () => {
@@ -1642,6 +1645,83 @@ export default {
     `}
   `
 }
+
+
+
+
+// TRANSLATE I18N
+
+// npm install i18next react-i18next i18next-http-backend i18next-browser-languagedetector --save
+// https://react.i18next.com/latest/using-with-hooks
+
+// i18n.js next to index.js
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'en',
+    debug: true,
+    interpolation: {
+      escapeValue: false,
+    }
+  });
+export default i18n;
+
+// update index.js with i18n import
+import './i18n';
+
+// add translation to App.js
+import React, { Suspense } from 'react';
+export default function App() {
+  return (
+    <Suspense fallback="loading">
+      <MyComponent />
+    </Suspense>
+  );
+}
+
+// create translation files (./public/locales/en/translation.json)
+{
+  "text": "This text comes from translation",
+  "translations": "Translations",
+  "anything": "Anything",
+  "withVariable": "With a variable of: {{var}}",
+  "item_one": "Item",
+  "item_other": "Items"
+}  
+
+// add translation to a component
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+function MyComponent() {
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = useState(i18n.language);
+  function changeLang(lng) {
+    setLang(lng);
+    i18n.changeLanguage(lng);
+  }
+  return (
+    <div className="App">
+      <h1>
+        i18n {lang.toUpperCase()} {t('translations')}
+      </h1>
+      <h2>{t('text')}</h2>
+      <p>{t('anything')}</p>
+      <p>{t('withVariable', { var: 40 })}</p>
+      <p>{t('item', { count: 1 })}</p>
+      <p>{t('item', { count: 2 })}</p>
+      <button onClick={() => changeLang('en')}>EN</button>
+      <button onClick={() => changeLang('fr')}>FR</button>
+    </div>
+  );
+}
+
+
 
 
 // DEBUGGING
