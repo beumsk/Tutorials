@@ -15,10 +15,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibility mode forced to move to most recent version; should be first after <head> -->
   <meta charset="utf-8"> <!-- allow special characters to be displayed -->
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- make media queries work; add this to prevent from zooming => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" -->
-  
-  <meta name="description" content="description"> <!-- Website description -->
-  <meta name="keywords" content="keywords"> <!-- !!Unrecommended!! keywords -->
-  <meta name="author" content="author"> <!-- Page author -->
+
+  <title>HTML</title> <!-- tab title -->
+  <meta name="description" content="description">
+  <meta name="robots" content="index, follow" /> <!-- tell bots to index page / tell bots to crawl links on the page / also noindex, nofollow -->
   <meta name="robots" content="nosnippet"> <!-- removes description from search engines results -->
   <meta name="googlebot" content="nosnippet"> <!-- same but specific to google -->
   <meta name="theme-color" content="#00796B"> <!-- sets color of PWA on mobile devices -->
@@ -26,22 +26,20 @@
   <meta http-equiv="refresh" content=""> <!-- Only use in devopment !! refresh page every x sec depending on content value -->
   
   <meta property="og:title" content="Title Here"> <!-- open graph data; for Facebook -->
-  <meta property="og:type" content="website"> <!-- article if article -->
+  <meta property="og:description" content="Description Here">
+  <meta property="og:locale" content="en_GB"> <!-- defines natural language of the page -->
+  <meta property="og:type" content="website"> <!-- article, audio, video, etc. -->
   <meta property="og:url" content="https://www.example.com/">
-  <meta property="og:image" content="https://example.com/image.jpg"><!-- full URL is needed to work; 1200x630 -->
+  <meta property="og:image" content="https://example.com/image.jpg"><!-- full URL is needed to work; 1200x630; better to use .jpg for linkedin -->
   <meta property="og:image:width" content="1200"> <!-- once width and height are specified, Facebook can directly fetch the image -->
   <meta property="og:image:height" content="600">
-  <meta property="og:image:secure_url" content="https://example.com/image.jpg"> <!-- ensure the image is understood both with http and https -->
   <meta property="og:image:alt" content="Alt text">
-  <meta property="og:description" content="Description Here"> 
-  <meta property="og:site_name" content="Site Name">
   <meta property="fb:admins" content="Facebook numeric ID">
 
-  <meta name="twitter:card" content="summary"> <!-- Twitter Card data -->
-  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:card" content="summary_large_image"> <!-- Twitter Card data -->
   <meta name="twitter:title" content="Page Title">
   <meta name="twitter:description" content="Page description less than 200 characters">
-  <meta name="twitter:creator" content="@author_handle">
+  <meta property="og:url" content="https://www.example.com/">
   <meta name="twitter:image" content="https://www.example.com/image.jpg"> <!-- Twitter Summary card images must be at least 200x200px -->
   <meta name="twitter:image:alt" content="Alt text">
 
@@ -56,7 +54,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css"> <!-- Dev icons -->
 
-  <title></title> <!-- tab title -->
   <style></style> <!-- Defines CSS but it is better to use an extern file -->
 
   <!-- because of use of html5 tags, need to add following link to JS to let IE to run the page -->
