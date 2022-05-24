@@ -279,7 +279,7 @@
 
 // ECMASCRIPT 6 !!IE
 
-  // CONST
+  // VARIABLES
   // Javascript const are containers you can only read; best use for value that will not change
 
   // basic const
@@ -304,10 +304,7 @@
   myArray = [8]; // not possible
   myArray.push(8); // possible
 
-
-  // LET
-  // Javascript let are containers with small scope (a block)
-  
+  // let are block-scoped variables
   // let vs var
   var a = 5, b = 10;
   if (a === 5) {
@@ -317,9 +314,22 @@
   }
   console.log(a, b); //  5 1
 
+  // const are block-scoped variables that can't be reassigned but that can be updated
+  const arr = [1, 2, 3];
+  // Trying to reassign a const will give an error
+  arr = [5]; // ERROR
+  // Updating a const will succeed
+  arr.push(4); // [1, 2, 3, 4]
 
+
+  // Template literals
+  const easyText = `<p class="danger">
+  It's way easier to write strings with "quotes" and breaks
+  </p>`;
+
+
+  // FUNCTIONS 
   // arrow function
-
   const myFunc = () => {
     const myVar = "value";
     return myVar;
@@ -341,7 +351,6 @@
   const arr = [1, 2, 3];
   const squares = arr.map(x => x * x); // 1, 4, 9
 
-
   // default parameter for function
   function greet(name = "Anonymous") {
     console.log("Hello" + name);
@@ -349,35 +358,29 @@
   great(); // Hello Anonymous
   great("Einstein"); // Hello Einstein
 
-
-  // Rest operator
+  // Rest in function
   function howMany(...args) {
     return args.length + " arguments";
   }
   howMany("hi", 1, true); // 3 arguments
 
-  // Spread operator
-  const arr = [1,9,3,4];
-  const maximus = Math.max(...arr); // 4
 
-  // Copy an array
-  const arr = [1,2,3,4];
+  // ARRAYS
+  // Spread operator with array
+  const arr = [1, 9, 3, 4];
+  const arr2 = [17];
+  const newArr = [...arr, ...arr2, 21]; // [1, 9, 3, 4, 17, 21]
+
+  // Copy an array with spread
+  const arr = [1, 2, 3, 4];
   const arrCopy = [...arr];
 
-  // Concat 
-  const arr1 = [1,2,3,4];
-  const arr2 = [5,6,7,8];
-  const concat = [...arr1, ...arr2]; // 1, 2, 3, 4, 5, 6, 7, 8
-
-  // String to array
+  // String to array with spread
   const str = "Aloha";
-  const arr = [...str]; // A, l, o, h, a
+  const arr = [...str]; // [A, l, o, h, a]
 
-
-  // Template literals
-  const easyText = `<p class="danger">
-  It's way easier to write strings with "quotes" and breaks
-  </p>`;
+  // rest for destructuring array
+  const [first, ...rest] = [1, 9, 3, 4]; // 1 and [9, 3, 4]
 
 
   // some loop
