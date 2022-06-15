@@ -378,6 +378,7 @@
       <input type="text" name="firstname" required minlength="3" maxlength="16"><!-- need to write min 3 characters (and max 16) to be able to submit; !!IE => use pattern=".{3,16}" --><br>
       <input type="text" name="firstname" readonly><!-- makes the input uneditable --><br>
       <input type="text" name="zipcode" pattern="[A-Za-z]{4}" required><!-- input required and made from 4 letters; pattern works with regexp --><br>
+      <input type="text" spellcheck="true"><!-- input with spellcheck --><br>
     </fieldset>
 
     <fieldset>
@@ -391,6 +392,7 @@
       <input type="tel" name="tel" placeholder="Telephone" pattern="^((\+|00)32\s?|0)4(60|[789]\d)(\s?\d{2}){3}$"><!-- telephone input with pattern to match Belgian phone numbers; useful for mobile --><br>
       <input type="url" name="url"><!-- check if it's url format --><br>
       <input type="file" name="file" accept=".png, .jpg, .jpeg" multiple><!-- upload a file; or multiple if specified --><br>
+      <input type="file" name="camera" capture="user" accept="image/*"><!-- open camera on mobiles; 'user' for front and 'environment' for back camera --><br>
       <input type="search" name=""><!-- create a search area --><br>
       <input type="range" name="range" id="range" min="0" max="10" step="2"><!-- cursor range --><br>
       <input type="color" name="color" value="#ffffff"><!-- color input; not working in !!IE --><br>
