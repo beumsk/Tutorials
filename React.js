@@ -424,7 +424,7 @@ const ah1 = (
 );
 
 // a JSX expression must have exactly one outermost element
-// good habit is to have a <div>, or <> wrapping everything
+// good habit is to have a <div>, or <> (<React.Fragment>) wrapping everything
 const blog = (
   <div>
     <h1>Main title</h1>
