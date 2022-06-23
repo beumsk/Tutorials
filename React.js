@@ -1023,11 +1023,19 @@ const FunctionalComponent = ({ name }) => {
 const FunctionalComponent = ({ name, ...props }) => {
  return <h1>Hello, {name} {props.surname}</h1>;
 };
+// prop types arrayOf(number), objectOf(string)) -> https://reactjs.org/docs/typechecking-with-proptypes.html
+FunctionalComponent.propTypes = { 
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+  fun: PropTypes.bool,
+  arr: PropTypes.array,
+  obj: PropTypes.obj,
+  el: PropTypes.element,
+  one: PropTypes.oneOf([number, string])
+};
 // default props
-FunctionalComponent.defaultProps = { surname: 'Nobody' };
-// prop types (string, number, bool, func, array, object, symbol)
-FunctionalComponent.propTypes = { name: PropTypes.string.isRequired };
-<FunctionalComponent name="John" surname="Doe" />
+FunctionalComponent.defaultProps = { age: 16 };
+<FunctionalComponent name="John" age={25} fun={true} arr={[1, 2]} obj={{yes: 'no'}} el={<AnotherComponent />} one={1} />
 
 
 // PROPS FROM PARENT TO CHILD
