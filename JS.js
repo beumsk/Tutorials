@@ -985,10 +985,10 @@
   (100 + 23).toString(); // 123
 
 
-  // toFixed; number of decimals
-  (2.343).toFixed(0); // 2
-  (2.343).toFixed(2); // 2.34
-  (2.343).toFixed(4); // 2.3430
+  // toFixed; number of decimals returned as string
+  (2.343).toFixed(0); // '2'
+  (2.343).toFixed(2); // '2.34'
+  (2.343).toFixed(4); // '2.3430'
 
 
   // Number; turns value into number
@@ -1054,7 +1054,7 @@
 
 
   // Math.sqrt; returns square root of parameter
-  Math.sqrt(16); // 16
+  Math.sqrt(16); // 4
 
 
   // Math.abs; returns absolute of parameter
