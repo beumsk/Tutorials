@@ -2765,6 +2765,37 @@ country.addEventListener("input", function (e) { // when typing
 
 
 
+// FETCH
+
+fetch("https://type.fit/api/quotes")
+  .then((response) => {
+    if (!response.ok) {
+      throw Error(response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+
+
+
+
+// ASYNC/AWAIT
+// best option to fetch data !
+const fetchData = async () => {
+  try {
+    const quotes = await fetch("https://type.fit/api/quotes");
+    const response = await quotes.json();
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+};
+fetchData();
+
+
+
+
 // SERVER REQUESTS
 // Manage requests to the server (HTTP, AJAX, JSON)
 
