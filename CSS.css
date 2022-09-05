@@ -238,6 +238,8 @@
   border-right: solid 5px red;
   border-bottom: solid 5px red;
   border-left: solid 5px red;
+  border-block: solid 5px red; /* shorthand property for top and bottom; depends on writing mode, directionality, and text orientation; !!IE */
+  border-inline: solid 5px red; /* shorthand property for left and right; depends on writing mode, directionality, and text orientation; !!IE */
   border-width: 10px 5px 20px 15px; /* make some irregular borders */
   border-image: url(""); /* image in border */
   border-image: linear-gradient(blue, green); /* gradient borders */
@@ -281,10 +283,12 @@ https://css-tricks.com/the-shapes-of-css/
 
 .MARGIN { 
   /* Space around elements */
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-block: 10px; /* shorthand property for top and bottom; depends on writing mode, directionality, and text orientation; !!IE */
+  margin-inline: 10px; /* shorthand property for left and right; depends on writing mode, directionality, and text orientation; !!IE */
   margin: 10px 5px; /* shorthand property; vertical horizontal */
   margin: 10px 5px 10px 5px; /* shorthand property; top right bottom left */
   margin: auto; /* center element; need to specify width */
@@ -300,6 +304,8 @@ https://css-tricks.com/the-shapes-of-css/
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  padding-block: 10px; /* shorthand property for top and bottom; depends on writing mode, directionality, and text orientation; !!IE */
+  padding-inline: 10px; /* shorthand property for left and right; depends on writing mode, directionality, and text orientation; !!IE */
   padding: 10px 5px; /* shorthand property; vertical horizontal */
   padding: 10px 5px 10px 5px; /* shorthand property; top right bottom left */
 }
