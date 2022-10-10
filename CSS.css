@@ -592,14 +592,17 @@ https://css-tricks.com/the-shapes-of-css/
 .SCROLLBAR {
   overflow: auto; /* to force the scroll when content > container */
   scrollbar-color: #666 transparent; /* thumb color and track color !only FF */
+  -ms-oveflow-style: none; /* hide on IE, Edge */
+  scrollbar-width: none; /* hide on firefox */
 }
-.SCROLLBAR ::-webkit-scrollbar {
+.SCROLLBAR::-webkit-scrollbar {
   height: 8px; /* height of thumb; if vertical, need to change it to width */
+  display: none; /* hide on chrome, safari, opera */
 }
-.SCROLLBAR ::-webkit-scrollbar-track {
+.SCROLLBAR::-webkit-scrollbar-track {
   background: transparent; /* track color */
 }
-.SCROLLBAR ::-webkit-scrollbar-thumb {
+.SCROLLBAR::-webkit-scrollbar-thumb {
   border-radius: 8px; /* thumb border-radius */
   background: #666; /* thumb color */
 }
