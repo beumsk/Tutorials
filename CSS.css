@@ -96,9 +96,12 @@
   p:only-of-type {} /* Selects p if its the only p in there */
   p:last-of-type {} /* Selects last p element */
   p:empty {} /* Selects empty p elements */
-  p:not(.main) /* Selects p without .main class */
-  p:not(:empty) /* Selects non empty p elements */
-  p:is(.main, .second) /* Selects p with classes .main or .second !!NOT READY */
+  p:not(.main) {} /* Selects p without .main class */
+  p:not(:empty) {} /* Selects non empty p elements */
+  p:is(.main, .second) {} /* Selects p.main or p.second; specificity is the highest of the list (here 10) !!IE */
+  p :is(.main, .second) {} /* Selects p .main or p .second; specificity is the highest of the list (here 10) !!IE */
+  p:where(.main, .second) {} /* Selects p.main or p.second; specificity is 0 !!IE */
+  p :where(.main, .second) {} /* Selects p .main or p .second; specificity is 0 !!IE */
 
   :required {} /* Selects required form elements */
   :valid {} /* Selects valid form elements */
