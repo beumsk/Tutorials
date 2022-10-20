@@ -393,6 +393,36 @@
   arr.every((value) => { return (value == 3); }); // returns false; all array values must be true to have a true output from an every loop
 
 
+  // OBJECTS
+  // spread with object
+  const obj = {id: 1, name: "John"};
+  const obj2 = {age: 29};
+  const newArr = {...obj, ...obj2, city: "Gotham"}; // {id: 1, name: "John", age: 29, city: "Gotham"}
+
+  // nested object update with spread
+  const user = {id: 3, name: 'Ron', organization: {name: 'Parks & Recreation', city: 'Pawnee'}};
+  const updatedUser = {...user, organization: {...user.organization, position: 'Director'}}; // {id: 3, name: "Ron", organization: {name: "Parks & Recreation", city: "Pawnee", position: "Director"}}
+
+  // Copy an object with spread
+  const obj = {id: 1, name: "John"};
+  const objCopy = [...obj]; // {id: 1, name: "John"}
+
+
+  // rest for destructuring object
+  const {id, ...rest} = {id: 1, name: "John", age: 29}; // 1 and {name: "John", age: 29}
+
+
+  // dynamic property name
+  const anything = 'something';
+  const short = 1;
+  const obj = {
+    [anything]: 5,
+    short
+  }
+  console.log(obj.anything, obj.something); // undefined, 5
+  console.log(obj.short); // 1
+
+
   // Class syntax; replaces constructor function
   class SpaceShuttle {
     constructor(targetPlanet){
