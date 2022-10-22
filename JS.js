@@ -2141,6 +2141,12 @@ for (var property in example) {
   // would be the same as below
   document.querySelector("p").setAttribute("class", "title");
 
+
+  // node contains
+  var elt1 = document.querySelector(".elt1");
+  var elt2 = document.querySelector(".elt2");
+  elt1.contains(elt2); // returns true if elt2 is a child of elt1
+
   
   // adding an element
   var addedElt = document.createElement("span"); // span created
