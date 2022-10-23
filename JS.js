@@ -162,6 +162,8 @@
 
   console.count(); // returns the number of time this particular call to count() has been called
 
+  console.trace(); // returns a stack trace to the console
+
   console.log("%cStyled!", "font-weight: 800; color: red; font-size: 3rem;"); // style your log with some CSS
 
 
@@ -924,8 +926,9 @@
 
 
   // use replace to add spaces before uppercases; or smth else
-  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1 $2"); // my Name Is What
-  "myNameIsWhat".replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(); // my-name-is-what
+  var str = "myNameIsWhat";
+  console.log(str.replace(/([a-z])([A-Z])/g, "$1 $2")); // my Name Is What
+  console.log(str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase()); // my-name-is-what
 
 
   // return all character from a string
