@@ -186,7 +186,12 @@
 
 @font-face {
   font-family: Fontname; /* define the name of new font to be used as font-family */
-  src: url(font.ttf); /* locate the font */
+  src: url('fontname.eot'); /* IE9 Compat Modes */
+  src: url('fontname.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fontname.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fontname.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fontname.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fontname.svg#svgFontName') format('svg'); /* Legacy iOS */
   font-weight: 400; /* useful when multiple font sources are names the same; define the font-weight to use other font source */
   font-style: normal; /* useful when multiple font sources are names the same; define the font-style to use other font source */
   font-display: optional; /* adapts layout before font loads */
