@@ -1270,6 +1270,32 @@ const ControlledInput = () => {
 };
 
 
+// FORMS (simplified state)
+import { useState } from 'react';
+const ControlledInput = () => {
+  const [form, setForm] = useState({
+    name: "John",
+    surname: "Doe",
+    desc: "Newbie dev"
+  });
+  function handleChange(e) {
+    setForm((curr) => ({...curr, [e.target.name]: e.target.value}));
+  }
+  return (
+    <div>
+      <form>
+        <input type="text" name="name" value={form.name} onChange={handleChange} />
+        <input type="text" name="surname" value={form.surname} onChange={handleChange} />
+        <textarea name="desc" value={form.desc} onChange={handleChange} />
+      </form>
+      <p>Name: {form.name}</p>
+      <p>Surname: {form.surname}</p>
+      <p>Desc: {form.desc}</p>
+    </div>
+  )
+};
+
+
 // 'react-hook-form' to build forms faster (uncrontrolled forms & more performance)
 import { useForm } from "react-hook-form";
 function ReactHookForm() {
