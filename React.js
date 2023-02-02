@@ -1209,6 +1209,30 @@ const ChildComponent = () => {
 
 
 
+// PORTAL
+// creates node out of parent; body or anywhere else
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
+export default function Modal() {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <>
+      <button onClick={() => setShowModal(true)}>Open modal</button>
+      {showModal &&
+        createPortal(
+          <div className="modal">
+            <h2>Modal title</h2>
+            <button onClick={() => setShowModal(false)}>Close</button>
+          </div>,
+          document.body
+        )}
+    </>
+  );
+}
+
+
+
+
 // EVENTS
 const EventComponents = () => (
   <>
@@ -1613,7 +1637,7 @@ const { data: products, loading, error, } = useFetch('products?category=shoes');
 
 
 
-// STYLE
+// STYLE inline
 import React from 'react';
 const StyleComponent = () => {
   return (
@@ -1623,7 +1647,7 @@ const StyleComponent = () => {
 export default StyleComponent;
 
 
-// STYLE with a CONST
+// STYLE inline with a const
 import React from 'react';
 const styles = {color: 'red', fontSize: '72px'}
 const StyleComponent = () => {
