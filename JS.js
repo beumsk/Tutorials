@@ -396,6 +396,13 @@
 
 
   // OBJECTS
+  // Object enumerables
+  const obj = {id: 1, name: "John"};
+  const entries = Object.entries(obj); // [['id', 1], ['name', 'John']]
+  const keys = Object.keys(obj); // ['id', 'name']
+  const values = Object.values(obj); // [1, 'John']
+  const objFromEntries = Object.fromEntries(entries); // {id: 1, name: "John"}
+
   // spread with object
   const obj = {id: 1, name: "John"};
   const obj2 = {age: 29};
