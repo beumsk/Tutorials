@@ -1266,6 +1266,7 @@ const ControlledInput = () => {
   const [select, setSelect] = useState(1);
   const [checkbox, setCheckbox] = useState(false);
   const [radio, setRadio] = useState(false);
+  const [radioString, setRadioString] = useState('');
   function handleChange(e) {
     setInput(() => e.target.value);
   }
@@ -1281,8 +1282,9 @@ const ControlledInput = () => {
           <option value={1}>1</option>
           <option value={2}>2</option>
         </select>
-        <input type="checkbox" checked={checkbox} onChange={(e) => setCheckbox(e.target.value)} />
-        <input type="radio" checked={radio} onChange={(e) => setRadio(e.target.value)} />
+        <input type="checkbox" checked={checkbox} onChange={(e) => setCheckbox(e.target.checked)} />
+        <input type="radio" checked={radio} onChange={(e) => setRadio(e.target.checked)} />
+        <input type="radio" checked={radio} value="radio-string" onChange={(e) => setRadioString(e.target.value)} />
       </form>
       <p>Input value: {input}</p>
       <p>Textarea value: {textarea}</p>
