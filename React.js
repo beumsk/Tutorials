@@ -1815,7 +1815,83 @@ debugger;
 // run it with yarn test / npm run test
 
   // TESTING WITH REACT TESTING LIBRARY
+  // https://github.com/testing-library/react-testing-library
   // npm install --save-dev @testing-library/react
+  import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+  import userEvent from '@testing-library/user-event';
+  import App from './App';
+  describe('Group tests in describe', () => {
+    test('Give useful names to your tests', () => {
+      render(<App />); // render your component to be tested
+      render(<App neededFunc={jest.fn()} />); // fake empty function to avoid errors when a function prop is required
+      // queries by priority: (more: https://testing-library.com/docs/dom-testing-library/cheatsheet/#queries)
+      const el = screen.getByRole('button', {name: 'Testing react'});
+      // aria roles: button, link, img, heading, and more
+      // find roles with https://testing-library.com/docs/dom-testing-library/api-debugging/#logroles
+      const el = screen.getByLabelText('Testing react');
+      const el = screen.getByPlaceholderText('Testing react');
+      const el = screen.getByText('Testing react');
+      const el = screen.getByText('Testing', { exact: false });
+      const el = screen.getByDisplayValue('Testing react');
+      const el = screen.getByAltText('Testing react');
+      const el = screen.getByTitle('Testing react');
+      const el = screen.getByTestId('Testing react');
+      // use get when you expect element to be in DOM
+      const el = screen.getByRole('button');
+      const els = screen.getAllByRole('button');
+      // use query when you don't expect element to be in DOM
+      const el = screen.queryByRole('button');
+      const els = screen.queryAllByRole('button');
+      // use find when you expect element to appear async ==> test('', async () => {})
+      const el = await screen.findByRole('button');
+      const els = await screen.findAllByRole('button');
+      // check roles; will give error and give current roles in tested component
+      screen.getByRole('blah');
+      // see current state of testing DOM
+      screen.debug();
+      // jet-dom assertions https://github.com/testing-library/jest-dom#table-of-contents
+      expect(const).toBe('any string'); // string or number
+      expect(const).toEqual(['one', 'two']); // array or object
+      expect(el).toBeInTheDocument();
+      expect(el).not.toBeInTheDocument(); // use query !
+      expect(el).toBeVisible();
+      expect(el).toBeEnabled();
+      expect(el).toBeDisabled();
+      expect(el).toBeChecked();
+      expect(el).not.toBeChecked();
+      expect(el).toHaveTextContent(/change to red/i);
+      expect(el.textContent).toBe('Testing react');
+      expect(el).toHaveStyle({'background-color': 'red'});
+      expect(el).toHaveClass('class-name');
+      expect(els).toHaveLength(3); // 3 elements in array
+      // use watFor to ensure elements are rendered (fetched)
+      await waitFor(async () => {
+        const el = await screen.findAllByRole('button');
+        expect(el).toHaveLength(2);
+      });
+      // fire event
+      fireEvent.click(el);
+      // better event !needs async ==> test('', async () => {});
+      const user = userEvent.setup();
+      await user.click(el);
+      await user.hover(el);
+      await user.unhover(el);
+      await user.clear(el); // input
+      await user.type(el, '1'); // input; value as second argument
+      // test functions (unit test)
+      const func = () => 'anything';
+      expect(func()).toBe('anything');
+    });
+    test('async test', async () => {});
+    test.only('skip other tests, run only this test', () => {});
+    test.skip('skip this test, run other tests', () => {});
+    it('is exactly the same as test()', () => {});
+  });
+
+
+  // testing server features needs a mocker; one is called msw
+
+
   // work with file.test.js
   import { Component } from './Component';
   import { render, fireEvent, wait } from '@testing-library/react';
