@@ -467,9 +467,7 @@ https://css-tricks.com/the-shapes-of-css/
   transform: skew(20deg, 20deg); /* skew horizontally and/or vertically */
   transform: scale(.7) rotate(30deg); /* shorthand property */
   transform-origin: 0px 100px; /* default is 50% 50%; specifies x and y origin for transformations */
-  -webkit-transform: rotate(10deg); /* for unsupporting browser */
-      -ms-transform: rotate(10deg); /* for unsupporting browser */
-          transform: rotate(10deg); /* for unsupporting browser */
+  transform: rotate(10deg); /* for unsupporting browser */
 }
 
 
@@ -482,9 +480,7 @@ https://css-tricks.com/the-shapes-of-css/
   transform: scale3d(x, y, z); /* scale */
   transform: rotate(180deg) translateX(100px); /* multiple transformation; if written in two different transforms it cancels the first one (as other css properties) */
   backface-visibility: hidden; /* useful when you want to use 2 different blocks to result a 2 faces card */
-  -webkit-transform: rotateZ(150deg); /* for unsupporting browser */
-      -ms-transform: rotateZ(150deg); /* for unsupporting browser */
-          transform: rotateZ(150deg); /* for unsupporting browser */
+  transform: rotateZ(150deg); /* for unsupporting browser */
 }
 
 
@@ -543,12 +539,9 @@ https://css-tricks.com/the-shapes-of-css/
   animation-iteration-count: 3 infinite; /* number of time the animation will be played */
   animation-fill-mode: none forwards backwards both; /* how the animation apply style to its target */
   animation-play-state: running paused; /* run or pause the animation */
-  -webkit-animation: keyframe_name 2s; /* for safari and chrome */
-          animation: keyframe_name 2s; /* use animation created before in @keyframes */
-  -webkit-animation: keyframe_name 2s linear alternate infinite steps(1); /* for chrome and safari */
-          animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
-  -webkit-animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
-          animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
+  animation: keyframe_name 2s; /* use animation created before in @keyframes */
+  animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
+  animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
 }
 
 
@@ -640,9 +633,7 @@ https://css-tricks.com/the-shapes-of-css/
 
 .MULTI-COLUMNS {
   /* not so useful; probably better to use grids */
-  -webkit-columns: 4 100px; /* Chrome, Safari, Opera */
-     -moz-columns: 4 100px; /* Firefox */
-          columns: 4 100px; /* IE */
+  columns: 4 100px;
   column-count: 4; /* 4 columns */
   column-width: 200px; /* width of columns */
   column-gap: 50px; /* gap bewteen columns */
