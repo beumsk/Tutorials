@@ -1188,7 +1188,7 @@ export const CountContext = createContext();
 const FunctionalComponent = () => {
   const [count, setCount] = useState(0);
   return (
-    <CountContext.Provider value={setCount, count}>
+    <CountContext.Provider value={{setCount, count}}>
       <ChildComponent />
     </CountContext.Provider>
   )
@@ -1863,6 +1863,7 @@ debugger;
       expect(el.textContent).toBe('Testing react');
       expect(el).toHaveStyle({'background-color': 'red'});
       expect(el).toHaveClass('class-name');
+      expect(el).toHaveAttribute('href', '/');
       expect(els).toHaveLength(3); // 3 elements in array
       // use watFor to ensure elements are rendered (fetched)
       await waitFor(async () => {
@@ -2080,12 +2081,17 @@ debugger;
 const id: number = 1;
 const title: string = 'Hello';
 const hidden: boolean = false;
-const arr: string[] = ['one', 'two', 'three'];
-const arr: Array<string> = ['one', 'two', 'three'];
+
 let code: (string | number); code = 123; code = "ABC"; // both work
-const hidden: any = false;
-const arr: any[] = ['one', 2, 'three'];
+let something: any; any = false; any = "any string";
+
+const arr: string[] = ['one', 'two', 'three'];
+const arr: (string | number)[] = ['one', 2, 'three'];
+const arr: any[] = ['one', 2, false];
+const arr: Array<string> = ['one', 'two', 'three'];
+
 function sayHi(): void { console.log('Hi!') } // void is only for function not returning any value
+function sayHi(name: string) { console.log('Hi ' + name) }
 
 
 // class comp into typescript; respect this order <Props, State>
@@ -2144,18 +2150,18 @@ interface ComplexProp {
     name: string;
   }[];
   optionalData?: [];
+  twoTypes: string | number;
+  func: (param: string) => string;
 }
 function TypescriptComponent(props: ComplexProp) {
   return (
     <>
       <h1>{props.title}</h1>
-      {props.data.map(x => <p key={x.data}>{x.name}</p>)}
+      {props.data.map(x => <p key={x.id}>{x.name}, {x.twoTypes}</p>)}
+      <button onClick={() => props.func("Hello")}></button>
     </>
   )
 }
-
-
-const val: boolean = true; // TS will check if the type is correct
 
 
 // use hooks in typescript
@@ -2169,7 +2175,6 @@ function TypescriptComponent() {
   const [text, setText] = useState<string | null>(null);
   return <p onClick={() => setText('Hello')}>{text}</p>
 }
-
 
 
 
