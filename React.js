@@ -1825,8 +1825,17 @@ debugger;
       render(<App />); // render your component to be tested
       render(<App neededFunc={jest.fn()} />); // fake empty function to avoid errors when a function prop is required
       // queries by priority: (more: https://testing-library.com/docs/dom-testing-library/cheatsheet/#queries)
-      const el = screen.getByRole('button', {name: 'Testing react'});
-      // aria roles: button, link, img, heading, and more
+      const el = screen.getByRole('button', {name: '<button>'});
+      const el = screen.getByRole('link', {name: '<a>'});
+      const el = screen.getByRole('img', {name: '<img>'});
+      const el = screen.getByRole('heading', {name: '<h1>'});
+      const el = screen.getByRole('list', {name: '<ul><ol>'});
+      const el = screen.getByRole('listitem', {name: '<li>'});
+      const el = screen.getByRole('textbox', {name: '<input type="text">'});
+      const el = screen.getByRole('checkbox', {name: '<input type="checkbox">'});
+      const el = screen.getByRole('spinbutton', {name: '<input type="number">'});
+      const el = screen.getByRole('combobox', {name: '<select>'});
+      const el = screen.getByRole('option', {name: '<option>'});
       // find roles with https://testing-library.com/docs/dom-testing-library/api-debugging/#logroles
       const el = screen.getByLabelText('Testing react');
       const el = screen.getByPlaceholderText('Testing react');
@@ -1879,6 +1888,7 @@ debugger;
       await user.unhover(el);
       await user.clear(el); // input
       await user.type(el, '1'); // input; value as second argument
+      await user.keyboard('{enter}'); // also {arrowleft} {arrowright} {arrowdown} {arrowup} {esc} {del} {backspace} {selectall} {space}
       // test functions (unit test)
       const func = () => 'anything';
       expect(func()).toBe('anything');
