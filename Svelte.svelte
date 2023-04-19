@@ -134,7 +134,16 @@ export default {
   export let color = undefined;
 </script>
 <div style="background-color: {color};" style:color>Text</div>
-
+<style>
+  /* unscoped css */
+  :global(body) {
+    background: #fefefe;
+  }
+  /* scoped css */
+  div {
+    color: #333;
+  }
+</style>
 
 
 <!-- CONDITIONALS -->
@@ -239,6 +248,22 @@ export default {
 <!-- improve: https://svelte.dev/tutorial/component-events -->
 
 
+<!-- CUSTOM EVENTS -->
+<!-- App.svelte -->
+<script>
+  import Child from './Child.svelte';
+  let text = '';
+</script>
+<Child on:customname={(e) => console.log(e.currentTarget)} />
+<p>{text}</p>
+<!-- Child.svelte -->
+<script>
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+</script>
+<button on:click={() => dispatch('customname', {text: 'Hey, you clicked'})}>Click me</button>
+
+
 <!-- BINDINGS -->
 <script>
   let text = 'world';
@@ -271,6 +296,37 @@ export default {
     <option value="two">two</option>
 </select>
 <p>selected question {selected}</p>
+
+
+<!-- COMPONENT LIFECYCLE -->
+<script>
+  import { onMount, onDestroy, beforeUpdate, afterUpdate, tick } from 'svelte';
+  onMount(() => console.log('mounted'));
+  onDestroy(() => console.log('destroyed'));
+  beforeUpdate(() => console.log('before update'));
+  afterUpdate(() => console.log('after update'));
+  async function waitForUpdate() {
+    console.log(data);
+    // something changes data
+    // wait for update
+    await tick();
+    console.log(data);
+  }
+</script>
+<div></div>
+
+
+<!-- TEST -->
+<script>
+  let text = 'world';
+  $: console.log(text);
+</script>
+<div>
+  {(console.log(text), '')}
+  {@debug text}
+  <p>{text}</p>
+  }
+</div>
 
 
 
