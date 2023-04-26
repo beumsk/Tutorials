@@ -2001,6 +2001,40 @@ debugger;
 
 
 
+  // TESTING WITH REACT TESTING LIBRARY alternatively
+  import React from 'react';
+  import { render } from '@testing-library/react';
+  import Component from './Component';
+  // helping func to avoid extra typing
+  function renderComponent(args) {
+    let defaultProps = {
+      saving: false,
+      errors: {},
+      onSave: () => {},
+      onChange: () => {},
+    };
+    const props = { ...defaultProps, ...args };
+    return render(<Component {...props} />);
+  }
+  // concise testing without the need to use expect()
+  it('should render Add Course header', () => {
+    const { getByText } = renderComponent();
+    getByText('Add Course');
+  });
+  it('should label save button as "Save" when not saving', () => {
+    const { getByText } = renderComponent();
+    getByText('Save');
+  });
+  it('should label save button as "Saving..." when saving', () => {
+    const { getByText, debug } = renderComponent({ saving: true });
+    // prints compmonent in terminal
+    debug();
+    getByText('Saving...');
+  });
+
+
+
+
   // TESTING without external library
   // very verbose...
   // work with file.render.test.js
@@ -2061,6 +2095,65 @@ debugger;
       });
     });
   });
+
+
+
+  // TESTING WITH ENZYME
+  import React from 'react';
+  import { Component } from './Component';
+  import { shallow } from 'enzyme';
+  // helping func to avoid extra typing
+  function renderComponent(args) {
+    const defaultProps = {
+      saving: false,
+      errors: {},
+      onSave: () => {},
+      onChange: () => {},
+    };
+    const props = { ...defaultProps, ...args };
+    return shallow(<Component {...props} />);
+  }
+  it('renders form and header', () => {
+    const wrapper = renderComponent();
+    // see the whole component in the terminal
+    console.log(wrapper.debug());
+    expect(wrapper.find('form').length).toBe(1);
+    expect(wrapper.find('h2').text()).toEqual('Add Course');
+  });
+  it('labels save buttons as "save" when not saving', () => {
+    const wrapper = renderComponent();
+    expect(wrapper.find('button').text()).toBe('Save');
+  });
+  // test passing props to component
+  it('labels save buttons as "save" when not saving', () => {
+    const wrapper = renderComponent({ saving: true });
+    expect(wrapper.find('button').text()).toBe('Saving...');
+  });
+
+
+
+
+  // ENZYME SHALLOW vs MOUNT
+  import React from 'react';
+  import Header from './Header';
+  import { mount, shallow } from 'enzyme';
+  // MemoryRouter is needed for mount
+  import { MemoryRouter } from 'react-router-dom';
+  // shallow to test one component in isolation
+  it('contains 3 NavLinks via shallow', () => {
+    const numLinks = shallow(<Header />).find('NavLink').length;
+    expect(numLinks).toEqual(3);
+  });
+  // mount to test more realistically with component and children
+  it('contains 3 anchors via mount', () => {
+    const numAnchors = mount(
+      <MemoryRouter>
+        <Header />
+      </MemoryRouter>
+    ).find('a').length;
+    expect(numAnchors).toEqual(3);
+  });
+
 
 
 
@@ -2530,6 +2623,138 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 
+// TESTING REDUX
+
+// testing connected react component
+import React from 'react';
+import { mount } from 'enzyme';
+import { authors, newCourse, courses } from '../../../tools/mockData';
+import { ManageCoursePage } from './ManageCoursePage';
+function render(args) {
+  const defaultProps = {
+    authors,
+    courses,
+    // Passed from React Router in real app, so just stubbing in for test.
+    // Could also choose to use MemoryRouter as shown in Header.test.js,
+    // or even wrap with React Router, depending on whether I
+    // need to test React Router related behavior.
+    history: {},
+    saveCourse: jest.fn(),
+    loadAuthors: jest.fn(),
+    loadCourses: jest.fn(),
+    course: newCourse,
+    match: {},
+  };
+  const props = { ...defaultProps, ...args };
+  return mount(<ManageCoursePage {...props} />);
+}
+it('sets error when attempting to save an empty title field', () => {
+  const wrapper = render();
+  wrapper.find('form').simulate('submit');
+  const error = wrapper.find('.alert').first();
+  expect(error.text()).toBe('Title is required.');
+});
+
+
+// testing action creators; maybe not useful if we test the store
+import * as courseActions from './courseActions';
+import * as types from './actionTypes';
+import { courses } from '../../../tools/mockData';
+describe('createCourseSuccess', () => {
+  it('should create a CREATE_COURSE_SUCCESS action', () => {
+    //arrange
+    const course = courses[0];
+    const expectedAction = {
+      type: types.CREATE_COURSE_SUCCESS,
+      course,
+    };
+    //act
+    const action = courseActions.createCourseSuccess(course);
+    //assert
+    expect(action).toEqual(expectedAction);
+  });
+});
+
+
+// testing thunks
+import * as courseActions from './courseActions';
+import * as types from './actionTypes';
+import { courses } from '../../../tools/mockData';
+import thunk from 'redux-thunk';
+import fetchMock from 'fetch-mock';
+import configureMockStore from 'redux-mock-store';
+const middleware = [thunk];
+const mockStore = configureMockStore(middleware);
+describe('Async Actions', () => {
+  afterEach(() => {
+    fetchMock.restore();
+  });
+  describe('Load Courses Thunk', () => {
+    it('should create BEGIN_API_CALL and LOAD_COURSES_SUCCESS when loading courses', () => {
+      fetchMock.mock('*', {
+        body: courses,
+        headers: { 'content-type': 'application/json' },
+      });
+
+      const expectedActions = [
+        { type: types.BEGIN_API_CALL },
+        { type: types.LOAD_COURSES_SUCCESS, courses },
+      ];
+
+      const store = mockStore({ courses: [] });
+      return store.dispatch(courseActions.loadCourses()).then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
+    });
+  });
+});
+
+
+// testing reducers
+import courseReducer from './courseReducer';
+import * as actions from '../actions/courseActions';
+it('should add course when passed CREATE_COURSE_SUCCESS', () => {
+  // arrange
+  const initialState = [
+    {
+      title: 'A',
+    },
+    {
+      title: 'B',
+    },
+  ];
+  const newCourse = {
+    title: 'C',
+  };
+  const action = actions.createCourseSuccess(newCourse);
+  // act
+  const newState = courseReducer(initialState, action);
+  // assert
+  expect(newState.length).toEqual(3);
+  expect(newState[0].title).toEqual('A');
+  expect(newState[1].title).toEqual('B');
+  expect(newState[2].title).toEqual('C');
+});
+
+
+// testing the store
+import { createStore } from "redux";
+import rootReducer from "./reducers";
+import initialState from "./reducers/initialState";
+import * as courseActions from "./actions/courseActions";
+it("Should handle creating courses", function() {
+  // arrange
+  const store = createStore(rootReducer, initialState);
+  const course = {
+    title: "Clean Code"
+  };
+  // act
+  const action = courseActions.createCourseSuccess(course);
+  store.dispatch(action);
+  // assert
+  const createdCourse = store.getState().courses[0];
+  expect(createdCourse).toEqual(course);
+});
 
 
 
