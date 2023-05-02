@@ -220,6 +220,8 @@
   background-clip: padding-box content-box border-box; /* border box is default; padding clip to padding; content clip to content */
   -webkit-background-clip: text; /* to show background through text */
   -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators; 'unset' to disable */
+  backdrop-filter: grayscale(100%) sepia(100%) saturate(100%) brightness(100%) invert(100%) contrast(100%) blur(5px) hue-rotate(90deg) initial; /* set a filter on element below !!IE */;
+  -webkit-backdrop-filter: grayscale(100%); /* for safari */
 }
 
 
@@ -365,6 +367,7 @@ https://css-tricks.com/the-shapes-of-css/
   white-space: nowrap pre-wrap pre-line pre normal; /* sets how white space inside an element is handled */
   overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
   overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; /* hide and replace lines exceeding the clamp with '...' !!IE */
+  hyphens: auto none; /* break words with hyphen if needed */
   line-height: .8; /* space between lines; common practice is to set around 150% */
   direction: rtl; /* change text direction to right-to-left */
   writing-mode: horizontal-tb vertical-rl vertical-lr; /* used to write vertical text */
@@ -422,7 +425,8 @@ https://css-tricks.com/the-shapes-of-css/
   position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
   position: sticky; /* switches from relative to fixed depending on the scroll; 'top' needs to be defined; !!IE */
   position: -webkit-sticky; /* for safari */
-  z-index: -1; /* defines stack order -> bigger is in front! if not defined, last will be in front */
+  z-index: -1; /* defines stack order -> bigger is in front!; cannot be 'static' */
+  isolation: isolate; /* creates a new stacking context */
   overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
   overflow-x: hidden; /* Hide horizontal scrollbar */
   overflow-y: scroll; /* Add vertical scrollbar */
@@ -617,6 +621,7 @@ https://css-tricks.com/the-shapes-of-css/
   align-items: stretch flex-end flex-start center baseline; /* manage secondary axis; how items will display in a column or lign */
   align-content: flex-start flex-end center space-between space-around space-evenly stretch; /* manage secondary axis if there is multiple lines */
   flex-flow: row wrap; /* shorthand property to direction and wrap */
+  gap: 20px; /* gep between flex items !!IE */
 }
 
 .FLEX-ITEMS {
@@ -637,9 +642,9 @@ https://css-tricks.com/the-shapes-of-css/
   column-count: 4; /* 4 columns */
   column-width: 200px; /* width of columns */
   column-gap: 50px; /* gap bewteen columns */
-  column-rule: 2px solid black; /* as a border between columns */
-  column-span: all; /* to span over multiple (all) columns a title for example */
-  /* check columns jumps */
+  column-rule: 2px solid black; /* border between columns */
+  column-span: all; /* for columns children: span over multiple (all) columns */
+  break-inside: avoid; /* for columns children: avoid breaking in x columns */
 }
 
 
