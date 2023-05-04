@@ -4,11 +4,13 @@
 
 /* compile sass to css; makes the browser able to understand the style */
 /* npm install sass */
-/* sass --no-source-map SASS.scss CSS.css -w */
+/* sass SASS.scss CSS.css --no-source-map --watch */
 /* more options: https://sass-lang.com/documentation/cli/dart-sass */
 
 /* npm install postcss postcss-cli autoprefixer */
-/* postcss --use autoprefixer -b 'defaults' src/css/index.css -o src/css/index.css --no-map */
+/* postcss CSS.css -o CSS.css --use autoprefixer -b 'defaults' --no-map */
+/* OR */
+/* postcss CSS.css --replace --use autoprefixer -b 'defaults' --no-map */
 
 
 /* SASS and SCSS only difference is in the use or not of '{}' and ',' */
