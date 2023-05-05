@@ -80,7 +80,7 @@ app.post('/name', function(req, res) {
 // access all API (security > network access)
 // connect (deployment > database) => mongodb+srv://<username>:<password>@<cluster-name>.prx1c.mongodb.net/<db-name>?retryWrites=true&w=majority
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://user:azerty@cluster0.fnwaqdz.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://<username>:<password>@<cluster-name>.fnwaqdz.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
 
 // create schema
 const personSchema = new mongoose.Schema({
