@@ -17,18 +17,44 @@
   var a = "example"; 
   console.log(a); // example
 
-  // Function; also var example function() {};
-  function example() {
+  // Function; also var example = function() {};
+  function example(num) { // num is the function parameter
     // code block;
-  } 
+    console.log(num * num);
+  }
+  example(5); // run the function -> 25 (5 is the function argument)
 
-  // Double arg Function
+  // Double arg Function (also called currying)
   function say(arg1) {
     return function(arg2) {
       return arg1 + " " + arg2;
     }
   }
-  say ("hello")("world"); // hello world
+  say("hello")("world"); // hello world
+
+  // Infinite currying
+  function add(a) {
+    return function(b) {
+      if (b) return add(a+b);
+      return a;
+    }
+  }
+  console.log(add(2)(3)(4)(8)()); // 2+3+4+8=17
+
+  // IIFE (Immediately Invoked Function Expression) -> doesn't need to be called to run
+  (function example(text) {
+    console.log(text);
+  })("hellow world");
+
+  // Callback function
+  function greeting(name) {
+    console.log('Hello ' + name);
+  }
+  function processGreeting(name, callback) {
+    callback(name);
+  }
+  processGreeting('you', greeting); // Hello you
+
 
   // Array (careful!-> if variable is set equal to another array, they will be linked and influence each other)
   var numbers = [one, two, three]; 
@@ -194,6 +220,8 @@
 
   typeof 27; // number
 
+  typeof 27_000; // number; using numeric separator for big figures
+
   typeof NaN; // number; weird i know
 
   typeof "Hello"; // string
@@ -260,7 +288,7 @@
 
   var a = 3; var b = a + 2; // 'b' will value 5 (3+2)
 
-  var a = 2 ** 3; // a = 8 !!IE
+  var a = 2 ** 3; // a = 2^3 = 8 !!IE
 
   var a = 1e6; // 1000000
 
