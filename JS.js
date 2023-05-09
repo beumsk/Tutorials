@@ -2840,16 +2840,18 @@ country.addEventListener("input", function (e) { // when typing
 
 
 // FETCH
-
-fetch("https://type.fit/api/quotes")
-  .then((response) => {
-    if (!response.ok) {
-      throw Error(response.statusText);
-    }
-    return response.json();
-  })
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+const fetchData = () => {
+  fetch("https://type.fit/api/quotes", {method: "GET"})
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+}
+fetchData();
 
 
 
@@ -2858,9 +2860,9 @@ fetch("https://type.fit/api/quotes")
 // best option to fetch data !
 const fetchData = async () => {
   try {
-    const quotes = await fetch("https://type.fit/api/quotes");
-    const response = await quotes.json();
-    console.log(response);
+    const response = await fetch("https://type.fit/api/quotes", {method: "GET"});
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
     console.log(error);
   }
