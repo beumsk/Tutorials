@@ -11,14 +11,31 @@
 
 
 .PRIORITY {
+  /* By default, the later in the cascade, the more important the rule is */
   <Browser default /* usually padding, fonts and sizes */
   <User default /* usually sizes and fonts */
+  <@layer rule style /* @layer layerName { color: blue; } override any other layer */
   <External and internal style sheets /* each selector gives 001, 010 or 100; the bigger the more important */
     <elements and pseudo-elements /* p, p::first-line, p::before; 001 */
     <class, attributes and pseudo-classes /* .class, a[title], a:hover; 010 */
     <id /* #id; 100 */
   <Inline style (inside an HTML element) /* should be avoided; for maintenance reasons */
-  <!important /* body { color: red !important; } */
+  <!important /* body { color: red !important; } Avoid! */
+}
+
+
+.LAYER {
+  /* !important rules in first declared layer will be most powerful rule of all */
+  @layer layerName, layerNameBis; /* priorities follows cascade; last to come is most important */
+  @layer layerName { 
+    color: red; /* ignored */
+    border: solid 1px red !important; /* takes priority (!important rules priority is inverted) */
+  }
+  @layer layerNameBis { 
+    color: blue; /* takes priority because layer is called later */
+    border: solid 1px blue !important; /* ignored */
+  }
+  @import url('example.css') layer(layerName); /* import external css to layer; !important rules will come after in priority because it's defined after the other layers */
 }
 
 
@@ -365,8 +382,8 @@ https://css-tricks.com/the-shapes-of-css/
   overflow-wrap: break-word normal; /* break word to make it fit in box */
   word-break: break-all keep-all break-word normal; /* similar to overflow-wrap; break all breaks everything */
   white-space: nowrap pre-wrap pre-line pre normal; /* sets how white space inside an element is handled */
-  overflow: hidden; text-overflow: ellipsis; /* hide too long text and replace last word with '...' */
-  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; /* hide and replace lines exceeding the clamp with '...' !!IE */
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; /* hide too long text (truncate) and replace last word with '...' */
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; /* hide (truncate) and replace lines exceeding the clamp with '...' !!IE */
   hyphens: auto none; /* break words with hyphen if needed */
   line-height: .8; /* space between lines; common practice is to set around 150% */
   direction: rtl; /* change text direction to right-to-left */
