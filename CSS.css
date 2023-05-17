@@ -24,21 +24,6 @@
 }
 
 
-.LAYER {
-  /* !important rules in first declared layer will be most powerful rule of all */
-  @layer layerName, layerNameBis; /* priorities follows cascade; last to come is most important */
-  @layer layerName { 
-    color: red; /* ignored */
-    border: solid 1px red !important; /* takes priority (!important rules priority is inverted) */
-  }
-  @layer layerNameBis { 
-    color: blue; /* takes priority because layer is called later */
-    border: solid 1px blue !important; /* ignored */
-  }
-  @import url('example.css') layer(layerName); /* import external css to layer; !important rules will come after in priority because it's defined after the other layers */
-}
-
-
 .BEM {
   /* naming convention based on Block, Element and Modifiers */
   .block-name {} /* .card */
@@ -137,6 +122,7 @@
   input[type="button"] {} /* Selects elements with type="button" */
 
   p {color: red !important;} /* become most important */
+}
 
 
 :root {
@@ -163,7 +149,22 @@
 }
 
 
-.MEDIA-QUERIES {
+.LAYER
+  /* !important rules in first declared layer will be most powerful rule of all */
+  @layer layerName, layerNameBis; /* priorities follows cascade; last to come is most important */
+  @layer layerName { 
+    color: red; /* ignored */
+    border: solid 1px red !important; /* takes priority (!important rules priority is inverted) */
+  }
+  @layer layerNameBis { 
+    color: blue; /* takes priority because layer is called later */
+    border: solid 1px blue !important; /* ignored */
+  }
+  @import url('example.css') layer(layerName); /* import external css to layer; !important rules will come after in priority because it's defined after the other layers */
+}
+
+
+.MEDIA-QUERIES
   @media only screen and (min-width: 768px) and (min-height: 1080px) {} /* screen width +768 and height +1080 */
   @media only screen and (min-width: 360px) and (orientation: portrait) {} /* screen +360 and portrait */
   @media only screen and (min-width: 360px), (orientation: portrait) {} /* screen +360 or portrait */
@@ -177,6 +178,18 @@
   @media (prefers-color-scheme: light) {} /* user preference for light theming */
   @media screen and (min-width:0\0) {} /* target IE9 & IE10 */
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {} /* target IE10 & IE11 */
+}
+
+
+.CONTAINER
+  container: containerName / inline-size; /* this is needed on the container to work; name can be used in @container */
+  @container containerName (width > 360px) {
+    .container-child { /* style */ }
+  } /* container will follow the rules when width > 360px; name is optional */
+  @container (width > 360px) and (height > 180px) {} /* style if width > 360px and height > 180px */
+  @container (width > 360px) or (height > 180px) {} /* style if width > 360px or height > 180px */
+  @container (width > 360px) not (height > 180px) {} /* style if width > 360px and height <= 180px */
+  @container (min-width: 360px) {} /* alternative syntax */
 }
 
 
@@ -630,7 +643,7 @@ https://css-tricks.com/the-shapes-of-css/
 }
 
 
-.FLEX-CONTAINER {
+.FLEX {
   display: flex;/* in a container, change the disposition to flex and allow following properties */
   flex-direction: column row column-reverse row-reverse; /* vertical, horizontal or in opposite order */
   flex-wrap: wrap wrap-reverse; /* by default items will stay on same line; wrap helps going down */
@@ -690,7 +703,7 @@ https://css-tricks.com/the-shapes-of-css/
   align-items: start center end stretch; /* vertical align inside grid cells */
 }
 
-.GRIDS-ELEMENTS {
+.GRIDS-ITEMS {
   grid-column-start: 1; /* starts at vertical line 1 */
   grid-column-end: 3; /* ends at 3 vertical line */
   grid-column: 1 / 3; /* shorter method */
