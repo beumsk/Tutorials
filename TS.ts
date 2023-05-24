@@ -34,6 +34,9 @@
 const num = 1;
 const str = 'Hello';
 const bool = false;
+const arr = [];
+const obj = {};
+const func() {}
 
 
 
