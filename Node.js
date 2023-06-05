@@ -20,6 +20,16 @@ console.log(__dirname); // /full/path/to/file
 console.log(__filename); // /full/path/to/file/index.js
 
 
+// FROM PACKAGE.JSON
+// Extract the arguments from process.argv ("node screenshot.js --url=https://www.example.com --output=example.png")
+const args = process.argv.slice(2);
+const urlArg = args.find((arg) => arg.startsWith('--url='));
+const outputArg = args.find((arg) => arg.startsWith('--output='));
+// Extract the values from the argument strings
+const url = urlArg ? urlArg.split('=')[1] : '';
+const outputPath = outputArg ? outputArg.split('=')[1] : '';
+
+
 // OS
 const os = require('os');
 const currentOS = {
