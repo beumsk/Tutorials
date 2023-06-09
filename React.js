@@ -1062,7 +1062,7 @@ export const ChildComponent = ({ func, ...props }) => {
 };
 
 
-// STATE
+// STATE HOOK
 import { useState } from 'react';
 const FunctionalComponent = () => {
  const [count, setCount] = useState(0);
@@ -1070,6 +1070,8 @@ const FunctionalComponent = () => {
    <div>
      <p>count: {count}</p>
      <button onClick={() => setCount(count + 1)}>+</button>
+     {/* better way to use current state */}
+     <button onClick={() => setCount(curr => curr + 1)}>+</button>
    </div>
  );
 };
@@ -1085,7 +1087,7 @@ const FunctionalComponent = () => {
 };
 
 
-// EFFECT
+// EFFECT HOOK
 import { useEffect } from 'react';
 const FunctionalComponent = () => {
   // On Mounting
@@ -1119,7 +1121,7 @@ const FunctionalComponent = () => {
 
 
 
-// REF
+// REF HOOK
 import { useRef } from 'react';
 const FunctionalComponent = () => {
   const inputEl = useRef(null);
@@ -1137,7 +1139,7 @@ const FunctionalComponent = () => {
 
 
 
-// REDUCER
+// REDUCER HOOK
 // useReducer instead of useState for complex state logic
 import { useReducer } from 'react';
 function reducer(state, action) {
@@ -1162,14 +1164,14 @@ const FunctionalComponent = () => {
 };
 
 
-// MEMO
+// MEMO HOOK
 // memoize a function to update only when a dependency prop has changed in the array
 import { useMemo } from 'react';
 const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 
 
-// CALLBACK
+// CALLBACK HOOK
 // memoize a returned value to update only when a dependency prop has changed in the array
 import { useCallback } from 'react';
 const memoizedCallback = useCallback(
@@ -1181,7 +1183,7 @@ const memoizedCallback = useCallback(
 
 
 
-// CONTEXT
+// CONTEXT HOOK
 // very useful to pass data deep in the tree
 import { createContext, useState } from 'react';
 export const CountContext = createContext();
@@ -1627,7 +1629,9 @@ export default function useFetch(url) {
 import React, { useState } from 'react';
 import useFetch from './services/useFetch';
 export default function App() {
-const { data: products, loading, error, } = useFetch('products?category=shoes');
+  const { data: products, loading, error, } = useFetch('products?category=shoes');
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error: {error.message}</p>
   return (
     <section>
       {products.map((p) => (
@@ -1636,6 +1640,37 @@ const { data: products, loading, error, } = useFetch('products?category=shoes');
     </section>
   )
 }
+
+
+
+// API call with aborting fetch request
+function useDataFetcher(url) {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      const abortController = new AbortController();
+      setIsLoading(true);
+      try {
+        const response = await fetch(url, { signal: abortController.signal });
+        if (response.ok) {
+          const result = await response.json();
+          setData(result);
+        } else {
+          throw new Error('Failed to fetch data');
+        }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, [url]);
+  return { data, isLoading, error };
+}
+
 
 
 
@@ -2181,20 +2216,8 @@ debugger;
 // test Typescript live -> https://www.typescriptlang.org/play 
 // nice source -> https://react-typescript-cheatsheet.netlify.app/docs/basic/setup
 
-const id: number = 1;
-const title: string = 'Hello';
-const hidden: boolean = false;
-
-let code: (string | number); code = 123; code = "ABC"; // both work
-let something: any; any = false; any = "any string";
-
-const arr: string[] = ['one', 'two', 'three'];
-const arr: (string | number)[] = ['one', 2, 'three'];
-const arr: any[] = ['one', 2, false];
-const arr: Array<string> = ['one', 'two', 'three'];
-
-function sayHi(): void { console.log('Hi!') } // void is only for function not returning any value
-function sayHi(name: string) { console.log('Hi ' + name) }
+// @ts-ignore -> ignore next line ts errors
+// @ts-nocheck -> ignore file ts errors
 
 
 // class comp into typescript; respect this order <Props, State>
@@ -2242,6 +2265,14 @@ function TypescriptComponent({ children }: {children: React.ReactNode}) {
 // logic can also be extracted with interface {}
 interface Props { children: React.ReactNode }
 function TypescriptComponent({ children }: Props) {
+  return <p>{children}</p>
+}
+// or
+const TypescriptComponent = ({ children }: Props) => {
+  return <p>{children}</p>
+}
+// or
+const TypescriptComponent: React.FC<Props> = ({ children }) => {
   return <p>{children}</p>
 }
 
@@ -2806,6 +2837,54 @@ async function patchSomeAxios(id, quantity) {
 
 
 
+
+// REACT-QUERY
+// npm install react-query
+
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+const queryClient = new QueryClient();
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+  )
+}
+function Example() {
+ const { isLoading, error, data } = useQuery('repoData', () =>
+   fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
+     res.json()
+   )
+ )
+ if (isLoading) return 'Loading...'
+ if (error) return 'An error has occurred: ' + error.message
+ return (
+   <div>
+     <h1>{data.name}</h1>
+     <p>{data.description}</p>
+     <strong>👀 {data.subscribers_count} </strong>
+     <strong>✨ {data.stargazers_count} </strong>
+     <strong>🍴 {data.forks_count} </strong>
+   </div>
+ )
+}
+
+
+
+
+// SWR: Stale While Revalidating
+// cleaner and shorter way
+// npm install swr
+
+const fetcher = (...args) => fetch(...args).then(res => res.json());
+import useSWR from 'swr'
+function Profile () {
+  const { data, error } = useSWR('/api/user/123', fetcher)
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+  // render data
+  return <div>hello {data.name}!</div>
+}
 
 
 
