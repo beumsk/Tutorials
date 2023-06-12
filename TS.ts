@@ -37,6 +37,7 @@ const bool = false;
 const arr = [];
 const obj = {};
 const func() {}
+const func = () => {}
 
 
 
@@ -58,17 +59,30 @@ const obj: {} = { title: "Hello", id: 1 };
 const obj: { title: string; id: number } = { title: "Hello", id: 1 };
 
 function func(): void { console.log('Hi!') } // void is only for function not returning any value
+const func = (): void => console.log('Hi!');
 function func(name: string, age: number): string { return 'Hi ' + name + ', you are ' + age } // you can specify type of each arg and the returned type as well
+const func = (name: string, age: number): string => 'Hi ' + name + ', you are ' + age;
+
+const some: any; // any type; you can use all types and all operations (some.thing)
+const some: unknown; // unknown type; you can use all types but no operations without manual type checking
 
 
 
 // TYPE ALIAS
 type StrOrNum = string|number;
 let dualType: StrOrNum; dualType = 123; dualType = '123';
+// combining aliases
+type X = { a: string, b: number };
+type Y = X & { c: string, d: number };
+let combinedAlias: Y = { a: 'a', b: 2, c: 'c', d: 4 };
 
 
 
 // INTERFACE
+interface XX { a: string, b: number };
+interface YY extends XX { c: string, d: number };
+let combinedInterFace: YY = { a: 'a', b: 2, c: 'c', d: 4 };
+
 interface ComplexObject {
   title: string;
   data: {
