@@ -1149,11 +1149,18 @@
 
 
   // set date easily
-  var d2 = new Date("January 2, 2015 10:42:00"); // Fri Jan 02 2015 10:42:00
+  var d2 = new Date("January 2, 2015 10:42:00"); // Fri Jan 02 2015 10:42:00 GMT+0100 (Central European Standard Time)
 
 
   // set date with numbers
-  var d3 = new Date(88,5,11,11,42,0,0); // Sat Jun 11 1988 11:42:00
+  var d3 = new Date(88,5,11,11,42,0,0); // Sat Jun 11 1988 11:42:00 GMT+0100 (Central European Standard Time)
+
+
+  // format date easily
+  new Date("January 2, 2015 10:42:00").toDateString(); // Fri Jan 02 2015
+
+
+  new Date("January 2, 2015 10:42:00").toTimeString(); // 10:42:00 GMT+0100 (Central European Standard Time)
 
 
   // time values
