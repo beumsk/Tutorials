@@ -75,6 +75,10 @@ let dualType: StrOrNum; dualType = 123; dualType = '123';
 type X = { a: string, b: number };
 type Y = X & { c: string, d: number };
 let combinedAlias: Y = { a: 'a', b: 2, c: 'c', d: 4 };
+// smart alias
+type Smart = { name: string } & ({ type: 'circle', radius: number } | { type: 'square', side: number });
+let smartCircle: Smart = { name: 'c', type: 'circle', radius: 10 };
+let smartSquare: Smart = { name: 's', type: 'square', side: 10 };
 
 
 
