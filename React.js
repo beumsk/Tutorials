@@ -1434,7 +1434,7 @@ const FunctionalComponent = () => {
 
 
 
-// ROUTING !!very much different in V6
+// ROUTING with react router dom !!very much different in V6
 
 // install react-router-dom (yarn or npm)
 

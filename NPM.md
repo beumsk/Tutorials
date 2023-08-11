@@ -22,6 +22,8 @@ npm install packageName@3.2.9 (certain version "^3.2.9")
 npm install packageName@3.2.9 --save-exact (certain version exactly "3.2.9")
 npm install file:/path/to/local/folder (local package)
 
+npx depcheck (check unused dependencies)
+
 npm uninstall packageName
 
 npm update (update packages to latest versions respecting indications)
