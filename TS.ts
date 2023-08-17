@@ -57,6 +57,7 @@ const arr: [number, string] = [1, "two"];
 
 const obj: {} = { title: "Hello", id: 1 };
 const obj: { title: string; id: number } = { title: "Hello", id: 1 };
+const obj: { title: string; id: number, online?: boolean } = { title: "Hello", id: 1 };
 
 function func(): void { console.log('Hi!') } // void is only for function not returning any value
 const func = (): void => console.log('Hi!');
@@ -71,10 +72,24 @@ const some: unknown; // unknown type; you can use all types but no operations wi
 // TYPE ALIAS
 type StrOrNum = string|number;
 let dualType: StrOrNum; dualType = 123; dualType = '123';
+// fixed values alias
+type Themes = "light" | "dark" | "rose";
+let theme: lightOrDark; theme = "light"; theme = "dark";
+// excluding alias
+type Themes = "light" | "dark" | "rose";
+type duoThemes = Exclude<Themes, "rose">;
+let excludedAlias: duoThemes = 'dark'; // not 'rose'
+// func alias
+type myFunc = (a:number, b:string) => void;
+let write: myFunc = (num, str) => { console.log(num + " times " + str) };
 // combining aliases
 type X = { a: string, b: number };
 type Y = X & { c: string, d: number };
 let combinedAlias: Y = { a: 'a', b: 2, c: 'c', d: 4 };
+// omitting alias
+type X = { a: string, b: number, c: string, d: number };
+type Y = Omit<X, 'd'>;
+let omitedAlias: Y = { a: 'a', b: 2, c: 'c' };
 // smart alias
 type Smart = { name: string } & ({ type: 'circle', radius: number } | { type: 'square', side: number });
 let smartCircle: Smart = { name: 'c', type: 'circle', radius: 10 };
@@ -114,5 +129,43 @@ const obj: ComplexObject = {
   func: (param) => 'string: ' + param,
   anotherProp: true
 }
+
+
+
+// GENERICS
+interface GenericInterface<T> {
+  id: number;
+  title: string;
+  desc: string;
+  extra: T[];
+}
+const article: GenericInterface<string> = {
+  id: 1,
+  title: "first piece",
+  desc: 'desc',
+  extra: ["str", "string"]
+}
+
+
+interface GenericInterface2<T extends object> {
+  id: number;
+  title: string;
+  desc: string;
+  extra: T[];
+}
+const article: GenericInterface<{id:number, name:string}> = {
+  id: 1,
+  title: "first piece",
+  desc: 'desc',
+  extra: [{id:1, name:"author"}]
+}
+
+
+
+
+
+
+
+
 
 
