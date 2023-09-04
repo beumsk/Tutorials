@@ -21,7 +21,9 @@ CREATE TABLE table_name (
 );
 
 -- Select data (all)
-select * from <table_name> \G;
+select * from <table_name>;
+select * from <table_name> \G; -- format
+select * from <table_name> limit 100 \G; -- limit 100
 
 -- Select data with condition
 select * from <table_name> where <condition> \G;
