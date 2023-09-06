@@ -9,6 +9,9 @@
 // npx tsc -w // watch TS changes to be compiled
 // test Typescript live -> https://www.typescriptlang.org/play 
 
+// add in package.json scripts
+// "ts": "node_modules/.bin/tsc --noEmit --skipLibCheck"
+
 
 
 // TSCONFIG.JSON

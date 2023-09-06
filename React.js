@@ -2234,10 +2234,11 @@ class TypescriptComponent extends React.Component<{children: React.ReactNode}, {
 function TypescriptComponent(props: {
   title: string;
   id: number;
-  hidden: boolean;
+  hidden?: boolean;
 }) {
   return <p key={props.id} hidden={props.hidden}>{props.title}</p>
 }
+// <TypescriptComponent title="title" id={1} hidden />
 
 // array of object prop into typescript
 function TypescriptComponent(props: {
@@ -2248,14 +2249,16 @@ function TypescriptComponent(props: {
 }) {
   return <p onClick={props.someFunc(props[0].title)}>{props[0].title}</p>
 }
+// <TypescriptComponent data={ [{title: 'title', intro: 'intro'}] } />
 
 // function prop into typescript
 function TypescriptComponent(props: {
   title: string;
-  someFunc: (title: string) => void;
+  someFunc: () => void;
 }) {
-  return <p onClick={props.someFunc(props.title)}>{props.title}</p>
+  return <p onClick={() => props.someFunc(props.title)}>{props.title}</p>
 }
+// <TypescriptComponent title="title" someFunc={() => console.log('duh') } />
 
 // children prop into typescript
 function TypescriptComponent({ children }: {children: React.ReactNode}) {
@@ -2298,16 +2301,71 @@ function TypescriptComponent(props: ComplexProp) {
 }
 
 
-// use hooks in typescript
+// typing style prop
+import React, { ReactNode, CSSProperties } from 'react';
+type ButtonProps = {
+  style?: CSSProperties;
+  children: ReactNode;
+};
+function Button({ style, children }: ButtonProps) {
+  return <button style={style}>{children}</button>;
+}
+
+
+// typing rest props
+interface InputGroupProps extends React.ComponentPropsWithoutRef<"input"> {
+  label: string;
+}
+function InputGroup({ label, ...rest }: InputGroupProps) {
+  return (
+    <label>
+      {label}:
+      <input {...rest} />
+    </label>
+  );
+}
+
+
+// typing react events
+function EventComponent() {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+  }
+  return <button onClick={handleClick}>Click</button>
+}
+
+function EventComponent() {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    console.log(e.target.value);
+  }
+  return <input type="text" onChange={handleChange} />
+}
+
+function EventComponent() {
+  function handleClick(e: React.MouseEvent<HTMLButtonElement>, prevent: boolean) {
+    if (prevent) {e.preventDefault();}
+  }
+  return <button onClick={(e) => handleClick(e, true)}>Click</button>
+}
+
+
+// typing react state
 function TypescriptComponent() {
   const [value, setValue] = useState<number>(0);
   return <p onClick={() => setValue(value + 1)}>{value}</p>
 }
 
-// complex hook in typescript
 function TypescriptComponent() {
   const [text, setText] = useState<string | null>(null);
   return <p onClick={() => setText('Hello')}>{text}</p>
+}
+
+
+// typing react ref
+function TypescriptComponent() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  return <input type="text" ref={inputRef} />
 }
 
 
