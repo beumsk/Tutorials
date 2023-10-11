@@ -733,6 +733,11 @@
 }
 
 
+.POINTER-EVENTS {
+  pointer-events: none;
+}
+
+
 .CURSOR {
   cursor: progress wait crosshair help move grab pointer zoom-in zoom-out text not-allowed; /* different types of cursors */
   cursor: n-resize ne-resize e-resize se-resize s-resize sw-resize w-resize nw-resize; /* direction of resize */
