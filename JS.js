@@ -280,9 +280,9 @@
 
   var a = 10; // shortened method
 
-  var a = 0; a += 1; a ++; // add 1 and 1 to 'a' variable to reach 2
+  var a = 0; a += 1; a++; // add 1 and 1 to 'a' variable to reach 2
 
-  var a = 5; a -= 1; a --; // subtracts 1 and 1 to reach 3
+  var a = 5; a -= 1; a--; // subtracts 1 and 1 to reach 3
 
   var a = 5; a *= 5; a /= 5; // multiply by 5 and divide by 5 to reach 5
 
@@ -955,6 +955,11 @@
   console.log(str.toUpperCase()); // "KANGAROO"
 
 
+  // capitalize first letter
+  var str = "kangaroo";
+  str.charAt(0).toUpperCase() + str.slice(1); // Kangaroo
+
+
   // string.replace() replace a string in a string
   var str = "Salut, c'est chouette !";
   console.log(str.replace("chouette", "cool")); // "Salut, c'est cool !"
@@ -1105,6 +1110,8 @@
 
 
   // Math.round
+  Math.round(4.3); // 4
+  Math.round(4.7); // 5
   Math.round(0.6666 * 100) / 100; // 0.67
   Math.round(0.66666666 * 10000) / 10000; // 0.6667
 
