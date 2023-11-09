@@ -2863,7 +2863,8 @@ const fetchData = () => {
       return response.json();
     })
     .then((data) => console.log(data))
-    .catch((err) => console.log(err));
+    .catch((error) => console.log(error))
+    .finally(() => console.log('Fetch operation finished'));
 }
 fetchData();
 
@@ -2879,6 +2880,8 @@ const fetchData = async () => {
     console.log(data);
   } catch (error) {
     console.log(error);
+  } finally {
+    console.log("Fetch operation finished")
   }
 };
 fetchData();
