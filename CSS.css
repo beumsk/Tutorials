@@ -77,7 +77,8 @@
   p::after {content: " -Read more… ";} /* Insert some content after the content of <p>; it can be empty */
   p::selection {} /* Selects the portion of <p> that is selected by a user */
   li::marker {} /* Selects a list item; you can specify its color, font-size, content */
-  ::placeholder {}; /* Selects placeholder value */
+  ::placeholder {} /* Selects placeholder value */
+  ::cue {} /* Selects <track> (video element for subtitles) */
 
   /* Pseudo classes; style an element according to its state */
   a:link {} /* Selects all unvisited links */
@@ -140,7 +141,7 @@
   --anything: 10px;
 }
 .CSS-VARIABLES {
-  color: red; border: solid 2px currentColor; /* will have border red because currentColor refers to element's color */
+  color: red; border: solid 2px currentcolor; /* will have border red because currentcolor refers to element's color */
   color: var(--main-color); /* uses variable and colors to red */
   background: var(--semi-transparent); /* uses variable to color background */
   padding: var(--anything, 10px); /* uses variable for padding and a fallback value used if the variables is undefined */
@@ -188,6 +189,8 @@
   @media not print {} /* styles applied to anything but print  */
   @media (prefers-color-scheme: dark) {} /* user preference for dark theming */
   @media (prefers-color-scheme: light) {} /* user preference for light theming */
+  @media (prefers-reduced-motion) {} /* user preference for reduced animation */
+  @media (prefers-reduced-motion: no-preference) {} /* user preference for normal animation */
   @media screen and (min-width:0\0) {} /* target IE9 & IE10 */
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {} /* target IE10 & IE11 */
 }
@@ -229,6 +232,9 @@
   color: hwb(0deg 0% 0%); /* hwb: hwb(hue whiteness blackness); red text */
   color: hwb(0deg 0% 0% / 50%); /* alpha 50% */
   color: transparent; /* will make anything transparent */
+  border-color: currentcolor; /* inherit color */
+  accent-color: red; /* affects only checkbox, radio, range, progress !!IE */
+  color: color-mix(in srgb, pink 30%, red 70%); /* method, color1 %, color2 %; mix 2 colors */
 }
 
 
@@ -248,6 +254,7 @@
   -webkit-text-fill-color: transparent; /* needed with clip-text for non webkit navigators; 'unset' to disable */
   backdrop-filter: grayscale(100%) sepia(100%) saturate(100%) brightness(100%) invert(100%) contrast(100%) blur(5px) hue-rotate(90deg) initial; /* set a filter on element below !!IE */;
   -webkit-backdrop-filter: grayscale(100%); /* for safari */
+  /* blend mode !!! */
 }
 
 
@@ -641,6 +648,9 @@
   0%, 5%, 15%, 100% { /* 0% and 100% are not even needed here */
     transform: translateY(0);
   }
+  50% { /* CSS knows to reorder */
+    transform: translateY(80px);    
+  }
   10% {
     transform: translateY(10px);
   }
@@ -658,7 +668,7 @@
   animation-play-state: running paused; /* run or pause the animation */
   animation: keyframe_name 2s; /* use animation created before in @keyframes */
   animation: keyframe_name 2s linear alternate infinite steps(1); /* alternate to make it play a loop; infinite for never-ending animation; steps for steps in seconds */
-  animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations */
+  animation: keyframe_name 2s, another_keyframe_name 2s; /* multiple animations, could also be same animation multiple times */
 }
 
 
@@ -687,6 +697,10 @@
 
 .BUTTON {
   -webkit-appearance: button; /* especially useful for iOS browsers to render buttons correctly */
+}
+
+.INPUT {
+  caret-color: red; /* color of input caret */
 }
 
 
