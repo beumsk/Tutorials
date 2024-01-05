@@ -136,30 +136,46 @@ const obj: ComplexObject = {
 
 
 // GENERICS
-interface GenericInterface<T> {
+interface GenericInterface<T> { // or type
   id: number;
   title: string;
-  desc: string;
   extra: T[];
 }
 const article: GenericInterface<string> = {
   id: 1,
   title: "first piece",
-  desc: 'desc',
   extra: ["str", "string"]
 }
-
-
-interface GenericInterface2<T extends object> {
-  id: number;
-  title: string;
-  desc: string;
-  extra: T[];
-}
-const article: GenericInterface<{id:number, name:string}> = {
+const article: GenericInterface<number> = {
   id: 1,
   title: "first piece",
-  desc: 'desc',
+  extra: [2, 4]
+}
+
+interface GenericInterface2<T = boolean> { // or type
+  id: number;
+  title: string;
+  extra: T[];
+}
+const article: GenericInterface2 = {
+  id: 1,
+  title: "first piece",
+  extra: [true, false]
+}
+const article: GenericInterface2<number> = {
+  id: 1,
+  title: "first piece",
+  extra: [2, 4]
+}
+
+interface GenericInterface3<T extends object> { // or type
+  id: number;
+  title: string;
+  extra: T[];
+}
+const article: GenericInterface3<{id:number, name:string}> = {
+  id: 1,
+  title: "first piece",
   extra: [{id:1, name:"author"}]
 }
 
