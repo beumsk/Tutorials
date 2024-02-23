@@ -39,6 +39,9 @@ git reset --soft HEAD~1 // undo last commit keeping changes (~x number of commit
 git reset HEAD~1 // undo last commit without keeping changes
 git reset --hard [origin/branchname] // reset branch following remote
 
+git config --global user.name [name] // change config name
+git config user.name [name] // change config name for this folder
+
 git config --global user.email [email] // change config mail
 git config user.email [email] // change config mail for this folder
 

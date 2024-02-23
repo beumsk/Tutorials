@@ -26,6 +26,8 @@ npx depcheck (check unused dependencies)
 
 npm uninstall packageName
 
+npm audit (check for vulnerabilities)
+
 npm update (update packages to latest versions respecting indications)
 npm update packageName
 

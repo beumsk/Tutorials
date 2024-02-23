@@ -314,11 +314,11 @@
   text-decoration-style: solid dotted dashed double wavy;
   text-decoration-color: red;
   text-decoration: underline dashed red;
-  text-decoration-thickness: 0.5rem; /* !!notyet */
-  text-decoration-offset: 2px; /* !!notyet */
+  text-decoration-thickness: 0.5rem; /* !!IE */
+  text-underline-offset: 2px; /* !!IE */
   text-transform: uppercase lowercase capitalize none;
   text-indent: 50px; /* alineas */
-  text-wrap: balance; /* multiline split balance !!notyet */
+  text-wrap: balance pretty; /* multiline split balance !!notyet */
   letter-spacing: 3px; /* space between letters */
   word-spacing: 3px; /* space between words */
   overflow-wrap: break-word normal; /* break word to make it fit in box */
@@ -439,6 +439,7 @@
   /* very similar to borders, it stands just outside it; it is used in forms for the focus color */
   outline-style: solid dotted dashed double groove ridge inset outset; /* use one */
   outline: 5px dotted red; /* shorthand property */
+  outline-offset: 5px; /* push the outline */
 }
 
 
@@ -773,6 +774,7 @@
   scroll-margin-top: 60px; /* defines the top margin of the scroll snap area that is used for snapping this box to the snapport !!IE */
   scroll-snap-type: x y both mandatory proximity; /* defines scroll snap */
   scroll-snap-align: center start end; /* defines snap alignement to scroll snap */
+  overscroll-behavior: auto contain none; /* manage the overscroll !!IE */
 }
 
 

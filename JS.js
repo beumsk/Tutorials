@@ -2851,6 +2851,16 @@ country.addEventListener("input", function (e) { // when typing
   ctx.strokeText();// draws text stroke
 
 
+  // Drawing image
+  var img = new Image();
+  img.src = 'image.png';
+  img.onload = function() { 
+    ctx.drawImage(img, 0, 0); // img, x, y
+    ctx.drawImage(img, 0, 0, 50, 50); // img, x, y, width, height
+    ctx.drawImage(img, 10, 10, 10, 10, 0, 0, 50, 50); // img, imgX, imgY, imgW, imgH, x, y, width, height
+  }
+
+
 
 
 // FETCH
