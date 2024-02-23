@@ -2864,303 +2864,97 @@ country.addEventListener("input", function (e) { // when typing
 
 
 // FETCH
-const fetchData = () => {
-  fetch("https://type.fit/api/quotes", {method: "GET"})
+const getData = (url = "https://type.fit/api/quotes", options = {method: "GET"}) => {
+  return fetch(url, options)
     .then((response) => {
-      if (!response.ok) {
-        throw Error(response.statusText);
-      }
+      if (!response.ok) throw Error(response.statusText);
       return response.json();
     })
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error))
+    .then((data) => data)
+    .catch((error) => {
+      console.error(error);
+      throw error;
+    })
     .finally(() => console.log('Fetch operation finished'));
 }
-fetchData();
+getData().then(data => console.log(data)).catch(error => console.error(error));
 
 
 
 
 // ASYNC/AWAIT
 // best option to fetch data !
-const fetchData = async () => {
+const getData = async (url = "https://type.fit/api/quotes", options = {method: "GET"}) => {
   try {
-    const response = await fetch("https://type.fit/api/quotes", {method: "GET"});
+    const response = await fetch(url, options);
+    if (!response.ok) throw Error(response.statusText);
     const data = await response.json();
-    console.log(data);
+    return data;
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    throw error;
   } finally {
     console.log("Fetch operation finished")
   }
 };
-fetchData();
+getData().then(data => console.log(data)).catch(error => console.error(error));
 
 
 
 
-// SERVER REQUESTS
-// Manage requests to the server (HTTP, AJAX, JSON)
-
-
-  // Synchronous GET requet of a doc through web server
-  var req = new XMLHttpRequest(); // create HTTP request
-  req.open("GET", "http://localhost/repository/file.txt", false); // synchronous GET request; could be POST or PUT
-  req.send(null); // sending request; could be POST or PUT
-  console.log(req.responseText);
-
-
-  // Asynchronous GET request
-  var req = new XMLHttpRequest();
-  req.open("GET", "http://localhost/repository/file.txt"); // no false because asynchronous request
-  req.addEventListener("load", function () { // use of load event to make it asynchronous
-    console.log(req.responseText);
-  });
-  req.send(null);
-
-
-  // Handling errors
-  var req = new XMLHttpRequest();
-  req.open("GET", "http://localhost/repository/file.txt");
-  req.addEventListener("load", function () {
-    if (req.status >= 200 && req.status < 400) { // server succeed with the request
-      console.log(req.responseText);
-    } else {
-      console.error(req.status + " " + req.statusText); // error with request information
-    }
-  });
-  req.addEventListener("error", function () {
-    console.error("Network error"); // request did not reach server
-  });
-  req.send(null);
-
-
-  // Generic AJAX function (AJAX = asynchronous HTTP); 
-  // Better to define the function in another js file when you have multiple js file that will need it (link it with script tag above other script tags)
-  function ajaxGet(url, callback) {
-    var req = new XMLHttpRequest();
-    req.open("GET", url);
-    req.addEventListener("load", function () {
-      if (req.status >= 200 && req.status < 400) {
-        callback(req.responseText);
-      } else {
-        console.error(req.status + " " + req.statusText + " " + url);
-      }
-    });
-    req.addEventListener("error", function () {
-      console.error("Network error with URL " + url);
-    });
-    req.send(null);
+// POST
+const postData = async (
+  url = "https://type.fit/api/quotes", 
+  data = {}, 
+  options = {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)}
+) => {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) throw Error(response.statusText);
+    const responseData = await response.json();
+    return responseData;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  } finally {
+    console.log("Fetch operation finished")
   }
-  function call(answer) { // function that handle the answer (aka callback)
-    console.log(answer);
+};
+const dataToPost = {key: "value"};
+postData("https://type.fit/api/quotes", dataToPost)
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+// for formData
+const dataForm = new FormData();
+data.append('key', 'value');
+const options = { method: "POST", body: dataForm };
+postData("https://type.fit/api/quotes", {}, options)
+  .then(responseData => console.log(responseData))
+  .catch(error => console.error(error));
+
+
+
+
+// PROMISE ALL
+// when you need multiple calls
+const getAllData = async (listOfURL, options = {method: "GET"}) => {
+  try {
+    const data = await Promise.all(
+      listOfURL.map(async (url) => {
+        const response = await fetch(url, options);
+        if (!response.ok) throw Error(response.statusText);
+        const singleData = await response.json();
+        return singleData;
+      })
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+    throw error;
   }
-  ajaxGet("http://localhost/repository/file.txt", call);
-  // ajaxGet("http://localhost/repository/file.txt", function (answer) {console.log(answer)}); shorter way with anonym function
-
-
-  // Transform from JS to JSON and from JSON to JS
-  var planes = [
-    {
-      brand: "Airbus",
-      model: "A320"
-    },
-    {
-      brand: "Airbus",
-      model: "A380"
-    }
-  ];
-  console.log(planes);
-  var textPlanes = JSON.stringify(planes); // JS objects array into JSON string
-  console.log(textPlanes);
-  console.log(JSON.parse(textPlanes)); // JSON string into JS objects array
-
-
-  // Get data from server converting JSON to JS and display list
-  ajaxGet("http://localhost/repository/file.txt", function (answer) {
-    var list = JSON.parse(answer); // JS objects array
-    list.forEach(function (smth) {
-      console.log(smth.thing); // have thing for each smth
-    });
-  });
-
-
-  // Split string and create list of li elements
-  ajaxGet("http://localhost/javascript-web-srv/data/langages.txt", function (answer) {
-    var arr = answer.split(";");
-    console.log(arr);
-    arr.forEach(function (element) {
-      li = document.createElement("li");
-      li.innerHTML = element;
-      document.getElementById("languages").appendChild(li);
-    });
-  });
-
-
-  // Get data from JSON and put it into table
-  ajaxGet("http://localhost/javascript-web-srv/data/tableaux.json", function (answer) {
-    arr = JSON.parse(answer);
-    console.log(arr);
-    arr.forEach( function(element) {
-      tr = document.createElement("tr");
-      tr.innerHTML = "<td>" + element.nom + "</td>" + "<td>" + element.annee + "</td>" + "<td>" + element.peintre + "</td>";
-      document.getElementById("table").appendChild(tr);
-    });
-  });
-
-
-  
-
-// API 
-// Application Programming Interface are made by people to help others go faster; use geolocation, weather, wiki, etc.
-
-
-  // API with JSON (works the same but with online url); need ajax file with ajaxGet function defined
-  ajaxGet("http://api-website/api/file", function (answer) {
-    var arr = JSON.parse(answer);
-    arr.forEach(function (element) {/*code block*/;});
-  });
-
-
-  // Github profile
-  function ajaxGet(url, callback) { // usual ajaxGet func
-    var req = new XMLHttpRequest();
-    req.open("GET", url);
-    req.addEventListener("load", function () {
-      if (req.status >= 200 && req.status < 400) {
-        callback(req.responseText);
-      } else {
-        console.error(req.status + " " + req.statusText + " " + url);
-      }
-    });
-    req.addEventListener("error", function () {
-      console.error("Network error with URL " + url);
-    });
-    req.send(null);
-  }
-  document.querySelector("form").addEventListener("submit", function (e) { // Get user value on click
-    user = document.getElementById("user").value;
-    e.preventDefault();
-    ajaxGet("https://api.github.com/users/" + user, function (answer) { // Request API
-      var profile = JSON.parse(answer); 
-      img = document.createElement("img"); // Avatar
-      img.src = profile.avatar_url;
-      img.style.width = "200px";
-      h1 = document.createElement("h1"); // Pseudo
-      h1.innerHTML = profile.name;
-      h1.style.color = "#3D7B74";
-      p = document.createElement("p"); // Website
-      p.innerHTML = "<a href='" + profile.blog + "'>" + profile.blog + "</a>";
-      document.getElementById("profile").innerHTML = ""; // empty previous search
-      document.getElementById("profile").appendChild(img);
-      document.getElementById("profile").appendChild(h1);
-      document.getElementById("profile").appendChild(p);
-    });
-  });
-
-
-  // Get geolocation data; must have user authorization
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      $("#data").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
-    }); // Insert latitude and longitude into #data
-  }
-
-
-
-
-// SEND DATA TO SERVER
-// Use http and json to send data to servers
-
-
-  // Basic data sending code
-  var identity = new FormData();
-  identity.append("login", "Bob"); // Adding info example
-  identity.append("password", "azerty");
-  var req = new XMLHttpRequest(); 
-  req.open("POST", "http://localhost/repository/post_form.php"); // HTTP POST
-  req.send(identity);
-
-
-  // Generic data sending function
-  function ajaxPost(url, data, callback) {
-    var req = new XMLHttpRequest();
-    req.open("POST", url);
-    req.addEventListener("load", function () {
-      if (req.status >= 200 && req.status < 400) {
-        callback(req.responseText);
-      } else {
-        console.error(req.status + " " + req.statusText + " " + url);
-      }
-    });
-    req.addEventListener("error", function () {
-      console.error("Network error with URL " + url);
-    });
-    req.send(data);
-  }
-  var command = new FormData(); // Adaptation of basic code
-  command.append("color", "red"); // Adding other info example (they erase previous ofc)
-  command.append("size", "43");
-  ajaxPost("http://localhost/repository/post_form.php", command, function (reponse) {
-      console.log("Command sent to server");
-  });
-
-
-  // Handle form submission
-  var form = document.querySelector("form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var data = new FormData(form);
-    ajaxPost("http://localhost/javascript-web-srv/post_form.php", data, function () {}); // Callback func is empty here
-  });
-
-
-  // Data sending checking if JSON data
-  function ajaxPost(url, data, callback, isJson) {
-    var req = new XMLHttpRequest();
-    req.open("POST", url);
-    req.addEventListener("load", function () {
-      if (req.status >= 200 && req.status < 400) {
-        callback(req.responseText);
-      } else {
-        console.error(req.status + " " + req.statusText + " " + url);
-      }
-    });
-    req.addEventListener("error", function () {
-      console.error("Network error with URL " + url);
-    });
-    if (isJson) { // Check if json format
-      req.setRequestHeader("Content-Type", "application/json");
-      data = JSON.stringify(data);
-    }
-    req.send(data);
-  }
-  var movie = { // Creation of a movie object
-    title: "Zootopie",
-    year: "2016",
-    director: "Byron Howard and Rich Moore"
-  };
-  ajaxPost("http://localhost/javascript-web-srv/post_json.php", movie, function (reponse) {
-      console.log("The movie " + JSON.stringify(movie) + " has been sent to the server");
-    },
-    true // JSON parameter value
-  );
-
-
-  // send feedback from a form (function is defined before ofc)
-  document.querySelector("form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var feedback = {
-      pseudo: e.target.elements.pseudo.value,
-      evaluation: e.target.elements.evaluation.value,
-      message: e.target.elements.message.value,
-    };
-    ajaxPost("http://oc-jswebsrv.herokuapp.com/api/temoignage", feedback, function (reponse) {
-      var messageElt = document.createElement("p");
-      messageElt.textContent = "Feedback added";
-      document.getElementById("result").appendChild(messageElt);
-    }, true);
-  });
+};
+getAllData([]).then(data => console.log(data)).catch(error => console.error(error));
 
 
 
