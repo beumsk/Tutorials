@@ -91,8 +91,8 @@ type Y = X & { c: string, d: number };
 let combinedAlias: Y = { a: 'a', b: 2, c: 'c', d: 4 };
 // omitting alias
 type X = { a: string, b: number, c: string, d: number };
-type Y = Omit<X, 'd'>;
-let omitedAlias: Y = { a: 'a', b: 2, c: 'c' };
+type Y = Omit<X, 'd' | 'c'>;
+let omitedAlias: Y = { a: 'a', b: 2 };
 // smart alias
 type Smart = { name: string } & ({ type: 'circle', radius: number } | { type: 'square', side: number });
 let smartCircle: Smart = { name: 'c', type: 'circle', radius: 10 };
@@ -179,7 +179,16 @@ const article: GenericInterface3<{id:number, name:string}> = {
   extra: [{id:1, name:"author"}]
 }
 
-
+type Arr = { id: string, type: "new" | "old", name: string };
+const arr = [{id:1, type:"new", name:"First"}];
+function addToArray<T>(array: T[], item: T): T[] {
+  array.push(item);
+  return array;
+}
+addToArray(arr, {id:2, type:"new", name:"Second"}); // OK
+addToArray<Arr>(arr, {id:3, type:"old", name:"Third"}); // OK
+addToArray(arr, {id:4, type:"fake", name:"Fourth"}); // doesn't throw an error because of inferring
+addToArray<Arr>(arr, {id:5, type:"fake", name:"Fifth"}); // throw error ebcause explicit
 
 
 
