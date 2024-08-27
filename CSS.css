@@ -476,14 +476,14 @@
   position: relative; /* follow properties */
   position: fixed; /* is fixed on viewport -> does not move when scrolling */
   position: absolute; /* is positioned relative to the nearest positioned ancestor; top-left corner if no box around it */
-  position: sticky; /* switches from relative to fixed depending on the scroll; 'top' needs to be defined; !!IE */
-  position: -webkit-sticky; /* for safari */
+  position: sticky; /* switches from relative to fixed depending on the scroll; 'top' needs to be defined; parent can't be other than overflow:visible !!IE */
   z-index: -1; /* defines stack order -> bigger is in front!; cannot be 'static' */
   isolation: isolate; /* creates a new stacking context */
-  overflow: hidden scroll; /* hide content when over element size or create scroll bar to access the rest */
+  overflow: hidden scroll; /* hide content when parent < child or create scroll bar to access the rest */
   overflow-x: hidden; /* Hide horizontal scrollbar */
   overflow-y: scroll; /* Add vertical scrollbar */
-  overflow: auto; /* chose best option */
+  overflow-x: clip; overflow-y: scroll; /* allows for a certain axis to be hidden while the other scrolls !not possible with 'hidden' */
+  overflow: auto; /* choose best option */
 }
 
 
