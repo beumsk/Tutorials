@@ -1140,6 +1140,10 @@
   Math.PI // 3.141592653589793
 
 
+  // Math.sign; returns -1 or 1 based on number
+  Math.sign(-11); // -1
+
+
   // eval; takes a string and do the math
   eval("10 * 5 + 10 / 2") // 55
   

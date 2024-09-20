@@ -1909,7 +1909,7 @@ debugger;
       expect(el).toHaveClass('class-name');
       expect(el).toHaveAttribute('href', '/');
       expect(els).toHaveLength(3); // 3 elements in array
-      // use watFor to ensure elements are rendered (fetched)
+      // use waitFor to ensure elements are rendered (fetched)
       await waitFor(async () => {
         const el = await screen.findAllByRole('button');
         expect(el).toHaveLength(2);
