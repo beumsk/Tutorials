@@ -519,10 +519,13 @@
   <em>Emphasized content</em><!-- use to make text emphasized --><br>
   <table><caption>Table description</caption></table><!-- use caption to describe a table --><br>
   <img src="img/html.jpg" alt="image description"><!-- use alt to describe the image --><br>
-  <div role="navigation">Navigation</div><!-- role can be used to make any element understood as anything (button, navigation, search...) --><br>
+  <div role="navigation">Navigation</div><!-- role can be used to make any element understood as anything (button, navigation, search, banner, dialog, alert...) --><br>
   <div tabindex="0">Focusable element</div><!-- force element to have focus with tab key; link and input have that by default; set to -1 to disable it --><br>
   <p aria-label="description of the element">Described element</p><!-- use aria-label to give more description to an element --><br>
   <p aria-hidden="true">Hidden element for screen readers</p><!-- tells screen readers to ignore this element --><br>
+  <h2 id="some-heading">Some heading</h2>
+  <section aria-labelledby="some-heading"></section><!-- tells screen readers the section is described by h2 label --><br>
+  <abbr title="World Wide Web">WWW</abbr><br><!-- tells extra info on hover; not all screen readers read it, nor touch screen users -->
   <!--// ACCESSIBILITY -->
 
 
