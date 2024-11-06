@@ -240,14 +240,17 @@ const FunctionalComponent = () => {
 
 
 // MEMO HOOK
-// memoize a function to update only when a dependency prop has changed in the array
+// lets you cache the result of a calculation between re-renders.
 import { useMemo } from 'react';
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+const memoizedValue = useMemo(
+  () => computeExpensiveValue(a, b), 
+  [a, b]
+);
 
 
 
 // CALLBACK HOOK
-// memoize a returned value to update only when a dependency prop has changed in the array
+// lets you cache a function definition between re-renders.
 import { useCallback } from 'react';
 const memoizedCallback = useCallback(
   () => {
@@ -974,9 +977,12 @@ debugger;
       const el = screen.getByRole('listitem', {name: '<li>'});
       const el = screen.getByRole('textbox', {name: '<input type="text">'});
       const el = screen.getByRole('checkbox', {name: '<input type="checkbox">'});
+      const el = screen.getByRole('radio', {name: '<input type="radio">'});
       const el = screen.getByRole('spinbutton', {name: '<input type="number">'});
       const el = screen.getByRole('combobox', {name: '<select>'});
       const el = screen.getByRole('option', {name: '<option>'});
+      const el = screen.getByRole('banner', {name: '<header>'});
+      const el = screen.getByRole('contentinfo', {name: '<footer>'});
       // find roles with https://testing-library.com/docs/dom-testing-library/api-debugging/#logroles
       const el = screen.getByLabelText('Testing react');
       const el = screen.getByPlaceholderText('Testing react');
@@ -2140,7 +2146,24 @@ export const Summary = React.memo(
 // make sure to build for production before pushing your repo on production environment
 
 
+// Memo components
+// lets you skip re-rendering a component when its props are unchanged.
+import React, { memo } from 'react';
+function App() {
+  const MemoComponent = memo(({ name }) => {
+    return <h1>Hello, {name}!</h1>;
+  });
+  return (
+    <div>
+      <MemoComponent name="Rem" />
+    </div>
+  )
+}
+
+
+
 // Lazy loading components
+// lets you defer loading component’s code until it is rendered for the first time.
 import React, { lazy, Suspense } from 'react';
 function App() {
   const LazyComponent = lazy(() => import('./LazyComponent'));
