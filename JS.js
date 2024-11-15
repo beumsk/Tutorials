@@ -486,6 +486,16 @@
 
 
 
+// DEEP COPY
+// opposed to shallow copy, deep copy doesn't hold reference, even for nested objects and arrays
+const obj1 = { id: 1, name: "one", user: { id: 1, name: "user1", start: new Date() } };
+const deep1 = { ...obj1, user: { ...obj1.user } }; // fast but verbose
+const deep2 = JSON.parse(JSON.stringify(obj1)); // slower (switch dates to string!)
+const deep3 = structuredClone(obj1); // slowest
+
+
+
+
 // POP-UPS
 // launch pop-up
 
