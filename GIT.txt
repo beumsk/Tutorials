@@ -60,3 +60,25 @@ Release branch handle last check before new release
 Develop branch handle improvements to the code, including new features
 Feature branches handle new features to be add to develop
 
+
+ALIAS
+// reach and edit list with => git config --global -e
+// git cm "anything"
+// git cmt "add" "anything"
+co = checkout
+br = branch
+ci = commit
+cm = commit -m
+cmt = "!f() { git commit -m \"[$1] $2\"; }; f"
+st = status
+stu = stash -u
+stp = stash pop
+stl = stash list
+reb = rebase
+reb-main = !git stash -u && git rebase origin/main && git stash pop
+reb-qual = !git stash -u && git rebase origin/qual && git stash pop
+mer = merge
+pu = push
+pl = pull
+
+
