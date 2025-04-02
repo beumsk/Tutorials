@@ -21,6 +21,8 @@
 // prod files are now in dist/<projectName>
 // more cli commands -> https://malcoded.com/posts/angular-fundamentals-cli/
 
+// ng build --prod --base-href https://<gh-username>.github.io/<gh-projectname>/
+// angular-cli-ghpages -d dist/<gh-projectname>/ --no-silent
 
 // Angular cheat sheet -> https://angular.io/guide/cheatsheet
 
