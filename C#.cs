@@ -30,7 +30,8 @@ namespace Hello
   {
     static void Main(string[] args) // Main method is MANDATORY for the code to work and must be STATIC
     {
-      Console.WriteLine("Hello, World!");
+      Console.WriteLine("Hello, World!"); // includes a new line at the end of string
+      Console.Write("Hello, World!"); // does not include new line at the end of string
     }
   }
 }
@@ -68,20 +69,40 @@ namespace Hello
 
 
 // Types
-var anyType; // var force the compiler to find the right type for us; should be avoided for clarity
-byte number; // integer 0 à 255
-short number; // integer -32768 à 32767
-int number; // integer -2147483648 à 2147483647
-byte number; // integer -9223372036854775808 à 9223372036854775807
-float number; // simple precision -3,402823e38 à 3,402823e38
-double number; // double precision  -1,79769313486232e308 à 1,79769313486232e308
-decimal number; // for financial values with lots of decimals
-char letter; // single character
-string name; // character string
+var anyType; // var force the compiler to find the right type for us; should be avoided for clarity; no initialisation gives an error
+byte number; // integer 0 to 255
+short number; // integer -32768 to 32767
+int number; // integer -2147483648 to 2147483647
+byte number; // integer -9223372036854775808 to 9223372036854775807
+float number; // simple precision ~6-9 digits
+double number; // double precision ~15-17 digits
+decimal number; // for financial values with lots of decimals 28-29 digits
+char letter; // single character 'a'
+string name; // character string "aaa"
 bool diff; // true or false
 type[] arr; // array of any type (ex int); reference type
 List<type> list; // list of any type (ex int)
 DayOfWeek day; // day of week enum
+
+
+// Variable initialization implicit
+var example = 'a'; // implicitly char
+var example = "aaa"; // implicitly string
+var example = true; // implicitly boolean
+var example = 123; // implicitly int
+var example = 1.23F; // implicitly float
+var example = 1.23; // implicitly double
+var example = 1.23456789m; // implicitly decimal
+
+
+// Variable initialization explicit
+char example = 'a'; // char
+string example = "aaa"; // string
+bool example = true; // boolean
+int example = 123; // int
+float example = 1.23F; // float
+double example = 1.23; // double
+decimal example = 1.23456789m; // decimal
 
 
 // Type casting
