@@ -1,7 +1,13 @@
 // C# - Object Oriented Programming language - by Beumsk
 
 
-// file > new project > web web app > basic + MVC
+// file > new project > web web app > basic + MVC (old VS)
+
+
+// .NET CLI 
+dotnet new console -o ./CsharpProjects/TestProject // create new project
+dotnet build // build project
+dotnet run // run built project
 
 
 // useful starting lines; they are assemblies (libraries) that contain useful objects, methods, functions.
@@ -15,12 +21,6 @@ using System.IO; // File methods like creating, writing, saving
 using System.Speech.Synthesis; // synthesize strings and more
 using Microsoft.VisualStudio.TestTools.UnitTesting; // testing assembly
 using anyClass; // could be any crafted class (Grades ie)
-
-
-// without VS -> in console
-$ dotnet new console
-$ dotnet restore
-$ dotnet run
 
 
 // Hello world
@@ -105,15 +105,42 @@ double example = 1.23; // double
 decimal example = 1.23456789m; // decimal
 
 
+// String character escape
+Console.WriteLine("Hello\nWorld!"); // new line
+Console.WriteLine("Hello\tWorld!"); // tab
+Console.WriteLine("Hello \"World\"!"); // inside quotes
+Console.WriteLine("c:\\source\\repos"); // back slash
+Console.WriteLine(@" c:\source\repos =>   OK"); // verbatim string literal; can't use double quotes
+
+
+// String concatanation and interpolation
+string greeting = "Hello";
+Console.WriteLine("Hello" + " " + "World!");
+Console.WriteLine(greeting + " " + "World!");
+Console.WriteLine($"{greeting} World!");
+string projectName = "First-Project";
+Console.WriteLine($@"C:\Output\{projectName}\Data"); // verbatim literal + string interpolation
+
+
 // Type casting
 short s = 200; int i = s; // 200 becomes of int type
-int i = 200; short s = i; // not possible; short could be too specific for the number
+int i = 200; short s = i; // NOT possible; short could be too specific for the number
 int i = 200; short s = (short)i; // possible because we cast 'explicitly'
-int i = 40000; short s = (short)i; // not possible even with cast 'explicitly'
+int i = 40000; short s = (short)i; // NOT possible even with cast 'explicitly'
 int i = 20; double d = i; // 20 becomes of double type
 int age = 24; string ageStr = Convert.ToString(age); // converts int to string "24"
 string ageStr = "24"; int age = int.Parse(ageStr); // converts string to int 24
 int.TryParse(ageStr, out age); // checks if parse is authorized and stores value in out int; will return true here
+int quotient = 7 / 5; // gives 1 because values are of type int
+decimal decimalQuotient = 7.0m / 5; // gives 1.4 because at least one value is decimal
+decimal quotient = (decimal)7 / (decimal)5; // gives 1.4 thanks to type casting
+
+
+// Increment
+int value = 1;
+value = value + 1; // 2
+value += 1; // 3
+value++; // 4 
 
 
 // Boxing
@@ -144,29 +171,6 @@ int x = Console.CursorLeft; // current position of cursor column
 int y = Console.CursorRight; // current position of cursor line
 int w = Console.WindowWidth; // current width of window
 Console.MoveBufferArea(5, 6, 7, 8, 9, 10); // the text in the zone ((5,6),(12,14)) will move to (9,10)
-
-
-// readline of a number
-static void Main(string[] args)
-{
-  bool inputValid = false;
-  int age = -1;
-  while (!inputValid)
-  {
-    Console.WriteLine("Please type your age");
-    string input = Console.ReadLine();
-    if (int.TryParse(input, out age))
-    {
-      inputValid = true;
-    }
-    else
-    {
-      inputValid = false;
-      Console.WriteLine("Your age input is invalid !");
-    }
-  }
-  Console.WriteLine("You are " + age + " years old");
-}
 
 
 // LIST; can be in 2 dimension
@@ -217,24 +221,15 @@ Console.WriteLine(Days.Monday); // Monday
 
 
 // conditions
-namespace Sleep
+Console.WriteLine("How many hours did you sleep?");
+Int hours = Console.ReadLine();
+if(hours >= 8)
 {
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      Console.WriteLine("How many hours did you sleep?");
-      Int hours = Console.ReadLine();
-      if(hours >= 8)
-      {
-        Console.WriteLine("You slept enough");
-      }
-      else
-      {
-        Console.WriteLine("You need more sleep");
-      }
-    }
-  }
+  Console.WriteLine("You slept enough");
+}
+else
+{
+  Console.WriteLine("You need more sleep");
 }
 // ternary operator
 string test = 18 > 20 ? "passed" : "failed";
