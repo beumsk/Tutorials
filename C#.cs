@@ -226,6 +226,10 @@ Int hours = Console.ReadLine();
 if(hours >= 8)
 {
   Console.WriteLine("You slept enough");
+} 
+else if 
+{
+  Console.WriteLine("You could sleep a little more")
 }
 else
 {
