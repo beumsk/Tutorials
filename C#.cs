@@ -10,6 +10,26 @@ dotnet build // build project
 dotnet run // run built project
 
 
+// SHORTCUTS in VS 
+
+// Snippets: double tab to use those
+cw -> Console.WriteLine();
+ctor -> creates constructor;
+testm -> creates testMethod;
+prop -> creates property;
+for -> for loop;
+
+// format
+F5 -> start Debugging
+F9 -> breakpoint on current line
+F10 -> step over 
+F11 -> step into
+ctrl+F5 -> start without Debugging
+ctrl+k, ctrl+c -> comment
+ctrl+K, ctrl+u -> uncomment
+ctrl+k, ctrl+d -> reformat the code
+
+
 // useful starting lines; they are assemblies (libraries) that contain useful objects, methods, functions.
 using System; // contain for example the Console object
 using System.Collections.Generic; // contains the list 
@@ -21,6 +41,12 @@ using System.IO; // File methods like creating, writing, saving
 using System.Speech.Synthesis; // synthesize strings and more
 using Microsoft.VisualStudio.TestTools.UnitTesting; // testing assembly
 using anyClass; // could be any crafted class (Grades ie)
+
+
+// Single line comment
+/*
+  Multiple lines comment
+*/
 
 
 // Hello world
@@ -197,12 +223,13 @@ days[3] = "Thursday";
 days[4] = "Friday";
 days[5] = "Saturday";
 days[6] = "Sunday";
-int length = days.Length; // 7
-Array.Sort(days); // sort alpha
 // shortened way
 string[] days = new string[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+string[] days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; // from C# 12 & .NET 10
 // write
 Console.WriteLine(days[0]); // Monday
+int length = days.Length; // 7
+Array.Sort(days); // sort alpha
 
 
 // enum
@@ -524,21 +551,4 @@ namespace Grades.Tests
 
 
 
-// SHORTCUTS in VS 
 
-// Snippets: double tab to use those
-cw -> Console.WriteLine();
-ctor -> creates constructor;
-testm -> creates testMethod;
-prop -> creates property;
-for -> for loop;
-
-// format
-F5 -> start Debugging
-F9 -> breakpoint on current line
-F10 -> step over 
-F11 -> step into
-ctrl+F5 -> start without Debugging
-ctrl+k, ctrl+c -> comment
-ctrl+K, ctrl+u -> uncomment
-ctrl+k, ctrl+d -> reformat the code
