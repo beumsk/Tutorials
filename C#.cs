@@ -131,6 +131,11 @@ double example = 1.23; // double
 decimal example = 1.23456789m; // decimal
 
 
+// nullable type string
+string? readResult;
+readResult = Console.ReadLine();
+
+
 // String character escape
 Console.WriteLine("Hello\nWorld!"); // new line
 Console.WriteLine("Hello\tWorld!"); // tab
@@ -146,6 +151,14 @@ Console.WriteLine(greeting + " " + "World!");
 Console.WriteLine($"{greeting} World!");
 string projectName = "First-Project";
 Console.WriteLine($@"C:\Output\{projectName}\Data"); // verbatim literal + string interpolation
+
+
+// String methods
+string example = " HellO";
+example.Trim(); // "HellO"
+example.ToLower(); // "hello"
+example.StartsWith("h"); // True
+example.Contains("l"); // True
 
 
 // Type casting
@@ -254,7 +267,7 @@ if(hours >= 8)
 {
   Console.WriteLine("You slept enough");
 } 
-else if 
+else if (hours >= 6)
 {
   Console.WriteLine("You could sleep a little more")
 }
@@ -262,7 +275,7 @@ else
 {
   Console.WriteLine("You need more sleep");
 }
-// ternary operator
+// ternary conditional operator
 string test = 18 > 20 ? "passed" : "failed";
 
 
@@ -282,28 +295,29 @@ switch(letterGrade)
   case "D":
     result = "Below Average";
     break;
+  case "E":
   default:
     result = "Failing";
     break;
 }
-return result;
+Console.WriteLine(result);
 
 
-// foreach loop
+// foreach loop; enumerates the elements of a collection and executes its body for each element of the collection
 foreach (int day in days)
 {
   Console.WriteLine(day);
 }
 
 
-// for loop
+// for loop; executes its body while a specified Boolean expression (the 'condition') evaluates to true.
 for (int i = 0; i<grades.Count; i++) 
 {
   Console.WriteLine(grade);
 }
 
 
-// while loop
+// while loop; conditionally executes its body zero or more times
 while (age > 0)
 {
   age -= 1;
@@ -311,7 +325,7 @@ while (age > 0)
 }
 
 
-// do while loop 
+// do while loop; conditionally executes its body one or more times
 do 
 {
   age++;
