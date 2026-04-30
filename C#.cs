@@ -97,9 +97,13 @@ namespace Hello
 // Types
 var anyType; // var force the compiler to find the right type for us; should be avoided for clarity; no initialisation gives an error
 byte number; // integer 0 to 255
+ushort number; // integer 0 to 65535
+uint number; // integer 0 to 4294967295
+ulong number; // integer 0 to 18446744073709551615
+sbyte number; // integer -128 to 127
 short number; // integer -32768 to 32767
 int number; // integer -2147483648 to 2147483647
-byte number; // integer -9223372036854775808 to 9223372036854775807
+long number; // integer -9223372036854775808 to 9223372036854775807
 float number; // simple precision ~6-9 digits
 double number; // double precision ~15-17 digits
 decimal number; // for financial values with lots of decimals 28-29 digits
@@ -109,6 +113,8 @@ bool diff; // true or false
 type[] arr; // array of any type (ex int); reference type
 List<type> list; // list of any type (ex int)
 DayOfWeek day; // day of week enum
+DateTime date; // date and time value
+TimeSpan span; // time span
 
 
 // Variable initialization implicit
