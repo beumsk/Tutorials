@@ -169,7 +169,7 @@ int i = 40000; short s = (short)i; // NOT possible even with cast 'explicitly'
 int i = 20; double d = i; // 20 becomes of double type
 int age = 24; string ageStr = Convert.ToString(age); // converts int to string "24"
 string ageStr = "24"; int age = int.Parse(ageStr); // converts string to int 24
-int.TryParse(ageStr, out age); // checks if parse is authorized and stores value in out int; will return true here
+int age; int.TryParse(ageStr, out age); // checks if parse is authorized and stores value in out int; will return true here
 int quotient = 7 / 5; // gives 1 because values are of type int
 decimal decimalQuotient = 7.0m / 5; // gives 1.4 because at least one value is decimal
 decimal quotient = (decimal)7 / (decimal)5; // gives 1.4 thanks to type casting
@@ -212,7 +212,7 @@ int w = Console.WindowWidth; // current width of window
 Console.MoveBufferArea(5, 6, 7, 8, 9, 10); // the text in the zone ((5,6),(12,14)) will move to (9,10)
 
 
-// LIST; can be in 2 dimension
+// LIST;
 List<string> days = new List<string>();
 days.Add("Monday"); // "Monday"
 days.Add("Tuesday"); // "Monday", "Tuesday"
@@ -227,6 +227,18 @@ List<string> days = new List<string> {"Monday", "Tuesday", "Wednesday", "Thursda
 Console.WriteLine(days[0]); // Monday
 
 
+// Multi Dimension list
+int[,] array2DDeclaration = new int[4, 2];
+// or
+int[,] array2D =  { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+Console.WriteLine(array2D[1, 0]); // 3
+
+int[,,] array3DDeclaration = new int[4, 2, 3];
+// or
+int[,,] array3D = { { { 1, 2, 3 }, { 4,   5,  6 } }, { { 7, 8, 9 }, { 10, 11, 12 } } };
+Console.WriteLine(array3D[1, 1, 2]); // 12
+
+
 // ARRAY; fixed length
 string[] days = new string[7];
 days[0] = "Monday";
@@ -236,13 +248,27 @@ days[3] = "Thursday";
 days[4] = "Friday";
 days[5] = "Saturday";
 days[6] = "Sunday";
-// shortened way
-string[] days = new string[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+string[] days = new string[] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}; // shortened way
 string[] days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]; // from C# 12 & .NET 10
-// write
 Console.WriteLine(days[0]); // Monday
 int length = days.Length; // 7
 Array.Sort(days); // sort alpha
+Array.Reverse(days); // reverse order
+Array.Clear(days, 5, 2); // start at index 5, clear 2 elements; cleared string are replaced with null; cleared int are replaced with 0
+Array.Resize(ref days, 5); // array is now 5 elements long
+string str "robot"; str.ToCharArray(); // ["r","o","b","o","t"]
+string result = String.Join(",", str); // "r,o,b,o,t"
+string[] items = result.Split(',');
+
+
+// Jagged array
+string[][] jaggedArray = new string[][]
+{
+    new string[] { "one1", "two1", "three1", "four1", "five1", "six1" },
+    new string[] { "one2", "two2", "three2", "four2", "five2", "six2" },
+    new string[] { "one3", "two3", "three3", "four3", "five3", "six3" }
+};
+Console.WriteLine(jaggedArray[1][2]); // three2
 
 
 // enum
