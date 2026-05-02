@@ -159,6 +159,13 @@ string projectName = "First-Project";
 Console.WriteLine($@"C:\Output\{projectName}\Data"); // verbatim literal + string interpolation
 
 
+// Formatting
+string first = "Hello"; string second = "World"; string result = string.Format("{0} {1}!", first, second); // Hello World!
+decimal price = 123.45m; int discount = 50; Console.WriteLine($"P: {price:C} - D: {discount:C}"); // P: $123.45 - D: $50.00 (depends on culture)
+decimal measurement = 123456.78912m; Console.WriteLine($"M: {measurement:N} or {measurement:N2}"); // M: M: 123,456.789 or 123,456.79 (depends on culture)
+decimal tax = .36785m; Console.WriteLine($"T: {tax:P2}"); // T: 36.79% (depends on culture)
+
+
 // String methods
 string example = " HellO";
 example.Trim(); // "HellO"
