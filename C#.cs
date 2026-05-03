@@ -127,6 +127,10 @@ var example = 1.23; // implicitly double
 var example = 1.23456789m; // implicitly decimal
 
 
+// Constant; they can't change
+const CONSTANT = "YOU CANNOT CHANGE ME";
+
+
 // Variable initialization explicit
 char example = 'a'; // char
 string example = "aaa"; // string
@@ -167,11 +171,19 @@ decimal tax = .36785m; Console.WriteLine($"T: {tax:P2}"); // T: 36.79% (depends 
 
 
 // String methods
-string example = " HellO";
-example.Trim(); // "HellO"
-example.ToLower(); // "hello"
-example.StartsWith("h"); // True
-example.Contains("l"); // True
+" example".Trim(); // "example"
+"Example".ToLower(); // "example"
+"example".StartsWith("e"); // True
+"example".EndsWith("e"); // True
+"example".Contains("l"); // False
+"example".PadLeft(8); // " example"
+"example".PadLeft(8, "-"); // "-example"
+"example".PadRight(8, '_'); // "example_"
+"example".IndexOf('x'); // 1
+"example".LastIndexOf('e'); // 7
+"example".Substring(2, 5); // "ample"; index position, length
+"example".Remove(2, 5); // "ex"
+"example".Replace('x', 'w'); // "ewample"
 
 
 // Type casting
@@ -233,7 +245,7 @@ days.Insert(2, "Wednesday"); // "Monday", "Tuesday", "Wednesday"
 days.Remove("Wednesday"); // "Monday", "Tuesday"
 days.RemoveAt(1); // "Monday"
 int length = days.Count; // 1
-int index = days.indexOf("Monday"); // 0
+int index = days.IndexOf("Monday"); // 0
 // shortened way
 List<string> days = new List<string> {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 // write
