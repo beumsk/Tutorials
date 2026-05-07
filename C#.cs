@@ -214,7 +214,7 @@ o = 6; // i = 5; o = 6
 
 
 // Unboxing
-int i =5;
+int i = 5;
 object o = i;
 o = 6;
 int j = (int)o;
@@ -406,16 +406,21 @@ for (int i = 0; i<5; i++)
 } // 0, 1, 2, 4
 
 
-// object
-static void writeResult(string description, int result) 
+// Method; or Function
+void WriteResult(string description, int result = 8) // void because it does not return anything
 {
-  Console.WriteLine(description + ": " + result);
-  // OR
-  Console.WriteLine("{0}: {1}", description, result); // c# string formatting; can add other strings and characters
-  // OR
   Console.WriteLine($"{description}: {result}");
 }
-writeResult("My age", 24); // My age: 24
+WriteResult("My age", 24); // My age: 24
+WriteResult(result: 24, description: "My age"); // My age: 24; naming your params, you can choose the order
+WriteResult("My age"); // My age: 8; default value is taken 
+
+// when you return a value from a method, you must define its returned type
+string ProcessString(string str)
+{
+  return str.ToLower().Substring(0, 2);
+}
+Console.WriteLine(ProcessString("OKLETSGO")); // ok
 
 
 // constructor; instiancates an instance of that class, creates an object
