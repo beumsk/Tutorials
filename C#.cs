@@ -303,18 +303,30 @@ Console.WriteLine(jaggedArray[1][2]); // three2
 
 
 // enum
-enum Days
+enum Direction
 {
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday,
-  Sunday
+  Up,
+  Down,
+  Right,
+  Left
 }
-// write
-Console.WriteLine(Days.Monday); // Monday
+enum Orientation
+{
+  North,
+  South,
+  East,
+  West
+}
+static Orientation ToOrientation(Direction direction) => direction switch
+{
+  Direction.Up => Orientation.North,
+  Direction.Right => Orientation.East,
+  Direction.Down => Orientation.South,
+  Direction.Left => Orientation.West,
+  _ => throw new ArgumentOutOfRangeException(nameof(direction), $"Not expected direction value: {direction}"),
+};
+Console.WriteLine(Direction.Right); // Right
+Console.WriteLine(ToOrientation(Direction.Right)); // East
 
 
 // conditions
