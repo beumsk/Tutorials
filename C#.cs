@@ -200,6 +200,12 @@ decimal decimalQuotient = 7.0m / 5; // gives 1.4 because at least one value is d
 decimal quotient = (decimal)7 / (decimal)5; // gives 1.4 thanks to type casting
 
 
+// Type check
+bool isString = "hello" is string; // true
+bool isInt = 3 is int; // true
+bool isNotInt = "hello" is not int; // true
+
+
 // Increment
 int value = 1;
 value = value + 1; // 2
@@ -314,7 +320,11 @@ Console.WriteLine(Days.Monday); // Monday
 // conditions
 Console.WriteLine("How many hours did you sleep?");
 Int hours = Console.ReadLine();
-if(hours >= 8)
+if (hours is not int) 
+{
+  Console.WriteLine("Entered value is not an int!");
+} 
+else if (hours >= 8)
 {
   Console.WriteLine("You slept enough");
 } 
